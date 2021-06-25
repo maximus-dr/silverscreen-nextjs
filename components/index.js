@@ -7,6 +7,7 @@ import Icon from "./Icon/Icon";
 import Label from "./Label/Label";
 import Image from "./Image/Image";
 import Input from "./Input/Input";
+import Link from "./Link/Link";
 
 
 export const Provider = {
@@ -19,4 +20,5 @@ export const Provider = {
     'image': Image,
     'input': Input,
     'label': Label,
+    'link': Link
 }
