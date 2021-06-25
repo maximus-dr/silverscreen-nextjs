@@ -1,7 +1,46 @@
 {
-    "typeName": "link",
-    "id": "l1",
+    "typeName": "page",
+    "id": "p1",
     "styles": {
+        "backgroundColor": "gray"
+    },
+    "childrenList": [
+        {
+            "typeName": "label",
+            "id": "l1",
+            "heading": "h1",
+            "value": "Title"
+        },
 
-    }
+        {
+            "typeName": "section",
+            "id": "s1",
+            "styles": {
+                "wrapper": {
+                    "backgroundColor": "blue"
+                }
+            },
+            "childrenList": [
+                {
+                    "typeName": "radio",
+                    "id": "r1"
+                },
+        
+                {
+                    "typeName": "radio",
+                    "id": "r2"
+                },
+        
+                {
+                    "typeName": "radio",
+                    "id": "r3"
+                }
+            ]
+        },
+
+        {
+            "typeName": "tab",
+            "id": "t1"
+        }
+    ]
 }
