@@ -1,5 +1,7 @@
 {
-    "typeName": "dropdown",
+    "typeName": "input",
     "id": "l1",
-    "childrenList": []
+    "styles": {
+
+    }
 }
