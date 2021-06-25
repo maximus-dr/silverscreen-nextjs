@@ -1,9 +1,8 @@
 {
-    "typeName": "checkbox",
+    "typeName": "description",
     "id": "l1",
+    "value": "some text",
     "styles": {
-        "input": {
-            "cursor": "pointer"
-        }
+
     }
 }
