@@ -1,8 +1,5 @@
 import axios from 'axios'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-
+import { renderComponents } from '../core/functions/render';
 
 
 export async function getStaticProps() {
@@ -16,12 +13,13 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home(props) {
-  console.log(props);
+export default function MainPage(props) {
+  const components = renderComponents(props.pageData);
 
   return (
-    <div className={styles.container}>
+    <div>
       <h1>App</h1>
+      <div>{components}</div>
     </div>
   )
 }
