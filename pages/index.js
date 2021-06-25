@@ -17,9 +17,8 @@ export default function MainPage(props) {
   const components = renderComponents(props.pageData);
 
   return (
-    <div>
-      <h1>App</h1>
-      <div>{components}</div>
-    </div>
+    <>
+      {components}
+    </>
   )
 }
