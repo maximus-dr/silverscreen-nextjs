@@ -1,8 +1,5 @@
 {
-    "typeName": "description",
+    "typeName": "dropdown",
     "id": "l1",
-    "value": "some text",
-    "styles": {
-
-    }
+    "childrenList": []
 }
