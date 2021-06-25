@@ -1,5 +1,4 @@
 {
-    "typeName": "label",
-    "id": "l1",
-    "heading": "h2"
+    "typeName": "button",
+    "id": "l1"
 }
