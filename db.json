@@ -1490,8 +1490,12 @@
           {
             "typeName": "tab",
             "id": "t1"
+          },
+
+          {
+            "typeName": "tab",
+            "id": "t2"
           }
-  
         ]
       }
     ]

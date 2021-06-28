@@ -1,24 +1,27 @@
-import axios from 'axios'
+
 import { renderComponents } from '../core/functions/render';
+const path = require('path');
+const fs = require('fs');
 
 
 export async function getStaticProps() {
-  const res = await axios('http://localhost:3001/db.json');
-  const pageData = await res.data;
+  const dbPath = path.join(process.cwd(), 'db.json');
+  const data = fs.readFileSync(dbPath, 'utf8');
 
   return {
     props: {
-      pageData
-    }
+      pageData: JSON.parse(data)
+    },
+    revalidate: 1
   }
 }
 
-export default function MainPage(props) {
-  const components = renderComponents(props.pageData);
+export default function Home(props) {
 
+  const Components = renderComponents(props.pageData);
   return (
     <>
-      {components}
+      {Components}    
     </>
   )
 }

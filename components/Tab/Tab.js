@@ -25,6 +25,8 @@ export default function Tab(props) {
     if (!tabsData) warnings.push(createMessage('Добавьте tab'));
     if (!tabContentData) warnings.push(createMessage('Добавьте tabContent'));
     
+    const [activeTab, setActiveTab] = useState(tabsData && tabsData[0].props.componentData.tabKey || null);
+    
     if (warnings.length > 0) {
         return (
             <TabWarning>
@@ -34,7 +36,6 @@ export default function Tab(props) {
         );
     }
 
-    const [activeTab, setActiveTab] = useState(tabsData && tabsData[0].props.componentData.tabKey || null);
 
     const el = {
         TabBar: Provider[tabBarData[0].props.componentData.typeName],

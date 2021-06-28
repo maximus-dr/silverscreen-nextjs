@@ -7,7 +7,6 @@ import { StylesProvider } from '../styles';
 export const RadioButton = styled.input`
     ${props => {
         const styles = props.componentData.styles && props.componentData.styles.radio || null;
-        console.log(styles);
 
         return css`
             ${styles && StylesProvider(styles)}
