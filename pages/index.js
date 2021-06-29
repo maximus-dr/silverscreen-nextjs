@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { renderComponents } from '../core/functions/render';
 import { API_ALL_EVENTS } from '../core/rest/paths';
