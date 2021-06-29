@@ -8,29 +8,24 @@ const path = require('path');
 const fs = require('fs');
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const dbPath = path.join(process.cwd(), 'db/db.json');
     const components = fs.readFileSync(dbPath, 'utf8');
-    
-    const reduxStore = initializeStore()
-    const { dispatch } = reduxStore
-
+  
     const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
       .then(res => res.data)
       .catch(err => console.log(err));
-
-    dispatch({
-        type: 'SET_EVENTS',
-        events
-    })
-
-    return { 
-        props: { 
-            initialReduxState: reduxStore.getState(),
-            components: JSON.parse(components)
-        } 
+    
+    return {
+      props: {
+        initialReduxState: {
+            events
+        },
+        components: JSON.parse(components)
+      },
+      revalidate: 1
     }
-}
+  }
 
 
 export default function SSR(props) {
