@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
-import clockReducer from "./clock";
 
 
 const rootReducer = combineReducers({
-    clock: clockReducer
+    init: (state = {}, action) => state    
 });
 
 export default rootReducer;
