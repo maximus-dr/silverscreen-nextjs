@@ -1,12 +1,13 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-import FilmGallery from '../components/FilmGallery/FilmGallery';
+import TestPage from '../components/test/TestPage/TestPage';
+
 import { renderComponents } from '../core/functions/render';
 import { API_ALL_EVENTS } from '../core/rest/paths';
 import { initializeStore } from '../store/store';
 const path = require('path');
 const fs = require('fs');
-
+import Head from 'next/head';
 
 export async function getStaticProps() {
     const dbPath = path.join(process.cwd(), 'db/db.json');
@@ -39,18 +40,13 @@ export default function SSR(props) {
 
     return (
         <>
-            <h2>SSR</h2>
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <div>{Components}</div>
+          <Head>
+              <meta charSet="utf-8" />
+              <meta name="keywords" content="next,js,react" />
+              <meta name="description" content="nextjs tutorial" />
+              <title>SSR Test Page</title>
+          </Head>
+          <TestPage />
         </>
     )
 }

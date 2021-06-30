@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect } from 'react';
-import FilmGallery from '../components/FilmGallery/FilmGallery';
+import FilmGallery from '../components/test/FilmGallery/FilmGallery';
+import TestPage from '../components/test/TestPage/TestPage';
 import { renderComponents } from '../core/functions/render';
 import { API_ALL_EVENTS } from '../core/rest/paths';
 import { initializeStore } from '../store/store';
 const path = require('path');
 const fs = require('fs');
+import Head from 'next/head';
 
 
 export async function getServerSideProps() {
@@ -35,27 +37,22 @@ export async function getServerSideProps() {
 
 export default function SSR(props) {
 
-    const Components = renderComponents(props.components);
+    // const Components = renderComponents(props.components);
     
-    useEffect(() => {
-        const numOfElements = document.getElementsByTagName('*').length;
-        console.log(numOfElements)
-    }, []);
+    // useEffect(() => {
+    //     const numOfElements = document.getElementsByTagName('*').length;
+    // }, []);
 
     return (
         <>
-            <h2>SSR</h2>
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <FilmGallery />
-            <div>{Components}</div>
+            <Head>
+                <meta charSet="utf-8" />
+                <meta name="keywords" content="next,js,react" />
+                <meta name="description" content="nextjs tutorial" />
+                <title>SSR Test Page</title>
+            </Head>
+
+            <TestPage />
         </>
     )
 }

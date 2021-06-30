@@ -1,16 +1,87 @@
-html,
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+  color: rgba(255, 255, 255, .8);
+  font: 400 16px/26px Ubuntu, Roboto, Arial, Helvetica, sans-serif;
+  background: #27272a;
+  overflow-x: hidden;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+::selection {
+    background: #1c9cdf;
+    color: #fff;
+}
+
+ul {
+  margin: 18px 0 18px 25px;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.625em;
+}
+
+/* @media all and (max-width: 1200px) {
+  ul{
+    font-size: 1em;
+    line-height: 1.625em;
+  }
+} */
+
+li {
+  margin: 0 0 8px;
+  padding: 0 0 0 25px;
+  position: relative;
+  list-style: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-size-adjust: 100%;
+  font: 400 1em/1.625em Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+}
+
+ul li:before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 0;
+  height: 2px;
+  width: 16px;
+  background: rgba(212, 7, 84, 0.8);
+}
+
+ol {
+  counter-reset: ol;
+  padding-inline-start: 25px;
+}
+
+ol li {
+  counter-increment: ol;
+}
+
+
+ol li:before {
+  content: counter(ol) '.';
+  position: absolute;
+  left: 0;
+  color: rgba(212,7,84,.8);
+  font-weight: 700;
 }
 
 a {
-  color: inherit;
+  color: #1c9cdf;
+  cursor: pointer;
+  border: none;
+  transition: .2s;
+  outline: 0;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+a:link {
+  color: #1c9cdf;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d40754;
 }
