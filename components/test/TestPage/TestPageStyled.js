@@ -787,6 +787,8 @@ export const FooterMiddleLeft = styled.div`
         color: rgba(255, 255, 255, 0.8);
         border: 2px solid rgba(255, 255, 255, 0.8);
         border-radius: 50%;
+        text-align: center;
+        vertical-align: middle;
     }
 `;
 
@@ -866,3 +868,5 @@ export const FooterBottomBottom = styled.p`
     line-height: 22px;
     text-align: center;
 `;
+
+export const NavLink = styled.a``;

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import PlaceSelection from './PlaceSelection/PlaceSelection'
 import Link from 'next/link'
 import FilmGallery from '../FilmGallery/FilmGallery'
-import { AfishaColumnImg, AfishaMenuColumn1, Button1, Button2, Button3, FilmSection, FilmSectionHeader, FilmSectionHeaderBottom, FilmSectionHeaderTop, FilmSectionShedule, FilmSectionTab, FilmSectionTitle, Footer, FooterBottom, FooterBottomBottom, FooterBottomTop, FooterBottomTopLeft, FooterBottomTopRight, FooterHr, FooterMiddle, FooterMiddleLeft, FooterMiddleRight, FooterTop, FooterTopColumn, FooterTopNav, FooterWrapper, HeaderMenu, HeaderPromo, HeaderSection, HeaderSectionWrapper, HeaderSectionWrapper2, HeaderSectionWrapper3, HeaderSectionWrapper4, HeaderSectionWrapper5, InfoSectionHeader, InfoSectionMain, LoginIcon, LoginIcons, LoginInput, LoginSection, MainLogo, MainLogoIcon, MainLogoSubtitle, MainLogoTitle, MainLogoTitleLeft, MainLogoTitleRight, MainNav, PageHeader, PlaceSelect, PromoButton, PromoColumn, PromoImgWrapper, PromoSection, PromoSectionBackground, PromoSectionWrapper, PromoSubtitle, PromoText, PromoTitle, Rcc, Search, SliderButton, SliderDescription, SliderItem, SliderItemDescription, SliderNext, SliderPrev, SliderSubtitle, SliderTitle, SliderWrapper, SubscribeButton, SubscribeEmail, SubscribeInput, SubscribeMain, SubscribeWrapper } from './TestPageStyled'
+import { AfishaColumnImg, AfishaMenuColumn1, Button1, Button2, Button3, FilmSection, FilmSectionHeader, FilmSectionHeaderBottom, FilmSectionHeaderTop, FilmSectionShedule, FilmSectionTab, FilmSectionTitle, Footer, FooterBottom, FooterBottomBottom, FooterBottomTop, FooterBottomTopLeft, FooterBottomTopRight, FooterHr, FooterMiddle, FooterMiddleLeft, FooterMiddleRight, FooterTop, FooterTopColumn, FooterTopNav, FooterWrapper, HeaderMenu, HeaderPromo, HeaderSection, HeaderSectionWrapper, HeaderSectionWrapper2, HeaderSectionWrapper3, HeaderSectionWrapper4, HeaderSectionWrapper5, InfoSectionHeader, InfoSectionMain, LoginIcon, LoginIcons, LoginInput, LoginSection, MainLogo, MainLogoIcon, MainLogoSubtitle, MainLogoTitle, MainLogoTitleLeft, MainLogoTitleRight, MainNav, NavLink, PageHeader, PlaceSelect, PromoButton, PromoColumn, PromoImgWrapper, PromoSection, PromoSectionBackground, PromoSectionWrapper, PromoSubtitle, PromoText, PromoTitle, Rcc, Search, SliderButton, SliderDescription, SliderItem, SliderItemDescription, SliderNext, SliderPrev, SliderSubtitle, SliderTitle, SliderWrapper, SubscribeButton, SubscribeEmail, SubscribeInput, SubscribeMain, SubscribeWrapper } from './TestPageStyled'
 
 
 export default function TestPage(props) {
@@ -324,19 +324,24 @@ export default function TestPage(props) {
                         <LoginSection>
                             <Button3>Войти</Button3>
                             <LoginIcons>
-                                <Link href="/">
-                                    <a style={{display: 'block', width: '44px', height: '44px'}}>
-                                        <LoginIcon>
-                                            <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
-                                        </LoginIcon> 
-                                    </a>
+                                <Link href="/" passHref>
+                                    <NavLink style={{display: 'block', width: '44px', height: '44px', fontSize: '0', lineHeight: '0'}} aria-label="fb-login">
+                                        <span>
+                                            fb
+                                            <LoginIcon>
+                                                <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
+                                            </LoginIcon> 
+                                        </span>
+                                    </NavLink>
                                 </Link>
-                                <Link href="/">
-                                    <a style={{display: 'block', width: '44px', height: '44px'}}>
-                                        <LoginIcon>
-                                            <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
-                                        </LoginIcon>
-                                    </a>
+                                <Link href="/" passHref>
+                                    <NavLink style={{display: 'block', width: '44px', height: '44px', fontSize: '0', lineHeight: '0'}} aria-label="vk-login">
+                                        <span>
+                                            <LoginIcon>
+                                                <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
+                                            </LoginIcon>
+                                        </span>
+                                    </NavLink>
                                 </Link>
                             </LoginIcons>
                         </LoginSection>
@@ -773,20 +778,27 @@ export default function TestPage(props) {
                     <FooterMiddle>
                         {/* left */}
                         <FooterMiddleLeft>
-                            <Link href="/">
-                                <a>
-                                    <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
-                                </a>
+                            <Link href="/" passHref>
+                                <NavLink style={{fontSize: '0', lineHeight: '0'}} aria-label="social-vk">
+                                    <span>
+                                        vk
+                                        <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="16" height="16"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
+                                    </span>
+                                </NavLink>
                             </Link>
-                            <Link href="/">
-                                <a>
-                                    <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
-                                </a>
+                            <Link href="/" passHref>
+                                <NavLink style={{fontSize: '0', lineHeight: '0'}} aria-label="social-fb">
+                                    <span>
+                                        <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="16" height="16"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
+                                    </span>
+                                </NavLink>
                             </Link>
-                            <Link href="/">
-                                <a>
-                                    <svg id="svg-icon-soc-instagram" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M26.875 35h-13.75A8.134 8.134 0 0 1 5 26.874v-13.75A8.134 8.134 0 0 1 13.125 5h13.75A8.134 8.134 0 0 1 35 13.123v13.75A8.134 8.134 0 0 1 26.875 35zM32.5 13.123A5.63 5.63 0 0 0 26.875 7.5h-13.75A5.63 5.63 0 0 0 7.5 13.123v13.75a5.632 5.632 0 0 0 5.625 5.627h13.75a5.632 5.632 0 0 0 5.625-5.626v-13.75zm-4.53.626a1.72 1.72 0 1 1 1.718-1.72 1.72 1.72 0 0 1-1.72 1.72zM20 27.5a7.5 7.5 0 1 1 7.5-7.5 7.508 7.508 0 0 1-7.5 7.5zM20 15a5 5 0 1 0 5 5 5.005 5.005 0 0 0-5-5z"></path></svg>
-                                </a>
+                            <Link href="/" passHref>
+                                <NavLink style={{fontSize: '0', lineHeight: '0'}} aria-label="social-inst">
+                                    <span>
+                                        <svg id="svg-icon-soc-instagram" viewBox="0 0 40 40" width="16" height="16"><path fill="currentColor" d="M26.875 35h-13.75A8.134 8.134 0 0 1 5 26.874v-13.75A8.134 8.134 0 0 1 13.125 5h13.75A8.134 8.134 0 0 1 35 13.123v13.75A8.134 8.134 0 0 1 26.875 35zM32.5 13.123A5.63 5.63 0 0 0 26.875 7.5h-13.75A5.63 5.63 0 0 0 7.5 13.123v13.75a5.632 5.632 0 0 0 5.625 5.627h13.75a5.632 5.632 0 0 0 5.625-5.626v-13.75zm-4.53.626a1.72 1.72 0 1 1 1.718-1.72 1.72 1.72 0 0 1-1.72 1.72zM20 27.5a7.5 7.5 0 1 1 7.5-7.5 7.508 7.508 0 0 1-7.5 7.5zM20 15a5 5 0 1 0 5 5 5.005 5.005 0 0 0-5-5z"></path></svg>
+                                    </span>
+                                </NavLink>
                             </Link>
                         </FooterMiddleLeft>
 
