@@ -4,7 +4,7 @@ import Image from 'next/image'
 import PlaceSelection from './PlaceSelection/PlaceSelection'
 import Link from 'next/link'
 import FilmGallery from '../FilmGallery/FilmGallery'
-import { AfishaColumnImg, AfishaMenuColumn1, Button1, Button2, Button3, FilmSection, FilmSectionHeader, FilmSectionHeaderBottom, FilmSectionHeaderTop, FilmSectionShedule, FilmSectionTab, FilmSectionTitle, HeaderMenu, HeaderPromo, HeaderSection, HeaderSectionWrapper, HeaderSectionWrapper2, HeaderSectionWrapper3, HeaderSectionWrapper4, HeaderSectionWrapper5, LoginIcon, LoginIcons, LoginInput, LoginSection, MainLogo, MainLogoIcon, MainLogoSubtitle, MainLogoTitle, MainLogoTitleLeft, MainLogoTitleRight, MainNav, PageHeader, PlaceSelect, PromoButton, PromoColumn, PromoImgWrapper, PromoSection, PromoSectionBackground, PromoSectionWrapper, PromoSubtitle, PromoText, PromoTitle, Rcc, Search, SliderButton, SliderDescription, SliderItem, SliderItemDescription, SliderNext, SliderPrev, SliderSubtitle, SliderTitle, SliderWrapper } from './TestPageStyled'
+import { AfishaColumnImg, AfishaMenuColumn1, Button1, Button2, Button3, FilmSection, FilmSectionHeader, FilmSectionHeaderBottom, FilmSectionHeaderTop, FilmSectionShedule, FilmSectionTab, FilmSectionTitle, Footer, FooterBottom, FooterBottomBottom, FooterBottomTop, FooterBottomTopLeft, FooterBottomTopRight, FooterHr, FooterMiddle, FooterMiddleLeft, FooterMiddleRight, FooterTop, FooterTopColumn, FooterTopNav, FooterWrapper, HeaderMenu, HeaderPromo, HeaderSection, HeaderSectionWrapper, HeaderSectionWrapper2, HeaderSectionWrapper3, HeaderSectionWrapper4, HeaderSectionWrapper5, InfoSectionHeader, InfoSectionMain, LoginIcon, LoginIcons, LoginInput, LoginSection, MainLogo, MainLogoIcon, MainLogoSubtitle, MainLogoTitle, MainLogoTitleLeft, MainLogoTitleRight, MainNav, PageHeader, PlaceSelect, PromoButton, PromoColumn, PromoImgWrapper, PromoSection, PromoSectionBackground, PromoSectionWrapper, PromoSubtitle, PromoText, PromoTitle, Rcc, Search, SliderButton, SliderDescription, SliderItem, SliderItemDescription, SliderNext, SliderPrev, SliderSubtitle, SliderTitle, SliderWrapper, SubscribeButton, SubscribeEmail, SubscribeInput, SubscribeMain, SubscribeWrapper } from './TestPageStyled'
 
 
 export default function TestPage(props) {
@@ -51,12 +51,12 @@ export default function TestPage(props) {
                     </HeaderPromo>
 
                     <Rcc>
-                        <svg id="svg-icon-rcc" viewBox="0 0 150 12" width="100%" height="100%"><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M10.1,5.4c0.3-0.5,0.4-1.1,0.4-1.8c0-1-0.4-1.9-1.1-2.5C8.6,0.5,7.5,0.2,6.2,0.2H0v11.6h3.6V7.4h1.1l1.7,4.5h4 L8.4,6.7C9.2,6.4,9.8,5.9,10.1,5.4z M6.3,4.6C6,4.8,5.6,4.9,5.2,4.9H3.6V2.7h1.7c0.9,0,1.4,0.4,1.4,1.1C6.7,4.1,6.6,4.4,6.3,4.6z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="12.2,11.8 21.1,11.8 21.1,9 15.8,9 15.8,7.1 20.1,7.1 20.1,4.6 15.8,4.6 15.8,2.9 21.1,2.9 21.1,0.2 12.2,0.2 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M27.1,0.2h-4.6v11.6h4.8c1.7,0,3.1-0.5,4.1-1.6c1.1-1.1,1.6-2.5,1.6-4.2c0-1.5-0.5-2.9-1.5-4 C30.6,0.8,29.1,0.2,27.1,0.2z M28.6,8.3c-0.4,0.6-0.9,0.9-1.5,0.9h-0.9V2.8h0.9c0.7,0,1.2,0.3,1.6,0.9c0.4,0.6,0.5,1.3,0.5,2.2 C29.3,6.9,29.1,7.7,28.6,8.3z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M43.9,2.6c0.4,0,0.8,0.2,1.1,0.5c0.3,0.3,0.5,0.9,0.5,1.7l3.4-0.2c-0.1-1.4-0.6-2.5-1.4-3.4 c-0.8-0.9-2-1.3-3.6-1.3c-1.7,0-3,0.6-3.9,1.7c-0.9,1.1-1.4,2.6-1.4,4.4c0,1.8,0.5,3.3,1.5,4.3c1,1,2.3,1.6,3.9,1.6 c1.3,0,2.5-0.4,3.4-1.1c0.9-0.8,1.4-1.9,1.6-3.3l-3.3-0.2c-0.1,1.3-0.7,1.9-1.6,1.9c-0.5,0-1-0.2-1.2-0.7c-0.3-0.5-0.4-1.3-0.4-2.6 C42.2,3.8,42.8,2.6,43.9,2.6z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M52.6,0.2L49,11.8h2.9l0.7-2.3h3.2l0.7,2.3h3.7L56.5,0.2H52.6z M53.3,7l1-3.4l1,3.4H53.3z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M71.3,5.4c0.3-0.5,0.4-1.1,0.4-1.8c0-1-0.4-1.9-1.1-2.5c-0.8-0.6-1.8-0.9-3.2-0.9h-6.2v11.6h3.6V7.4H66 l1.7,4.5h4l-2.1-5.1C70.5,6.4,71,5.9,71.3,5.4z M67.5,4.6c-0.3,0.2-0.6,0.3-1.1,0.3h-1.5V2.7h1.7C67.5,2.7,68,3,68,3.8 C68,4.1,67.8,4.4,67.5,4.6z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M81.4,0.6c-0.7-0.3-1.6-0.4-2.9-0.4h-5v11.6h3.7V7.6h2.1c1.3,0,2.4-0.3,3.1-1c0.8-0.7,1.2-1.6,1.2-2.7 c0-0.7-0.2-1.4-0.6-2C82.6,1.3,82.1,0.9,81.4,0.6z M78.3,5.1h-1.2V2.8h1.3c1,0,1.5,0.4,1.5,1.1C79.9,4.7,79.4,5.1,78.3,5.1z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="84.9,11.8 93.8,11.8 93.8,9 88.5,9 88.5,7.1 92.8,7.1 92.8,4.6 88.5,4.6 88.5,2.9 93.8,2.9 93.8,0.2 84.9,0.2 "></polygon><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="94.2,3 96.6,3 96.6,11.8 100.1,11.8 100.1,3 102.5,3 102.5,0.2 94.2,0.2 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M112.9,2.6c0.4,0,0.8,0.2,1.1,0.5c0.3,0.3,0.5,0.9,0.5,1.7l3.4-0.2c-0.1-1.4-0.6-2.5-1.4-3.4 c-0.8-0.9-2-1.3-3.6-1.3c-1.7,0-3,0.6-3.9,1.7c-0.9,1.1-1.4,2.6-1.4,4.4c0,1.8,0.5,3.3,1.5,4.3c1,1,2.3,1.6,3.9,1.6 c1.3,0,2.5-0.4,3.4-1.1c0.9-0.8,1.4-1.9,1.6-3.3l-3.3-0.2c-0.1,1.3-0.7,1.9-1.6,1.9c-0.5,0-1-0.2-1.2-0.7c-0.3-0.5-0.4-1.3-0.4-2.6 C111.2,3.8,111.8,2.6,112.9,2.6z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="122.8,0.2 119.1,0.2 119.1,11.8 127.4,11.8 127.4,9 122.8,9 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M135.3,7c0,0.7,0,1.1-0.1,1.4c-0.1,0.2-0.2,0.4-0.5,0.6c-0.3,0.2-0.6,0.3-1.1,0.3c-0.5,0-0.9-0.1-1.1-0.4 c-0.2-0.3-0.4-0.7-0.4-1.2V0.2h-3.7v7.9c0,1.4,0.5,2.4,1.4,3c0.9,0.6,2.1,0.9,3.6,0.9c1.4,0,2.6-0.3,3.4-1c0.9-0.6,1.3-1.7,1.3-3.2 V0.2h-2.9V7z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M147.7,5.8c0.7-0.2,1.2-0.5,1.5-1c0.3-0.5,0.5-1,0.5-1.6c0-0.8-0.3-1.5-0.9-2.1c-0.6-0.6-1.5-0.9-2.7-0.9h-6 v11.6h5.6c1.8,0,2.9-0.3,3.5-1c0.5-0.7,0.8-1.5,0.8-2.3C150,7,149.2,6.1,147.7,5.8z M143.4,2.7h1.6c0.8,0,1.2,0.3,1.2,1 c0,0.2-0.1,0.5-0.3,0.7c-0.2,0.2-0.5,0.3-0.9,0.3h-1.7V2.7z M146.2,8.9c-0.2,0.2-0.5,0.3-1,0.3h-1.8V7.1h1.6c0.5,0,0.9,0.1,1.1,0.3 c0.2,0.2,0.3,0.5,0.3,0.7C146.5,8.5,146.4,8.7,146.2,8.9z"></path></svg>
+                        <svg id="svg-icon-rcc" viewBox="0 0 150 12" width="150" height="12"><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M10.1,5.4c0.3-0.5,0.4-1.1,0.4-1.8c0-1-0.4-1.9-1.1-2.5C8.6,0.5,7.5,0.2,6.2,0.2H0v11.6h3.6V7.4h1.1l1.7,4.5h4 L8.4,6.7C9.2,6.4,9.8,5.9,10.1,5.4z M6.3,4.6C6,4.8,5.6,4.9,5.2,4.9H3.6V2.7h1.7c0.9,0,1.4,0.4,1.4,1.1C6.7,4.1,6.6,4.4,6.3,4.6z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="12.2,11.8 21.1,11.8 21.1,9 15.8,9 15.8,7.1 20.1,7.1 20.1,4.6 15.8,4.6 15.8,2.9 21.1,2.9 21.1,0.2 12.2,0.2 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M27.1,0.2h-4.6v11.6h4.8c1.7,0,3.1-0.5,4.1-1.6c1.1-1.1,1.6-2.5,1.6-4.2c0-1.5-0.5-2.9-1.5-4 C30.6,0.8,29.1,0.2,27.1,0.2z M28.6,8.3c-0.4,0.6-0.9,0.9-1.5,0.9h-0.9V2.8h0.9c0.7,0,1.2,0.3,1.6,0.9c0.4,0.6,0.5,1.3,0.5,2.2 C29.3,6.9,29.1,7.7,28.6,8.3z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M43.9,2.6c0.4,0,0.8,0.2,1.1,0.5c0.3,0.3,0.5,0.9,0.5,1.7l3.4-0.2c-0.1-1.4-0.6-2.5-1.4-3.4 c-0.8-0.9-2-1.3-3.6-1.3c-1.7,0-3,0.6-3.9,1.7c-0.9,1.1-1.4,2.6-1.4,4.4c0,1.8,0.5,3.3,1.5,4.3c1,1,2.3,1.6,3.9,1.6 c1.3,0,2.5-0.4,3.4-1.1c0.9-0.8,1.4-1.9,1.6-3.3l-3.3-0.2c-0.1,1.3-0.7,1.9-1.6,1.9c-0.5,0-1-0.2-1.2-0.7c-0.3-0.5-0.4-1.3-0.4-2.6 C42.2,3.8,42.8,2.6,43.9,2.6z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M52.6,0.2L49,11.8h2.9l0.7-2.3h3.2l0.7,2.3h3.7L56.5,0.2H52.6z M53.3,7l1-3.4l1,3.4H53.3z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M71.3,5.4c0.3-0.5,0.4-1.1,0.4-1.8c0-1-0.4-1.9-1.1-2.5c-0.8-0.6-1.8-0.9-3.2-0.9h-6.2v11.6h3.6V7.4H66 l1.7,4.5h4l-2.1-5.1C70.5,6.4,71,5.9,71.3,5.4z M67.5,4.6c-0.3,0.2-0.6,0.3-1.1,0.3h-1.5V2.7h1.7C67.5,2.7,68,3,68,3.8 C68,4.1,67.8,4.4,67.5,4.6z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M81.4,0.6c-0.7-0.3-1.6-0.4-2.9-0.4h-5v11.6h3.7V7.6h2.1c1.3,0,2.4-0.3,3.1-1c0.8-0.7,1.2-1.6,1.2-2.7 c0-0.7-0.2-1.4-0.6-2C82.6,1.3,82.1,0.9,81.4,0.6z M78.3,5.1h-1.2V2.8h1.3c1,0,1.5,0.4,1.5,1.1C79.9,4.7,79.4,5.1,78.3,5.1z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="84.9,11.8 93.8,11.8 93.8,9 88.5,9 88.5,7.1 92.8,7.1 92.8,4.6 88.5,4.6 88.5,2.9 93.8,2.9 93.8,0.2 84.9,0.2 "></polygon><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="94.2,3 96.6,3 96.6,11.8 100.1,11.8 100.1,3 102.5,3 102.5,0.2 94.2,0.2 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M112.9,2.6c0.4,0,0.8,0.2,1.1,0.5c0.3,0.3,0.5,0.9,0.5,1.7l3.4-0.2c-0.1-1.4-0.6-2.5-1.4-3.4 c-0.8-0.9-2-1.3-3.6-1.3c-1.7,0-3,0.6-3.9,1.7c-0.9,1.1-1.4,2.6-1.4,4.4c0,1.8,0.5,3.3,1.5,4.3c1,1,2.3,1.6,3.9,1.6 c1.3,0,2.5-0.4,3.4-1.1c0.9-0.8,1.4-1.9,1.6-3.3l-3.3-0.2c-0.1,1.3-0.7,1.9-1.6,1.9c-0.5,0-1-0.2-1.2-0.7c-0.3-0.5-0.4-1.3-0.4-2.6 C111.2,3.8,111.8,2.6,112.9,2.6z"></path><polygon fillRule="evenodd" clipRule="evenodd" fill="currentColor" points="122.8,0.2 119.1,0.2 119.1,11.8 127.4,11.8 127.4,9 122.8,9 "></polygon><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M135.3,7c0,0.7,0,1.1-0.1,1.4c-0.1,0.2-0.2,0.4-0.5,0.6c-0.3,0.2-0.6,0.3-1.1,0.3c-0.5,0-0.9-0.1-1.1-0.4 c-0.2-0.3-0.4-0.7-0.4-1.2V0.2h-3.7v7.9c0,1.4,0.5,2.4,1.4,3c0.9,0.6,2.1,0.9,3.6,0.9c1.4,0,2.6-0.3,3.4-1c0.9-0.6,1.3-1.7,1.3-3.2 V0.2h-2.9V7z"></path><path fillRule="evenodd" clipRule="evenodd" fill="currentColor" d="M147.7,5.8c0.7-0.2,1.2-0.5,1.5-1c0.3-0.5,0.5-1,0.5-1.6c0-0.8-0.3-1.5-0.9-2.1c-0.6-0.6-1.5-0.9-2.7-0.9h-6 v11.6h5.6c1.8,0,2.9-0.3,3.5-1c0.5-0.7,0.8-1.5,0.8-2.3C150,7,149.2,6.1,147.7,5.8z M143.4,2.7h1.6c0.8,0,1.2,0.3,1.2,1 c0,0.2-0.1,0.5-0.3,0.7c-0.2,0.2-0.5,0.3-0.9,0.3h-1.7V2.7z M146.2,8.9c-0.2,0.2-0.5,0.3-1,0.3h-1.8V7.1h1.6c0.5,0,0.9,0.1,1.1,0.3 c0.2,0.2,0.3,0.5,0.3,0.7C146.5,8.5,146.4,8.7,146.2,8.9z"></path></svg>
                         <span>Вход и привилегии</span>
                     </Rcc>
 
                     <Search>
-                        <svg id="svg-icon-search" viewBox="0 0 22 22" width="100%" height="100%"><path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21.7,20.5l-4.8-4.8c3.1-3.8,3-9.4-0.6-12.9c-3.7-3.7-9.8-3.7-13.5,0c-3.7,3.7-3.7,9.8,0,13.5 c3.5,3.5,9.1,3.7,12.9,0.6l4.8,4.8c0.3,0.3,0.9,0.3,1.2,0C22.1,21.4,22.1,20.9,21.7,20.5z M4.2,15c-3-3-3-7.8,0-10.8 c3-3,7.8-3,10.8,0c3,3,3,7.8,0,10.8C12,18,7.1,18,4.2,15z"></path></svg>
+                        <svg id="svg-icon-search" viewBox="0 0 22 22" width="22" height="22"><path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M21.7,20.5l-4.8-4.8c3.1-3.8,3-9.4-0.6-12.9c-3.7-3.7-9.8-3.7-13.5,0c-3.7,3.7-3.7,9.8,0,13.5 c3.5,3.5,9.1,3.7,12.9,0.6l4.8,4.8c0.3,0.3,0.9,0.3,1.2,0C22.1,21.4,22.1,20.9,21.7,20.5z M4.2,15c-3-3-3-7.8,0-10.8 c3-3,7.8-3,10.8,0c3,3,3,7.8,0,10.8C12,18,7.1,18,4.2,15z"></path></svg>
                     </Search>
                 </MainNav>
 
@@ -541,7 +541,7 @@ export default function TestPage(props) {
 
             {/* Info section */}
             <section>
-                <header>
+                <InfoSectionHeader>
                     <Link href="/">
                         <a>Акции и промо</a>
                     </Link>
@@ -551,9 +551,9 @@ export default function TestPage(props) {
                     <Link href="/">
                         <a>Red Carpet Club</a>
                     </Link>
-                </header>
+                </InfoSectionHeader>
 
-                <div>
+                <InfoSectionMain>
                     <p>
                         Silver Screen cinemas — первая в Беларуси сеть современных мультиплексов.
                     </p>
@@ -575,293 +575,308 @@ export default function TestPage(props) {
                     <p>
                         В случае возникновения вопросов, пишите нам <Link href="/"><a>info@silverscreen.by</a></Link>
                     </p>
-                </div>
+                </InfoSectionMain>
             </section>
 
             {/* Subscribtion section */}
-            <section>
-                <div>
-                    <input type="email" placeholder="E-mail для акций и новостей"/>
-                </div>
-                <div>
-                    <button>Подписаться</button>
-                </div>
-            </section>
+            <SubscribeWrapper>
+                <SubscribeMain>
+                    <SubscribeEmail>
+                        <div style={{marginRight: '50px'}}>
+                            <Image 
+                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/CVB.svg"
+                                alt="mail"
+                                width="44"
+                                height="44"
+                            />
+                        </div>
+                        <SubscribeInput type="email" placeholder="E-mail для акций и новостей"/>
+                    </SubscribeEmail>
+                    <div>
+                        <SubscribeButton>Подписаться</SubscribeButton>
+                    </div>
+                </SubscribeMain>
+            </SubscribeWrapper>
 
 
             {/* footer */}
-            <footer>
-
+            <Footer>
+                <FooterWrapper>
+                    <FooterHr />
                 {/* footer nav section */}
-                <nav>
-                    <div>
-                        <h2>Афиша</h2>
-                        <Link href="/">
-                            <a>
-                                Сейчас в кино
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Скоро
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                ScreenX
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Звук Dolby Atmos
-                            </a>
-                        </Link>
-                    </div>
+                    <FooterTop>
+                        <FooterTopNav>
+                            <FooterTopColumn>
+                                <h2>Афиша</h2>
+                                <Link href="/">
+                                    <a>
+                                        Сейчас в кино
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Скоро
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        ScreenX
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Звук Dolby Atmos
+                                    </a>
+                                </Link>
+                            </FooterTopColumn>
+                            
+                            <FooterTopColumn>
+                                <h2>Кинотеатры</h2>
+                                <Link href="/">
+                                    <a>
+                                        VOKA CINEMA by Silver Screen в ТРЦ Dana Mall
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Silver Screen в ТРЦ Arena City
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        MOOON в ТРК Triniti
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Dolby Atmos
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        3D-очки
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Подарочные карты
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Контакты
+                                    </a>
+                                </Link>
+                            </FooterTopColumn>
+
+                            <FooterTopColumn>
+                                <h2>Red Carpet Club</h2>
+                                <Link href="/">
+                                    <a>
+                                        О Red Carpet Club
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Как стать участником
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Правила Red Carpet Club
+                                    </a>
+                                </Link>
+                            </FooterTopColumn>
+
+                            <FooterTopColumn>
+                                <h2>Еда и напитки</h2>
+                                <Link href="/">
+                                    <a>
+                                        Комбо-блюда
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Попкорн
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Напитки
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Десерты
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Мороженое и слаши
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Healthy food
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Снеки
+                                    </a>
+                                </Link>
+                            </FooterTopColumn>
+
+                            <FooterTopColumn>
+                                <h2>Инфо</h2>
+                                <Link href="/">
+                                    <a>
+                                        Акции
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Новости
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Возрастной рейтинг
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Правила посещения кинотеатров
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Карьера и вакансии
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Реклама в кинотеатре
+                                    </a>
+                                </Link>
+                                <Link href="/">
+                                    <a>
+                                        Получить билет
+                                    </a>
+                                </Link>
+                            </FooterTopColumn>
+                        </FooterTopNav>
+                    </FooterTop>
+                
+
+                    {/* footer links section */}
+                    <FooterMiddle>
+                        {/* left */}
+                        <FooterMiddleLeft>
+                            <Link href="/">
+                                <a>
+                                    <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a>
+                                    <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
+                                </a>
+                            </Link>
+                            <Link href="/">
+                                <a>
+                                    <svg id="svg-icon-soc-instagram" viewBox="0 0 40 40" width="40" height="40"><path fill="currentColor" d="M26.875 35h-13.75A8.134 8.134 0 0 1 5 26.874v-13.75A8.134 8.134 0 0 1 13.125 5h13.75A8.134 8.134 0 0 1 35 13.123v13.75A8.134 8.134 0 0 1 26.875 35zM32.5 13.123A5.63 5.63 0 0 0 26.875 7.5h-13.75A5.63 5.63 0 0 0 7.5 13.123v13.75a5.632 5.632 0 0 0 5.625 5.627h13.75a5.632 5.632 0 0 0 5.625-5.626v-13.75zm-4.53.626a1.72 1.72 0 1 1 1.718-1.72 1.72 1.72 0 0 1-1.72 1.72zM20 27.5a7.5 7.5 0 1 1 7.5-7.5 7.508 7.508 0 0 1-7.5 7.5zM20 15a5 5 0 1 0 5 5 5.005 5.005 0 0 0-5-5z"></path></svg>
+                                </a>
+                            </Link>
+                        </FooterMiddleLeft>
+
+                        {/* right */}
+                        <FooterMiddleRight>
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/visa2.svg"
+                                    alt="visa"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/visa1.svg"
+                                    alt="visa-secure"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/mastercard1.svg"
+                                    alt="mastercard"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/mastercard2.svg"
+                                    alt="mastercard2"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/belcard1.svg"
+                                    alt="belcard"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/belcard2.svg"
+                                    alt="belcard2"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+
+                            <div>
+                                <Image 
+                                    src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/CRz.svg"
+                                    alt="assist"
+                                    width="62"
+                                    height="32"
+                                />
+                            </div>
+                        </FooterMiddleRight>
+                    </FooterMiddle>
                     
-                    <div>
-                        <h2>Кинотеатры</h2>
-                        <Link href="/">
-                            <a>
-                                VOKA CINEMA by Silver Screen в ТРЦ Dana Mall
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Silver Screen в ТРЦ Arena City
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                MOOON в ТРК Triniti
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Dolby Atmos
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                3D-очки
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Подарочные карты
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Контакты
-                            </a>
-                        </Link>
-                    </div>
+                    <FooterHr />
+                    {/* Copyright section */}
+                    <FooterBottom>
+                        <FooterBottomTop>
+                            <FooterBottomTopLeft>
+                                <p>© 2012–2021 ООО «Кино маяк»</p>
+                            </FooterBottomTopLeft>
+                            <FooterBottomTopRight>
+                                <Link href="/"><a>Публичная оферта</a></Link>
+                                <Link href="/"><a>Соглашение с пользователем</a></Link>
+                            </FooterBottomTopRight>
+                        </FooterBottomTop>
 
-                    <div>
-                        <h2>Red Carpet Club</h2>
-                        <Link href="/">
-                            <a>
-                                О Red Carpet Club
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Как стать участником
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Правила Red Carpet Club
-                            </a>
-                        </Link>
-                    </div>
-
-                    <div>
-                        <h2>Еда и напитки</h2>
-                        <Link href="/">
-                            <a>
-                                Комбо-блюда
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Попкорн
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Напитки
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Десерты
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Мороженое и слаши
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Healthy food
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Снеки
-                            </a>
-                        </Link>
-                    </div>
-
-                    <div>
-                        <h2>Инфо</h2>
-                        <Link href="/">
-                            <a>
-                                Акции
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Новости
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Возрастной рейтинг
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Правила посещения кинотеатров
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Карьера и вакансии
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Реклама в кинотеатре
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                Получить билет
-                            </a>
-                        </Link>
-                    </div>
-                </nav>
-
-                {/* footer links section */}
-                <div>
-                    {/* left */}
-                    <div>
-                        <Link href="/">
-                            <a>
-                                <svg id="svg-icon-soc-vkontakte" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M30.914 19.8s4.348-6.35 4.78-8.436a.85.85 0 0 0-.922-1.162H31a1.378 1.378 0 0 0-1.44.954 35.583 35.583 0 0 1-4.52 7.332c-.8.916-1.2 1.193-1.642 1.193-.355 0-.518-.306-.518-1.133V11.31c0-1.01-.116-1.31-.922-1.31H15.91a.67.67 0 0 0-.748.656c0 .954 1.41 1.17 1.41 3.756v5.335c0 1.073-.057 1.49-.546 1.49-1.3 0-4.377-4.618-6.1-9.865A1.516 1.516 0 0 0 8.222 10H4.45a.915.915 0 0 0-.95.954c0 1.046 1.18 5.87 5.817 12.338C12.427 27.644 16.517 30 20.2 30c2.246 0 2.793-.387 2.793-1.37v-3.34c0-.837.317-1.194.777-1.194.518 0 1.433.173 3.57 2.355 2.537 2.505 2.71 3.55 4.092 3.55h4.233a.8.8 0 0 0 .835-.956c0-.983-1.238-2.74-3.14-4.828-.776-1.073-2.043-2.236-2.447-2.773-.575-.625-.403-.983 0-1.643z"></path></svg>
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                <svg id="svg-icon-soc-facebook" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M22.265 34.996v-13.7h4.4l.66-5.317h-5.06v-3.41c0-1.547.4-2.6 2.526-2.6h2.716V5.197a36.06 36.06 0 0 0-3.956-.2c-3.913 0-6.59 2.474-6.59 7.04v3.936h-4.446v5.317h4.444v13.7h5.307z"></path></svg>
-                            </a>
-                        </Link>
-                        <Link href="/">
-                            <a>
-                                <svg id="svg-icon-soc-instagram" viewBox="0 0 40 40" width="100%" height="100%"><path fill="currentColor" d="M26.875 35h-13.75A8.134 8.134 0 0 1 5 26.874v-13.75A8.134 8.134 0 0 1 13.125 5h13.75A8.134 8.134 0 0 1 35 13.123v13.75A8.134 8.134 0 0 1 26.875 35zM32.5 13.123A5.63 5.63 0 0 0 26.875 7.5h-13.75A5.63 5.63 0 0 0 7.5 13.123v13.75a5.632 5.632 0 0 0 5.625 5.627h13.75a5.632 5.632 0 0 0 5.625-5.626v-13.75zm-4.53.626a1.72 1.72 0 1 1 1.718-1.72 1.72 1.72 0 0 1-1.72 1.72zM20 27.5a7.5 7.5 0 1 1 7.5-7.5 7.508 7.508 0 0 1-7.5 7.5zM20 15a5 5 0 1 0 5 5 5.005 5.005 0 0 0-5-5z"></path></svg>
-                            </a>
-                        </Link>
-                    </div>
-
-                    {/* right */}
-                    <div>
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/visa2.svg"
-                                alt="visa"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/visa1.svg"
-                                alt="visa-secure"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/mastercard1.svg"
-                                alt="mastercard"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/mastercard2.svg"
-                                alt="mastercard2"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/belcard1.svg"
-                                alt="belcard"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/belcard2.svg"
-                                alt="belcard2"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-
-                        <div>
-                            <Image 
-                                src="https://portal.silverscreen.by:8448/meadiaStorage/imgsite/svg/CRz.svg"
-                                alt="assist"
-                                width="62"
-                                height="32"
-                            />
-                        </div>
-                    </div>
-                </div>
-
-                {/* Copyright section */}
-                <div>
-                    <div>
-                        <p>© 2012–2021 ООО «Кино маяк»</p>
-                    </div>
-                    <div>
-                        <Link href="/"><a>Публичная оферта</a></Link>
-                        <Link href="/"><a>Соглашение с пользователем</a></Link>
-                    </div>
-                </div>
-
-                <div>
-                    <p>
-                        Зарегистрировано решением Минского районного исполнительного комитета от 13.11.2014 г. в Едином государственном регистре юридических лиц и индивидуальных предпринимателей за №192376313. УНП 192376313, юридический адрес: 220114, г. Минск, ул. П. Мстиславца, д.11, пом. 5, часть пом. 5-11 Интернет-магазин silverscreen.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 01.12.2020 г.
-                        e-mail: info@silverscreen.by.
-                    </p>
-                </div>
-
-            </footer>
+                        <FooterBottomBottom>
+                            Зарегистрировано решением Минского районного исполнительного комитета от 13.11.2014 г. в Едином государственном регистре юридических лиц и индивидуальных предпринимателей за №192376313. УНП 192376313, юридический адрес: 220114, г. Минск, ул. П. Мстиславца, д.11, пом. 5, часть пом. 5-11 Интернет-магазин silverscreen.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 01.12.2020 г.
+                            <br />e-mail: info@silverscreen.by.
+                        </FooterBottomBottom>
+                    </FooterBottom>
+                </FooterWrapper>
+            </Footer>
         </div>
     )
 }

@@ -206,6 +206,32 @@ export const AfishaMenuColumn1 = styled.div`
         width: 230px;
         height: 150px;
     }
+
+    a {
+        color: rgba(200,199,198,0.8);
+        display: block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        cursor: pointer;
+        border: none;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        -webkit-transition: .2s;
+        transition: .2s;
+        outline: 0;
+    }
+
+    h2 {
+        margin-bottom: 14px;
+        font-size: 1.47em;
+        text-size-adjust: 100%;
+        white-space: pre-line;
+        font: 400 1em/1.625em Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+        font-size: 1.47em;
+        font-weight: 700;
+        line-height: 30px;
+    }
 `;
 
 export const AfishaColumnImg = styled.div`
@@ -607,4 +633,236 @@ export const PromoButton = styled.button`
     box-shadow: 0 0 0 2px #d40754 inset;
     width: 146px;
     height: 44px;
+`;
+
+export const InfoSectionHeader = styled.header`
+    width: 100%;
+    padding: 45px 0;
+    display: flex;
+    justify-content: center;
+
+    a {
+        border: none;
+        border-radius: 22px;
+        height: 44px;
+        padding: 9px 30px;
+        position: relative;
+        background: rgba(255,255,255,0);
+        color: inherit;
+        font-size: 1.0em;
+        line-height: 1.625em;
+        font-family: Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+        text-overflow: ellipsis;
+        text-align: center;
+        text-decoration: none;
+        outline: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: .2s;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: 0 0 0 2px #d40754 inset;
+        box-shadow: none;
+        color: #1c9cdf;
+        display: block;
+        cursor: pointer;
+        border: none;
+        text-decoration: none;
+        transition: .2s;
+        outline: 0;
+    }
+`;
+
+export const InfoSectionMain = styled.div`
+    width: 1300px;
+    margin: 16px auto;
+    padding: 45px 30px 0;
+`;
+
+
+export const SubscribeWrapper = styled.div`
+    width: 100%;
+    padding: 30px 0;
+    background: #181818;
+`;
+
+export const SubscribeMain = styled.div`
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const SubscribeEmail = styled.div`
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 280px;
+`;
+
+export const SubscribeInput = styled.input`
+    width: 456px;
+    height: 44px;
+    padding: 10px;
+    font-size: 1.25em;
+    display: block;
+    height: 2.2em;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    padding: 0.5em 0px 0.5em 0px;
+    background: 0 0;
+    color: #fff;
+    font-weight: 400;
+    font-family: Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+    transition: .2s;
+    box-sizing: border-box;
+    line-height: 1.3em;
+    outline: none;
+    appearance: none;
+`;
+
+export const SubscribeButton = styled.button`
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    border-radius: 22px;
+    height: 44px;
+    padding: 9px 30px;
+    position: relative;
+    background: rgba(255,255,255,0);
+    color: inherit;
+    font-size: 1.0em;
+    line-height: 1.625em;
+    font-family: Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+    text-overflow: ellipsis;
+    text-align: center;
+    text-decoration: none;
+    outline: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: .2s;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 0 0 2px #d40754 inset;
+    box-shadow: 0 0 0 2px rgb(200 199 198 / 80%) inset;
+    color: rgba(200,199,198,0.8);
+    font-weight: 500 !important;
+    width: 160px;
+    height: 44px;
+    margin-right: 280px;
+`;
+
+export const Footer = styled.footer`
+    width: 100%;
+    padding: 0 0 45px 0;
+`;
+
+export const FooterWrapper = styled.div`
+    width: 1300px;
+    margin: 0 auto;
+`;
+
+export const FooterTop = styled.section``;
+
+export const FooterMiddle = styled.section`
+    margin-top: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const FooterMiddleLeft = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 180px;
+    height: 77px;
+
+    a {
+        width: 36px;
+        height: 36px;
+        padding: 7px;
+        color: rgba(255, 255, 255, 0.8);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+    }
+`;
+
+export const FooterMiddleRight = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 644px;
+    height: 77px;
+`;
+
+export const FooterBottom = styled.section``;
+
+export const FooterHr = styled.hr`
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.15);
+    margin: 45px 0;
+`;
+
+export const FooterTopNav = styled.nav`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const FooterTopColumn = styled.div`
+    width: 216px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        text-size-adjust: 100%;
+        white-space: pre-line;
+        font: 400 1em/1.625em Ubuntu,Roboto,Arial,Helvetica,sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 28px;
+        margin: 0.875em 0;
+        color: rgba(255,255,255,0.8);
+    }
+
+    a {
+        margin-bottom: 10px;
+        font-size: 14px;
+        padding: 0;
+        margin-left: 0;
+        line-height: 24px;
+        color: rgba(200,199,198,0.8);
+    }
+`;
+
+export const FooterBottomTop = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const FooterBottomTopLeft = styled.div`
+    width: 207px;
+    height: 24px;
+    margin: 0 20px 10px;
+    font-size: 14px;
+`;
+
+export const FooterBottomTopRight = styled.div`
+    margin: 0 20px 10px;
+    width: 352px;
+    height: 24px;
+    display: flex;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const FooterBottomBottom = styled.p`
+    width: 100%;
+    cursor: default;
+    margin-top: 45px;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center;
 `;
