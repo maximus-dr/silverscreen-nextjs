@@ -1,5 +1,5 @@
 import React from 'react';
-import Panel from '../Panel/Panel';
+import Panel from '../Panels/Panel/Panel';
 import { SidebarWrapper } from './SidebarRightStyled';
 
 

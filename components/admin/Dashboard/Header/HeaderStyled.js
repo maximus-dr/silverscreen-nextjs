@@ -8,5 +8,5 @@ export const HeaderWrapper = styled.div`
     width: 100%;
     min-height: 55px;
     border-bottom: 1px solid #E5E5E5;
-    background-color: #ffffff;
+    background-color: #FBFCFD;
 `;

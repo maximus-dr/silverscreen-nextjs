@@ -8,6 +8,6 @@ export const SidebarWrapper = styled.div`
     width: 15%;
     min-width: 285px;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #FBFCFD;
     box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 `;

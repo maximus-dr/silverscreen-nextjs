@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: "Ubuntu";
   src: url("/fonts/Ubuntu-Regular.ttf");
   font-style: normal;
@@ -18,7 +18,7 @@
   font-style: bold;
   font-weight: 700;
   font-display: swap;
-} */
+}
 
 html,
 body {
@@ -27,10 +27,12 @@ body {
 }
 
 body {
+  font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
   line-height: 1;
   color: rgba(0, 0, 0, 0.7);
   background-color: #F5F5F5;
+  user-select: none;
 }
 
 *, ::after, ::before {
