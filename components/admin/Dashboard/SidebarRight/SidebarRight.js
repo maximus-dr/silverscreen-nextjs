@@ -7,7 +7,7 @@ export default function SidebarRight() {
     
     return (
         <SidebarWrapper>
-            <Panel title="Properties" />
+            <Panel title="Свойства" />
         </SidebarWrapper>
     )
 }

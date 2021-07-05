@@ -3,14 +3,18 @@ import { PanelLi, PanelUl, PanelUlCaption } from './PanelListStyled'
 
 
 export default function PanelList(props) {
+    const {title, items} = props;
+
+    const listItems = items && items.map(item => {
+        return (
+            <PanelLi key={item}>{item}</PanelLi>
+        );
+    })
+
     return (
         <PanelUl>
-            <PanelUlCaption>Category</PanelUlCaption>
-            <PanelLi>Item</PanelLi>
-            <PanelLi>Item</PanelLi>
-            <PanelLi>Item</PanelLi>
-            <PanelLi>Item</PanelLi>
-            <PanelLi>Item</PanelLi>
+            <PanelUlCaption>{title}</PanelUlCaption>
+            {listItems}
         </PanelUl>
     )
 }

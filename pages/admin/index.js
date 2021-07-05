@@ -9,7 +9,7 @@ export default function AdminMainPage() {
     
     return (
         <Wrapper>
-            <Header style={{position: 'fixed'}}></Header>
+            <Header style={{position: 'fixed', left: '0', right: '0'}}></Header>
             <Main>
                 <SidebarLeft />
                 <Workspace />
