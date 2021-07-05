@@ -21,6 +21,10 @@
           }
         },
         "childrenList": [
+          {
+            "typeName": "section",
+            "id": "s3"
+          }
         ]
       }
     ]

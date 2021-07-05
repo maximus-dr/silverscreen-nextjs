@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const AddFieldWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -14,4 +15,6 @@ export const AddFieldWrapper = styled.div`
 export const AddFieldCaption = styled.p`
     font-size: 18px;
     color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 0 50px;
 `;

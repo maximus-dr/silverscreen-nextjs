@@ -8,6 +8,9 @@ export default function AddField() {
             <AddFieldCaption>
                 Перетащите компонент сюда...
             </AddFieldCaption>
+            <AddFieldCaption>
+                Либо нажмите на него один раз, чтобы добавить в дерево
+            </AddFieldCaption>
         </AddFieldWrapper>
     )
 }

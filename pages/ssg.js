@@ -10,23 +10,23 @@ const fs = require('fs');
 import Head from 'next/head';
 
 export async function getStaticProps() {
-    const dbPath = path.join(process.cwd(), 'db/db.json');
-    const components = fs.readFileSync(dbPath, 'utf8');
+  const dbPath = path.join(process.cwd(), 'db/db.json');
+  const components = fs.readFileSync(dbPath, 'utf8');
+
+  const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
+    .then(res => res.data)
+    .catch(err => console.log(err));
   
-    const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
-      .then(res => res.data)
-      .catch(err => console.log(err));
-    
-    return {
-      props: {
-        initialReduxState: {
-            events
-        },
-        components: JSON.parse(components)
+  return {
+    props: {
+      initialReduxState: {
+          events
       },
-      revalidate: 1
-    }
+      components: JSON.parse(components)
+    },
+    revalidate: 1
   }
+}
 
 
 export default function SSR(props) {
