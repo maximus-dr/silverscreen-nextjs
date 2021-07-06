@@ -4,10 +4,12 @@ import styled, {css} from 'styled-components';
 const TreeNodeWrapper = styled.div`
     position: relative;
     padding-left: 10px;
+    padding-right: 1px;
 `;
 
 const TreeNodeItem = styled.div`
     display: flex;
+    flex-wrap: nowrap;
     align-items: baseline;
     transition: font-weight 10ms;
 
@@ -78,7 +80,7 @@ const TreeNodeItemType = styled.span`
 
             &:hover {
                 color: #000000;
-                font-weight: bold;
+                text-shadow: 0 0 .65px #333, 0 0 .65px #333;
             }
         `
     }}
@@ -127,18 +129,13 @@ const TreeNodeItemType = styled.span`
 const TreeNodeItemName = styled.span`
     color: #64b5f6;
     font-size: 13px;
+    flex: 0 0 auto;
 
     ${props => {
         return props.isActive && css`
             color: #ffffff;
         `
     }}
-
-    /* ${props => {
-        return props.isPage && css`
-            color: #e57373;
-        `
-    }} */
 `;
 
 const TreeNodeChildren = styled.div`

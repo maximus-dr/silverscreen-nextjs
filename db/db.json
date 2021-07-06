@@ -93,7 +93,65 @@
                             {
                               "typeName": "label",
                               "id": "lab2",
-                              "name": "Заголовок"
+                              "name": "Заголовок меню"
+                            },
+                            {
+                              "typeName": "link",
+                              "id": "link1",
+                              "name": "Ссылка 1"
+                            },
+                            {
+                              "typeName": "button",
+                              "id": "but1",
+                              "name": "Кнопка закрыть"
+                            }
+                          ]
+                        },
+                        {
+                          "typeName": "section",
+                          "id": "sec6",
+                          "name": "Контент меню",
+                          "childrenList": [
+                            {
+                              "typeName": "section",
+                              "id": "sec7",
+                              "name": "Список ссылок",
+                              "childrenList": [
+                                {
+                                  "typeName": "section",
+                                  "id": "sec8",
+                                  "name": "Пункт меню",
+                                  "childrenList": [
+                                    {
+                                      "typeName": "icon",
+                                      "id": "ic1",
+                                      "name": "Иконка 1"
+                                    },
+                                    {
+                                      "typeName": "link",
+                                      "id": "link2",
+                                      "name": "Ссылка пункта меню 1"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "typeName": "section",
+                                  "id": "sec9",
+                                  "name": "Пункт меню",
+                                  "childrenList": [
+                                    {
+                                      "typeName": "icon",
+                                      "id": "ic2",
+                                      "name": "Иконка 2"
+                                    },
+                                    {
+                                      "typeName": "link",
+                                      "id": "link3",
+                                      "name": "Ссылка пункта меню 2"
+                                    }
+                                  ]
+                                }
+                              ]
                             }
                           ]
                         }
