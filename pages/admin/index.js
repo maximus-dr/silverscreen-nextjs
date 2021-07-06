@@ -8,7 +8,7 @@ import axios from 'axios';
 import { API_ALL_EVENTS } from "../../core/rest/paths";
 const path = require('path');
 const fs = require('fs');
-import React, { useEffect } from 'react'
+import React from 'react'
 import { initializeStore } from "../../store/store";
 
 
@@ -63,9 +63,7 @@ export async function getServerSideProps() {
     }
 }
 
-export default function AdminMainPage(props) {
-
-
+export default function AdminMainPage() {
 
     return (
         <Wrapper>

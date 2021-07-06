@@ -21,6 +21,11 @@ export const PanelTitle = styled.span`
     color: #ffffff;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.6);
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing;
+    }
 `;
 
 export const PanelBodyWrapper = styled.div`

@@ -6,6 +6,11 @@ export const documentReducer = (state = {}, action) => {
                 ...state,
                 components: action.components
             }
+        case 'SET_ACTIVE_COMPONENT':
+            return {
+                ...state,
+                activeComponent: action.activeComponent
+            }
         default:
             return state
     }

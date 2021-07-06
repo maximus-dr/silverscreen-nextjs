@@ -14,7 +14,7 @@
         {
           "typeName": "section",
           "id": "s2",
-          "name": "Обертка",
+          "name": "Обертка-центровщик",
           "styles": {
             "wrapper": {
               "width": "100%",
@@ -30,7 +30,78 @@
           "childrenList": [
             {
               "typeName": "section",
-              "id": "s3"
+              "id": "s3",
+              "name": "Хедер",
+              "childrenList": [
+                {
+                  "typeName": "label",
+                  "id": "lab1",
+                  "name": "Заголовок",
+                  "value": "Gallery"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img1",
+                  "name": "Изображение 1"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img2",
+                  "name": "Изображение 2"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img3",
+                  "name": "Изображение 3"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img4",
+                  "name": "Изображение 4"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img5",
+                  "name": "Изображение 5"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img6",
+                  "name": "Изображение 6"
+                },
+                {
+                  "typeName": "image",
+                  "id": "img7",
+                  "name": "Изображение 7"
+                },
+
+                {
+                  "typeName": "section",
+                  "id": "sec3",
+                  "name": "Обертка меню навигации",
+                  "childrenList": [
+                    {
+                      "typeName": "section",
+                      "id": "sec4",
+                      "name": "Меню навигации",
+                      "childrenList": [
+                        {
+                          "typeName": "section",
+                          "id": "sec5",
+                          "name": "Хедер меню навигации",
+                          "childrenList": [
+                            {
+                              "typeName": "label",
+                              "id": "lab2",
+                              "name": "Заголовок"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -49,6 +120,14 @@
         {
           "typeName": "section",
           "id": "sec2"
+        },
+        {
+          "typeName": "section",
+          "id": "sec4"
+        },
+        {
+          "typeName": "section",
+          "id": "sec5"
         }
       ]
     }

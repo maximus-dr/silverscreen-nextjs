@@ -12,12 +12,14 @@ import Page from "./Page/Page";
 import Radio from "./Radio/Radio";
 import Section from './Section/Section';
 import Tab from './Tab/Tab';
+import Document from "./Document/Document";
 
 
 export const Provider = {
     'button': Button,
     'checkbox': Checkbox,
     'description': Description,
+    'Document': Document,
     'dropdown': Dropdown,
     'form': Form,
     'icon': Icon,

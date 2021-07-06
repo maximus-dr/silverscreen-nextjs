@@ -13,6 +13,7 @@ export const PanelUlCaption = styled.span`
     width: 100%;
     font-weight: bold;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
 
     &:before {
         content: '';

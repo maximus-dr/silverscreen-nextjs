@@ -3,11 +3,12 @@ import styled, {css} from 'styled-components';
 
 const TreeNodeWrapper = styled.div`
     position: relative;
-    padding: 2px;
     padding-left: 10px;
 `;
 
 const TreeNodeItem = styled.div`
+    display: flex;
+    align-items: baseline;
     transition: font-weight 10ms;
 
     &:hover {
@@ -30,8 +31,19 @@ const TreeNodeItem = styled.div`
 
 const TreeNodeItemType = styled.span`
     display: inline-block;
+    text-align: center;
     padding: 1px;
-    padding-right: 5px;
+    padding-right: 10px;
+    font-weight: 500;
+    
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+
+    ${props => {
+        return props.isRootItem && css`
+            font-weight: bold;
+        `
+    }}
 
     ${props => {
         return props.hasChildren && css`
@@ -50,13 +62,43 @@ const TreeNodeItemType = styled.span`
                 transition: transform 100ms;
             }
 
+            &:after {
+                display: block;
+                content: attr(title);
+                font-weight: bold;
+                height: 0;
+                overflow: hidden;
+                visibility: hidden;
+            }
+
 
             &:hover:before {
-                border-left: 3px solid #1976d2;
+                border-left: 3px solid #000000;
             }
 
             &:hover {
-                color: #115293;
+                color: #000000;
+                font-weight: bold;
+            }
+        `
+    }}
+
+    ${props => {
+        return props.isPage && css`
+            color: #ea4335;
+
+            &:hover {
+                color: #ea4335;
+            }
+        `
+    }}
+
+    ${props => {
+        return props.isPage && props.isActive && css`
+            color: rgba(0, 0, 0, 0.6);
+
+            &:hover {
+                color: rgba(0, 0, 0, 0.6);
             }
         `
     }}
@@ -84,13 +126,19 @@ const TreeNodeItemType = styled.span`
 
 const TreeNodeItemName = styled.span`
     color: #64b5f6;
-    font-size: 12px;
+    font-size: 13px;
 
     ${props => {
         return props.isActive && css`
             color: #ffffff;
         `
     }}
+
+    /* ${props => {
+        return props.isPage && css`
+            color: #e57373;
+        `
+    }} */
 `;
 
 const TreeNodeChildren = styled.div`
