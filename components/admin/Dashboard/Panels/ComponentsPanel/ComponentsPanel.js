@@ -8,6 +8,7 @@ export default function ComponentsPanel() {
         <>
             <Panel title="Компоненты">
                 {/* <PanelList title="Страница" items={['Шаблон страницы 1', 'Шаблон страницы 2', 'Шаблон страницы 3']} /> */}
+                <PanelList id="14" title="Страница" items={[{id: 'p1', name: 'Шаблон страницы 1'}, {id: 'sec2', name: 'Шаблон страницы 2'}, {id: 'sec3', name: 'Шаблон страницы 3'}]} />
                 <PanelList id="1" title="Секция" items={[{id: 'sec1', name: 'Шаблон секции 1'}, {id: 'sec2', name: 'Шаблон секции 2'}, {id: 'sec3', name: 'Шаблон секции 3'}]} />
                 <PanelList id="2" title="Заголовок" items={[{ id: 'lab1', name: 'Шаблон заголовока 1'}, { id: 'lab2', name: 'Шаблон заголовока 2'}, { id: 'lab3', name: 'Шаблон заголовока 3'}]} />
                 <PanelList id="3" title="Текст" items={[{id: 'desc1', name: 'Шаблон текста 1'}, {id: 'desc2', name: 'Шаблон текста 2'}, {id: 'desc3', name: 'Шаблон текста 3'}]}/>

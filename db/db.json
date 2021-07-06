@@ -1,32 +1,57 @@
 {
-    "typeName": "page",
-    "id": "1",
-    "styles": {
-      "backgroundColor": "#F5F5F5"
-    },
-    "childrenList": [
-      {
-        "typeName": "section",
-        "id": "s2",
-        "styles": {
-          "wrapper": {
-            "width": "100%",
-            "backgroundColor": "#ffffff",
-            "marginBottom": "30px",
-            "borderRadius": "5px",
-            "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+  "typeName": "Document",
+  "id": "doc1",
+  "name": "Тестовый документ",
+  "childrenList": [
+    {
+      "typeName": "page",
+      "id": "1",
+      "name": "Главная",
+      "styles": {
+        "backgroundColor": "#F5F5F5"
+      },
+      "childrenList": [
+        {
+          "typeName": "section",
+          "id": "s2",
+          "name": "Обертка",
+          "styles": {
+            "wrapper": {
+              "width": "100%",
+              "backgroundColor": "#ffffff",
+              "marginBottom": "30px",
+              "borderRadius": "5px",
+              "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+            },
+            "body": {
+              "minHeight": "50px"
+            }
           },
-          "body": {
-            "minHeight": "50px"
-          }
+          "childrenList": [
+            {
+              "typeName": "section",
+              "id": "s3"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "typeName": "page",
+      "id": "p2",
+      "name": "About",
+      "childrenList": [
+        {
+          "typeName": "section",
+          "id": "sec1"
         },
-        "childrenList": [
-          {
-            "typeName": "section",
-            "id": "s3"
-          }
-        ]
-      }
-    ]
-  }
+        {
+          "typeName": "section",
+          "id": "sec2"
+        }
+      ]
+    }
+  ]
+}
   

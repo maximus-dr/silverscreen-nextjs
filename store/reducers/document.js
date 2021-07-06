@@ -1,10 +1,10 @@
 
 export const documentReducer = (state = {}, action) => {
     switch(action.type) {
-        case 'SET_DOCUMENT':
+        case 'SET_DOCUMENT_COMPONENTS':
             return {
                 ...state,
-                tree: action.document
+                components: action.components
             }
         default:
             return state

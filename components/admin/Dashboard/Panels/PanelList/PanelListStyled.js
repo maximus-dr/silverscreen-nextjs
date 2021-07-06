@@ -10,7 +10,6 @@ export const PanelUlCaption = styled.span`
     position: relative;
     display: inline-block;
     padding: 5px 18px 5px 25px;
-    margin-bottom: 2px;
     width: 100%;
     font-weight: bold;
     cursor: pointer;
@@ -35,7 +34,12 @@ export const PanelUlCaption = styled.span`
     }
 
     &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: #2196f3;
+        color: #ffffff;
+    }
+
+    &:hover:before {
+        border-left: 4px solid #ffffff;
     }
 `;
 
