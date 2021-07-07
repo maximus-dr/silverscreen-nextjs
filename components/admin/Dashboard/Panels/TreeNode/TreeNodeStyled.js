@@ -132,7 +132,7 @@ const TreeNodeItemType = styled.span`
 `;
 
 const TreeNodeItemName = styled.span`
-    color: #64b5f6;
+    color: #42a5f5;
     font-size: 13px;
     flex: 0 0 auto;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Panel from '../Panels/Panel/Panel';
+import PropsPanel from '../Panels/PropsPanel/PropsPanel';
 import { SidebarWrapper } from './SidebarRightStyled';
 
 
@@ -7,7 +7,7 @@ export default function SidebarRight() {
     
     return (
         <SidebarWrapper>
-            <Panel title="Свойства" />
+            <PropsPanel />
         </SidebarWrapper>
     )
 }

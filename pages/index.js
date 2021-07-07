@@ -56,11 +56,11 @@ export async function getStaticProps() {
 
 export default function Home(props) {
 
-  const Components = renderComponents(props.components);
+  // const Components = renderComponents(props.components);
 
   return (
     <>
-      {Components}
+      <h2>Home Page</h2>
     </>
   )
 }

@@ -120,7 +120,7 @@
                                 {
                                   "typeName": "section",
                                   "id": "sec8",
-                                  "name": "Пункт меню",
+                                  "name": "Пункт меню 1",
                                   "childrenList": [
                                     {
                                       "typeName": "icon",
@@ -137,7 +137,7 @@
                                 {
                                   "typeName": "section",
                                   "id": "sec9",
-                                  "name": "Пункт меню",
+                                  "name": "Пункт меню 2",
                                   "childrenList": [
                                     {
                                       "typeName": "icon",
@@ -148,6 +148,36 @@
                                       "typeName": "link",
                                       "id": "link3",
                                       "name": "Ссылка пункта меню 2"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "typeName": "section",
+                                  "id": "sec11",
+                                  "name": "Пункт меню 3",
+                                  "childrenList": [
+                                    {
+                                      "typeName": "icon",
+                                      "id": "ic3",
+                                      "name": "Иконка 3"
+                                    },
+                                    {
+                                      "typeName": "link",
+                                      "id": "link4",
+                                      "name": "Ссылка пункта меню 3"
+                                    },
+
+                                    {
+                                      "typeName": "section",
+                                      "id": "sec12",
+                                      "name": "Подпункт меню",
+                                      "childrenList": [
+                                        {
+                                          "typeName": "section",
+                                          "id": "sec13",
+                                          "name": "Подпункт подпункта меню"
+                                        }
+                                      ]
                                     }
                                   ]
                                 }
@@ -173,19 +203,19 @@
       "childrenList": [
         {
           "typeName": "section",
-          "id": "sec10"
+          "id": "secc"
         },
         {
           "typeName": "section",
-          "id": "sec11"
+          "id": "seccc"
         },
         {
           "typeName": "section",
-          "id": "sec12"
+          "id": "secccc"
         },
         {
           "typeName": "section",
-          "id": "sec13"
+          "id": "seccccc"
         }
       ]
     }

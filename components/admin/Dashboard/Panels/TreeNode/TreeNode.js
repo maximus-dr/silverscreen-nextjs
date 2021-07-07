@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
 import { TreeNodeChildren, TreeNodeItem, TreeNodeItemName, TreeNodeItemType, TreeNodeItemWrapper, TreeNodeWrapper } from "./TreeNodeStyled";
