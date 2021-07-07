@@ -13,6 +13,8 @@ export const StylesProvider = (styles) => {
 
         display: ${styles && styles.display || ''};
         overflow: ${styles && styles.overflow || ''};
+        cursor: ${styles && styles.cursor || ''};
+        pointer-events: ${styles && styles.pointerEvents || ''};
 
         flex-direction: ${styles && styles.flexDirection || ''};
         justify-content: ${styles && styles.justifyContent || ''};
@@ -50,26 +52,25 @@ export const StylesProvider = (styles) => {
         text-align: ${styles && styles.textAlign || ''};
         text-transform: ${styles && styles.textTransform || ''};
         text-decoration: ${styles && styles.textDecoration || ''};
+        text-shadow: ${styles && styles.textShadow || ''};
         font-size: ${styles && styles.fontSize || ''};
         font-weight: ${styles && styles.fontWeight || ''};
         font-style: ${styles && styles.fontStyle || ''};
+        font-family: ${styles && styles.fontFamily || ''};
         line-height: ${styles && styles.lineHeight || ''};
         content: ${styles && styles.content || ''};
+        user-select: ${styles && styles.userSelect || ''};
 
         background-color: ${styles && styles.backgroundColor || ''};
         background-image: ${styles && styles.backgroundImage || ''};
         background-size: ${styles && styles.backgroundSize || ''};
         background-position: ${styles && styles.backgroundPosition || ''};
         background-repeat: ${styles && styles.backgroundRepeat || ''};
-        filter: ${styles && styles.filter || ''};
 
         opacity: ${styles && styles.opacity || ''};
-        transform: ${styles && styles.transform || ''};
         box-shadow: ${styles && styles.boxShadow || ''};
-
-        cursor: ${styles && styles.cursor || ''};
-        user-select: ${styles && styles.userSelect || ''};
-        pointer-events: ${styles && styles.pointerEvents || ''};
+        transform: ${styles && styles.transform || ''};
+        filter: ${styles && styles.filter || ''};
         transition: ${styles && styles.transitions && styles.transitions.join(', ') || ''};
 
         &:hover {
