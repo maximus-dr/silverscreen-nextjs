@@ -49,6 +49,14 @@ const TreeNodeItemType = styled.span`
     ${props => {
         return props.isRootItem && css`
             font-weight: bold;
+            color: rgba(0, 0, 0, 0.55);
+        `
+    }}
+
+    ${props => {
+        return props.isPage && css`
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.55);
         `
     }}
 
@@ -59,7 +67,7 @@ const TreeNodeItemType = styled.span`
             &:before {
                 content: '';
                 position: absolute;
-                top: 7px;
+                top: 6px;
                 left: 3px;
                 width: 0;
                 height: 0;
@@ -84,8 +92,7 @@ const TreeNodeItemType = styled.span`
             }
 
             &:hover {
-                color: #000000;
-                text-shadow: 0 0 .65px #333, 0 0 .65px #333;
+                text-shadow: 0 0 .65px rgba(0, 0, 0, 0.4), 0 0 .65px rgba(0, 0, 0, 0.4);
             }
         `
     }}
@@ -136,21 +143,25 @@ const TreeNodeItemName = styled.span`
     font-size: 13px;
     flex: 0 0 auto;
 
-    ${props => {
-        return props.isActive && css`
-            color: #ffffff;
-        `
-    }}
+    
 
     ${props => {
         return props.isPage && css`
             font-weight: bold;
+            color: #42a5f5;
         `
     }}
 
     ${props => {
         return props.isRootItem && css`
             font-weight: bold;
+            color: #42a5f5;
+        `
+    }}
+
+    ${props => {
+        return props.isActive && css`
+            color: #ffffff;
         `
     }}
 `;

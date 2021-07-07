@@ -199,23 +199,23 @@
     {
       "typeName": "page",
       "id": "p2",
-      "name": "About",
+      "name": "Афиша",
       "childrenList": [
         {
           "typeName": "section",
-          "id": "secc"
+          "id": "sec14"
         },
         {
           "typeName": "section",
-          "id": "seccc"
+          "id": "sec15"
         },
         {
           "typeName": "section",
-          "id": "secccc"
+          "id": "sec16"
         },
         {
           "typeName": "section",
-          "id": "seccccc"
+          "id": "sec17"
         }
       ]
     }

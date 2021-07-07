@@ -14,7 +14,7 @@ export default function TreeNode(props) {
     const isPage = props.nodeData.typeName === 'page';
     const isActive = activeComponent && props.nodeData.id === activeComponent.id;
 
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
 
 
     return (
