@@ -7,11 +7,16 @@ const TreeNodeWrapper = styled.div`
     padding-right: 1px;
 `;
 
+const TreeNodeItemWrapper = styled.div`
+    display: flex;
+`;
+
 const TreeNodeItem = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
     transition: font-weight 10ms;
+    flex: 0 0 auto;
 
     &:hover {
         outline: 1px dashed #1976d2;
@@ -87,10 +92,10 @@ const TreeNodeItemType = styled.span`
 
     ${props => {
         return props.isPage && css`
-            color: #ea4335;
+            font-weight: bold;
 
             &:hover {
-                color: #ea4335;
+                font-weight: bold;
             }
         `
     }}
@@ -136,6 +141,18 @@ const TreeNodeItemName = styled.span`
             color: #ffffff;
         `
     }}
+
+    ${props => {
+        return props.isPage && css`
+            font-weight: bold;
+        `
+    }}
+
+    ${props => {
+        return props.isRootItem && css`
+            font-weight: bold;
+        `
+    }}
 `;
 
 const TreeNodeChildren = styled.div`
@@ -149,6 +166,7 @@ const TreeNodeChildren = styled.div`
 
 export {
     TreeNodeWrapper,
+    TreeNodeItemWrapper,
     TreeNodeItem,
     TreeNodeItemType,
     TreeNodeItemName,

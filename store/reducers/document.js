@@ -11,6 +11,11 @@ export const documentReducer = (state = {}, action) => {
                 ...state,
                 activeComponent: action.activeComponent
             }
+        case 'UNSET_ACTIVE_COMPONENT':
+            return {
+                ...state,
+                activeComponent: null
+            }
         default:
             return state
     }

@@ -1,48 +1,58 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { TreeNodeChildren, TreeNodeItem, TreeNodeItemName, TreeNodeItemType, TreeNodeWrapper } from "./TreeNodeStyled";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
+import { TreeNodeChildren, TreeNodeItem, TreeNodeItemName, TreeNodeItemType, TreeNodeItemWrapper, TreeNodeWrapper } from "./TreeNodeStyled";
 
 
 export default function TreeNode(props) {
+
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const dispatch = useDispatch();
     
     const hasChildren = props.nodeData.childrenList && props.nodeData.childrenList.length > 0;
+    const isRootItem = props.nodeData.typeName === 'Document';
     const isPage = props.nodeData.typeName === 'page';
+    const isActive = activeComponent && props.nodeData.id === activeComponent.id;
 
     const [expanded, setExpanded] = useState(true);
-    const [isActive, setIsActive] = useState(false);
 
-    const dispatch = useDispatch();
 
     return (
         <TreeNodeWrapper>
-            <TreeNodeItem 
-                isActive={isActive}
-                onClick={() => {
-                    setIsActive(prev => !prev);
-                    dispatch({type: 'SET_ACTIVE_COMPONENT', activeComponent: props.nodeData});
-                }}
-            >
-                <TreeNodeItemType
-                    isRootItem={props.nodeData.typeName === 'Document'}
-                    isPage={props.nodeData.typeName === 'page'}
+            <TreeNodeItemWrapper>
+                <TreeNodeItem 
                     isActive={isActive}
-                    hasChildren={hasChildren}
-                    expanded={expanded}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        hasChildren && e.stopPropagation();
-                        setExpanded(prev => !prev);
+                    onClick={() => {
+                        if (isActive) {
+                            dispatch(unsetActiveComponent());
+                            return
+                        }
+                        dispatch(setActiveComponent(props.nodeData));
                     }}
                 >
-                    {props.nodeData.typeName}
-                </TreeNodeItemType>
-                <TreeNodeItemName 
-                    isActive={isActive}
-                    isPage={isPage}    
-                >
-                    {props.nodeData.name}
-                </TreeNodeItemName>
-            </TreeNodeItem>
+                    <TreeNodeItemType
+                        isRootItem={isRootItem}
+                        isPage={isPage}
+                        isActive={isActive}
+                        hasChildren={hasChildren}
+                        expanded={expanded}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            hasChildren && e.stopPropagation();
+                            setExpanded(prev => !prev);
+                        }}
+                    >
+                        {props.nodeData.typeName}
+                    </TreeNodeItemType>
+                    <TreeNodeItemName
+                        isRootItem={isRootItem}
+                        isPage={isPage}    
+                        isActive={isActive}
+                    >
+                        {props.nodeData.name}
+                    </TreeNodeItemName>
+                </TreeNodeItem>
+            </TreeNodeItemWrapper>
             <TreeNodeChildren expanded={expanded}>
                 {props.children}
             </TreeNodeChildren>
