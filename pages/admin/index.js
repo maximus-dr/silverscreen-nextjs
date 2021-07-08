@@ -71,7 +71,7 @@ export default function AdminMainPage() {
             <Main>
                 <SidebarLeft />
                 <Workspace />
-                <SidebarRight />
+                {/* <SidebarRight /> */}
             </Main>
         </Wrapper>
     );
