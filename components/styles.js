@@ -22,6 +22,9 @@ export const StylesProvider = (styles) => {
         align-items: ${styles && styles.alignItems || ''};
         align-self: ${styles && styles.alignSelf || ''};
         column-gap: ${styles && styles.columnGap || ''};
+        flex-grow: ${styles && styles.flexGrow || ''};
+        flex-shrink: ${styles && styles.flexShrink || ''};
+        flex-basis: ${styles && styles.flexBasis || ''};
 
         width: ${styles && styles.width || ''};
         height: ${styles && styles.height || ''};
