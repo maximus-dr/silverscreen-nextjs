@@ -1,128 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Panel from '../Panel/Panel'
-import { ComponentData, PropItem, PropKey, PropsPanelWrapper, PropsSection, PropsSectionBody, PropsSectionHeader, PropValue, StatesSection, StatesItem, ScreensSection, ScreensItem, ScreenValue, ScreensIcon } from './PropsPanelStyled';
-
-
-const IconSmartphone = () => {
-    return (
-            <svg x="0px" y="0px"
-            width="25px" height="25px" viewBox="0 0 35 35">
-                <g>
-                    <path fill="currentColor" d="M25.302,0H9.698c-1.3,0-2.364,1.063-2.364,2.364v30.271C7.334,33.936,8.398,35,9.698,35h15.604
-                        c1.3,0,2.364-1.062,2.364-2.364V2.364C27.666,1.063,26.602,0,25.302,0z M15.004,1.704h4.992c0.158,0,0.286,0.128,0.286,0.287
-                        c0,0.158-0.128,0.286-0.286,0.286h-4.992c-0.158,0-0.286-0.128-0.286-0.286C14.718,1.832,14.846,1.704,15.004,1.704z M17.5,33.818
-                        c-0.653,0-1.182-0.529-1.182-1.183s0.529-1.182,1.182-1.182s1.182,0.528,1.182,1.182S18.153,33.818,17.5,33.818z M26.021,30.625
-                        H8.979V3.749h17.042V30.625z"/>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-            </svg>
-    );
-}
-
-
-export function IconTablet() {
-    return (
-        <svg x="0px" y="0px"
-                viewBox="0 0 33.994 33.994">
-            <g>
-                <path fill="currentColor" d="M27.125,0H6.867C5.59,0,4.562,1.033,4.562,2.309v29.377c0,1.272,1.028,2.308,2.305,2.308h20.258
-                    c1.273,0,2.306-1.035,2.306-2.308V2.309C29.433,1.033,28.399,0,27.125,0z M16.997,33.129c-0.758,0-1.371-0.613-1.371-1.37
-                    c0-0.758,0.613-1.372,1.371-1.372c0.756,0,1.371,0.614,1.371,1.372C18.368,32.516,17.753,33.129,16.997,33.129z M27.098,29.186
-                    H6.896V2.774h20.202V29.186z"/>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-            <g>
-            </g>
-        </svg>
-    )
-}
+import ComponentSeciton from './ComponentSection/ComponentSeciton';
+import { PropItem, PropKey, PropsPanelWrapper, PropsSection, PropsSectionBody, PropsSectionHeader, PropValue } from './PropsPanelStyled';
+import ScreensSection from './ScreensSection/ScreensSection';
+import StatesSection from './StatesSection/StatesSection';
 
 
 export default function PropsPanel() {
@@ -133,51 +15,18 @@ export default function PropsPanel() {
         <>
            <Panel title="Свойства">
                 <PropsPanelWrapper>
-                    {activeComponent &&
-                    <ComponentData>
-                        <div><b>id:</b> {activeComponent.id}</div>
-                        <div><b>name:</b> {activeComponent.name}</div>
-                    </ComponentData>}
+                    {
+                        activeComponent &&
+                        <ComponentSeciton activeComponent={activeComponent} />
+                    }
                     
-                    <ScreensSection>
-                        <ScreensItem>
-                            <ScreensIcon style={{width: '20px', height: '25px'}}>
-                                <IconSmartphone />
-                            </ScreensIcon>
-                            <ScreenValue>320px</ScreenValue>
-                        </ScreensItem>
-                        <ScreensItem>
-                            <ScreensIcon style={{width: '20px', height: '25px', transform: 'rotate(90deg)'}}>
-                                <IconSmartphone />
-                            </ScreensIcon>
-                            <ScreenValue>480px</ScreenValue>
-                        </ScreensItem>
-                        <ScreensItem>
-                            <ScreensIcon style={{width: '25px', height: '25px'}}>
-                                <IconTablet />
-                            </ScreensIcon>
-                            <ScreenValue>640px</ScreenValue>
-                        </ScreensItem>
-                        <ScreensItem>
-                            <ScreensIcon style={{width: '25px', height: '25px'}}>
-                                <IconTablet />
-                            </ScreensIcon>
-                            <ScreenValue>1024px</ScreenValue>
-                        </ScreensItem>
-                        <ScreensItem>
-                            <IconSmartphone />
-                            <ScreenValue>1200px</ScreenValue>
-                        </ScreensItem>
-                    </ScreensSection>
-                
-
-                    <StatesSection>
-                        <StatesItem>:hover</StatesItem>
-                        <StatesItem>:active</StatesItem>
-                        <StatesItem>:focus</StatesItem>
-                        <StatesItem>:checked</StatesItem>
-                    </StatesSection>
-
+                    {/* Секция выбора разрешения экрана */}
+                    <ScreensSection />
+                    
+                    {/* Секция выбора состояния - :hover, :active, :focus, :checked */}
+                    <StatesSection />
+                    
+                    {/* Позиционирование */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Позиционирование
@@ -239,7 +88,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Отображение */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Отображение
@@ -263,7 +113,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Размеры */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Размеры
@@ -295,7 +146,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Внешние отступы */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Внешние отступы
@@ -319,7 +171,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Внутренние отступы */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Внутренние отступы
@@ -343,7 +196,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Границы */}
                     <PropsSection>
                         <PropsSectionHeader>
                             Границы
@@ -379,7 +233,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Типографика */}
                     <PropsSection>
                         <PropsSectionHeader>Типографика</PropsSectionHeader>
                         <PropsSectionBody>
@@ -429,7 +284,8 @@ export default function PropsPanel() {
                             </PropItem>
                         </PropsSectionBody>
                     </PropsSection>
-
+                    
+                    {/* Фон */}
                     <PropsSection>
                         <PropsSectionHeader>Фон</PropsSectionHeader>
                         <PropsSectionBody>
@@ -456,7 +312,7 @@ export default function PropsPanel() {
                         </PropsSectionBody>
                     </PropsSection>
 
-
+                    {/* Эффекты */}
                     <PropsSection>
                         <PropsSectionHeader>Эффекты</PropsSectionHeader>
                         <PropsSectionBody>
