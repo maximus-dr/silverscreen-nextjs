@@ -2,18 +2,20 @@ import styled from "styled-components";
 
 
 export const WorkspaceWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     position: relative;
     display: block;
+    margin-top: 55px;
     width: 100%;
     min-width: 400px;
-    height: 100vh;
+    height: calc(100vh - 55px);
     overflow: auto;
 `;
 
 export const WorkspacePageWrapper = styled.div`
     margin: 0 auto;
-    margin-top: 105px;
-    padding: 0 50px 100px 50px;
+    padding: 50px 50px 100px 50px;
     width: 1300px;
 `;
 

@@ -1,18 +1,18 @@
-import Button from "./Button/Button";
-import Checkbox from "./Checkbox/Checkbox";
-import Description from "./Description/Description";
-import Dropdown from "./Dropdown/Dropdown";
-import Form from "./Form/Form";
-import Icon from "./Icon/Icon";
-import Label from "./Label/Label";
-import Image from "./Image/Image";
-import Input from "./Input/Input";
-import Link from "./Link/Link";
-import Page from "./Page/Page";
-import Radio from "./Radio/Radio";
-import Section from './Section/Section';
-import Tab from './Tab/Tab';
-import Document from "./Document/Document";
+import Button from "./lib/Button/Button";
+import Checkbox from "./lib/Checkbox/Checkbox";
+import Description from "./lib/Description/Description";
+import Dropdown from "./lib/Dropdown/Dropdown";
+import Form from "./lib/Form/Form";
+import Icon from "./lib/Icon/Icon";
+import Label from "./lib/Label/Label";
+import Image from "./lib/Image/Image";
+import Input from "./lib/Input/Input";
+import Link from "./lib/Link/Link";
+import Page from "./lib/Page/Page";
+import Radio from "./lib/Radio/Radio";
+import Section from './lib/Section/Section';
+import Tab from './lib/Tab/Tab';
+import Document from "./lib/Document/Document";
 
 
 export const Provider = {
