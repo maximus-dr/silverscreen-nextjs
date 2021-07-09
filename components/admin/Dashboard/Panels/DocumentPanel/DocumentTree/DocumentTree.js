@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
-import { TreeNodeChildren, TreeNodeItem, TreeNodeItemName, TreeNodeItemType, TreeNodeItemWrapper, TreeNodeWrapper } from "./TreeNodeStyled";
+import { setActiveComponent, unsetActiveComponent } from "../../../../../../store/actions/document";
+import { DocumentTreeChildren, DocumentTreeItem, DocumentTreeItemName, DocumentTreeItemType, DocumentTreeItemWrapper, DocumentTreeWrapper } from "./DocumentTreeStyled";
 
 
-export default function TreeNode(props) {
+export default function DocumentTree(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
@@ -18,9 +18,9 @@ export default function TreeNode(props) {
 
 
     return (
-        <TreeNodeWrapper>
-            <TreeNodeItemWrapper>
-                <TreeNodeItem 
+        <DocumentTreeWrapper>
+            <DocumentTreeItemWrapper>
+                <DocumentTreeItem 
                     isActive={isActive}
                     onClick={() => {
                         if (isActive) {
@@ -30,7 +30,7 @@ export default function TreeNode(props) {
                         dispatch(setActiveComponent(props.nodeData));
                     }}
                 >
-                    <TreeNodeItemType
+                    <DocumentTreeItemType
                         isRootItem={isRootItem}
                         isPage={isPage}
                         isActive={isActive}
@@ -43,19 +43,19 @@ export default function TreeNode(props) {
                         }}
                     >
                         {props.nodeData.typeName}
-                    </TreeNodeItemType>
-                    <TreeNodeItemName
+                    </DocumentTreeItemType>
+                    <DocumentTreeItemName
                         isRootItem={isRootItem}
                         isPage={isPage}    
                         isActive={isActive}
                     >
                         {props.nodeData.name}
-                    </TreeNodeItemName>
-                </TreeNodeItem>
-            </TreeNodeItemWrapper>
-            <TreeNodeChildren expanded={expanded}>
+                    </DocumentTreeItemName>
+                </DocumentTreeItem>
+            </DocumentTreeItemWrapper>
+            <DocumentTreeChildren expanded={expanded}>
                 {props.children}
-            </TreeNodeChildren>
-        </TreeNodeWrapper>
+            </DocumentTreeChildren>
+        </DocumentTreeWrapper>
     )
 }

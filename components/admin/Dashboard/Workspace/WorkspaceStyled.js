@@ -12,7 +12,8 @@ export const WorkspaceWrapper = styled.div`
 
 export const WorkspacePageWrapper = styled.div`
     margin: 0 auto;
-    padding: 105px 50px 100px 50px;
+    margin-top: 105px;
+    padding: 0 50px 100px 50px;
     width: 1300px;
 `;
 

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 
-export const StylesSelectBody = styled.select`
+export const SelectBody = styled.select`
     width: 110px;
     cursor: pointer;
 `;
 
-export const StylesSelectOption = styled.option`
+export const SelectOption = styled.option`
     cursor: pointer;
 `;

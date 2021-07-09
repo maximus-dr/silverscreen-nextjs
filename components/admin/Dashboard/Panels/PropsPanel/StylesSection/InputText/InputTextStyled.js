@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 
-export const TextInputBody = styled.input`
+export const InputTextBody = styled.input`
     width: 110px;
 `;

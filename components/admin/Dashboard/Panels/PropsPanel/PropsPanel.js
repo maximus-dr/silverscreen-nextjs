@@ -5,7 +5,7 @@ import ComponentSeciton from './ComponentSection/ComponentSeciton';
 import { PropsPanelWrapper} from './PropsPanelStyled';
 import ScreensSection from './ScreensSection/ScreensSection';
 import StatesSection from './StatesSection/StatesSection';
-import StylesSection from './StylesSection/StylesSection';
+import StylesSection from './StylesSection/StylesSection/StylesSection';
 
 
 export default function PropsPanel() {

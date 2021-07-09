@@ -1,5 +1,5 @@
 import { Provider } from '../../components';
-import TreeNode from '../../components/admin/Dashboard/Panels/TreeNode/TreeNode';
+import DocumentTree from '../../components/admin/Dashboard/Panels/DocumentPanel/DocumentTree/DocumentTree';
 
 
 export function renderComponents(componentData) {
@@ -56,7 +56,7 @@ export function renderDocumentTree(nodeData) {
     const props = {
         nodeData,
         id: nodeData.id,
-        component: TreeNode
+        component: DocumentTree
     }
 
     return <GetTreeNodes {...props} />;
@@ -75,7 +75,7 @@ export function GetTreeNodes(props) {
                 const childProps = {
                     nodeData: child,
                     id: child.id,
-                    component: TreeNode
+                    component: DocumentTree
                 }
                 return <GetTreeNodes key={child.id} {...childProps} />;
             })

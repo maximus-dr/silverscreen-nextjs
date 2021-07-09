@@ -1,11 +1,11 @@
 import styled, {css} from "styled-components";
 
 
-export const StylesNumInputWrapper = styled.div`
+export const InputNumWrapper = styled.div`
 
 `;
 
-export const StylesNumInputField = styled.input`
+export const InputNumField = styled.input`
     width: 55px;
 
     ${props => {
@@ -21,6 +21,6 @@ export const StylesNumInputField = styled.input`
     }}
 `;
 
-export const StylesNumInputUnit = styled.span`
+export const InputNumUnit = styled.span`
     padding: 0 5px;
 `;

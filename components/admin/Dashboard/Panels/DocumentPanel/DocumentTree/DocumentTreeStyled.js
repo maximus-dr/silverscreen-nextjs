@@ -1,17 +1,17 @@
 import styled, {css} from 'styled-components';
 
 
-const TreeNodeWrapper = styled.div`
+const DocumentTreeWrapper = styled.div`
     position: relative;
     padding-left: 10px;
     padding-right: 1px;
 `;
 
-const TreeNodeItemWrapper = styled.div`
+const DocumentTreeItemWrapper = styled.div`
     display: flex;
 `;
 
-const TreeNodeItem = styled.div`
+const DocumentTreeItem = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -36,7 +36,7 @@ const TreeNodeItem = styled.div`
     }}
 `;
 
-const TreeNodeItemType = styled.span`
+const DocumentTreeItemType = styled.span`
     display: inline-block;
     text-align: center;
     padding: 1px;
@@ -138,7 +138,7 @@ const TreeNodeItemType = styled.span`
     }}
 `;
 
-const TreeNodeItemName = styled.span`
+const DocumentTreeItemName = styled.span`
     color: #42a5f5;
     font-size: 13px;
     flex: 0 0 auto;
@@ -166,7 +166,7 @@ const TreeNodeItemName = styled.span`
     }}
 `;
 
-const TreeNodeChildren = styled.div`
+const DocumentTreeChildren = styled.div`
     display: block;
     ${props => {
         return !props.expanded && css`
@@ -176,10 +176,10 @@ const TreeNodeChildren = styled.div`
 `;
 
 export {
-    TreeNodeWrapper,
-    TreeNodeItemWrapper,
-    TreeNodeItem,
-    TreeNodeItemType,
-    TreeNodeItemName,
-    TreeNodeChildren
+    DocumentTreeWrapper,
+    DocumentTreeItemWrapper,
+    DocumentTreeItem,
+    DocumentTreeItemType,
+    DocumentTreeItemName,
+    DocumentTreeChildren
 }

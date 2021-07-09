@@ -1,8 +1,8 @@
 import React from 'react'
-import { StylesNumInputField, StylesNumInputUnit, StylesNumInputWrapper } from './StylesNumInputStyled'
+import { InputNumField, InputNumUnit, InputNumWrapper } from './InputNumStyled'
 
 
-export default function StylesNumInput(props) {
+export default function InputNum(props) {
 
     const {unit, units, min, max, step} = props;
 
@@ -10,9 +10,9 @@ export default function StylesNumInput(props) {
     const middleWidth = !units && unit;
 
     return (
-        <StylesNumInputWrapper>
-            <StylesNumInputField type="number" min={min} max={max} step={step} fullWidth={fullWidth} middleWidth={middleWidth} />
-            <StylesNumInputUnit>
+        <InputNumWrapper>
+            <InputNumField type="number" min={min} max={max} step={step} fullWidth={fullWidth} middleWidth={middleWidth} />
+            <InputNumUnit>
                 {unit}
                 {units && 
                 <select style={{cursor: 'pointer', width: '50px'}}>
@@ -20,7 +20,7 @@ export default function StylesNumInput(props) {
                         <option key={unit.id}>{unit.name}</option>
                     ))}
                 </select>}
-            </StylesNumInputUnit>
-        </StylesNumInputWrapper>
+            </InputNumUnit>
+        </InputNumWrapper>
     )
 }
