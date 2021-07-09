@@ -6,7 +6,6 @@ export const MainWrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin-top: -55px;
-    padding-top: 55px;
     width: 100%;
     overflow: hidden;
 `;

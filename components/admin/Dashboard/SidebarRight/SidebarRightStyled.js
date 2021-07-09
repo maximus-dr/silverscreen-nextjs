@@ -4,6 +4,7 @@ export const SidebarWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
+    padding-top: 60px;
     padding-bottom: 15px;
     width: 15%;
     min-width: 285px;

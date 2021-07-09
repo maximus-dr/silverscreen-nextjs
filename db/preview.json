@@ -8,11 +8,13 @@
       {
         "typeName": "section",
         "id": "s1",
+        "name": "Длиииииииииииииииииииинннннннннннннное названиеееееееееееееееееееее",
         "styles": {
           "wrapper": {
-            "width": "768px",
+            "width": "1200px",
             "marginLeft": "auto",
-            "marginRight": "auto"
+            "marginRight": "auto",
+            "paddingTop": "50px"
           },
           "background": {
   
