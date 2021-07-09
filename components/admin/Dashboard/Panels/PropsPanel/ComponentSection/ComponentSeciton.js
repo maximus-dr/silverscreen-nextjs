@@ -38,7 +38,7 @@ export default function ComponentSeciton(props) {
         <ComponentSectionWrapper>
             <ComponentData>
                 {entries && entries.map(entrie => {
-                    console.log(entrie);
+
                     if (entrie[0] === 'childrenList') return;
                     if (entrie[0] === 'styles') return;
                     if (typeof entrie[1] !== 'string') return;

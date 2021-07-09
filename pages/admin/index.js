@@ -34,7 +34,7 @@ import { initializeStore } from "../../store/store";
 
 
 export async function getServerSideProps() {
-    const dbPath = path.join(process.cwd(), 'db/db.json');
+    const dbPath = path.join(process.cwd(), 'db/preview.json');
     const components = fs.readFileSync(dbPath, 'utf8');
     
     const reduxStore = initializeStore()

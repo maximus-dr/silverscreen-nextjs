@@ -10,7 +10,7 @@ export const PageBody = styled.div`
 
   display: flex;
   height: 100%;
-  min-height: 100vh;
+  min-height: 100px;
   width: 100%;
   background-repeat: no-repeat;
   flex-direction: column;

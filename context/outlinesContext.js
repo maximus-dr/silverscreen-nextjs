@@ -43,7 +43,7 @@ export const Outlines = (props) => {
         outlines
       </OutlineButton>
 
-      <OutlinesContext.Provider value={outlines}>
+      <OutlinesContext.Provider value={true}>
         {props.children}
       </OutlinesContext.Provider>
     </>
