@@ -3,14 +3,48 @@ import InputNum from '../InputNum/InputNum'
 import { Section, Body, Header, Item, ItemKey, ItemValue } from './StylesSectionStyled'
 import Select from '../Select/Select'
 import InputText from '../InputText/InputText'
+import Elements from './Elements/Elements'
+import ScreensSection from '../../ScreensSection/ScreensSection'
+import StatesSection from '../../StatesSection/StatesSection'
+import { useState } from 'react'
+
+
+const componentElements = {
+    section: [{name: 'wrapper'}, {name: 'body'}, {name: 'background'}]
+}
+
+function getElements(component) {
+    return componentElements[component.typeName];
+}
 
 
 
-export default function StylesSection() {
+export default function StylesSection(props) {
+
+    const {activeComponent} = props;
+    const elements = activeComponent ? getElements(activeComponent) : null;
+    const [activeElement, setActiveElement] = useState(() => elements && elements[0].name || null);
+
+
+    
     return (
         <>
             {/* Позиционирование */}
             <Section>
+                <Elements 
+                    activeComponent={activeComponent}
+                    activeElement={activeElement}
+                    setActiveElement={setActiveElement}
+                    elements={elements}  
+                />
+
+
+                {/* Выбор разрешения */}
+                <ScreensSection />
+                    
+                {/* Выбор состояния - :hover, :active, :focus, :checked */}
+                <StatesSection />
+
                 <Header>
                     Позиционирование
                 </Header>
