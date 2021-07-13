@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { screenItems } from './Items';
 import { ScreensIcon, ScreensItem, ScreensSectionBody, ScreenValue } from './ScreensSectionStyled'
 import { setResolution } from '../../../../../../store/actions/styles';
@@ -10,9 +10,13 @@ const items = screenItems;
 
 export default function ScreensSection() {
     const resolution = useSelector(state => state.styles.resolution);
-    console.log(resolution);
-    const [activeItem, setActiveItem] = useState('screens_mobile');
+    const [activeItem, setActiveItem] = useState(null);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        setActiveItem('screens_desktop');
+        dispatch(setResolution('screens_desktop'));
+    }, [dispatch])
 
     const onItemClick = (e, value) => {
         setActiveItem(e.target.id);

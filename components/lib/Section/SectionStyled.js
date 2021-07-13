@@ -20,7 +20,6 @@ export const SectionWrapper = styled.div`
         const styles = props.componentData.styles && props.componentData.styles.wrapper || null;
         return css`
             ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
         `
     }}
 `;
@@ -34,7 +33,6 @@ export const SectionBackground = styled.div`
         const styles = props.componentData.styles && props.componentData.styles.background || null;
         return css`
             ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
         `
     }}
 `;

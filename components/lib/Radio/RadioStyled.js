@@ -6,7 +6,7 @@ import { StylesProvider } from '../../styles';
 
 export const RadioButton = styled.input`
     ${props => {
-        const styles = props.componentData.styles && props.componentData.styles.radio || null;
+        const styles = props.componentData.styles && props.componentData.styles.input || null;
 
         return css`
             ${styles && StylesProvider(styles)}
@@ -20,8 +20,8 @@ export const RadioLabel = styled.label`
         const styles = props.componentData.styles && props.componentData.styles.label || null;
 
         return css`
-            ${styles && styles.label && StylesProvider(styles.label.input)}
-            ${styles && styles.label && styles.label.isActive && StylesProvider(styles.label.isActive)}
+            ${styles && StylesProvider(styles)}
+            ${styles && styles.isActive && StylesProvider(styles.isActive)}
         `
     }}
 `;

@@ -48,7 +48,7 @@ export default function Dropdown(props) {
     };
 
     const [state, setState] = useState(() => new Set().add(defaultItem));
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [resetSelect, setResetSelect] = useState(false);
     
     // закрывает выпадающее меню при клике вне этого меню

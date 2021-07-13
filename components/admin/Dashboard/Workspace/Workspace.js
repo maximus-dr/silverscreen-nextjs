@@ -14,9 +14,6 @@ export default function Workspace() {
     const pageWrapperWidth = resolution ? resolution + 100 + 'px' : '1300px';
     const pageWidth = resolution ? resolution + 'px' : '1200px';
 
-    console.log(pageWidth);
-    console.log(pageWrapperWidth);
-
     return (
         <WorkspaceWrapper>
             <WorkspacePageWrapper width={pageWrapperWidth}>

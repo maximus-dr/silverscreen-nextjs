@@ -14,6 +14,7 @@ export default function Button(props) {
             {...props.componentData}
             showOutlines={outlines}
             onClick={getHandler(props, 'onClick')}
+            type={props.componentData.type}
         >
             {props.componentData && props.componentData.value || 'Button'}
             {props.children}

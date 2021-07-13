@@ -14,14 +14,16 @@ export default function Radio(props) {
         : {};
 
     return (
-        <>
-            <RadioButton type="radio"
-                {...props}
-                id={props.componentData.id}
-                name={props.componentData.attrs && props.componentData.attrs.name || 'default'} 
-                {...radioProps}
-            />
-            <RadioLabel {...props} htmlFor={props.componentData.id}>Radio</RadioLabel>
+        <>   
+            <RadioLabel {...props} htmlFor={props.componentData.id}>
+                <RadioButton type="radio"
+                    {...props}
+                    id={props.componentData.id}
+                    name={props.componentData.attrs && props.componentData.attrs.name || 'default'} 
+                    {...radioProps}
+                />
+                {props.componentData.value || 'Radio'}
+            </RadioLabel>
         </>
     );
 }

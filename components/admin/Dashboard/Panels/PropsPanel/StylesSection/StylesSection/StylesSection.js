@@ -456,14 +456,18 @@ export default function StylesSection() {
                     </Item>
                     <Item>
                         <ItemKey>filter</ItemKey>
-                        <ItemValue></ItemValue>
+                        <ItemValue>
+                            <InputText />
+                        </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>transitions</ItemKey>
-                        <ItemValue></ItemValue>
+                        <ItemValue>
+                            <InputText />
+                        </ItemValue>
                     </Item>
                 </Body>
-            </Section>  
+            </Section>
         </>
     )
 }

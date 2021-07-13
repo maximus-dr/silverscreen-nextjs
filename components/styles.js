@@ -50,6 +50,7 @@ export const StylesProvider = (styles) => {
         border-bottom: ${styles && styles.borderBottom || ''};
         border-left: ${styles && styles.borderLeft || ''};
         border-radius: ${styles && styles.borderRadius || ''};
+        border-color: ${styles && styles.borderColor || ''};
 
         color: ${styles && styles.color || ''};
         text-align: ${styles && styles.textAlign || ''};
@@ -102,6 +103,7 @@ export const StylesProvider = (styles) => {
         
         ${'' /* isActive */}
         ${props => {
+
             return props.isActive && css`
                 ${styles && styles.isActive && StylesProvider(styles.isActive)}
 

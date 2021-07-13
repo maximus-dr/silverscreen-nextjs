@@ -99,7 +99,7 @@ export default function Tab(props) {
             </el.TabHead>
             
             <el.TabContent key={tabContentData[0].key} {...tabContentProps}>
-                Active tab: {activeTab}
+                Active tab: <b>{activeTab}</b>
                 {tabContentData[0].props.children}
             </el.TabContent>
         </el.TabBar>
