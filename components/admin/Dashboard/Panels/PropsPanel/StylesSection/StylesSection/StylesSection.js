@@ -1,12 +1,15 @@
 import React from 'react'
 import InputNum from '../InputNum/InputNum'
-import { Section, Body, Header, Item, ItemKey, ItemValue } from './StylesSectionStyled'
+import { Section, Body, Header, Item, ItemKey, ItemValue, Wrapper } from './StylesSectionStyled'
 import Select from '../Select/Select'
 import InputText from '../InputText/InputText'
 import Elements from './Elements/Elements'
-import ScreensSection from '../../ScreensSection/ScreensSection'
-import StatesSection from '../../StatesSection/StatesSection'
+import Resolutions from '../../Resolutions/Resolutions'
+import StatesSection from '../../PseudoClasses/PseudoClasses'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearStyles, setStyles } from '../../../../../../../store/actions/styles'
 
 
 const componentElements = {
@@ -24,11 +27,57 @@ export default function StylesSection(props) {
     const {activeComponent} = props;
     const elements = activeComponent ? getElements(activeComponent) : null;
     const [activeElement, setActiveElement] = useState(() => elements && elements[0].name || null);
+    const dispatch = useDispatch();
 
+    const componentStyles = useSelector(state => state.document && state.document.activeComponent && state.document.activeComponent.styles || null);
+    const componentElement = useSelector(state => state.styles && state.styles.element || null);
+    const resolution = useSelector(state => state.styles && state.styles.resolution || null);
+
+    useEffect(() => {
+        if (!componentElement && componentStyles && componentStyles[resolution]) {
+            dispatch(setStyles(null, resolution, componentStyles[resolution]));
+        }
+
+        else if (componentElement && componentStyles && componentStyles[componentElement] && componentStyles[componentElement][resolution]) {
+            dispatch(setStyles(componentElement, resolution, componentStyles[componentElement][resolution]));
+        }
+
+        else if (componentElement && componentStyles && componentStyles[componentElement] && !componentStyles[componentElement][resolution]) {
+            dispatch(setStyles(componentElement, resolution, null));
+        }
+
+        else if (componentElement && componentStyles && !componentStyles[componentElement]) {
+            dispatch(setStyles(componentElement, resolution, null));
+        }
+
+    }, [dispatch, componentStyles, componentElement, resolution]);
+
+    const styles = useSelector(state => state.styles.styles);
+
+    function getWidth(styles) {
+        const str = styles.width;
+        if (str && str === 'auto') {
+            // console.log ('auto');
+        }
+        if (str && str.includes('px')) {
+            // console.log(str.replace('px', ''));
+        }
+        if (str && str.includes('%')) {
+            // console.log(str.replace('%', ''));
+        }
+
+        if (str && str.includes('vw')) {
+            // console.log(str.replace('vw', ''));
+        }
+    }
+    
+    if (styles) {
+        getWidth(styles);
+    }
 
     
     return (
-        <>
+        <Wrapper isActive={activeComponent}>
             {/* Позиционирование */}
             <Section>
                 <Elements 
@@ -40,7 +89,9 @@ export default function StylesSection(props) {
 
 
                 {/* Выбор разрешения */}
-                <ScreensSection />
+                <Resolutions 
+                    activeComponent={activeComponent}
+                />
                     
                 {/* Выбор состояния - :hover, :active, :focus, :checked */}
                 <StatesSection />
@@ -502,6 +553,6 @@ export default function StylesSection(props) {
                     </Item>
                 </Body>
             </Section>
-        </>
+        </Wrapper>
     )
 }

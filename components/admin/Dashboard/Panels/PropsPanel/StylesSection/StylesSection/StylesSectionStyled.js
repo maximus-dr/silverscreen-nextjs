@@ -1,8 +1,17 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
+export const Wrapper = styled.div`
+    display: none;
+    ${props => {
+        return props.isActive && css`
+            display: block;
+        `;
+    }}
+`;
 
 export const Section = styled.div`
     margin-bottom: 5px;
+    border: 1px dashed black;
 `
 
 export const Header = styled.div`

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import { getStyles } from '../../../core/functions/styles';
 import {enableOutlines} from '../../../core/functions/outlines';
-import { colors } from '../../../core/variables';
+import { colors } from '../../../core/variables/variables';
 import { StylesProvider } from '../../styles';
 
 

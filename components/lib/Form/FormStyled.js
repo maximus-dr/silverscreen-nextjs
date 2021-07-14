@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import {enableOutlines} from '../../../core/functions/outlines';
 import {getStyles} from '../../../core/functions/styles';
-import { colors } from '../../../core/variables';
+import { colors } from '../../../core/variables/variables';
 
 
 export const FormBody = styled.form`

@@ -1,14 +1,14 @@
 import styled, {css} from "styled-components";
 
 
-export const ScreensSectionBody = styled.div`
+export const ResolutionsBody = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 5px;
     margin-bottom: 10px;
 `;
 
-export const ScreensItem = styled.div`
+export const ResolutionsItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -22,7 +22,7 @@ export const ScreensItem = styled.div`
     }
 
     ${props => {
-        return props.id === props.activeItem && css`
+        return props.isActive && css`
             position: relative;
             color: #1e88e5;
 
@@ -43,7 +43,7 @@ export const ScreensItem = styled.div`
     }}
 `;
 
-export const ScreensIcon = styled.div`
+export const ResolutionsIcon = styled.div`
     position: relative;
     margin-bottom: 2px;
     height: 25px;
@@ -59,7 +59,7 @@ export const ScreensIcon = styled.div`
     }
 `;
 
-export const ScreenValue = styled.div`
+export const ResolutionsValue = styled.div`
     font-size: 12px;
     text-align: center;
     pointer-events: none;

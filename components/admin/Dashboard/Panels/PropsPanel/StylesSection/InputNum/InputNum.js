@@ -4,7 +4,7 @@ import { InputNumField, InputNumUnit, InputNumWrapper } from './InputNumStyled'
 
 export default function InputNum(props) {
 
-    const {unit, units, min, max, step} = props;
+    const {unit, units, min, max, step, activeOption} = props;
 
     const fullWidth = !units && !unit;
     const middleWidth = !units && unit;
@@ -17,7 +17,7 @@ export default function InputNum(props) {
                 {units && 
                 <select style={{cursor: 'pointer', width: '50px'}}>
                     {units.map(unit => (
-                        <option key={unit.id}>{unit.name}</option>
+                        <option selected={activeOption} key={unit.id}>{unit.name}</option>
                     ))}
                 </select>}
             </InputNumUnit>

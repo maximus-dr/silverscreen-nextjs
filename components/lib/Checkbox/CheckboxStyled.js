@@ -1,5 +1,5 @@
 import styled, {css} from 'styled-components';
-import { colors } from '../../../core/variables';
+import { colors } from '../../../core/variables/variables';
 import { enableOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 

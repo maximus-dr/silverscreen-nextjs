@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 
 
-export const StatesSectionBody = styled.div`
+export const PseudoClassesBody = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +9,7 @@ export const StatesSectionBody = styled.div`
     margin-bottom: 10px;
 `
 
-export const StatesItem = styled.div`
+export const PseudoClassesItem = styled.div`
     display: inline-block;
     padding: 5px;
     cursor: pointer;

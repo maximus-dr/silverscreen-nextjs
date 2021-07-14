@@ -17,18 +17,34 @@
           "name": "Main Wrapper",
           "styles": {
             "wrapper": {
-              "width": "1200px",
-              "marginLeft": "auto",
-              "marginRight": "auto",
-              "paddingTop": "50px"
+              "screen_mobile": {
+                "width": "auto",
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "paddingTop": "50px"
+              },
+              "screen_mobile_landscape": {
+                "width": "480px"
+              },
+              "screen_tablet": {
+                "width": "100%"
+              },
+              "screen_tablet_landscape": {
+                "width": "100000vw"
+              },
+              "screen_desktop": {
+                "width": "1200px"
+              }
             },
             "background": {
     
             },
             "body": {
-              "marginLeft": "auto",
-              "marginRight": "auto",
-              "minHeight": "100vh"
+              "screen_mobile": {
+                "marginLeft": "auto",
+                "marginRight": "auto",
+                "minHeight": "100vh"
+              }
             }
           },
           "childrenList": [
@@ -40,12 +56,18 @@
               "heading": "h2",
               "value": "Section",
               "styles": {
-                "marginTop": "0",
-                "marginBottom": "15px",
-                "paddingTop": "0",
-                "paddingRight": "0",
-                "paddingBottom": "0",
-                "paddingLeft": "0"
+                "screen_mobile": {
+                  "marginTop": "0",
+                  "marginBottom": "15px",
+                  "paddingTop": "0",
+                  "paddingRight": "0",
+                  "paddingBottom": "0",
+                  "paddingLeft": "0"
+                },
+                "screen_mobile_landscape": {},
+                "screen_tablet": {},
+                "screen_tablet_landscape": {},
+                "screen_desktop": {}
               }
             },
     
@@ -55,14 +77,22 @@
               "name": "Section example 1",
               "styles": {
                 "wrapper": {
-                  "width": "500px",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "30px",
-                  "borderRadius": "5px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "width": "500px",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "30px",
+                    "borderRadius": "5px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
                 },
                 "body": {
-                  "minHeight": "50px"
+                  "screen_mobile": {
+                    "minHeight": "50px"
+                  }
                 }
               },
               "childrenList": [
@@ -75,17 +105,35 @@
               "name": "Section example 2",
               "styles": {
                 "wrapper": {
-                  "width": "500px",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "30px",
-                  "borderRadius": "5px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "width": "500px",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "30px",
+                    "borderRadius": "5px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
                 },
                 "background": {
-                  "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)"
+                  "screen_mobile": {
+                    "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)"
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
                 },
                 "body": {
-                  "minHeight": "50px"
+                  "screen_mobile": {
+                    "minHeight": "50px"
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
                 }
               }
             },
@@ -96,17 +144,23 @@
               "name": "Section example 3",
               "styles": {
                 "wrapper": {
-                  "width": "500px",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "30px",
-                  "borderRadius": "5px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "width": "500px",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "30px",
+                    "borderRadius": "5px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  }
                 },
                 "background": {
-                  "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  "screen_mobile": {
+                    "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  }
                 },
                 "body": {
-                  "minHeight": "50px"
+                  "screen_mobile": {
+                    "minHeight": "50px"
+                  }
                 }
               }
             },
@@ -117,18 +171,24 @@
               "name": "Section example 3",
               "styles": {
                 "wrapper": {
-                  "width": "500px",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "30px",
-                  "borderRadius": "5px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "width": "500px",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "30px",
+                    "borderRadius": "5px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  }
                 },
                 "background": {
-                  "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  "screen_mobile": {
+                    "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  }
                 },
                 "body": {
-                  "minHeight": "50px",
-                  "backgroundColor": "rgba(0, 0, 0, 0.6)"
+                  "screen_mobile": {
+                    "minHeight": "50px",
+                    "backgroundColor": "rgba(0, 0, 0, 0.6)"
+                  }
                 }
               }
             },
@@ -139,19 +199,25 @@
               "name": "Section example 4",
               "styles": {
                 "wrapper": {
-                  "width": "500px",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "50px",
-                  "borderRadius": "5px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "width": "500px",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "50px",
+                    "borderRadius": "5px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  }
                 },
                 "background": {
-                  "filter": "blur(24px)",
-                  "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  "screen_mobile": {
+                    "filter": "blur(24px)",
+                    "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                  }
                 },
                 "body": {
-                  "minHeight": "50px",
-                  "filter": "blur(24px)"
+                  "screen_mobile": {
+                    "minHeight": "50px",
+                    "filter": "blur(24px)"
+                  }
                 }
               }
             },

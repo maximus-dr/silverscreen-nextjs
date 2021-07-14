@@ -1,5 +1,6 @@
 import { IconDesktop, IconSmartphone, IconTablet } from "./Icons";
 
+
 export const screenItems = [
     {
         id: 'screen_mobile',
@@ -18,23 +19,23 @@ export const screenItems = [
         icon: IconSmartphone
     },
     {
-        id: 'screens_tablet',
+        id: 'screen_tablet',
         style: {
-            width: '20px', height: '17px', transform: 'rotate(90deg)', marginRight: '3px'
+            width: '23px', height: '23px', marginBottom: '3px'
         },
         value: 640,
         icon: IconTablet
     },
     {
-        id: 'screens_tablet_langscape',
+        id: 'screen_tablet_landscape',
         style: {
-            width: '23px', height: '23px', marginBottom: '3px'
+            width: '20px', height: '17px', transform: 'rotate(90deg)', marginRight: '3px'
         },
         value: 1024,
         icon: IconTablet
     },
     {
-        id: 'screens_desktop',
+        id: 'screen_desktop',
         style: {
             width: '30px', height: '30px'
         },

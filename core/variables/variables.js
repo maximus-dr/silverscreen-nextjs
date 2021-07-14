@@ -1,9 +1,19 @@
 export const screens = {
-    mobile: '320px',
-    mobile_landscape: '480px',
-    tablet: '640px',
-    tablet_landscape: '1024px',
-    large: '1200px'
+    screen_mobile: {
+        minWidth: '320px'
+    },
+    screen_mobile_landscape: {
+        minWidth: '480px'
+    },
+    screen_tablet: {
+        minWidth: '640px'
+    },
+    screen_tablet_landscape: {
+        minWidth: '1024px'
+    },
+    screen_desktop: {
+        minWidth: '1200px'
+    }
 };
 
 export const colors = {
