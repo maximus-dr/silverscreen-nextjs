@@ -30,8 +30,6 @@ export const stylesReducer = (state = {}, action) => {
         case SET_STYLES:
             return {
                 ...state,
-                element: action.element,
-                resolution: action.resolution,
                 styles: action.styles
             }
         case CLEAR_STYLES:

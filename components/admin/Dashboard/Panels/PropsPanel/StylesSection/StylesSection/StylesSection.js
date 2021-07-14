@@ -9,7 +9,7 @@ import StatesSection from '../../PseudoClasses/PseudoClasses'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearStyles, setStyles } from '../../../../../../../store/actions/styles'
+import { clearComponentElement, clearStyles, setStyles } from '../../../../../../../store/actions/styles'
 
 
 const componentElements = {
@@ -35,19 +35,19 @@ export default function StylesSection(props) {
 
     useEffect(() => {
         if (!componentElement && componentStyles && componentStyles[resolution]) {
-            dispatch(setStyles(null, resolution, componentStyles[resolution]));
+            dispatch(setStyles(componentStyles[resolution]));
         }
 
         else if (componentElement && componentStyles && componentStyles[componentElement] && componentStyles[componentElement][resolution]) {
-            dispatch(setStyles(componentElement, resolution, componentStyles[componentElement][resolution]));
+            dispatch(setStyles(componentStyles[componentElement][resolution]));
         }
 
         else if (componentElement && componentStyles && componentStyles[componentElement] && !componentStyles[componentElement][resolution]) {
-            dispatch(setStyles(componentElement, resolution, null));
+            dispatch(setStyles(null));
         }
 
         else if (componentElement && componentStyles && !componentStyles[componentElement]) {
-            dispatch(setStyles(componentElement, resolution, null));
+            dispatch(setStyles(null));
         }
 
     }, [dispatch, componentStyles, componentElement, resolution]);

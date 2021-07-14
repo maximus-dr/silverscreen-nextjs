@@ -25,10 +25,8 @@ export const setStylesPseudoClass = (pseudoClass) => ({
     pseudoClass
 });
 
-export const setStyles = (element, resolution, styles) => ({
+export const setStyles = (styles) => ({
     type: SET_STYLES,
-    element,
-    resolution,
     styles
 });
 
