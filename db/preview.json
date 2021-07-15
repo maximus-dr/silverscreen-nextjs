@@ -78,16 +78,111 @@
               "styles": {
                 "wrapper": {
                   "screen_mobile": {
-                    "width": "500px",
+                    "position": "relative",
+                    "zIndex": "1",
+                    "top": "0",
+                    "right": "0",
+                    "bottom": "5px",
+                    "left": "0",
+                    "flexDirection": "row",
+                    "justifyContent": "flex-start",
+                    "flexWrap": "nowrap",
+                    "alignItems": "center",
+                    "alignSelf": "auto",
+                    "order": "0",
+                    "columnGap": "normal",
+                    
                     "backgroundColor": "#ffffff",
-                    "marginBottom": "30px",
                     "borderRadius": "5px",
-                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+
+                    "display": "flex",
+                    "overflow": "visible",
+                    "overflowX": "auto",
+                    "overflowY": "scroll",
+
+                    "width": "50px",
+                    "height": "100px",
+                    "minWidth": "20%",
+                    "maxWidth": "100vw",
+                    "minHeight": "50px",
+                    "maxHeight": "100vh",
+
+                    "marginTop": "5px",
+                    "marginRight": "15px",
+                    "marginBottom": "5px",
+                    "marginLeft": "15px",
+
+                    "paddingTop": "25px",
+                    "paddingRight": "50px",
+                    "paddingBottom": "25px",
+                    "paddingLeft": "50px",
+
+                    "border": "1px solid #1976d2",
+                    "borderTop": "2px dashed red",
+                    "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
+                    "borderBottom": "none",
+                    "borderLeft": "3px solid transparent",
+                    "outline": "2px solid black"
                   },
-                  "screen_mobile_landscape": {},
-                  "screen_tablet": {},
-                  "screen_tablet_landscape": {},
-                  "screen_desktop": {}
+                  "screen_mobile_landscape": {
+                    "position": "absolute",
+                    "zIndex": "2",
+                    "top": "20px",
+                    "right": "20px",
+                    "bottom": "20px",
+                    "left": "20px",
+
+                    "flexDirection": "row",
+                    "justifyContent": "space-around",
+                    "flexWrap": "wrap",
+                    "alignItems": "flex-end",
+                    "alignSelf": "flex-start",
+                    "order": "1",
+                    "backgroundColor": "rgba(0, 0, 0, 0.5)",
+                    "columnGap": "5px",
+
+                    "display": "block",
+                    "overflow": "hidden",
+                    "overflowX": "scroll",
+                    "overflowY": "visible",
+
+                    "width": "100%",
+                    "height": "50px",
+                    "minWidth": "14%",
+                    "maxWidth": "50vw",
+                    "minHeight": "100px",
+                    "maxHeight": "60vh",
+
+                    "marginTop": "25px",
+                    "marginRight": "50px",
+                    "marginBottom": "25px",
+                    "marginLeft": "50px",
+
+                    "paddingTop": "5px",
+                    "paddingRight": "15px",
+                    "paddingBottom": "5px",
+                    "paddingLeft": "15px",
+
+                    "borderRadius": "2%",
+                    "border": "1px solid #1976d2",
+                    "borderTop": "2px dashed red",
+                    "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
+                    "borderBottom": "none",
+                    "borderLeft": "3px solid transparent",
+                    "outline": "2px solid black"
+                  },
+                  "screen_tablet": {
+                    "width": "100vw",
+                    "position": "relative",
+                    "columnGap": "20%"
+                  },
+                  "screen_tablet_landscape": {
+                    "width": "auto"
+                  },
+                  "screen_desktop": {
+                    "width": "1200px"
+                  }
                 },
                 "body": {
                   "screen_mobile": {

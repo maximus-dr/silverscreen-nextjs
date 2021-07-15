@@ -13,7 +13,7 @@ export function renderComponents(componentData) {
 }
 
 
-// рекурсивно перебирает childrenList в структуре и возвращает массив компонентов по typeName
+// рекурсивно перебирает json по typeName и возвращает react компонент с вложенными react компонентами 
 function getComponents(props) {
 
     if (!props.componentData) return;
@@ -51,7 +51,7 @@ function getComponents(props) {
 }
 
 
-
+// отрисовка дерева документа в админке
 export function renderDocumentTree(nodeData) {
     const props = {
         nodeData,

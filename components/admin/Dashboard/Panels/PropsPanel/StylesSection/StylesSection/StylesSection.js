@@ -10,6 +10,186 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearComponentElement, clearStyles, setStyles } from '../../../../../../../store/actions/styles'
+import styled, {css} from 'styled-components'
+
+
+
+const stylesProps = {
+    position: {
+        type: 'select',
+        options: [{id: 1, name: 'default'}, {id: 2, name: 'relative'}, {id: 3, name: 'absolute'}, {id: 4, name: 'fixed'}],
+        default: 'static'
+    },
+    
+    zIndex: {
+        type: 'num',
+        default: 0
+    },
+
+    top: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+    },
+
+    right: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+    },
+
+    bottom: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+    },
+
+    left: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+    },
+
+    flexDirection: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'row'}, {id: 2, name: 'row-reverse'}, {id: 3, name: 'column'}, {id: 4, name: 'column-reverse'}],
+        default: 'row'
+    },
+
+    justifyContent: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'space-between'}, {id: 5, name: 'space-around'}],
+        default: 'flex-start'
+    },
+
+    flexWrap: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'nowrap'}, {id: 2, name: 'wrap'}, {id: 3, name: 'wrap-reverse'}],
+        default: 'nowrap'
+    },
+
+    alignItems: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'baseline'}, {id: 5, name: 'stretch'}],
+        default: 'flex-start'
+    },
+
+    alignSelf: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'flex-start'}, {id: 3, name: 'flex-end'}, {id: 4, name: 'center'}, {id: 5, name: 'baseline'}, {id: 6, name: 'stretch'}],
+        default: 'auto'
+    },
+
+    order: {
+        type: 'num'
+    },
+
+    columnGap: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'custom'}]
+    },
+
+    display: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}]
+    },
+
+    overflow: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+    },
+
+    overflowX: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+    },
+
+    overflowY: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+    },
+
+    width: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+    },
+
+    height: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+    },
+
+    minWidth: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+    },
+
+    maxWidth: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+    },
+
+    minHeight: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+    },
+
+    maxHeight: {
+        type: 'num',
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+    },
+
+    marginTop: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    marginRight: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    marginBottom: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    marginLeft: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    paddingTop: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    paddingRight: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    paddingBottom: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    paddingLeft: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+    },
+
+    borderRadius: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+    },
+
+    border: {
+        type: 'border'
+    }
+
+}
+
+
+
+
+
 
 
 const componentElements = {
@@ -18,6 +198,52 @@ const componentElements = {
 
 function getElements(component) {
     return componentElements[component.typeName];
+}
+
+
+const BorderPropsOutput = styled.div`
+    display: none;
+    ${props => {
+        return props.isActive && css`
+            display: block;
+        `
+    }}
+`;
+
+export const BorderProps = (props) => {
+
+    const {styles} = props;
+    const [option, setOption] = useState('none');
+
+    const border = styles && styles.border;
+    const borderTop = styles && styles.borderTop;
+    const borderRight = styles && styles.borderRight;
+    const borderBottom = styles && styles.borderBottom;
+    const borderLeft = styles && styles.borderLeft;
+
+    return (
+        <Item style={{alignItems: 'flex-start'}}>
+            <ItemKey>
+                <Select options={[{id: 1, name: 'border'}, {id: 2, name: 'border-top'}, {id: 3, name: 'border-right'}, {id: 4, name: 'border-bottom'}, {id: 5, name: 'border-left'}, {id: 6, name: 'outline'}]} />
+            </ItemKey>
+            <ItemValue>
+                <select style={{width: '110px', marginBottom: '5px'}} onChange={(e) => setOption(e.currentTarget.value)}>
+                    <option selected={option === 'none'}>none</option>
+                    <option selected={option === 'custom'}>custom</option>
+                </select>
+
+                <BorderPropsOutput isActive={option === 'custom'}>
+                    <InputNum min={0} unit="px" />
+                    <div style={{marginTop: '5px', marginBottom: '5px'}}>
+                        <Select options={[{id: 1, name: 'solid'}, {id: 2, name: 'dashed'}, {id: 3, name: 'dotted'}]} />
+                    </div>
+                    <div>
+                        <InputText />
+                    </div>
+                </BorderPropsOutput>
+            </ItemValue>
+        </Item>
+    );
 }
 
 
@@ -54,26 +280,78 @@ export default function StylesSection(props) {
 
     const styles = useSelector(state => state.styles.styles);
 
-    function getWidth(styles) {
-        const str = styles.width;
-        if (str && str === 'auto') {
-            // console.log ('auto');
-        }
-        if (str && str.includes('px')) {
-            // console.log(str.replace('px', ''));
-        }
-        if (str && str.includes('%')) {
-            // console.log(str.replace('%', ''));
+
+
+
+
+
+
+    
+    
+
+    function parseStylesProp(styles, propName) {
+
+        if (!styles) return;
+
+        
+        const propData = stylesProps[propName];
+        const propValue = styles[propName];
+
+        const result = {}
+        
+        if (!propData) {
+            console.log('Такое свойство не найдено');
+            return null;
         }
 
-        if (str && str.includes('vw')) {
-            // console.log(str.replace('vw', ''));
+        if (propData.type === 'select') {
+            result.value = propValue;
         }
+
+        if (propData.type === 'num' && !propData.units) {
+
+            if (!Number(propValue) && propValue !== '0') return {};
+            if (Number(propValue)) {
+                result.value = propValue;
+                return result;
+            }
+            if (propValue === '0') {
+                result.value = '0';
+                return result;
+            }
+        }
+
+        if (propData.type === 'num' && propData.units) {
+
+            if (propValue === '0') {
+                result.value = '0';
+                return result;
+            }
+
+            propData.units.forEach(unit => {
+                if (String(propValue).includes(unit.name)) {
+                    result.value = propValue.replace(unit.name, '');
+                    result.unit = unit.name;
+                }
+            })
+        }
+
+        if (propData.type === 'border' && propValue) {
+            const params = propValue.split(' ');
+            result.borderWidth = params[0];
+            result.borderStyle = params[1];
+            result.borderColor = params[2]; 
+        }
+
+        return result;
     }
+
+
+
+
+
     
-    if (styles) {
-        getWidth(styles);
-    }
+
 
     
     return (
@@ -103,37 +381,37 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>position: </ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'static'}, {id: 2, name: 'relative'}, {id: 3, name: 'absolute'}, {id: 4, name: 'fixed'}]} />
+                            <Select activeOption={parseStylesProp(styles, 'position')} options={stylesProps.position.options} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>z-index: </ItemKey>
                         <ItemValue>
-                            <InputNum />
+                            <InputNum parsedProp={parseStylesProp(styles, 'zIndex')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>top: </ItemKey>
                         <ItemValue>
-                            <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
+                            <InputNum units={stylesProps.top.units} parsedProp={parseStylesProp(styles, 'top')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>right: </ItemKey>
                         <ItemValue>
-                            <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
+                            <InputNum units={stylesProps.right.units} parsedProp={parseStylesProp(styles, 'right')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>bottom: </ItemKey>
                         <ItemValue>
-                            <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
+                            <InputNum units={stylesProps.bottom.units} parsedProp={parseStylesProp(styles, 'bottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>left: </ItemKey>
                         <ItemValue>
-                            <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
+                            <InputNum units={stylesProps.left.units} parsedProp={parseStylesProp(styles, 'left')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -141,43 +419,43 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>flex-direction:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'row'}, {id: 2, name: 'row-reverse'}, {id: 3, name: 'column'}, {id: 4, name: 'column-reverse'}]} />
+                            <Select options={stylesProps.flexDirection.options} parsedProp={parseStylesProp(styles, 'flexDirection')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>justify-content:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'space-between'}, {id: 5, name: 'space-around'}]} />
+                            <Select options={stylesProps.justifyContent.options} parsedProp={parseStylesProp(styles, 'justifyContent')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>flex-wrap:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'nowrap'}, {id: 2, name: 'wrap'}, {id: 3, name: 'wrap-reverse'}]} />
+                            <Select options={stylesProps.flexWrap.options} parsedProp={parseStylesProp(styles, 'flexWrap')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>align-items:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'baseline'}, {id: 5, name: 'stretch'}]} />
+                            <Select options={stylesProps.alignItems.options} parsedProp={parseStylesProp(styles, 'alignItems')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>align-self:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'auto'}, {id: 2, name: 'flex-start'}, {id: 3, name: 'flex-end'}, {id: 4, name: 'center'}, {id: 5, name: 'baseline'}, {id: 6, name: 'stretch'}]} />
+                            <Select options={stylesProps.alignSelf.options} parsedProp={parseStylesProp(styles, 'alignSelf')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>order:</ItemKey>
                         <ItemValue>
-                            <InputNum />
+                            <InputNum parsedProp={parseStylesProp(styles, 'order')} />
                         </ItemValue>
                     </Item>
                     <Item style={{alignItems: 'flex-start'}}>
                         <ItemKey>column-gap:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'normal'}, {id: 2, name: 'custom'}]} />
+                            <Select options={stylesProps.columnGap.options} parsedProp={parseStylesProp(styles, 'columnGap')} />
                             <div style={{marginTop: '5px'}}>
                                 <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
                             </div>
@@ -195,25 +473,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>display:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}]} />
+                            <Select options={stylesProps.display.options} parsedProp={parseStylesProp(styles, 'display')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]} />
+                            <Select options={stylesProps.overflow.options} parsedProp={parseStylesProp(styles, 'overflow')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow-x:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]} />
+                            <Select options={stylesProps.overflowX.options} parsedProp={parseStylesProp(styles, 'overflowX')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow-y:</ItemKey>
                         <ItemValue>
-                            <Select options={[{id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]} />
+                            <Select options={stylesProps.overflowY.options} parsedProp={parseStylesProp(styles, 'overflowY')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -228,37 +506,37 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]} />
+                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]} />
+                            <InputNum  units={stylesProps.height.units} parsedProp={parseStylesProp(styles, 'height')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>min-width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]} />
+                            <InputNum  units={stylesProps.minWidth.units} parsedProp={parseStylesProp(styles, 'minWidth')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>max-width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]} />
+                            <InputNum  units={stylesProps.maxWidth.units} parsedProp={parseStylesProp(styles, 'maxWidth')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>min-height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]} />
+                            <InputNum  units={stylesProps.minHeight.units} parsedProp={parseStylesProp(styles, 'minHeight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>max-height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]} />
+                            <InputNum  units={stylesProps.maxHeight.units} parsedProp={parseStylesProp(styles, 'maxHeight')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -273,25 +551,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>margin-top:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.marginTop.units} parsedProp={parseStylesProp(styles, 'marginTop')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-right:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.marginRight.units} parsedProp={parseStylesProp(styles, 'marginRight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-bottom:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.marginBottom.units} parsedProp={parseStylesProp(styles, 'marginBottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-left:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.marginLeft.units} parsedProp={parseStylesProp(styles, 'marginLeft')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -306,25 +584,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>padding-top:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.paddingTop.units} parsedProp={parseStylesProp(styles, 'paddingTop')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-right:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.paddingRight.units} parsedProp={parseStylesProp(styles, 'paddingRight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-bottom:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.paddingBottom.units} parsedProp={parseStylesProp(styles, 'paddingBottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-left:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]} />
+                            <InputNum  units={stylesProps.paddingLeft.units} parsedProp={parseStylesProp(styles, 'paddingLeft')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -339,26 +617,12 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>border-radius:</ItemKey>
                         <ItemValue>
-                            <InputNum min={0} units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
+                            <InputNum min={0} units={stylesProps.borderRadius.units} parsedProp={parseStylesProp(styles, 'borderRadius')} />
                         </ItemValue>
                     </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>
-                            <Select options={[{id: 1, name: 'border'}, {id: 2, name: 'border-top'}, {id: 3, name: 'border-right'}, {id: 4, name: 'border-bottom'}, {id: 5, name: 'border-left'}, {id: 6, name: 'outline'}]} />
-                        </ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'custom'}]} />
-                            <div style={{marginTop: '5px', marginBottom: '15px'}}>
-                                <InputNum min={0} unit="px" />
-                                <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                                    <Select options={[{id: 1, name: 'solid'}, {id: 2, name: 'dashed'}, {id: 3, name: 'dotted'}]} />
-                                </div>
-                                <div>
-                                    <InputText />
-                                </div>
-                            </div>
-                        </ItemValue>
-                    </Item>
+                    
+                    <BorderProps />
+
                 </Body>
             </Section>
             
