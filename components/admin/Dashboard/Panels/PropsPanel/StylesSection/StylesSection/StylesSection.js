@@ -182,8 +182,95 @@ const stylesProps = {
 
     border: {
         type: 'border'
+    },
+
+    borderTop: {
+        type: 'border'
+    },
+
+    borderRight: {
+        type: 'border'
+    },
+
+    borderBottom: {
+        type: 'border'
+    },
+
+    borderLeft: {
+        type: 'border'
+    },
+
+    outline: {
+        type: 'border'
     }
 
+}
+
+
+function parseStylesProp(styles, propName) {
+
+    if (!styles) return;
+    
+    const propData = stylesProps[propName];
+    const propValue = styles[propName];
+
+    const result = {}
+    
+    if (!propData) {
+        console.log('Такое свойство не найдено');
+        return null;
+    }
+
+    if (propData.type === 'select') {
+        result.value = propValue;
+    }
+
+    if (propData.type === 'num' && !propData.units) {
+
+        if (!Number(propValue) && propValue !== '0') return {};
+        if (Number(propValue)) {
+            result.value = propValue;
+            return result;
+        }
+        if (propValue === '0') {
+            result.value = '0';
+            return result;
+        }
+    }
+
+    if (propData.type === 'num' && propData.units) {
+
+        if (propValue === '0') {
+            result.value = '0';
+            return result;
+        }
+
+        propData.units.forEach(unit => {
+            if (String(propValue).includes(unit.name)) {
+                result.value = propValue.replace(unit.name, '');
+                result.unit = unit.name;
+            }
+        })
+    }
+
+    if (propData.type === 'border' && propValue) {
+
+        if (propValue === 'none') return { custom: false };
+
+        let params = propValue.split(' ');
+
+        if (propValue.indexOf('rgba') > 0) {
+            const rgba = propValue.slice(propValue.indexOf('rgba'));
+            params[2] = rgba;
+        }
+
+        result.custom = true;
+        result.borderWidth = params[0];
+        result.borderStyle = params[1];
+        result.borderColor = params[2];
+    }
+
+    return result;
 }
 
 
@@ -213,32 +300,61 @@ const BorderPropsOutput = styled.div`
 export const BorderProps = (props) => {
 
     const {styles} = props;
-    const [option, setOption] = useState('none');
+    const [prop, setProp] = useState('border');
+    const [custom, setCustom] = useState(false);
+    const [borderWidth, setBorderWidth] = useState('');
+    const [borderStyle, setBorderStyle] = useState('solid');
+    const [borderColor, setBorderColor] = useState('');
 
-    const border = styles && styles.border;
-    const borderTop = styles && styles.borderTop;
-    const borderRight = styles && styles.borderRight;
-    const borderBottom = styles && styles.borderBottom;
-    const borderLeft = styles && styles.borderLeft;
+    useEffect(() => {
+        const propsList = {
+            border: parseStylesProp(styles, 'border'),
+            borderTop: parseStylesProp(styles, 'borderTop'),
+            borderRight: parseStylesProp(styles, 'borderRight'),
+            borderBottom: parseStylesProp(styles, 'borderBottom'),
+            borderLeft: parseStylesProp(styles, 'borderLeft'),
+            outline: parseStylesProp(styles, 'outline')
+        }
+
+        if (propsList[prop] && propsList[prop].custom) {
+            setCustom(true);
+            setBorderWidth(propsList[prop].borderWidth.replace('px', ''));
+            setBorderStyle(propsList[prop].borderStyle);
+            setBorderColor(propsList[prop].borderColor);
+        }
+        if (propsList[prop] && !propsList[prop].custom) {
+            setCustom(false);
+            setBorderWidth('');
+            setBorderStyle('solid');
+            setBorderColor('');
+        }
+    }, [prop, styles]);
 
     return (
         <Item style={{alignItems: 'flex-start'}}>
             <ItemKey>
-                <Select options={[{id: 1, name: 'border'}, {id: 2, name: 'border-top'}, {id: 3, name: 'border-right'}, {id: 4, name: 'border-bottom'}, {id: 5, name: 'border-left'}, {id: 6, name: 'outline'}]} />
+                <select style={{width: '110px'}} value={prop} onChange={(e) => setProp(e.currentTarget.value)}>
+                    <option value="border">border</option>
+                    <option value="borderTop">borderTop</option>
+                    <option value="borderRight">borderRight</option>
+                    <option value="borderBottom">borderBottom</option>
+                    <option value="borderLeft">borderLeft</option>
+                    <option value="outline">outline</option>
+                </select>
             </ItemKey>
             <ItemValue>
-                <select style={{width: '110px', marginBottom: '5px'}} onChange={(e) => setOption(e.currentTarget.value)}>
-                    <option selected={option === 'none'}>none</option>
-                    <option selected={option === 'custom'}>custom</option>
+                <select style={{width: '110px', marginBottom: '5px'}} value={custom ? 'custom' : 'none'} onChange={() => setCustom(prev => !prev)}>
+                    <option value="none">none</option>
+                    <option value="custom">custom</option>
                 </select>
 
-                <BorderPropsOutput isActive={option === 'custom'}>
-                    <InputNum min={0} unit="px" />
+                <BorderPropsOutput isActive={custom}>
+                    <InputNum min={0} unit="px" parsedProp={{value: borderWidth}} />
                     <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                        <Select options={[{id: 1, name: 'solid'}, {id: 2, name: 'dashed'}, {id: 3, name: 'dotted'}]} />
+                        <Select options={[{id: 1, name: 'solid'}, {id: 2, name: 'dashed'}, {id: 3, name: 'dotted'}]} parsedProp={{value: borderStyle}} />
                     </div>
                     <div>
-                        <InputText />
+                        <InputText parsedProp={{value: borderColor}} />
                     </div>
                 </BorderPropsOutput>
             </ItemValue>
@@ -289,62 +405,7 @@ export default function StylesSection(props) {
     
     
 
-    function parseStylesProp(styles, propName) {
-
-        if (!styles) return;
-
-        
-        const propData = stylesProps[propName];
-        const propValue = styles[propName];
-
-        const result = {}
-        
-        if (!propData) {
-            console.log('Такое свойство не найдено');
-            return null;
-        }
-
-        if (propData.type === 'select') {
-            result.value = propValue;
-        }
-
-        if (propData.type === 'num' && !propData.units) {
-
-            if (!Number(propValue) && propValue !== '0') return {};
-            if (Number(propValue)) {
-                result.value = propValue;
-                return result;
-            }
-            if (propValue === '0') {
-                result.value = '0';
-                return result;
-            }
-        }
-
-        if (propData.type === 'num' && propData.units) {
-
-            if (propValue === '0') {
-                result.value = '0';
-                return result;
-            }
-
-            propData.units.forEach(unit => {
-                if (String(propValue).includes(unit.name)) {
-                    result.value = propValue.replace(unit.name, '');
-                    result.unit = unit.name;
-                }
-            })
-        }
-
-        if (propData.type === 'border' && propValue) {
-            const params = propValue.split(' ');
-            result.borderWidth = params[0];
-            result.borderStyle = params[1];
-            result.borderColor = params[2]; 
-        }
-
-        return result;
-    }
+    
 
 
 
@@ -621,7 +682,7 @@ export default function StylesSection(props) {
                         </ItemValue>
                     </Item>
                     
-                    <BorderProps />
+                    <BorderProps styles={styles} />
 
                 </Body>
             </Section>
