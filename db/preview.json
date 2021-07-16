@@ -76,8 +76,10 @@
               "id": "s2",
               "name": "Section example 1",
               "styles": {
+
                 "wrapper": {
                   "screen_mobile": {
+
                     "position": "relative",
                     "zIndex": "1",
                     "top": "0",
@@ -123,8 +125,21 @@
                     "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
                     "borderBottom": "none",
                     "borderLeft": "3px solid transparent",
-                    "outline": "2px solid black"
+                    "outline": "2px solid black",
+
+                    "color": "rgba(0, 0, 0, 0.26)",
+                    "fontSize": "14px",
+                    "fontWeight": "bold",
+                    "lineHeight": "18em",
+                    "textAlign": "center",
+                    "textTransform": "uppercase",
+                    "textDecoration": "underline",
+                    "textShadow": "2px 3px 4px rgba(0, 0, 0, 0.4)",
+                    "content": "blabla",
+                    "userSelect": "none",
+                    "fontFamily": "Ubuntu, sans-serif"
                   },
+
                   "screen_mobile_landscape": {
                     "position": "absolute",
                     "zIndex": "2",
@@ -170,13 +185,27 @@
                     "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
                     "borderBottom": "none",
                     "borderLeft": "3px solid transparent",
-                    "outline": "2px solid black"
+                    "outline": "2px solid black",
+
+                    "color": "#0000000",
+                    "fontSize": "12em",
+                    "fontWeight": "medium",
+                    "lineHeight": "1.6",
+                    "textAlign": "left",
+                    "textTransform": "none",
+                    "textDecoration": "none",
+                    "textShadow": "none",
+                    "content": "",
+                    "userSelect": "auto",
+                    "fontFamily": "Roboto, Arial, sans-serif"
                   },
+
                   "screen_tablet": {
                     "width": "100vw",
                     "position": "relative",
                     "columnGap": "20%"
                   },
+
                   "screen_tablet_landscape": {
                     "width": "auto"
                   },

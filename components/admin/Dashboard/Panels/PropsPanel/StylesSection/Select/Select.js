@@ -9,10 +9,10 @@ export default function Select(props) {
 
     return (
         <>
-          <SelectBody>
+          <SelectBody value={parsedProp && parsedProp.value || options[0].name} onChange={() => {}}>
             {options && options.map(option => {
                 return (
-                    <SelectOption key={option.id} selected={parsedProp && parsedProp.value === option.name}>
+                    <SelectOption key={option.id} value={option.name}>
                         {option.name}
                     </SelectOption>
                 )

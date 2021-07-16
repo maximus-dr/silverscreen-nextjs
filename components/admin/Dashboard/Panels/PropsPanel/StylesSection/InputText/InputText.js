@@ -8,7 +8,7 @@ export default function InputText(props) {
 
     return (
         <>
-            <InputTextBody type="text" value={parsedProp && parsedProp.value} />
+            <InputTextBody onChange={() => {}} type="text" value={parsedProp && parsedProp.value || ''} />
         </>
     )
 }

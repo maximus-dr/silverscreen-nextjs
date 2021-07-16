@@ -202,6 +202,60 @@ const stylesProps = {
 
     outline: {
         type: 'border'
+    },
+
+    color: {
+        type: 'text'
+    },
+
+    fontSize: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: 'rem'}]
+    },
+
+    fontWeight: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'medium'}, {id: 3, name: 'bold'}]
+    },
+
+    lineHeight: {
+        type: 'num',
+        units: [{id: 1, name: ''}, {id: 2, name: 'px'}, {id: 3, name: 'em'}]
+    },
+
+    textAlign: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'left'}, {id: 2, name: 'center'}, {id: 3, name: 'right'}, {id: 4, name: 'justify'}]
+    },
+
+    textTransform: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'capitalize'}, {id: 3, name: 'uppercase'}, {id: 4, name: 'lowercase'}]
+    },
+
+    textDecoration: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'underline'}]
+    },
+
+    textShadow: {
+        type: 'textShadow'
+    },
+
+    content: {
+        type: 'text'
+    },
+
+    userSelect: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 4, name: 'contain'}, {id: 5, name: 'all'}]
+    },
+
+    fontFamily: {
+        type: 'fontFamily',
+        serif: {
+            options: [{id: 0, name: 'default'}, {id: 1, name: 'serif'}, {id: 2, name: 'sans-serif'}, {id: 3, name: 'monospace'}, {id: 4, name: 'cursive'}, {id: 5, name: 'fantasy'}]
+        }
     }
 
 }
@@ -222,6 +276,10 @@ function parseStylesProp(styles, propName) {
     }
 
     if (propData.type === 'select') {
+        result.value = propValue;
+    }
+
+    if (propData.type === 'text') {
         result.value = propValue;
     }
 
@@ -246,7 +304,7 @@ function parseStylesProp(styles, propName) {
         }
 
         propData.units.forEach(unit => {
-            if (String(propValue).includes(unit.name)) {
+            if (String(propValue).includes(unit.name) && propValue) {
                 result.value = propValue.replace(unit.name, '');
                 result.unit = unit.name;
             }
@@ -268,6 +326,39 @@ function parseStylesProp(styles, propName) {
         result.borderWidth = params[0];
         result.borderStyle = params[1];
         result.borderColor = params[2];
+    }
+
+    if (propData.type === 'textShadow' && propValue) {
+        if (propValue === 'none') return {custom: false}
+
+        let params = propValue.split(' ');
+
+        if (propValue.indexOf('rgba') > 0) {
+            const rgba = propValue.slice(propValue.indexOf('rgba'));
+            params[3] = rgba;
+        }
+
+        result.custom = true;
+        result.offsetX = params[0];
+        result.offsetY = params[1];
+        result.blur = params[2];
+        result.color = params[3];
+    }
+
+    if (propData.type === 'fontFamily' && propValue) {
+        const params = propValue.split(',');
+
+        if (params.length === 3) {
+            result.primary = params[0].trim();
+            result.secondary = params[1].trim();
+            result.serif = params[2].trim();
+        }
+        
+        if (params.length === 2) {
+            result.primary = params[0].trim();
+            result.secondary = null;
+            result.serif = params[1].trim();
+        }
     }
 
     return result;
@@ -364,6 +455,65 @@ export const BorderProps = (props) => {
 
 
 
+const TextShadowOutput = styled.div`
+    display: none;
+    margin-top: 5px;
+    ${props => {
+        return props.isActive && css`
+            display: block;
+        `
+    }}
+`;
+
+export const TextShadow = (props) => {
+
+    const [custom, setCustom] = useState(false);
+    const {styles} = props;
+
+    const parsedProp = parseStylesProp(styles, 'textShadow');
+
+    const offsetX = parsedProp && parsedProp.offsetX && parsedProp.offsetX.replace('px', '') || null;
+    const offsetY = parsedProp &&  parsedProp.offsetY && parsedProp.offsetY.replace('px', '') || null;
+    const blur = parsedProp &&  parsedProp.blur && parsedProp.blur.replace('px', '') || null;
+    const color = parsedProp &&  parsedProp.color && parsedProp.color || null;
+
+    useEffect(() => {
+        const prop = parseStylesProp(styles, 'textShadow');
+        if (prop && prop.custom) {
+            setCustom(true);
+        }
+        if (prop && !prop.custom) {
+            setCustom(false);
+        }
+    }, [styles]);
+
+    return (
+        <Item style={{alignItems: 'flex-start'}}>
+            <ItemKey>text-shadow:</ItemKey>
+            <ItemValue>
+                <select value={custom ? 'custom' : 'none'} onChange={() => setCustom(prev => !prev)}>
+                    <option value="none">none</option>
+                    <option value="custom">custom</option>
+                </select>
+                <TextShadowOutput isActive={custom}>
+                    <div style={{marginBottom: '5px'}}>
+                        <InputNum unit='px' parsedProp={{value: offsetX}} />
+                    </div>
+                    <div style={{marginBottom: '5px'}}>
+                        <InputNum unit='px' parsedProp={{value: offsetY}} />
+                    </div>
+                    <div style={{marginBottom: '5px'}}>
+                        <InputNum unit='px' parsedProp={{value: blur}} />
+                    </div>
+                    <InputText parsedProp={{value: color}} />
+                </TextShadowOutput>
+            </ItemValue>
+        </Item>
+    );
+}
+
+
+
 export default function StylesSection(props) {
 
     const {activeComponent} = props;
@@ -411,30 +561,109 @@ export default function StylesSection(props) {
 
 
 
-    
+   console.log( parseStylesProp(styles, 'fontFamily'));
 
 
     
     return (
         <Wrapper isActive={activeComponent}>
+
+            <Elements 
+                activeComponent={activeComponent}
+                activeElement={activeElement}
+                setActiveElement={setActiveElement}
+                elements={elements}  
+            />
+
+            {/* Выбор разрешения */}
+            <Resolutions 
+                activeComponent={activeComponent}
+            />
+                
+            {/* Выбор состояния - :hover, :active, :focus, :checked */}
+            <StatesSection />
+
+
+            {/* Типографика */}
+            <Section>
+                <Header>Типографика</Header>
+                <Body>
+                    <Item>
+                        <ItemKey>color:</ItemKey>
+                        <ItemValue>
+                            <InputText parsedProp={parseStylesProp(styles, 'color')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>font-size:</ItemKey>
+                        <ItemValue>
+                            <InputNum units={stylesProps.fontSize.units} parsedProp={parseStylesProp(styles, 'fontSize')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>font-weight:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.fontWeight.options} parsedProp={parseStylesProp(styles, 'fontWeight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>line-height:</ItemKey>
+                        <ItemValue>
+                            <InputNum units={stylesProps.lineHeight.units} parsedProp={parseStylesProp(styles, 'lineHeight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-align:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textAlign.options} parsedProp={parseStylesProp(styles, 'textAlign')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-transform:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textTransform.options} parsedProp={parseStylesProp(styles, 'textTransform')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-decoration:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textDecoration.options} parsedProp={parseStylesProp(styles, 'textDecoration')} />
+                        </ItemValue>
+                    </Item>
+                    
+
+                    <TextShadow styles={styles} />
+
+                    <Item>
+                        <ItemKey>content:</ItemKey>
+                        <ItemValue>
+                            <InputText parsedProp={parseStylesProp(styles, 'content')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>user-select:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.userSelect.options} parsedProp={parseStylesProp(styles, 'userSelect')} />
+                        </ItemValue>
+                    </Item>
+                    <Item style={{alignItems: 'flex-start'}}>
+                        <ItemKey>font-family:</ItemKey>
+                        <ItemValue>
+                            <div style={{marginBottom: '5px'}}>
+                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily').primary}} />
+                            </div>
+                            <div style={{marginBottom: '5px'}}>
+                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily').secondary}} />
+                            </div>
+                            <Select options={stylesProps.fontFamily.serif.options} parsedProp={{value: parseStylesProp(styles, 'fontFamily').serif}} />
+                        </ItemValue>
+                    </Item>
+                </Body>
+            </Section>
+            
+
             {/* Позиционирование */}
             <Section>
-                <Elements 
-                    activeComponent={activeComponent}
-                    activeElement={activeElement}
-                    setActiveElement={setActiveElement}
-                    elements={elements}  
-                />
-
-
-                {/* Выбор разрешения */}
-                <Resolutions 
-                    activeComponent={activeComponent}
-                />
-                    
-                {/* Выбор состояния - :hover, :active, :focus, :checked */}
-                <StatesSection />
-
                 <Header>
                     Позиционирование
                 </Header>
@@ -524,6 +753,8 @@ export default function StylesSection(props) {
                     </Item>
                 </Body>
             </Section>
+
+
             
             {/* Отображение */}
             <Section>
@@ -687,96 +918,6 @@ export default function StylesSection(props) {
                 </Body>
             </Section>
             
-            {/* Типографика */}
-            <Section>
-                <Header>Типографика</Header>
-                <Body>
-                    <Item>
-                        <ItemKey>color:</ItemKey>
-                        <ItemValue>
-                            <InputText />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>font-size:</ItemKey>
-                        <ItemValue>
-                            <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: 'rem'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>font-weight:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'normal'}, {id: 2, name: 'medium'}, {id: 3, name: 'bold'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>line-height:</ItemKey>
-                        <ItemValue>
-                            <InputNum units={[{id: 1, name: '-'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-align:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'left'}, {id: 2, name: 'right'}, {id: 3, name: 'center'}, {id: 4, name: 'justify'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-transform:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'capitalize'}, {id: 3, name: 'uppercase'}, {id: 4, name: 'lowercase'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-decoration:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'underline'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>text-shadow:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'custom'}]} />
-                            <div style={{marginTop: '5px'}}>
-                                <div style={{marginBottom: '5px'}}>
-                                    <InputNum unit='px' />
-                                </div>
-                                <div style={{marginBottom: '5px'}}>
-                                    <InputNum unit='px' />
-                                </div>
-                                <div style={{marginBottom: '5px'}}>
-                                    <InputNum unit='px' />
-                                </div>
-                                <InputText />
-                            </div>
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>content:</ItemKey>
-                        <ItemValue>
-                            <InputText />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>user-select:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 4, name: 'contain'}, {id: 5, name: 'all'}]} />
-                        </ItemValue>
-                    </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>font-family:</ItemKey>
-                        <ItemValue>
-                            <div style={{marginBottom: '5px'}}>
-                                <InputText />
-                            </div>
-                            <div style={{marginBottom: '5px'}}>
-                                <InputText />
-                            </div>
-                            <Select options={[{id: 1, name: 'serif'}, {id: 2, name: 'sans-serif'}, {id: 3, name: 'monospace'}, {id: 4, name: 'cursive'}, {id: 5, name: 'fantasy'}]} />
-                        </ItemValue>
-                    </Item>
-                </Body>
-            </Section>
             
             {/* Фон */}
             <Section>

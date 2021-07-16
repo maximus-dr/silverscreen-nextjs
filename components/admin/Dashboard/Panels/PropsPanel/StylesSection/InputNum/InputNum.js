@@ -25,9 +25,9 @@ export default function InputNum(props) {
             <InputNumUnit>
                 {unit}
                 {units && 
-                <select style={{cursor: 'pointer', width: '50px'}}>
+                <select style={{cursor: 'pointer', width: '50px'}} value={parsedProp && parsedProp.unit || units[0].name} onChange={() => {}}>
                     {units.map(unit => (
-                        <option selected={parsedProp && parsedProp.unit === unit.name} key={unit.id}>
+                        <option value={unit.name} key={unit.id}>
                             {unit.name}
                         </option>
                     ))}
