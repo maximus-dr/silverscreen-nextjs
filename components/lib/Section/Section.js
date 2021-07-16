@@ -6,6 +6,8 @@ import { getHandler } from '../../../core/functions/components';
 
 export default function Section(props) {
 
+    console.log(props);
+
     // if (props.role === 'dropdownMenu') {
     //     console.log(props);
     // }

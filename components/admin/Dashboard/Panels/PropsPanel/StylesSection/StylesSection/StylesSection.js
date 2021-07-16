@@ -256,6 +256,27 @@ const stylesProps = {
         serif: {
             options: [{id: 0, name: 'default'}, {id: 1, name: 'serif'}, {id: 2, name: 'sans-serif'}, {id: 3, name: 'monospace'}, {id: 4, name: 'cursive'}, {id: 5, name: 'fantasy'}]
         }
+    },
+
+    backgroundColor: {
+        type: 'text'
+    },
+
+    backgroundImage: {
+        type: 'text'
+    },
+
+    backgroundSize: {
+        type: 'backgroundSize'
+    },
+
+    backgroundPosition: {
+        type: 'backgroundPosition'
+    },
+
+    backgroundRepeat: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}]
     }
 
 }
@@ -358,6 +379,72 @@ function parseStylesProp(styles, propName) {
             result.primary = params[0].trim();
             result.secondary = null;
             result.serif = params[1].trim();
+        }
+    }
+
+    if (propData.type === 'backgroundSize' && propValue) {
+        if (propValue.includes('px') || propValue.includes('%')) {
+            const params = propValue.split(' ');
+            const x = params[0];
+            const y = params[1];
+            const sizeX = {
+                value: 
+                    x.includes('px') && x.replace('px', '') || 
+                    x.includes('%') && x.replace('%', '') || 
+                    x === 'auto' && '',
+                unit: 
+                    x.includes('px') && 'px' || 
+                    x.includes('%') && '%' || 
+                    x === 'auto' && 'auto'
+            };
+            const sizeY = {
+                value: 
+                    y.includes('px') && y.replace('px', '') || 
+                    y.includes('%') && y.replace('%', '') || 
+                    y === 'auto' && '',
+                unit: 
+                    y.includes('px') && 'px' || 
+                    y.includes('%') && '%' || 
+                    y === 'auto' && 'auto'
+            }
+            result.value = 'unit unit';
+            result.sizeX = sizeX;
+            result.sizeY = sizeY;
+
+            return result;
+        }
+
+        result.value = propValue;
+    }
+
+    if (propData.type === 'backgroundPosition' && propValue) {
+        if (propValue.includes('px') || propValue.includes('%')) {
+            const params = propValue.split(' ');
+            const x = params[0];
+            const y = params[1];
+            const posX = {
+                value: 
+                    x.includes('px') && x.replace('px', '').trim() ||
+                    x.includes('%') && x.replace('%', '').trim() ||
+                    x,
+                unit:
+                    x.includes('px') && 'px' ||
+                    x.includes('%') && '%' ||
+                    ''
+            }
+            const posY = {
+                value: 
+                    y.includes('px') && y.replace('px', '').trim() ||
+                    y.includes('%') && y.replace('%', '').trim() ||
+                    y,
+                unit:
+                    y.includes('px') && 'px' ||
+                    y.includes('%') && '%' ||
+                    ''
+            }
+            result.posX = posX;
+            result.posY = posY;
+            return result;
         }
     }
 
@@ -514,6 +601,108 @@ export const TextShadow = (props) => {
 
 
 
+const BackgroundSizeOutput = styled.div`
+    display: none;
+    margin-top: 5px;
+
+    ${props => {
+        return props.isActive && css`
+            display: block;
+        `
+    }}
+`;
+
+
+export const BackgroundSize = (props) => {
+    
+    const {styles} = props;
+    const parsedProp = parseStylesProp(styles, 'backgroundSize');
+
+    const sizeX = {
+        value: parsedProp && parsedProp.sizeX && parsedProp.sizeX.value || '',
+        unit: parsedProp && parsedProp.sizeX && parsedProp.sizeX.unit || ''
+    }
+
+    const sizeY = {
+        value: parsedProp && parsedProp.sizeY && parsedProp.sizeY.value || '',
+        unit: parsedProp && parsedProp.sizeY && parsedProp.sizeY.unit || ''
+    }
+
+    const [select, setSelect] = useState('default');
+
+    useEffect(() => {
+        const prop = parseStylesProp(styles, 'backgroundSize')
+        if (prop && prop.value && prop.value) {
+            setSelect(prop.value);
+        }
+
+        if (!prop || !prop.value) setSelect('default');
+    }, [styles]);
+
+    return (
+        <Item style={{alignItems: 'flex-start'}}>
+            <ItemKey>background-size:</ItemKey>
+            <ItemValue>
+                <select style={{width: '110px'}} value={select} onChange={(e) => setSelect(e.currentTarget.value)}>
+                    <option value="default">default</option>
+                    <option value="auto auto">auto auto</option>
+                    <option value="cover">cover</option>
+                    <option value="contain">contain</option>
+                    <option value="unit unit">unit unit</option>
+                </select>
+                
+                <BackgroundSizeOutput isActive={select === 'unit unit'}>
+                    <div style={{marginTop: '5px', marginBottom: '5px'}}>
+                        <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}]} parsedProp={sizeX} />
+                    </div>
+                    <div>
+                        <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}]} parsedProp={sizeY} />
+                    </div>
+                </BackgroundSizeOutput>
+            </ItemValue>
+        </Item>
+    );
+}
+
+
+
+const BackgroundPositionOutput = styled.div`
+    margin-bottom: 5px;
+    display: none;
+
+    ${props => {
+        return props.isActive && css`
+            display: block;
+        `
+    }}
+`;
+
+
+export const BackgroundPosition = (props) => {
+
+    const [selectX, setSelectX] = useState('unit');
+    const [selectY, setSelectY] = useState('unit');
+
+    const {styles} = props;
+    const parsedProp = styles && parseStylesProp(styles, 'backgroundPosition') || {};
+
+    return (
+        <Item style={{alignItems: 'flex-start', marginTop: '10px', marginBottom: '10px'}}>
+            <ItemKey>background-position:</ItemKey>
+            <ItemValue>
+                <BackgroundPositionOutput isActive={true}>
+                    <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} parsedProp={parsedProp && parsedProp.posX} />
+                </BackgroundPositionOutput>
+                <BackgroundPositionOutput isActive={true}>
+                    <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} parsedProp={parsedProp && parsedProp.posY} />
+                </BackgroundPositionOutput>
+            </ItemValue>
+        </Item>
+    );
+}
+
+
+
 export default function StylesSection(props) {
 
     const {activeComponent} = props;
@@ -548,22 +737,6 @@ export default function StylesSection(props) {
 
 
 
-
-
-
-
-    
-    
-
-    
-
-
-
-
-
-   console.log( parseStylesProp(styles, 'fontFamily'));
-
-
     
     return (
         <Wrapper isActive={activeComponent}>
@@ -584,83 +757,40 @@ export default function StylesSection(props) {
             <StatesSection />
 
 
-            {/* Типографика */}
+
+            {/* Фон */}
             <Section>
-                <Header>Типографика</Header>
+                <Header>Фон</Header>
                 <Body>
                     <Item>
-                        <ItemKey>color:</ItemKey>
+                        <ItemKey>background-color:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'color')} />
+                            <InputText parsedProp={parseStylesProp(styles, 'backgroundColor')} />
                         </ItemValue>
                     </Item>
                     <Item>
-                        <ItemKey>font-size:</ItemKey>
+                        <ItemKey>background-image:</ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.fontSize.units} parsedProp={parseStylesProp(styles, 'fontSize')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>font-weight:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.fontWeight.options} parsedProp={parseStylesProp(styles, 'fontWeight')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>line-height:</ItemKey>
-                        <ItemValue>
-                            <InputNum units={stylesProps.lineHeight.units} parsedProp={parseStylesProp(styles, 'lineHeight')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-align:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.textAlign.options} parsedProp={parseStylesProp(styles, 'textAlign')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-transform:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.textTransform.options} parsedProp={parseStylesProp(styles, 'textTransform')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>text-decoration:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.textDecoration.options} parsedProp={parseStylesProp(styles, 'textDecoration')} />
+                            <InputText parsedProp={parseStylesProp(styles, 'backgroundImage')} />
                         </ItemValue>
                     </Item>
                     
 
-                    <TextShadow styles={styles} />
+                    <BackgroundSize styles={styles} />
+
+                    
+                    <BackgroundPosition styles={styles} />
 
                     <Item>
-                        <ItemKey>content:</ItemKey>
+                        <ItemKey>background-repeat:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'content')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>user-select:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.userSelect.options} parsedProp={parseStylesProp(styles, 'userSelect')} />
-                        </ItemValue>
-                    </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>font-family:</ItemKey>
-                        <ItemValue>
-                            <div style={{marginBottom: '5px'}}>
-                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily').primary}} />
-                            </div>
-                            <div style={{marginBottom: '5px'}}>
-                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily').secondary}} />
-                            </div>
-                            <Select options={stylesProps.fontFamily.serif.options} parsedProp={{value: parseStylesProp(styles, 'fontFamily').serif}} />
+                            <Select options={stylesProps.backgroundRepeat.options} parsedProp={parseStylesProp(styles, 'backgroundRepeat')} />
                         </ItemValue>
                     </Item>
                 </Body>
             </Section>
-            
+
+
 
             {/* Позиционирование */}
             <Section>
@@ -917,54 +1047,86 @@ export default function StylesSection(props) {
 
                 </Body>
             </Section>
-            
-            
-            {/* Фон */}
+
+
+            {/* Типографика */}
             <Section>
-                <Header>Фон</Header>
+                <Header>Типографика</Header>
                 <Body>
                     <Item>
-                        <ItemKey>background-color:</ItemKey>
+                        <ItemKey>color:</ItemKey>
                         <ItemValue>
-                            <InputText />
+                            <InputText parsedProp={parseStylesProp(styles, 'color')} />
                         </ItemValue>
                     </Item>
                     <Item>
-                        <ItemKey>background-image:</ItemKey>
+                        <ItemKey>font-size:</ItemKey>
                         <ItemValue>
-                            <InputText />
+                            <InputNum units={stylesProps.fontSize.units} parsedProp={parseStylesProp(styles, 'fontSize')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>font-weight:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.fontWeight.options} parsedProp={parseStylesProp(styles, 'fontWeight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>line-height:</ItemKey>
+                        <ItemValue>
+                            <InputNum units={stylesProps.lineHeight.units} parsedProp={parseStylesProp(styles, 'lineHeight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-align:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textAlign.options} parsedProp={parseStylesProp(styles, 'textAlign')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-transform:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textTransform.options} parsedProp={parseStylesProp(styles, 'textTransform')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>text-decoration:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.textDecoration.options} parsedProp={parseStylesProp(styles, 'textDecoration')} />
+                        </ItemValue>
+                    </Item>
+                    
+
+                    <TextShadow styles={styles} />
+
+                    <Item>
+                        <ItemKey>content:</ItemKey>
+                        <ItemValue>
+                            <InputText parsedProp={parseStylesProp(styles, 'content')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>user-select:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.userSelect.options} parsedProp={parseStylesProp(styles, 'userSelect')} />
                         </ItemValue>
                     </Item>
                     <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>background-size:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'auto auto'}, {id: 2, name: 'px px'}, {id: 3, name: '% %'}, {id: 4, name: 'contain'}, {id: 5, name: 'cover'}]} />
-                            <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                                <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
-                            </div>
-                            <div>
-                                <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
-                            </div>
-                        </ItemValue>
-                    </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>background-position:</ItemKey>
+                        <ItemKey>font-family:</ItemKey>
                         <ItemValue>
                             <div style={{marginBottom: '5px'}}>
-                                <InputNum unit="%" />
+                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').primary}} />
                             </div>
-                            <InputNum unit="%" />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>background-repeat:</ItemKey>
-                        <ItemValue>
-                            <Select options={[{id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}]} />
+                            <div style={{marginBottom: '5px'}}>
+                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').secondary}} />
+                            </div>
+                            <Select options={stylesProps.fontFamily.serif.options} parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').serif}} />
                         </ItemValue>
                     </Item>
                 </Body>
             </Section>
-
+            
+            
             {/* Эффекты */}
             <Section>
                 <Header>Эффекты</Header>

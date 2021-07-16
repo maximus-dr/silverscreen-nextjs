@@ -94,7 +94,7 @@
                     "order": "0",
                     "columnGap": "normal",
                     
-                    "backgroundColor": "#ffffff",
+                    
                     "borderRadius": "5px",
                     "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
 
@@ -137,7 +137,13 @@
                     "textShadow": "2px 3px 4px rgba(0, 0, 0, 0.4)",
                     "content": "blabla",
                     "userSelect": "none",
-                    "fontFamily": "Ubuntu, sans-serif"
+                    "fontFamily": "Ubuntu, sans-serif",
+
+                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
+                    "backgroundColor": "#ffffff",
+                    "backgroundSize": "120px 50%",
+                    "backgroundPosition": "50px 50px",
+                    "backgroundRepeat": "no-repeat"
                   },
 
                   "screen_mobile_landscape": {
@@ -154,7 +160,6 @@
                     "alignItems": "flex-end",
                     "alignSelf": "flex-start",
                     "order": "1",
-                    "backgroundColor": "rgba(0, 0, 0, 0.5)",
                     "columnGap": "5px",
 
                     "display": "block",
@@ -197,20 +202,38 @@
                     "textShadow": "none",
                     "content": "",
                     "userSelect": "auto",
-                    "fontFamily": "Roboto, Arial, sans-serif"
+                    "fontFamily": "Roboto, Arial, sans-serif",
+
+                    "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
+                    "backgroundColor": "rgba(0, 0, 0, 0.24)",
+                    "backgroundSize": "120px 50%",
+                    "backgroundPosition": "50% 50%",
+                    "backgroundRepeat": "no-repeat"
                   },
 
                   "screen_tablet": {
                     "width": "100vw",
                     "position": "relative",
-                    "columnGap": "20%"
+                    "columnGap": "20%",
+
+                    "backgroundImage": "none",
+                    "backgroundColor": "black",
+                    "backgroundSize": "20% auto",
+                    "backgroundPosition": "100% 20px",
+                    "backgroundRepeat": "repeat-y"
                   },
 
                   "screen_tablet_landscape": {
-                    "width": "auto"
+                    "width": "auto",
+
+                    "backgroundSize": "cover",
+                    "backgroundPosition": "50% 100%"
                   },
                   "screen_desktop": {
-                    "width": "1200px"
+                    "width": "1200px",
+
+                    "backgroundSize": "contain",
+                    "backgroundPosition": "20px 50%"
                   }
                 },
                 "body": {
