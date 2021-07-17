@@ -2,6 +2,8 @@ import { Provider } from '../../components';
 import DocumentTree from '../../components/admin/Dashboard/Panels/DocumentPanel/DocumentTree/DocumentTree';
 
 
+
+
 export function renderComponents(componentData) {
     const props = {
         componentData,
@@ -51,6 +53,25 @@ function getComponents(props) {
 }
 
 
+
+export function getComponentsList(componentsData, result = {}) {
+
+    result[componentsData.id] = {...componentsData};
+
+    if (componentsData.childrenList && componentsData.childrenList.length > 0) {
+        componentsData.childrenList.forEach(child => {
+            if (result[child.id]) {
+                console.log(`Дублирование id: ${child.id}`)
+            }
+
+            getComponentsList(child, result);
+        })
+    }
+
+    return result;
+}
+
+
 // отрисовка дерева документа в админке
 export function renderDocumentTree(nodeData) {
     const props = {
@@ -61,6 +82,7 @@ export function renderDocumentTree(nodeData) {
 
     return <GetTreeNodes {...props} />;
 }
+
 
 export function GetTreeNodes(props) {
 

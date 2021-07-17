@@ -50,8 +50,18 @@ export async function getServerSideProps() {
     });
 
     dispatch({
-        type: 'SET_DOCUMENT_COMPONENTS',
+        type: 'SET_DOCUMENT_COMPONENTS_DATA',
         componentsData: JSON.parse(componentsData)
+    });
+
+    dispatch({
+        type: 'SET_DOCUMENT_COMPONENTS',
+        components: {
+            someId: {
+                id: 'someId',
+                styles: 'someStyles'
+            }
+        } 
     });
 
     return { 

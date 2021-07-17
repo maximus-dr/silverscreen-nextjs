@@ -481,7 +481,7 @@
     
                 {
                   "typeName": "label",
-                  "id": "l10",
+                  "id": "l12",
                   "name": "Default label",
                   "value": "Default"
                 }
@@ -491,7 +491,7 @@
             {
               "typeName": "label",
               "heading": "h2",
-              "id": "l11",
+              "id": "lab14",
               "name": "Description",
               "value": "Description",
               "styles": {
@@ -1000,7 +1000,7 @@
                       "childrenList": [
                         {
                           "typeName": "icon",
-                          "id": "i2",
+                          "id": "ic2",
                           "name": "Link example 11 icon",
                           "styles": {
                             "position": "absolute",
@@ -1244,7 +1244,7 @@
                       "childrenList": [
                         {
                           "typeName": "icon",
-                          "id": "i1",
+                          "id": "i2",
                           "name": "Link example 16 icon",
                           "styles": {
                             "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
@@ -1268,7 +1268,7 @@
     
             {
               "typeName": "label",
-              "id": "l12",
+              "id": "lsfdf12",
               "name": "Button",
               "heading": "h2",
               "value": "Button",
@@ -1702,7 +1702,7 @@
     
             {
               "typeName": "section",
-              "id": "s17",
+              "id": "sect17",
               "name": "Checkbox section",
               "styles": {
                 "wrapper": {
