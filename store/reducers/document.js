@@ -4,7 +4,7 @@ export const documentReducer = (state = {}, action) => {
         case 'SET_DOCUMENT_COMPONENTS':
             return {
                 ...state,
-                components: action.components
+                componentsData: action.componentsData
             }
         case 'SET_ACTIVE_COMPONENT':
             return {

@@ -7,8 +7,8 @@ import Panel from '../Panel/Panel';
 
 export default function DocumentPanel(props) {
 
-    const components = useSelector(state => state.document.components);
-    const document = renderDocumentTree(components);
+    const componentsData = useSelector(state => state.document.componentsData);
+    const document = renderDocumentTree(componentsData);
 
     return (
         <>

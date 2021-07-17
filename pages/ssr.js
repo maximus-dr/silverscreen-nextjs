@@ -12,7 +12,7 @@ import Head from 'next/head';
 
 export async function getServerSideProps() {
     const dbPath = path.join(process.cwd(), 'db/db.json');
-    const components = fs.readFileSync(dbPath, 'utf8');
+    const componentsData = fs.readFileSync(dbPath, 'utf8');
     
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
@@ -29,7 +29,7 @@ export async function getServerSideProps() {
     return { 
         props: { 
             initialReduxState: reduxStore.getState(),
-            components: JSON.parse(components)
+            components: JSON.parse(componentsData)
         } 
     }
 }

@@ -35,7 +35,7 @@ import { initializeStore } from "../../store/store";
 
 export async function getServerSideProps() {
     const dbPath = path.join(process.cwd(), 'db/preview.json');
-    const components = fs.readFileSync(dbPath, 'utf8');
+    const componentsData = fs.readFileSync(dbPath, 'utf8');
     
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
@@ -51,13 +51,13 @@ export async function getServerSideProps() {
 
     dispatch({
         type: 'SET_DOCUMENT_COMPONENTS',
-        components: JSON.parse(components)
+        componentsData: JSON.parse(componentsData)
     });
 
     return { 
         props: { 
             initialReduxState: reduxStore.getState(),
-            components: JSON.parse(components)
+            components: JSON.parse(componentsData)
         } 
     }
 }

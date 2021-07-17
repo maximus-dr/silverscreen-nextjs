@@ -7,7 +7,7 @@ import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './Workspa
 
 export default function Workspace() {
 
-    const componentsData = useSelector(state => state.document.components);
+    const componentsData = useSelector(state => state.document.componentsData);
     const components = renderComponents(componentsData);
 
     const resolution = useSelector(state => state.styles.resolution);
