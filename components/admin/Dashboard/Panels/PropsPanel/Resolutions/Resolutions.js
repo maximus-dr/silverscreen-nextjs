@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { screenItems } from './Items';
 import { ResolutionsIcon, ResolutionsItem, ResolutionsBody, ResolutionsValue } from './ResolutionsStyled'
-import { setResolution } from '../../../../../../store/actions/styles';
+
 import { useDispatch, useSelector } from 'react-redux';
+import { setResolution } from '../../../../../../store/actions/document';
 
 
 const items = screenItems;
@@ -10,10 +11,10 @@ const items = screenItems;
 
 export default function Resolutions(props) {
 
-    const currentResolution = useSelector(state => state.styles.resolution);
+    const currentResolution = useSelector(state => state.document.resolution);
     const dispatch = useDispatch();
     const {activeComponent} = props;
-    const resolution = useSelector(state => state.styles.resolution);
+    const resolution = useSelector(state => state.document.resolution);
 
     useEffect(() => {
         if (!resolution && activeComponent) {

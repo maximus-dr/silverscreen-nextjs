@@ -712,7 +712,7 @@ export default function StylesSection(props) {
 
     const componentStyles = useSelector(state => state.document && state.document.activeComponent && state.document.activeComponent.styles || null);
     const componentElement = useSelector(state => state.styles && state.styles.element || null);
-    const resolution = useSelector(state => state.styles && state.styles.resolution || null);
+    const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
 
     useEffect(() => {
         if (!componentElement && componentStyles && componentStyles[resolution]) {

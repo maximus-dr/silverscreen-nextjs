@@ -1,4 +1,4 @@
-import { SET_RESOLUTION, SET_STYLES_PSEUDO_CLASS, SET_STYLES, CLEAR_STYLES } from "../actions/styles";
+import { SET_STYLES_PSEUDO_CLASS, SET_STYLES, CLEAR_STYLES } from "../actions/styles";
 
 const initialState = {
     resolution: 'screen_mobile',
@@ -7,11 +7,6 @@ const initialState = {
 
 export const stylesReducer = (state = {}, action) => {
     switch(action.type) {
-        case SET_RESOLUTION:
-            return {
-                ...state,
-                resolution: action.resolution
-            }
         
         case SET_STYLES_PSEUDO_CLASS:
             return {
