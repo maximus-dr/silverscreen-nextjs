@@ -7,10 +7,6 @@ import { StylesProvider } from '../../styles';
 
 export const SectionWrapper = styled.div`
     min-width: 100px;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
     overflow: hidden;
     position: relative;
 
@@ -85,7 +81,6 @@ export const SectionBody = styled.div`
     align-items: flex-start;
 
     width: 100%;
-    min-height: 30px;
 
     padding-top: 10px;
     padding-right: 10px;

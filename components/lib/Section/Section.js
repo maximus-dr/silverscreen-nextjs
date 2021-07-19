@@ -21,8 +21,8 @@ export default function Section(props) {
             onMouseEnter={props.onMouseEnter} 
             onClick={getHandler(props, 'onClick')}
         >
-            <SectionBackground {...props} componentData={props.componentData}>
-                <SectionBody {...props} componentData={props.componentData}>
+            <SectionBackground {...props} componentData={componentData}>
+                <SectionBody {...props} componentData={componentData}>
                     {props.children}
                 </SectionBody>
             </SectionBackground>

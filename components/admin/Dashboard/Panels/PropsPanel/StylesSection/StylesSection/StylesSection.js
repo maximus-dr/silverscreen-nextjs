@@ -136,47 +136,47 @@ const stylesProps = {
 
     marginTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     marginRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     marginBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     marginLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     paddingTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     paddingRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     paddingBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     paddingLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
     },
 
     borderRadius: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}]
     },
 
     border: {

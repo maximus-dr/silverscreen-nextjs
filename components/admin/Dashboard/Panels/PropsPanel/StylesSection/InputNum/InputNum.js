@@ -8,15 +8,17 @@ import { InputNumField, InputNumUnit, InputNumWrapper } from './InputNumStyled'
 
 export default function InputNum(props) {
 
-    const {unit, units, min, max, step, parsedProp, currentElement} = props;
+    const {unit, units, min, max, step, parsedProp} = props;
 
     const fullWidth = !units && !unit;
     const middleWidth = !units && unit;
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
+    const currentElement = useSelector(state => state.document.element);
     const dispatch = useDispatch();
 
     const [unitValue, setUnitValue] = useState(parsedProp && parsedProp.unit || units && units[0].name);
+    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
         if (parsedProp && parsedProp.unit) {
@@ -27,7 +29,17 @@ export default function InputNum(props) {
             setUnitValue(units[0].name)
         }
     }, [parsedProp, units]);
-    
+
+    useEffect(() => {
+        if (unitValue === 'auto') {
+            setDisabled(true);
+        }
+
+        if (unitValue !== 'auto') {
+            setDisabled(false);
+        }
+    }, [unitValue]);
+
 
     return (
         <InputNumWrapper>
@@ -39,6 +51,7 @@ export default function InputNum(props) {
                 fullWidth={fullWidth} 
                 middleWidth={middleWidth} 
                 value={inputValue}
+                disabled={disabled}
                 onChange={(e) => {
                     dispatch(setProp({
                         name: parsedProp.name,
@@ -53,7 +66,8 @@ export default function InputNum(props) {
                 {unit}
                 {units && 
                 <select style={{cursor: 'pointer', width: '50px'}} value={unitValue} onChange={(e) => {
-                    if (e.currentTarget.value !== 'auto') {
+
+                    if (e.currentTarget.value !== 'auto' && inputValue) {
                         dispatch(setProp({
                         name: parsedProp.name,
                         hasElements: true,
