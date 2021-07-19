@@ -9,7 +9,6 @@ import StatesSection from '../../PseudoClasses/PseudoClasses'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearComponentElement, clearStyles, setStyles } from '../../../../../../../store/actions/styles'
 import styled, {css} from 'styled-components'
 
 
@@ -284,7 +283,7 @@ const stylesProps = {
 
 function parseStylesProp(styles, propName) {
 
-    if (!styles) return;
+    if (!styles) return {};
     
     const propData = stylesProps[propName];
     const propValue = styles[propName];
@@ -708,36 +707,17 @@ export default function StylesSection(props) {
     const {activeComponent} = props;
     const elements = activeComponent ? getElements(activeComponent) : null;
     const [activeElement, setActiveElement] = useState(() => elements && elements[0].name || null);
-    const dispatch = useDispatch();
 
-    const componentStyles = useSelector(state => state.document && state.document.activeComponent && state.document.activeComponent.styles || null);
-    const componentElement = useSelector(state => state.styles && state.styles.element || null);
+
+    const componentElement = useSelector(state => state.document.element && state.document.element || null);
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
 
-    useEffect(() => {
-        if (!componentElement && componentStyles && componentStyles[resolution]) {
-            dispatch(setStyles(componentStyles[resolution]));
-        }
-
-        else if (componentElement && componentStyles && componentStyles[componentElement] && componentStyles[componentElement][resolution]) {
-            dispatch(setStyles(componentStyles[componentElement][resolution]));
-        }
-
-        else if (componentElement && componentStyles && componentStyles[componentElement] && !componentStyles[componentElement][resolution]) {
-            dispatch(setStyles(null));
-        }
-
-        else if (componentElement && componentStyles && !componentStyles[componentElement]) {
-            dispatch(setStyles(null));
-        }
-
-    }, [dispatch, componentStyles, componentElement, resolution]);
-
-    const styles = useSelector(state => state.styles.styles);
 
 
+    const styles = activeComponent && activeComponent.styles && componentElement && resolution 
+        ? activeComponent.styles[componentElement][resolution] 
+        : {};
 
-    
     return (
         <Wrapper isActive={activeComponent}>
 
