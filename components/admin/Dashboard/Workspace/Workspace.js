@@ -11,9 +11,6 @@ export default function Workspace() {
     const componentsData = useSelector(state => state.document.componentsData);
     const components = renderComponents(componentsData);
 
-
-    console.log(getComponentsList(componentsData));
-
     const resolution = useSelector(state => state.styles.resolution);
     const pageWrapperWidth = resolution ? resolution + 100 + 'px' : '1300px';
     const pageWidth = resolution ? resolution + 'px' : '1200px';

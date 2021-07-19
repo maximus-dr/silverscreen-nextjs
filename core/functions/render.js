@@ -56,7 +56,8 @@ function getComponents(props) {
 
 export function getComponentsList(componentsData, result = {}) {
 
-    result[componentsData.id] = {...componentsData};
+    const noChildrenList = ({childrenList, ...rest}) => rest;
+    result[componentsData.id] = noChildrenList(componentsData);
 
     if (componentsData.childrenList && componentsData.childrenList.length > 0) {
         componentsData.childrenList.forEach(child => {

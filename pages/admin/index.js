@@ -10,6 +10,7 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
+import { getComponentsList } from "../../core/functions/render";
 
 
 
@@ -35,7 +36,8 @@ import { initializeStore } from "../../store/store";
 
 export async function getServerSideProps() {
     const dbPath = path.join(process.cwd(), 'db/preview.json');
-    const componentsData = fs.readFileSync(dbPath, 'utf8');
+    const data = fs.readFileSync(dbPath, 'utf8');
+    const componentsData = JSON.parse(data);
     
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
@@ -51,23 +53,18 @@ export async function getServerSideProps() {
 
     dispatch({
         type: 'SET_DOCUMENT_COMPONENTS_DATA',
-        componentsData: JSON.parse(componentsData)
+        componentsData: componentsData
     });
 
     dispatch({
         type: 'SET_DOCUMENT_COMPONENTS',
-        components: {
-            someId: {
-                id: 'someId',
-                styles: 'someStyles'
-            }
-        } 
+        components: getComponentsList(componentsData)
     });
 
     return { 
         props: { 
             initialReduxState: reduxStore.getState(),
-            components: JSON.parse(componentsData)
+            components: componentsData
         } 
     }
 }
