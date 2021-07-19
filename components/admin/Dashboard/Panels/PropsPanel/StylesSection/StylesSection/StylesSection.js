@@ -288,7 +288,9 @@ function parseStylesProp(styles, propName) {
     const propData = stylesProps[propName];
     const propValue = styles[propName];
 
-    const result = {}
+    const result = {
+        name: propName
+    }
     
     if (!propData) {
         console.log('Такое свойство не найдено');
@@ -706,6 +708,7 @@ export default function StylesSection(props) {
 
     const {activeComponent} = props;
     const elements = activeComponent ? getElements(activeComponent) : null;
+    const currentElement = useSelector(state => state.document.element);
     const [activeElement, setActiveElement] = useState(() => elements && elements[0].name || null);
 
 
@@ -713,10 +716,16 @@ export default function StylesSection(props) {
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
 
 
+    let styles = {};
 
-    const styles = activeComponent && activeComponent.styles && componentElement && resolution 
-        ? activeComponent.styles[componentElement][resolution] 
-        : {};
+    if (activeComponent && activeComponent.styles && !elements) {
+        styles = activeComponent.styles[resolution]
+    }
+
+    if (activeComponent && activeComponent.styles && elements) {
+        styles = activeComponent.styles[componentElement] ? activeComponent.styles[componentElement][resolution] : {};
+    }
+
 
     return (
         <Wrapper isActive={activeComponent}>
@@ -736,39 +745,118 @@ export default function StylesSection(props) {
             {/* Выбор состояния - :hover, :active, :focus, :checked */}
             <StatesSection />
 
-
-
-            {/* Фон */}
+            {/* Размеры */}
             <Section>
-                <Header>Фон</Header>
+                <Header>
+                    Размеры
+                </Header>
                 <Body>
                     <Item>
-                        <ItemKey>background-color:</ItemKey>
+                        <ItemKey>width:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'backgroundColor')} />
+                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} currentElement={currentElement} />
                         </ItemValue>
                     </Item>
                     <Item>
-                        <ItemKey>background-image:</ItemKey>
+                        <ItemKey>height:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'backgroundImage')} />
+                            <InputNum  units={stylesProps.height.units} parsedProp={parseStylesProp(styles, 'height')} />
                         </ItemValue>
                     </Item>
-                    
-
-                    <BackgroundSize styles={styles} />
-
-                    
-                    <BackgroundPosition styles={styles} />
-
                     <Item>
-                        <ItemKey>background-repeat:</ItemKey>
+                        <ItemKey>min-width:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.backgroundRepeat.options} parsedProp={parseStylesProp(styles, 'backgroundRepeat')} />
+                            <InputNum  units={stylesProps.minWidth.units} parsedProp={parseStylesProp(styles, 'minWidth')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>max-width:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.maxWidth.units} parsedProp={parseStylesProp(styles, 'maxWidth')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>min-height:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.minHeight.units} parsedProp={parseStylesProp(styles, 'minHeight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>max-height:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.maxHeight.units} parsedProp={parseStylesProp(styles, 'maxHeight')} />
                         </ItemValue>
                     </Item>
                 </Body>
             </Section>
+            
+            {/* Внешние отступы */}
+            <Section>
+                <Header>
+                    Внешние отступы
+                </Header>
+                <Body>
+                    <Item>
+                        <ItemKey>margin-top:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.marginTop.units} parsedProp={parseStylesProp(styles, 'marginTop')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>margin-right:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.marginRight.units} parsedProp={parseStylesProp(styles, 'marginRight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>margin-bottom:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.marginBottom.units} parsedProp={parseStylesProp(styles, 'marginBottom')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>margin-left:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.marginLeft.units} parsedProp={parseStylesProp(styles, 'marginLeft')} />
+                        </ItemValue>
+                    </Item>
+                </Body>
+            </Section>
+            
+            {/* Внутренние отступы */}
+            <Section>
+                <Header>
+                    Внутренние отступы
+                </Header>
+                <Body>
+                    <Item>
+                        <ItemKey>padding-top:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.paddingTop.units} parsedProp={parseStylesProp(styles, 'paddingTop')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>padding-right:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.paddingRight.units} parsedProp={parseStylesProp(styles, 'paddingRight')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>padding-bottom:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.paddingBottom.units} parsedProp={parseStylesProp(styles, 'paddingBottom')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>padding-left:</ItemKey>
+                        <ItemValue>
+                            <InputNum  units={stylesProps.paddingLeft.units} parsedProp={parseStylesProp(styles, 'paddingLeft')} />
+                        </ItemValue>
+                    </Item>
+                </Body>
+            </Section>
+            
+
 
 
 
@@ -899,117 +987,7 @@ export default function StylesSection(props) {
                 </Body>
             </Section>
             
-            {/* Размеры */}
-            <Section>
-                <Header>
-                    Размеры
-                </Header>
-                <Body>
-                    <Item>
-                        <ItemKey>width:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>height:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.height.units} parsedProp={parseStylesProp(styles, 'height')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>min-width:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.minWidth.units} parsedProp={parseStylesProp(styles, 'minWidth')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>max-width:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.maxWidth.units} parsedProp={parseStylesProp(styles, 'maxWidth')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>min-height:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.minHeight.units} parsedProp={parseStylesProp(styles, 'minHeight')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>max-height:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.maxHeight.units} parsedProp={parseStylesProp(styles, 'maxHeight')} />
-                        </ItemValue>
-                    </Item>
-                </Body>
-            </Section>
-            
-            {/* Внешние отступы */}
-            <Section>
-                <Header>
-                    Внешние отступы
-                </Header>
-                <Body>
-                    <Item>
-                        <ItemKey>margin-top:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.marginTop.units} parsedProp={parseStylesProp(styles, 'marginTop')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>margin-right:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.marginRight.units} parsedProp={parseStylesProp(styles, 'marginRight')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>margin-bottom:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.marginBottom.units} parsedProp={parseStylesProp(styles, 'marginBottom')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>margin-left:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.marginLeft.units} parsedProp={parseStylesProp(styles, 'marginLeft')} />
-                        </ItemValue>
-                    </Item>
-                </Body>
-            </Section>
-            
-            {/* Внутренние отступы */}
-            <Section>
-                <Header>
-                    Внутренние отступы
-                </Header>
-                <Body>
-                    <Item>
-                        <ItemKey>padding-top:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.paddingTop.units} parsedProp={parseStylesProp(styles, 'paddingTop')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>padding-right:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.paddingRight.units} parsedProp={parseStylesProp(styles, 'paddingRight')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>padding-bottom:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.paddingBottom.units} parsedProp={parseStylesProp(styles, 'paddingBottom')} />
-                        </ItemValue>
-                    </Item>
-                    <Item>
-                        <ItemKey>padding-left:</ItemKey>
-                        <ItemValue>
-                            <InputNum  units={stylesProps.paddingLeft.units} parsedProp={parseStylesProp(styles, 'paddingLeft')} />
-                        </ItemValue>
-                    </Item>
-                </Body>
-            </Section>
-            
+
             {/* Границы */}
             <Section>
                 <Header>
@@ -1106,6 +1084,39 @@ export default function StylesSection(props) {
                 </Body>
             </Section>
             
+
+            {/* Фон */}
+            <Section>
+                <Header>Фон</Header>
+                <Body>
+                    <Item>
+                        <ItemKey>background-color:</ItemKey>
+                        <ItemValue>
+                            <InputText parsedProp={parseStylesProp(styles, 'backgroundColor')} />
+                        </ItemValue>
+                    </Item>
+                    <Item>
+                        <ItemKey>background-image:</ItemKey>
+                        <ItemValue>
+                            <InputText parsedProp={parseStylesProp(styles, 'backgroundImage')} />
+                        </ItemValue>
+                    </Item>
+                    
+
+                    <BackgroundSize styles={styles} />
+
+                    
+                    <BackgroundPosition styles={styles} />
+
+                    <Item>
+                        <ItemKey>background-repeat:</ItemKey>
+                        <ItemValue>
+                            <Select options={stylesProps.backgroundRepeat.options} parsedProp={parseStylesProp(styles, 'backgroundRepeat')} />
+                        </ItemValue>
+                    </Item>
+                </Body>
+            </Section>
+
             
             {/* Эффекты */}
             <Section>

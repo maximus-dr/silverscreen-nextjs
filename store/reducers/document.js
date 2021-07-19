@@ -1,4 +1,4 @@
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP } from "../actions/document"
 
 
 export const documentReducer = (state = {}, action) => {
@@ -38,6 +38,25 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 resolution: action.resolution
+            }
+        case SET_PROP:
+            if (action.prop.hasElements) {
+                return {
+                    ...state,
+                    activeComponent: {
+                        ...state.activeComponent,
+                        styles: {
+                            ...state.activeComponent.styles,
+                            [action.prop.element]:  {
+                                ...state.activeComponent.styles[action.prop.element],
+                                [action.prop.resolution]: {
+                                    ...state.activeComponent.styles[action.prop.element][action.prop.resolution],
+                                    [action.prop.name]: action.prop.value
+                                }
+                            }
+                        }
+                    }
+                }
             }
         default:
             return state

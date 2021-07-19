@@ -230,7 +230,7 @@
                     "backgroundPosition": "50% 100%"
                   },
                   "screen_desktop": {
-                    "width": "1200px",
+                    "width": "120px",
 
                     "backgroundSize": "contain",
                     "backgroundPosition": "20px 50%"
