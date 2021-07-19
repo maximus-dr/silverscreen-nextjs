@@ -1,4 +1,4 @@
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_STYLES_ELEMENT } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT } from "../actions/document"
 
 
 export const documentReducer = (state = {}, action) => {
@@ -23,7 +23,7 @@ export const documentReducer = (state = {}, action) => {
                 ...state,
                 activeComponent: null
             }
-        case SET_STYLES_ELEMENT:
+        case SET_COMPONENT_ELEMENT:
             return {
                 ...state,
                 element: action.element

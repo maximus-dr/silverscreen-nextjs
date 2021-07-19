@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setStylesElement } from '../../../../../../../../store/actions/document';
+import { setComponentElement } from '../../../../../../../../store/actions/document';
 import { ElementItem, ElementsWrapper } from './ElementsStyled'
 
 
@@ -16,11 +16,11 @@ export default function Elements(props) {
 
     useEffect(() => {
         if (elements && activeComponent) {
-            dispatch(setStylesElement(elements[0].name));
+            dispatch(setComponentElement(elements[0].name));
         }
 
         if (!elements && activeComponent) {
-            dispatch(setStylesElement(null));
+            dispatch(setComponentElement(null));
         }
     }, [dispatch, elements, activeComponent]);
 
@@ -30,7 +30,7 @@ export default function Elements(props) {
             <ElementItem 
                 key={item.name} 
                 isActive={item.name === currentElement} 
-                onClick={() => dispatch(setStylesElement(item.name))}
+                onClick={() => dispatch(setComponentElement(item.name))}
             >
                 {item.name}
             </ElementItem>
