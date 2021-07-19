@@ -745,7 +745,7 @@ export default function StylesSection(props) {
                 activeComponent={activeComponent}
                 activeElement={activeElement}
                 setActiveElement={setActiveElement}
-                elements={elements}  
+                elements={elements}
             />
 
             {/* Выбор разрешения */}

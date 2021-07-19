@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { clearComponentElement, setStyles, setStylesElement } from '../../../../../../../../store/actions/styles';
+import { setStylesElement } from '../../../../../../../../store/actions/document';
+import { clearComponentElement, setStyles } from '../../../../../../../../store/actions/styles';
 import { ElementItem, ElementsWrapper } from './ElementsStyled'
 
 
@@ -9,7 +10,7 @@ export default function Elements(props) {
 
     const {activeComponent, elements} = props;
     const dispatch = useDispatch();
-    const currentElement = useSelector(state => state.styles.element);
+    const currentElement = useSelector(state => state.document.element);
     const resolution = useSelector(state => state.styles.resolution);
     const styles = activeComponent && activeComponent.styles || null;
 

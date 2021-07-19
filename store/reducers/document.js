@@ -1,3 +1,5 @@
+import { CLEAR_COMPONENT_ELEMENT, SET_STYLES_ELEMENT } from "../actions/document"
+
 
 export const documentReducer = (state = {}, action) => {
     switch(action.type) {
@@ -20,6 +22,17 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 activeComponent: null
+            }
+        case SET_STYLES_ELEMENT:
+            return {
+                ...state,
+                element: action.element
+                
+            }
+        case CLEAR_COMPONENT_ELEMENT:
+            return {
+                ...state,
+                element: null
             }
         default:
             return state
