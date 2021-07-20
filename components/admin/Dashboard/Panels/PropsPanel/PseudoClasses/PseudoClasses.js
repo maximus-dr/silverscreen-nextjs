@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { PseudoClassesItem, PseudoClassesBody } from './PseudoClassesStyled'
 
 
-export default function PseudoClasses() {
+export default function PseudoClasses(props) {
 
-    const [activeItem, setActiveItem] = useState(null);
+    const [activeItem, setActiveItem] = useState('state_hover');
+    const {isActive} = props;
 
     const onItemClick = (e) => {
         if (e.target.id === activeItem) {
@@ -16,11 +17,11 @@ export default function PseudoClasses() {
 
     return (
         <>
-            <PseudoClassesBody>
-                <PseudoClassesItem id="state_hover" onClick={onItemClick} activeItem={activeItem}>:hover</PseudoClassesItem>
-                <PseudoClassesItem id="state_active" onClick={onItemClick} activeItem={activeItem}>:active</PseudoClassesItem>
-                <PseudoClassesItem id="state_focus" onClick={onItemClick} activeItem={activeItem}>:focus</PseudoClassesItem>
-                <PseudoClassesItem id="state_checked" onClick={onItemClick} activeItem={activeItem}>:checked</PseudoClassesItem>
+            <PseudoClassesBody isActive={isActive}>
+                <PseudoClassesItem id="state_hover" onClick={onItemClick} isActive={activeItem === 'state_hover' && isActive}>:hover</PseudoClassesItem>
+                <PseudoClassesItem id="state_active" onClick={onItemClick} isActive={activeItem === 'state_active' && isActive}>:active</PseudoClassesItem>
+                <PseudoClassesItem id="state_focus" onClick={onItemClick} isActive={activeItem === 'state_focus' && isActive}>:focus</PseudoClassesItem>
+                <PseudoClassesItem id="state_checked" onClick={onItemClick} isActive={activeItem === 'state_checked' && isActive}>:checked</PseudoClassesItem>
             </PseudoClassesBody>
         </>
     )

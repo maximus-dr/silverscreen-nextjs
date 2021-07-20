@@ -16,12 +16,12 @@
           "id": "s1",
           "name": "Main Wrapper",
           "styles": {
-            "wrapper": {
               "screen_mobile": {
                 "width": "auto",
                 "marginLeft": "auto",
                 "marginRight": "auto",
-                "paddingTop": "50px"
+                "paddingTop": "50px",
+                "overflow": "hidden"
               },
               "screen_mobile_landscape": {
                 "width": "480px"
@@ -35,35 +35,13 @@
               "screen_desktop": {
                 "width": "1200px"
               }
-            },
-            "background": {
-              "screen_mobile": {},
-              "screen_mobile_landscape": {},
-              "screen_tablet": {},
-              "screen_tablet_landscape": {},
-              "screen_desktop": {}
-    
-            },
-            "body": {
-              "screen_mobile": {
-                "marginLeft": "auto",
-                "marginRight": "auto",
-                "minHeight": "100vh"
-              },
-              "screen_mobile_landscape": {},
-              "screen_tablet": {},
-              "screen_tablet_landscape": {},
-              "screen_desktop": {
-
-              }
-            }
           },
           "childrenList": [
     
             {
               "typeName": "label",
               "id": "l1",
-              "name": "Section",
+              "name": "Title: Section",
               "heading": "h2",
               "value": "Section",
               "styles": {
@@ -84,250 +62,80 @@
     
             {
               "typeName": "section",
-              "id": "s2",
-              "name": "Section example 1",
+              "id": "s3",
+              "name": "Section 1: Gradient",
               "styles": {
-
-                "wrapper": {
-                  "screen_mobile": {
-
-                    "position": "relative",
-                    "zIndex": "1",
-                    "top": "0",
-                    "right": "0",
-                    "bottom": "5px",
-                    "left": "0",
-                    "flexDirection": "row",
-                    "justifyContent": "flex-start",
-                    "flexWrap": "nowrap",
-                    "alignItems": "center",
-                    "alignSelf": "auto",
-                    "order": "0",
-                    "columnGap": "normal",
-                    
-                    
-                    "borderRadius": "5px",
-                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
-
-                    "display": "flex",
-                    "overflow": "visible",
-                    "overflowX": "auto",
-                    "overflowY": "scroll",
-
-                    "width": "50px",
-                    "height": "100px",
-                    "minWidth": "20%",
-                    "maxWidth": "100vw",
-                    "minHeight": "50px",
-                    "maxHeight": "100vh",
-
-                    "marginTop": "5px",
-                    "marginRight": "15px",
-                    "marginBottom": "5px",
-                    "marginLeft": "15px",
-
-                    "paddingTop": "25px",
-                    "paddingRight": "50px",
-                    "paddingBottom": "25px",
-                    "paddingLeft": "50px",
-
-                    "border": "1px solid #1976d2",
-                    "borderTop": "2px dashed red",
-                    "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
-                    "borderBottom": "none",
-                    "borderLeft": "3px solid transparent",
-                    "outline": "2px solid black",
-
-                    "color": "rgba(0, 0, 0, 0.26)",
-                    "fontSize": "14px",
-                    "fontWeight": "bold",
-                    "lineHeight": "18em",
-                    "textAlign": "center",
-                    "textTransform": "uppercase",
-                    "textDecoration": "underline",
-                    "textShadow": "2px 3px 4px rgba(0, 0, 0, 0.4)",
-                    "content": "blabla",
-                    "userSelect": "none",
-                    "fontFamily": "Ubuntu, sans-serif",
-
-                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/cloud-computing.svg?alt=media&token=8d1d69ac-3a61-4d6d-88e1-37b291ad893c')",
-                    "backgroundColor": "#ffffff",
-                    "backgroundSize": "120px 50%",
-                    "backgroundPosition": "50px 50px",
-                    "backgroundRepeat": "no-repeat"
-                  },
-
-                  "screen_mobile_landscape": {
-                    "position": "absolute",
-                    "zIndex": "2",
-                    "top": "20px",
-                    "right": "20px",
-                    "bottom": "20px",
-                    "left": "20px",
-
-                    "flexDirection": "row",
-                    "justifyContent": "space-around",
-                    "flexWrap": "wrap",
-                    "alignItems": "flex-end",
-                    "alignSelf": "flex-start",
-                    "order": "1",
-                    "columnGap": "5px",
-
-                    "display": "block",
-                    "overflow": "hidden",
-                    "overflowX": "scroll",
-                    "overflowY": "visible",
-
-                    "width": "100%",
-                    "height": "50px",
-                    "minWidth": "14%",
-                    "maxWidth": "50vw",
-                    "minHeight": "100px",
-                    "maxHeight": "60vh",
-
-                    "marginTop": "25px",
-                    "marginRight": "50px",
-                    "marginBottom": "25px",
-                    "marginLeft": "50px",
-
-                    "paddingTop": "5px",
-                    "paddingRight": "15px",
-                    "paddingBottom": "5px",
-                    "paddingLeft": "15px",
-
-                    "borderRadius": "2%",
-                    "border": "1px solid #1976d2",
-                    "borderTop": "2px dashed red",
-                    "borderRight": "1px dotted rgba(0, 0, 0, 0.5)",
-                    "borderBottom": "none",
-                    "borderLeft": "3px solid transparent",
-                    "outline": "2px solid black",
-
-                    "color": "#0000000",
-                    "fontSize": "12em",
-                    "fontWeight": "medium",
-                    "lineHeight": "1.6",
-                    "textAlign": "left",
-                    "textTransform": "none",
-                    "textDecoration": "none",
-                    "textShadow": "none",
-                    "content": "",
-                    "userSelect": "auto",
-                    "fontFamily": "Roboto, Arial, sans-serif",
-
-                    "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
-                    "backgroundColor": "rgba(0, 0, 0, 0.24)",
-                    "backgroundSize": "120px 50%",
-                    "backgroundPosition": "50% 50%",
-                    "backgroundRepeat": "no-repeat"
-                  },
-
-                  "screen_tablet": {
-                    "width": "100vw",
-                    "position": "relative",
-                    "columnGap": "20%",
-
-                    "backgroundImage": "none",
-                    "backgroundColor": "black",
-                    "backgroundSize": "20% auto",
-                    "backgroundPosition": "100% 20px",
-                    "backgroundRepeat": "repeat-y"
-                  },
-
-                  "screen_tablet_landscape": {
-                    "width": "auto",
-
-                    "backgroundSize": "cover",
-                    "backgroundPosition": "50% 100%"
-                  },
-                  "screen_desktop": {
-                    "width": "120px",
-
-                    "backgroundSize": "contain",
-                    "backgroundPosition": "20px 50%"
-                  }
+                "screen_mobile": {
+                  "position": "relative",
+                  "width": "500px",
+                  "minHeight": "50px",
+                  "overflow": "hidden",
+                  "backgroundColor": "#ffffff",
+                  "marginBottom": "30px",
+                  "borderRadius": "5px",
+                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+                  "transitions": ["all 200ms linear"]
                 },
-                "body": {
-                  "screen_mobile": {
-                    "minHeight": "50px"
-                  }
-                }
+                "screen_mobile_landscape": {},
+                "screen_tablet": {},
+                "screen_tablet_landscape": {},
+                "screen_desktop": {}
               },
               "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "sect112",
+                  "name": "Section 1 Background",
+                  "styles": {
+                    "screen_mobile": {
+                      
+                    },
+                    "screen_mobile_landscape": {},
+                    "screen_tablet": {},
+                    "screen_tablet_landscape": {},
+                    "screen_desktop": {
+                      "position": "absolute",
+                      "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
+                      "width": "100%",
+                      "height": "100%",
+                      "transitions": ["all 200ms linear"]
+                    }
+                  }
+                }
               ]
             },
     
             {
               "typeName": "section",
-              "id": "s3",
-              "name": "Section example 2",
-              "styles": {
-                "wrapper": {
-                  "screen_mobile": {
-                    "transitions": ["all 200ms linear"]
-                  },
-                  "screen_mobile_landscape": {},
-                  "screen_tablet": {},
-                  "screen_tablet_landscape": {},
-                  "screen_desktop": {
-                    "width": "500px",
-                    "backgroundColor": "#ffffff",
-                    "marginBottom": "30px",
-                    "borderRadius": "5px",
-                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
-                    "transitions": ["all 200ms linear"]
-                  }
-                },
-                "background": {
-                  "screen_mobile": {
-                    "transitions": ["all 200ms linear"]
-                  },
-                  "screen_mobile_landscape": {},
-                  "screen_tablet": {},
-                  "screen_tablet_landscape": {},
-                  "screen_desktop": {
-                    "backgroundImage": "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)"
-                  }
-                },
-                "body": {
-                  "screen_mobile": {
-                    "transitions": ["all 200ms linear"]
-                  },
-                  "screen_mobile_landscape": {},
-                  "screen_tablet": {},
-                  "screen_tablet_landscape": {},
-                  "screen_desktop": {
-                    "minHeight": "50px"
-                  }
-                }
-              }
-            },
-    
-            {
-              "typeName": "section",
               "id": "s4",
-              "name": "Section example 3",
+              "name": "Section 2: Nature",
               "styles": {
-                "wrapper": {
-                  "screen_mobile": {
-                    "width": "500px",
-                    "backgroundColor": "#ffffff",
-                    "marginBottom": "30px",
-                    "borderRadius": "5px",
-                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
-                  }
-                },
-                "background": {
-                  "screen_mobile": {
-                    "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
-                  }
-                },
-                "body": {
-                  "screen_mobile": {
-                    "minHeight": "50px"
+                "screen_mobile": {
+                  "width": "500px",
+                  "minHeight": "50px",
+                  "position": "relative",
+                  "backgroundColor": "#ffffff",
+                  "marginBottom": "30px",
+                  "borderRadius": "5px",
+                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                }
+              },
+              "childrenList": [
+                {
+                  "typeName": "section",
+                  "id": "sect113",
+                  "name": "Section 2 Background",
+                  "styles": {
+                    "screen_mobile": {
+                      "position": "absolute",
+                      "width": "100%",
+                      "height": "100%",
+                      "backgroundSize": "cover",
+                      "backgroundImage": "url('https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752')"
+                    }
                   }
                 }
-              }
+              ]
             },
     
             {

@@ -5,7 +5,6 @@ import Select from '../Select/Select'
 import InputText from '../InputText/InputText'
 import Elements from './Elements/Elements'
 import Resolutions from '../../Resolutions/Resolutions'
-import StatesSection from '../../PseudoClasses/PseudoClasses'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -776,20 +775,12 @@ export default function StylesSection(props) {
     return (
         <Wrapper isActive={activeComponent}>
 
-            <Elements 
-                activeComponent={activeComponent}
-                activeElement={activeElement}
-                setActiveElement={setActiveElement}
-                elements={elements}
-            />
-
             {/* Выбор разрешения */}
             <Resolutions 
                 activeComponent={activeComponent}
             />
                 
-            {/* Выбор состояния - :hover, :active, :focus, :checked */}
-            <StatesSection />
+            
 
             {/* Размеры */}
             <Section>
