@@ -37,6 +37,11 @@
               }
             },
             "background": {
+              "screen_mobile": {},
+              "screen_mobile_landscape": {},
+              "screen_tablet": {},
+              "screen_tablet_landscape": {},
+              "screen_desktop": {}
     
             },
             "body": {
@@ -44,6 +49,12 @@
                 "marginLeft": "auto",
                 "marginRight": "auto",
                 "minHeight": "100vh"
+              },
+              "screen_mobile_landscape": {},
+              "screen_tablet": {},
+              "screen_tablet_landscape": {},
+              "screen_desktop": {
+
               }
             }
           },
@@ -252,7 +263,9 @@
               "name": "Section example 2",
               "styles": {
                 "wrapper": {
-                  "screen_mobile": {},
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
                   "screen_mobile_landscape": {},
                   "screen_tablet": {},
                   "screen_tablet_landscape": {},
@@ -261,11 +274,14 @@
                     "backgroundColor": "#ffffff",
                     "marginBottom": "30px",
                     "borderRadius": "5px",
-                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)",
+                    "transitions": ["all 200ms linear"]
                   }
                 },
                 "background": {
-                  "screen_mobile": {},
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
                   "screen_mobile_landscape": {},
                   "screen_tablet": {},
                   "screen_tablet_landscape": {},
@@ -274,7 +290,9 @@
                   }
                 },
                 "body": {
-                  "screen_mobile": {},
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
                   "screen_mobile_landscape": {},
                   "screen_tablet": {},
                   "screen_tablet_landscape": {},
@@ -387,14 +405,40 @@
               "name": "Label section",
               "styles": {
                 "wrapper": {
-                  "width": "auto",
-                  "backgroundColor": "#ffffff",
-                  "marginBottom": "50px",
-                  "paddingLeft": "15px",
-                  "paddingRight": "15px",
-                  "paddingBottom": "15px",
-                  "borderRadius": "4px",
-                  "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {
+                    "width": "auto",
+                    "backgroundColor": "#ffffff",
+                    "marginBottom": "50px",
+                    "paddingLeft": "15px",
+                    "paddingRight": "15px",
+                    "paddingBottom": "15px",
+                    "borderRadius": "4px",
+                    "boxShadow": "0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)"
+                  }
+                },
+                "body": {
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
+                },
+                "background": {
+                  "screen_mobile": {
+                    "transitions": ["all 200ms linear"]
+                  },
+                  "screen_mobile_landscape": {},
+                  "screen_tablet": {},
+                  "screen_tablet_landscape": {},
+                  "screen_desktop": {}
                 }
               },
               "childrenList": [

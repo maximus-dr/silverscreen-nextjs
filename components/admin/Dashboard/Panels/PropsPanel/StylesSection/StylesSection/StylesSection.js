@@ -27,22 +27,26 @@ const stylesProps = {
 
     top: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'auto'
     },
 
     right: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'auto'
     },
 
     bottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'auto'
     },
 
     left: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'auto'
     },
 
     flexDirection: {
@@ -76,169 +80,204 @@ const stylesProps = {
     },
 
     order: {
-        type: 'num'
+        type: 'num',
+        default: '0'
     },
 
     columnGap: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'custom'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'custom'}],
+        default: 'normal'
     },
 
     display: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}],
+        default: ''
     },
 
     overflow: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
     },
 
     overflowX: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
     },
 
     overflowY: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
     },
 
     width: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
+        default: 'auto'
     },
 
     height: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
+        default: 'auto'
     },
 
     minWidth: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
+        default: 'auto'
     },
 
     maxWidth: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
+        default: 'auto'
     },
 
     minHeight: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
+        default: 'auto'
     },
 
     maxHeight: {
         type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}]
+        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
+        default: 'auto'
     },
 
     marginTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     marginRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     marginBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     marginLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     paddingTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     paddingRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     paddingBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     paddingLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: ''
     },
 
     borderRadius: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}]
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: '0'
     },
 
     border: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     borderTop: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     borderRight: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     borderBottom: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     borderLeft: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     outline: {
-        type: 'border'
+        type: 'border',
+        default: ''
     },
 
     color: {
-        type: 'text'
+        type: 'text',
+        default: ''
     },
 
     fontSize: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: 'rem'}]
+        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: 'rem'}],
+        default: ''
     },
 
     fontWeight: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'medium'}, {id: 3, name: 'bold'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'medium'}, {id: 3, name: 'bold'}],
+        default: ''
     },
 
     lineHeight: {
         type: 'num',
-        units: [{id: 1, name: ''}, {id: 2, name: 'px'}, {id: 3, name: 'em'}]
+        units: [{id: 1, name: ''}, {id: 2, name: 'px'}, {id: 3, name: 'em'}],
+        default: ''
     },
 
     textAlign: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'left'}, {id: 2, name: 'center'}, {id: 3, name: 'right'}, {id: 4, name: 'justify'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'left'}, {id: 2, name: 'center'}, {id: 3, name: 'right'}, {id: 4, name: 'justify'}],
+        default: ''
     },
 
     textTransform: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'capitalize'}, {id: 3, name: 'uppercase'}, {id: 4, name: 'lowercase'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'capitalize'}, {id: 3, name: 'uppercase'}, {id: 4, name: 'lowercase'}],
+        default: 'none'
     },
 
     textDecoration: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'underline'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'underline'}],
+        default: 'none'
     },
 
     textShadow: {
-        type: 'textShadow'
+        type: 'textShadow',
+        default: 'none'
     },
 
     content: {
@@ -247,35 +286,42 @@ const stylesProps = {
 
     userSelect: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 4, name: 'contain'}, {id: 5, name: 'all'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 4, name: 'contain'}, {id: 5, name: 'all'}],
+        default: 'auto'
     },
 
     fontFamily: {
         type: 'fontFamily',
         serif: {
             options: [{id: 0, name: 'default'}, {id: 1, name: 'serif'}, {id: 2, name: 'sans-serif'}, {id: 3, name: 'monospace'}, {id: 4, name: 'cursive'}, {id: 5, name: 'fantasy'}]
-        }
+        },
+        default: ''
     },
 
     backgroundColor: {
-        type: 'text'
+        type: 'text',
+        default: ''
     },
 
     backgroundImage: {
-        type: 'text'
+        type: 'text',
+        default: ''
     },
 
     backgroundSize: {
-        type: 'backgroundSize'
+        type: 'backgroundSize',
+        default: ''
     },
 
     backgroundPosition: {
-        type: 'backgroundPosition'
+        type: 'backgroundPosition',
+        default: ''
     },
 
     backgroundRepeat: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}],
+        default: ''
     }
 
 }
@@ -869,7 +915,7 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>position: </ItemKey>
                         <ItemValue>
-                            <Select activeOption={parseStylesProp(styles, 'position')} options={stylesProps.position.options} />
+                            <Select parsedProp={parseStylesProp(styles, 'position')} options={stylesProps.position.options} />
                         </ItemValue>
                     </Item>
                     <Item>
@@ -1057,12 +1103,6 @@ export default function StylesSection(props) {
 
                     <TextShadow styles={styles} />
 
-                    <Item>
-                        <ItemKey>content:</ItemKey>
-                        <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'content')} />
-                        </ItemValue>
-                    </Item>
                     <Item>
                         <ItemKey>user-select:</ItemKey>
                         <ItemValue>

@@ -47,7 +47,7 @@ export default function InputNum(props) {
                 type="number" 
                 min={min} 
                 max={max} 
-                step={step} 
+                step={5} 
                 fullWidth={fullWidth} 
                 middleWidth={middleWidth} 
                 value={inputValue}
@@ -67,7 +67,7 @@ export default function InputNum(props) {
                 {units && 
                 <select style={{cursor: 'pointer', width: '50px'}} value={unitValue} onChange={(e) => {
 
-                    if (e.currentTarget.value !== 'auto' && inputValue) {
+                    if (e.currentTarget.value !== 'auto') {
                         dispatch(setProp({
                         name: parsedProp.name,
                         hasElements: true,
