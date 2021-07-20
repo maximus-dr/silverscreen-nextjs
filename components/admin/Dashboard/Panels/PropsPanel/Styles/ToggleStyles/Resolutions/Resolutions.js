@@ -16,11 +16,6 @@ export default function Resolutions(props) {
     const {activeComponent} = props;
     const resolution = useSelector(state => state.document.resolution);
 
-    useEffect(() => {
-        if (!resolution && activeComponent) {
-            dispatch(setResolution('screen_mobile'));
-        }
-    }, [dispatch, resolution, activeComponent]);
 
     const onItemClick = (e, value) => {
         dispatch(setResolution(value));
@@ -34,12 +29,34 @@ export default function Resolutions(props) {
             <ResolutionsWrapper>
 
                 <ResolutionRow>
-                    <ResolutionsCheckbox type="radio" name="res-radio" id="res-radio-1" onChange={() => setActiveRadio('res-radio-1')} checked={activeRadio === 'res-radio-1'} />
+                    <ResolutionsCheckbox 
+                        type="radio" 
+                        name="res-radio" 
+                        id="res-radio-1" 
+                        checked={activeRadio === 'res-radio-1'} 
+                        onChange={() => {
+                            setActiveRadio('res-radio-1');
+                            if (resolution) {
+                                dispatch(setResolution(null));
+                            }
+                        }} 
+                    />
                     <ResolutionsCaption htmlFor="res-radio-1">Общие стили</ResolutionsCaption>
                 </ResolutionRow>
 
                 <ResolutionRow>
-                    <ResolutionsCheckbox type="radio" name="res-radio" id="res-radio-2" onChange={() => setActiveRadio('res-radio-2')}  checked={activeRadio === 'res-radio-2'}/>
+                    <ResolutionsCheckbox 
+                        type="radio" 
+                        name="res-radio" 
+                        id="res-radio-2" 
+                        checked={activeRadio === 'res-radio-2'}
+                        onChange={() => {
+                            setActiveRadio('res-radio-2');
+                            if (!resolution) {
+                                dispatch(setResolution('screen_mobile'));
+                            }
+                        }}  
+                    />
                     <ResolutionsColumn>
                         <ResolutionsCaption htmlFor="res-radio-2">Стили для разрешений</ResolutionsCaption>
                         <ResolutionsBody>
@@ -65,7 +82,18 @@ export default function Resolutions(props) {
                 </ResolutionRow>
                     
                 <ResolutionRow>
-                    <ResolutionsCheckbox type="radio" name="res-radio" id="res-radio-3" checked={activeRadio === 'res-radio-3'} onChange={() => setActiveRadio('res-radio-3')} />
+                    <ResolutionsCheckbox 
+                        type="radio" 
+                        name="res-radio" 
+                        id="res-radio-3" 
+                        checked={activeRadio === 'res-radio-3'} 
+                        onChange={() => {
+                            setActiveRadio('res-radio-3');
+                            if (resolution) {
+                                dispatch(setResolution(null));
+                            }
+                        }}
+                    />
                     <ResolutionsColumn>
                         <ResolutionsCaption htmlFor="res-radio-3">Стили для состояний</ResolutionsCaption>
                         <StatesSection isActive={activeRadio === 'res-radio-3'} />

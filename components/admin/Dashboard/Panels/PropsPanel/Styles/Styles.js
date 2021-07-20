@@ -762,13 +762,15 @@ export default function StylesSection(props) {
 
     let styles = {};
 
-    if (activeComponent && activeComponent.styles && !elements) {
-        styles = activeComponent.styles[resolution]
-    }
 
-    if (activeComponent && activeComponent.styles && elements) {
+    if (activeComponent && activeComponent.styles && resolution) {
         styles = activeComponent.styles[componentElement] ? activeComponent.styles[componentElement][resolution] : {};
     }
+
+    if (activeComponent && activeComponent.styles && !resolution) {
+        console.log('test');
+        styles = activeComponent.styles[componentElement] ? activeComponent.styles[componentElement]['common'] : {};
+    } 
 
 
     return (
