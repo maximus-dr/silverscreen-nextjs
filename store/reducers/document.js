@@ -40,24 +40,21 @@ export const documentReducer = (state = {}, action) => {
                 resolution: action.resolution
             }
         case SET_PROP:
-            if (action.prop.hasElements) {
-                return {
-                    ...state,
-                    activeComponent: {
-                        ...state.activeComponent,
-                        styles: {
-                            ...state.activeComponent.styles,
-                            [action.prop.element]:  {
-                                ...state.activeComponent.styles[action.prop.element],
-                                [action.prop.resolution]: {
-                                    ...state.activeComponent.styles[action.prop.element][action.prop.resolution],
-                                    [action.prop.name]: action.prop.value
-                                }
-                            }
+
+            return {
+                ...state,
+                activeComponent: {
+                    ...state.activeComponent,
+                    styles: {
+                        ...state.activeComponent.styles,
+                        common: {
+                            ...state.activeComponent.styles.common,
+                            [action.prop.name]: action.prop.value
                         }
                     }
                 }
             }
+
         default:
             return state
     }

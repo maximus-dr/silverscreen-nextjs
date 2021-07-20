@@ -751,12 +751,8 @@ export const BackgroundPosition = (props) => {
 export default function StylesSection(props) {
 
     const {activeComponent} = props;
-    const elements = activeComponent ? getElements(activeComponent) : null;
-    const currentElement = useSelector(state => state.document.element);
-    const [activeElement, setActiveElement] = useState(() => elements && elements[0].name || null);
 
 
-    const componentElement = useSelector(state => state.document.element && state.document.element || null);
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
 
 
@@ -764,12 +760,11 @@ export default function StylesSection(props) {
 
 
     if (activeComponent && activeComponent.styles && resolution) {
-        styles = activeComponent.styles[componentElement] ? activeComponent.styles[componentElement][resolution] : {};
+        styles = activeComponent.styles[resolution] || {};
     }
 
     if (activeComponent && activeComponent.styles && !resolution) {
-        console.log('test');
-        styles = activeComponent.styles[componentElement] ? activeComponent.styles[componentElement]['common'] : {};
+        styles = activeComponent.styles.common || {};
     } 
 
 
@@ -792,7 +787,7 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} currentElement={currentElement} />
+                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} />
                         </ItemValue>
                     </Item>
                     <Item>

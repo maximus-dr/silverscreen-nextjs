@@ -14,7 +14,6 @@ export default function InputNum(props) {
     const middleWidth = !units && unit;
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
-    const currentElement = useSelector(state => state.document.element);
     const dispatch = useDispatch();
 
     const [unitValue, setUnitValue] = useState(parsedProp && parsedProp.unit || units && units[0].name);
@@ -55,8 +54,6 @@ export default function InputNum(props) {
                 onChange={(e) => {
                     dispatch(setProp({
                         name: parsedProp.name,
-                        hasElements: true,
-                        element: currentElement,
                         value: e.target.value + unitValue,
                         resolution: resolution
                     }))
@@ -70,8 +67,6 @@ export default function InputNum(props) {
                     if (e.currentTarget.value !== 'auto') {
                         dispatch(setProp({
                         name: parsedProp.name,
-                        hasElements: true,
-                        element: currentElement,
                         value: inputValue + e.currentTarget.value,
                         resolution: resolution
                         }));
@@ -79,8 +74,6 @@ export default function InputNum(props) {
                     if (e.currentTarget.value === 'auto') {
                         dispatch(setProp({
                         name: parsedProp.name,
-                        hasElements: true,
-                        element: currentElement,
                         value: e.currentTarget.value,
                         resolution: resolution
                         }));

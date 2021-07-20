@@ -10,9 +10,9 @@ export const SectionWrapper = styled.div`
     ${props => enableOutlines(props.showOutlines, colors.outline_section)}
     ${props => {
         const styles = props.componentData.styles && props.componentData.styles.common || null;
-        console.log(styles);
+
         return css`
-            ${styles && styles}
+            ${styles && StylesProvider(styles)}
 
             @media (min-width: ${screens['screen_mobile'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_mobile'])}
