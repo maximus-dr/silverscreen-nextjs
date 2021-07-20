@@ -3,7 +3,7 @@ import { screenItems } from './Items';
 import { ResolutionsIcon, ResolutionsItem, ResolutionsBody, ResolutionsValue, ResolutionsWrapper, ResolutionRow, ResolutionsCheckbox, ResolutionsCaption, ResolutionsColumn } from './ResolutionsStyled'
 import StatesSection from '../PseudoClasses/PseudoClasses'
 import { useDispatch, useSelector } from 'react-redux';
-import { setResolution } from '../../../../../../store/actions/document';
+import { setResolution } from '../../../../../../../../store/actions/document';
 
 
 const items = screenItems;
@@ -26,8 +26,6 @@ export default function Resolutions(props) {
         dispatch(setResolution(value));
     }
 
-
-    const [showResolutions, setShowResolutions] = useState(false);
     const [activeRadio, setActiveRadio] = useState('res-radio-1');
 
 

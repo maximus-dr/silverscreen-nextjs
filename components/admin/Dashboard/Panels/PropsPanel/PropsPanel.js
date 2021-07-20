@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Panel from '../Panel/Panel'
-import ComponentSeciton from './ComponentSection/ComponentSeciton';
+import ComponentSeciton from './ComponentData/ComponentSeciton';
 import { PropsPanelWrapper} from './PropsPanelStyled';
-import StylesSection from './StylesSection/StylesSection/StylesSection';
+import StylesSection from './Styles/Styles';
 
 
 
