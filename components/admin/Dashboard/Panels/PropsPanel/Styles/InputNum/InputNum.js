@@ -60,19 +60,18 @@ export default function InputNum(props) {
 
         if (unit !== 'auto' && inputValue) {
             prop.value = inputValue + unit;
-            dispatch(setProp(prop));
         }
 
         if (unit !== 'auto' && !inputValue) {
             prop.value = '';
-            dispatch(setProp(prop));
             setPropUnit(unit);
         }
 
         if (unit === 'auto') {
             prop.value = unit;
-            dispatch(setProp(prop));
         }
+
+        dispatch(setProp(prop));
     }
 
 

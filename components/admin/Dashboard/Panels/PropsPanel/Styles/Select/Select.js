@@ -10,33 +10,32 @@ export default function Select(props) {
 
     const {options, parsedProp} = props;
     const dispatch = useDispatch();
-    const currentElement = useSelector(state => state.document.element);
     const resolution = useSelector(state => state.document.resolution);
+
+
+    const onSelect = (e) => {
+        dispatch(setProp({
+            name: parsedProp.name,
+            value: e.currentTarget.value,
+            resolution: resolution
+        }));
+    }
 
 
     return (
         <>
             <SelectBody 
-                value={parsedProp && parsedProp.value || options[0].name} 
-                onChange={(e) => {
-                    console.log(parsedProp);
-                    dispatch(setProp({
-                        name: parsedProp.name,
-                        hasElements: true,
-                        element: currentElement,
-                        value: e.currentTarget.value,
-                        resolution: resolution
-                    }));
-                }}
+                value={parsedProp && parsedProp.value || options[0].name}
+                onChange={onSelect}
             >
-            {options && options.map(option => {
-                return (
-                    <SelectOption key={option.id} value={option.name}>
-                        {option.name}
-                    </SelectOption>
-                )
-            })}
-          </SelectBody>  
+                {options && options.map(option => {
+                    return (
+                        <SelectOption key={option.id} value={option.name}>
+                            {option.name}
+                        </SelectOption>
+                    )
+                })}
+            </SelectBody>  
         </>
     )
 }
