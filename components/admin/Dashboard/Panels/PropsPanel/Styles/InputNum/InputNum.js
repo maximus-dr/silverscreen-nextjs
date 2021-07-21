@@ -3,41 +3,77 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProp } from '../../../../../../../store/actions/document';
-import { InputNumField, InputNumUnit, InputNumWrapper } from './InputNumStyled'
+import { InputNumField, InputNumSelect, InputNumUnit, InputNumWrapper } from './InputNumStyled'
 
 
 export default function InputNum(props) {
 
-    const {unit, units, min, max, step, parsedProp} = props;
+    const {units, min, max, parsedProp} = props;
 
-    const fullWidth = !units && !unit;
-    const middleWidth = !units && unit;
+    const fullWidth = !units;
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
     const dispatch = useDispatch();
+    const activeComponent = useSelector(state => state.document.activeComponent);
 
-    const [unitValue, setUnitValue] = useState(parsedProp && parsedProp.unit || units && units[0].name);
+    const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
     const [disabled, setDisabled] = useState(false);
+    
 
+    // установка единиц измерений
     useEffect(() => {
-        if (parsedProp && parsedProp.unit) {
-            setUnitValue(parsedProp.unit);
+        if (!activeComponent || !parsedProp) return;
+        if (parsedProp.unit) {
+            setPropUnit(parsedProp.unit);
         }
 
-        if (parsedProp && !parsedProp.unit && units && units[0].name) {
-            setUnitValue(units[0].name)
+        if (!parsedProp.unit && units && parsedProp.value) {
+            setPropUnit(units[0].name)
         }
-    }, [parsedProp, units]);
+    }, [parsedProp, units, activeComponent]);
 
+
+    // disable input, если ед.измерения - auto
     useEffect(() => {
-        if (unitValue === 'auto') {
-            setDisabled(true);
+        if (!activeComponent) return;
+        propUnit === 'auto' ? setDisabled(true) : setDisabled(false);
+    }, [propUnit, activeComponent]);
+
+
+    const onInputChange = (e) => {
+        dispatch(setProp({
+            name: parsedProp.name,
+            value: e.target.value + propUnit,
+            resolution: resolution
+        }));
+    }
+
+
+    const onSelect = (e) => {
+        const unit = e.currentTarget.value;
+
+        const prop = {
+            name: parsedProp.name,
+            value: null,
+            resolution
         }
 
-        if (unitValue !== 'auto') {
-            setDisabled(false);
+        if (unit !== 'auto' && inputValue) {
+            prop.value = inputValue + unit;
+            dispatch(setProp(prop));
         }
-    }, [unitValue]);
+
+        if (unit !== 'auto' && !inputValue) {
+            prop.value = '';
+            dispatch(setProp(prop));
+            setPropUnit(unit);
+        }
+
+        if (unit === 'auto') {
+            prop.value = unit;
+            dispatch(setProp(prop));
+        }
+    }
 
 
     return (
@@ -46,45 +82,24 @@ export default function InputNum(props) {
                 type="number" 
                 min={min} 
                 max={max} 
-                step={5} 
-                fullWidth={fullWidth} 
-                middleWidth={middleWidth} 
+                step={5}
+                fullWidth={fullWidth}
                 value={inputValue}
                 disabled={disabled}
-                onChange={(e) => {
-                    dispatch(setProp({
-                        name: parsedProp.name,
-                        value: e.target.value + unitValue,
-                        resolution: resolution
-                    }))
-                }}
+                onChange={onInputChange}
             />
             <InputNumUnit>
-                {unit}
                 {units && 
-                <select style={{cursor: 'pointer', width: '50px'}} value={unitValue} onChange={(e) => {
-
-                    if (e.currentTarget.value !== 'auto') {
-                        dispatch(setProp({
-                        name: parsedProp.name,
-                        value: inputValue + e.currentTarget.value,
-                        resolution: resolution
-                        }));
-                    }
-                    if (e.currentTarget.value === 'auto') {
-                        dispatch(setProp({
-                        name: parsedProp.name,
-                        value: e.currentTarget.value,
-                        resolution: resolution
-                        }));
-                    }
-                }}>
+                <InputNumSelect 
+                    value={propUnit} 
+                    onChange={onSelect}
+                >
                     {units.map(unit => (
                         <option value={unit.name} key={unit.id}>
                             {unit.name}
                         </option>
                     ))}
-                </select>}
+                </InputNumSelect>}
             </InputNumUnit>
         </InputNumWrapper>
     )

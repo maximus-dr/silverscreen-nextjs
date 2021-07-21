@@ -11,7 +11,7 @@ import styled, {css} from 'styled-components'
 
 
 
-const stylesProps = {
+const propsList = {
     position: {
         type: 'select',
         options: [{id: 1, name: 'default'}, {id: 2, name: 'relative'}, {id: 3, name: 'absolute'}, {id: 4, name: 'fixed'}],
@@ -25,25 +25,25 @@ const stylesProps = {
 
     top: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
         default: 'auto'
     },
 
     right: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
         default: 'auto'
     },
 
     bottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
         default: 'auto'
     },
 
     left: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: '%'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
         default: 'auto'
     },
 
@@ -80,12 +80,6 @@ const stylesProps = {
     order: {
         type: 'num',
         default: '0'
-    },
-
-    columnGap: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'custom'}],
-        default: 'normal'
     },
 
     display: {
@@ -150,49 +144,49 @@ const stylesProps = {
 
     marginTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
         default: ''
     },
 
     marginRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
         default: ''
     },
 
     marginBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
     marginLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
     paddingTop: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
     paddingRight: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
     paddingBottom: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
     paddingLeft: {
         type: 'num',
-        units: [{id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
         default: ''
     },
 
@@ -321,15 +315,14 @@ const stylesProps = {
         options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}],
         default: ''
     }
-
 }
 
 
-function parseStylesProp(styles, propName) {
+function parseProp(styles, propName) {
 
     if (!styles) return {};
     
-    const propData = stylesProps[propName];
+    const propData = propsList[propName];
     const propValue = styles[propName];
 
     const result = {
@@ -341,13 +334,10 @@ function parseStylesProp(styles, propName) {
         return null;
     }
 
-    if (propData.type === 'select') {
+    if (propData.type === 'select' || propData.type === 'text') {
         result.value = propValue;
     }
 
-    if (propData.type === 'text') {
-        result.value = propValue;
-    }
 
     if (propData.type === 'num' && !propData.units) {
 
@@ -531,12 +521,12 @@ export const BorderProps = (props) => {
 
     useEffect(() => {
         const propsList = {
-            border: parseStylesProp(styles, 'border'),
-            borderTop: parseStylesProp(styles, 'borderTop'),
-            borderRight: parseStylesProp(styles, 'borderRight'),
-            borderBottom: parseStylesProp(styles, 'borderBottom'),
-            borderLeft: parseStylesProp(styles, 'borderLeft'),
-            outline: parseStylesProp(styles, 'outline')
+            border: parseProp(styles, 'border'),
+            borderTop: parseProp(styles, 'borderTop'),
+            borderRight: parseProp(styles, 'borderRight'),
+            borderBottom: parseProp(styles, 'borderBottom'),
+            borderLeft: parseProp(styles, 'borderLeft'),
+            outline: parseProp(styles, 'outline')
         }
 
         if (propsList[prop] && propsList[prop].custom) {
@@ -572,7 +562,7 @@ export const BorderProps = (props) => {
                 </select>
 
                 <BorderPropsOutput isActive={custom}>
-                    <InputNum min={0} unit="px" parsedProp={{value: borderWidth}} />
+                    <InputNum min={0} units={[{id: 1, name: 'px'}]} parsedProp={{value: borderWidth}} />
                     <div style={{marginTop: '5px', marginBottom: '5px'}}>
                         <Select options={[{id: 1, name: 'solid'}, {id: 2, name: 'dashed'}, {id: 3, name: 'dotted'}]} parsedProp={{value: borderStyle}} />
                     </div>
@@ -602,7 +592,7 @@ export const TextShadow = (props) => {
     const [custom, setCustom] = useState(false);
     const {styles} = props;
 
-    const parsedProp = parseStylesProp(styles, 'textShadow');
+    const parsedProp = parseProp(styles, 'textShadow');
 
     const offsetX = parsedProp && parsedProp.offsetX && parsedProp.offsetX.replace('px', '') || null;
     const offsetY = parsedProp &&  parsedProp.offsetY && parsedProp.offsetY.replace('px', '') || null;
@@ -610,7 +600,7 @@ export const TextShadow = (props) => {
     const color = parsedProp &&  parsedProp.color && parsedProp.color || null;
 
     useEffect(() => {
-        const prop = parseStylesProp(styles, 'textShadow');
+        const prop = parseProp(styles, 'textShadow');
         if (prop && prop.custom) {
             setCustom(true);
         }
@@ -629,13 +619,13 @@ export const TextShadow = (props) => {
                 </select>
                 <TextShadowOutput isActive={custom}>
                     <div style={{marginBottom: '5px'}}>
-                        <InputNum unit='px' parsedProp={{value: offsetX}} />
+                        <InputNum units={[{id: 1, name: 'px'}]} parsedProp={{value: offsetX}} />
                     </div>
                     <div style={{marginBottom: '5px'}}>
-                        <InputNum unit='px' parsedProp={{value: offsetY}} />
+                        <InputNum units={[{id: 1, name: 'px'}]} parsedProp={{value: offsetY}} />
                     </div>
                     <div style={{marginBottom: '5px'}}>
-                        <InputNum unit='px' parsedProp={{value: blur}} />
+                        <InputNum units={[{id: 1, name: 'px'}]} parsedProp={{value: blur}} />
                     </div>
                     <InputText parsedProp={{value: color}} />
                 </TextShadowOutput>
@@ -661,7 +651,7 @@ const BackgroundSizeOutput = styled.div`
 export const BackgroundSize = (props) => {
     
     const {styles} = props;
-    const parsedProp = parseStylesProp(styles, 'backgroundSize');
+    const parsedProp = parseProp(styles, 'backgroundSize');
 
     const sizeX = {
         value: parsedProp && parsedProp.sizeX && parsedProp.sizeX.value || '',
@@ -676,7 +666,7 @@ export const BackgroundSize = (props) => {
     const [select, setSelect] = useState('default');
 
     useEffect(() => {
-        const prop = parseStylesProp(styles, 'backgroundSize')
+        const prop = parseProp(styles, 'backgroundSize')
         if (prop && prop.value && prop.value) {
             setSelect(prop.value);
         }
@@ -729,7 +719,7 @@ export const BackgroundPosition = (props) => {
     const [selectY, setSelectY] = useState('unit');
 
     const {styles} = props;
-    const parsedProp = styles && parseStylesProp(styles, 'backgroundPosition') || {};
+    const parsedProp = styles && parseProp(styles, 'backgroundPosition') || {};
 
     return (
         <Item style={{alignItems: 'flex-start', marginTop: '10px', marginBottom: '10px'}}>
@@ -787,37 +777,37 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.width.units} parsedProp={parseStylesProp(styles, 'width')} />
+                            <InputNum  units={propsList.width.units} parsedProp={parseProp(styles, 'width')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.height.units} parsedProp={parseStylesProp(styles, 'height')} />
+                            <InputNum  units={propsList.height.units} parsedProp={parseProp(styles, 'height')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>min-width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.minWidth.units} parsedProp={parseStylesProp(styles, 'minWidth')} />
+                            <InputNum  units={propsList.minWidth.units} parsedProp={parseProp(styles, 'minWidth')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>max-width:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.maxWidth.units} parsedProp={parseStylesProp(styles, 'maxWidth')} />
+                            <InputNum  units={propsList.maxWidth.units} parsedProp={parseProp(styles, 'maxWidth')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>min-height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.minHeight.units} parsedProp={parseStylesProp(styles, 'minHeight')} />
+                            <InputNum  units={propsList.minHeight.units} parsedProp={parseProp(styles, 'minHeight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>max-height:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.maxHeight.units} parsedProp={parseStylesProp(styles, 'maxHeight')} />
+                            <InputNum  units={propsList.maxHeight.units} parsedProp={parseProp(styles, 'maxHeight')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -832,25 +822,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>margin-top:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.marginTop.units} parsedProp={parseStylesProp(styles, 'marginTop')} />
+                            <InputNum  units={propsList.marginTop.units} parsedProp={parseProp(styles, 'marginTop')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-right:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.marginRight.units} parsedProp={parseStylesProp(styles, 'marginRight')} />
+                            <InputNum  units={propsList.marginRight.units} parsedProp={parseProp(styles, 'marginRight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-bottom:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.marginBottom.units} parsedProp={parseStylesProp(styles, 'marginBottom')} />
+                            <InputNum  units={propsList.marginBottom.units} parsedProp={parseProp(styles, 'marginBottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>margin-left:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.marginLeft.units} parsedProp={parseStylesProp(styles, 'marginLeft')} />
+                            <InputNum  units={propsList.marginLeft.units} parsedProp={parseProp(styles, 'marginLeft')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -865,25 +855,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>padding-top:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.paddingTop.units} parsedProp={parseStylesProp(styles, 'paddingTop')} />
+                            <InputNum  units={propsList.paddingTop.units} parsedProp={parseProp(styles, 'paddingTop')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-right:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.paddingRight.units} parsedProp={parseStylesProp(styles, 'paddingRight')} />
+                            <InputNum  units={propsList.paddingRight.units} parsedProp={parseProp(styles, 'paddingRight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-bottom:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.paddingBottom.units} parsedProp={parseStylesProp(styles, 'paddingBottom')} />
+                            <InputNum  units={propsList.paddingBottom.units} parsedProp={parseProp(styles, 'paddingBottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>padding-left:</ItemKey>
                         <ItemValue>
-                            <InputNum  units={stylesProps.paddingLeft.units} parsedProp={parseStylesProp(styles, 'paddingLeft')} />
+                            <InputNum  units={propsList.paddingLeft.units} parsedProp={parseProp(styles, 'paddingLeft')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -902,37 +892,37 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>position: </ItemKey>
                         <ItemValue>
-                            <Select parsedProp={parseStylesProp(styles, 'position')} options={stylesProps.position.options} />
+                            <Select parsedProp={parseProp(styles, 'position')} options={propsList.position.options} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>z-index: </ItemKey>
                         <ItemValue>
-                            <InputNum parsedProp={parseStylesProp(styles, 'zIndex')} />
+                            <InputNum parsedProp={parseProp(styles, 'zIndex')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>top: </ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.top.units} parsedProp={parseStylesProp(styles, 'top')} />
+                            <InputNum units={propsList.top.units} parsedProp={parseProp(styles, 'top')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>right: </ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.right.units} parsedProp={parseStylesProp(styles, 'right')} />
+                            <InputNum units={propsList.right.units} parsedProp={parseProp(styles, 'right')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>bottom: </ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.bottom.units} parsedProp={parseStylesProp(styles, 'bottom')} />
+                            <InputNum units={propsList.bottom.units} parsedProp={parseProp(styles, 'bottom')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>left: </ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.left.units} parsedProp={parseStylesProp(styles, 'left')} />
+                            <InputNum units={propsList.left.units} parsedProp={parseProp(styles, 'left')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -940,46 +930,37 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>flex-direction:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.flexDirection.options} parsedProp={parseStylesProp(styles, 'flexDirection')} />
+                            <Select options={propsList.flexDirection.options} parsedProp={parseProp(styles, 'flexDirection')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>justify-content:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.justifyContent.options} parsedProp={parseStylesProp(styles, 'justifyContent')} />
+                            <Select options={propsList.justifyContent.options} parsedProp={parseProp(styles, 'justifyContent')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>flex-wrap:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.flexWrap.options} parsedProp={parseStylesProp(styles, 'flexWrap')} />
+                            <Select options={propsList.flexWrap.options} parsedProp={parseProp(styles, 'flexWrap')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>align-items:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.alignItems.options} parsedProp={parseStylesProp(styles, 'alignItems')} />
+                            <Select options={propsList.alignItems.options} parsedProp={parseProp(styles, 'alignItems')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>align-self:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.alignSelf.options} parsedProp={parseStylesProp(styles, 'alignSelf')} />
+                            <Select options={propsList.alignSelf.options} parsedProp={parseProp(styles, 'alignSelf')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>order:</ItemKey>
                         <ItemValue>
-                            <InputNum parsedProp={parseStylesProp(styles, 'order')} />
-                        </ItemValue>
-                    </Item>
-                    <Item style={{alignItems: 'flex-start'}}>
-                        <ItemKey>column-gap:</ItemKey>
-                        <ItemValue>
-                            <Select options={stylesProps.columnGap.options} parsedProp={parseStylesProp(styles, 'columnGap')} />
-                            <div style={{marginTop: '5px'}}>
-                                <InputNum units={[{id: 1, name: 'px'}, {id: 2, name: '%'}]} />
-                            </div>
+                            <InputNum parsedProp={parseProp(styles, 'order')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -996,25 +977,25 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>display:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.display.options} parsedProp={parseStylesProp(styles, 'display')} />
+                            <Select options={propsList.display.options} parsedProp={parseProp(styles, 'display')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.overflow.options} parsedProp={parseStylesProp(styles, 'overflow')} />
+                            <Select options={propsList.overflow.options} parsedProp={parseProp(styles, 'overflow')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow-x:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.overflowX.options} parsedProp={parseStylesProp(styles, 'overflowX')} />
+                            <Select options={propsList.overflowX.options} parsedProp={parseProp(styles, 'overflowX')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>overflow-y:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.overflowY.options} parsedProp={parseStylesProp(styles, 'overflowY')} />
+                            <Select options={propsList.overflowY.options} parsedProp={parseProp(styles, 'overflowY')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -1030,7 +1011,7 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>border-radius:</ItemKey>
                         <ItemValue>
-                            <InputNum min={0} units={stylesProps.borderRadius.units} parsedProp={parseStylesProp(styles, 'borderRadius')} />
+                            <InputNum min={0} units={propsList.borderRadius.units} parsedProp={parseProp(styles, 'borderRadius')} />
                         </ItemValue>
                     </Item>
                     
@@ -1047,43 +1028,43 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>color:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'color')} />
+                            <InputText parsedProp={parseProp(styles, 'color')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>font-size:</ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.fontSize.units} parsedProp={parseStylesProp(styles, 'fontSize')} />
+                            <InputNum units={propsList.fontSize.units} parsedProp={parseProp(styles, 'fontSize')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>font-weight:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.fontWeight.options} parsedProp={parseStylesProp(styles, 'fontWeight')} />
+                            <Select options={propsList.fontWeight.options} parsedProp={parseProp(styles, 'fontWeight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>line-height:</ItemKey>
                         <ItemValue>
-                            <InputNum units={stylesProps.lineHeight.units} parsedProp={parseStylesProp(styles, 'lineHeight')} />
+                            <InputNum units={propsList.lineHeight.units} parsedProp={parseProp(styles, 'lineHeight')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>text-align:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.textAlign.options} parsedProp={parseStylesProp(styles, 'textAlign')} />
+                            <Select options={propsList.textAlign.options} parsedProp={parseProp(styles, 'textAlign')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>text-transform:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.textTransform.options} parsedProp={parseStylesProp(styles, 'textTransform')} />
+                            <Select options={propsList.textTransform.options} parsedProp={parseProp(styles, 'textTransform')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>text-decoration:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.textDecoration.options} parsedProp={parseStylesProp(styles, 'textDecoration')} />
+                            <Select options={propsList.textDecoration.options} parsedProp={parseProp(styles, 'textDecoration')} />
                         </ItemValue>
                     </Item>
                     
@@ -1093,19 +1074,19 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>user-select:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.userSelect.options} parsedProp={parseStylesProp(styles, 'userSelect')} />
+                            <Select options={propsList.userSelect.options} parsedProp={parseProp(styles, 'userSelect')} />
                         </ItemValue>
                     </Item>
                     <Item style={{alignItems: 'flex-start'}}>
                         <ItemKey>font-family:</ItemKey>
                         <ItemValue>
                             <div style={{marginBottom: '5px'}}>
-                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').primary}} />
+                                <InputText parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary}} />
                             </div>
                             <div style={{marginBottom: '5px'}}>
-                                <InputText parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').secondary}} />
+                                <InputText parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').secondary}} />
                             </div>
-                            <Select options={stylesProps.fontFamily.serif.options} parsedProp={{value: parseStylesProp(styles, 'fontFamily') && parseStylesProp(styles, 'fontFamily').serif}} />
+                            <Select options={propsList.fontFamily.serif.options} parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').serif}} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -1119,13 +1100,13 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>background-color:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'backgroundColor')} />
+                            <InputText parsedProp={parseProp(styles, 'backgroundColor')} />
                         </ItemValue>
                     </Item>
                     <Item>
                         <ItemKey>background-image:</ItemKey>
                         <ItemValue>
-                            <InputText parsedProp={parseStylesProp(styles, 'backgroundImage')} />
+                            <InputText parsedProp={parseProp(styles, 'backgroundImage')} />
                         </ItemValue>
                     </Item>
                     
@@ -1138,7 +1119,7 @@ export default function StylesSection(props) {
                     <Item>
                         <ItemKey>background-repeat:</ItemKey>
                         <ItemValue>
-                            <Select options={stylesProps.backgroundRepeat.options} parsedProp={parseStylesProp(styles, 'backgroundRepeat')} />
+                            <Select options={propsList.backgroundRepeat.options} parsedProp={parseProp(styles, 'backgroundRepeat')} />
                         </ItemValue>
                     </Item>
                 </Body>
@@ -1160,16 +1141,16 @@ export default function StylesSection(props) {
                         <ItemValue>
                             <Select options={[{id: 1, name: 'none'}, {id: 2, name: 'custom'}]} />
                             <div style={{margin: '5px 0'}}>
-                                <InputNum unit='px' />
+                                <InputNum units={[{id: 1, name: 'px'}]} />
                             </div>
                             <div>
-                                <InputNum unit='px' />
+                                <InputNum units={[{id: 1, name: 'px'}]} />
                             </div>
                             <div style={{margin: '5px 0'}}>
-                                <InputNum unit='px' />
+                                <InputNum units={[{id: 1, name: 'px'}]} />
                             </div>
                             <div>
-                                <InputNum unit='px' />
+                                <InputNum units={[{id: 1, name: 'px'}]} />
                             </div>
                             <div style={{margin: '5px 0'}}>
                                 <InputText />

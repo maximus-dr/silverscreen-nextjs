@@ -13,14 +13,13 @@ export const InputNumField = styled.input`
             width: 110px;
         `
     }}
-
-    ${props => {
-        return props.middleWidth && css`
-            width: 88px;
-        `
-    }}
 `;
 
 export const InputNumUnit = styled.span`
     padding: 0 5px;
+`;
+
+export const InputNumSelect = styled.select`
+    cursor: pointer;
+    width: 50px;
 `;
