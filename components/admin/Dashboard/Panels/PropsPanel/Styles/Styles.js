@@ -341,7 +341,7 @@ function parseProp(styles, propName) {
 
     if (propData.type === 'num' && !propData.units) {
 
-        if (!Number(propValue) && propValue !== '0') return {};
+        if (!Number(propValue) && propValue !== '0') return result;
         if (Number(propValue)) {
             result.value = propValue;
             return result;
@@ -756,7 +756,6 @@ export default function StylesSection(props) {
     if (activeComponent && activeComponent.styles && !resolution) {
         styles = activeComponent.styles.common || {};
     } 
-
 
     return (
         <Wrapper isActive={activeComponent}>

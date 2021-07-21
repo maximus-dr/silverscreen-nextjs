@@ -25,6 +25,7 @@ export const StylesProvider = (styles) => {
         flex-grow: ${styles && styles.flexGrow || ''};
         flex-shrink: ${styles && styles.flexShrink || ''};
         flex-basis: ${styles && styles.flexBasis || ''};
+        order: ${styles && styles.order || ''};
 
         width: ${styles && styles.width || ''};
         height: ${styles && styles.height || ''};

@@ -41,10 +41,12 @@ export default function InputNum(props) {
 
 
     const onInputChange = (e) => {
+        const value = e.target.value;
+        const unit = propUnit || '';
         dispatch(setProp({
             name: parsedProp.name,
-            value: e.target.value + propUnit,
-            resolution: resolution
+            value: value + unit,
+            resolution
         }));
     }
 

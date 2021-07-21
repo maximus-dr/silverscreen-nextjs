@@ -14,11 +14,16 @@ export default function Select(props) {
 
 
     const onSelect = (e) => {
-        dispatch(setProp({
+        const value = e.currentTarget.value;
+        const prop = {
             name: parsedProp.name,
-            value: e.currentTarget.value,
-            resolution: resolution
-        }));
+            value,
+            resolution
+        }
+        if (value === 'default') {
+            prop.value = '';
+        }
+        dispatch(setProp(prop));
     }
 
 
