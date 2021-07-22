@@ -8,7 +8,7 @@ import { SelectBody, SelectOption } from './SelectStyled'
 
 export default function Select(props) {
 
-    const {options, parsedProp} = props;
+    const {options, parsedProp, isDisabled} = props;
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
 
@@ -32,6 +32,7 @@ export default function Select(props) {
             <SelectBody 
                 value={parsedProp && parsedProp.value || options[0].name}
                 onChange={onSelect}
+                disabled={isDisabled}
             >
                 {options && options.map(option => {
                     return (

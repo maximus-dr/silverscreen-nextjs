@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Hint from '../Hint/Hint';
 import { PanelLi, PanelUl, PanelUlCaption, PanelUlWrapper, PanelUlContent, PanelUlSubtitle } from './PanelListStyled'
 
 
@@ -8,7 +7,7 @@ export default function PanelList(props) {
 
     const [expanded, setExpanded] = useState(false);
     const [activeItemId, setActiveItemId] = useState(null);
-    const [showHint, setShowHint] = useState(true);
+
 
     const listItems = items && items.map(item => {
         return item.isSubtitle
@@ -26,8 +25,6 @@ export default function PanelList(props) {
                 <PanelUlCaption
                     expanded={expanded} 
                     onClick={() => {setExpanded(prev => !prev)}} 
-                    onMouseEnter={() => setShowHint(true)}
-                    onMouseLeave={() => setShowHint(false)}
                 >
                     {title}
                 </PanelUlCaption>

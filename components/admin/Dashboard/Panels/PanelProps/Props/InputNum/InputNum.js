@@ -8,7 +8,7 @@ import { InputNumField, InputNumSelect, InputNumUnit, InputNumWrapper } from './
 
 export default function InputNum(props) {
 
-    const {units, min, max, parsedProp} = props;
+    const {units, min, max, parsedProp, isDisabled} = props;
 
     const fullWidth = !units;
     const inputValue = parsedProp && parsedProp.value || '';
@@ -38,6 +38,10 @@ export default function InputNum(props) {
         if (!activeComponent) return;
         propUnit === 'auto' ? setDisabled(true) : setDisabled(false);
     }, [propUnit, activeComponent]);
+
+    useEffect(() => {
+        isDisabled ? setDisabled(true) : setDisabled(false);
+    }, [isDisabled]);
 
 
     const onInputChange = (e) => {

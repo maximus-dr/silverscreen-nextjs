@@ -3,7 +3,7 @@ import Panel from '../Panel/Panel'
 import PanelList from '../PanelList/PanelList'
 
 
-export default function ComponentsPanel() {
+export default function PanelComponents() {
     return (
         <>
             <Panel title="Компоненты">

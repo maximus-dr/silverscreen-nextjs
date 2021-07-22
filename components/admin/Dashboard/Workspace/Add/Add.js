@@ -1,8 +1,8 @@
 import React from 'react'
-import { AddFieldCaption, AddFieldWrapper } from './AddFieldStyled'
+import { AddFieldCaption, AddFieldWrapper } from './AddStyled'
 
 
-export default function AddField() {
+export default function Add() {
     return (
         <AddFieldWrapper>
             <AddFieldCaption>

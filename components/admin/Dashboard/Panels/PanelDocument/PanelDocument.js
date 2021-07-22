@@ -5,7 +5,7 @@ import Panel from '../Panel/Panel';
 
 
 
-export default function DocumentPanel(props) {
+export default function PanelDocument(props) {
 
     const componentsData = useSelector(state => state.document.componentsData);
     const document = renderDocumentTree(componentsData);

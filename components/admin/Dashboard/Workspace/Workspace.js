@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { renderComponents, getComponentsList } from '../../../../core/functions/render';
-import AddField from './AddField/AddField'
+import Add from './Add/Add'
 import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './WorkspaceStyled'
 
 
