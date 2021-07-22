@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProp } from '../../../../../../../store/actions/document';
-import { InputNumField, InputNumSelect, InputNumUnit, InputNumWrapper } from './InputNumStyled'
+import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputNumWrapper } from './InputNumStyled'
 
 
 export default function InputNum(props) {
@@ -52,7 +52,7 @@ export default function InputNum(props) {
             value: value + unit,
             resolution
         }));
-    }
+    };
 
 
     const onSelect = (e) => {
@@ -79,6 +79,10 @@ export default function InputNum(props) {
 
         dispatch(setProp(prop));
     }
+    
+
+    const singleUnit = units && units.length === 1;
+    const multipleUnits = units && units.length > 1;
 
 
     return (
@@ -94,17 +98,25 @@ export default function InputNum(props) {
                 onChange={onInputChange}
             />
             <InputNumUnit>
-                {units && 
-                <InputNumSelect 
-                    value={propUnit} 
-                    onChange={onSelect}
-                >
-                    {units.map(unit => (
-                        <option value={unit.name} key={unit.id}>
-                            {unit.name}
-                        </option>
-                    ))}
-                </InputNumSelect>}
+                {   
+                    singleUnit &&
+                    <InputNumUnitSingle isDisabled={disabled}>
+                        {units[0].name}
+                    </InputNumUnitSingle>
+                }
+                {
+                    multipleUnits &&
+                    <InputNumSelect 
+                        value={propUnit} 
+                        onChange={onSelect}
+                    >
+                        {units.map(unit => (
+                            <option value={unit.name} key={unit.id}>
+                                {unit.name}
+                            </option>
+                        ))}
+                    </InputNumSelect>
+                }
             </InputNumUnit>
         </InputNumWrapper>
     )

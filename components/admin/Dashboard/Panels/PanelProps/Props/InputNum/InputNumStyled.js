@@ -19,6 +19,12 @@ export const InputNumUnit = styled.span`
     padding: 0 5px;
 `;
 
+export const InputNumUnitSingle = styled.span`
+    ${props => props.isDisabled && `
+        opacity: 0.4;
+    `}
+`;
+
 export const InputNumSelect = styled.select`
     cursor: pointer;
     width: 50px;

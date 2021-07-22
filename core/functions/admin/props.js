@@ -52,7 +52,7 @@ export function parseProp(styles, propName) {
 
     if (propData.type === 'border' && propValue) {
 
-        if (propValue === 'none') return { custom: false };
+        if (propValue === 'none') return { custom: false, name: propName };
 
         let params = propValue.split(' ');
 
@@ -62,6 +62,7 @@ export function parseProp(styles, propName) {
         }
 
         result.custom = true;
+        result.name = propName;
         result.borderWidth = params[0];
         result.borderStyle = params[1];
         result.borderColor = params[2];
