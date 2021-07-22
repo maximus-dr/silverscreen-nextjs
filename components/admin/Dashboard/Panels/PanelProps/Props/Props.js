@@ -34,6 +34,9 @@ export default function Props(props) {
             {/* Выбор разрешения */}
             <Resolutions activeComponent={activeComponent} />
 
+            {/* Типографика */}
+            <PropsFont styles={styles} />
+
             {/* Границы */}
             <PropsBorder styles={styles} />
                 
@@ -51,9 +54,6 @@ export default function Props(props) {
 
             {/* Отображение */}
             <PropsDisplay styles={styles} />
-            
-            {/* Типографика */}
-            <PropsFont styles={styles} />
             
             {/* Фон */}
             <PropsBackground styles={styles} />

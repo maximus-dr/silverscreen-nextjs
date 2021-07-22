@@ -1,13 +1,16 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { parseProp } from '../../../../../../../core/functions/admin/props'
 import { propsList } from '../../../../../../../core/variables/variables'
+import { setProp } from '../../../../../../../store/actions/document'
 import InputNum from '../InputNum/InputNum'
 import InputText from '../InputText/InputText'
 import { Body, Header, Item, ItemKey, ItemValue, Section } from '../PropsStyled'
 import Select from '../Select/Select'
+import { FontFamilyPrimary, FontFamilySecondary } from './PropsFontStyled'
 
 
 
@@ -73,12 +76,13 @@ export const TextShadow = (props) => {
 
 
 export default function PropsFont(props) {
-
     const {styles} = props;
+    const dispatch = useDispatch();
+    const resolution = useSelector(state => state.document.resolution);
 
     return (
         <Section>
-            <Header>Типографика</Header>
+            <Header>Шрифт</Header>
             <Body>
                 <Item>
                     <ItemKey>color:</ItemKey>
@@ -89,7 +93,7 @@ export default function PropsFont(props) {
                 <Item>
                     <ItemKey>font-size:</ItemKey>
                     <ItemValue>
-                        <InputNum units={propsList.fontSize.units} parsedProp={parseProp(styles, 'fontSize')} />
+                        <InputNum step={1} units={propsList.fontSize.units} parsedProp={parseProp(styles, 'fontSize')} />
                     </ItemValue>
                 </Item>
                 <Item>
@@ -99,9 +103,15 @@ export default function PropsFont(props) {
                     </ItemValue>
                 </Item>
                 <Item>
+                    <ItemKey>font-style:</ItemKey>
+                    <ItemValue>
+                        <Select options={propsList.fontStyle.options} parsedProp={parseProp(styles, 'fontStyle')} />
+                    </ItemValue>
+                </Item>
+                <Item>
                     <ItemKey>line-height:</ItemKey>
                     <ItemValue>
-                        <InputNum units={propsList.lineHeight.units} parsedProp={parseProp(styles, 'lineHeight')} />
+                        <InputNum step={1} units={propsList.lineHeight.units} parsedProp={parseProp(styles, 'lineHeight')} />
                     </ItemValue>
                 </Item>
                 <Item>
@@ -124,7 +134,7 @@ export default function PropsFont(props) {
                 </Item>
                 
 
-                <TextShadow styles={styles} />
+                {/* <TextShadow styles={styles} /> */}
 
                 <Item>
                     <ItemKey>user-select:</ItemKey>
@@ -132,18 +142,51 @@ export default function PropsFont(props) {
                         <Select options={propsList.userSelect.options} parsedProp={parseProp(styles, 'userSelect')} />
                     </ItemValue>
                 </Item>
-                <Item style={{alignItems: 'flex-start'}}>
+                {/* <Item style={{alignItems: 'flex-start'}}>
                     <ItemKey>font-family:</ItemKey>
                     <ItemValue>
                         <div style={{marginBottom: '5px'}}>
-                            <InputText parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary}} />
+                            <FontFamilyPrimary 
+                                type="text"
+                                value={parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary || ''}
+                                onChange={(e) => {
+                                    
+                                }}
+                            />
                         </div>
                         <div style={{marginBottom: '5px'}}>
-                            <InputText parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').secondary}} />
+                            <FontFamilySecondary
+                                type="text"
+                                value={parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').secondary || ''}
+                                onChange={(e) => {
+                                    dispatch(setProp({
+                                        name: 'fontFamily',
+                                        value: `${parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary + ', ' || ''}${e.target.value + ','}${parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').serif || ''}`,
+                                        resolution
+                                    }))
+                                }}
+                            />
                         </div>
-                        <Select options={propsList.fontFamily.serif.options} parsedProp={{value: parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').serif}} />
+                        <select
+                            style={{width: '110px'}}
+                            value={parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').serif || "default"}
+                            onChange={(e) => {
+                                dispatch(setProp({
+                                    name: 'fontFamily',
+                                    value: `${parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary + ', ' || ''}${parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').secondary + ',' || ''}, ${e.target.value}`,
+                                    resolution
+                                }))
+                            }}
+                        >
+                            <option value="default">default</option>
+                            <option value="serif">serif</option>
+                            <option value="sans-serif">sans-serif</option>
+                            <option value="monospace">monospace</option>
+                            <option value="cursive">cursive</option>
+                            <option value="fantasy">fantasy</option>
+                        </select>
                     </ItemValue>
-                </Item>
+                </Item> */}
             </Body>
         </Section>
     )

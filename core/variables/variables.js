@@ -264,6 +264,11 @@ export const propsList = {
         default: ''
     },
 
+    fontStyle: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'italic'}, {id: 3, name: 'oblique'}]
+    },
+
     lineHeight: {
         type: 'num',
         units: [{id: 1, name: ''}, {id: 2, name: 'px'}, {id: 3, name: 'em'}],
@@ -299,7 +304,7 @@ export const propsList = {
 
     userSelect: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 4, name: 'contain'}, {id: 5, name: 'all'}],
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'auto'}, {id: 3, name: 'text'}, {id: 5, name: 'all'}],
         default: 'auto'
     },
 

@@ -8,7 +8,7 @@ import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputN
 
 export default function InputNum(props) {
 
-    const {units, min, max, parsedProp, isDisabled} = props;
+    const {units, min, max, step, parsedProp, isDisabled} = props;
 
     const fullWidth = !units;
     const inputValue = parsedProp && parsedProp.value || '';
@@ -91,7 +91,7 @@ export default function InputNum(props) {
                 type="number" 
                 min={min} 
                 max={max} 
-                step={5}
+                step={step || 5}
                 fullWidth={fullWidth}
                 value={inputValue}
                 disabled={disabled}

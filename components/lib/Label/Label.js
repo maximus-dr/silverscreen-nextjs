@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useSelector } from 'react-redux';
 import { OutlinesContext } from '../../../context/outlinesContext';
 import { getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
@@ -9,8 +10,11 @@ import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputL
 export default function Label(props) {
 
     const outlines = useContext(OutlinesContext);
-    const componentData = props.componentData ? props.componentData : null;
     const attrs = getAttrs(props.componentData);
+
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const componentData = isActiveComponent ? activeComponent : props.componentData;
 
 
     const label = (heading) => {
@@ -22,8 +26,8 @@ export default function Label(props) {
             case 'h1':
                 return (
                     <LabelH1
-                        {...props} 
-                        {...props.componentData} 
+                        {...props}
+                        componentData={componentData}
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -35,7 +39,7 @@ export default function Label(props) {
                 return (
                     <LabelH2
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData} 
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -47,7 +51,7 @@ export default function Label(props) {
                 return (
                     <LabelH3 
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData} 
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -59,7 +63,7 @@ export default function Label(props) {
                 return (
                     <LabelH4
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData}
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -71,7 +75,7 @@ export default function Label(props) {
                 return (
                     <LabelH5
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData} 
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -83,7 +87,7 @@ export default function Label(props) {
                 return (
                     <LabelH6
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData} 
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -96,7 +100,7 @@ export default function Label(props) {
                     <InputLabel 
                         htmlFor={htmlFor} 
                         {...props}
-                        {...props.componentData} 
+                        componentData={componentData}
                         showOutlines={outlines}
                         onClick={getHandler(props, 'onClick')}
                     >
@@ -109,7 +113,7 @@ export default function Label(props) {
                     <LabelSpan 
                         showOutlines={outlines}
                         {...props}
-                        {...props.componentData}
+                        componentData={componentData}
                         {...props.handlers}
                         onClick={getHandler(props, 'onClick')}
                     >

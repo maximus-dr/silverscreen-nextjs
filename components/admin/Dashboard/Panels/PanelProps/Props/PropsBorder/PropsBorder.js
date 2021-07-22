@@ -3,7 +3,6 @@ import { useState } from "react";
 import { parseProp } from "../../../../../../../core/functions/admin/props";
 import { propsList } from "../../../../../../../core/variables/variables";
 import InputNum from "../InputNum/InputNum";
-import InputText from "../InputText/InputText";
 import { Body, Header, Item, ItemKey, ItemValue, Section } from "../PropsStyled";
 import { BorderColorInput, BorderProps, BorderPropsSpan, BorderWidthInput, BorderWidthUnit, PropsBorderInputs } from "./PropsBorderStyled";
 import { useDispatch } from "react-redux";
@@ -140,7 +139,11 @@ export default function PropsBorder(props) {
                 <Item>
                     <ItemKey>border-radius:</ItemKey>
                     <ItemValue>
-                        <InputNum min={0} units={propsList.borderRadius.units} parsedProp={parseProp(styles, 'borderRadius')} />
+                        <InputNum 
+                            min={0}
+                            step={1}
+                            units={propsList.borderRadius.units} 
+                            parsedProp={parseProp(styles, 'borderRadius')} />
                     </ItemValue>
                 </Item>
             </Body>
