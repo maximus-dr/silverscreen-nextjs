@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { colors, screens } from '../../../core/variables/variables';
-import { enableOutlines } from '../../../core/functions/outlines';
+import { enableOutlines, getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
 
@@ -13,10 +13,7 @@ export const SectionWrapper = styled.div`
 
         return css`
             ${styles && StylesProvider(styles)}
-            ${props => props.isActiveComponent && `
-                outline: 2px solid #42a5f5;
-                outline-offset: 5px;
-            `}
+            ${props => props.isActiveComponent && getOutlines()}
 
             @media (min-width: ${screens['screen_mobile'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_mobile'])}

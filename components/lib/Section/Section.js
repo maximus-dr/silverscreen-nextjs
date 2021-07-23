@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { SectionWrapper, SectionBody, SectionBackground } from './SectionStyled'
+import React, { useContext } from 'react'
+import { SectionWrapper } from './SectionStyled'
 import { OutlinesContext } from '../../../context/outlinesContext';
 import { getHandler } from '../../../core/functions/components';
 import { useSelector } from 'react-redux';
@@ -7,11 +7,10 @@ import { useSelector } from 'react-redux';
 
 export default function Section(props) {
 
+    const id = props.componentData.id;
     const outlines = useContext(OutlinesContext);
     const activeComponent = useSelector(state => state.document.activeComponent);
-    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
-
-    const id = props.componentData.id;
+    const isActiveComponent = activeComponent && activeComponent.id === id;
 
     const componentData = useSelector(state => state.document.components[id]);
 

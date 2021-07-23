@@ -28,7 +28,7 @@ const BackgroundSizeOutput = styled.div`
 
 export const BackgroundSize = (props) => {
     
-    const {styles} = props;
+    const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
@@ -76,6 +76,7 @@ export const BackgroundSize = (props) => {
                     onChange={(e) => {
                         if (e.target.value !== 'unit unit' && e.target.value !== 'default') {
                             dispatch(setProp({
+                                id: activeComponent.id,
                                 name: 'backgroundSize',
                                 value: e.target.value,
                                 resolution
@@ -84,6 +85,7 @@ export const BackgroundSize = (props) => {
 
                         if (e.target.value === 'default') {
                             dispatch(setProp({
+                                id: activeComponent.id,
                                 name: 'backgroundSize',
                                 value: '',
                                 resolution
@@ -110,6 +112,7 @@ export const BackgroundSize = (props) => {
                             value={x.value}
                             onChange={(e) => {
                                 dispatch(setProp({
+                                    id: activeComponent.id,
                                     name: 'backgroundSize',
                                     value: `${e.target.value}${sizeX.unit} ${sizeY.value}${sizeY.unit}`
                                 }))
@@ -190,7 +193,7 @@ export const BackgroundPosition = (props) => {
 
 export default function PropsBackground(props) {
 
-    const {styles} = props;
+    const {styles, activeComponent} = props;
     
     return (
         <Section>
@@ -210,7 +213,7 @@ export default function PropsBackground(props) {
                 </Item>
                 
 
-                <BackgroundSize styles={styles} />
+                <BackgroundSize styles={styles} activeComponent={activeComponent} />
 
                 
                 <BackgroundPosition styles={styles} />

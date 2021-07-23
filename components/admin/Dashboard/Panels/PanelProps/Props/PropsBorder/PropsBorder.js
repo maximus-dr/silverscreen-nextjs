@@ -13,7 +13,8 @@ import { setProp } from "../../../../../../../store/actions/document";
 
 export default function PropsBorder(props) {
 
-    const {styles} = props;
+
+    const {styles, activeComponent} = props;
     const [prop, setPropName] = useState('border');
     const [custom, setCustom] = useState(false);
     const [borderWidth, setBorderWidth] = useState('');
@@ -74,6 +75,7 @@ export default function PropsBorder(props) {
                                 setCustom(prev => !prev);
                                 if (e.currentTarget.value === 'none') {
                                     dispatch(setProp({
+                                        id: activeComponent.id,
                                         name: prop,
                                         value: '',
                                         resolution
@@ -94,6 +96,7 @@ export default function PropsBorder(props) {
                                 disabled={!custom}
                                 value={borderWidth}
                                 onChange={(e) => dispatch(setProp({
+                                    id: activeComponent.id,
                                     name: prop,
                                     value: `${e.target.value}px ${borderStyle} ${borderColor}`,
                                     resolution
@@ -109,6 +112,7 @@ export default function PropsBorder(props) {
                                     disabled={!custom}
                                     onChange={(e) => {
                                         dispatch(setProp({
+                                            id: activeComponent.id,
                                             name: prop,
                                             value: `${borderWidth}px ${e.currentTarget.value} ${borderColor}`,
                                             resolution
@@ -126,6 +130,7 @@ export default function PropsBorder(props) {
                                     value={borderColor}
                                     onChange={(e) => {
                                         dispatch(setProp({
+                                            id: activeComponent.id,
                                             name: prop,
                                             value: `${borderWidth}px ${borderStyle} ${e.target.value}`
                                         }))

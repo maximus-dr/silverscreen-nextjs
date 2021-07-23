@@ -37,31 +37,58 @@ export default function Props(props) {
             <Resolutions activeComponent={activeComponent} />
 
             {/* Размеры */}
-            <PropsWidth styles={styles} />
+            <PropsWidth 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
             
             {/* Внешние отступы */}
-            <PropsMargin styles={styles} />
+            <PropsMargin 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
             
             {/* Внутренние отступы */}
-            <PropsPadding styles={styles} />
+            <PropsPadding 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
 
             {/* Границы */}
-            <PropsBorder styles={styles} />
+            <PropsBorder 
+                styles={styles} 
+                activeComponent={activeComponent}    
+            />
 
             {/* Отображение */}
-            <PropsDisplay styles={styles} />
+            <PropsDisplay 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
             
             {/* Позиционирование */}
-            <PropsPosition styles={styles} />
+            <PropsPosition 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
 
             {/* Типографика */}
-            <PropsFont styles={styles} />
+            <PropsFont 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
 
             {/* Фон */}
-            <PropsBackground styles={styles} />
+            <PropsBackground 
+                styles={styles} 
+                activeComponent={activeComponent}
+            />
             
             {/* Эффекты */}
-            <PropsEffects />
+            <PropsEffects 
+                styles={styles}
+                activeComponent={activeComponent}
+            />
         </Wrapper>
     )
 }
