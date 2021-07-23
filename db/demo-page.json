@@ -1,0 +1,91 @@
+{
+    "typeName": "Document",
+    "id": "doc1",
+    "name": "Demo",
+    "childrenList": [
+        {
+            "typeName": "page",
+            "id": "page1",
+            "name": "Main page",
+            "styles": {
+                "common": {
+                    "minHeight": "100vh"
+                }
+            },
+            "childrenList": [
+                {
+                    "typeName": "section",
+                    "id": "sectionCards001",
+                    "name": "Cards",
+                    "styles": {
+                        "common": {}
+                    },
+                    "childrenList": [
+                        {
+                            "typeName": "section",
+                            "id": "section001",
+                            "name": "Main wrapper",
+                            "styles": {
+                                "common": {
+                                    "paddingTop": "32px",
+                                    "paddingRight": "32px",
+                                    "paddingLeft": "32px",
+                                    "paddingBottom": "32px"
+                                }
+                            },
+                            "childrenList": [
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard001",
+                                    "name": "Card 1", 
+                                    "styles": {
+                                        "common": {
+                                            "width": "100%",
+                                            "maxWidth": "272px",
+                                            "minHeight": "376px",
+                                            "backgroundColor": "#ffffff",
+                                            "borderRadius": "8px",
+                                            "marginBottom": "32px"
+                                        }
+                                    }
+                                },
+        
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard002",
+                                    "name": "Card 1", 
+                                    "styles": {
+                                        "common": {
+                                            "width": "100%",
+                                            "maxWidth": "272px",
+                                            "minHeight": "376px",
+                                            "backgroundColor": "#ffffff",
+                                            "borderRadius": "8px",
+                                            "marginBottom": "32px"
+                                        }
+                                    }
+                                },
+        
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard003",
+                                    "name": "Card 1", 
+                                    "styles": {
+                                        "common": {
+                                            "width": "100%",
+                                            "maxWidth": "272px",
+                                            "minHeight": "376px",
+                                            "backgroundColor": "#ffffff",
+                                            "borderRadius": "8px",
+                                            "marginBottom": "32px"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

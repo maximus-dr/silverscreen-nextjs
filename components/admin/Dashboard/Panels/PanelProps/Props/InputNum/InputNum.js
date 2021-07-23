@@ -10,11 +10,13 @@ export default function InputNum(props) {
 
     const {units, min, max, step, parsedProp, isDisabled} = props;
 
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const id = activeComponent && activeComponent.id || '';
     const fullWidth = !units;
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
     const dispatch = useDispatch();
-    const activeComponent = useSelector(state => state.document.activeComponent);
+    const component = useSelector(state => state.document.components[id]);
 
     const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
     const [disabled, setDisabled] = useState(false);
@@ -22,7 +24,7 @@ export default function InputNum(props) {
 
     // установка единиц измерений
     useEffect(() => {
-        if (!activeComponent || !parsedProp) return;
+        if (!component || !parsedProp) return;
         if (parsedProp.unit) {
             setPropUnit(parsedProp.unit);
         }
@@ -30,7 +32,7 @@ export default function InputNum(props) {
         if (!parsedProp.unit && units && parsedProp.value) {
             setPropUnit(units[0].name)
         }
-    }, [parsedProp, units, activeComponent]);
+    }, [parsedProp, units, component]);
 
 
     // disable input, если ед.измерения - auto
@@ -50,7 +52,8 @@ export default function InputNum(props) {
         dispatch(setProp({
             name: parsedProp.name,
             value: value + unit,
-            resolution
+            resolution,
+            id: activeComponent.id
         }));
     };
 
@@ -61,7 +64,8 @@ export default function InputNum(props) {
         const prop = {
             name: parsedProp.name,
             value: null,
-            resolution
+            resolution,
+            id: activeComponent.id
         }
 
         if (unit !== 'auto' && inputValue) {

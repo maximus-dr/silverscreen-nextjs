@@ -13,6 +13,10 @@ export const SectionWrapper = styled.div`
 
         return css`
             ${styles && StylesProvider(styles)}
+            ${props => props.isActiveComponent && `
+                outline: 2px solid #42a5f5;
+                outline-offset: 5px;
+            `}
 
             @media (min-width: ${screens['screen_mobile'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_mobile'])}

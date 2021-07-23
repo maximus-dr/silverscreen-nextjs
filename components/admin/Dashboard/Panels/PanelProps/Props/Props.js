@@ -17,15 +17,17 @@ import PropsEffects from './PropsEffects/PropsEffects'
 export default function Props(props) {
 
     const {activeComponent} = props;
+    const id = activeComponent && activeComponent.id || '';
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
+    const component = useSelector(state => state.document.components[id]);
     let styles = {};
 
-    if (activeComponent && activeComponent.styles && resolution) {
-        styles = activeComponent.styles[resolution] || {};
+    if (component && component.styles && resolution) {
+        styles = component.styles[resolution] || {};
     }
 
-    if (activeComponent && activeComponent.styles && !resolution) {
-        styles = activeComponent.styles.common || {};
+    if (component && component.styles && !resolution) {
+        styles = component.styles.common || {};
     }
 
     
@@ -34,12 +36,6 @@ export default function Props(props) {
             {/* Выбор разрешения */}
             <Resolutions activeComponent={activeComponent} />
 
-            {/* Типографика */}
-            <PropsFont styles={styles} />
-
-            {/* Границы */}
-            <PropsBorder styles={styles} />
-                
             {/* Размеры */}
             <PropsWidth styles={styles} />
             
@@ -48,13 +44,19 @@ export default function Props(props) {
             
             {/* Внутренние отступы */}
             <PropsPadding styles={styles} />
-            
-            {/* Позиционирование */}
-            <PropsPosition styles={styles} />
+
+            {/* Границы */}
+            <PropsBorder styles={styles} />
 
             {/* Отображение */}
             <PropsDisplay styles={styles} />
             
+            {/* Позиционирование */}
+            <PropsPosition styles={styles} />
+
+            {/* Типографика */}
+            <PropsFont styles={styles} />
+
             {/* Фон */}
             <PropsBackground styles={styles} />
             

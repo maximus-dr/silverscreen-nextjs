@@ -43,15 +43,19 @@ export const documentReducer = (state = {}, action) => {
 
             return {
                 ...state,
-                activeComponent: {
-                    ...state.activeComponent,
-                    styles: {
-                        ...state.activeComponent.styles,
-                        common: {
-                            ...state.activeComponent.styles.common,
-                            [action.prop.name]: action.prop.value
+                components: {
+                    ...state.components,
+                    [action.prop.id]: {
+                        ...state.components[action.prop.id],
+                        styles: {
+                            ...state.components[action.prop.id].styles,
+                            common: {
+                                ...state.components[action.prop.id].styles.common,
+                                [action.prop.name]: action.prop.value
+                            }
                         }
-                    }
+                    } 
+                    
                 }
             }
 

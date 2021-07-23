@@ -10,6 +10,7 @@ export default function InputText(props) {
     const {parsedProp, isDisabled} = props;
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
+    const document = useSelector(state => state.document);
 
     return (
         <>
@@ -21,7 +22,8 @@ export default function InputText(props) {
                     dispatch(setProp({
                         name: parsedProp.name,
                         value: e.target.value,
-                        resolution
+                        resolution,
+                        id: document.activeComponent.id
                     }))
                 }}
             /> 

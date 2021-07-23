@@ -8,27 +8,15 @@ export const PageBody = styled.div`
 
   ${props => enableOutlines(props.showOutlines, colors.outline_page)}
 
-  display: flex;
-  height: 100%;
-  min-height: 100px;
-  width: 100%;
-  background-repeat: no-repeat;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  padding-top: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-
-  background-color: #f5f5f5;
-  background-image: none;
-  background-size: cover;
-
   ${props => {
-    const styles = props.styles ? props.styles : null;
+    const styles = props.componentData.styles && props.componentData.styles.common || null;
 
     return css`
+    ${props => props.isActiveComponent && `
+          outline: 2px solid #42a5f5;
+          outline-offset: 5px;
+          position: relative;
+      `}
       ${styles && StylesProvider(styles)}
       ${styles && styles.isActive && StylesProvider(styles.isActive)}
     `

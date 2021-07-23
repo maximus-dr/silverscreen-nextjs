@@ -11,6 +11,7 @@ export default function Select(props) {
     const {options, parsedProp, isDisabled} = props;
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
+    const document = useSelector(state => state.document);
 
 
     const onSelect = (e) => {
@@ -18,7 +19,8 @@ export default function Select(props) {
         const prop = {
             name: parsedProp.name,
             value,
-            resolution
+            resolution,
+            id: document.activeComponent.id
         }
         if (value === 'default') {
             prop.value = '';

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { SectionWrapper, SectionBody, SectionBackground } from './SectionStyled'
 import { OutlinesContext } from '../../../context/outlinesContext';
 import { getHandler } from '../../../core/functions/components';
@@ -11,7 +11,9 @@ export default function Section(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
 
-    const componentData = isActiveComponent ? activeComponent : props.componentData;
+    const id = props.componentData.id;
+
+    const componentData = useSelector(state => state.document.components[id]);
 
     return (
         <SectionWrapper
@@ -20,8 +22,9 @@ export default function Section(props) {
             showOutlines={outlines} 
             onMouseEnter={props.onMouseEnter} 
             onClick={getHandler(props, 'onClick')}
+            isActiveComponent={isActiveComponent}
         >
-                    {props.children}
+            {props.children}
         </SectionWrapper>
     )
 }
