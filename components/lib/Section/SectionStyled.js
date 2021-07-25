@@ -1,13 +1,12 @@
 import styled, {css} from 'styled-components';
-import { colors, screens } from '../../../core/variables/variables';
-import { enableOutlines, getOutlines } from '../../../core/functions/outlines';
+import { screens } from '../../../core/variables/variables';
+import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
 
 
 export const SectionWrapper = styled.div`
 
-    ${props => enableOutlines(props.showOutlines, colors.outline_section)}
     ${props => {
         const styles = props.componentData.styles && props.componentData.styles.common || null;
 

@@ -23,11 +23,20 @@ export const ComponentPropKey = styled.span`
     font-weight: bold;
 `;
 
-export const ComponentPropValue = styled.span`
+export const ComponentPropValue = styled.div`
     display: inline-block;
+    width: 100%;
 `;
 
 export const ComponentElements = styled.div`
     border: 1px dashed black;
     padding: 5px;
+`;
+
+export const ComponentInfoTextarea = styled.textarea`
+    display:inline-block;
+    border: solid 1px #000;
+    min-height:50px;
+    width: 100%;
+    resize: none;
 `;

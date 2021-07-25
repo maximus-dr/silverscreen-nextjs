@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Panel from '../Panel/Panel'
-import ComponentSeciton from './Info/ComponentSeciton';
+import ComponentInfo from './ComponentInfo/ComponentInfo';
 import { PropsPanelWrapper} from './PanelPropsStyled';
 import Props from './Props/Props';
 
@@ -18,7 +18,7 @@ export default function PanelProps() {
                 <PropsPanelWrapper>
                     {
                         activeComponent &&
-                        <ComponentSeciton activeComponent={activeComponent} />
+                        <ComponentInfo activeComponent={activeComponent} />
                     }
                     
                     <Props activeComponent={activeComponent} />

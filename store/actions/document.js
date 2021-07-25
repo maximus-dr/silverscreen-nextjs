@@ -4,6 +4,8 @@ export const SET_COMPONENT_ELEMENT = 'SET_COMPONENT_ELEMENT';
 export const CLEAR_COMPONENT_ELEMENT = 'CLEAR_COMPONENT_ELEMENT';
 export const SET_RESOLUTION = 'SET_RESOLUTION';
 export const SET_PROP = 'SET_PROP';
+export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
+
 
 export const setActiveComponent = (activeComponent) => ({
     type: SET_ACTIVE_COMPONENT,
@@ -31,4 +33,10 @@ export const setResolution = (resolution) => ({
 export const setProp = (prop) => ({
     type: SET_PROP,
     prop
+});
+
+export const setComponentValue = (value, id) => ({
+    type: SET_COMPONENT_VALUE,
+    value,
+    id
 });

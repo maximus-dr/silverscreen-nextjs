@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux';
-import { OutlinesContext } from '../../../context/outlinesContext';
 import { getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
@@ -9,17 +8,17 @@ import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputL
 
 export default function Label(props) {
 
-    const outlines = useContext(OutlinesContext);
     const attrs = getAttrs(props.componentData);
 
+    const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
-    const componentData = isActiveComponent ? activeComponent : props.componentData;
+    const componentData = useSelector(state => state.document.components[id]);
 
 
     const label = (heading) => {
 
-        const text = componentData.value || 'Label';
+        const text = componentData.value || '';
         const htmlFor = attrs && componentData.attrs['for'] || '';
 
         switch(heading) {
@@ -28,7 +27,7 @@ export default function Label(props) {
                     <LabelH1
                         {...props}
                         componentData={componentData}
-                        showOutlines={outlines}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -39,8 +38,8 @@ export default function Label(props) {
                 return (
                     <LabelH2
                         {...props}
-                        componentData={componentData} 
-                        showOutlines={outlines}
+                        componentData={componentData}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -51,8 +50,8 @@ export default function Label(props) {
                 return (
                     <LabelH3 
                         {...props}
-                        componentData={componentData} 
-                        showOutlines={outlines}
+                        componentData={componentData}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -64,7 +63,7 @@ export default function Label(props) {
                     <LabelH4
                         {...props}
                         componentData={componentData}
-                        showOutlines={outlines}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -75,8 +74,8 @@ export default function Label(props) {
                 return (
                     <LabelH5
                         {...props}
-                        componentData={componentData} 
-                        showOutlines={outlines}
+                        componentData={componentData}
+                        isActiveComponent={isActiveComponent} 
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -87,8 +86,8 @@ export default function Label(props) {
                 return (
                     <LabelH6
                         {...props}
-                        componentData={componentData} 
-                        showOutlines={outlines}
+                        componentData={componentData}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -101,7 +100,7 @@ export default function Label(props) {
                         htmlFor={htmlFor} 
                         {...props}
                         componentData={componentData}
-                        showOutlines={outlines}
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -111,9 +110,9 @@ export default function Label(props) {
             default:
                 return (
                     <LabelSpan 
-                        showOutlines={outlines}
                         {...props}
                         componentData={componentData}
+                        isActiveComponent={isActiveComponent}
                         {...props.handlers}
                         onClick={getHandler(props, 'onClick')}
                     >

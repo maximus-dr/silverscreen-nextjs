@@ -5,13 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { parseProp } from '../../../../../../../core/functions/admin/props'
 import { propsList } from '../../../../../../../core/variables/variables'
-import { setProp } from '../../../../../../../store/actions/document'
 import InputNum from '../InputNum/InputNum'
 import InputText from '../InputText/InputText'
 import { Body, Header, Item, ItemKey, ItemValue, Section } from '../PropsStyled'
 import Select from '../Select/Select'
-import { FontFamilyPrimary, FontFamilySecondary } from './PropsFontStyled'
-
 
 
 
@@ -118,6 +115,17 @@ export default function PropsFont(props) {
                     <ItemKey>text-align:</ItemKey>
                     <ItemValue>
                         <Select options={propsList.textAlign.options} parsedProp={parseProp(styles, 'textAlign')} />
+                    </ItemValue>
+                </Item>
+                <Item>
+                    <ItemKey>text-indent:</ItemKey>
+                    <ItemValue>
+                        <InputNum 
+                            step={1}
+                            min={0}
+                            units={propsList.textIndent.units} 
+                            parsedProp={parseProp(styles, 'textIndent')} 
+                        />
                     </ItemValue>
                 </Item>
                 <Item>

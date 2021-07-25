@@ -1,4 +1,5 @@
 import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP } from "../actions/document"
+import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
 export const documentReducer = (state = {}, action) => {
@@ -40,7 +41,6 @@ export const documentReducer = (state = {}, action) => {
                 resolution: action.resolution
             }
         case SET_PROP:
-
             return {
                 ...state,
                 components: {
@@ -56,6 +56,18 @@ export const documentReducer = (state = {}, action) => {
                         }
                     } 
                     
+                }
+            }
+
+        case SET_COMPONENT_VALUE:
+            return {
+                ...state,
+                components: {
+                    ...state.components,
+                    [action.id]: {
+                        ...state.components[action.id],
+                        value: action.value
+                    }
                 }
             }
 

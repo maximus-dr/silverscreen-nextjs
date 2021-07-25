@@ -15,6 +15,6 @@ export function enableOutlines(isEnabled, color) {
 export function getOutlines() {
   return `
     outline: 2px solid #42a5f5;
-    outline-offset: 5px;
+    outline-offset: 3px;
   `;
 }

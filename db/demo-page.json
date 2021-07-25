@@ -47,7 +47,39 @@
                                             "borderRadius": "8px",
                                             "marginBottom": "32px"
                                         }
-                                    }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardLabel001",
+                                            "name": "Title",
+                                            "value": "Label",
+                                            "heading": "h2",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "0px",
+                                                    "marginRIght": "0px",
+                                                    "marginBottom": "0px",
+                                                    "marginLeft": "0px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription001",
+                                            "name": "Description",
+                                            "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "0px",
+                                                    "marginRIght": "0px",
+                                                    "marginBottom": "0px",
+                                                    "marginLeft": "0px"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 },
         
                                 {

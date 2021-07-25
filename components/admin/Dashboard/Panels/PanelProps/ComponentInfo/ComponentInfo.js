@@ -1,39 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { ComponentData, ComponentElements, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper } from './ComponentSectionStyled'
+import { ComponentData, ComponentElements, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea } from './ComponentInfoStyled'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setComponentValue } from '../../../../../../store/actions/document';
+
 
 
 export default function ComponentSeciton(props) {
 
     const {activeComponent} = props;
-    const entries = Object.entries(activeComponent);
+    const componentData = useSelector(state => state.document.components[activeComponent.id]);
+    const entries = Object.entries(componentData);
+    const dispatch = useDispatch();
 
 
-    const [name, setName] = useState(() => activeComponent.name || '');
-    const [value, setValue] = useState(() => activeComponent.value || '');
-
-    const onNameFieldChange = (e) => {
-        setName(e.target.value);
-    }
-
-    const onValueFieldChange = (e) => {
-        setValue(e.target.value);
-    }
-
-    useEffect(() => {
-        if (activeComponent.name) {
-            setName(activeComponent.name);
-        }
-        return;
-    }, [activeComponent]);
-
-    useEffect(() => {
-        if (activeComponent.value) {
-            setValue(activeComponent.value);
-        }
-        return;
-    }, [activeComponent])
-
-    
     return (
         <ComponentSectionWrapper>
             <ComponentData>
@@ -48,7 +28,11 @@ export default function ComponentSeciton(props) {
                             <ComponentPropItem key={entrie[0]}>
                                 <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
                                 <ComponentPropValue>
-                                    <input type="text" value={name} onChange={onNameFieldChange} />
+                                    <input 
+                                        type="text" 
+                                        value={componentData.name} 
+                                        onChange={() => {}} 
+                                    />
                                 </ComponentPropValue>
                             </ComponentPropItem>
                         );
@@ -59,7 +43,15 @@ export default function ComponentSeciton(props) {
                             <ComponentPropItem key={entrie[0]}>
                                 <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
                                 <ComponentPropValue>
-                                    <input type="text" value={value} onChange={onValueFieldChange} />
+                                    <ComponentInfoTextarea 
+                                        value={componentData.value || ''}
+                                        onChange={(e) => {
+                                            dispatch(setComponentValue(
+                                                e.target.value,
+                                                componentData.id
+                                            ))
+                                        }}
+                                    />
                                 </ComponentPropValue>
                             </ComponentPropItem>
                         );

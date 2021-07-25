@@ -55,6 +55,7 @@ export const StylesProvider = (styles) => {
 
         color: ${styles && styles.color || ''};
         text-align: ${styles && styles.textAlign || ''};
+        text-indent: ${styles && styles.textIndent || ''};
         text-transform: ${styles && styles.textTransform || ''};
         text-decoration: ${styles && styles.textDecoration || ''};
         text-shadow: ${styles && styles.textShadow || ''};

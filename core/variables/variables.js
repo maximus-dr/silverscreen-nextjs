@@ -281,6 +281,11 @@ export const propsList = {
         default: ''
     },
 
+    textIndent: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}]
+    },
+
     textTransform: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'capitalize'}, {id: 3, name: 'uppercase'}, {id: 4, name: 'lowercase'}],
