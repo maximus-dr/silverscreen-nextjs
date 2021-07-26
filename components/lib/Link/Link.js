@@ -13,7 +13,7 @@ export default function LinkView(props) {
             <Link href='/link'>
                 <a>
                     <LinkBody {...props} {...props.componentData}>
-                        {props.componentData && props.componentData.value || 'Link'}
+                        {props.componentData && props.componentData.value || ''}
                     </LinkBody>
                 </a>
             </Link>

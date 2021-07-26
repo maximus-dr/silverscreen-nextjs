@@ -1,4 +1,5 @@
 import React from 'react'
+import { parseProp } from '../../../../../../../core/functions/admin/props'
 import InputNum from '../InputNum/InputNum'
 import InputText from '../InputText/InputText'
 import { Body, Header, Item, ItemKey, ItemValue, Section } from '../PropsStyled'
@@ -6,7 +7,10 @@ import Select from '../Select/Select'
 
 
 
-export default function PropsEffects() {
+export default function PropsEffects(props) {
+
+    const {styles, activeComponent} = props;
+
     return (
         <Section>
             <Header>Эффекты</Header>
@@ -14,7 +18,7 @@ export default function PropsEffects() {
                 <Item>
                     <ItemKey>opacity:</ItemKey>
                     <ItemValue>
-                        <InputNum />
+                        <InputNum min={0} max={1} step={0.1} parsedProp={parseProp(styles, 'opacity')} />
                     </ItemValue>
                 </Item>
                 <Item style={{alignItems: 'flex-start'}}>

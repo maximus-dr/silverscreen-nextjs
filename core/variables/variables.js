@@ -86,6 +86,19 @@ export const propsList = {
         default: 'nowrap'
     },
 
+    flexShrink: {
+        type: 'num'
+    },
+
+    flexGrow: {
+        type: 'num'
+    },
+
+    flexBasis: {
+        type: 'num',
+        units: [{id: 1, name: 'px'}]
+    },
+
     alignItems: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'baseline'}, {id: 5, name: 'stretch'}],
@@ -327,7 +340,7 @@ export const propsList = {
     },
 
     backgroundImage: {
-        type: 'text',
+        type: 'backgroundImage',
         default: ''
     },
 
@@ -345,5 +358,8 @@ export const propsList = {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}],
         default: ''
+    },
+    opacity: {
+        type: 'num'
     }
 }

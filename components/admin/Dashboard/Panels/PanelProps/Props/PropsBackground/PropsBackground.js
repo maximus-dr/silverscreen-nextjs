@@ -190,28 +190,141 @@ export const BackgroundPosition = (props) => {
 }
 
 
+export const BackgroundImageWrapper = styled.div`
+    width: 100%;
+`;
+
+export const BackgroundImageRow = styled.div`
+
+`;
+
+export const BackgroundImageTextarea = styled.textarea`
+    width: 230px;
+    resize: none;
+    margin-bottom: 10px;
+    min-height: 75px;
+`;
+
+export const BackgroundImageRadio = styled.input`
+    cursor: pointer;
+`;
+
+export const BackgroundImageLabel = styled.label`
+    cursor: pointer;
+    padding: 0 25px 0 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+`;
+
+
+export const BackgroundImage = (props) => {
+    const {parsedProp, activeComponent} = props;
+    const resolution = useSelector(state => state.document.resolution);
+    const dispatch = useDispatch();
+    const [type, setType] = useState('url');
+
+
+    useEffect(() => {
+        if (parsedProp && parsedProp.url) {
+            setType('url');
+        }
+
+        if (parsedProp && parsedProp.gradient) {
+            setType('gradient');
+        }
+    }, [parsedProp])
+
+    return (
+        <BackgroundImageWrapper>
+            <BackgroundImageRow>
+                <BackgroundImageRadio 
+                    type="radio" 
+                    name="backgroundImageType" 
+                    id="bgImageType-1"
+                    checked={type === "url"}
+                    onChange={() => {
+                        setType('url')
+                    }}
+                />
+                <BackgroundImageLabel htmlFor="bgImageType-1">url</BackgroundImageLabel>
+                <BackgroundImageTextarea
+                    value={parsedProp && parsedProp.value && parsedProp.url && parsedProp.value || ''}
+                    onChange={(e) => {
+                        dispatch(setProp({
+                            name: 'backgroundImage',
+                            value: `url('${e.target.value}')`,
+                            resolution,
+                            id: activeComponent.id
+                        }))
+                    }}
+                />
+            </BackgroundImageRow>
+            <BackgroundImageRow>
+                <BackgroundImageRadio 
+                    type="radio" 
+                    name="backgroundImageType" 
+                    id="bgImageType-2" 
+                    checked={type === "gradient"}
+                    onChange={() => {
+                        setType('gradient')
+                    }}
+                />
+                <BackgroundImageLabel htmlFor="bgImageType-2">gradient</BackgroundImageLabel>
+                <div style={{display: 'flex'}}>
+                    <input 
+                        type="text" 
+                        style={{width: '110px', marginRight: '10px'}} 
+                        value={parsedProp && parsedProp.gradient && parsedProp.value && parsedProp.value[0] || ''}
+                        onChange={(e) => {
+                            dispatch(setProp({
+                                name: 'backgroundImage',
+                                value: `linear-gradient(${e.target.value}, ${parsedProp.value && parsedProp.value[1] || ''})`,
+                                resolution,
+                                id: activeComponent.id
+                            }));
+                        }}
+                    />
+                    <input 
+                        type="text" 
+                        style={{width: '110px'}} 
+                        value={parsedProp && parsedProp.gradient && parsedProp.value && parsedProp.value[1] || ''}
+                        onChange={(e) => {
+                            dispatch(setProp({
+                                name: 'backgroundImage',
+                                value: `linear-gradient(${parsedProp.value && parsedProp.value[0] || ''}, ${e.target.value})`,
+                                resolution,
+                                id: activeComponent.id
+                            }));
+                        }}
+                    />
+                </div>
+            </BackgroundImageRow>  
+        </BackgroundImageWrapper>
+    );
+}
+
+
 
 export default function PropsBackground(props) {
 
     const {styles, activeComponent} = props;
     
+    
     return (
         <Section>
             <Header>Фон</Header>
             <Body>
-                <Item>
+                <Item style={{marginBottom: '10px'}}>
                     <ItemKey>background-color:</ItemKey>
                     <ItemValue>
                         <InputText parsedProp={parseProp(styles, 'backgroundColor')} />
                     </ItemValue>
                 </Item>
-                <Item>
-                    <ItemKey>background-image:</ItemKey>
-                    <ItemValue>
-                        <InputText parsedProp={parseProp(styles, 'backgroundImage')} />
-                    </ItemValue>
-                </Item>
-                
+
+                <div style={{marginBottom: '10px'}}>
+                    <div style={{marginBottom: '5px'}}>background-image:</div>
+                    <BackgroundImage parsedProp={parseProp(styles, 'backgroundImage')} activeComponent={activeComponent} />
+                </div>
 
                 <BackgroundSize styles={styles} activeComponent={activeComponent} />
 

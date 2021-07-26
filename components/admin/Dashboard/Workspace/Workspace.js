@@ -41,7 +41,8 @@ const Cards = styled.div`
 `;
 
 const CardWrapper = styled.div`
-    flex: 1 1 200px;
+    flex: 1 1 300px;
+    margin-bottom: 25px;
 `;
 
 const Card = styled.div`
@@ -50,7 +51,9 @@ const Card = styled.div`
     background-image: url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c');
     background-size: cover;
     border-radius: 8px;
+    margin-bottom: 10px;
 `;
+
 
 const Date = styled.span`
     font-size: 13px;
@@ -59,7 +62,7 @@ const Date = styled.span`
 `;
 
 const Text = styled.p`
-    
+    margin-top: 15px;
 `;
 
 
@@ -118,8 +121,8 @@ export default function Workspace() {
             <WorkspacePageWrapper>
                 <Screens screen={screen} setScreen={setScreen} />
                 <WorkspacePage pageWidth={`${screen}px`}>
-                    {/* {components} */}
-                    <Test />
+                    {components}
+                    {/* <Test /> */}
                 </WorkspacePage>
             </WorkspacePageWrapper>
         </WorkspaceWrapper> 

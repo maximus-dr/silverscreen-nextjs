@@ -1,20 +1,20 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { PageBody } from './PageStyled';
-import { OutlinesContext } from '../../../context/outlinesContext';
 import { useSelector } from 'react-redux';
 
 
 export default function Page(props) {
 
-  const outlines = useContext(OutlinesContext);
+
+  const id = props.componentData.id;
   const activeComponent = useSelector(state => state.document.activeComponent);
-  const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+  const isActiveComponent = activeComponent && activeComponent.id === id;
+  const componentData = useSelector(state => state.document.components[id]);
 
   return (
       <PageBody 
         {...props} 
-        componentData={props.componentData} 
-        showOutlines={outlines}
+        componentData={componentData} 
         isActiveComponent={isActiveComponent}
       >
         {props.children}

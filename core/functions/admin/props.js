@@ -167,5 +167,17 @@ export function parseProp(styles, propName) {
         }
     }
 
+    if (propData.type === 'backgroundImage' && propValue) {
+        if (propValue.includes('url')) {
+            result.value = propValue.replace(`url('`, '').replace(`')`, '').trim();
+            result.url = true;
+        }
+
+        if (propValue.includes('gradient')) {
+            result.value = propValue.trim().replace('linear-gradient(', '').replace(')', '').split(', ');
+            result.gradient = true;
+        }
+    }
+
     return result;
 }

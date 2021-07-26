@@ -74,6 +74,25 @@ export default function PropsPosition(props) {
                     </ItemValue>
                 </Item>
                 <Item>
+                    <ItemKey>flex-shrink:</ItemKey>
+                    <ItemValue>
+                        <InputNum step={1} parsedProp={parseProp(styles, 'flexShrink')} />
+                    </ItemValue>
+                </Item>
+                <Item>
+                    <ItemKey>flex-grow:</ItemKey>
+                    <ItemValue>
+                        <InputNum step={1} parsedProp={parseProp(styles, 'flexGrow')} />
+                    </ItemValue>
+                </Item>
+                <Item>
+                    <ItemKey>flex-basis:</ItemKey>
+                    <ItemValue>
+                        <InputNum step={5} units={propsList.flexBasis.units} parsedProp={parseProp(styles, 'flexBasis')} />
+                    </ItemValue>
+                </Item>
+
+                <Item>
                     <ItemKey>align-items:</ItemKey>
                     <ItemValue>
                         <Select options={propsList.alignItems.options} parsedProp={parseProp(styles, 'alignItems')} />
@@ -88,7 +107,7 @@ export default function PropsPosition(props) {
                 <Item>
                     <ItemKey>order:</ItemKey>
                     <ItemValue>
-                        <InputNum parsedProp={parseProp(styles, 'order')} />
+                        <InputNum step={1} parsedProp={parseProp(styles, 'order')} />
                     </ItemValue>
                 </Item>
             </Body>

@@ -9,7 +9,10 @@
             "name": "Main page",
             "styles": {
                 "common": {
-                    "minHeight": "100vh"
+                    "minHeight": "100vh",
+                    "width": "100%",
+                    "color": "#ffffff",
+                    "backgroundImage": "linear-gradient(#FC5C7D, #6A82FB)"
                 }
             },
             "childrenList": [
@@ -18,19 +21,43 @@
                     "id": "sectionCards001",
                     "name": "Main Wrapper",
                     "styles": {
-                        "common": {}
+                        "common": {
+                            
+                        }
                     },
                     "childrenList": [
+                        {
+                            "typeName": "label",
+                            "id": "cardSectionLabel001",
+                            "name": "Title",
+                            "value": "новости и акции",
+                            "styles": {
+                                "common": {
+                                    "marginTop": "0px",
+                                    "marginBottom": "15px",
+                                    "paddingTop": "32px",
+                                    "paddingLeft": "32px",
+                                    "paddingRight": "32px",
+                                    "paddingBottom": "15px",
+                                    "fontWeight": "normal",
+                                    "display": "inline-block",
+                                    "fontSize": "40px",
+                                    "lineHeight": "40px"
+                                }
+                            }
+                        },
+
                         {
                             "typeName": "section",
                             "id": "section001",
                             "name": "Cards",
                             "styles": {
                                 "common": {
-                                    "paddingTop": "32px",
                                     "paddingRight": "32px",
                                     "paddingLeft": "32px",
-                                    "paddingBottom": "32px"
+                                    "display": "flex",
+                                    "flexWrap": "wrap",
+                                    "columnGap": "30px"
                                 }
                             },
                             "childrenList": [
@@ -40,62 +67,471 @@
                                     "name": "Card 1", 
                                     "styles": {
                                         "common": {
-                                            "width": "100%",
-                                            "minHeight": "50px",
-                                            "backgroundColor": "#ffffff",
-                                            "marginBottom": "30px"
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px",
+                                            "display": "flex",
+                                            "flexDirection": "column",
+                                            "alignItems": "flex-start"
                                         }
                                     },
                                     "childrenList": [
                                         {
-                                            "typeName": "label",
-                                            "id": "cardLabel001",
-                                            "name": "Title",
-                                            "value": "Card 1",
-                                            "heading": "h2",
+                                            "typeName": "section",
+                                            "id": "cardImgSection01",
+                                            "name": "Image",
                                             "styles": {
                                                 "common": {
-                                                    "marginTop": "0px",
-                                                    "marginRIght": "0px",
-                                                    "marginBottom": "0px",
-                                                    "marginLeft": "0px"
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px",
+                                                    "order": "0"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateSection",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase",
+                                                    "order": "1"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription001",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px",
+                                                    "order": "2"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink001",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px",
+                                                    "order": "3"
                                                 }
                                             }
                                         }
                                     ]
                                 },
-        
+
                                 {
                                     "typeName": "section",
                                     "id": "sectionCard002",
                                     "name": "Card 2", 
                                     "styles": {
                                         "common": {
-                                            "width": "100%",
-                                            "maxWidth": "272px",
-                                            "minHeight": "376px",
-                                            "backgroundColor": "#ffffff",
-                                            "borderRadius": "8px",
-                                            "marginBottom": "30px"
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px"
                                         }
-                                    }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "cardImgSection02",
+                                            "name": "Image",
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateLabel002",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription002",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink002",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 },
-        
+
                                 {
                                     "typeName": "section",
                                     "id": "sectionCard003",
-                                    "name": "Card 1", 
+                                    "name": "Card 3", 
                                     "styles": {
                                         "common": {
-                                            "width": "100%",
-                                            "maxWidth": "272px",
-                                            "minHeight": "376px",
-                                            "backgroundColor": "#ffffff",
-                                            "borderRadius": "8px",
-                                            "marginBottom": "32px"
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px"
                                         }
-                                    }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "cardImgSection03",
+                                            "name": "Image",
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateLabel003",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription003",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink003",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard004",
+                                    "name": "Card 4", 
+                                    "styles": {
+                                        "common": {
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "cardImgSection04",
+                                            "name": "Image",
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateLabel004",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription004",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink004",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard005",
+                                    "name": "Card 5", 
+                                    "styles": {
+                                        "common": {
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "cardImgSection05",
+                                            "name": "Image",
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateLabel005",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription005",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink005",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sectionCard006",
+                                    "name": "Card 6", 
+                                    "styles": {
+                                        "common": {
+                                            "flexGrow": "1",
+                                            "flexShrink": "1",
+                                            "flexBasis": "200px",
+                                            "marginBottom": "35px",
+                                            "maxWidth": "568px"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "cardImgSection06",
+                                            "name": "Image",
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingBottom": "58%",
+                                                    "backgroundImage": "url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/news-1.jpg?alt=media&token=e5b6016b-2708-42ee-a328-d3a1545b084c')",
+                                                    "backgroundSize": "cover",
+                                                    "borderRadius": "8px",
+                                                    "marginBottom": "10px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "cardDateLabel006",
+                                            "name": "Date",
+                                            "value": "26 Июля 2021",
+                                            "styles": {
+                                                "common": {
+                                                    "fontSize": "13px",
+                                                    "lineHeight": "24px",
+                                                    "textTransform": "uppercase"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "description",
+                                            "id": "cardDescription006",
+                                            "name": "Description",
+                                            "value": "Уважаемые зрители! В целях снижение рисков распространения инфекции (COVID - 19) и сохранения здоровья посетителей и работников кинотеатра в нашей сети действует следующий комплекс мер безопасности...",
+                                            "styles": {
+                                                "common": {
+                                                    "marginTop": "15px"
+                                                }
+                                            }
+                                        },
+
+                                        {
+                                            "typeName": "button",
+                                            "id": "cardLink006",
+                                            "name": "Link",
+                                            "value": "Подробнее",
+                                            "styles": {
+                                                "common": {
+                                                    "color": "#ffffff",
+                                                    "fontSize": "14px",
+                                                    "cursor": "pointer",
+                                                    "border": "1px solid #ffffff",
+                                                    "backgroundColor": "transparent",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "15px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "15px"
+                                                }
+                                            }
+                                        }
+                                    ]
                                 }
+        
+                    
                             ]
                         }
                     ]
