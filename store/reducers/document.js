@@ -1,4 +1,4 @@
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -67,6 +67,18 @@ export const documentReducer = (state = {}, action) => {
                     [action.id]: {
                         ...state.components[action.id],
                         value: action.value
+                    }
+                }
+            }
+
+        case SET_COMPONENT_NAME:
+            return {
+                ...state,
+                components: {
+                    ...state.components,
+                    [action.id]: {
+                        ...state.components[action.id],
+                        name: action.name
                     }
                 }
             }

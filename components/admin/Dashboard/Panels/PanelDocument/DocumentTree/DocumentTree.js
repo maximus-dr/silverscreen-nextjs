@@ -4,6 +4,7 @@ import { setActiveComponent, unsetActiveComponent } from "../../../../../../stor
 import { DocumentTreeChildren, DocumentTreeItem, DocumentTreeItemName, DocumentTreeItemType, DocumentTreeItemWrapper, DocumentTreeWrapper } from "./DocumentTreeStyled";
 
 
+
 export default function DocumentTree(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -13,6 +14,8 @@ export default function DocumentTree(props) {
     const isRootItem = props.nodeData.typeName === 'Document';
     const isPage = props.nodeData.typeName === 'page';
     const isActive = activeComponent && props.nodeData.id === activeComponent.id;
+
+    const components = useSelector(state => state.document.components);
 
     const [expanded, setExpanded] = useState(false);
 
@@ -49,7 +52,7 @@ export default function DocumentTree(props) {
                         isPage={isPage}    
                         isActive={isActive}
                     >
-                        {props.nodeData.name}
+                        {components[props.nodeData.id].name}
                     </DocumentTreeItemName>
                 </DocumentTreeItem>
             </DocumentTreeItemWrapper>

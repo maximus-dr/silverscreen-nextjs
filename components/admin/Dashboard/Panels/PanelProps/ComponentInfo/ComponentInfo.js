@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { ComponentData, ComponentElements, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea } from './ComponentInfoStyled'
+import { ComponentData, ComponentElements, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentValue } from '../../../../../../store/actions/document';
+import { setComponentName, setComponentValue } from '../../../../../../store/actions/document';
 
 
 
@@ -28,10 +28,15 @@ export default function ComponentSeciton(props) {
                             <ComponentPropItem key={entrie[0]}>
                                 <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
                                 <ComponentPropValue>
-                                    <input 
+                                    <ComponentName 
                                         type="text" 
                                         value={componentData.name} 
-                                        onChange={() => {}} 
+                                        onChange={(e) => {
+                                            dispatch(setComponentName(
+                                                e.target.value,
+                                                activeComponent.id
+                                            ))
+                                        }} 
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>

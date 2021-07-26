@@ -40,3 +40,7 @@ export const ComponentInfoTextarea = styled.textarea`
     width: 100%;
     resize: none;
 `;
+
+export const ComponentName = styled.input`
+    width: 100%;
+`;
