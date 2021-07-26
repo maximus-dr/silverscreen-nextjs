@@ -35,7 +35,7 @@ import { getComponentsList } from "../../core/functions/render";
 
 
 export async function getServerSideProps() {
-    const dbPath = path.join(process.cwd(), 'db/demo-page.json');
+    const dbPath = path.join(process.cwd(), 'db/test.json');
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
     

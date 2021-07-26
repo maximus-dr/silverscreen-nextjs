@@ -12,6 +12,25 @@ export const WorkspaceWrapper = styled.div`
     height: calc(100vh - 55px);
     overflow: auto;
     transition: width 150ms;
+
+    &::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0,0,0,0.1);
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background: rgba(0,0,0,0.2);
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background: rgba(0,0,0,0.4);
+    }
+    &::-webkit-scrollbar-thumb:active{
+        background: rgba(0,0,0,.5);
+    }
 `;
 
 export const WorkspacePageWrapper = styled.div`
