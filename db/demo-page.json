@@ -16,7 +16,7 @@
                 {
                     "typeName": "section",
                     "id": "sectionCards001",
-                    "name": "Cards",
+                    "name": "Main Wrapper",
                     "styles": {
                         "common": {}
                     },
@@ -24,7 +24,7 @@
                         {
                             "typeName": "section",
                             "id": "section001",
-                            "name": "Main wrapper",
+                            "name": "Cards",
                             "styles": {
                                 "common": {
                                     "paddingTop": "32px",
@@ -41,11 +41,9 @@
                                     "styles": {
                                         "common": {
                                             "width": "100%",
-                                            "maxWidth": "272px",
-                                            "minHeight": "376px",
+                                            "minHeight": "50px",
                                             "backgroundColor": "#ffffff",
-                                            "borderRadius": "8px",
-                                            "marginBottom": "32px"
+                                            "marginBottom": "30px"
                                         }
                                     },
                                     "childrenList": [
@@ -53,23 +51,8 @@
                                             "typeName": "label",
                                             "id": "cardLabel001",
                                             "name": "Title",
-                                            "value": "Label",
+                                            "value": "Card 1",
                                             "heading": "h2",
-                                            "styles": {
-                                                "common": {
-                                                    "marginTop": "0px",
-                                                    "marginRIght": "0px",
-                                                    "marginBottom": "0px",
-                                                    "marginLeft": "0px"
-                                                }
-                                            }
-                                        },
-
-                                        {
-                                            "typeName": "description",
-                                            "id": "cardDescription001",
-                                            "name": "Description",
-                                            "value": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley",
                                             "styles": {
                                                 "common": {
                                                     "marginTop": "0px",
@@ -85,7 +68,7 @@
                                 {
                                     "typeName": "section",
                                     "id": "sectionCard002",
-                                    "name": "Card 1", 
+                                    "name": "Card 2", 
                                     "styles": {
                                         "common": {
                                             "width": "100%",
@@ -93,7 +76,7 @@
                                             "minHeight": "376px",
                                             "backgroundColor": "#ffffff",
                                             "borderRadius": "8px",
-                                            "marginBottom": "32px"
+                                            "marginBottom": "30px"
                                         }
                                     }
                                 },
