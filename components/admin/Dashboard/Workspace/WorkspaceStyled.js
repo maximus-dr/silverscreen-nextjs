@@ -15,7 +15,7 @@ export const WorkspaceWrapper = styled.div`
 
     &::-webkit-scrollbar {
     width: 10px;
-    height: 6px;
+    height: 10px;
     }
     &::-webkit-scrollbar-track {
         border-radius: 10px;
@@ -44,6 +44,7 @@ export const WorkspacePage = styled.div`
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
     transition: width 150ms;
     position: relative;
+    min-height: 100vh;
 
     ${props => props.pageWidth && css`
         width: ${props.pageWidth};
