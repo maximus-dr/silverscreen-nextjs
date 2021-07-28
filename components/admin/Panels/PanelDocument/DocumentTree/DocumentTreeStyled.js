@@ -17,6 +17,7 @@ const TreeItem = styled.div`
     align-items: baseline;
     transition: font-weight 10ms;
     flex: 0 0 auto;
+    width: 100%;
 
     &:hover {
         outline: 1px dashed #1976d2;

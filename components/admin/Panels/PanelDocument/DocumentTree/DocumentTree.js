@@ -1,8 +1,19 @@
 import React, { useState } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
+
+function usePrevious(value) {
+
+    const ref = useRef();
+    useEffect(() => {
+        ref.current = value;
+    });
+    return ref.current;
+}
 
 
 export default function Tree(props) {
@@ -16,10 +27,18 @@ export default function Tree(props) {
     const isActive = activeComponent && props.nodeData.id === activeComponent.id;
 
     const components = useSelector(state => state.document.components);
-
     const [expanded, setExpanded] = useState(false);
 
+    const childrenLength = props.nodeData.childrenList.length;
 
+    // разворачивает список при добавлении новых элементов в него
+    useEffect(() => {
+        if (childrenLength > 0) {
+            setExpanded(true);
+        }
+    }, [childrenLength]);
+
+    
     return (
         <TreeWrapper>
             <TreeItemWrapper>

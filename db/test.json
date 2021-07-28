@@ -5,38 +5,6 @@
     "styles": {
       "backgroundColor": "#F5F5F5"
     },
-    "childrenList": [
-      {
-        "typeName": "section",
-        "id": "sec001",
-        "name": "Container",
-        "styles": {
-          "common": {
-            "width": "300px",
-            "height": "100%",
-            "backgroundColor": "#ffffff",
-            "paddingTop": "15px",
-            "paddingRight": "15px",
-            "paddingBottom": "15px",
-            "paddingLeft": "15px"
-          }
-        },
-        "childrenList": [
-          {
-            "typeName": "section",
-            "id": "sec002",
-            "name": "Content",
-            "styles": {
-              "common": {
-                "width": "100%",
-                "minHeight": "50px",
-                "border": "1px dashed black"
-              }
-            },
-            "childrenList": []
-          }
-        ]
-      }
-    ]
+    "childrenList": []
   }
   

@@ -59,8 +59,8 @@ export default function Home(props) {
   // const Components = renderComponents(props.components);
 
   return (
-    <>
+    <div style={{border: '1px dashed black', width: '300px'}}>
       <h2>Home Page</h2>
-    </>
+    </div>
   )
 }

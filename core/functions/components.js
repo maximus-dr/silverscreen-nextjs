@@ -60,21 +60,18 @@ function generateNewId(length) {
 
 
 function addComponentIntoTree(state, containerId, component) {
-
     if (state.id === containerId) {
         return {
             ...state,
             childrenList: [
-                component,
-                ...state.childrenList
+                ...state.childrenList,
+                component
             ]
         }
     }
-
     const children = state.childrenList.map((child) => {
         return addComponentIntoTree(child, containerId, component);
     });
-
     return {
         ...state,
         childrenList: children

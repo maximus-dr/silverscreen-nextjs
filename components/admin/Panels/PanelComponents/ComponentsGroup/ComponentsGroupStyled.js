@@ -83,7 +83,7 @@ export const ComponentsLi = styled.li`
     position: relative;
     width: 100%;
     padding: 5px 15px;
-    padding-left: 52px;
+    padding-left: 25px;
     cursor: grab;
     transition: background-color 10ms;
 
@@ -94,17 +94,6 @@ export const ComponentsLi = styled.li`
     &:active {
         cursor: grabbing;
         background-color: rgba(0, 0, 0, 0.1);
-    }
-
-    &:before {
-        content: 'svg';
-        position: absolute;
-        top: 0;
-        left: 25px;
-        width: 23px;
-        height: 23px;
-        padding-top: 2px;
-        border: 1px solid rgba(0, 0, 0, 0.5);
     }
 
     /* isActive */
