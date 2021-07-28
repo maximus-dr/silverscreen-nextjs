@@ -6,44 +6,73 @@ export const SET_RESOLUTION = 'SET_RESOLUTION';
 export const SET_PROP = 'SET_PROP';
 export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
 export const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
+export const ADD_COMPONENT = 'ADD_COMPONENT';
+export const PUT_COMPONENT = 'PUT_COMPONENT';
 
 
-export const setActiveComponent = (activeComponent) => ({
+
+const setActiveComponent = (activeComponent) => ({
     type: SET_ACTIVE_COMPONENT,
     activeComponent
 });
 
-export const unsetActiveComponent = () => ({
+const unsetActiveComponent = () => ({
     type: UNSET_ACTIVE_COMPONENT
 });
 
-export const setComponentElement = (elementName) => ({
+const setComponentElement = (elementName) => ({
     type: SET_COMPONENT_ELEMENT,
     element: elementName
 });
 
-export const clearComponentElement = () => ({
+const clearComponentElement = () => ({
     type: CLEAR_COMPONENT_ELEMENT
 });
 
-export const setResolution = (resolution) => ({
+const setResolution = (resolution) => ({
     type: SET_RESOLUTION,
     resolution
 });
 
-export const setProp = (prop) => ({
+const setProp = (prop) => ({
     type: SET_PROP,
     prop
 });
 
-export const setComponentValue = (value, id) => ({
+const setComponentValue = (value, id) => ({
     type: SET_COMPONENT_VALUE,
     value,
     id
 });
 
-export const setComponentName = (name, id) => ({
+const setComponentName = (name, id) => ({
     type: SET_COMPONENT_NAME,
     name,
     id
 });
+
+const addComponent = (component) => ({
+    type: ADD_COMPONENT,
+    component
+})
+
+const putComponent = (containerId, component) => ({
+    type: PUT_COMPONENT,
+    containerId,
+    component
+});
+
+
+
+export {
+    setActiveComponent,
+    unsetActiveComponent,
+    setComponentElement,
+    clearComponentElement,
+    setResolution,
+    setProp,
+    setComponentValue,
+    setComponentName,
+    putComponent,
+    addComponent
+}

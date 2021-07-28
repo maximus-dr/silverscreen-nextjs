@@ -1,17 +1,17 @@
 import styled, {css} from 'styled-components';
 
 
-const DocumentTreeWrapper = styled.div`
+const TreeWrapper = styled.div`
     position: relative;
     padding-left: 10px;
     padding-right: 1px;
 `;
 
-const DocumentTreeItemWrapper = styled.div`
+const TreeItemWrapper = styled.div`
     display: flex;
 `;
 
-const DocumentTreeItem = styled.div`
+const TreeItem = styled.div`
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
@@ -36,7 +36,7 @@ const DocumentTreeItem = styled.div`
     }}
 `;
 
-const DocumentTreeItemType = styled.span`
+const TreeItemType = styled.span`
     display: inline-block;
     text-align: center;
     padding: 1px;
@@ -138,7 +138,7 @@ const DocumentTreeItemType = styled.span`
     }}
 `;
 
-const DocumentTreeItemName = styled.span`
+const TreeItemName = styled.span`
     color: #42a5f5;
     font-size: 13px;
     flex: 0 0 auto;
@@ -166,7 +166,7 @@ const DocumentTreeItemName = styled.span`
     }}
 `;
 
-const DocumentTreeChildren = styled.div`
+const TreeChildren = styled.div`
     display: block;
     ${props => {
         return !props.expanded && css`
@@ -176,10 +176,10 @@ const DocumentTreeChildren = styled.div`
 `;
 
 export {
-    DocumentTreeWrapper,
-    DocumentTreeItemWrapper,
-    DocumentTreeItem,
-    DocumentTreeItemType,
-    DocumentTreeItemName,
-    DocumentTreeChildren
+    TreeWrapper,
+    TreeItemWrapper,
+    TreeItem,
+    TreeItemType,
+    TreeItemName,
+    TreeChildren
 }

@@ -1,4 +1,5 @@
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME } from "../actions/document"
+import { addComponentIntoTree } from "../../core/functions/components";
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, PUT_COMPONENT, ADD_COMPONENT } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -81,6 +82,22 @@ export const documentReducer = (state = {}, action) => {
                         name: action.name
                     }
                 }
+            }
+
+        case ADD_COMPONENT:
+            return {
+                ...state,
+                components: {
+                    ...state.components,
+                    [action.component.id]: action.component
+                }
+            }
+
+        case PUT_COMPONENT:
+            const {containerId, component} = action;
+            return {
+                ...state,
+                componentsData: addComponentIntoTree(state.componentsData, containerId, component)
             }
 
         default:

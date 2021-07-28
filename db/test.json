@@ -1,5 +1,6 @@
 {
     "typeName": "page",
+    "name": "Main Page",
     "id": "1",
     "styles": {
       "backgroundColor": "#F5F5F5"
@@ -12,11 +13,29 @@
         "styles": {
           "common": {
             "width": "300px",
-            "minHeight": "50px",
-            "backgroundColor": "#ffffff"
+            "height": "100%",
+            "backgroundColor": "#ffffff",
+            "paddingTop": "15px",
+            "paddingRight": "15px",
+            "paddingBottom": "15px",
+            "paddingLeft": "15px"
           }
         },
-        "childrenList": []
+        "childrenList": [
+          {
+            "typeName": "section",
+            "id": "sec002",
+            "name": "Content",
+            "styles": {
+              "common": {
+                "width": "100%",
+                "minHeight": "50px",
+                "border": "1px dashed black"
+              }
+            },
+            "childrenList": []
+          }
+        ]
       }
     ]
   }

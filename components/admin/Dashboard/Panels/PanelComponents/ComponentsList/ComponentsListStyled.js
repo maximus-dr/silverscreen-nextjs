@@ -1,12 +1,12 @@
 import styled, {css} from "styled-components";
 
 
-export const PanelUlWrapper = styled.div`
+export const ComponentsUlWrapper = styled.div`
     position: relative;
     overflow: visible;
 `;
 
-export const PanelUlCaption = styled.span`
+export const ComponentsUlCaption = styled.span`
     position: relative;
     display: inline-block;
     padding: 5px 18px 5px 25px;
@@ -44,7 +44,7 @@ export const PanelUlCaption = styled.span`
     }
 `;
 
-export const PanelUlContent = styled.div`
+export const ComponentsUlContent = styled.div`
     max-height: 0;
     transition: max-height 0.1s ease-out;
     overflow: hidden;
@@ -57,14 +57,14 @@ export const PanelUlContent = styled.div`
     }}
 `;
 
-export const PanelUlSubCaption = styled.span`
+export const ComponentsUlSubCaption = styled.span`
     display: inline-block;
     padding: 5px;
     padding-left: 25px;
     font-weight: bold;
 `;
 
-export const PanelUlSubtitle = styled.span`
+export const ComponentsUlSubtitle = styled.span`
     display: inline-block;
     padding: 5px 15px;
     padding-left: 30px;
@@ -72,14 +72,14 @@ export const PanelUlSubtitle = styled.span`
     color: rgba(0, 0, 0, 0.4);
 `;
 
-export const PanelUl = styled.ul`
+export const ComponentsUl = styled.ul`
     list-style: none;
     padding: 0;
     margin: 0;
     margin-bottom: 2px;
 `;
 
-export const PanelLi = styled.li`
+export const ComponentsLi = styled.li`
     position: relative;
     width: 100%;
     padding: 5px 15px;

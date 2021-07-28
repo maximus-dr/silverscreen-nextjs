@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 const getRole = (component) => {
     return component.props.componentData.role && component.props.componentData.role || null;
 }
@@ -52,9 +54,39 @@ function extractChildrenByRole(props, role) {
     return result.length > 0 ? result : null;
 }
 
+function generateNewId(length) {
+    return nanoid(length);
+}
+
+
+function addComponentIntoTree(state, containerId, component) {
+
+    if (state.id === containerId) {
+        return {
+            ...state,
+            childrenList: [
+                component,
+                ...state.childrenList
+            ]
+        }
+    }
+
+    const children = state.childrenList.map((child) => {
+        return addComponentIntoTree(child, containerId, component);
+    });
+
+    return {
+        ...state,
+        childrenList: children
+    }
+}
+
+
 export {
     getRole,
     getHandler,
     extractChildrenDataByRole,
-    extractChildrenByRole
+    extractChildrenByRole,
+    generateNewId,
+    addComponentIntoTree
 }

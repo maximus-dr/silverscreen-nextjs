@@ -8,12 +8,12 @@ import Panel from '../Panel/Panel';
 export default function PanelDocument(props) {
 
     const componentsData = useSelector(state => state.document.componentsData);
-    const document = renderDocumentTree(componentsData);
+    const documentTree = renderDocumentTree(componentsData);
 
     return (
         <>
           <Panel title="Документ">
-              <div>{document}</div>
+              <div>{documentTree}</div>
           </Panel>  
         </>
     )

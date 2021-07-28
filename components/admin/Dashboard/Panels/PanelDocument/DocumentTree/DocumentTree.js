@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveComponent, unsetActiveComponent } from "../../../../../../store/actions/document";
-import { DocumentTreeChildren, DocumentTreeItem, DocumentTreeItemName, DocumentTreeItemType, DocumentTreeItemWrapper, DocumentTreeWrapper } from "./DocumentTreeStyled";
+import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
 
-export default function DocumentTree(props) {
+export default function Tree(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
@@ -21,9 +21,9 @@ export default function DocumentTree(props) {
 
 
     return (
-        <DocumentTreeWrapper>
-            <DocumentTreeItemWrapper>
-                <DocumentTreeItem 
+        <TreeWrapper>
+            <TreeItemWrapper>
+                <TreeItem 
                     isActive={isActive}
                     onClick={() => {
                         if (isActive) {
@@ -33,7 +33,7 @@ export default function DocumentTree(props) {
                         dispatch(setActiveComponent(props.nodeData));
                     }}
                 >
-                    <DocumentTreeItemType
+                    <TreeItemType
                         isRootItem={isRootItem}
                         isPage={isPage}
                         isActive={isActive}
@@ -46,19 +46,19 @@ export default function DocumentTree(props) {
                         }}
                     >
                         {props.nodeData.typeName}
-                    </DocumentTreeItemType>
-                    <DocumentTreeItemName
+                    </TreeItemType>
+                    <TreeItemName
                         isRootItem={isRootItem}
                         isPage={isPage}    
                         isActive={isActive}
                     >
                         {components[props.nodeData.id].name}
-                    </DocumentTreeItemName>
-                </DocumentTreeItem>
-            </DocumentTreeItemWrapper>
-            <DocumentTreeChildren expanded={expanded}>
+                    </TreeItemName>
+                </TreeItem>
+            </TreeItemWrapper>
+            <TreeChildren expanded={expanded}>
                 {props.children}
-            </DocumentTreeChildren>
-        </DocumentTreeWrapper>
+            </TreeChildren>
+        </TreeWrapper>
     )
 }
