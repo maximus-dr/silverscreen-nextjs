@@ -1,5 +1,5 @@
 import { Provider } from '../../components';
-import DocumentTree from '../../components/admin/Dashboard/Panels/PanelDocument/DocumentTree/DocumentTree';
+import DocumentTree from '../../components/admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 
 
 
