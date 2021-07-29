@@ -1,8 +1,8 @@
 import React from 'react'
-import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
+import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName, DeleteButton } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue } from '../../../../../store/actions/document';
+import { deleteComponent, setComponentName, setComponentValue } from '../../../../../store/actions/document';
 
 
 
@@ -69,6 +69,18 @@ export default function ComponentSeciton(props) {
                         </ComponentPropItem>
                     );
                 })}
+
+                {
+                    activeComponent.typeName !== 'Document' &&
+                    <DeleteButton
+                        onClick={() => {
+                            dispatch(deleteComponent(activeComponent.id))
+                        }}
+                    >
+                        Delete
+                    </DeleteButton>
+                }
+
             </ComponentData>
         </ComponentSectionWrapper>
     )

@@ -8,6 +8,7 @@ export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
 export const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 export const PUT_COMPONENT = 'PUT_COMPONENT';
+export const DELETE_COMPONENT = 'DELETE_COMPONENT';
 
 
 
@@ -62,6 +63,11 @@ const putComponent = (containerId, component) => ({
     component
 });
 
+const deleteComponent = (componentId) => ({
+    type: DELETE_COMPONENT,
+    componentId
+});
+
 
 
 export {
@@ -74,5 +80,6 @@ export {
     setComponentValue,
     setComponentName,
     putComponent,
-    addComponent
+    addComponent,
+    deleteComponent
 }

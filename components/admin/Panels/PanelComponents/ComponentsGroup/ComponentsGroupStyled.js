@@ -9,7 +9,7 @@ export const ComponentsUlWrapper = styled.div`
 export const ComponentsUlCaption = styled.span`
     position: relative;
     display: inline-block;
-    padding: 5px 18px 5px 25px;
+    padding: 2px 18px 2px 18px;
     width: 100%;
     font-weight: bold;
     cursor: pointer;
@@ -19,7 +19,7 @@ export const ComponentsUlCaption = styled.span`
         content: '';
         position: absolute;
         left: 8px;
-        top: 8px;
+        top: 5px;
         width: 0;
         height: 0;
         border: 4px solid transparent;
@@ -82,7 +82,7 @@ export const ComponentsUl = styled.ul`
 export const ComponentsLi = styled.li`
     position: relative;
     width: 100%;
-    padding: 5px 15px;
+    padding: 3px 15px;
     padding-left: 25px;
     cursor: grab;
     transition: background-color 10ms;

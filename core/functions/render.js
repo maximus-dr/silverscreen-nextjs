@@ -5,6 +5,7 @@ import DocumentTree from '../../components/admin/Panels/PanelDocument/DocumentTr
 
 
 export function renderComponents(componentData) {
+    if (!componentData || Object.keys(componentData) === 0) return;
     const props = {
         componentData,
         id: componentData.id,
@@ -75,6 +76,7 @@ export function getComponentsList(componentsData, result = {}) {
 
 // отрисовка дерева документа в админке
 export function renderDocumentTree(nodeData) {
+    if (!nodeData || Object.keys(nodeData).length === 0) return null;
     const props = {
         nodeData,
         id: nodeData.id,

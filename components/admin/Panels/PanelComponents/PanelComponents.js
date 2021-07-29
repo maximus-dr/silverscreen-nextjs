@@ -9,12 +9,19 @@ const componentsGroups = [
         templates: [
             {
                 id: 'p1', 
-                name: 'Шаблон страницы',
+                name: 'page',
                 component: {
-                    typeName: "section",
-                    name: "default name",
+                    typeName: "page",
+                    name: "default",
                     styles: {
-                        common: {}
+                        common: {
+                            paddingTop: '5px',
+                            paddingRight: '5px',
+                            paddingBottom: '5px',
+                            paddingLeft: '5px',
+                            border: '1px dashed rgba(0, 0, 0, 0.8)',
+                            minHeight: '200px'
+                        }
                     },
                     childrenList: []
                 }
@@ -26,7 +33,7 @@ const componentsGroups = [
         templates: [
             { 
                 id: 'sec01', 
-                name: 'Шаблон секции',
+                name: 'section',
                 component: {
                     typeName: "section",
                     name: "default",
@@ -50,7 +57,7 @@ const componentsGroups = [
         templates: [
             { 
                 id: 'lab001', 
-                name: 'Шаблон заголовка',
+                name: 'label',
                 component: {
                     typeName: "label",
                     name: "default",
@@ -79,7 +86,11 @@ export default function PanelComponents() {
             <Panel title="Компоненты">
                 {componentsGroups.map(group => {
                     return (
-                        <ComponentsGroup key={group.name} title={group.name} templates={group.templates} />
+                        <ComponentsGroup 
+                            key={group.name} 
+                            title={group.name} 
+                            templates={group.templates} 
+                        />
                     );
                 })}
             </Panel>

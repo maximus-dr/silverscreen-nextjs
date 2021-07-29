@@ -35,7 +35,6 @@ function extractChildrenDataByRole(componentData, role) {
 
 function extractChildrenByRole(props, role) {
     const result = [];
-    
     function getChild(parent) {
         if (parent.children && parent.children.length > 0) {
             parent.children.forEach(child => {
@@ -49,7 +48,6 @@ function extractChildrenByRole(props, role) {
             return;
         }
     }
-
     getChild(props);
     return result.length > 0 ? result : null;
 }
@@ -60,6 +58,11 @@ function generateNewId(length) {
 
 
 function addComponentIntoTree(state, containerId, component) {
+    
+    if (!state) {
+        return {...component}
+    }
+
     if (state.id === containerId) {
         return {
             ...state,
@@ -78,6 +81,31 @@ function addComponentIntoTree(state, containerId, component) {
     }
 }
 
+function deleteComponent(state, componentId) {
+    let match = false;
+    state.childrenList.forEach(child => {
+        if (child.id === componentId) {
+            match = true;
+        }
+    });
+
+    if (match) {
+        return {
+            ...state,
+            childrenList: state.childrenList.filter(item => item.id !== componentId)
+        }
+    }
+    
+    const children = state.childrenList.map(child => {
+        return deleteComponent(child, componentId);
+    });
+
+    return {
+        ...state,
+        childrenList: children
+    }
+}
+
 
 export {
     getRole,
@@ -85,5 +113,6 @@ export {
     extractChildrenDataByRole,
     extractChildrenByRole,
     generateNewId,
-    addComponentIntoTree
+    addComponentIntoTree,
+    deleteComponent
 }
