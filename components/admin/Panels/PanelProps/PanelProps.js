@@ -12,9 +12,9 @@ export default function PanelProps() {
     const activeComponent = useSelector(state => state.document.activeComponent);
     
 
-    return (
-        <>
-           <Panel title="Свойства">
+    return activeComponent && activeComponent.typeName !== 'Document' 
+        ? (
+            <Panel title="Свойства">
                 <PropsPanelWrapper>
                     {
                         activeComponent &&
@@ -24,7 +24,8 @@ export default function PanelProps() {
                     <Props activeComponent={activeComponent} />
 
                 </PropsPanelWrapper>
-           </Panel> 
-        </>
-    )
+            </Panel> 
+        ) : (
+            <Panel title="Свойства"></Panel>
+        );
 }

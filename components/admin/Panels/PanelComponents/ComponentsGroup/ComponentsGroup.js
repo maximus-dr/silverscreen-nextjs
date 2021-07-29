@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../../../core/functions/components';
-import { addComponent, putComponent } from '../../../../../store/actions/document';
+import { updateComponentsList, addComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
 
 
@@ -26,8 +26,8 @@ export default function ComponentsGroup(props) {
                         setActiveItemId(template.id);
                         if (activeComponent) {
                             const id = generateNewId(10)
-                            dispatch(addComponent({...template.component, id}))
-                            dispatch(putComponent(activeComponent.id, {...template.component, id}));
+                            dispatch(addComponent(activeComponent.id, {...template.component, id}));
+                            dispatch(updateComponentsList({...template.component, id}))
                         }
                     }}
                 >

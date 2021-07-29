@@ -1,5 +1,5 @@
 import { addComponentIntoTree, deleteComponent } from "../../core/functions/components";
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, PUT_COMPONENT, ADD_COMPONENT, DELETE_COMPONENT } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, UPDATE_COMPONENTS_LIST } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -84,7 +84,7 @@ export const documentReducer = (state = {}, action) => {
                 }
             }
 
-        case ADD_COMPONENT:
+        case UPDATE_COMPONENTS_LIST:
             return {
                 ...state,
                 components: {
@@ -93,7 +93,7 @@ export const documentReducer = (state = {}, action) => {
                 }
             }
 
-        case PUT_COMPONENT:
+        case ADD_COMPONENT:
             const {containerId, component} = action;
             return {
                 ...state,

@@ -70,7 +70,8 @@ const componentsGroups = [
                             paddingBottom: '5px',
                             paddingLeft: '5px',
                             marginTop: '0px',
-                            marignBottom: '0px'
+                            marignBottom: '0px',
+                            "fontSize": "22px"
                         }
                     },
                     childrenList: []

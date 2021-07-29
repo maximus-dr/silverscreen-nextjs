@@ -62,7 +62,7 @@ export const DeleteButton = styled.button`
 
     &:hover {
         color: rgba(0, 0, 0, 0.87);
-        background-color: #d5d5d5;
+        background-color: rgba(0, 0, 0, 0.25);
     }
 
     &:active {
