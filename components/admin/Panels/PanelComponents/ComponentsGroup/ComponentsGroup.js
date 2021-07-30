@@ -13,13 +13,20 @@ export default function ComponentsGroup(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
 
+    const onDragStart = (e, templateId) => {
+        e.dataTransfer.setData('templateId', templateId);
+    }
+
+
     const templatesList = templates && templates.map(template => {
         return template.isSubtitle
             ? (
                 <ComponentsUlSubtitle key={template.id}>{template.name}</ComponentsUlSubtitle>
             )
             : (
-                <ComponentsLi 
+                <ComponentsLi
+                    draggable
+                    onDragStart={(e) => onDragStart(e, template.id)}
                     key={template.id} 
                     isActive={template.id === activeItemId} 
                     onClick={() => {

@@ -1,8 +1,61 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
+import { generateNewId } from "../../../../../core/functions/components";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, updateComponentsList } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
+
+
+const templates = {
+    p1: {
+        typeName: "page",
+        name: "default",
+        styles: {
+            common: {
+                paddingTop: '5px',
+                paddingRight: '5px',
+                paddingBottom: '5px',
+                paddingLeft: '5px',
+                border: '1px dashed rgba(0, 0, 0, 0.8)',
+                minHeight: '200px'
+            }
+        },
+        childrenList: []
+    },
+    sec01: { 
+        typeName: "section",
+        name: "default",
+        styles: {
+            common: {
+                paddingTop: '15px',
+                paddingRight: '15px',
+                paddingBottom: '15px',
+                paddingLeft: '15px',
+                "minHeight": '50px',
+                "border": "1px dashed #42a5f5"
+            }
+        },
+        childrenList: []
+    },
+    lab001: {
+        typeName: "label",
+        name: "default",
+        value: 'Label',
+        styles: {
+            common: {
+                display: 'inline-block',
+                paddingTop: '5px',
+                paddingRight: '5px',
+                paddingBottom: '5px',
+                paddingLeft: '5px',
+                marginTop: '0px',
+                marignBottom: '0px',
+                "fontSize": "22px"
+            }
+        },
+        childrenList: []
+    }
+}
 
 
 
@@ -55,10 +108,19 @@ export default function Tree(props) {
 
     const onDrop = (e, targetId, componentsList) => {
         const componentId = e.dataTransfer.getData('componentId');
+        const templateId = e.dataTransfer.getData('templateId');
         if (componentId === targetId) return;
-        const component = componentsList[componentId];
-        dispatch(deleteComponent(componentId));
-        dispatch(addComponent(targetId, component));
+        if (componentId) {
+            const component = componentsList[componentId];
+            dispatch(deleteComponent(componentId));
+            dispatch(addComponent(targetId, component));
+        }
+        if (templateId) {
+            const template = templates[templateId];
+            const id = generateNewId(10);
+            dispatch(updateComponentsList({id, ...template}));
+            dispatch(addComponent(targetId, {id, ...template}));
+        }
     }
 
     
