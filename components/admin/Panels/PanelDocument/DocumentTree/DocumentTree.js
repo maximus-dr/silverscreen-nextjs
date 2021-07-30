@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
+import { deleteComponent, setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -27,6 +27,23 @@ export default function Tree(props) {
             setExpanded(true);
         }
     }, [childrenLength]);
+
+    
+    // удаляет активный компонент при нажатии delete
+    useEffect(() => {
+        const onDeleteKeydown = (e) => {
+            e.preventDefault();
+            if (e.code === 'Delete') {
+                dispatch(deleteComponent(activeComponent.id))
+            }
+        }
+        if (isActive) {
+            document.addEventListener('keydown', onDeleteKeydown);
+        }
+        return () => {
+            document.removeEventListener('keydown', onDeleteKeydown);
+        }
+    }, [isActive, activeComponent, dispatch]);
 
     
     return (
