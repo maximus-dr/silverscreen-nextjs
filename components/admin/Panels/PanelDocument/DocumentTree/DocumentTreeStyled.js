@@ -18,15 +18,10 @@ const TreeItem = styled.div`
     transition: font-weight 10ms;
     flex: 0 0 auto;
     width: 100%;
-    cursor: grab;
 
     &:hover {
         outline: 1px dashed #1976d2;
         background-color: rgba(0, 0, 0, 0.04);
-    }
-
-    &:active {
-        cursor: grabbing;
     }
 
     ${props => {

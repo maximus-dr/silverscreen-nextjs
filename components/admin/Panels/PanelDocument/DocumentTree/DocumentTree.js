@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteComponent, setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -32,7 +32,6 @@ export default function Tree(props) {
     // удаляет активный компонент при нажатии delete
     useEffect(() => {
         const onDeleteKeydown = (e) => {
-            e.preventDefault();
             if (e.code === 'Delete') {
                 dispatch(deleteComponent(activeComponent.id))
             }
@@ -45,11 +44,32 @@ export default function Tree(props) {
         }
     }, [isActive, activeComponent, dispatch]);
 
+
+    const onDragStart = (e, componentId) => {
+        e.dataTransfer.setData('componentId', componentId);
+    }
+
+    const onDragOver = (e) => {
+        e.preventDefault();
+    }
+
+    const onDrop = (e, targetId, componentsList) => {
+        const componentId = e.dataTransfer.getData('componentId');
+        if (componentId === targetId) return;
+        const component = componentsList[componentId];
+        dispatch(deleteComponent(componentId));
+        dispatch(addComponent(targetId, component));
+    }
+
     
     return (
         <TreeWrapper>
             <TreeItemWrapper>
-                <TreeItem 
+                <TreeItem
+                    draggable
+                    onDragStart={(e) => onDragStart(e, props.nodeData.id)}
+                    onDragOver={(e) => onDragOver(e)}
+                    onDrop={(e) => onDrop(e, props.nodeData.id, components)}
                     isActive={isActive}
                     onClick={() => {
                         if (isActive) {
