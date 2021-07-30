@@ -1,7 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getHandler } from '../../../core/functions/components';
+import { generateNewId, getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
+import { addComponent, updateComponentsList } from '../../../store/actions/document';
+import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
 
@@ -14,6 +17,22 @@ export default function Label(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const componentData = useSelector(state => state.document.components[id]);
+    const dispatch = useDispatch();
+
+    const onDragStart = (e, componentId) => {
+        e.dataTransfer.setData('componentId', componentId);
+    }
+
+    const onDrop = (e, targetId) => {
+        e.stopPropagation();
+        const templateId = e.dataTransfer.getData('templateId');
+        if (templateId) {
+            const template = templates[templateId];
+            const id = generateNewId(10);
+            dispatch(updateComponentsList({id, ...template}));
+            dispatch(addComponent(targetId, {id, ...template}));
+        }
+    }
 
 
     const label = (heading) => {
@@ -109,12 +128,16 @@ export default function Label(props) {
                 );
             default:
                 return (
-                    <LabelSpan 
+                    <LabelSpan
+                        draggable
                         {...props}
                         componentData={componentData}
                         isActiveComponent={isActiveComponent}
                         {...props.handlers}
                         onClick={getHandler(props, 'onClick')}
+                        onDragStart={(e) => onDragStart(e, id)}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => onDrop(e, id)}
                     >
                         {text}
                         {props.children}

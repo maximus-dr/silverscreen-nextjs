@@ -6,7 +6,7 @@ import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
-const templates = {
+export const templates = {
     p1: {
         typeName: "page",
         name: "default",
