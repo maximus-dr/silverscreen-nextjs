@@ -19,12 +19,20 @@ export default function Page(props) {
   const onDrop = (e, targetId, componentsList) => {
     e.stopPropagation();
     const componentId = e.dataTransfer.getData('componentId');
+		const parentId = e.dataTransfer.getData('parentId');
     const templateId = e.dataTransfer.getData('templateId');
     if (componentId === targetId) return;
     if (componentId) {
-        const component = componentsList[componentId];
-        dispatch(deleteComponent(componentId));
-        dispatch(addComponent(targetId, component));
+			if (activeComponent && componentId === activeComponent.id) {
+				dispatch(unsetActiveComponent());
+			}
+			const component = componentsList[componentId];
+			dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
+			dispatch(deleteComponent(componentId));
+			dispatch(addComponent(targetId, component));
+			if (activeComponent && componentId === activeComponent.id) {
+				dispatch(setActiveComponent(component));
+			}
     }
     if (templateId) {
         const template = templates[templateId];

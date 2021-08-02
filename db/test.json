@@ -14,7 +14,7 @@
 					"paddingBottom": "5px",
 					"paddingLeft": "5px",
 					"border": "1px dashed rgba(0, 0, 0, 0.8)",
-					"minHeight": "200px"
+					"minHeight": "100vh"
         }
       },
       "childrenList": [

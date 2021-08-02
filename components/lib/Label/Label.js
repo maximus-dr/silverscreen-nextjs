@@ -21,8 +21,8 @@ export default function Label(props) {
 
 
     const onDragStart = (e, componentId) => {
-		  const parentId = e.target.parentElement.id;
 			e.stopPropagation();
+		  const parentId = e.target.parentElement.id;
       e.dataTransfer.setData('componentId', componentId);
       e.dataTransfer.setData('parentId', parentId);
     }
