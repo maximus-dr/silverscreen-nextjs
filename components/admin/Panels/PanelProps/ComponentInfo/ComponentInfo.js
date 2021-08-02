@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName, DeleteButton } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteComponent, setComponentName, setComponentValue } from '../../../../../store/actions/document';
+import { deleteComponent, setComponentName, setComponentValue, unsetActiveComponent, deleteComponentFromList } from '../../../../../store/actions/document';
 
 
 
@@ -28,15 +28,15 @@ export default function ComponentSeciton(props) {
                             <ComponentPropItem key={entrie[0]}>
                                 <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
                                 <ComponentPropValue>
-                                    <ComponentName 
-                                        type="text" 
-                                        value={componentData.name} 
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.name}
                                         onChange={(e) => {
                                             dispatch(setComponentName(
                                                 e.target.value,
                                                 activeComponent.id
                                             ))
-                                        }} 
+                                        }}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>
@@ -48,7 +48,7 @@ export default function ComponentSeciton(props) {
                             <ComponentPropItem key={entrie[0]}>
                                 <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
                                 <ComponentPropValue>
-                                    <ComponentInfoTextarea 
+                                    <ComponentInfoTextarea
                                         value={componentData.value || ''}
                                         onChange={(e) => {
                                             dispatch(setComponentValue(
@@ -74,7 +74,9 @@ export default function ComponentSeciton(props) {
                     activeComponent.typeName !== 'Document' &&
                     <DeleteButton
                         onClick={() => {
-                            dispatch(deleteComponent(activeComponent.id))
+														dispatch(unsetActiveComponent());
+                            dispatch(deleteComponent(activeComponent.id));
+														dispatch(deleteComponentFromList(activeComponent.id));
                         }}
                     >
                         Delete

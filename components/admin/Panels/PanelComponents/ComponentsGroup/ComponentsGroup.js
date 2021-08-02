@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../../../core/functions/components';
-import { updateComponentsList, addComponent } from '../../../../../store/actions/document';
+import { addComponentToList, addComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
 
 
@@ -27,14 +27,14 @@ export default function ComponentsGroup(props) {
                 <ComponentsLi
                     draggable
                     onDragStart={(e) => onDragStart(e, template.id)}
-                    key={template.id} 
-                    isActive={template.id === activeItemId} 
+                    key={template.id}
+                    isActive={template.id === activeItemId}
                     onClick={() => {
                         setActiveItemId(template.id);
                         if (activeComponent) {
                             const id = generateNewId(10)
                             dispatch(addComponent(activeComponent.id, {...template.component, id}));
-                            dispatch(updateComponentsList({...template.component, id}))
+                            dispatch(addComponentToList({...template.component, id}))
                         }
                     }}
                 >
@@ -47,13 +47,13 @@ export default function ComponentsGroup(props) {
         <ComponentsUlWrapper>
             <ComponentsUl>
                 <ComponentsUlCaption
-                    expanded={expanded} 
-                    onClick={() => {setExpanded(prev => !prev)}} 
+                    expanded={expanded}
+                    onClick={() => {setExpanded(prev => !prev)}}
                 >
                     {title}
                 </ComponentsUlCaption>
-                
-                <ComponentsUlContent 
+
+                <ComponentsUlContent
                     expanded={expanded}
                     onClick={() => {
 

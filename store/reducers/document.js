@@ -1,5 +1,5 @@
 import { addComponentIntoTree, deleteComponent } from "../../core/functions/components";
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, UPDATE_COMPONENTS_LIST } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -29,7 +29,7 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 element: action.element
-                
+
             }
         case CLEAR_COMPONENT_ELEMENT:
             return {
@@ -55,8 +55,8 @@ export const documentReducer = (state = {}, action) => {
                                 [action.prop.name]: action.prop.value
                             }
                         }
-                    } 
-                    
+                    }
+
                 }
             }
 
@@ -84,7 +84,7 @@ export const documentReducer = (state = {}, action) => {
                 }
             }
 
-        case UPDATE_COMPONENTS_LIST:
+        case ADD_COMPONENT_TO_LIST:
             return {
                 ...state,
                 components: {
@@ -92,6 +92,14 @@ export const documentReducer = (state = {}, action) => {
                     [action.component.id]: action.component
                 }
             }
+
+				case DELETE_COMPONENT_FROM_LIST:
+					const newComponents = {...state.components};
+					delete newComponents[action.componentId];
+					return {
+						...state,
+						components: newComponents
+					}
 
         case ADD_COMPONENT:
             const {containerId, component} = action;

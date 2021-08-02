@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { generateNewId, getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
-import { addComponent, updateComponentsList } from '../../../store/actions/document';
+import { addComponent, addComponentToList } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
@@ -20,7 +20,8 @@ export default function Label(props) {
     const dispatch = useDispatch();
 
     const onDragStart = (e, componentId) => {
-        e.dataTransfer.setData('componentId', componentId);
+			e.stopPropagation();
+      e.dataTransfer.setData('componentId', componentId);
     }
 
     const onDrop = (e, targetId) => {
@@ -29,7 +30,7 @@ export default function Label(props) {
         if (templateId) {
             const template = templates[templateId];
             const id = generateNewId(10);
-            dispatch(updateComponentsList({id, ...template}));
+            dispatch(addComponentToList({id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
     }
@@ -67,7 +68,7 @@ export default function Label(props) {
                 );
             case 'h3':
                 return (
-                    <LabelH3 
+                    <LabelH3
                         {...props}
                         componentData={componentData}
                         isActiveComponent={isActiveComponent}
@@ -94,7 +95,7 @@ export default function Label(props) {
                     <LabelH5
                         {...props}
                         componentData={componentData}
-                        isActiveComponent={isActiveComponent} 
+                        isActiveComponent={isActiveComponent}
                         onClick={getHandler(props, 'onClick')}
                     >
                         {text}
@@ -115,8 +116,8 @@ export default function Label(props) {
                 );
             case 'label':
                 return (
-                    <InputLabel 
-                        htmlFor={htmlFor} 
+                    <InputLabel
+                        htmlFor={htmlFor}
                         {...props}
                         componentData={componentData}
                         isActiveComponent={isActiveComponent}
@@ -144,7 +145,7 @@ export default function Label(props) {
                     </LabelSpan>
                 );
         }
-    } 
+    }
 
     return (
         <>

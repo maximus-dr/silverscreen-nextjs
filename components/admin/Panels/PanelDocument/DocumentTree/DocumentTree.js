@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generateNewId } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, updateComponentsList } from "../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -22,7 +22,7 @@ export const templates = {
         },
         childrenList: []
     },
-    sec01: { 
+    sec01: {
         typeName: "section",
         name: "default",
         styles: {
@@ -63,7 +63,7 @@ export default function Tree(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
-    
+
     const hasChildren = props.nodeData.childrenList && props.nodeData.childrenList.length > 0;
     const isRootItem = props.nodeData.typeName === 'Document';
     const isPage = props.nodeData.typeName === 'page';
@@ -81,12 +81,14 @@ export default function Tree(props) {
         }
     }, [childrenLength]);
 
-    
+
     // удаляет активный компонент при нажатии delete
     useEffect(() => {
         const onDeleteKeydown = (e) => {
             if (e.code === 'Delete') {
-                dispatch(deleteComponent(activeComponent.id))
+								dispatch(unsetActiveComponent());
+                dispatch(deleteComponent(activeComponent.id));
+								dispatch(deleteComponentFromList(activeComponent.id));
             }
         }
         if (isActive) {
@@ -112,18 +114,20 @@ export default function Tree(props) {
         if (componentId === targetId) return;
         if (componentId) {
             const component = componentsList[componentId];
+						dispatch(unsetActiveComponent());
             dispatch(deleteComponent(componentId));
+						dispatch({type: 'DELETE_FROM_COMPONENTS_LIST', componentId});
             dispatch(addComponent(targetId, component));
         }
         if (templateId) {
             const template = templates[templateId];
             const id = generateNewId(10);
-            dispatch(updateComponentsList({id, ...template}));
+            dispatch(addComponentToList({id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
     }
 
-    
+
     return (
         <TreeWrapper>
             <TreeItemWrapper>
@@ -157,10 +161,10 @@ export default function Tree(props) {
                     </TreeItemType>
                     <TreeItemName
                         isRootItem={isRootItem}
-                        isPage={isPage}    
+                        isPage={isPage}
                         isActive={isActive}
                     >
-                        {components[props.nodeData.id].name}
+                        {components[props.nodeData.id] && components[props.nodeData.id].name}
                     </TreeItemName>
                 </TreeItem>
             </TreeItemWrapper>

@@ -2,7 +2,7 @@ import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../core/functions/components';
-import { addComponent, deleteComponent, updateComponentsList } from '../../../store/actions/document';
+import { addComponent, deleteComponent, addComponentToList } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 
 
@@ -29,15 +29,15 @@ export default function Page(props) {
     if (templateId) {
         const template = templates[templateId];
         const id = generateNewId(10);
-        dispatch(updateComponentsList({id, ...template}));
+        dispatch(addComponentToList({id, ...template}));
         dispatch(addComponent(targetId, {id, ...template}));
     }
   }
 
   return (
-      <PageBody 
-        {...props} 
-        componentData={componentData} 
+      <PageBody
+        {...props}
+        componentData={componentData}
         isActiveComponent={isActiveComponent}
         draggable
         onDragOver={(e) => e.preventDefault()}

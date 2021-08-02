@@ -6,9 +6,10 @@ export const SET_RESOLUTION = 'SET_RESOLUTION';
 export const SET_PROP = 'SET_PROP';
 export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
 export const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
-export const UPDATE_COMPONENTS_LIST = 'UPDATE_COMPONENTS_LIST';
+export const ADD_COMPONENT_TO_LIST = 'ADD_COMPONENT_TO_LIST';
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 export const DELETE_COMPONENT = 'DELETE_COMPONENT';
+export const DELETE_COMPONENT_FROM_LIST = 'DELETE_COMPONENT_FROM_LIST';
 
 
 
@@ -52,9 +53,14 @@ const setComponentName = (name, id) => ({
     id
 });
 
-const updateComponentsList = (component) => ({
-    type: UPDATE_COMPONENTS_LIST,
+const addComponentToList = (component) => ({
+    type: ADD_COMPONENT_TO_LIST,
     component
+});
+
+const deleteComponentFromList = (componentId) => ({
+	type: DELETE_COMPONENT_FROM_LIST,
+	componentId
 })
 
 const addComponent = (containerId, component) => ({
@@ -80,6 +86,7 @@ export {
     setComponentValue,
     setComponentName,
     addComponent,
-    updateComponentsList,
-    deleteComponent
+    addComponentToList,
+    deleteComponent,
+		deleteComponentFromList
 }
