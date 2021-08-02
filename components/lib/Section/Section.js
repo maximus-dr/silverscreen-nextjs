@@ -24,6 +24,7 @@ export default function Section(props) {
     const onDrop = (e, targetId, componentsList) => {
         e.stopPropagation();
         const componentId = e.dataTransfer.getData('componentId');
+				const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
         if (componentId === targetId) return;
         if (componentId) {
@@ -31,6 +32,7 @@ export default function Section(props) {
 						if (activeComponent && componentId === activeComponent.id) {
 							dispatch(unsetActiveComponent());
 						}
+						dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
         }
@@ -45,17 +47,18 @@ export default function Section(props) {
 
     return (
         <SectionWrapper
-            {...props}
-            componentData={componentData}
-            onMouseEnter={props.onMouseEnter}
-            onClick={getHandler(props, 'onClick')}
-            isActiveComponent={isActiveComponent}
-            draggable
-						onDragStart={(e) => onDragStart(e, id)}
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={(e) => onDrop(e, props.componentData.id, components)}
+					id={id}
+					{...props}
+					componentData={componentData}
+					onMouseEnter={props.onMouseEnter}
+					onClick={getHandler(props, 'onClick')}
+					isActiveComponent={isActiveComponent}
+					draggable
+					onDragStart={(e) => onDragStart(e, id)}
+					onDragOver={(e) => e.preventDefault()}
+					onDrop={(e) => onDrop(e, props.componentData.id, components)}
         >
-            {props.children}
+					{props.children}
         </SectionWrapper>
     )
 }

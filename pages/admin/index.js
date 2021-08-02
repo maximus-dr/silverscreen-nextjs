@@ -38,14 +38,14 @@ export async function getServerSideProps() {
     const dbPath = path.join(process.cwd(), 'db/test.json');
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
-    
+
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
     const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
       .then(res => res.data)
       .catch(err => console.log(err));
-    
+
     dispatch({
         type: 'SET_EVENTS',
         events
@@ -61,11 +61,10 @@ export async function getServerSideProps() {
         components: getComponentsList(componentsData)
     });
 
-    return { 
-        props: { 
-            initialReduxState: reduxStore.getState(),
-            components: componentsData
-        } 
+    return {
+        props: {
+            initialReduxState: reduxStore.getState()
+        }
     }
 }
 

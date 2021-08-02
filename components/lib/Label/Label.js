@@ -19,9 +19,12 @@ export default function Label(props) {
     const componentData = useSelector(state => state.document.components[id]);
     const dispatch = useDispatch();
 
+
     const onDragStart = (e, componentId) => {
+		  const parentId = e.target.parentElement.id;
 			e.stopPropagation();
       e.dataTransfer.setData('componentId', componentId);
+      e.dataTransfer.setData('parentId', parentId);
     }
 
     const onDrop = (e, targetId) => {
@@ -130,6 +133,7 @@ export default function Label(props) {
             default:
                 return (
                     <LabelSpan
+											id={id}
                         draggable
                         {...props}
                         componentData={componentData}

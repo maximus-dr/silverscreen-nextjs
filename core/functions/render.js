@@ -16,7 +16,7 @@ export function renderComponents(componentData) {
 }
 
 
-// рекурсивно перебирает json по typeName и возвращает react компонент с вложенными react компонентами 
+// рекурсивно перебирает json по typeName и возвращает react компонент с вложенными react компонентами
 function getComponents(props) {
 
     if (!props.componentData) return;
@@ -122,4 +122,18 @@ export function GetTreeNodes(props) {
     );
 
     return result;
+}
+
+
+export const getComponentFromTree = (root, id) => {
+
+	if (root.id === id) {
+		console.log(root);
+		return root;
+	};
+
+	root.childrenList.forEach(child => {
+		getComponentFromTree(child, id);
+	});
+
 }

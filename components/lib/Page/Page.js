@@ -36,6 +36,7 @@ export default function Page(props) {
 
   return (
       <PageBody
+				id={id}
         {...props}
         componentData={componentData}
         isActiveComponent={isActiveComponent}

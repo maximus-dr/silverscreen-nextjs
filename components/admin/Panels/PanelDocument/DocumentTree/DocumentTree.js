@@ -59,7 +59,7 @@ export const templates = {
 
 
 
-export default function Tree(props) {
+export default function DocumentTree(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();

@@ -12,8 +12,6 @@ export default function Workspace() {
     const componentsData = useSelector(state => state.document.componentsData);
     const components = renderComponents(componentsData);
 
-    const resolution = useSelector(state => state.document.resolution);
-
 
     const [screen, setScreen] = useState('1200');
 
