@@ -1,4 +1,3 @@
-import { StaticRouter } from "react-router-dom";
 import { addComponentIntoTree, deleteComponent } from "../../core/functions/components";
 import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';

@@ -16,12 +16,12 @@ export default function Section(props) {
     const componentData = useSelector(state => state.document.components[id]);
     const dispatch = useDispatch();
 
-		const onDragStart = (e, componentId) => {
-			e.stopPropagation();
-			const parentId = e.target.parentElement.id;
-			e.dataTransfer.setData('componentId', componentId);
-			e.dataTransfer.setData('parentId', parentId);
-		}
+	const onDragStart = (e, componentId) => {
+		e.stopPropagation();
+		const parentId = e.target.parentElement.id;
+		e.dataTransfer.setData('componentId', componentId);
+		e.dataTransfer.setData('parentId', parentId);
+	}
 
     const onDrop = (e, targetId, componentsList) => {
         e.stopPropagation();

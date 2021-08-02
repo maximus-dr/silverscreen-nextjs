@@ -2,7 +2,7 @@ import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../core/functions/components';
-import { addComponent, deleteComponent, addComponentToList } from '../../../store/actions/document';
+import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 
 

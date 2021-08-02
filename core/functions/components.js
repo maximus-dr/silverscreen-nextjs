@@ -6,8 +6,8 @@ const getRole = (component) => {
 
 const getHandler = (props, action) => {
     return (
-        (e) => props.handlers 
-        && props.handlers[action] 
+        (e) => props.handlers
+        && props.handlers[action]
         && props.handlers[action](e, props) || null
     );
 }
@@ -16,7 +16,7 @@ function extractChildrenDataByRole(componentData, role) {
     const result = [];
 
     function getChild(data) {
-    
+
         if (data.childrenList && data.childrenList.length > 0) {
             data.childrenList.forEach(child => {
                 if (child.role === role) {
@@ -26,7 +26,7 @@ function extractChildrenDataByRole(componentData, role) {
                     getChild(child);
                 }
             });
-        } 
+        }
         return;
     }
     getChild(componentData);
@@ -58,11 +58,9 @@ function generateNewId(length) {
 
 
 function addComponentIntoTree(state, containerId, component) {
-    
     if (!state) {
         return {...component}
     }
-
     if (state.id === containerId) {
         return {
             ...state,
@@ -88,18 +86,15 @@ function deleteComponent(state, componentId) {
             match = true;
         }
     });
-
     if (match) {
         return {
             ...state,
             childrenList: state.childrenList.filter(item => item.id !== componentId)
         }
     }
-    
     const children = state.childrenList.map(child => {
         return deleteComponent(child, componentId);
     });
-
     return {
         ...state,
         childrenList: children
