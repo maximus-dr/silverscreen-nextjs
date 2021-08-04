@@ -3,7 +3,7 @@ import { SectionWrapper } from './SectionStyled'
 import { generateNewId, getHandler } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
-import { addComponent, addComponentToList, deleteComponent, setActiveComponent, unsetActiveComponent } from '../../../store/actions/document';
+import { addComponent, addComponentToList, deleteComponent, setActiveComponent, unsetActiveComponent, updateComponentsList } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
 
 
@@ -40,12 +40,12 @@ export default function Section(props) {
         if (componentId) {
             if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
                 return;
-              }
+            }
             const component = componentsList[componentId];
             if (activeComponent && componentId === activeComponent.id) {
                 dispatch(unsetActiveComponent());
             }
-            dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
+            dispatch(updateComponentsList(componentId, parentId, targetId, component));
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
             if (activeComponent && componentId === activeComponent.id) {

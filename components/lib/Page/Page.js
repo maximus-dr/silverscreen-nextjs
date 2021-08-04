@@ -2,7 +2,7 @@ import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../core/functions/components';
-import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent } from '../../../store/actions/document';
+import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent, updateComponentsList } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { MODE } from '../../../core/config/site';
 
@@ -29,7 +29,7 @@ export default function Page(props) {
             dispatch(unsetActiveComponent());
         }
         const component = componentsList[componentId];
-        dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
+        dispatch(updateComponentsList(componentId, parentId, targetId, component));
         dispatch(deleteComponent(componentId));
         dispatch(addComponent(targetId, component));
         if (activeComponent && componentId === activeComponent.id) {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generateNewId, getParent } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList } from "../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList, updateComponentsList } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -103,7 +103,9 @@ export default function DocumentTree(props) {
 
 
     const onDragStart = (e, componentId) => {
+        const parent = getParent(componentsData, componentId);
         e.dataTransfer.setData('componentId', componentId);
+        e.dataTransfer.setData('parentId', parent.id);
     }
 
     const onDragOver = (e) => {
@@ -112,13 +114,19 @@ export default function DocumentTree(props) {
 
     const onDrop = (e, targetId, componentsList) => {
         const componentId = e.dataTransfer.getData('componentId');
+        const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
-        if (componentId === targetId) return;
+        if (targetId === componentId) return;
+        if (targetId === parentId) return;
+
         if (componentId) {
+            if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
+                return;
+            }
             const component = componentsList[componentId];
-						dispatch(unsetActiveComponent());
+			dispatch(unsetActiveComponent());
+            dispatch(updateComponentsList(componentId, parentId, targetId, component));
             dispatch(deleteComponent(componentId));
-						dispatch({type: 'DELETE_FROM_COMPONENTS_LIST', componentId});
             dispatch(addComponent(targetId, component));
         }
         if (templateId) {
@@ -132,7 +140,7 @@ export default function DocumentTree(props) {
 
     return (
         <TreeWrapper>
-            <TreeItemWrapper>
+            <TreeItemWrapper id={`tree-${props.nodeData.id}`}>
                 <TreeItem
                     draggable
                     onDragStart={(e) => onDragStart(e, props.nodeData.id)}

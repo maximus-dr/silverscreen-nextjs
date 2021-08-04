@@ -19,10 +19,7 @@ export default function Label(props) {
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const componentData = useSelector(state => state.document.components[id]);
     const dispatch = useDispatch();
-
     const componentsData = useSelector(state => state.document.componentsData);
-
-    console.log(getParent(componentsData, id));
 
 
     const onDragStart = (e, componentId) => {
