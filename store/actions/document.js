@@ -54,13 +54,15 @@ const setComponentName = (name, id) => ({
     id
 });
 
-const addComponentToList = (component) => ({
+const addComponentToList = (containerId, component) => ({
     type: ADD_COMPONENT_TO_LIST,
+    containerId,
     component
 });
 
-const deleteComponentFromList = (componentId) => ({
+const deleteComponentFromList = (parentId, componentId) => ({
 	type: DELETE_COMPONENT_FROM_LIST,
+    parentId,
 	componentId
 });
 

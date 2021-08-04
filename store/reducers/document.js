@@ -89,13 +89,21 @@ export const documentReducer = (state = {}, action) => {
                 ...state,
                 components: {
                     ...state.components,
-                    [action.component.id]: action.component
+                    [action.component.id]: action.component,
+                    [action.containerId]: {
+                        ...state.components[action.containerId],
+                        childrenList: [
+                            ...state.components[action.containerId].childrenList,
+                            action.component
+                        ]
+                    }
                 }
             }
 
         case DELETE_COMPONENT_FROM_LIST:
             const newComponents = {...state.components};
             delete newComponents[action.componentId];
+            newComponents[action.parentId].childrenList = newComponents[action.parentId].childrenList.filter(item => item.id !== action.componentId);
             return {
                 ...state,
                 components: newComponents

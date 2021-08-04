@@ -1,9 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { generateNewId, getHandler } from '../../../core/functions/components';
+import { MODE } from '../../../core/config/site';
+import { generateNewId, getHandler, getParent } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
-import { addComponent, addComponentToList } from '../../../store/actions/document';
+import { addComponent, addComponentToList, setActiveComponent, unsetActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
@@ -18,6 +19,10 @@ export default function Label(props) {
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const componentData = useSelector(state => state.document.components[id]);
     const dispatch = useDispatch();
+
+    const componentsData = useSelector(state => state.document.componentsData);
+
+    console.log(getParent(componentsData, id));
 
 
     const onDragStart = (e, componentId) => {
@@ -38,7 +43,7 @@ export default function Label(props) {
         if (templateId) {
             const template = templates[templateId];
             const id = generateNewId(10);
-            dispatch(addComponentToList({id, ...template}));
+            dispatch(addComponentToList(targetId, {id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
     }
@@ -144,7 +149,17 @@ export default function Label(props) {
                         componentData={componentData}
                         isActiveComponent={isActiveComponent}
                         {...props.handlers}
-                        onClick={getHandler(props, 'onClick')}
+                        onClick={(e) => {
+                            getHandler(props, 'onClick')();
+                            if (MODE === 'admin') {
+                                e.stopPropagation();
+                                if (activeComponent && activeComponent.id === id) {
+                                    dispatch(unsetActiveComponent());
+                                    return;
+                                }
+                                dispatch(setActiveComponent(props.componentData));
+                            }
+                        }}
                         onDragStart={(e) => onDragStart(e, id)}
                         onDragEnd={onDragEnd}
                         onDragOver={(e) => e.preventDefault()}

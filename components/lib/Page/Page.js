@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../core/functions/components';
 import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
+import { MODE } from '../../../core/config/site';
 
 
 
@@ -38,7 +39,7 @@ export default function Page(props) {
     if (templateId) {
         const template = templates[templateId];
         const id = generateNewId(10);
-        dispatch(addComponentToList({id, ...template}));
+        dispatch(addComponentToList(targetId, {id, ...template}));
         dispatch(addComponent(targetId, {id, ...template}));
     }
   }
@@ -51,6 +52,16 @@ export default function Page(props) {
         isActiveComponent={isActiveComponent}
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => onDrop(e, props.componentData.id, components)}
+        onClick={(e) => {
+            if (MODE === 'admin') {
+                e.stopPropagation();
+                if (activeComponent && activeComponent.id === id) {
+                    dispatch(unsetActiveComponent());
+                    return;
+                }
+                dispatch(setActiveComponent(props.componentData));
+            }
+        }}
       >
         {props.children}
       </PageBody>

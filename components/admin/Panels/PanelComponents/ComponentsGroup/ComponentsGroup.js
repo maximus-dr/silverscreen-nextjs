@@ -34,7 +34,7 @@ export default function ComponentsGroup(props) {
                         if (activeComponent) {
                             const id = generateNewId(10)
                             dispatch(addComponent(activeComponent.id, {...template.component, id}));
-                            dispatch(addComponentToList({...template.component, id}))
+                            dispatch(addComponentToList(activeComponent.id, {...template.component, id}))
                         }
                     }}
                 >

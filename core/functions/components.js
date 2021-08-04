@@ -101,6 +101,22 @@ function deleteComponent(state, componentId) {
     }
 }
 
+function getParent(componentsData, componentId) {
+    let result;
+    let match = componentsData.childrenList.find(item => item.id === componentId);
+    if (match) {
+        result = componentsData;
+    }
+    if (!match) {
+        componentsData.childrenList.forEach(child => {
+            if (getParent(child, componentId)) {
+                result = getParent(child, componentId);
+            };
+        });
+    }
+    return result;
+}
+
 
 export {
     getRole,
@@ -109,5 +125,6 @@ export {
     extractChildrenByRole,
     generateNewId,
     addComponentIntoTree,
-    deleteComponent
+    deleteComponent,
+    getParent
 }

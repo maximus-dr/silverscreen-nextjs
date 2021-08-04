@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { generateNewId } from "../../../../../core/functions/components";
+import { generateNewId, getParent } from "../../../../../core/functions/components";
 import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
@@ -70,6 +70,7 @@ export default function DocumentTree(props) {
     const isActive = activeComponent && props.nodeData.id === activeComponent.id;
 
     const components = useSelector(state => state.document.components);
+    const componentsData = useSelector(state => state.document.componentsData);
     const [expanded, setExpanded] = useState(false);
 
     const childrenLength = props.nodeData.childrenList.length;
@@ -86,9 +87,10 @@ export default function DocumentTree(props) {
     useEffect(() => {
         const onDeleteKeydown = (e) => {
             if (e.code === 'Delete') {
-								dispatch(unsetActiveComponent());
+                const parent = getParent(componentsData, activeComponent.id);
+				dispatch(unsetActiveComponent());
                 dispatch(deleteComponent(activeComponent.id));
-								dispatch(deleteComponentFromList(activeComponent.id));
+				dispatch(deleteComponentFromList(parent.id, activeComponent.id));
             }
         }
         if (isActive) {
@@ -97,7 +99,7 @@ export default function DocumentTree(props) {
         return () => {
             document.removeEventListener('keydown', onDeleteKeydown);
         }
-    }, [isActive, activeComponent, dispatch]);
+    }, [isActive, activeComponent, dispatch, componentsData]);
 
 
     const onDragStart = (e, componentId) => {

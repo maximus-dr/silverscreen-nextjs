@@ -13,7 +13,7 @@ export default function Workspace() {
     const components = renderComponents(componentsData);
 
 
-    const [screen, setScreen] = useState('1200');
+    const [screen, setScreen] = useState('320');
 
     return (
         <WorkspaceWrapper>
