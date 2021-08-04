@@ -18,28 +18,37 @@ export default function Section(props) {
 
 	const onDragStart = (e, componentId) => {
 		e.stopPropagation();
+        e.target.style.opacity = '0.4';
 		const parentId = e.target.parentElement.id;
 		e.dataTransfer.setData('componentId', componentId);
 		e.dataTransfer.setData('parentId', parentId);
 	}
 
+    const onDragEnd = (e) => {
+        e.target.style.opacity = '1';
+    }
+
     const onDrop = (e, targetId, componentsList) => {
         e.stopPropagation();
         const componentId = e.dataTransfer.getData('componentId');
-				const parentId = e.dataTransfer.getData('parentId');
+		const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
-        if (componentId === targetId) return;
+        if (targetId === componentId) return;
+        if (targetId === parentId) return;
+        if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
+          return;
+        }
         if (componentId) {
             const component = componentsList[componentId];
-						if (activeComponent && componentId === activeComponent.id) {
-							dispatch(unsetActiveComponent());
-						}
-						dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
+            if (activeComponent && componentId === activeComponent.id) {
+                dispatch(unsetActiveComponent());
+            }
+            dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
-						if (activeComponent && componentId === activeComponent.id) {
-							dispatch(setActiveComponent(component));
-						}
+            if (activeComponent && componentId === activeComponent.id) {
+                dispatch(setActiveComponent(component));
+            }
         }
 
         if (templateId) {
@@ -52,18 +61,19 @@ export default function Section(props) {
 
     return (
         <SectionWrapper
-					id={id}
-					{...props}
-					componentData={componentData}
-					onMouseEnter={props.onMouseEnter}
-					onClick={getHandler(props, 'onClick')}
-					isActiveComponent={isActiveComponent}
-					draggable
-					onDragStart={(e) => onDragStart(e, id)}
-					onDragOver={(e) => e.preventDefault()}
-					onDrop={(e) => onDrop(e, props.componentData.id, components)}
+            id={id}
+            {...props}
+            componentData={componentData}
+            onMouseEnter={props.onMouseEnter}
+            onClick={getHandler(props, 'onClick')}
+            isActiveComponent={isActiveComponent}
+            draggable
+            onDragStart={(e) => onDragStart(e, id)}
+            onDragOver={(e) => e.preventDefault()}
+            onDragEnd={onDragEnd}
+            onDrop={(e) => onDrop(e, props.componentData.id, components)}
         >
-					{props.children}
+            {props.children}
         </SectionWrapper>
     )
 }

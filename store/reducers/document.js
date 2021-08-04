@@ -1,5 +1,5 @@
 import { addComponentIntoTree, deleteComponent } from "../../core/functions/components";
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST, UPDATE_COMPONENTS_LIST } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -93,29 +93,29 @@ export const documentReducer = (state = {}, action) => {
                 }
             }
 
-				case DELETE_COMPONENT_FROM_LIST:
-					const newComponents = {...state.components};
-					delete newComponents[action.componentId];
-					return {
-						...state,
-						components: newComponents
-					}
+        case DELETE_COMPONENT_FROM_LIST:
+            const newComponents = {...state.components};
+            delete newComponents[action.componentId];
+            return {
+                ...state,
+                components: newComponents
+            }
 
-				case 'UPDATE_COMPONENTS_LIST':
-					return {
-						...state,
-						components: {
-							...state.components,
-							[action.parentId]: {
-								...state.components[action.parentId],
-								childrenList: state.components[action.parentId].childrenList.filter(item => item.id !== action.componentId)
-							},
-							[action.targetId]: {
-								...state.components[action.targetId],
-								childrenList: [...state.components[action.targetId].childrenList, action.component]
-							}
-						}
-					}
+        case UPDATE_COMPONENTS_LIST:
+            return {
+                ...state,
+                components: {
+                    ...state.components,
+                    [action.parentId]: {
+                        ...state.components[action.parentId],
+                        childrenList: state.components[action.parentId].childrenList.filter(item => item.id !== action.componentId)
+                    },
+                    [action.targetId]: {
+                        ...state.components[action.targetId],
+                        childrenList: [...state.components[action.targetId].childrenList, action.component]
+                    }
+                }
+            }
 
         case ADD_COMPONENT:
             const {containerId, component} = action;

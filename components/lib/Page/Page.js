@@ -19,20 +19,21 @@ export default function Page(props) {
   const onDrop = (e, targetId, componentsList) => {
     e.stopPropagation();
     const componentId = e.dataTransfer.getData('componentId');
-		const parentId = e.dataTransfer.getData('parentId');
+    const parentId = e.dataTransfer.getData('parentId');
     const templateId = e.dataTransfer.getData('templateId');
-    if (componentId === targetId) return;
+    if (targetId === componentId) return;
+    if (targetId === parentId) return;
     if (componentId) {
-			if (activeComponent && componentId === activeComponent.id) {
-				dispatch(unsetActiveComponent());
-			}
-			const component = componentsList[componentId];
-			dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
-			dispatch(deleteComponent(componentId));
-			dispatch(addComponent(targetId, component));
-			if (activeComponent && componentId === activeComponent.id) {
-				dispatch(setActiveComponent(component));
-			}
+        if (activeComponent && componentId === activeComponent.id) {
+            dispatch(unsetActiveComponent());
+        }
+        const component = componentsList[componentId];
+        dispatch({type: 'UPDATE_COMPONENTS_LIST', componentId, parentId, targetId, component});
+        dispatch(deleteComponent(componentId));
+        dispatch(addComponent(targetId, component));
+        if (activeComponent && componentId === activeComponent.id) {
+            dispatch(setActiveComponent(component));
+        }
     }
     if (templateId) {
         const template = templates[templateId];
@@ -44,11 +45,10 @@ export default function Page(props) {
 
   return (
       <PageBody
-				id={id}
+	    id={id}
         {...props}
         componentData={componentData}
         isActiveComponent={isActiveComponent}
-        draggable
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => onDrop(e, props.componentData.id, components)}
       >

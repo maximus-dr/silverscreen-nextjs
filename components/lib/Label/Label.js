@@ -21,10 +21,15 @@ export default function Label(props) {
 
 
     const onDragStart = (e, componentId) => {
-			e.stopPropagation();
-		  const parentId = e.target.parentElement.id;
-      e.dataTransfer.setData('componentId', componentId);
-      e.dataTransfer.setData('parentId', parentId);
+        e.stopPropagation();
+        e.target.style.opacity = '0.4';
+        const parentId = e.target.parentElement.id;
+        e.dataTransfer.setData('componentId', componentId);
+        e.dataTransfer.setData('parentId', parentId);
+    }
+
+    const onDragEnd = (e) => {
+        e.target.style.opacity = '1';
     }
 
     const onDrop = (e, targetId) => {
@@ -133,7 +138,7 @@ export default function Label(props) {
             default:
                 return (
                     <LabelSpan
-											id={id}
+                        id={id}
                         draggable
                         {...props}
                         componentData={componentData}
@@ -141,6 +146,7 @@ export default function Label(props) {
                         {...props.handlers}
                         onClick={getHandler(props, 'onClick')}
                         onDragStart={(e) => onDragStart(e, id)}
+                        onDragEnd={onDragEnd}
                         onDragOver={(e) => e.preventDefault()}
                         onDrop={(e) => onDrop(e, id)}
                     >
