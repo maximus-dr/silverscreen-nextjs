@@ -5,10 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { addComponent, addComponentToList, deleteComponent, setActiveComponent, unsetActiveComponent, updateComponentsList } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 
 export default function Section(props) {
+
+    const [isDroppable, setIsDroppable] = useState(false);
 
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -16,6 +20,18 @@ export default function Section(props) {
     const components = useSelector(state => state.document.components);
     const componentData = useSelector(state => state.document.components[id]);
     const dispatch = useDispatch();
+
+    const [dragCounter, setDragCounter] = useState(0);
+
+    useEffect(() => {
+        if (dragCounter === 0) {
+            setIsDroppable(false);
+        }
+
+        else {
+            setIsDroppable(true);
+        }
+    }, [dragCounter]);
 
 	const onDragStart = (e, componentId) => {
 		e.stopPropagation();
@@ -25,12 +41,33 @@ export default function Section(props) {
 		e.dataTransfer.setData('parentId', parentId);
 	}
 
+    const onDragEnter = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragCounter(prev => prev + 1);
+    }
+
+    const onDragLeave = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragCounter(prev => prev - 1);
+    }
+
+    const onDragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     const onDragEnd = (e) => {
         e.target.style.opacity = '1';
+        setIsDroppable(false);
+        setDragCounter(0);
     }
 
     const onDrop = (e, targetId, componentsList) => {
         e.stopPropagation();
+        setIsDroppable(false);
+        setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
 		const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
@@ -79,9 +116,12 @@ export default function Section(props) {
                 }
             }}
             isActiveComponent={isActiveComponent}
+            isDroppable={isDroppable}
             draggable
             onDragStart={(e) => onDragStart(e, id)}
-            onDragOver={(e) => e.preventDefault()}
+            onDragEnter={(e) => onDragEnter(e, props.componentData.id, components)}
+            onDragLeave={onDragLeave}
+            onDragOver={(e) => onDragOver(e)}
             onDragEnd={onDragEnd}
             onDrop={(e) => onDrop(e, props.componentData.id, components)}
         >

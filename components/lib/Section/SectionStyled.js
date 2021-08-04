@@ -13,6 +13,9 @@ export const SectionWrapper = styled.div`
         return css`
             ${styles && StylesProvider(styles)}
             ${props => props.isActiveComponent && getOutlines()}
+            ${props => props.isDroppable && `
+                outline: 2px solid #42a5f5;
+            `}
 
             @media (min-width: ${screens['screen_mobile'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_mobile'])}
@@ -29,7 +32,7 @@ export const SectionWrapper = styled.div`
             @media (min-width: ${screens['screen_tablet_landscape'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_tablet_landscape'])}
             }
-            
+
             @media (min-width: ${screens['screen_desktop'].minWidth}) {
                 ${styles && StylesProvider(styles['screen_desktop'])}
             }

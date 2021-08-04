@@ -34,6 +34,11 @@ export default function Label(props) {
         e.target.style.opacity = '1';
     }
 
+    const onDragOver = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     const onDrop = (e, targetId) => {
         e.stopPropagation();
         const templateId = e.dataTransfer.getData('templateId');
@@ -159,7 +164,7 @@ export default function Label(props) {
                         }}
                         onDragStart={(e) => onDragStart(e, id)}
                         onDragEnd={onDragEnd}
-                        onDragOver={(e) => e.preventDefault()}
+                        onDragOver={onDragOver}
                         onDrop={(e) => onDrop(e, id)}
                     >
                         {text}

@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 
 // добавляет обводку компонентам
 export function enableOutlines(isEnabled, color) {
-  return isEnabled 
+  return isEnabled
     ? css`
       position: relative;
       outline: 1px dashed ${color};
@@ -15,6 +15,6 @@ export function enableOutlines(isEnabled, color) {
 export function getOutlines() {
   return `
     outline: 2px solid #42a5f5;
-    outline-offset: 3px;
+    outline-offset: 1px;
   `;
 }
