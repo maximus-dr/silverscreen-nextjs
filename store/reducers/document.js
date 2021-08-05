@@ -1,5 +1,5 @@
 import { addComponentIntoTree, deleteComponent } from "../../core/functions/components";
-import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST, UPDATE_COMPONENTS_LIST } from "../actions/document"
+import { CLEAR_COMPONENT_ELEMENT, SET_RESOLUTION, SET_COMPONENT_ELEMENT, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, ADD_COMPONENT_TO_LIST, DELETE_COMPONENT_FROM_LIST, UPDATE_COMPONENTS_LIST, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -136,6 +136,19 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 componentsData: deleteComponent(state.componentsData, action.componentId)
+            }
+
+        case SET_DRAGEND_COMPONENT:
+            return {
+                ...state,
+                dragendComponent: action.componentData
+            }
+
+        case UNSET_DRAGEND_COMPONENT:
+            const newState = {...state};
+            delete newState.dragendComponent;
+            return {
+                ...newState
             }
 
         default:

@@ -117,6 +117,39 @@ function getParent(componentsData, componentId) {
     return result;
 }
 
+function getComponent(componentsData, componentId) {
+    let result;
+    if (componentsData.id === componentId) {
+        result = componentsData;
+    };
+
+    if (componentsData.childrenList) {
+        componentsData.childrenList.forEach(child => {
+            if (getComponent(child, componentId)) {
+                result = getComponent(child, componentId);
+            }
+        })
+    }
+    return result;
+}
+
+function getChild(componentData, childId) {
+    let result = null;
+
+    componentData.childrenList.forEach(item => {
+        if (item.id === childId) {
+            result = item;
+            return result;
+        }
+
+        if (getChild(item, childId)) {
+            result = getChild(item, childId);
+            return result;
+        };
+    })
+    return result;
+}
+
 
 export {
     getRole,
@@ -126,5 +159,7 @@ export {
     generateNewId,
     addComponentIntoTree,
     deleteComponent,
-    getParent
+    getParent,
+    getComponent,
+    getChild
 }

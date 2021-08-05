@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { MODE } from '../../../core/config/site';
-import { generateNewId, getHandler, getParent } from '../../../core/functions/components';
+import { generateNewId, getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
 import { addComponent, addComponentToList, setActiveComponent, unsetActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
@@ -35,6 +35,7 @@ export default function Label(props) {
     }
 
     const onDragOver = (e) => {
+        e.dataTransfer.dropEffect = 'none';
         e.preventDefault();
         e.stopPropagation();
     }
@@ -165,7 +166,6 @@ export default function Label(props) {
                         onDragStart={(e) => onDragStart(e, id)}
                         onDragEnd={onDragEnd}
                         onDragOver={onDragOver}
-                        onDrop={(e) => onDrop(e, id)}
                     >
                         {text}
                         {props.children}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
-import { generateNewId } from '../../../core/functions/components';
+import { generateNewId, getComponent } from '../../../core/functions/components';
 import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent, updateComponentsList } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { MODE } from '../../../core/config/site';
@@ -15,6 +15,7 @@ export default function Page(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const componentData = useSelector(state => state.document.components[id]);
+    const componentsData = useSelector(state => state.document.componentsData);
     const components = useSelector(state => state.document.components);
     const dispatch = useDispatch();
 
@@ -42,16 +43,16 @@ export default function Page(props) {
         if (targetId === componentId) return;
         if (targetId === parentId) return;
         if (componentId) {
-            if (activeComponent && componentId === activeComponent.id) {
-                dispatch(unsetActiveComponent());
+            if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
+                return;
             }
-            const component = componentsList[componentId];
-            dispatch(updateComponentsList(componentId, parentId, targetId, component));
+
+            const componentInList = componentsList[componentId];
+            const component = getComponent(componentsData, componentId);
+            dispatch(updateComponentsList(componentId, parentId, targetId, componentInList));
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
-            if (activeComponent && componentId === activeComponent.id) {
-                dispatch(setActiveComponent(component));
-            }
+
         }
         if (templateId) {
             const template = templates[templateId];

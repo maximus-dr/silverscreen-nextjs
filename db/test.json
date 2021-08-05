@@ -32,45 +32,83 @@
               "border": "1px dashed #42a5f5"
             }
           },
-          "childrenList": []
-        },
-
-        {
-          "typeName": "section",
-          "id": "sec002",
-          "name": "Container 2",
-          "styles": {
-            "common": {
-              "paddingTop": "15px",
-              "paddingRight": "15px",
-              "paddingBottom": "15px",
-              "paddingLeft": "15px",
-              "minHeight": "50px",
-              "border": "1px dashed #42a5f5"
-            }
-          },
           "childrenList": [
             {
-              "typeName": "label",
-              "id": "lab001",
-              "name": "Label",
-              "value": "Label",
-              "styles": {
-                "common": {
-                  "display": "inline-block",
-                  "paddingTop": "5px",
-                  "paddingRight": "5px",
-                  "paddingBottom": "5px",
-                  "paddingLeft": "5px",
-                  "marginTop": "0px",
-                  "marginBottom": "0px",
-                  "fontSize": "22px"
-                }
-              },
-              "childrenList": []
+                "typeName": "section",
+                "id": "sec002",
+                "name": "Container 2",
+                "styles": {
+                  "common": {
+                    "paddingTop": "15px",
+                    "paddingRight": "15px",
+                    "paddingBottom": "15px",
+                    "paddingLeft": "15px",
+                    "minHeight": "50px",
+                    "border": "1px dashed #42a5f5"
+                  }
+                },
+                "childrenList": [
+                  {
+                    "typeName": "label",
+                    "id": "lab001",
+                    "name": "Label",
+                    "value": "Label",
+                    "styles": {
+                      "common": {
+                        "display": "inline-block",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "marginTop": "0px",
+                        "marginBottom": "0px",
+                        "fontSize": "22px"
+                      }
+                    },
+                    "childrenList": []
+                  },
+
+                  {
+                    "typeName": "section",
+                    "id": "sec003",
+                    "name": "Container 2",
+                    "styles": {
+                      "common": {
+                        "paddingTop": "15px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "15px",
+                        "paddingLeft": "15px",
+                        "minHeight": "50px",
+                        "border": "1px dashed #42a5f5"
+                      }
+                    },
+                    "childrenList": [
+                        {
+                            "typeName": "section",
+                            "id": "sec004",
+                            "name": "Container 2",
+                            "styles": {
+                              "common": {
+                                "paddingTop": "15px",
+                                "paddingRight": "15px",
+                                "paddingBottom": "15px",
+                                "paddingLeft": "15px",
+                                "minHeight": "50px",
+                                "border": "1px dashed #42a5f5"
+                              }
+                            },
+                            "childrenList": [
+
+                            ]
+                          }
+                    ]
+                  }
+                ]
             }
           ]
         }
+
+
       ]
     }
   ]

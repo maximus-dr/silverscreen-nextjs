@@ -11,6 +11,8 @@ export const ADD_COMPONENT = 'ADD_COMPONENT';
 export const DELETE_COMPONENT = 'DELETE_COMPONENT';
 export const DELETE_COMPONENT_FROM_LIST = 'DELETE_COMPONENT_FROM_LIST';
 export const UPDATE_COMPONENTS_LIST = 'UPDATE_COMPONENTS_LIST';
+export const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
+export const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 
 
 
@@ -85,6 +87,15 @@ const deleteComponent = (componentId) => ({
     componentId
 });
 
+const setDragendComponent = (componentData) => ({
+    type: SET_DRAGEND_COMPONENT,
+    componentData
+});
+
+const unsetDragendComponent = () => ({
+    type: UNSET_DRAGEND_COMPONENT
+})
+
 
 
 export {
@@ -100,5 +111,7 @@ export {
     addComponentToList,
     deleteComponent,
 	deleteComponentFromList,
-    updateComponentsList
+    updateComponentsList,
+    setDragendComponent,
+    unsetDragendComponent
 }

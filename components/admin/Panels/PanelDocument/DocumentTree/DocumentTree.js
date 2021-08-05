@@ -124,7 +124,9 @@ export default function DocumentTree(props) {
                 return;
             }
             const component = componentsList[componentId];
-			dispatch(unsetActiveComponent());
+            if (activeComponent && componentId === activeComponent.id) {
+                dispatch(unsetActiveComponent());
+            }
             dispatch(updateComponentsList(componentId, parentId, targetId, component));
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
@@ -132,7 +134,7 @@ export default function DocumentTree(props) {
         if (templateId) {
             const template = templates[templateId];
             const id = generateNewId(10);
-            dispatch(addComponentToList({id, ...template}));
+            dispatch(addComponentToList(targetId, {id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
     }
