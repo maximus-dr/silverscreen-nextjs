@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { generateNewId, getParent } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList, updateComponentsList } from "../../../../../store/actions/document";
+import { generateNewId, getChild, getParent } from "../../../../../core/functions/components";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList, updateComponentsList, setDragendComponent, unsetDragendComponent } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -71,9 +71,33 @@ export default function DocumentTree(props) {
 
     const components = useSelector(state => state.document.components);
     const componentsData = useSelector(state => state.document.componentsData);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const [expanded, setExpanded] = useState(false);
 
+    const [dragCounter, setDragCounter] = useState(0);
+    const [allowDrop, setAllowDrop] = useState(false);
+
     const childrenLength = props.nodeData.childrenList.length;
+
+
+    const checkAllowDrop = (dragendComponent, dropTarget) => {
+        if (getChild(dragendComponent, dropTarget.id)) {
+            return false;
+        }
+        return true;
+    }
+
+    useEffect(() => {
+        if (dragendComponent) {
+            if (dragCounter === 0) {
+                setAllowDrop(false);
+            }
+            else {
+                setAllowDrop(checkAllowDrop(dragendComponent, props.nodeData));
+            }
+        }
+    }, [dragCounter, dragendComponent, props.nodeData]);
+
 
     // разворачивает список при добавлении новых элементов в него
     useEffect(() => {
@@ -103,13 +127,35 @@ export default function DocumentTree(props) {
 
 
     const onDragStart = (e, componentId) => {
+        dispatch(setDragendComponent(props.nodeData));
         const parent = getParent(componentsData, componentId);
         e.dataTransfer.setData('componentId', componentId);
         e.dataTransfer.setData('parentId', parent.id);
+        e.dataTransfer.effectAllowed = 'move';
+    }
+
+    const onDragEnter = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragCounter(prev => prev + 1);
+    }
+
+    const onDragLeave = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setDragCounter(prev => prev - 1);
     }
 
     const onDragOver = (e) => {
         e.preventDefault();
+        e.stopPropagation();
+        e.dataTransfer.dropEffect = allowDrop ? 'move' : 'none';
+    }
+
+    const onDragEnd = () => {
+        if (dragendComponent) {
+            dispatch(unsetDragendComponent());
+        }
     }
 
     const onDrop = (e, targetId, componentsList) => {
@@ -146,7 +192,10 @@ export default function DocumentTree(props) {
                 <TreeItem
                     draggable
                     onDragStart={(e) => onDragStart(e, props.nodeData.id)}
+                    onDragEnter={onDragEnter}
+                    onDragLeave={onDragLeave}
                     onDragOver={(e) => onDragOver(e)}
+                    onDragEnd={onDragEnd}
                     onDrop={(e) => onDrop(e, props.nodeData.id, components)}
                     isActive={isActive}
                     onClick={() => {

@@ -15,7 +15,6 @@ export default function Section(props) {
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const components = useSelector(state => state.document.components);
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
@@ -82,7 +81,7 @@ export default function Section(props) {
         }
     }
 
-    const onDrop = (e, targetId, componentsList) => {
+    const onDrop = (e, targetId) => {
         e.stopPropagation();
         setAllowDrop(false);
         setDragCounter(0);
@@ -99,12 +98,10 @@ export default function Section(props) {
         if (targetId === parentId) return;
 
         if (componentId) {
-            const componentInList = componentsList[componentId];
+            // const componentInList = componentsList[componentId];
             const component = getComponent(componentsData, componentId);
-
             if (getChild(component, targetId)) return;
-
-            dispatch(updateComponentsList(componentId, parentId, targetId, componentInList));
+            // dispatch(updateComponentsList(componentId, parentId, targetId, componentInList));
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
         }
@@ -139,11 +136,11 @@ export default function Section(props) {
             allowDrop={allowDrop}
             draggable
             onDragStart={(e) => onDragStart(e, id)}
-            onDragEnter={(e) => onDragEnter(e, props.componentData.id, components)}
+            onDragEnter={onDragEnter}
             onDragLeave={onDragLeave}
             onDragOver={(e) => onDragOver(e)}
             onDragEnd={onDragEnd}
-            onDrop={(e) => onDrop(e, id, components)}
+            onDrop={(e) => onDrop(e, id)}
         >
             {props.children}
         </SectionWrapper>
