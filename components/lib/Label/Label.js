@@ -2,9 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { MODE } from '../../../core/config/site';
-import { generateNewId, getHandler } from '../../../core/functions/components';
+import { generateNewId, getComponent, getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
-import { addComponent, addComponentToList, setActiveComponent, unsetActiveComponent } from '../../../store/actions/document';
+import { addComponent, addComponentToList, setActiveComponent, setDragendComponent, unsetActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
@@ -17,17 +17,20 @@ export default function Label(props) {
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
-    const componentData = useSelector(state => state.document.components[id]);
-    const dispatch = useDispatch();
     const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, id);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
+    const dispatch = useDispatch();
 
 
     const onDragStart = (e, componentId) => {
+        dispatch(setDragendComponent(componentData));
         e.stopPropagation();
         e.target.style.opacity = '0.4';
         const parentId = e.target.parentElement.id;
         e.dataTransfer.setData('componentId', componentId);
         e.dataTransfer.setData('parentId', parentId);
+        e.dataTransfer.effectAllowed = 'move';
     }
 
     const onDragEnd = (e) => {
@@ -35,21 +38,21 @@ export default function Label(props) {
     }
 
     const onDragOver = (e) => {
-        e.dataTransfer.dropEffect = 'none';
+        e.dataTransfer.dropEffect =  dragendComponent && dragendComponent.id === id ? 'move' : 'none';
         e.preventDefault();
         e.stopPropagation();
     }
 
-    const onDrop = (e, targetId) => {
-        e.stopPropagation();
-        const templateId = e.dataTransfer.getData('templateId');
-        if (templateId) {
-            const template = templates[templateId];
-            const id = generateNewId(10);
-            dispatch(addComponentToList(targetId, {id, ...template}));
-            dispatch(addComponent(targetId, {id, ...template}));
-        }
-    }
+    // const onDrop = (e, targetId) => {
+    //     e.stopPropagation();
+    //     const templateId = e.dataTransfer.getData('templateId');
+    //     if (templateId) {
+    //         const template = templates[templateId];
+    //         const id = generateNewId(10);
+    //         dispatch(addComponentToList(targetId, {id, ...template}));
+    //         dispatch(addComponent(targetId, {id, ...template}));
+    //     }
+    // }
 
 
     const label = (heading) => {

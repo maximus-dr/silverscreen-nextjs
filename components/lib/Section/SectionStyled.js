@@ -13,7 +13,7 @@ export const SectionWrapper = styled.div`
         return css`
             ${styles && StylesProvider(styles)}
             ${props => props.isActiveComponent && getOutlines()}
-            ${props => props.isDroppable && `
+            ${props => props.allowDrop && `
                 outline: 2px solid #42a5f5;
             `}
 

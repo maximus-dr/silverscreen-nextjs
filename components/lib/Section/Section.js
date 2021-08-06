@@ -12,34 +12,43 @@ import { useEffect } from 'react';
 
 export default function Section(props) {
 
-    const [isDroppable, setIsDroppable] = useState(false);
-
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const components = useSelector(state => state.document.components);
-    // const componentData = useSelector(state => state.document.components[id]);
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
 
     const [dragCounter, setDragCounter] = useState(0);
+    const [allowDrop, setAllowDrop] = useState(false);
+
+    const checkAllowDrop = (dragendComponent, dropTarget) => {
+        if (getChild(dragendComponent, dropTarget.id)) {
+            return false;
+        }
+        return true;
+    }
 
     useEffect(() => {
-        if (dragCounter === 0) {
-            setIsDroppable(false);
+        if (dragendComponent) {
+            if (dragCounter === 0) {
+                setAllowDrop(false);
+            }
+            else {
+                setAllowDrop(checkAllowDrop(dragendComponent, componentData));
+            }
         }
-        else {
-            setIsDroppable(true);
-        }
-    }, [dragCounter]);
+    }, [dragCounter, dragendComponent, componentData]);
+
+
 
 	const onDragStart = (e, componentId) => {
         dispatch(setDragendComponent(componentData));
 		e.stopPropagation();
-        e.target.style.opacity = '0.4';
 		const parentId = e.target.parentElement.id;
+        e.target.style.opacity = '0.4';
 		e.dataTransfer.setData('componentId', componentId);
 		e.dataTransfer.setData('parentId', parentId);
         e.dataTransfer.effectAllowed = 'move';
@@ -60,12 +69,13 @@ export default function Section(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.dataTransfer.dropEffect = allowDrop ? 'move' : 'none';
     }
 
     const onDragEnd = (e) => {
         e.stopPropagation();
         e.target.style.opacity = '1';
-        setIsDroppable(false);
+        setAllowDrop(false);
         setDragCounter(0);
         if (dragendComponent) {
             dispatch(unsetDragendComponent());
@@ -74,7 +84,7 @@ export default function Section(props) {
 
     const onDrop = (e, targetId, componentsList) => {
         e.stopPropagation();
-        setIsDroppable(false);
+        setAllowDrop(false);
         setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
 		const parentId = e.dataTransfer.getData('parentId');
@@ -126,7 +136,7 @@ export default function Section(props) {
                 }
             }}
             isActiveComponent={isActiveComponent}
-            isDroppable={isDroppable}
+            allowDrop={allowDrop}
             draggable
             onDragStart={(e) => onDragStart(e, id)}
             onDragEnter={(e) => onDragEnter(e, props.componentData.id, components)}
