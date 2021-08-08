@@ -85,8 +85,8 @@ export default function DocumentTree(props) {
             return false;
         }
         if (dropTarget.typeName === 'label' && dropTarget.id !== dragendComponent.id) return false;
-        if (dropTarget.typeName === 'Document') return false;
-        if (dragendComponent.typeName === 'page') {
+        if (dropTarget.typeName === 'Document' && dragendComponent.typeName !== 'page') return false;
+        if (dragendComponent.typeName === 'page' && dropTarget.typeName !== 'Document') {
             return false;
         }
         return true;
@@ -154,8 +154,8 @@ export default function DocumentTree(props) {
 
     const onDragOver = (e) => {
         e.preventDefault();
-        e.stopPropagation();
-        e.dataTransfer.dropEffect = allowDrop ? 'move' : 'none';
+        // e.stopPropagation();
+        e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
     }
 
     const onDragEnd = (e) => {
@@ -185,7 +185,6 @@ export default function DocumentTree(props) {
             dispatch(addComponent(targetId, component));
         }
         if (templateId) {
-            if (dragendComponent.typeName === 'page' && targetId !== 'doc1') return;
             const template = templates[templateId];
             const id = generateNewId(10);
             dispatch(addComponent(targetId, {id, ...template}));

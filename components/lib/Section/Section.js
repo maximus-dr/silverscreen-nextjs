@@ -72,7 +72,7 @@ export default function Section(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = allowDrop ? 'move' : 'none';
+        e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
     }
 
     const onDragEnd = (e) => {

@@ -16,6 +16,7 @@ export default function ComponentsGroup(props) {
     const dispatch = useDispatch();
 
     const onDragStart = (e, template) => {
+        e.dataTransfer.effectAllowed = 'copy';
         e.dataTransfer.setData('templateId', template.id);
         const id = nanoid(10);
         dispatch(setDragendComponent({id, ...template.component}));

@@ -58,7 +58,7 @@ export default function Page(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = isDroppable ? 'move' : 'none';
+        e.dataTransfer.dropEffect = isDroppable ? e.dataTransfer.effectAllowed : 'none';
     }
 
     const onDrop = (e, targetId) => {
