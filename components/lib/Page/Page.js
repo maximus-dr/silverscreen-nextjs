@@ -66,10 +66,8 @@ export default function Page(props) {
         setIsDroppable(false);
         setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
-        const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
         if (targetId === componentId) return;
-        if (targetId === parentId) return;
         if (componentId) {
             const component = getComponent(componentsData, componentId);
             if (getChild(component, targetId)) return;

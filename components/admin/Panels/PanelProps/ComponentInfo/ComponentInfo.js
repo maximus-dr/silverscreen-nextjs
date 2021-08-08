@@ -76,10 +76,8 @@ export default function ComponentSeciton(props) {
                     activeComponent.typeName !== 'Document' &&
                     <DeleteButton
                         onClick={() => {
-                            const parentId = getParent(componentsData, activeComponent.id).id;
                             dispatch(unsetActiveComponent());
                             dispatch(deleteComponent(activeComponent.id));
-                            dispatch(deleteComponentFromList(parentId, activeComponent.id));
                         }}
                     >
                         Delete

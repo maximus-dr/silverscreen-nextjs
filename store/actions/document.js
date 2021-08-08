@@ -6,11 +6,8 @@ export const SET_RESOLUTION = 'SET_RESOLUTION';
 export const SET_PROP = 'SET_PROP';
 export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
 export const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
-export const ADD_COMPONENT_TO_LIST = 'ADD_COMPONENT_TO_LIST';
 export const ADD_COMPONENT = 'ADD_COMPONENT';
 export const DELETE_COMPONENT = 'DELETE_COMPONENT';
-export const DELETE_COMPONENT_FROM_LIST = 'DELETE_COMPONENT_FROM_LIST';
-export const UPDATE_COMPONENTS_LIST = 'UPDATE_COMPONENTS_LIST';
 export const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
 export const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 
@@ -56,26 +53,6 @@ const setComponentName = (name, id) => ({
     id
 });
 
-const addComponentToList = (containerId, component) => ({
-    type: ADD_COMPONENT_TO_LIST,
-    containerId,
-    component
-});
-
-const deleteComponentFromList = (parentId, componentId) => ({
-	type: DELETE_COMPONENT_FROM_LIST,
-    parentId,
-	componentId
-});
-
-const updateComponentsList = (componentId, parentId, targetId, component) => ({
-    type: UPDATE_COMPONENTS_LIST,
-    componentId,
-    parentId,
-    targetId,
-    component
-});
-
 const addComponent = (containerId, component) => ({
     type: ADD_COMPONENT,
     containerId,
@@ -108,10 +85,7 @@ export {
     setComponentValue,
     setComponentName,
     addComponent,
-    addComponentToList,
     deleteComponent,
-	deleteComponentFromList,
-    updateComponentsList,
     setDragendComponent,
     unsetDragendComponent
 }

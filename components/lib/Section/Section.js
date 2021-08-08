@@ -50,10 +50,8 @@ export default function Section(props) {
 	const onDragStart = (e, componentId) => {
         dispatch(setDragendComponent(componentData));
 		e.stopPropagation();
-		const parentId = e.target.parentElement.id;
         e.target.style.opacity = '0.4';
 		e.dataTransfer.setData('componentId', componentId);
-		e.dataTransfer.setData('parentId', parentId);
         e.dataTransfer.effectAllowed = 'move';
 	}
 
@@ -90,16 +88,14 @@ export default function Section(props) {
         setAllowDrop(false);
         setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
-		const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
 
         if (dragendComponent) {
             dispatch(unsetDragendComponent());
         }
 
-
         if (targetId === componentId) return;
-        if (targetId === parentId) return;
+
 
         if (componentId) {
             const component = getComponent(componentsData, componentId);

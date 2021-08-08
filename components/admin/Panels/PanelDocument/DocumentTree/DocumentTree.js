@@ -116,10 +116,8 @@ export default function DocumentTree(props) {
     useEffect(() => {
         const onDeleteKeydown = (e) => {
             if (e.code === 'Delete') {
-                const parent = getParent(componentsData, activeComponent.id);
 				dispatch(unsetActiveComponent());
                 dispatch(deleteComponent(activeComponent.id));
-				dispatch(deleteComponentFromList(parent.id, activeComponent.id));
             }
         }
         if (isActive) {
@@ -133,10 +131,8 @@ export default function DocumentTree(props) {
 
     const onDragStart = (e, componentId) => {
         dispatch(setDragendComponent(nodeData));
-        const parent = getParent(componentsData, componentId);
         e.target.style.opacity = '0.4';
         e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.setData('parentId', parent.id);
         e.dataTransfer.effectAllowed = 'move';
     }
 
@@ -169,14 +165,12 @@ export default function DocumentTree(props) {
 
     const onDrop = (e, targetId) => {
         const componentId = e.dataTransfer.getData('componentId');
-        const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
 
         setAllowDrop(false);
         setDragCounter(0);
 
         if (targetId === componentId) return;
-        if (targetId === parentId) return;
 
         if (componentId) {
             const component = getComponent(componentsData, componentId);

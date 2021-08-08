@@ -27,9 +27,7 @@ export default function Label(props) {
         dispatch(setDragendComponent(componentData));
         e.stopPropagation();
         e.target.style.opacity = '0.4';
-        const parentId = e.target.parentElement.id;
         e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.setData('parentId', parentId);
         e.dataTransfer.effectAllowed = 'move';
     }
 
