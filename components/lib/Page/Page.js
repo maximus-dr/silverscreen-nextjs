@@ -1,12 +1,23 @@
 import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
-import { generateNewId, getComponent } from '../../../core/functions/components';
-import { addComponent, deleteComponent, addComponentToList, unsetActiveComponent, setActiveComponent, updateComponentsList } from '../../../store/actions/document';
+import { generateNewId, getChild, getComponent } from '../../../core/functions/components';
+import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { MODE } from '../../../core/config/site';
 import { useEffect, useState } from 'react';
 
+
+
+const checkAllowDrop = (dragendComponent, dropTarget) => {
+    if (getChild(dragendComponent, dropTarget.id)) {
+        return false;
+    }
+    if (dragendComponent.typeName === 'page') {
+        return false;
+    }
+    return true;
+}
 
 
 export default function Page(props) {
@@ -14,9 +25,9 @@ export default function Page(props) {
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentData = useSelector(state => state.document.components[id]);
     const componentsData = useSelector(state => state.document.componentsData);
-    const components = useSelector(state => state.document.components);
+    const componentData = getComponent(componentsData, id);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
 
     const [isDroppable, setIsDroppable] = useState(false);
@@ -28,39 +39,9 @@ export default function Page(props) {
         }
 
         else {
-            setIsDroppable(true);
+            setIsDroppable(checkAllowDrop(dragendComponent, componentData));
         }
     }, [dragCounter]);
-
-
-    const onDrop = (e, targetId, componentsList) => {
-        e.stopPropagation();
-        setIsDroppable(false);
-        setDragCounter(0);
-        const componentId = e.dataTransfer.getData('componentId');
-        const parentId = e.dataTransfer.getData('parentId');
-        const templateId = e.dataTransfer.getData('templateId');
-        if (targetId === componentId) return;
-        if (targetId === parentId) return;
-        if (componentId) {
-            if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
-                return;
-            }
-
-            const componentInList = componentsList[componentId];
-            const component = getComponent(componentsData, componentId);
-            dispatch(updateComponentsList(componentId, parentId, targetId, componentInList));
-            dispatch(deleteComponent(componentId));
-            dispatch(addComponent(targetId, component));
-
-        }
-        if (templateId) {
-            const template = templates[templateId];
-            const id = generateNewId(10);
-            dispatch(addComponentToList(targetId, {id, ...template}));
-            dispatch(addComponent(targetId, {id, ...template}));
-        }
-    }
 
     const onDragEnter = (e) => {
         e.preventDefault();
@@ -77,6 +58,31 @@ export default function Page(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.dataTransfer.dropEffect = isDroppable ? 'move' : 'none';
+    }
+
+    const onDrop = (e, targetId) => {
+        e.stopPropagation();
+        setIsDroppable(false);
+        setDragCounter(0);
+        const componentId = e.dataTransfer.getData('componentId');
+        const parentId = e.dataTransfer.getData('parentId');
+        const templateId = e.dataTransfer.getData('templateId');
+        if (targetId === componentId) return;
+        if (targetId === parentId) return;
+        if (componentId) {
+            const component = getComponent(componentsData, componentId);
+            if (getChild(component, targetId)) return;
+            dispatch(deleteComponent(componentId));
+            dispatch(addComponent(targetId, component));
+
+        }
+        if (templateId) {
+            const template = templates[templateId];
+            if (template.typeName === 'page') return;
+            const id = generateNewId(10);
+            dispatch(addComponent(targetId, {id, ...template}));
+        }
     }
 
   return (
@@ -89,7 +95,7 @@ export default function Page(props) {
         onDragEnter={onDragEnter}
         onDragLeave={onDragLeave}
         onDragOver={onDragOver}
-        onDrop={(e) => onDrop(e, props.componentData.id, components)}
+        onDrop={(e) => onDrop(e, props.componentData.id)}
         onClick={(e) => {
             if (MODE === 'admin') {
                 e.stopPropagation();

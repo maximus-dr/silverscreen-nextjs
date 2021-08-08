@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { MODE } from '../../../core/config/site';
 import { generateNewId, getComponent, getHandler } from '../../../core/functions/components';
 import { getAttrs } from '../../../core/functions/styles';
-import { addComponent, addComponentToList, setActiveComponent, setDragendComponent, unsetActiveComponent } from '../../../store/actions/document';
+import { setActiveComponent, setDragendComponent, unsetActiveComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
 
@@ -42,17 +42,6 @@ export default function Label(props) {
         e.preventDefault();
         e.stopPropagation();
     }
-
-    // const onDrop = (e, targetId) => {
-    //     e.stopPropagation();
-    //     const templateId = e.dataTransfer.getData('templateId');
-    //     if (templateId) {
-    //         const template = templates[templateId];
-    //         const id = generateNewId(10);
-    //         dispatch(addComponentToList(targetId, {id, ...template}));
-    //         dispatch(addComponent(targetId, {id, ...template}));
-    //     }
-    // }
 
 
     const label = (heading) => {

@@ -35,6 +35,10 @@ const TreeItem = styled.div`
             }
         `;
     }}
+
+    ${props => props.allowDrop && `
+        outline: 2px solid #42a5f5;
+    `}
 `;
 
 const TreeItemType = styled.span`

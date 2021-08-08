@@ -1,20 +1,28 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../../../core/functions/components';
-import { addComponentToList, addComponent } from '../../../../../store/actions/document';
+import {  addComponent, setDragendComponent, unsetDragendComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
+import { nanoid } from 'nanoid';
+
 
 
 export default function ComponentsGroup(props) {
     const {title, templates} = props;
 
     const [expanded, setExpanded] = useState(false);
-    const [activeItemId, setActiveItemId] = useState(null);
     const activeComponent = useSelector(state => state.document.activeComponent);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
 
-    const onDragStart = (e, templateId) => {
-        e.dataTransfer.setData('templateId', templateId);
+    const onDragStart = (e, template) => {
+        e.dataTransfer.setData('templateId', template.id);
+        const id = nanoid(10);
+        dispatch(setDragendComponent({id, ...template.component}));
+    }
+
+    const onDragEnd = () => {
+        dragendComponent && dispatch(unsetDragendComponent());
     }
 
 
@@ -26,15 +34,16 @@ export default function ComponentsGroup(props) {
             : (
                 <ComponentsLi
                     draggable
-                    onDragStart={(e) => onDragStart(e, template.id)}
+                    onDragStart={(e) => onDragStart(e, template)}
+                    onDragEnd={onDragEnd}
                     key={template.id}
-                    isActive={template.id === activeItemId}
                     onClick={() => {
-                        setActiveItemId(template.id);
                         if (activeComponent) {
+                            if (template.name === 'page' && activeComponent.typeName !== 'Document') {
+                                return
+                            }
                             const id = generateNewId(10)
                             dispatch(addComponent(activeComponent.id, {...template.component, id}));
-                            dispatch(addComponentToList(activeComponent.id, {...template.component, id}))
                         }
                     }}
                 >

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { generateNewId, getChild, getParent } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, addComponentToList, deleteComponentFromList, updateComponentsList, setDragendComponent, unsetDragendComponent } from "../../../../../store/actions/document";
+import { generateNewId, getChild, getComponent, getParent } from "../../../../../core/functions/components";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, deleteComponentFromList, setDragendComponent, unsetDragendComponent } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
 
 
@@ -61,6 +61,8 @@ export const templates = {
 
 export default function DocumentTree(props) {
 
+    const { nodeData } = props;
+
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
 
@@ -68,8 +70,6 @@ export default function DocumentTree(props) {
     const isRootItem = props.nodeData.typeName === 'Document';
     const isPage = props.nodeData.typeName === 'page';
     const isActive = activeComponent && props.nodeData.id === activeComponent.id;
-
-    const components = useSelector(state => state.document.components);
     const componentsData = useSelector(state => state.document.componentsData);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const [expanded, setExpanded] = useState(false);
@@ -82,6 +82,11 @@ export default function DocumentTree(props) {
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
         if (getChild(dragendComponent, dropTarget.id)) {
+            return false;
+        }
+        if (dropTarget.typeName === 'label' && dropTarget.id !== dragendComponent.id) return false;
+        if (dropTarget.typeName === 'Document') return false;
+        if (dragendComponent.typeName === 'page') {
             return false;
         }
         return true;
@@ -127,8 +132,9 @@ export default function DocumentTree(props) {
 
 
     const onDragStart = (e, componentId) => {
-        dispatch(setDragendComponent(props.nodeData));
+        dispatch(setDragendComponent(nodeData));
         const parent = getParent(componentsData, componentId);
+        e.target.style.opacity = '0.4';
         e.dataTransfer.setData('componentId', componentId);
         e.dataTransfer.setData('parentId', parent.id);
         e.dataTransfer.effectAllowed = 'move';
@@ -152,35 +158,36 @@ export default function DocumentTree(props) {
         e.dataTransfer.dropEffect = allowDrop ? 'move' : 'none';
     }
 
-    const onDragEnd = () => {
+    const onDragEnd = (e) => {
+        e.target.style.opacity = '1';
+        setAllowDrop(false);
+        setDragCounter(0);
         if (dragendComponent) {
             dispatch(unsetDragendComponent());
         }
     }
 
-    const onDrop = (e, targetId, componentsList) => {
+    const onDrop = (e, targetId) => {
         const componentId = e.dataTransfer.getData('componentId');
         const parentId = e.dataTransfer.getData('parentId');
         const templateId = e.dataTransfer.getData('templateId');
+
+        setAllowDrop(false);
+        setDragCounter(0);
+
         if (targetId === componentId) return;
         if (targetId === parentId) return;
 
         if (componentId) {
-            if (componentsList[componentId].childrenList.find(item => item.id === targetId)) {
-                return;
-            }
-            const component = componentsList[componentId];
-            if (activeComponent && componentId === activeComponent.id) {
-                dispatch(unsetActiveComponent());
-            }
-            dispatch(updateComponentsList(componentId, parentId, targetId, component));
+            const component = getComponent(componentsData, componentId);
+            if (component.childrenList.find(item => item.id === targetId)) return;
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
         }
         if (templateId) {
+            if (dragendComponent.typeName === 'page' && targetId !== 'doc1') return;
             const template = templates[templateId];
             const id = generateNewId(10);
-            dispatch(addComponentToList(targetId, {id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
     }
@@ -196,8 +203,10 @@ export default function DocumentTree(props) {
                     onDragLeave={onDragLeave}
                     onDragOver={(e) => onDragOver(e)}
                     onDragEnd={onDragEnd}
-                    onDrop={(e) => onDrop(e, props.nodeData.id, components)}
+                    onDrop={(e) => onDrop(e, props.nodeData.id)}
+                    isRootItem={isRootItem}
                     isActive={isActive}
+                    allowDrop={allowDrop}
                     onClick={() => {
                         if (isActive) {
                             dispatch(unsetActiveComponent());
@@ -218,14 +227,14 @@ export default function DocumentTree(props) {
                             setExpanded(prev => !prev);
                         }}
                     >
-                        {props.nodeData.typeName}
+                        {nodeData.typeName}
                     </TreeItemType>
                     <TreeItemName
                         isRootItem={isRootItem}
                         isPage={isPage}
                         isActive={isActive}
                     >
-                        {components[props.nodeData.id] && components[props.nodeData.id].name}
+                        {nodeData.name}
                     </TreeItemName>
                 </TreeItem>
             </TreeItemWrapper>

@@ -3,15 +3,15 @@ import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue,
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { deleteComponent, setComponentName, setComponentValue, unsetActiveComponent, deleteComponentFromList } from '../../../../../store/actions/document';
-import { getParent } from '../../../../../core/functions/components';
+import { getComponent, getParent } from '../../../../../core/functions/components';
 
 
 
 export default function ComponentSeciton(props) {
 
     const {activeComponent} = props;
-    const componentData = useSelector(state => state.document.components[activeComponent.id]);
     const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, activeComponent.id);
     const entries = Object.entries(componentData);
     const dispatch = useDispatch();
 
