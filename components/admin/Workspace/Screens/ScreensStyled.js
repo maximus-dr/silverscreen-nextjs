@@ -5,8 +5,6 @@ export const ScreensWrapper = styled.div`
     width: 210px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    margin-bottom: 35px;
 `;
 
 export const ScreenButton = styled.button`

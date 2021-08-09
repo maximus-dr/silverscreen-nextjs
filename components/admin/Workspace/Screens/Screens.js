@@ -1,53 +1,55 @@
 import React from 'react'
 import { useState } from 'react'
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setResolution } from '../../../../store/actions/document';
 import { ScreenButton, ScreensWrapper } from './ScreensStyled'
 
 
 
 export default function Screens(props) {
 
-
-    const {screen, setScreen} = props;
-
+    const dispatch = useDispatch();
+    const resolution = useSelector(state => state.document.resolution);
 
     return (
         <ScreensWrapper>
-            <ScreenButton 
-                isActive={screen === '320'}
+            <ScreenButton
+                isActive={resolution === '320'}
                 onClick={() => {
-                    setScreen('320');
+                    dispatch(setResolution('320'));
                 }}
             >
                 320
             </ScreenButton>
-            <ScreenButton 
-                isActive={screen === '480'}
+            <ScreenButton
+                isActive={resolution === '480'}
                 onClick={() => {
-                    setScreen('480');
+                    dispatch(setResolution('480'));
                 }}
             >
                 480
             </ScreenButton>
-            <ScreenButton 
-                isActive={screen === '640'}
+            <ScreenButton
+                isActive={resolution === '640'}
                 onClick={() => {
-                    setScreen('640');
+                    dispatch(setResolution('640'));
                 }}
             >
                 640
             </ScreenButton>
-            <ScreenButton 
-                isActive={screen === '1024'}
+            <ScreenButton
+                isActive={resolution === '1024'}
                 onClick={() => {
-                    setScreen('1024');
+                    dispatch(setResolution('1024'));
                 }}
             >
                 1024
             </ScreenButton>
-            <ScreenButton 
-                isActive={screen === '1200'}
+            <ScreenButton
+                isActive={resolution === '1200'}
                 onClick={() => {
-                    setScreen('1200');
+                    dispatch(setResolution('1200'));
                 }}
             >
                 1200

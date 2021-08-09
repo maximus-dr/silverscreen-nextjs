@@ -41,24 +41,8 @@ export const documentReducer = (state = {}, action) => {
                 ...state,
                 resolution: action.resolution
             }
-        case SET_PROP:
-            // return {
-            //     ...state,
-            //     components: {
-            //         ...state.components,
-            //         [action.prop.id]: {
-            //             ...state.components[action.prop.id],
-            //             styles: {
-            //                 ...state.components[action.prop.id].styles,
-            //                 common: {
-            //                     ...state.components[action.prop.id].styles.common,
-            //                     [action.prop.name]: action.prop.value
-            //                 }
-            //             }
-            //         }
 
-            //     }
-            // }
+        case SET_PROP:
             const setProp = (componentsData, prop) => {
                 if (componentsData.id === prop.id) {
                     return {

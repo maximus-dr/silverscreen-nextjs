@@ -10,6 +10,7 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
+import { setResolution } from "../../store/actions/document";
 
 
 
@@ -54,6 +55,8 @@ export async function getServerSideProps() {
         type: 'SET_DOCUMENT_COMPONENTS_DATA',
         componentsData: componentsData
     });
+
+    dispatch(setResolution('320'));
 
     return {
         props: {
