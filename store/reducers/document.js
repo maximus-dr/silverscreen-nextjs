@@ -61,16 +61,26 @@ export const documentReducer = (state = {}, action) => {
             }
 
         case SET_COMPONENT_VALUE:
-					return {
-							...state,
-							components: {
-									...state.components,
-									[action.id]: {
-											...state.components[action.id],
-											value: action.value
-									}
-							}
-					}
+            const setValue = (componentsData, componentId, value) => {
+                if (componentsData.id === componentId) {
+                    return {
+                        ...componentsData,
+                        value
+                    }
+                }
+                const children = componentsData.childrenList.map(child => {
+                    return setValue(child, componentId, value);
+                });
+                return {
+                    ...componentsData,
+                    childrenList: children
+                }
+            }
+            return {
+                ...state,
+                componentsData: setValue(state.componentsData, action.id, action.value)
+            }
+
 
         case SET_COMPONENT_NAME:
             return {
