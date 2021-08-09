@@ -83,15 +83,24 @@ export const documentReducer = (state = {}, action) => {
 
 
         case SET_COMPONENT_NAME:
-            return {
-                ...state,
-                components: {
-                    ...state.components,
-                    [action.id]: {
-                        ...state.components[action.id],
-                        name: action.name
+            const setName = (componentsData, componentId, name) => {
+                if (componentsData.id === componentId) {
+                    return {
+                        ...componentsData,
+                        name
                     }
                 }
+                const children = componentsData.childrenList.map(child => {
+                    return setName(child, componentId, name);
+                });
+                return {
+                    ...componentsData,
+                    childrenList: children
+                }
+            }
+            return {
+                ...state,
+                componentsData: setName(state.componentsData, action.id, action.name)
             }
 
         case ADD_COMPONENT:
