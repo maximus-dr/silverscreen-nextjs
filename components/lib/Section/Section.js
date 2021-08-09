@@ -38,7 +38,6 @@ export default function Section(props) {
             if (dragCounter === 0) {
                 setAllowDrop(false);
             }
-
             else {
                 setAllowDrop(checkAllowDrop(dragendComponent, componentData));
             }
@@ -94,9 +93,7 @@ export default function Section(props) {
         if (dragendComponent) {
             dispatch(unsetDragendComponent());
         }
-
         if (targetId === componentId) return;
-
 
         if (componentId) {
             const component = getComponent(componentsData, componentId);

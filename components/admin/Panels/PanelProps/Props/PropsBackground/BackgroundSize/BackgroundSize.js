@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { parseProp } from "../../../../../../../core/functions/admin/props";
+import { setProp } from "../../../../../../../store/actions/document";
 import { Item, ItemKey, ItemValue } from "../../PropsStyled";
 import { BackgroundSizeOutput } from "./BackgroundSizeStyled";
 
@@ -10,7 +11,7 @@ import { BackgroundSizeOutput } from "./BackgroundSizeStyled";
 
 
 export const BackgroundSize = (props) => {
-    
+
     const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
     const dispatch = useDispatch();
@@ -53,9 +54,9 @@ export const BackgroundSize = (props) => {
         <Item style={{alignItems: 'flex-start'}}>
             <ItemKey>background-size:</ItemKey>
             <ItemValue>
-                <select 
-                    style={{width: '110px'}} 
-                    value={custom ? 'unit unit' : parsedProp.value} 
+                <select
+                    style={{width: '110px'}}
+                    value={custom ? 'unit unit' : parsedProp.value}
                     onChange={(e) => {
                         if (e.target.value !== 'unit unit' && e.target.value !== 'default') {
                             dispatch(setProp({
@@ -86,12 +87,12 @@ export const BackgroundSize = (props) => {
                     <option value="contain">contain</option>
                     <option value="unit unit">unit unit</option>
                 </select>
-                
+
                 <BackgroundSizeOutput isActive={custom}>
                     <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                        <input 
-                            type="number" 
-                            style={{width: '55px', marginRight: '5px'}} 
+                        <input
+                            type="number"
+                            style={{width: '55px', marginRight: '5px'}}
                             value={x.value}
                             onChange={(e) => {
                                 dispatch(setProp({
@@ -101,7 +102,7 @@ export const BackgroundSize = (props) => {
                                 }))
                             }}
                         />
-                        <select 
+                        <select
                             style={{width: '50px'}}
                             value={parsedProp.sizeX && parsedProp.sizeX.unit || 'px'}
                             onChange={(e) => {
@@ -113,13 +114,13 @@ export const BackgroundSize = (props) => {
                         </select>
                     </div>
                     <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                        <input 
-                            type="number" 
-                            style={{width: '55px', marginRight: '5px'}} 
+                        <input
+                            type="number"
+                            style={{width: '55px', marginRight: '5px'}}
                             value={parsedProp.sizeY && parsedProp.sizeY.value || ''}
                             onChange={() => {}}
                         />
-                        <select 
+                        <select
                             style={{width: '50px'}}
                             value={parsedProp.sizeY && parsedProp.sizeY.unit || 'px'}
                             onChange={() => {}}
