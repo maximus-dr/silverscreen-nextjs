@@ -38,7 +38,7 @@ export default function Section(props) {
             if (dragCounter === 0) {
                 setAllowDrop(false);
             }
-            
+
             else {
                 setAllowDrop(checkAllowDrop(dragendComponent, componentData));
             }
@@ -58,6 +58,7 @@ export default function Section(props) {
     const onDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
         setDragCounter(prev => prev + 1);
     }
 

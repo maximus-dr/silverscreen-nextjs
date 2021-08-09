@@ -8,19 +8,20 @@ const componentsGroups = [
         name: "Страница",
         templates: [
             {
-                id: 'p1', 
+                id: 'p1',
                 name: 'page',
                 component: {
                     typeName: "page",
                     name: "default",
                     styles: {
                         common: {
-                            paddingTop: '5px',
-                            paddingRight: '5px',
-                            paddingBottom: '5px',
-                            paddingLeft: '5px',
-                            border: '1px dashed rgba(0, 0, 0, 0.8)',
-                            minHeight: '200px'
+                            "paddingTop": "5px",
+                            "paddingRight": "5px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "5px",
+                            "border": "1px dashed rgba(0, 0, 0, 0.8)",
+                            "minHeight": "100vh",
+                            "backgroundColor": "#ffffff"
                         }
                     },
                     childrenList: []
@@ -31,8 +32,8 @@ const componentsGroups = [
     {
         name: "Секция",
         templates: [
-            { 
-                id: 'sec01', 
+            {
+                id: 'sec01',
                 name: 'section',
                 component: {
                     typeName: "section",
@@ -55,8 +56,8 @@ const componentsGroups = [
     {
         name: "Заголовок",
         templates: [
-            { 
-                id: 'lab001', 
+            {
+                id: 'lab001',
                 name: 'label',
                 component: {
                     typeName: "label",
@@ -87,10 +88,10 @@ export default function PanelComponents() {
             <Panel title="Компоненты">
                 {componentsGroups.map(group => {
                     return (
-                        <ComponentsGroup 
-                            key={group.name} 
-                            title={group.name} 
-                            templates={group.templates} 
+                        <ComponentsGroup
+                            key={group.name}
+                            title={group.name}
+                            templates={group.templates}
                         />
                     );
                 })}

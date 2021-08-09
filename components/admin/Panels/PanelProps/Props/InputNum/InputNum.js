@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { getComponent } from '../../../../../../core/functions/components';
 import { setProp } from '../../../../../../store/actions/document';
 import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputNumWrapper } from './InputNumStyled'
 
@@ -16,15 +17,17 @@ export default function InputNum(props) {
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
     const dispatch = useDispatch();
-    const component = useSelector(state => state.document.components[id]);
+    const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, activeComponent.id);
+
 
     const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
     const [disabled, setDisabled] = useState(false);
-    
+
 
     // установка единиц измерений
     useEffect(() => {
-        if (!component || !parsedProp) return;
+        if (!componentData || !parsedProp) return;
         if (parsedProp.unit) {
             setPropUnit(parsedProp.unit);
         }
@@ -32,7 +35,7 @@ export default function InputNum(props) {
         if (!parsedProp.unit && units && parsedProp.value) {
             setPropUnit(units[0].name)
         }
-    }, [parsedProp, units, component]);
+    }, [parsedProp, units, componentData]);
 
 
     // disable input, если ед.измерения - auto
@@ -83,7 +86,7 @@ export default function InputNum(props) {
 
         dispatch(setProp(prop));
     }
-    
+
 
     const singleUnit = units && units.length === 1;
     const multipleUnits = units && units.length > 1;
@@ -91,10 +94,10 @@ export default function InputNum(props) {
 
     return (
         <InputNumWrapper>
-            <InputNumField 
-                type="number" 
-                min={min} 
-                max={max} 
+            <InputNumField
+                type="number"
+                min={min}
+                max={max}
                 step={step || 5}
                 fullWidth={fullWidth}
                 value={inputValue}
@@ -102,7 +105,7 @@ export default function InputNum(props) {
                 onChange={onInputChange}
             />
             <InputNumUnit>
-                {   
+                {
                     singleUnit &&
                     <InputNumUnitSingle isDisabled={disabled}>
                         {units[0].name}
@@ -110,8 +113,8 @@ export default function InputNum(props) {
                 }
                 {
                     multipleUnits &&
-                    <InputNumSelect 
-                        value={propUnit} 
+                    <InputNumSelect
+                        value={propUnit}
                         onChange={onSelect}
                     >
                         {units.map(unit => (

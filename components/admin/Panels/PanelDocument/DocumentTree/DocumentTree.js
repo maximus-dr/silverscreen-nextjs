@@ -17,7 +17,8 @@ export const templates = {
                 paddingBottom: '5px',
                 paddingLeft: '5px',
                 border: '1px dashed rgba(0, 0, 0, 0.8)',
-                minHeight: '200px'
+                minHeight: '100vh',
+                backgroundColor: "#ffffff"
             }
         },
         childrenList: []
@@ -140,6 +141,7 @@ export default function DocumentTree(props) {
         e.preventDefault();
         e.stopPropagation();
         setDragCounter(prev => prev + 1);
+        e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
     }
 
     const onDragLeave = (e) => {
@@ -150,7 +152,7 @@ export default function DocumentTree(props) {
 
     const onDragOver = (e) => {
         e.preventDefault();
-        // e.stopPropagation();
+        e.stopPropagation();
         e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
     }
 
@@ -188,7 +190,9 @@ export default function DocumentTree(props) {
 
     return (
         <TreeWrapper>
-            <TreeItemWrapper id={`tree-${props.nodeData.id}`}>
+            <TreeItemWrapper
+                id={`tree-${props.nodeData.id}`}
+            >
                 <TreeItem
                     draggable
                     onDragStart={(e) => onDragStart(e, props.nodeData.id)}

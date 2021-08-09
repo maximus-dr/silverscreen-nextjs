@@ -10,7 +10,6 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
-import { getComponentsList } from "../../core/functions/render";
 
 
 
@@ -54,11 +53,6 @@ export async function getServerSideProps() {
     dispatch({
         type: 'SET_DOCUMENT_COMPONENTS_DATA',
         componentsData: componentsData
-    });
-
-    dispatch({
-        type: 'SET_DOCUMENT_COMPONENTS',
-        components: getComponentsList(componentsData)
     });
 
     return {

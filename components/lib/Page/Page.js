@@ -41,11 +41,12 @@ export default function Page(props) {
         else {
             setIsDroppable(checkAllowDrop(dragendComponent, componentData));
         }
-    }, [dragCounter]);
+    }, [dragCounter, componentData, dragendComponent]);
 
     const onDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
+        e.dataTransfer.dropEffect = isDroppable ? e.dataTransfer.effectAllowed : 'none';
         setDragCounter(prev => prev + 1);
     }
 
