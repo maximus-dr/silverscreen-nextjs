@@ -22,15 +22,8 @@ export default function Props(props) {
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
-    let styles = {};
 
-    if (componentData && componentData.styles && resolution) {
-        styles = componentData.styles[resolution] || {};
-    }
-
-    if (componentData && componentData.styles && !resolution) {
-        styles = componentData.styles.common || {};
-    }
+    const styles = componentData.styles.common || {};
 
 
     return (

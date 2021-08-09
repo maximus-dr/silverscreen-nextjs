@@ -18,7 +18,7 @@ export default function InputNum(props) {
     const resolution = useSelector(state => state.document.resolution);
     const dispatch = useDispatch();
     const componentsData = useSelector(state => state.document.componentsData);
-    const componentData = getComponent(componentsData, activeComponent.id);
+    const componentData = getComponent(componentsData, id);
 
 
     const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
