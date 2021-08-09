@@ -42,22 +42,47 @@ export const documentReducer = (state = {}, action) => {
                 resolution: action.resolution
             }
         case SET_PROP:
-            return {
-                ...state,
-                components: {
-                    ...state.components,
-                    [action.prop.id]: {
-                        ...state.components[action.prop.id],
+            // return {
+            //     ...state,
+            //     components: {
+            //         ...state.components,
+            //         [action.prop.id]: {
+            //             ...state.components[action.prop.id],
+            //             styles: {
+            //                 ...state.components[action.prop.id].styles,
+            //                 common: {
+            //                     ...state.components[action.prop.id].styles.common,
+            //                     [action.prop.name]: action.prop.value
+            //                 }
+            //             }
+            //         }
+
+            //     }
+            // }
+            const setProp = (componentsData, prop) => {
+                if (componentsData.id === prop.id) {
+                    return {
+                        ...componentsData,
                         styles: {
-                            ...state.components[action.prop.id].styles,
+                            ...componentsData.styles,
                             common: {
-                                ...state.components[action.prop.id].styles.common,
-                                [action.prop.name]: action.prop.value
+                                ...componentsData.styles.common,
+                                [prop.name]: prop.value
                             }
                         }
                     }
-
                 }
+                const children = componentsData.childrenList.map(child => {
+                    return setProp(child, prop);
+                });
+                return {
+                    ...componentsData,
+                    childrenList: children
+                }
+            }
+            return {
+                ...state,
+                componentsData: setProp(state.componentsData, action.prop)
             }
 
         case SET_COMPONENT_VALUE:

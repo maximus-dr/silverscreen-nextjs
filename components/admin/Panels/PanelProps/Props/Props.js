@@ -11,6 +11,7 @@ import PropsDisplay from './PropsDisplay/PropsDisplay'
 import PropsFont from './PropsFont/PropsFont'
 import PropsBackground from './PropsBackground/PropsBackground'
 import PropsEffects from './PropsEffects/PropsEffects'
+import { getComponent } from '../../../../../core/functions/components'
 
 
 
@@ -19,73 +20,75 @@ export default function Props(props) {
     const {activeComponent} = props;
     const id = activeComponent && activeComponent.id || '';
     const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
-    const component = useSelector(state => state.document.components[id]);
+    const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, id);
+    // const component = useSelector(state => state.document.components[id]);
     let styles = {};
 
-    if (component && component.styles && resolution) {
-        styles = component.styles[resolution] || {};
+    if (componentData && componentData.styles && resolution) {
+        styles = componentData.styles[resolution] || {};
     }
 
-    if (component && component.styles && !resolution) {
-        styles = component.styles.common || {};
+    if (componentData && componentData.styles && !resolution) {
+        styles = componentData.styles.common || {};
     }
 
-    
+
     return (
         <Wrapper isActive={activeComponent}>
             {/* Выбор разрешения */}
             <Resolutions activeComponent={activeComponent} />
 
             {/* Размеры */}
-            <PropsWidth 
-                styles={styles} 
+            <PropsWidth
+                styles={styles}
                 activeComponent={activeComponent}
             />
-            
+
             {/* Внешние отступы */}
-            <PropsMargin 
-                styles={styles} 
+            <PropsMargin
+                styles={styles}
                 activeComponent={activeComponent}
             />
-            
+
             {/* Внутренние отступы */}
-            <PropsPadding 
-                styles={styles} 
+            <PropsPadding
+                styles={styles}
                 activeComponent={activeComponent}
             />
 
             {/* Границы */}
-            <PropsBorder 
-                styles={styles} 
-                activeComponent={activeComponent}    
+            <PropsBorder
+                styles={styles}
+                activeComponent={activeComponent}
             />
 
             {/* Отображение */}
-            <PropsDisplay 
-                styles={styles} 
+            <PropsDisplay
+                styles={styles}
                 activeComponent={activeComponent}
             />
-            
+
             {/* Позиционирование */}
-            <PropsPosition 
-                styles={styles} 
+            <PropsPosition
+                styles={styles}
                 activeComponent={activeComponent}
             />
 
             {/* Типографика */}
-            <PropsFont 
-                styles={styles} 
+            <PropsFont
+                styles={styles}
                 activeComponent={activeComponent}
             />
 
             {/* Фон */}
-            <PropsBackground 
-                styles={styles} 
+            <PropsBackground
+                styles={styles}
                 activeComponent={activeComponent}
             />
-            
+
             {/* Эффекты */}
-            <PropsEffects 
+            <PropsEffects
                 styles={styles}
                 activeComponent={activeComponent}
             />
