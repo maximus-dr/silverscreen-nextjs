@@ -27,5 +27,5 @@ export const InputNumUnitSingle = styled.span`
 
 export const InputNumSelect = styled.select`
     cursor: pointer;
-    width: 50px;
+    width: 64px;
 `;

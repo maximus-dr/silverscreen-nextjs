@@ -17,39 +17,81 @@ export default function PropsWidth(props) {
             </Header>
             <Body>
                 <Item>
-                    <ItemKey>width:</ItemKey>
+                    <ItemKey>
+                        width:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.width.units} parsedProp={parseProp(styles, 'width')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.width.units}
+                            parsedProp={parseProp(styles, 'width')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
-                    <ItemKey>height:</ItemKey>
+                    <ItemKey>
+                        height:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.height.units} parsedProp={parseProp(styles, 'height')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.height.units}
+                            parsedProp={parseProp(styles, 'height')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
-                    <ItemKey>min-width:</ItemKey>
+                    <ItemKey>
+                        min-width:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.minWidth.units} parsedProp={parseProp(styles, 'minWidth')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.minWidth.units}
+                            parsedProp={parseProp(styles, 'minWidth')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
-                    <ItemKey>max-width:</ItemKey>
+                    <ItemKey>
+                        max-width:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.maxWidth.units} parsedProp={parseProp(styles, 'maxWidth')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.maxWidth.units}
+                            parsedProp={parseProp(styles, 'maxWidth')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
-                    <ItemKey>min-height:</ItemKey>
+                    <ItemKey>
+                        min-height:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.minHeight.units} parsedProp={parseProp(styles, 'minHeight')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.minHeight.units}
+                            parsedProp={parseProp(styles, 'minHeight')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
-                    <ItemKey>max-height:</ItemKey>
+                    <ItemKey>
+                        max-height:
+                    </ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.maxHeight.units} parsedProp={parseProp(styles, 'maxHeight')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.maxHeight.units}
+                            parsedProp={parseProp(styles, 'maxHeight')}
+                        />
                     </ItemValue>
                 </Item>
             </Body>

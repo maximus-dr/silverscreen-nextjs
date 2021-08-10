@@ -32,7 +32,164 @@ export const colors = {
     outline_radio: 'red'
 }
 
+
 export const propsList = {
+
+    // Размеры
+    width: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
+        default: 'default'
+    },
+
+    height: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
+        default: 'default'
+    },
+
+    minWidth: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
+        default: 'default'
+    },
+
+    maxWidth: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'vw'}],
+        default: ''
+    },
+
+    minHeight: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
+        default: 'default'
+    },
+
+    maxHeight: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'vh'}],
+        default: ''
+    },
+
+
+    // Внешние отступы
+    marginTop: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'auto'
+    },
+
+    marginRight: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'auto'
+    },
+
+    marginBottom: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+    marginLeft: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+
+    // Внутренние отступы
+    paddingTop: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+    paddingRight: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+    paddingBottom: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+    paddingLeft: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
+        default: 'auto'
+    },
+
+
+    // Границы
+    borderRadius: {
+        type: 'num',
+        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'auto'
+    },
+
+    border: {
+        type: 'border',
+        default: ''
+    },
+
+    borderTop: {
+        type: 'border',
+        default: ''
+    },
+
+    borderRight: {
+        type: 'border',
+        default: ''
+    },
+
+    borderBottom: {
+        type: 'border',
+        default: ''
+    },
+
+    borderLeft: {
+        type: 'border',
+        default: ''
+    },
+
+    outline: {
+        type: 'border',
+        default: ''
+    },
+
+
+    // Отображение
+    display: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}],
+        default: ''
+    },
+
+    overflow: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
+
+    overflowX: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
+
+    overflowY: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
+
+
+    // Позиционирование
     position: {
         type: 'select',
         options: [{id: 1, name: 'default'}, {id: 2, name: 'relative'}, {id: 3, name: 'absolute'}, {id: 4, name: 'fixed'}],
@@ -116,150 +273,8 @@ export const propsList = {
         default: '0'
     },
 
-    display: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}],
-        default: ''
-    },
 
-    overflow: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-    overflowX: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-    overflowY: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-    width: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
-        default: 'auto'
-    },
-
-    height: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
-        default: 'auto'
-    },
-
-    minWidth: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
-        default: 'auto'
-    },
-
-    maxWidth: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
-        default: 'auto'
-    },
-
-    minHeight: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
-        default: 'auto'
-    },
-
-    maxHeight: {
-        type: 'num',
-        units: [{id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
-        default: 'auto'
-    },
-
-    marginTop: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
-        default: ''
-    },
-
-    marginRight: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
-        default: ''
-    },
-
-    marginBottom: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    marginLeft: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    paddingTop: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    paddingRight: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    paddingBottom: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    paddingLeft: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: ''
-    },
-
-    borderRadius: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: '0'
-    },
-
-    border: {
-        type: 'border',
-        default: ''
-    },
-
-    borderTop: {
-        type: 'border',
-        default: ''
-    },
-
-    borderRight: {
-        type: 'border',
-        default: ''
-    },
-
-    borderBottom: {
-        type: 'border',
-        default: ''
-    },
-
-    borderLeft: {
-        type: 'border',
-        default: ''
-    },
-
-    outline: {
-        type: 'border',
-        default: ''
-    },
-
+    // Шрифт
     color: {
         type: 'text',
         default: ''
@@ -334,6 +349,8 @@ export const propsList = {
         default: ''
     },
 
+
+    // Фон
     backgroundColor: {
         type: 'text',
         default: ''
@@ -359,6 +376,9 @@ export const propsList = {
         options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}],
         default: ''
     },
+
+
+    // Эффекты
     opacity: {
         type: 'num'
     }

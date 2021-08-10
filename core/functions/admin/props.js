@@ -12,6 +12,10 @@ const parseProp = (styles, propName) => {
         name: propName
     }
 
+    if (propData.default) {
+        result.default = propData.default;
+    }
+
     if (!propData) {
         console.log('Такое свойство не найдено');
         return null;

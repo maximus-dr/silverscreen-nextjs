@@ -9,7 +9,7 @@ import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputN
 
 export default function InputNum(props) {
 
-    const {units, min, max, step, parsedProp, isDisabled} = props;
+    const {units, min, max, step, parsedProp} = props;
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const id = activeComponent && activeComponent.id || '';
@@ -22,7 +22,7 @@ export default function InputNum(props) {
 
 
     const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
-    const [disabled, setDisabled] = useState(false);
+    const [disabled, setDisabled] = useState(true);
 
 
     // установка единиц измерений
@@ -38,20 +38,34 @@ export default function InputNum(props) {
     }, [parsedProp, units, componentData]);
 
 
-    // disable input, если ед.измерения - auto
+    // отключает input, если ед.измерения - auto
     useEffect(() => {
         if (!activeComponent) return;
-        propUnit === 'auto' ? setDisabled(true) : setDisabled(false);
+        propUnit === 'default' || propUnit === 'auto' ? setDisabled(true) : setDisabled(false);
     }, [propUnit, activeComponent]);
 
-    useEffect(() => {
-        isDisabled ? setDisabled(true) : setDisabled(false);
-    }, [isDisabled]);
+
+    // useEffect(() => {
+    //     if (!activeComponent) return;
+    //     if (parsedProp && !parsedProp.value && parsedProp.default) {
+    //         setPropUnit(parsedProp.default);
+    //     }
+    // }, [parsedProp, activeComponent]);
+
 
 
     const onInputChange = (e) => {
         const value = e.target.value;
         const unit = propUnit || '';
+        if (value === '') {
+            dispatch(setProp({
+                name: parsedProp.name,
+                value: '',
+                resolution,
+                id: activeComponent.id
+            }));
+            return;
+        }
         dispatch(setProp({
             name: parsedProp.name,
             value: value + unit,
@@ -63,28 +77,29 @@ export default function InputNum(props) {
 
     const onSelect = (e) => {
         const unit = e.currentTarget.value;
-
         const prop = {
             name: parsedProp.name,
             value: null,
             resolution,
             id: activeComponent.id
         }
-
         if (unit !== 'auto' && inputValue) {
             prop.value = inputValue + unit;
         }
-
         if (unit !== 'auto' && !inputValue) {
             prop.value = '';
             setPropUnit(unit);
         }
-
         if (unit === 'auto') {
             prop.value = unit;
+            dispatch(setProp(prop));
         }
-
-        dispatch(setProp(prop));
+        if (unit === 'default') {
+            prop.value = '';
+            dispatch(setProp(prop));
+            setPropUnit('default');
+        }
+        if (inputValue) dispatch(setProp(prop));
     }
 
 
@@ -98,7 +113,7 @@ export default function InputNum(props) {
                 type="number"
                 min={min}
                 max={max}
-                step={step || 5}
+                step={step || 1}
                 fullWidth={fullWidth}
                 value={inputValue}
                 disabled={disabled}
