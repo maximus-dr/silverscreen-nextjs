@@ -68,30 +68,50 @@ export default function PropsBorder(props) {
                         </BorderProps>
                     </ItemKey>
                     <ItemValue>
-                        <select 
-                            style={{width: '110px', marginBottom: '5px'}} 
-                            value={custom ? 'custom' : 'none'} 
+                        <select
+                            style={{width: '124px', marginBottom: '5px'}}
                             onChange={(e) => {
                                 setCustom(prev => !prev);
                                 if (e.currentTarget.value === 'none') {
                                     dispatch(setProp({
                                         id: activeComponent.id,
                                         name: prop,
+                                        value: 'none',
+                                        resolution
+                                    }));
+                                    dispatch(setProp({
+                                        id: activeComponent.id,
+                                        name: 'borderRadius',
                                         value: '',
                                         resolution
-                                    }))
+                                    }));
+                                }
+                                if (e.currentTarget.value === 'default') {
+                                    dispatch(setProp({
+                                        id: activeComponent.id,
+                                        name: prop,
+                                        value: '',
+                                        resolution
+                                    }));
+                                    dispatch(setProp({
+                                        id: activeComponent.id,
+                                        name: 'borderRadius',
+                                        value: '',
+                                        resolution
+                                    }));
                                 }
                             }}
                         >
+                            <option value="default">default</option>
                             <option value="none">none</option>
                             <option value="custom">custom</option>
                         </select>
 
                         <PropsBorderInputs isActive={custom}>
                             <BorderWidthInput
-                                type="number" 
-                                min={0} 
-                                units={[{id: 1, name: 'px'}]} 
+                                type="number"
+                                min={0}
+                                units={[{id: 1, name: 'px'}]}
                                 parsedProp={{value: borderWidth}}
                                 disabled={!custom}
                                 value={borderWidth}
@@ -107,7 +127,7 @@ export default function PropsBorder(props) {
                             </BorderWidthUnit>
                             <div style={{marginTop: '5px', marginBottom: '5px'}}>
                                 <select
-                                    style={{height: '21px'}}
+                                    style={{height: '21px', width: '124px'}}
                                     value={borderStyle}
                                     disabled={!custom}
                                     onChange={(e) => {
@@ -125,7 +145,7 @@ export default function PropsBorder(props) {
                                 </select>
                             </div>
                             <div>
-                                <BorderColorInput  
+                                <BorderColorInput
                                     disabled={!custom}
                                     value={borderColor}
                                     onChange={(e) => {
@@ -144,14 +164,14 @@ export default function PropsBorder(props) {
                 <Item>
                     <ItemKey>border-radius:</ItemKey>
                     <ItemValue>
-                        <InputNum 
+                        <InputNum
                             min={0}
                             step={1}
-                            units={propsList.borderRadius.units} 
+                            units={propsList.borderRadius.units}
                             parsedProp={parseProp(styles, 'borderRadius')} />
                     </ItemValue>
                 </Item>
             </Body>
-        </Section>        
+        </Section>
     );
 }

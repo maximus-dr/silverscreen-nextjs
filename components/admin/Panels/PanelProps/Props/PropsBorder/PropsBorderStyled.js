@@ -28,7 +28,7 @@ export const BorderStyleSelect = styled.select`
 `;
 
 export const BorderColorInput = styled.input`
-    width: 110px;
+    width: 124px;
 `;
 
 export const BorderProps = styled.div`

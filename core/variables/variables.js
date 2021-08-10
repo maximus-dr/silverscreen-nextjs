@@ -79,13 +79,11 @@ export const propsList = {
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
         default: 'default'
     },
-
     marginBottom: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
         default: 'default'
     },
-
     marginLeft: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
@@ -99,19 +97,16 @@ export const propsList = {
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
         default: 'default'
     },
-
     paddingRight: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
         default: 'default'
     },
-
     paddingBottom: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
         default: 'default'
     },
-
     paddingLeft: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
@@ -120,40 +115,34 @@ export const propsList = {
 
 
     // Границы
-    borderRadius: {
-        type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'auto'
-    },
-
     border: {
         type: 'border',
-        default: ''
+        default: 'default'
     },
-
     borderTop: {
         type: 'border',
-        default: ''
+        default: 'default'
     },
-
     borderRight: {
         type: 'border',
-        default: ''
+        default: 'default'
     },
-
     borderBottom: {
         type: 'border',
-        default: ''
+        default: 'default'
     },
-
     borderLeft: {
         type: 'border',
-        default: ''
+        default: 'default'
     },
-
     outline: {
         type: 'border',
-        default: ''
+        default: 'default'
+    },
+    borderRadius: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'default'
     },
 
 
