@@ -5,7 +5,7 @@ import { StylesProvider } from '../../styles';
 
 
 
-export const SectionBody = styled.div`
+export const SectionComponent = styled.div`
 
     ${props => {
         const styles = props.componentData.styles && props.componentData.styles.common || null;

@@ -1,17 +1,21 @@
-export const SET_ACTIVE_COMPONENT = 'SET_ACTIVE_COMPONENT';
-export const UNSET_ACTIVE_COMPONENT = 'UNSET_ACTIVE_COMPONENT';
-export const SET_COMPONENT_ELEMENT = 'SET_COMPONENT_ELEMENT';
-export const CLEAR_COMPONENT_ELEMENT = 'CLEAR_COMPONENT_ELEMENT';
-export const SET_RESOLUTION = 'SET_RESOLUTION';
-export const SET_PROP = 'SET_PROP';
-export const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
-export const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
-export const ADD_COMPONENT = 'ADD_COMPONENT';
-export const DELETE_COMPONENT = 'DELETE_COMPONENT';
-export const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
-export const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
+const SET_ACTIVE_COMPONENT = 'SET_ACTIVE_COMPONENT';
+const UNSET_ACTIVE_COMPONENT = 'UNSET_ACTIVE_COMPONENT';
+const SET_RESOLUTION = 'SET_RESOLUTION';
+const SET_PROP = 'SET_PROP';
+const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
+const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
+const ADD_COMPONENT = 'ADD_COMPONENT';
+const DELETE_COMPONENT = 'DELETE_COMPONENT';
+const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
+const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
+const SET_DOCUMENT_COMPONENTS_DATA = 'SET_DOCUMENT_COMPONENTS_DATA';
 
 
+
+const setDocumentComponentsData = (componentsData) => ({
+    type: SET_DOCUMENT_COMPONENTS_DATA,
+    componentsData
+});
 
 const setActiveComponent = (activeComponent) => ({
     type: SET_ACTIVE_COMPONENT,
@@ -20,15 +24,6 @@ const setActiveComponent = (activeComponent) => ({
 
 const unsetActiveComponent = () => ({
     type: UNSET_ACTIVE_COMPONENT
-});
-
-const setComponentElement = (elementName) => ({
-    type: SET_COMPONENT_ELEMENT,
-    element: elementName
-});
-
-const clearComponentElement = () => ({
-    type: CLEAR_COMPONENT_ELEMENT
 });
 
 const setResolution = (resolution) => ({
@@ -76,10 +71,9 @@ const unsetDragendComponent = () => ({
 
 
 export {
+    setDocumentComponentsData,
     setActiveComponent,
     unsetActiveComponent,
-    setComponentElement,
-    clearComponentElement,
     setResolution,
     setProp,
     setComponentValue,
@@ -88,4 +82,18 @@ export {
     deleteComponent,
     setDragendComponent,
     unsetDragendComponent
+}
+
+export {
+    SET_ACTIVE_COMPONENT,
+    UNSET_ACTIVE_COMPONENT,
+    SET_RESOLUTION,
+    SET_PROP,
+    SET_COMPONENT_VALUE,
+    SET_COMPONENT_NAME,
+    ADD_COMPONENT,
+    DELETE_COMPONENT,
+    SET_DRAGEND_COMPONENT,
+    UNSET_DRAGEND_COMPONENT,
+    SET_DOCUMENT_COMPONENTS_DATA
 }

@@ -1,17 +1,17 @@
 import { propsList } from "../../variables/variables";
 
 
-export function parseProp(styles, propName) {
+const parseProp = (styles, propName) => {
 
     if (!styles) return {};
-    
+
     const propData = propsList[propName];
     const propValue = styles[propName];
 
     const result = {
         name: propName
     }
-    
+
     if (!propData) {
         console.log('Такое свойство не найдено');
         return null;
@@ -93,7 +93,7 @@ export function parseProp(styles, propName) {
             result.secondary = params[1].trim();
             result.serif = params[2].trim();
         }
-        
+
         if (params.length === 2) {
             result.primary = params[0].trim();
             result.secondary = null;
@@ -107,23 +107,23 @@ export function parseProp(styles, propName) {
             const x = params[0];
             const y = params[1];
             const sizeX = {
-                value: 
-                    x.includes('px') && x.replace('px', '') || 
-                    x.includes('%') && x.replace('%', '') || 
+                value:
+                    x.includes('px') && x.replace('px', '') ||
+                    x.includes('%') && x.replace('%', '') ||
                     x === 'auto' && '',
-                unit: 
-                    x.includes('px') && 'px' || 
-                    x.includes('%') && '%' || 
+                unit:
+                    x.includes('px') && 'px' ||
+                    x.includes('%') && '%' ||
                     x === 'auto' && 'auto'
             };
             const sizeY = {
-                value: 
-                    y.includes('px') && y.replace('px', '') || 
-                    y.includes('%') && y.replace('%', '') || 
+                value:
+                    y.includes('px') && y.replace('px', '') ||
+                    y.includes('%') && y.replace('%', '') ||
                     y === 'auto' && '',
-                unit: 
-                    y.includes('px') && 'px' || 
-                    y.includes('%') && '%' || 
+                unit:
+                    y.includes('px') && 'px' ||
+                    y.includes('%') && '%' ||
                     y === 'auto' && 'auto'
             }
             result.value = 'unit unit';
@@ -142,7 +142,7 @@ export function parseProp(styles, propName) {
             const x = params[0];
             const y = params[1];
             const posX = {
-                value: 
+                value:
                     x.includes('px') && x.replace('px', '').trim() ||
                     x.includes('%') && x.replace('%', '').trim() ||
                     x,
@@ -152,7 +152,7 @@ export function parseProp(styles, propName) {
                     ''
             }
             const posY = {
-                value: 
+                value:
                     y.includes('px') && y.replace('px', '').trim() ||
                     y.includes('%') && y.replace('%', '').trim() ||
                     y,
@@ -180,4 +180,34 @@ export function parseProp(styles, propName) {
     }
 
     return result;
+}
+
+
+const setPropToComponentsData = (componentsData, prop) => {
+    if (componentsData.id === prop.id) {
+        return {
+            ...componentsData,
+            styles: {
+                ...componentsData.styles,
+                common: {
+                    ...componentsData.styles.common,
+                    [prop.name]: prop.value
+                }
+            }
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return setPropToComponentsData(child, prop);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
+
+
+export {
+    parseProp,
+    setPropToComponentsData
 }

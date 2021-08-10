@@ -10,7 +10,7 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
-import { setResolution } from "../../store/actions/document";
+import { setDocumentComponentsData, setResolution } from "../../store/actions/document";
 
 
 
@@ -42,20 +42,16 @@ export async function getServerSideProps() {
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
-    const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
-      .then(res => res.data)
-      .catch(err => console.log(err));
+    // const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
+    //   .then(res => res.data)
+    //   .catch(err => console.log(err));
 
-    dispatch({
-        type: 'SET_EVENTS',
-        events
-    });
+    // dispatch({
+    //     type: 'SET_EVENTS',
+    //     events
+    // });
 
-    dispatch({
-        type: 'SET_DOCUMENT_COMPONENTS_DATA',
-        componentsData: componentsData
-    });
-
+    dispatch(setDocumentComponentsData(componentsData));
     dispatch(setResolution('320'));
 
     return {

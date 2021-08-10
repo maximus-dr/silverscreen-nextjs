@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionBody } from './SectionStyled'
+import { SectionComponent } from './SectionStyled'
 import { generateNewId, getChild, getComponent, getHandler } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
@@ -112,7 +112,7 @@ export default function Section(props) {
 
 
     return (
-        <SectionBody
+        <SectionComponent
             id={id}
             {...props}
             componentData={componentData}
@@ -139,6 +139,6 @@ export default function Section(props) {
             onDrop={(e) => onDrop(e, id)}
         >
             {props.children}
-        </SectionBody>
+        </SectionComponent>
     )
 }

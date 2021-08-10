@@ -1,8 +1,11 @@
 import { nanoid } from "nanoid";
 
+
+
 const getRole = (component) => {
     return component.props.componentData.role && component.props.componentData.role || null;
 }
+
 
 const getHandler = (props, action) => {
     return (
@@ -12,11 +15,10 @@ const getHandler = (props, action) => {
     );
 }
 
-function extractChildrenDataByRole(componentData, role) {
+
+const extractChildrenDataByRole = (componentData, role) => {
     const result = [];
-
     function getChild(data) {
-
         if (data.childrenList && data.childrenList.length > 0) {
             data.childrenList.forEach(child => {
                 if (child.role === role) {
@@ -33,7 +35,8 @@ function extractChildrenDataByRole(componentData, role) {
     return result;
 }
 
-function extractChildrenByRole(props, role) {
+
+const extractChildrenByRole = (props, role) => {
     const result = [];
     function getChild(parent) {
         if (parent.children && parent.children.length > 0) {
@@ -52,56 +55,13 @@ function extractChildrenByRole(props, role) {
     return result.length > 0 ? result : null;
 }
 
-function generateNewId(length) {
+
+const generateNewId = (length) => {
     return nanoid(length);
 }
 
 
-function addComponentIntoTree(state, containerId, component) {
-    if (!state) {
-        return {...component}
-    }
-    if (state.id === containerId) {
-        return {
-            ...state,
-            childrenList: [
-                ...state.childrenList,
-                component
-            ]
-        }
-    }
-    const children = state.childrenList.map((child) => {
-        return addComponentIntoTree(child, containerId, component);
-    });
-    return {
-        ...state,
-        childrenList: children
-    }
-}
-
-function deleteComponent(state, componentId) {
-    let match = false;
-    state.childrenList.forEach(child => {
-        if (child.id === componentId) {
-            match = true;
-        }
-    });
-    if (match) {
-        return {
-            ...state,
-            childrenList: state.childrenList.filter(item => item.id !== componentId)
-        }
-    }
-    const children = state.childrenList.map(child => {
-        return deleteComponent(child, componentId);
-    });
-    return {
-        ...state,
-        childrenList: children
-    }
-}
-
-function getParent(componentsData, componentId) {
+const getParent = (componentsData, componentId) => {
     let result;
     let match = componentsData.childrenList.find(item => item.id === componentId);
     if (match) {
@@ -117,7 +77,8 @@ function getParent(componentsData, componentId) {
     return result;
 }
 
-function getComponent(componentsData, componentId) {
+
+const getComponent = (componentsData, componentId) => {
     let result;
     if (componentsData.id === componentId) {
         result = componentsData;
@@ -133,7 +94,8 @@ function getComponent(componentsData, componentId) {
     return result;
 }
 
-function getChild(componentData, childId) {
+
+const getChild = (componentData, childId) => {
     let result = null;
 
     componentData.childrenList.forEach(item => {
@@ -151,14 +113,13 @@ function getChild(componentData, childId) {
 }
 
 
+
 export {
     getRole,
     getHandler,
     extractChildrenDataByRole,
     extractChildrenByRole,
     generateNewId,
-    addComponentIntoTree,
-    deleteComponent,
     getParent,
     getComponent,
     getChild

@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 
 // добавляет обводку компонентам
-export function enableOutlines(isEnabled, color) {
+const enableOutlines = (isEnabled, color) => {
   return isEnabled
     ? css`
       position: relative;
@@ -12,9 +12,16 @@ export function enableOutlines(isEnabled, color) {
     : css``;
 };
 
-export function getOutlines() {
+const getOutlines = () => {
   return `
     outline: 2px solid #42a5f5;
     outline-offset: 1px;
   `;
+}
+
+
+
+export {
+    enableOutlines,
+    getOutlines
 }

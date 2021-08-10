@@ -1,18 +1,18 @@
 export const screens = {
     screen_mobile: {
-        minWidth: '320px'
+        minWidth: '320'
     },
     screen_mobile_landscape: {
-        minWidth: '480px'
+        minWidth: '480'
     },
     screen_tablet: {
-        minWidth: '640px'
+        minWidth: '640'
     },
     screen_tablet_landscape: {
-        minWidth: '1024px'
+        minWidth: '1024'
     },
     screen_desktop: {
-        minWidth: '1200px'
+        minWidth: '1200'
     }
 };
 
@@ -38,7 +38,7 @@ export const propsList = {
         options: [{id: 1, name: 'default'}, {id: 2, name: 'relative'}, {id: 3, name: 'absolute'}, {id: 4, name: 'fixed'}],
         default: 'static'
     },
-    
+
     zIndex: {
         type: 'num',
         default: 0
