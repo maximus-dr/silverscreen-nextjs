@@ -181,31 +181,31 @@ export const propsList = {
 
     zIndex: {
         type: 'num',
-        default: 0
+        default: ''
     },
 
     top: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}],
+        default: 'default'
     },
 
     right: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}],
+        default: 'default'
     },
 
     bottom: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}],
+        default: 'default'
     },
 
     left: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'auto'}],
+        default: 'default'
     },
 
     flexDirection: {

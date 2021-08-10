@@ -10,13 +10,14 @@ export const InputNumField = styled.input`
 
     ${props => {
         return props.fullWidth && css`
-            width: 110px;
+            width: 124px;
         `
     }}
 `;
 
 export const InputNumUnit = styled.span`
-    padding: 0 5px;
+    padding: 0;
+    padding-left: 5px;
 `;
 
 export const InputNumUnitSingle = styled.span`

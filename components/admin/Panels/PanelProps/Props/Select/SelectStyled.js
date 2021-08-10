@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const SelectBody = styled.select`
-    width: 110px;
+    width: 124px;
     cursor: pointer;
 `;
 

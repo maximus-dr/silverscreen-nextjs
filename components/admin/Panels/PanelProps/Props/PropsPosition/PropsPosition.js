@@ -16,7 +16,7 @@ export default function PropsPosition(props) {
             <Header>
                 Позиционирование
             </Header>
-            <Body>
+            <Body style={{marginBottom: '21px'}}>
                 <Item>
                     <ItemKey>position: </ItemKey>
                     <ItemValue>
