@@ -13,6 +13,8 @@ export const StylesProvider = (styles) => {
 
         display: ${styles && styles.display || ''};
         overflow: ${styles && styles.overflow || ''};
+        overflow-x: ${styles && styles.overflowX || ''};
+        overflow-y: ${styles && styles.overflowY || ''};
         cursor: ${styles && styles.cursor || ''};
         pointer-events: ${styles && styles.pointerEvents || ''};
 
@@ -102,7 +104,7 @@ export const StylesProvider = (styles) => {
         &:after {
             ${styles && styles.after && StylesProvider(styles.after)}
         }
-        
+
         ${'' /* isActive */}
         ${props => {
 

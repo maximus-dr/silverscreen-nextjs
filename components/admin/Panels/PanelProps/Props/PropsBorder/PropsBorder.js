@@ -71,8 +71,9 @@ export default function PropsBorder(props) {
                         <select
                             style={{width: '124px', marginBottom: '5px'}}
                             onChange={(e) => {
-                                setCustom(prev => !prev);
+                                if (e.currentTarget.value === 'custom') setCustom(true);
                                 if (e.currentTarget.value === 'none') {
+                                    setCustom(false);
                                     dispatch(setProp({
                                         id: activeComponent.id,
                                         name: prop,
@@ -87,6 +88,7 @@ export default function PropsBorder(props) {
                                     }));
                                 }
                                 if (e.currentTarget.value === 'default') {
+                                    setCustom(false);
                                     dispatch(setProp({
                                         id: activeComponent.id,
                                         name: prop,

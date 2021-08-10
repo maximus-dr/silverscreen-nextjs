@@ -149,7 +149,7 @@ export const propsList = {
     // Отображение
     display: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'none'}, {id: 2, name: 'inline'}, {id: 3, name: 'block'}, {id: 4, name: 'inline-block'}, {id: 5, name: 'flex'}, {id: 6, name: 'grid'}, {id: 7, name: 'table'}],
+        options: [{id: 0, name: 'default'}, {id: 2, name: 'flex'}, {id: 3, name: 'inline-flex'}, {id: 4, name: 'block'}, {id: 6, name: 'inline-block'}, {id: 5, name: 'inline'}, {id: 7, name: 'grid'}, {id: 8, name: 'none'}],
         default: ''
     },
 
