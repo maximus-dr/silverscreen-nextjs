@@ -41,31 +41,26 @@ export const propsList = {
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
         default: 'default'
     },
-
     height: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
         default: 'default'
     },
-
     minWidth: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vw'}],
         default: 'default'
     },
-
     maxWidth: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'vw'}],
         default: ''
     },
-
     minHeight: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: '%'}, {id: 4, name: 'vh'}],
         default: 'default'
     },
-
     maxHeight: {
         type: 'num',
         units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}, {id: 3, name: 'vh'}],
@@ -76,52 +71,51 @@ export const propsList = {
     // Внешние отступы
     marginTop: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
+        default: 'default'
     },
-
     marginRight: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
+        default: 'default'
     },
 
     marginBottom: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
+        default: 'default'
     },
 
     marginLeft: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'px'}, {id: 3, name: 'em'}, {id: 4, name: '%'}],
+        default: 'default'
     },
 
 
     // Внутренние отступы
     paddingTop: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'default'
     },
 
     paddingRight: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'default'
     },
 
     paddingBottom: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'default'
     },
 
     paddingLeft: {
         type: 'num',
-        units: [{id: 0, name: 'auto'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}, {id: 4, name: 'auto'}],
-        default: 'auto'
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: 'em'}, {id: 3, name: '%'}],
+        default: 'default'
     },
 
 

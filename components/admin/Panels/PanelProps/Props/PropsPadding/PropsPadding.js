@@ -19,25 +19,45 @@ export default function PropsPadding(props) {
                 <Item>
                     <ItemKey>padding-top:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.paddingTop.units} parsedProp={parseProp(styles, 'paddingTop')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.paddingTop.units}
+                            parsedProp={parseProp(styles, 'paddingTop')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>padding-right:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.paddingRight.units} parsedProp={parseProp(styles, 'paddingRight')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.paddingRight.units}
+                            parsedProp={parseProp(styles, 'paddingRight')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>padding-bottom:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.paddingBottom.units} parsedProp={parseProp(styles, 'paddingBottom')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.paddingBottom.units}
+                            parsedProp={parseProp(styles, 'paddingBottom')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>padding-left:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.paddingLeft.units} parsedProp={parseProp(styles, 'paddingLeft')} />
+                        <InputNum
+                            step={5}
+                            min={0}
+                            units={propsList.paddingLeft.units}
+                            parsedProp={parseProp(styles, 'paddingLeft')}
+                        />
                     </ItemValue>
                 </Item>
             </Body>

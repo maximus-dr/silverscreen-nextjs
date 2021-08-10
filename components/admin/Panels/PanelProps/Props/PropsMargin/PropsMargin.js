@@ -19,25 +19,40 @@ export default function PropsMargin(props) {
                 <Item>
                     <ItemKey>margin-top:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.marginTop.units} parsedProp={parseProp(styles, 'marginTop')} />
+                        <InputNum
+                            step={5}
+                            units={propsList.marginTop.units}
+                            parsedProp={parseProp(styles, 'marginTop')} />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>margin-right:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.marginRight.units} parsedProp={parseProp(styles, 'marginRight')} />
+                        <InputNum
+                            step={5}
+                            units={propsList.marginRight.units}
+                            parsedProp={parseProp(styles, 'marginRight')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>margin-bottom:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.marginBottom.units} parsedProp={parseProp(styles, 'marginBottom')} />
+                        <InputNum
+                            step={5}
+                            units={propsList.marginBottom.units}
+                            parsedProp={parseProp(styles, 'marginBottom')}
+                        />
                     </ItemValue>
                 </Item>
                 <Item>
                     <ItemKey>margin-left:</ItemKey>
                     <ItemValue>
-                        <InputNum  units={propsList.marginLeft.units} parsedProp={parseProp(styles, 'marginLeft')} />
+                        <InputNum
+                            step={5}
+                            units={propsList.marginLeft.units}
+                            parsedProp={parseProp(styles, 'marginLeft')}
+                        />
                     </ItemValue>
                 </Item>
             </Body>
