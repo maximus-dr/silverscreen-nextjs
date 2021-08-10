@@ -211,19 +211,19 @@ export const propsList = {
     flexDirection: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'row'}, {id: 2, name: 'row-reverse'}, {id: 3, name: 'column'}, {id: 4, name: 'column-reverse'}],
-        default: 'row'
+        default: 'default'
     },
 
     justifyContent: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'space-between'}, {id: 5, name: 'space-around'}],
-        default: 'flex-start'
+        default: 'default'
     },
 
     flexWrap: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'nowrap'}, {id: 2, name: 'wrap'}, {id: 3, name: 'wrap-reverse'}],
-        default: 'nowrap'
+        default: 'default'
     },
 
     flexShrink: {
@@ -242,13 +242,13 @@ export const propsList = {
     alignItems: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'flex-start'}, {id: 2, name: 'flex-end'}, {id: 3, name: 'center'}, {id: 4, name: 'baseline'}, {id: 5, name: 'stretch'}],
-        default: 'flex-start'
+        default: 'default'
     },
 
     alignSelf: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'auto'}, {id: 2, name: 'flex-start'}, {id: 3, name: 'flex-end'}, {id: 4, name: 'center'}, {id: 5, name: 'baseline'}, {id: 6, name: 'stretch'}],
-        default: 'auto'
+        default: 'default'
     },
 
     order: {
@@ -271,13 +271,13 @@ export const propsList = {
 
     fontWeight: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'medium'}, {id: 3, name: 'bold'}],
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 3, name: 'bold'}],
         default: ''
     },
 
     fontStyle: {
         type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'italic'}, {id: 3, name: 'oblique'}]
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'normal'}, {id: 2, name: 'italic'}]
     },
 
     lineHeight: {

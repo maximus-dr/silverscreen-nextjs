@@ -88,7 +88,7 @@ export default function PropsPosition(props) {
                 <Item>
                     <ItemKey>flex-basis:</ItemKey>
                     <ItemValue>
-                        <InputNum step={5} units={propsList.flexBasis.units} parsedProp={parseProp(styles, 'flexBasis')} />
+                        <InputNum min={0} step={5} units={propsList.flexBasis.units} parsedProp={parseProp(styles, 'flexBasis')} />
                     </ItemValue>
                 </Item>
 

@@ -90,7 +90,7 @@ export default function PropsFont(props) {
                 <Item>
                     <ItemKey>font-size:</ItemKey>
                     <ItemValue>
-                        <InputNum step={1} units={propsList.fontSize.units} parsedProp={parseProp(styles, 'fontSize')} />
+                        <InputNum min={0} step={1} units={propsList.fontSize.units} parsedProp={parseProp(styles, 'fontSize')} />
                     </ItemValue>
                 </Item>
                 <Item>
@@ -108,7 +108,7 @@ export default function PropsFont(props) {
                 <Item>
                     <ItemKey>line-height:</ItemKey>
                     <ItemValue>
-                        <InputNum step={1} units={propsList.lineHeight.units} parsedProp={parseProp(styles, 'lineHeight')} />
+                        <InputNum min={0} step={1} units={propsList.lineHeight.units} parsedProp={parseProp(styles, 'lineHeight')} />
                     </ItemValue>
                 </Item>
                 <Item>
@@ -120,11 +120,11 @@ export default function PropsFont(props) {
                 <Item>
                     <ItemKey>text-indent:</ItemKey>
                     <ItemValue>
-                        <InputNum 
+                        <InputNum
                             step={1}
                             min={0}
-                            units={propsList.textIndent.units} 
-                            parsedProp={parseProp(styles, 'textIndent')} 
+                            units={propsList.textIndent.units}
+                            parsedProp={parseProp(styles, 'textIndent')}
                         />
                     </ItemValue>
                 </Item>
@@ -140,7 +140,7 @@ export default function PropsFont(props) {
                         <Select options={propsList.textDecoration.options} parsedProp={parseProp(styles, 'textDecoration')} />
                     </ItemValue>
                 </Item>
-                
+
 
                 {/* <TextShadow styles={styles} /> */}
 
@@ -154,11 +154,11 @@ export default function PropsFont(props) {
                     <ItemKey>font-family:</ItemKey>
                     <ItemValue>
                         <div style={{marginBottom: '5px'}}>
-                            <FontFamilyPrimary 
+                            <FontFamilyPrimary
                                 type="text"
                                 value={parseProp(styles, 'fontFamily') && parseProp(styles, 'fontFamily').primary || ''}
                                 onChange={(e) => {
-                                    
+
                                 }}
                             />
                         </div>
