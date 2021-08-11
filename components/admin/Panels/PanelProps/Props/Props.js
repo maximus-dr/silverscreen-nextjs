@@ -7,7 +7,6 @@ import PropsWidth from './PropsWidth/PropsWidth'
 import PropsMargin from './PropsMargin/PropsMargin'
 import PropsPadding from './PropsPadding/PropsPadding'
 import PropsPosition from './PropsPosition/PropsPosition'
-import PropsDisplay from './PropsDisplay/PropsDisplay'
 import PropsFont from './PropsFont/PropsFont'
 import PropsBackground from './PropsBackground/PropsBackground'
 import PropsEffects from './PropsEffects/PropsEffects'
@@ -49,26 +48,20 @@ export default function Props(props) {
                 activeComponent={activeComponent}
             />
 
-            {/* Границы */}
-            <PropsBorder
-                styles={styles}
-                activeComponent={activeComponent}
-            />
-
-            {/* Отображение */}
-            <PropsDisplay
-                styles={styles}
-                activeComponent={activeComponent}
-            />
-
             {/* Позиционирование */}
             <PropsPosition
                 styles={styles}
                 activeComponent={activeComponent}
             />
 
-            {/* Типографика */}
+            {/* Шрифт */}
             <PropsFont
+                styles={styles}
+                activeComponent={activeComponent}
+            />
+
+            {/* Границы */}
+            <PropsBorder
                 styles={styles}
                 activeComponent={activeComponent}
             />

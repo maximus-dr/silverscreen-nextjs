@@ -8,6 +8,7 @@ import { BorderColorInput, BorderProps, BorderPropsSpan, BorderWidthInput, Borde
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setProp } from "../../../../../../store/actions/document";
+import Select from "../Select/Select";
 
 
 
@@ -50,7 +51,7 @@ export default function PropsBorder(props) {
     return (
         <Section>
             <Header>Границы</Header>
-            <Body>
+            <Body style={{marginBottom: '15px'}}>
                 <Item style={{alignItems: 'flex-start', marginBottom: '15px'}}>
                     <ItemKey>
                         <select style={{width: '110px', marginBottom: '5px'}} value={prop} onChange={(e) => setPropName(e.currentTarget.value)}>
@@ -171,6 +172,27 @@ export default function PropsBorder(props) {
                             step={1}
                             units={propsList.borderRadius.units}
                             parsedProp={parseProp(styles, 'borderRadius')} />
+                    </ItemValue>
+                </Item>
+            </Body>
+
+            <Body>
+                <Item>
+                    <ItemKey>overflow:</ItemKey>
+                    <ItemValue>
+                        <Select options={propsList.overflow.options} parsedProp={parseProp(styles, 'overflow')} />
+                    </ItemValue>
+                </Item>
+                <Item>
+                    <ItemKey>overflow-x:</ItemKey>
+                    <ItemValue>
+                        <Select options={propsList.overflowX.options} parsedProp={parseProp(styles, 'overflowX')} />
+                    </ItemValue>
+                </Item>
+                <Item>
+                    <ItemKey>overflow-y:</ItemKey>
+                    <ItemValue>
+                        <Select options={propsList.overflowY.options} parsedProp={parseProp(styles, 'overflowY')} />
                     </ItemValue>
                 </Item>
             </Body>

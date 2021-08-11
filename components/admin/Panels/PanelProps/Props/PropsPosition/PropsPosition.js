@@ -54,7 +54,14 @@ export default function PropsPosition(props) {
                     </ItemValue>
                 </Item>
             </Body>
+
             <Body>
+                <Item>
+                    <ItemKey>display:</ItemKey>
+                    <ItemValue>
+                        <Select options={propsList.display.options} parsedProp={parseProp(styles, 'display')} />
+                    </ItemValue>
+                </Item>
                 <Item>
                     <ItemKey>flex-direction:</ItemKey>
                     <ItemValue>
