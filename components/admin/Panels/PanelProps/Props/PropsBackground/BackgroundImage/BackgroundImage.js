@@ -14,7 +14,8 @@ export default function BackgroundImage(props) {
     const dispatch = useDispatch();
     const [type, setType] = useState('url');
     const isGradient = type === 'gradient';
-    console.log('parsedProp', parsedProp);
+    const isRadialGradient = parsedProp && parsedProp.gradient && parsedProp.gradient === 'radial-gradient' || false;
+
 
     useEffect(() => {
         if (parsedProp && parsedProp.url) {
@@ -31,15 +32,15 @@ export default function BackgroundImage(props) {
 
     const gradient = {
         type: parsedProp.gradient || '',
-        deg: parsedProp.value && parsedProp.value.deg || '',
-        color1: parsedProp.value && parsedProp.value.colors[0].value || '',
-        color2: parsedProp.value && parsedProp.value.colors[1].value || '',
-        color3: parsedProp.value && parsedProp.value.colors[2].value || '',
-        color4: parsedProp.value && parsedProp.value.colors[3].value || '',
-        point1: parsedProp.value && parsedProp.value.colors[0].point || '',
-        point2: parsedProp.value && parsedProp.value.colors[1].point || '',
-        point3: parsedProp.value && parsedProp.value.colors[2].point || '',
-        point4: parsedProp.value && parsedProp.value.colors[3].point || ''
+        deg: parsedProp.gradient && parsedProp.value && parsedProp.value.deg || '',
+        color1: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].value || '',
+        color2: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].value || '',
+        color3: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].value || '',
+        color4: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].value || '',
+        point1: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].point || '',
+        point2: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].point || '',
+        point3: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].point || '',
+        point4: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].point || ''
     }
 
 
@@ -80,9 +81,9 @@ export default function BackgroundImage(props) {
         const point4 = gradient.point4 ? ' ' + gradient.point4 + '%' : '';
 
         if (colorName === 'color1') color1 = e.target.value;
-        if (colorName === 'color2') color2 = ', ' + e.target.value;
-        if (colorName === 'color3') color3 = ', ' + e.target.value;
-        if (colorName === 'color4') color4 = ', ' + e.target.value;
+        if (colorName === 'color2') color2 = e.target.value ? ', ' + e.target.value : '';
+        if (colorName === 'color3') color3 = e.target.value ? ', ' + e.target.value : '';
+        if (colorName === 'color4') color4 = e.target.value ? ', ' + e.target.value : '';
 
         const prop = `${type}(${deg}${color1}${point1}${color2}${point2}${color3}${point3}${color4}${point4})`;
         dispatch(setProp({
@@ -105,12 +106,34 @@ export default function BackgroundImage(props) {
         let point3 = gradient.point3 ? ' ' + gradient.point3 + '%' : '';
         let point4 = gradient.point4 ? ' ' + gradient.point4 + '%' : '';
 
-        if (pointName === 'point1') point1 = ' ' + e.target.value + '%';
-        if (pointName === 'point2') point2 = ' ' + e.target.value + '%';
-        if (pointName === 'point3') point3 = ' ' + e.target.value + '%';
-        if (pointName === 'point4') point4 = ' ' + e.target.value + '%';
+        if (pointName === 'point1') point1 = e.target.value ? ' ' + e.target.value + '%' : '';
+        if (pointName === 'point2') point2 = e.target.value ? ' ' + e.target.value + '%' : '';
+        if (pointName === 'point3') point3 = e.target.value ? ' ' + e.target.value + '%' : '';
+        if (pointName === 'point4') point4 = e.target.value ? ' ' + e.target.value + '%' : '';
 
         const prop = `${type}(${deg}${color1}${point1}${color2}${point2}${color3}${point3}${color4}${point4})`;
+        dispatch(setProp({
+            name: 'backgroundImage',
+            value: prop,
+            resolution,
+            id: activeComponent.id
+        }));
+    }
+
+    const onGradientSelect = (e, gradient) => {
+        const deg = gradient.deg ? gradient.deg + 'deg, ' : '';
+        const color1 = gradient.color1;
+        const point1 = gradient.point1 ? ' ' + gradient.point1 + '%' : '';
+        const color2 = gradient.color2 ? ', ' + gradient.color2 : '';
+        const point2 = gradient.point2 ? ' ' + gradient.point2 + '%' : '';
+        const color3 = gradient.color3 ? ', ' + gradient.color3 : '';
+        const point3 = gradient.point3 ? ' ' + gradient.point3 + '%' : '';
+        const color4 = gradient.color4 ? ', ' + gradient.color4 : '';
+        const point4 = gradient.point4 ? ' ' + gradient.point4 + '%' : '';
+
+        const isLinearGradient = e.target.value === 'linear-gradient';
+
+        const prop = `${e.target.value}(${isLinearGradient ? deg : ''}${color1}${isLinearGradient ? point1 : ''}${color2}${isLinearGradient ? point2 : ''}${color3}${isLinearGradient ? point3 : ''}${color4}${isLinearGradient ? point4 : ''})`;
         dispatch(setProp({
             name: 'backgroundImage',
             value: prop,
@@ -165,7 +188,11 @@ export default function BackgroundImage(props) {
 
 
                 <GradientInputsWrapper>
-                    <GradientSelect disabled={!isGradient} value={parsedProp.gradient}>
+                    <GradientSelect
+                        value={parsedProp.gradient}
+                        onChange={(e) => onGradientSelect(e, gradient)}
+                        disabled={!isGradient}
+                    >
                         <option value="linear-gradient">linear-gradient</option>
                         <option value="radial-gradient">radial-gradient</option>
                     </GradientSelect>
@@ -173,7 +200,7 @@ export default function BackgroundImage(props) {
                         <GradientDegInput
                             type="number"
                             step={5}
-                            disabled={!isGradient}
+                            disabled={!isGradient || isRadialGradient}
                             value={parsedProp.value && parsedProp.value.deg || ''}
                             onChange={(e) => onGradientDegChange(e, gradient)}
                         />
@@ -183,7 +210,7 @@ export default function BackgroundImage(props) {
                     <GradientRow>
                         <GradientInput
                             type="text"
-                            value={parsedProp.value && parsedProp.value.colors[0].value || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].value || ''}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color1')}
                             disabled={!isGradient}
                         />
@@ -193,9 +220,9 @@ export default function BackgroundImage(props) {
                             min={0}
                             max={100}
                             step={5}
-                            value={parsedProp.value && parsedProp.value.colors[0].point || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].point || ''}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point1')}
-                            disabled={!isGradient}
+                            disabled={!isGradient || isRadialGradient}
                         />
                         <GradientLabel disabled={!isGradient}>%</GradientLabel>
                     </GradientRow>
@@ -203,7 +230,7 @@ export default function BackgroundImage(props) {
                     <GradientRow>
                         <GradientInput
                             type="text"
-                            value={parsedProp.value && parsedProp.value.colors[1].value || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].value || ''}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color2')}
                             disabled={!isGradient}
                         />
@@ -213,9 +240,9 @@ export default function BackgroundImage(props) {
                             min={0}
                             max={100}
                             step={5}
-                            value={parsedProp.value && parsedProp.value.colors[1].point || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].point || ''}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point2')}
-                            disabled={!isGradient}
+                            disabled={!isGradient || isRadialGradient}
                         />
                         <GradientLabel disabled={!isGradient}>%</GradientLabel>
                     </GradientRow>
@@ -223,7 +250,7 @@ export default function BackgroundImage(props) {
                     <GradientRow>
                         <GradientInput
                             type="text"
-                            value={parsedProp.value && parsedProp.value.colors[2].value || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].value || ''}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color3')}
                             disabled={!isGradient}
                         />
@@ -233,9 +260,9 @@ export default function BackgroundImage(props) {
                             min={0}
                             max={100}
                             step={5}
-                            value={parsedProp.value && parsedProp.value.colors[2].point || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].point || ''}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point3')}
-                            disabled={!isGradient}
+                            disabled={!isGradient || isRadialGradient}
                         />
                         <GradientLabel disabled={!isGradient}>%</GradientLabel>
                     </GradientRow>
@@ -243,7 +270,7 @@ export default function BackgroundImage(props) {
                     <GradientRow>
                         <GradientInput
                             type="text"
-                            value={parsedProp.value && parsedProp.value.colors[3].value || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].value || ''}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color4')}
                             disabled={!isGradient}
                         />
@@ -253,9 +280,9 @@ export default function BackgroundImage(props) {
                             min={0}
                             max={100}
                             step={5}
-                            value={parsedProp.value && parsedProp.value.colors[3].point || ''}
+                            value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].point || ''}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point4')}
-                            disabled={!isGradient}
+                            disabled={!isGradient || isRadialGradient}
                         />
                         <GradientLabel disabled={!isGradient}>%</GradientLabel>
                     </GradientRow>

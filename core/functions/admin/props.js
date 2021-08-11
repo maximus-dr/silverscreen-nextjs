@@ -178,7 +178,6 @@ const parseProp = (styles, propName) => {
         }
 
         if (propValue.includes('linear-gradient')) {
-            console.log('propValue', propValue);
             const value = {
                 deg: '',
                 colors: {
@@ -231,6 +230,38 @@ const parseProp = (styles, propName) => {
 
             result.value = value;
             result.gradient = 'linear-gradient';
+        }
+
+        if (propValue.includes('radial-gradient')) {
+            const value = {
+                deg: '',
+                colors: {
+                    0: {
+                        value: '',
+                        point: ''
+                    },
+                    1: {
+                        value: '',
+                        point: ''
+                    },
+                    2: {
+                        value: '',
+                        point: ''
+                    },
+                    3: {
+                        value: '',
+                        point: ''
+                    }
+                }
+            }
+
+            const colors = propValue.trim().replace('radial-gradient(', '').replace(')', '').split(', ');
+            colors.forEach((item, i) => {
+                value.colors[i].value = item;
+            })
+
+            result.value = value;
+            result.gradient = 'radial-gradient';
         }
     }
     return result;
