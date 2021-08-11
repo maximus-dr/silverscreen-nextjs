@@ -177,12 +177,62 @@ const parseProp = (styles, propName) => {
             result.url = true;
         }
 
-        if (propValue.includes('gradient')) {
-            result.value = propValue.trim().replace('linear-gradient(', '').replace(')', '').split(', ');
-            result.gradient = true;
+        if (propValue.includes('linear-gradient')) {
+            console.log('propValue', propValue);
+            const value = {
+                deg: '',
+                colors: {
+                    0: {
+                        value: '',
+                        point: ''
+                    },
+                    1: {
+                        value: '',
+                        point: ''
+                    },
+                    2: {
+                        value: '',
+                        point: ''
+                    },
+                    3: {
+                        value: '',
+                        point: ''
+                    }
+                }
+            }
+
+            let colors = [];
+
+
+            const splitted = propValue.trim().replace('linear-gradient(', '').replace(')', '').split(', ');
+
+            splitted.forEach(item => {
+                if (item.includes('deg')) {
+                    value.deg = item.replace('deg', '');
+                }
+                if (item.includes('%')) {
+                    const splitted = item.split(' ');
+                    colors.push(splitted);
+                }
+                if (!item.includes('deg') && !item.includes('%')) {
+                    colors.push(item);
+                }
+            });
+
+            colors.forEach((item, i) => {
+                if (Array.isArray(item)) {
+                    value.colors[i].value = item[0];
+                    value.colors[i].point = item[1].replace('%', '');
+                }
+                if (!Array.isArray(item)) {
+                    value.colors[i].value = item;
+                }
+            });
+
+            result.value = value;
+            result.gradient = 'linear-gradient';
         }
     }
-
     return result;
 }
 

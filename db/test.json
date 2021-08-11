@@ -14,7 +14,8 @@
             "paddingBottom": "5px",
             "paddingLeft": "5px",
             "minHeight": "100vh",
-            "backgroundColor": "#ffffff"
+            "backgroundColor": "#ffffff",
+            "backgroundImage": "linear-gradient(270deg, #c6ffdd 0%, #fbd786, #f7797d, #fc5c7d 100%)"
         }
       },
       "childrenList": [
