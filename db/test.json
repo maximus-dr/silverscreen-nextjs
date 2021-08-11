@@ -15,7 +15,9 @@
             "paddingLeft": "5px",
             "minHeight": "100vh",
             "backgroundColor": "#ffffff",
-            "backgroundImage": "radial-gradient(#c6ffdd, #fbd786, #f7797d)"
+            "backgroundImage": "url('https://tr-images.condecdn.net/image/LDM0pgM40l1/crop/2040/f/gettyimages-1146431497.jpg')",
+            "backgroundSize": "auto auto",
+            "backgroundRepeat": "no-repeat"
         }
       },
       "childrenList": [

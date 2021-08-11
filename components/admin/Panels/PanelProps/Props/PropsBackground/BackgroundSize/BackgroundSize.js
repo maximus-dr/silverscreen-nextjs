@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { parseProp } from "../../../../../../../core/functions/admin/props";
 import { setProp } from "../../../../../../../store/actions/document";
 import { Item, ItemKey, ItemValue } from "../../PropsStyled";
-import { BackgroundSizeOutput } from "./BackgroundSizeStyled";
+import { BackgroundSizeInput, BackgroundSizeOutput, BackgroundSizeSelect, BackgroundSizeUnit, BackgroundSizeWrapper, OutputGroup } from "./BackgroundSizeStyled";
 
 
 
@@ -17,120 +17,79 @@ export const BackgroundSize = (props) => {
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
 
-    const sizeX = {
-        value: parsedProp && parsedProp.sizeX && parsedProp.sizeX.value || '',
-        unit: parsedProp && parsedProp.sizeX && parsedProp.sizeX.unit || ''
-    }
+    const isAutoX = parsedProp.sizeX && parsedProp.sizeX.unit && parsedProp.sizeX.unit === 'auto';
+    const isAutoY = parsedProp.sizeY && parsedProp.sizeY.unit && parsedProp.sizeY.unit === 'auto';
 
-    const sizeY = {
-        value: parsedProp && parsedProp.sizeY && parsedProp.sizeY.value || '',
-        unit: parsedProp && parsedProp.sizeY && parsedProp.sizeY.unit || ''
-    }
+    console.log(isAutoX, isAutoY);
 
-    const [select, setSelect] = useState('default');
-    const [custom, setCustom] = useState(false);
-    const [x, setX] = useState(sizeX);
-    const [y, setY] = useState(sizeY);
+    console.log('parsedProp', parsedProp);
 
-
-    useEffect(() => {
-        const prop = parseProp(styles, 'backgroundSize')
-        if (prop && prop.value) {
-            setSelect(prop.value);
-        }
-
-        if (!prop || !prop.value) setSelect('default');
-
-        if (prop.value && prop.value === 'unit unit') {
-            setCustom(true);
-        }
-
-        if (prop.value && prop.value !== 'unit unit') {
-            setCustom(false);
-        }
-    }, [styles]);
 
     return (
-        <Item style={{alignItems: 'flex-start'}}>
+        <BackgroundSizeWrapper>
             <ItemKey>background-size:</ItemKey>
             <ItemValue>
-                <select
-                    style={{width: '110px'}}
-                    value={custom ? 'unit unit' : parsedProp.value}
+                <BackgroundSizeSelect
+                    value={parsedProp.value}
                     onChange={(e) => {
-                        if (e.target.value !== 'unit unit' && e.target.value !== 'default') {
-                            dispatch(setProp({
-                                id: activeComponent.id,
-                                name: 'backgroundSize',
-                                value: e.target.value,
-                                resolution
-                            }));
-                        }
-
                         if (e.target.value === 'default') {
                             dispatch(setProp({
-                                id: activeComponent.id,
                                 name: 'backgroundSize',
                                 value: '',
-                                resolution
+                                id: activeComponent.id
                             }));
-                        }
+                            return;
+                        };
 
-                        if (e.target.value === 'unit unit') {
-                            setCustom(true);
-                        }
+                        dispatch(setProp({
+                            name: 'backgroundSize',
+                            value: e.target.value,
+                            id: activeComponent.id
+                        }));
                     }}
                 >
                     <option value="default">default</option>
-                    <option value="auto auto">auto auto</option>
                     <option value="cover">cover</option>
+                    <option value="unit">unit</option>
                     <option value="contain">contain</option>
-                    <option value="unit unit">unit unit</option>
-                </select>
+                    <option value="auto">auto</option>
+                </BackgroundSizeSelect>
 
-                <BackgroundSizeOutput isActive={custom}>
-                    <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                        <input
+                <BackgroundSizeOutput isActive={true}>
+                    <OutputGroup>
+                        <BackgroundSizeInput
                             type="number"
-                            style={{width: '55px', marginRight: '5px'}}
-                            value={x.value}
-                            onChange={(e) => {
-                                dispatch(setProp({
-                                    id: activeComponent.id,
-                                    name: 'backgroundSize',
-                                    value: `${e.target.value}${sizeX.unit} ${sizeY.value}${sizeY.unit}`
-                                }))
-                            }}
+                            value={parsedProp.sizeX && parsedProp.sizeX.value || ''}
+                            onChange={() => {}}
+                            disabled={isAutoX}
                         />
-                        <select
-                            style={{width: '50px'}}
-                            value={parsedProp.sizeX && parsedProp.sizeX.unit || 'px'}
-                            onChange={(e) => {
-                                sizeX.unit = e.target.value;
-                            }}
+                        <BackgroundSizeUnit
+                            value={parsedProp.sizeX && parsedProp.sizeX.unit || 'auto'}
+                            onChange={() => {}}
                         >
                             <option value="px">px</option>
                             <option value="%">%</option>
-                        </select>
-                    </div>
-                    <div style={{marginTop: '5px', marginBottom: '5px'}}>
-                        <input
+                            <option value="auto">auto</option>
+                        </BackgroundSizeUnit>
+                    </OutputGroup>
+                    <OutputGroup>
+                        <BackgroundSizeInput
                             type="number"
-                            style={{width: '55px', marginRight: '5px'}}
                             value={parsedProp.sizeY && parsedProp.sizeY.value || ''}
                             onChange={() => {}}
+                            disabled={isAutoY}
                         />
-                        <select
-                            style={{width: '50px'}}
-                            value={parsedProp.sizeY && parsedProp.sizeY.unit || 'px'}
+                        <BackgroundSizeUnit
+                            value={parsedProp.sizeY && parsedProp.sizeY.unit || 'auto'}
                             onChange={() => {}}
                         >
                             <option value="px">px</option>
                             <option value="%">%</option>
-                        </select>
-                    </div>
+                            <option value="auto">auto</option>
+                        </BackgroundSizeUnit>
+                    </OutputGroup>
                 </BackgroundSizeOutput>
             </ItemValue>
-        </Item>
+        </BackgroundSizeWrapper>
     );
 }

@@ -47,7 +47,7 @@ export default function BackgroundImage(props) {
 
 
     const onGradientDegChange = (e, gradient) => {
-        const type = gradient.type;
+        const type = gradient.type || 'linear-gradient';
         const color1 = gradient.color1;
         const point1 = gradient.point1 ? ' ' + gradient.point1 + '%' : '';
         const color2 = gradient.color2 ? ', ' + gradient.color2 : '';
@@ -69,7 +69,7 @@ export default function BackgroundImage(props) {
     };
 
     const onGradientColorChange = (e, gradient, colorName) => {
-        const type = gradient.type;
+        const type = gradient.type || 'linear-gradient';
         const deg = gradient.deg ? gradient.deg + 'deg, ' : '';
         let color1 = gradient.color1;
         let color2 = gradient.color2 ? ', ' + gradient.color2 : '';
@@ -95,7 +95,7 @@ export default function BackgroundImage(props) {
     }
 
     const onGradientPointChange = (e, gradient, pointName) => {
-        const type = gradient.type;
+        const type = gradient.type || 'linear-gradient';
         const deg = gradient.deg ? gradient.deg + 'deg, ' : '';
         let color1 = gradient.color1;
         let color2 = gradient.color2 ? ', ' + gradient.color2 : '';
@@ -199,6 +199,8 @@ export default function BackgroundImage(props) {
                     <GradientDegInputWrapper>
                         <GradientDegInput
                             type="number"
+                            min={0}
+                            max={360}
                             step={5}
                             disabled={!isGradient || isRadialGradient}
                             value={parsedProp.value && parsedProp.value.deg || ''}

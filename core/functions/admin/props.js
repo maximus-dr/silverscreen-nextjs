@@ -106,7 +106,7 @@ const parseProp = (styles, propName) => {
     }
 
     if (propData.type === 'backgroundSize' && propValue) {
-        if (propValue.includes('px') || propValue.includes('%')) {
+        if (propValue.includes('px') || propValue.includes('%') || propValue.includes('auto') && propValue.length > 4) {
             const params = propValue.split(' ');
             const x = params[0];
             const y = params[1];
@@ -130,7 +130,7 @@ const parseProp = (styles, propName) => {
                     y.includes('%') && '%' ||
                     y === 'auto' && 'auto'
             }
-            result.value = 'unit unit';
+            result.value = 'unit';
             result.sizeX = sizeX;
             result.sizeY = sizeY;
 
