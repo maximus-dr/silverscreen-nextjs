@@ -50,7 +50,7 @@ export default function Document(props) {
         return () => {
             document.removeEventListener('keydown', onDocumentKeydown);
         }
-    })
+    });
 
 
     return (

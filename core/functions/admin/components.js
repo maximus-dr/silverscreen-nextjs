@@ -57,6 +57,7 @@ const addComponentToComponentsData = (state, containerId, component) => {
 }
 
 
+
 const deleteComponentFromComponentsData = (state, componentId) => {
     let match = false;
     state.childrenList.forEach(child => {
@@ -93,10 +94,29 @@ const updateComponentIds = (component) => {
     }
 }
 
+const updateComponentChildrenList = (componentsData, componentId, childrenList) => {
+    if (componentsData.id === componentId) {
+        return {
+            ...componentsData,
+            childrenList
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return updateComponentChildrenList(child, componentId, childrenList);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
+
+
 export {
     setValueToComponentsData,
     setNameToComponentsData,
     addComponentToComponentsData,
     deleteComponentFromComponentsData,
-    updateComponentIds
+    updateComponentIds,
+    updateComponentChildrenList
 }

@@ -10,6 +10,7 @@ const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
 const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 const SET_DOCUMENT_COMPONENTS_DATA = 'SET_DOCUMENT_COMPONENTS_DATA';
 const SET_COMPONENT_TO_BUFFER = 'SET_COMPONENT_TO_BUFFER';
+const UPDATE_COMPONENT_CHILDRENLIST = 'UPDATE_COMPONENT_CHILDRENLIST';
 
 
 
@@ -47,6 +48,12 @@ const setComponentName = (name, id) => ({
     type: SET_COMPONENT_NAME,
     name,
     id
+});
+
+const updateComponentChildrenList = (componentId, childrenList) => ({
+    type: UPDATE_COMPONENT_CHILDRENLIST,
+    componentId,
+    childrenList
 });
 
 const addComponent = (containerId, component) => ({
@@ -88,7 +95,8 @@ export {
     deleteComponent,
     setDragendComponent,
     unsetDragendComponent,
-    setComponentToBuffer
+    setComponentToBuffer,
+    updateComponentChildrenList
 }
 
 export {
@@ -98,6 +106,7 @@ export {
     SET_PROP,
     SET_COMPONENT_VALUE,
     SET_COMPONENT_NAME,
+    UPDATE_COMPONENT_CHILDRENLIST,
     ADD_COMPONENT,
     DELETE_COMPONENT,
     SET_DRAGEND_COMPONENT,
