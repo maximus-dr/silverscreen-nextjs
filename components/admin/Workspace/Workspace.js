@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { renderComponents } from '../../../core/functions/render';
+import Notification from '../Notifications/Notification/Notification';
 import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './WorkspaceStyled'
 
 
@@ -18,6 +19,8 @@ export default function Workspace() {
                 <WorkspacePage pageWidth={`${resolution}px`}>
                     {components}
                 </WorkspacePage>
+
+                {/* <Notification /> */}
             </WorkspacePageWrapper>
         </WorkspaceWrapper>
     )

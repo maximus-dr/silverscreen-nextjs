@@ -34,6 +34,7 @@ export const WorkspaceWrapper = styled.div`
 `;
 
 export const WorkspacePageWrapper = styled.div`
+    position: relative;
     margin: 0 auto;
     padding: 50px 50px 100px 50px;
     transition: width 150ms;
