@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../core/functions/admin/components';
 import { generateNewId } from '../../../core/functions/components';
-import { addComponent, setComponentToBuffer } from '../../../store/actions/document';
+import { addComponent, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../store/actions/document';
 
 export default function Document(props) {
 
@@ -28,6 +28,9 @@ export default function Document(props) {
 
             if (ctrl && key === keyX && activeComponent) {
                 console.log('CTRL + X pressed');
+                dispatch(setComponentToBuffer(activeComponent));
+                dispatch(unsetActiveComponent());
+                dispatch(deleteComponent(activeComponent.id));
             }
 
             if (ctrl && key === keyZ && activeComponent) {
