@@ -9,6 +9,7 @@ const DELETE_COMPONENT = 'DELETE_COMPONENT';
 const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
 const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 const SET_DOCUMENT_COMPONENTS_DATA = 'SET_DOCUMENT_COMPONENTS_DATA';
+const SET_COMPONENT_TO_BUFFER = 'SET_COMPONENT_TO_BUFFER';
 
 
 
@@ -66,7 +67,12 @@ const setDragendComponent = (componentData) => ({
 
 const unsetDragendComponent = () => ({
     type: UNSET_DRAGEND_COMPONENT
-})
+});
+
+const setComponentToBuffer = (component) => ({
+    type: SET_COMPONENT_TO_BUFFER,
+    component
+});
 
 
 
@@ -81,7 +87,8 @@ export {
     addComponent,
     deleteComponent,
     setDragendComponent,
-    unsetDragendComponent
+    unsetDragendComponent,
+    setComponentToBuffer
 }
 
 export {
@@ -95,5 +102,6 @@ export {
     DELETE_COMPONENT,
     SET_DRAGEND_COMPONENT,
     UNSET_DRAGEND_COMPONENT,
-    SET_DOCUMENT_COMPONENTS_DATA
+    SET_DOCUMENT_COMPONENTS_DATA,
+    SET_COMPONENT_TO_BUFFER
 }

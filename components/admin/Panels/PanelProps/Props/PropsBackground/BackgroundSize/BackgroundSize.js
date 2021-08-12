@@ -20,10 +20,6 @@ export const BackgroundSize = (props) => {
     const isAutoX = parsedProp.sizeX && parsedProp.sizeX.unit && parsedProp.sizeX.unit === 'auto';
     const isAutoY = parsedProp.sizeY && parsedProp.sizeY.unit && parsedProp.sizeY.unit === 'auto';
 
-    console.log(isAutoX, isAutoY);
-
-    console.log('parsedProp', parsedProp);
-
 
     return (
         <BackgroundSizeWrapper>

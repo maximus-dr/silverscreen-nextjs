@@ -15,13 +15,60 @@
             "paddingLeft": "5px",
             "minHeight": "100vh",
             "backgroundColor": "#ffffff",
-            "backgroundImage": "url('https://tr-images.condecdn.net/image/LDM0pgM40l1/crop/2040/f/gettyimages-1146431497.jpg')",
             "backgroundSize": "auto auto",
             "backgroundRepeat": "no-repeat"
         }
       },
       "childrenList": [
-
+        {
+            "typeName": "section",
+            "id": "sec001",
+            "name": "Section 1",
+            "styles": {
+                "common": {
+                    "minHeight": "50px",
+                    "border": "1px dashed #42a5f5",
+                    "paddingTop": "15px",
+                    "paddingRight": "15px",
+                    "paddingBottom": "15px",
+                    "paddingLeft": "15px"
+                }
+            },
+            "childrenList": []
+        },
+        {
+            "typeName": "section",
+            "id": "sec002",
+            "name": "Section 2",
+            "styles": {
+                "common": {
+                    "minHeight": "50px",
+                    "border": "1px dashed #42a5f5",
+                    "paddingTop": "15px",
+                    "paddingRight": "15px",
+                    "paddingBottom": "15px",
+                    "paddingLeft": "15px"
+                }
+            },
+            "childrenList": []
+        },
+        {
+            "typeName": "label",
+            "id": "lab001",
+            "name": "Label 1",
+            "value": "Label",
+            "styles": {
+                "common": {
+                    "display": "inline-block",
+                    "paddingTop": "5px",
+                    "paddingRight": "5px",
+                    "paddingBottom": "5px",
+                    "paddingLeft": "5px",
+                    "fontSize": "22px"
+                }
+            },
+            "childrenList": []
+        }
       ]
     }
   ]

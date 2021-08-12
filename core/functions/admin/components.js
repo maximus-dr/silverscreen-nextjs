@@ -1,3 +1,5 @@
+import { generateNewId } from "../components";
+
 const setValueToComponentsData = (componentsData, componentId, value) => {
     if (componentsData.id === componentId) {
         return {
@@ -77,11 +79,24 @@ const deleteComponentFromComponentsData = (state, componentId) => {
     }
 }
 
+const updateComponentIds = (component) => {
+    const newId = generateNewId(10);
+    const newComponent = {...component, id: newId};
 
+    const childrenList = component.childrenList.map(child => {
+        const childId = generateNewId(10);
+        return updateComponentIds({...child, id: childId});
+    });
+    return {
+        ...newComponent,
+        childrenList
+    }
+}
 
 export {
     setValueToComponentsData,
     setNameToComponentsData,
     addComponentToComponentsData,
-    deleteComponentFromComponentsData
+    deleteComponentFromComponentsData,
+    updateComponentIds
 }

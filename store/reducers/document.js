@@ -1,6 +1,6 @@
 import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData } from "../../core/functions/admin/components";
 import { setPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -76,6 +76,12 @@ export const documentReducer = (state = {}, action) => {
             delete newState.dragendComponent;
             return {
                 ...newState
+            }
+
+        case SET_COMPONENT_TO_BUFFER:
+            return {
+                ...state,
+                buffer: action.component
             }
 
         default:
