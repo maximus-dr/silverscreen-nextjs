@@ -1,6 +1,6 @@
 import React from 'react'
 import { parseProp } from '../../../../../../core/functions/admin/props'
-import { propsList } from '../../../../../../core/variables/variables'
+import { propsList } from '../../../../../../core/variables/props'
 import InputNum from '../InputNum/InputNum'
 import { Body, Header, Item, ItemKey, ItemValue, Section } from '../PropsStyled'
 

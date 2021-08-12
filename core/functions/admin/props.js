@@ -1,4 +1,4 @@
-import { propsList } from "../../variables/variables";
+import { propsList } from "../../variables/props";
 
 
 const parseProp = (styles, propName) => {

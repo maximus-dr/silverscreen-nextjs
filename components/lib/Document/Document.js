@@ -3,8 +3,9 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../core/functions/admin/components';
-import { generateNewId } from '../../../core/functions/components';
 import { addComponent, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../store/actions/document';
+
+
 
 export default function Document(props) {
 
@@ -50,9 +51,6 @@ export default function Document(props) {
             document.removeEventListener('keydown', onDocumentKeydown);
         }
     })
-
-
-
 
 
     return (
