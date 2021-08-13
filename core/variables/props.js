@@ -79,65 +79,6 @@ const propsList = {
         default: 'default'
     },
 
-
-    // Границы
-    border: {
-        type: 'border',
-        default: 'default'
-    },
-    borderTop: {
-        type: 'border',
-        default: 'default'
-    },
-    borderRight: {
-        type: 'border',
-        default: 'default'
-    },
-    borderBottom: {
-        type: 'border',
-        default: 'default'
-    },
-    borderLeft: {
-        type: 'border',
-        default: 'default'
-    },
-    outline: {
-        type: 'border',
-        default: 'default'
-    },
-    borderRadius: {
-        type: 'num',
-        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
-        default: 'default'
-    },
-
-
-    // Отображение
-    display: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 2, name: 'flex'}, {id: 3, name: 'inline-flex'}, {id: 4, name: 'block'}, {id: 6, name: 'inline-block'}, {id: 5, name: 'inline'}, {id: 7, name: 'grid'}, {id: 8, name: 'none'}],
-        default: ''
-    },
-
-    overflow: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-    overflowX: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-    overflowY: {
-        type: 'select',
-        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
-        default: 'visible'
-    },
-
-
     // Позиционирование
     position: {
         type: 'select',
@@ -174,6 +115,12 @@ const propsList = {
         default: 'default'
     },
 
+    display: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 2, name: 'flex'}, {id: 3, name: 'inline-flex'}, {id: 4, name: 'block'}, {id: 6, name: 'inline-block'}, {id: 5, name: 'inline'}, {id: 7, name: 'grid'}, {id: 8, name: 'none'}],
+        default: ''
+    },
+
     flexDirection: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'row'}, {id: 2, name: 'row-reverse'}, {id: 3, name: 'column'}, {id: 4, name: 'column-reverse'}],
@@ -190,14 +137,6 @@ const propsList = {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'nowrap'}, {id: 2, name: 'wrap'}, {id: 3, name: 'wrap-reverse'}],
         default: 'default'
-    },
-
-    flexShrink: {
-        type: 'num'
-    },
-
-    flexGrow: {
-        type: 'num'
     },
 
     flexBasis: {
@@ -217,9 +156,49 @@ const propsList = {
         default: 'default'
     },
 
+    flexShrink: {
+        type: 'num'
+    },
+
+    flexGrow: {
+        type: 'num'
+    },
+
     order: {
         type: 'num',
         default: '0'
+    },
+
+
+    // Границы
+    border: {
+        type: 'border',
+        default: 'default'
+    },
+    borderTop: {
+        type: 'border',
+        default: 'default'
+    },
+    borderRight: {
+        type: 'border',
+        default: 'default'
+    },
+    borderBottom: {
+        type: 'border',
+        default: 'default'
+    },
+    borderLeft: {
+        type: 'border',
+        default: 'default'
+    },
+    outline: {
+        type: 'border',
+        default: 'default'
+    },
+    borderRadius: {
+        type: 'num',
+        units: [{id: 0, name: 'default'}, {id: 1, name: 'px'}, {id: 2, name: '%'}],
+        default: 'default'
     },
 
 
@@ -330,7 +309,25 @@ const propsList = {
     // Эффекты
     opacity: {
         type: 'num'
-    }
+    },
+
+    overflow: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
+
+    overflowX: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
+
+    overflowY: {
+        type: 'select',
+        options: [{id: 0, name: 'default'}, {id: 1, name: 'visible'}, {id: 2, name: 'hidden'}, {id: 3, name: 'scroll'}, {id: 4, name: 'auto'}],
+        default: 'visible'
+    },
 }
 
 

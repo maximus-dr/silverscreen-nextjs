@@ -1,0 +1,169 @@
+{
+    "document": {
+        "typeName": "Document",
+        "id": "",
+        "name": "",
+        "childrenList": []
+    },
+
+    "page": {
+        "typeName": "page",
+        "id": "",
+        "name": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        },
+        "childrenList": []
+    },
+
+    "section": {
+        "typeName": "section",
+        "id": "",
+        "name": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "label": {
+        "typeName": "label",
+        "id": "",
+        "name": "",
+        "tag": "",
+        "value": "",
+        "for": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "link": {
+        "typeName": "link",
+        "id": "",
+        "name": "",
+        "link": "",
+        "value": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "button": {
+        "typeName": "button",
+        "id": "",
+        "name": "",
+        "value": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "description": {
+        "typeName": "description",
+        "id": "",
+        "name": "",
+        "value": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "image": {
+        "typeName": "image",
+        "id": "",
+        "name": "",
+        "link": "",
+        "alt": "",
+        "width": "",
+        "height": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "input": {
+        "typeName": "input",
+        "id": "",
+        "name": "",
+        "type": "",
+        "placeholder": "",
+        "required": "",
+        "minLength": "",
+        "maxLength": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "checkbox": {
+        "typeName": "checkbox",
+        "id": "",
+        "name": "",
+        "checked": "",
+        "value": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    },
+
+    "radio": {
+        "typeName": "radio",
+        "id": "",
+        "name": "",
+        "value": "",
+        "checked": "",
+        "styles": {
+            "common": {},
+            "screen_mobile": {},
+            "screen_mobile_landscape": {},
+            "screen_tablet": {},
+            "screen_tablet_landscape": {},
+            "screen_desktop": {}
+        }
+    }
+}

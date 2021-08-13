@@ -28,7 +28,7 @@ export default function Label(props) {
         e.stopPropagation();
         e.target.style.opacity = '0.4';
         e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.effectAllowed = e.shiftKey ? 'none' : 'move';
     }
 
     const onDragEnd = (e) => {

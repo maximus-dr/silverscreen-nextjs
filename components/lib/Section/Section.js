@@ -62,28 +62,49 @@ export default function Section(props) {
 
         if (e.target.id === dragendComponent.id) return;
 
-        const parent = getParent(componentsData, id);
-        const index = parent.childrenList.indexOf(componentData);
-        const parentCopy = {
-            ... parent,
-            childrenList: [...parent.childrenList]
+
+        if (e.shiftKey) {
+            const parent = getParent(componentsData, id);
+
+            const hasCommonParent = parent.childrenList.includes(dragendComponent);
+            console.log(hasCommonParent);
+
+            if (!hasCommonParent) {
+                e.target.style.pointerEvents = 'none';
+            };
+
+            if (hasCommonParent) {
+                const index = parent.childrenList.indexOf(componentData);
+                const parentCopy = {
+                    ... parent,
+                    childrenList: [...parent.childrenList]
+                };
+                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+                parentCopy.childrenList.splice(index, 0, dragendComponent);
+                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            }
         };
-        parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
-        parentCopy.childrenList.splice(index, 0, dragendComponent);
-        console.log(parentCopy.childrenList);
-        dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
     }
 
     const onDragLeave = (e) => {
         e.preventDefault();
         e.stopPropagation();
         setDragCounter(prev => prev - 1);
+
+        const parent = getParent(componentsData, id);
+        const hasCommonParent = parent.childrenList.includes(dragendComponent);
+
+        if (!hasCommonParent) {
+            console.log('has no')
+            // e.target.style.pointerEvents = 'auto';
+        };
     }
 
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
         e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        if (e.shiftKey) setAllowDrop(false);
     }
 
     const onDragEnd = (e) => {
@@ -108,7 +129,7 @@ export default function Section(props) {
         }
         if (targetId === componentId) return;
 
-        if (componentId) {
+        if (componentId && !e.shiftKey) {
             const component = getComponent(componentsData, componentId);
             if (getChild(component, targetId)) return;
             dispatch(deleteComponent(componentId));

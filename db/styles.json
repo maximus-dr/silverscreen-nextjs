@@ -1,0 +1,406 @@
+{
+    "width": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vw"}, {"name": "auto"}]
+    },
+    "height": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vh"}, {"name": "auto"}]
+    },
+    "minwidth": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vw"}, {"name": "auto"}]
+    },
+    "maxWidth": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vw"}]
+    },
+    "minHeight": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vh"}, {"name": "auto"}]
+    },
+    "maxHeight": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "vh"}]
+    },
+    "marginTop": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "marginRight": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "marginBottom": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "marginLeft": {
+        "type": "num",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "default": "default",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "paddingTop": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}]
+    },
+    "paddingRight": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}]
+    },
+    "paddingBottom": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}]
+    },
+    "paddingLeft": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "em"}, {"name": "%"}]
+    },
+    "position": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "relative"}, {"name": "absolute"}, {"name": "fixed"}]
+    },
+    "zIndex": {
+        "type": "num",
+        "min": "",
+        "max": "",
+        "step": "1",
+        "default": ""
+    },
+    "top": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "right": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "bottom": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "left": {
+        "type": "num",
+        "default": "default",
+        "min": "",
+        "max": "",
+        "step": "5",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}, {"name": "auto"}]
+    },
+    "display": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "flex"}, {"name": "inline-flex"}, {"name": "block"}, {"name": "inline-block"}, {"name": "inline"}, {"name": "none"}]
+    },
+    "flexWrap": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "wrap"}, {"name": "nowrap"}, {"name": "wrap-reverse"}]
+    },
+    "flexDirection": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "column"}, {"name": "column-reverse"}, {"name": "row"}, {"name": "row-reverse"}]
+    },
+    "justifyContent": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "flex-start"}, {"name": "flex-end"}, {"name": "center"}, {"name": "space-between"}, {"name": "space-around"}]
+    },
+    "alignItems": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "flex-start"}, {"name": "flex-end"}, {"name": "center"}, {"name": "baseline"}, {"name": "stretch"}]
+    },
+    "alignSelf": {
+        "type": "select",
+        "options": [{"name": "default"}, {"name": "flex-start"}, {"name": "flex-end"}, {"name": "center"}, {"name": "baseline"}, {"name": "stretch"}]
+    },
+    "flexGrow": {
+        "type": "num",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "default": ""
+    },
+    "flexShrink": {
+        "type": "num",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "default": ""
+    },
+    "order": {
+        "type": "num",
+        "min": "",
+        "max": "",
+        "step": "1",
+        "default": ""
+    },
+    "border": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "borderTop": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "borderRight": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "borderBottom": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "borderLeft": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "outline": {
+        "type": "border",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "custom"}]
+    },
+    "borderRadius": {
+        "type": "num",
+        "default": "default",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "units": [{"name": "default"}, {"name": "px"}, {"name": "%"}]
+    },
+    "overflow": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "visible"}, {"name": "hidden"}, {"name": "scroll"}, {"name": "auto"}]
+    },
+    "overflowX": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "visible"}, {"name": "hidden"}, {"name": "scroll"}, {"name": "auto"}]
+    },
+    "overflowY": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "visible"}, {"name": "hidden"}, {"name": "scroll"}, {"name": "auto"}]
+    },
+    "color": {
+        "type": "text",
+        "default": ""
+    },
+    "fontSize": {
+        "type": "num",
+        "default": "px",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "units": [{"name": "px"}, {"name": "em"}, {"name": "rem"}]
+    },
+    "fontWeight": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "normal"}, {"name": "bold"}]
+    },
+    "fontStyle": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "normal"}, {"name": "italic"}]
+    },
+    "lineHeight": {
+        "type": "num",
+        "default": "",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "units": [{"name": ""}, {"name": "px"}, {"name": "em"}]
+    },
+    "textAlign": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "left"}, {"name": "center"}, {"name": "right"}, {"name": "justify"}]
+    },
+    "textIndent": {
+        "type": "num",
+        "default": "px",
+        "min": "0",
+        "max": "",
+        "step": "1",
+        "units": [{"name": "px"}]
+    },
+    "textTransform": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "capitalize"}, {"name": "uppercase"}, {"name": "lowercase"}]
+    },
+    "textDecoration": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "underline"}]
+    },
+    "userSelect": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "none"}, {"name": "auto"}, {"name": "text"}, {"name": "all"}]
+    },
+    "backgroundColor": {
+        "type": "text",
+        "default": ""
+    },
+    "backgroundImage": {
+        "type": "backgroundImage",
+        "default": "url",
+        "options": [
+            {"name": "url"},
+            {"name": "gradient",
+                "default": "linear-gradient",
+                "options": [{"name": "linear-gradient"}, {"name": "radial-gradient"}]
+            }
+        ]
+    },
+    "backgroundSize": {
+        "type": "backgroundSize",
+        "default": "default",
+        "options": [
+            {"name": "default"},
+            {"name": "cover"},
+            {"name": "contain"},
+            {"name": "value",
+                "x": {
+                    "default": "px",
+                    "min": "",
+                    "max": "",
+                    "step": "5",
+                    "units": [{"name": "px"}, {"name": "%"}, {"name": "auto"}]
+                },
+                "y": {
+                    "default": "px",
+                    "min": "",
+                    "max": "",
+                    "step": "5",
+                    "units": [{"name": "px"}, {"name": "%"}, {"name": "auto"}]
+                }
+            },
+            {"name": "auto"}
+        ]
+    },
+    "backgroundPosition": {
+        "type": "backgroundPosition",
+        "x": {
+            "default": "px",
+            "min": "",
+            "max": "",
+            "step": "5",
+            "units": [{"name": "px"}, {"name": "%"}]
+        },
+        "y": {
+            "default": "px",
+            "min": "",
+            "max": "",
+            "step": "5",
+            "units": [{"name": "px"}, {"name": "%"}]
+        }
+    },
+    "backgroundRepeat": {
+        "type": "select",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "no-repeat"}, {"name": "repeat"}, {"name": "repeat-x"}, {"name": "repeat-y"}]
+    },
+    "opacity": {
+        "type": "num",
+        "min": "0",
+        "max": "1",
+        "step": "0.1",
+        "default": ""
+    },
+    "boxShadow": {
+        "type": "boxShadow",
+        "default": "default",
+        "options": [{"name": "default"}, {"name": "custom"}, {"name": "none"}]
+    },
+    "transform": {
+        "type": "transform",
+        "default": ""
+    },
+    "filter": {
+        "type": "text",
+        "default": ""
+    },
+    "transitions": {
+        "type": "text",
+        "default": ""
+    }
+}

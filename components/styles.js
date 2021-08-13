@@ -4,31 +4,6 @@ import {css} from 'styled-components';
 export const StylesProvider = (styles) => {
 
     return css`
-        position: ${styles && styles.position || ''};
-        top: ${styles && styles.top || ''};
-        right: ${styles && styles.right || ''};
-        bottom: ${styles && styles.bottom || ''};
-        left: ${styles && styles.left || ''};
-        z-index: ${styles && styles.zIndex || ''};
-
-        display: ${styles && styles.display || ''};
-        overflow: ${styles && styles.overflow || ''};
-        overflow-x: ${styles && styles.overflowX || ''};
-        overflow-y: ${styles && styles.overflowY || ''};
-        cursor: ${styles && styles.cursor || ''};
-        pointer-events: ${styles && styles.pointerEvents || ''};
-
-        flex-direction: ${styles && styles.flexDirection || ''};
-        justify-content: ${styles && styles.justifyContent || ''};
-        flex-wrap: ${styles && styles.flexWrap || ''};
-        align-items: ${styles && styles.alignItems || ''};
-        align-self: ${styles && styles.alignSelf || ''};
-        column-gap: ${styles && styles.columnGap || ''};
-        flex-grow: ${styles && styles.flexGrow || ''};
-        flex-shrink: ${styles && styles.flexShrink || ''};
-        flex-basis: ${styles && styles.flexBasis || ''};
-        order: ${styles && styles.order || ''};
-
         width: ${styles && styles.width || ''};
         height: ${styles && styles.height || ''};
         min-width: ${styles && styles.minWidth || ''};
@@ -45,6 +20,25 @@ export const StylesProvider = (styles) => {
         padding-right: ${styles && styles.paddingRight || ''};
         padding-bottom: ${styles && styles.paddingBottom || ''};
         padding-left: ${styles && styles.paddingLeft || ''};
+
+        position: ${styles && styles.position || ''};
+        top: ${styles && styles.top || ''};
+        right: ${styles && styles.right || ''};
+        bottom: ${styles && styles.bottom || ''};
+        left: ${styles && styles.left || ''};
+        z-index: ${styles && styles.zIndex || ''};
+
+        display: ${styles && styles.display || ''};
+        flex-direction: ${styles && styles.flexDirection || ''};
+        justify-content: ${styles && styles.justifyContent || ''};
+        flex-wrap: ${styles && styles.flexWrap || ''};
+        align-items: ${styles && styles.alignItems || ''};
+        align-self: ${styles && styles.alignSelf || ''};
+        column-gap: ${styles && styles.columnGap || ''};
+        flex-grow: ${styles && styles.flexGrow || ''};
+        flex-shrink: ${styles && styles.flexShrink || ''};
+        flex-basis: ${styles && styles.flexBasis || ''};
+        order: ${styles && styles.order || ''};
 
         outline: ${styles && styles.outline || ''};
         border: ${styles && styles.border || ''};
@@ -80,6 +74,11 @@ export const StylesProvider = (styles) => {
         transform: ${styles && styles.transform || ''};
         filter: ${styles && styles.filter || ''};
         transition: ${styles && styles.transitions && styles.transitions.join(', ') || ''};
+        overflow: ${styles && styles.overflow || ''};
+        overflow-x: ${styles && styles.overflowX || ''};
+        overflow-y: ${styles && styles.overflowY || ''};
+        cursor: ${styles && styles.cursor || ''};
+        pointer-events: ${styles && styles.pointerEvents || ''};
 
         &:hover {
             ${styles && styles.hover && StylesProvider(styles.hover)}
