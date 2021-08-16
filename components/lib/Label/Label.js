@@ -2,17 +2,13 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { MODE } from '../../../core/config/site';
-import { generateNewId, getComponent, getHandler } from '../../../core/functions/components';
-import { getAttrs } from '../../../core/functions/styles';
-import { setActiveComponent, setDragendComponent, unsetActiveComponent } from '../../../store/actions/document';
-import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
-import { LabelSpan, LabelH1, LabelH2, LabelH3, LabelH4, LabelH5, LabelH6, InputLabel } from './LabelStyled'
+import { getComponent, getHandler, getParent } from '../../../core/functions/components';
+import { setActiveComponent, setDragendComponent, unsetActiveComponent, updateComponentChildrenList } from '../../../store/actions/document';
+import { LabelSpan } from './LabelStyled'
 
 
 
 export default function Label(props) {
-
-    const attrs = getAttrs(props.componentData);
 
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -21,6 +17,7 @@ export default function Label(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
+    const text = componentData.value || '';
 
 
     const onDragStart = (e, componentId) => {
@@ -29,6 +26,33 @@ export default function Label(props) {
         e.target.style.opacity = '0.4';
         e.dataTransfer.setData('componentId', componentId);
         e.dataTransfer.effectAllowed = e.shiftKey ? 'none' : 'move';
+    }
+
+    const onDragEnter = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.target.id === dragendComponent.id) return;
+
+        if (e.shiftKey) {
+            const parent = getParent(componentsData, id);
+            const hasCommonParent = parent.childrenList.includes(dragendComponent);
+
+            if (hasCommonParent) {
+                const index = parent.childrenList.indexOf(componentData);
+                const parentCopy = {
+                    ... parent,
+                    childrenList: [...parent.childrenList]
+                };
+                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+                parentCopy.childrenList.splice(index, 0, dragendComponent);
+                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            }
+        }
+    }
+
+    const onDragLeave = (e) => {
+        e.stopPropagation();
     }
 
     const onDragEnd = (e) => {
@@ -42,131 +66,33 @@ export default function Label(props) {
     }
 
 
-    const label = (heading) => {
-
-        const text = componentData.value || '';
-        const htmlFor = attrs && componentData.attrs['for'] || '';
-
-        switch(heading) {
-            case 'h1':
-                return (
-                    <LabelH1
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH1>
-                );
-            case 'h2':
-                return (
-                    <LabelH2
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH2>
-                );
-            case 'h3':
-                return (
-                    <LabelH3
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH3>
-                );
-            case 'h4':
-                return (
-                    <LabelH4
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH4>
-                );
-            case 'h5':
-                return (
-                    <LabelH5
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH5>
-                );
-            case 'h6':
-                return (
-                    <LabelH6
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelH6>
-                );
-            case 'label':
-                return (
-                    <InputLabel
-                        htmlFor={htmlFor}
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        onClick={getHandler(props, 'onClick')}
-                    >
-                        {text}
-                        {props.children}
-                    </InputLabel>
-                );
-            default:
-                return (
-                    <LabelSpan
-                        id={id}
-                        draggable
-                        {...props}
-                        componentData={componentData}
-                        isActiveComponent={isActiveComponent}
-                        {...props.handlers}
-                        onClick={(e) => {
-                            getHandler(props, 'onClick')();
-                            if (MODE === 'admin') {
-                                e.stopPropagation();
-                                if (activeComponent && activeComponent.id === id) {
-                                    dispatch(unsetActiveComponent());
-                                    return;
-                                }
-                                dispatch(setActiveComponent(props.componentData));
-                            }
-                        }}
-                        onDragStart={(e) => onDragStart(e, id)}
-                        onDragEnd={onDragEnd}
-                        onDragOver={onDragOver}
-                    >
-                        {text}
-                        {props.children}
-                    </LabelSpan>
-                );
-        }
-    }
-
     return (
-        <>
-            {label(componentData.heading)}
-        </>
+        <LabelSpan
+            id={id}
+            draggable
+            {...props}
+            componentData={componentData}
+            isActiveComponent={isActiveComponent}
+            {...props.handlers}
+            onClick={(e) => {
+                getHandler(props, 'onClick')();
+                if (MODE === 'admin') {
+                    e.stopPropagation();
+                    if (activeComponent && activeComponent.id === id) {
+                        dispatch(unsetActiveComponent());
+                        return;
+                    }
+                    dispatch(setActiveComponent(props.componentData));
+                }
+            }}
+            onDragStart={(e) => onDragStart(e, id)}
+            onDragEnter={onDragEnter}
+            onDragLeave={onDragLeave}
+            onDragEnd={onDragEnd}
+            onDragOver={onDragOver}
+        >
+            {text}
+            {props.children}
+        </LabelSpan>
     );
 }
