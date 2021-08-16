@@ -23,6 +23,7 @@ export default function Section(props) {
     const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
 
+
     const checkAllowDrop = (dragendComponent, dropTarget) => {
         if (getChild(dragendComponent, dropTarget.id)) {
             return false;
@@ -58,20 +59,17 @@ export default function Section(props) {
         e.preventDefault();
         e.stopPropagation();
         e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
-        setDragCounter(prev => prev + 1);
+        if (!e.shiftKey) setDragCounter(prev => prev + 1);
 
         if (e.target.id === dragendComponent.id) return;
 
 
         if (e.shiftKey) {
-            const parent = getParent(componentsData, id);
-
-            const hasCommonParent = parent.childrenList.includes(dragendComponent);
-            console.log(hasCommonParent);
-
-            if (!hasCommonParent) {
-                e.target.style.pointerEvents = 'none';
+            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
+                Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
             };
+            const parent = getParent(componentsData, id);
+            const hasCommonParent = parent.childrenList.includes(dragendComponent);
 
             if (hasCommonParent) {
                 const index = parent.childrenList.indexOf(componentData);
@@ -89,22 +87,16 @@ export default function Section(props) {
     const onDragLeave = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setDragCounter(prev => prev - 1);
-
-        const parent = getParent(componentsData, id);
-        const hasCommonParent = parent.childrenList.includes(dragendComponent);
-
-        if (!hasCommonParent) {
-            console.log('has no')
-            // e.target.style.pointerEvents = 'auto';
-        };
+        if (!e.shiftKey) setDragCounter(prev => prev - 1);
+        if (e.shiftKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+        }
     }
 
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
         e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
-        if (e.shiftKey) setAllowDrop(false);
     }
 
     const onDragEnd = (e) => {

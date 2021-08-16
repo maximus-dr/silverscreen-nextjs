@@ -32,7 +32,8 @@
             "screen_tablet": {},
             "screen_tablet_landscape": {},
             "screen_desktop": {}
-        }
+        },
+        "childrenList": []
     },
 
     "label": {
