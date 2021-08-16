@@ -62,7 +62,6 @@ export default function Section(props) {
             e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
         if (!e.shiftKey) setDragCounter(prev => prev + 1);
-
         if (e.target.id === dragendComponent.id) return;
 
 
@@ -140,6 +139,10 @@ export default function Section(props) {
             if (template.typeName === 'page') return;
             const id = generateNewId(10);
             dispatch(addComponent(targetId, {id, ...template}));
+        }
+
+        if (e.shiftKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }
 
