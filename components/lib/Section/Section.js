@@ -58,7 +58,9 @@ export default function Section(props) {
     const onDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        if (!e.shiftKey) {
+            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        }
         if (!e.shiftKey) setDragCounter(prev => prev + 1);
 
         if (e.target.id === dragendComponent.id) return;
@@ -96,7 +98,12 @@ export default function Section(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        if (!e.shiftKey) {
+            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        }
+        if (e.shiftKey) {
+            e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
+        }
     }
 
     const onDragEnd = (e) => {

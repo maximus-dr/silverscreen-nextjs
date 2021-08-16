@@ -25,7 +25,7 @@ export default function Label(props) {
         e.stopPropagation();
         e.target.style.opacity = '0.4';
         e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.effectAllowed = e.shiftKey ? 'none' : 'move';
+        e.dataTransfer.effectAllowed = 'move';
     }
 
     const onDragEnter = (e) => {
@@ -65,6 +65,10 @@ export default function Label(props) {
         e.stopPropagation();
     }
 
+    const onDrop = (e) => {
+        e.stopPropagation();
+    }
+
 
     return (
         <LabelSpan
@@ -90,6 +94,7 @@ export default function Label(props) {
             onDragLeave={onDragLeave}
             onDragEnd={onDragEnd}
             onDragOver={onDragOver}
+            onDrop={onDrop}
         >
             {text}
             {props.children}
