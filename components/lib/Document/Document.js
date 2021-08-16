@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../core/functions/admin/components';
-import { addComponent, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../store/actions/document';
+import { addComponent, addComponentToActive, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../store/actions/document';
 
 
 
@@ -42,6 +42,7 @@ export default function Document(props) {
                 console.log('CTRL + V pressed');
                 const componentCopy = updateComponentIds({...bufferedComponent});
                 dispatch(addComponent(activeComponent.id, componentCopy));
+                dispatch(addComponentToActive(componentCopy));
             }
         }
 

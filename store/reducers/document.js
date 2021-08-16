@@ -1,6 +1,6 @@
 import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, updateComponentChildrenList } from "../../core/functions/admin/components";
 import { setPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -58,6 +58,15 @@ export const documentReducer = (state = {}, action) => {
                 componentsData: updateComponentChildrenList(state.componentsData, action.componentId, action.childrenList)
             }
 
+        case UPDATE_ACTIVE_COMPONENT_CHILDRENLIST:
+            return {
+                ...state,
+                activeComponent: {
+                    ...state.activeComponent,
+                    childrenList: action.childrenList
+                }
+            }
+
         case ADD_COMPONENT:
             const {containerId, component} = action;
             return {
@@ -88,6 +97,18 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 buffer: action.component
+            }
+
+        case ADD_COMPONENT_TO_ACTIVE:
+            return {
+                ...state,
+                activeComponent: {
+                    ...state.activeComponent,
+                    childrenList: [
+                        ...state.activeComponent.childrenList,
+                        action.component
+                    ]
+                }
             }
 
         default:

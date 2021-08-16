@@ -11,6 +11,8 @@ const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 const SET_DOCUMENT_COMPONENTS_DATA = 'SET_DOCUMENT_COMPONENTS_DATA';
 const SET_COMPONENT_TO_BUFFER = 'SET_COMPONENT_TO_BUFFER';
 const UPDATE_COMPONENT_CHILDRENLIST = 'UPDATE_COMPONENT_CHILDRENLIST';
+const UPDATE_ACTIVE_COMPONENT_CHILDRENLIST = 'UPDATE_ACTIVE_COMPONENT_CHILDRENLIST';
+const ADD_COMPONENT_TO_ACTIVE = 'ADD_COMPONENT_TO_ACTIVE';
 
 
 
@@ -56,6 +58,11 @@ const updateComponentChildrenList = (componentId, childrenList) => ({
     childrenList
 });
 
+const updateActiveComponentChildrenList = (childrenList) => ({
+    type: UPDATE_ACTIVE_COMPONENT_CHILDRENLIST,
+    childrenList
+})
+
 const addComponent = (containerId, component) => ({
     type: ADD_COMPONENT,
     containerId,
@@ -81,6 +88,11 @@ const setComponentToBuffer = (component) => ({
     component
 });
 
+const addComponentToActive = (component) => ({
+    type: ADD_COMPONENT_TO_ACTIVE,
+    component
+});
+
 
 
 export {
@@ -96,7 +108,9 @@ export {
     setDragendComponent,
     unsetDragendComponent,
     setComponentToBuffer,
-    updateComponentChildrenList
+    updateComponentChildrenList,
+    updateActiveComponentChildrenList,
+    addComponentToActive
 }
 
 export {
@@ -107,10 +121,12 @@ export {
     SET_COMPONENT_VALUE,
     SET_COMPONENT_NAME,
     UPDATE_COMPONENT_CHILDRENLIST,
+    UPDATE_ACTIVE_COMPONENT_CHILDRENLIST,
     ADD_COMPONENT,
     DELETE_COMPONENT,
     SET_DRAGEND_COMPONENT,
     UNSET_DRAGEND_COMPONENT,
     SET_DOCUMENT_COMPONENTS_DATA,
-    SET_COMPONENT_TO_BUFFER
+    SET_COMPONENT_TO_BUFFER,
+    ADD_COMPONENT_TO_ACTIVE
 }
