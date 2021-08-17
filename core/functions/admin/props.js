@@ -258,7 +258,7 @@ const parseProp = (styles, propName) => {
             const colors = propValue.trim().replace('radial-gradient(', '').replace(')', '').split(', ');
             colors.forEach((item, i) => {
                 value.colors[i].value = item;
-            })
+            });
 
             result.value = value;
             result.gradient = 'radial-gradient';
