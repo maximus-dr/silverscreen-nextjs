@@ -7,7 +7,7 @@ const fs = require('fs');
 
 
 export async function getStaticProps() {
-  const dbPath = path.join(process.cwd(), 'db/demo/b.json');
+  const dbPath = path.join(process.cwd(), 'db/demo/db.json');
   const componentsData = fs.readFileSync(dbPath, 'utf8');
 
   const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
