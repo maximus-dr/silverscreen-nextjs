@@ -3,7 +3,7 @@ import { SectionComponent } from './SectionStyled'
 import { generateNewId, getChild, getComponent, getHandler, getParent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
-import { addComponent, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
+import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -138,6 +138,7 @@ export default function Section(props) {
             const template = templates[templateId];
             if (template.typeName === 'page') return;
             const id = generateNewId(10);
+            dispatch(addComponentToActive({id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
 

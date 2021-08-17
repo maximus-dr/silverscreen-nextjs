@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../../../core/functions/components';
-import {  addComponent, setDragendComponent, unsetDragendComponent } from '../../../../../store/actions/document';
+import {  addComponent, addComponentToActive, setDragendComponent, unsetDragendComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
 import { nanoid } from 'nanoid';
 
@@ -43,7 +43,8 @@ export default function ComponentsGroup(props) {
                             if (template.name === 'page' && activeComponent.typeName !== 'Document') {
                                 return
                             }
-                            const id = generateNewId(10)
+                            const id = generateNewId(10);
+                            dispatch(addComponentToActive({...template.component, id}));
                             dispatch(addComponent(activeComponent.id, {...template.component, id}));
                         }
                     }}

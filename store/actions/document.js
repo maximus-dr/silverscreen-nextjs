@@ -75,6 +75,11 @@ const addComponent = (containerId, component) => ({
     component
 });
 
+const addComponentToActive = (component) => ({
+    type: ADD_COMPONENT_TO_ACTIVE,
+    component
+});
+
 const deleteComponent = (componentId) => ({
     type: DELETE_COMPONENT,
     componentId
@@ -94,10 +99,6 @@ const setComponentToBuffer = (component) => ({
     component
 });
 
-const addComponentToActive = (component) => ({
-    type: ADD_COMPONENT_TO_ACTIVE,
-    component
-});
 
 
 
