@@ -96,6 +96,7 @@ const getComponent = (componentsData, componentId) => {
 
 
 const getChild = (componentData, childId) => {
+    if (!componentData) return;
     let result = null;
 
     componentData.childrenList.forEach(item => {

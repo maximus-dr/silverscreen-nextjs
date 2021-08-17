@@ -44,30 +44,3 @@ export const ComponentInfoTextarea = styled.textarea`
 export const ComponentName = styled.input`
     width: 100%;
 `;
-
-export const DeleteButton = styled.button`
-    margin: 5px;
-    margin-top: 15px;
-    margin-bottom: 0;
-    padding: 5px 15px;
-    border-radius: 4px;
-    border:none;
-    transition: background-color 100ms, box-shadow 200ms, transform 100ms;
-    color: rgba(0, 0, 0, 0.87);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 13px;
-    background-color: #e0e0e0;
-    cursor: pointer;
-
-    &:hover {
-        color: rgba(0, 0, 0, 0.87);
-        background-color: rgba(0, 0, 0, 0.25);
-    }
-
-    &:active {
-        color: rgba(0, 0, 0, 0.87);
-        background-color: #d5d5d5;
-        transform: scale(0.9);
-    }
-`;

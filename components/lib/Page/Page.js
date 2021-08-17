@@ -2,7 +2,7 @@ import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId, getChild, getComponent } from '../../../core/functions/components';
-import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent } from '../../../store/actions/document';
+import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent, unsetDragendComponent } from '../../../store/actions/document';
 import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { MODE } from '../../../core/config/site';
 import { useEffect, useState } from 'react';
@@ -38,7 +38,7 @@ export default function Page(props) {
             setIsDroppable(false);
         }
 
-        else {
+        else if (dragendComponent) {
             setIsDroppable(checkAllowDrop(dragendComponent, componentData));
         }
     }, [dragCounter, componentData, dragendComponent]);
@@ -82,6 +82,7 @@ export default function Page(props) {
             const id = generateNewId(10);
             dispatch(addComponent(targetId, {id, ...template}));
         }
+        if (dragendComponent) dispatch(unsetDragendComponent());
     }
 
   return (

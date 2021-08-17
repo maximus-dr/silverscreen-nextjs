@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux'
 import { renderComponents } from '../../../core/functions/render';
 import Notification from '../Notifications/Notification/Notification';
+import PanelTools from '../Panels/PanelTools/PanelTools';
 import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './WorkspaceStyled'
 
 
@@ -21,6 +22,7 @@ export default function Workspace() {
                     {components}
                 </WorkspacePage>
 
+                {/* <PanelTools /> */}
                 {/* <Notification /> */}
             </WorkspacePageWrapper>
         </WorkspaceWrapper>

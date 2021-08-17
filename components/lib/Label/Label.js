@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { MODE } from '../../../core/config/site';
 import { getComponent, getHandler, getParent } from '../../../core/functions/components';
-import { setActiveComponent, setDragendComponent, unsetActiveComponent, updateComponentChildrenList } from '../../../store/actions/document';
+import { setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
 import { LabelSpan } from './LabelStyled'
 
 
@@ -57,6 +57,7 @@ export default function Label(props) {
 
     const onDragEnd = (e) => {
         e.target.style.opacity = '1';
+        if (dragendComponent) dispatch(unsetDragendComponent());
     }
 
     const onDragOver = (e) => {
