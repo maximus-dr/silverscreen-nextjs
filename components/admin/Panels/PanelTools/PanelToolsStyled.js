@@ -13,10 +13,12 @@ export const ToolsFixWrapper = styled.div`
     left: 50%;
     transform: translateX(-50%);
     display: inline-flex;
-    min-width: 100px;
+    width: 330px;
+    justify-content: space-between;
     height: 40px;
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
     background-color: #ffffff;
+    padding: 0 15px;
 `;
 
 export const ToolsItem = styled.div`

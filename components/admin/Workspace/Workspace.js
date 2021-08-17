@@ -22,7 +22,7 @@ export default function Workspace() {
                     {components}
                 </WorkspacePage>
 
-                {/* <PanelTools /> */}
+                <PanelTools />
                 {/* <Notification /> */}
             </WorkspacePageWrapper>
         </WorkspaceWrapper>

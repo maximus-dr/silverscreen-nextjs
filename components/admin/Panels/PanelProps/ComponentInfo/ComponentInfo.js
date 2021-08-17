@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteComponent, setComponentName, setComponentValue, unsetActiveComponent, deleteComponentFromList } from '../../../../../store/actions/document';
+import { deleteComponent, setComponentName, setComponentValue, unsetActiveComponent, deleteComponentFromList, setComponentValueToActive } from '../../../../../store/actions/document';
 import { getComponent, getParent } from '../../../../../core/functions/components';
 
 
@@ -56,7 +56,8 @@ export default function ComponentSeciton(props) {
                                             dispatch(setComponentValue(
                                                 e.target.value,
                                                 componentData.id
-                                            ))
+                                            ));
+                                            dispatch(setComponentValueToActive(e.target.value));
                                         }}
                                     />
                                 </ComponentPropValue>

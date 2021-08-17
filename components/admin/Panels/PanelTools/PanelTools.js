@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../../core/functions/admin/components';
 import { getParent } from '../../../../core/functions/components';
-import { addComponent, addComponentToActive, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../../store/actions/document';
+import { addComponent, addComponentToActive, deleteComponent, setComponentToBuffer, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
 import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled'
 
 export default function PanelTools() {
@@ -17,12 +17,13 @@ export default function PanelTools() {
 
     const parent = getParent(componentsData, activeComponent.id);
     const lastChild = parent.childrenList[parent.childrenList.length - 1];
+    const index = parent.childrenList.indexOf(activeComponent);
 
-    const isSingleChild = parent.childrenList.length === 1;
+    const isOnlyChild = parent.childrenList.length === 1;
     const isLastChild = activeComponent === lastChild;
+    const isFirstChild = parent.childrenList.indexOf(activeComponent) === 0;
 
-    if (isSingleChild) console.log('single');
-    if (isLastChild) console.log('bingo');
+
 
     const onCopyClick = () => {
         dispatch(setComponentToBuffer(activeComponent));
@@ -43,6 +44,26 @@ export default function PanelTools() {
     const onDeleteClick = () => {
         dispatch(unsetActiveComponent());
         dispatch(deleteComponent(activeComponent.id));
+    }
+
+    const onBackwardClick = () => {
+        const parentCopy = {
+            ...parent,
+            childrenList: [...parent.childrenList]
+        }
+        parentCopy.childrenList.splice(index, 1);
+        parentCopy.childrenList.splice(index - 1, 0, activeComponent);
+        dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+    }
+
+    const onForwardClick = () => {
+        const parentCopy = {
+            ...parent,
+            childrenList: [...parent.childrenList]
+        }
+        parentCopy.childrenList.splice(index, 1);
+        parentCopy.childrenList.splice(index + 1, 0, activeComponent);
+        dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
     }
 
 
@@ -79,10 +100,20 @@ export default function PanelTools() {
                     </ToolsButton>
                 </ToolsItem>
                 <ToolsItem>
-                    <ToolsButton>forw</ToolsButton>
+                    <ToolsButton
+                        disabled={isOnlyChild || isFirstChild}
+                        onClick={onBackwardClick}
+                    >
+                        back
+                    </ToolsButton>
                 </ToolsItem>
                 <ToolsItem>
-                    <ToolsButton>back</ToolsButton>
+                    <ToolsButton
+                        disabled={isOnlyChild || isLastChild}
+                        onClick={onForwardClick}
+                    >
+                        forw
+                    </ToolsButton>
                 </ToolsItem>
             </ToolsFixWrapper>
         </ToolsWrapper>
