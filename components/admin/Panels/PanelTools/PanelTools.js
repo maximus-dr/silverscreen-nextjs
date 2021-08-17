@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../../core/functions/admin/components';
 import { getParent } from '../../../../core/functions/components';
-import { addComponent, addComponentToActive, deleteComponent, setComponentToBuffer, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
+import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setComponentToBuffer, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
 import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled'
 
 export default function PanelTools() {
@@ -21,7 +21,6 @@ export default function PanelTools() {
     const isOnlyChild = parent.childrenList.length === 1;
     const isLastChild = activeComponent === lastChild;
     const isFirstChild = parent.childrenList.indexOf(activeComponent) === 0;
-
 
     const onCopyClick = () => {
         dispatch(setComponentToBuffer(activeComponent));
@@ -42,6 +41,14 @@ export default function PanelTools() {
     const onDeleteClick = () => {
         dispatch(unsetActiveComponent());
         dispatch(deleteComponent(activeComponent.id));
+    }
+
+    const onUpClick = () => {
+        const outerParent = getParent(componentsData, parent.id);
+        dispatch(unsetActiveComponent());
+        dispatch(deleteComponent(activeComponent.id));
+        dispatch(setActiveComponent(activeComponent));
+        dispatch(addComponent(outerParent.id, activeComponent));
     }
 
     const onBackwardClick = () => {
@@ -103,6 +110,14 @@ export default function PanelTools() {
                         onClick={onDeleteClick}
                     >
                         delete
+                    </ToolsButton>
+                </ToolsItem>
+                <ToolsItem>
+                    <ToolsButton
+                        disabled={parent.typeName === 'page'}
+                        onClick={onUpClick}
+                    >
+                        up
                     </ToolsButton>
                 </ToolsItem>
                 <ToolsItem>
