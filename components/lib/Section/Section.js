@@ -58,14 +58,14 @@ export default function Section(props) {
     const onDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!e.shiftKey) {
+        if (!e.altKey) {
             e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
-        if (!e.shiftKey) setDragCounter(prev => prev + 1);
+        if (!e.altKey) setDragCounter(prev => prev + 1);
         if (e.target.id === dragendComponent.id) return;
 
 
-        if (e.shiftKey) {
+        if (e.altKey) {
             if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
                 Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
             };
@@ -88,8 +88,8 @@ export default function Section(props) {
     const onDragLeave = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!e.shiftKey) setDragCounter(prev => prev - 1);
-        if (e.shiftKey) {
+        if (!e.altKey) setDragCounter(prev => prev - 1);
+        if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }
@@ -97,10 +97,10 @@ export default function Section(props) {
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!e.shiftKey) {
+        if (!e.altKey) {
             e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
-        if (e.shiftKey) {
+        if (e.altKey) {
             e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
         }
     }
@@ -127,7 +127,7 @@ export default function Section(props) {
         }
         if (targetId === componentId) return;
 
-        if (componentId && !e.shiftKey) {
+        if (componentId && !e.altKey) {
             const component = getComponent(componentsData, componentId);
             if (getChild(component, targetId)) return;
             dispatch(deleteComponent(componentId));
@@ -141,7 +141,7 @@ export default function Section(props) {
             dispatch(addComponent(targetId, {id, ...template}));
         }
 
-        if (e.shiftKey) {
+        if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generateNewId, getChild, getComponent, getParent } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, deleteComponentFromList, setDragendComponent, unsetDragendComponent } from "../../../../../store/actions/document";
-import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeItemWrapper, TreeWrapper } from "./DocumentTreeStyled";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, deleteComponentFromList, setDragendComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../../../store/actions/document";
+import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeWrapper } from "./DocumentTreeStyled";
 
 
 export const templates = {
@@ -140,20 +140,45 @@ export default function DocumentTree(props) {
     const onDragEnter = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setDragCounter(prev => prev + 1);
-        e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
+        if (!e.altKey) setDragCounter(prev => prev + 1);
+        if (!e.altKey) e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
+
+        if (props.nodeData.id === dragendComponent.id) return;
+
+        if (e.altKey) {
+            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
+                Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
+            };
+            const parent = getParent(componentsData, props.nodeData.id);
+            const hasCommonParent = parent && parent.childrenList.includes(dragendComponent);
+
+            if (hasCommonParent) {
+                const index = parent.childrenList.indexOf(nodeData);
+                const parentCopy = {
+                    ...parent,
+                    childrenList: [...parent.childrenList]
+                }
+                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+                parentCopy.childrenList.splice(index, 0, dragendComponent);
+                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            }
+        }
     }
 
     const onDragLeave = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        setDragCounter(prev => prev - 1);
+        if (!e.altKey) setDragCounter(prev => prev - 1);
+
+        if (e.altKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+        }
     }
 
     const onDragOver = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
+        if (!e.altKey) e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
     }
 
     const onDragEnd = (e) => {
@@ -173,7 +198,7 @@ export default function DocumentTree(props) {
         setDragCounter(0);
 
         if (targetId === componentId) return;
-
+        if (e.altKey) return;
         if (componentId) {
             const component = getComponent(componentsData, componentId);
             if (component.childrenList.find(item => item.id === targetId)) return;
@@ -185,15 +210,16 @@ export default function DocumentTree(props) {
             const id = generateNewId(10);
             dispatch(addComponent(targetId, {id, ...template}));
         }
+        if (e.altKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+        }
     }
 
 
     return (
         <TreeWrapper>
-            <TreeItemWrapper
-                id={`tree-${props.nodeData.id}`}
-            >
                 <TreeItem
+                    id={`tree-${props.nodeData.id}`}
                     draggable
                     onDragStart={(e) => onDragStart(e, props.nodeData.id)}
                     onDragEnter={onDragEnter}
@@ -218,6 +244,7 @@ export default function DocumentTree(props) {
                         isActive={isActive}
                         hasChildren={hasChildren}
                         expanded={expanded}
+                        onDragStart={(e) => e.preventDefault()}
                         onClick={(e) => {
                             e.preventDefault();
                             hasChildren && e.stopPropagation();
@@ -234,7 +261,6 @@ export default function DocumentTree(props) {
                         {nodeData.name}
                     </TreeItemName>
                 </TreeItem>
-            </TreeItemWrapper>
             <TreeChildren expanded={expanded}>
                 {props.children}
             </TreeChildren>

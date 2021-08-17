@@ -47,13 +47,13 @@ export default function Page(props) {
         e.preventDefault();
         e.stopPropagation();
         e.dataTransfer.dropEffect = isDroppable ? e.dataTransfer.effectAllowed : 'none';
-        if (!e.shiftKey) setDragCounter(prev => prev + 1);
+        if (!e.altKey) setDragCounter(prev => prev + 1);
     }
 
     const onDragLeave = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        if (!e.shiftKey) setDragCounter(prev => prev - 1);
+        if (!e.altKey) setDragCounter(prev => prev - 1);
     }
 
     const onDragOver = (e) => {

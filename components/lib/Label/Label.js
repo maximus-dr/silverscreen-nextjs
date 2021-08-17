@@ -34,7 +34,7 @@ export default function Label(props) {
 
         if (e.target.id === dragendComponent.id) return;
 
-        if (e.shiftKey) {
+        if (e.altKey) {
             const parent = getParent(componentsData, id);
             const hasCommonParent = parent.childrenList.includes(dragendComponent);
 

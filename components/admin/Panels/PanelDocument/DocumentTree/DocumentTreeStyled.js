@@ -7,10 +7,6 @@ const TreeWrapper = styled.div`
     padding-right: 1px;
 `;
 
-const TreeItemWrapper = styled.div`
-    display: flex;
-`;
-
 const TreeItem = styled.div`
     display: flex;
     flex-wrap: nowrap;
@@ -18,6 +14,8 @@ const TreeItem = styled.div`
     transition: font-weight 10ms;
     flex: 0 0 auto;
     width: 100%;
+    outline: none;
+    background-color: transparent;
 
     &:hover {
         outline: 1px dashed #1976d2;
@@ -47,7 +45,7 @@ const TreeItemType = styled.span`
     padding: 1px;
     padding-right: 10px;
     font-weight: 500;
-    
+
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
 
@@ -68,7 +66,7 @@ const TreeItemType = styled.span`
     ${props => {
         return props.hasChildren && css`
             cursor: pointer;
-            
+
             &:before {
                 content: '';
                 position: absolute;
@@ -148,7 +146,7 @@ const TreeItemName = styled.span`
     font-size: 13px;
     flex: 0 0 auto;
 
-    
+
 
     ${props => {
         return props.isPage && css`
@@ -182,7 +180,6 @@ const TreeChildren = styled.div`
 
 export {
     TreeWrapper,
-    TreeItemWrapper,
     TreeItem,
     TreeItemType,
     TreeItemName,
