@@ -53,11 +53,11 @@ export default function ComponentSeciton(props) {
                                     <ComponentInfoTextarea
                                         value={componentData.value || ''}
                                         onChange={(e) => {
+                                            dispatch(setComponentValueToActive(e.target.value));
                                             dispatch(setComponentValue(
                                                 e.target.value,
                                                 componentData.id
                                             ));
-                                            dispatch(setComponentValueToActive(e.target.value));
                                         }}
                                     />
                                 </ComponentPropValue>

@@ -17,12 +17,10 @@ export default function PanelTools() {
 
     const parent = getParent(componentsData, activeComponent.id);
     const lastChild = parent.childrenList[parent.childrenList.length - 1];
-    const index = parent.childrenList.indexOf(activeComponent);
 
     const isOnlyChild = parent.childrenList.length === 1;
     const isLastChild = activeComponent === lastChild;
     const isFirstChild = parent.childrenList.indexOf(activeComponent) === 0;
-
 
 
     const onCopyClick = () => {
@@ -47,6 +45,10 @@ export default function PanelTools() {
     }
 
     const onBackwardClick = () => {
+        let index;
+        parent.childrenList.forEach((item, i) => {
+            if (item.id === activeComponent.id) index = i;
+        });
         const parentCopy = {
             ...parent,
             childrenList: [...parent.childrenList]
@@ -57,6 +59,10 @@ export default function PanelTools() {
     }
 
     const onForwardClick = () => {
+        let index;
+        parent.childrenList.forEach((item, i) => {
+            if (item.id === activeComponent.id) index = i;
+        });
         const parentCopy = {
             ...parent,
             childrenList: [...parent.childrenList]
