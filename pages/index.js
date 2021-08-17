@@ -7,13 +7,13 @@ const fs = require('fs');
 
 
 export async function getStaticProps() {
-  const dbPath = path.join(process.cwd(), 'db/db.json');
+  const dbPath = path.join(process.cwd(), 'db/demo/b.json');
   const componentsData = fs.readFileSync(dbPath, 'utf8');
 
   const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
     .then(res => res.data)
     .catch(err => console.log(err));
-  
+
   return {
     props: {
       componentsData: JSON.parse(componentsData),
@@ -27,14 +27,14 @@ export async function getStaticProps() {
 // export async function getServerSideProps() {
 //   const dbPath = path.join(process.cwd(), 'db/db.json');
 //   const components = fs.readFileSync(dbPath, 'utf8');
-  
+
 //   const reduxStore = initializeStore()
 //   const { dispatch } = reduxStore
 
 //   const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
 //     .then(res => res.data)
 //     .catch(err => console.log(err));
-  
+
 //   dispatch({
 //       type: 'SET_EVENTS',
 //       events
@@ -45,11 +45,11 @@ export async function getStaticProps() {
 //       components: JSON.parse(components)
 //   });
 
-//   return { 
-//       props: { 
+//   return {
+//       props: {
 //           initialReduxState: reduxStore.getState(),
 //           components: JSON.parse(components)
-//       } 
+//       }
 //   }
 // }
 

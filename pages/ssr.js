@@ -11,9 +11,9 @@ import Head from 'next/head';
 
 
 export async function getServerSideProps() {
-    const dbPath = path.join(process.cwd(), 'db/db.json');
+    const dbPath = path.join(process.cwd(), 'db/demo/db.json');
     const componentsData = fs.readFileSync(dbPath, 'utf8');
-    
+
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
@@ -26,11 +26,11 @@ export async function getServerSideProps() {
         events
     })
 
-    return { 
-        props: { 
+    return {
+        props: {
             initialReduxState: reduxStore.getState(),
             components: JSON.parse(componentsData)
-        } 
+        }
     }
 }
 
@@ -38,7 +38,7 @@ export async function getServerSideProps() {
 export default function SSR(props) {
 
     // const Components = renderComponents(props.components);
-    
+
     // useEffect(() => {
     //     const numOfElements = document.getElementsByTagName('*').length;
     // }, []);
