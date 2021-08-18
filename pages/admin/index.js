@@ -10,7 +10,7 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
-import { setDocumentComponentsData, setResolution } from "../../store/actions/document";
+import { setDocumentComponentsData, setResolution, setTemplates } from "../../store/actions/document";
 
 
 
@@ -42,6 +42,11 @@ export async function getServerSideProps() {
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
+
+    const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
+    const templates = JSON.parse(templatesData);
+
+
     // const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
     //   .then(res => res.data)
     //   .catch(err => console.log(err));
@@ -52,6 +57,7 @@ export async function getServerSideProps() {
     // });
 
     dispatch(setDocumentComponentsData(componentsData));
+    dispatch(setTemplates(templates));
     dispatch(setResolution('320'));
 
     return {

@@ -1,6 +1,6 @@
 import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, updateComponentChildrenList } from "../../core/functions/admin/components";
 import { setPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -12,6 +12,12 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 componentsData: action.componentsData
+            }
+
+        case SET_TEMPLATES:
+            return {
+                ...state,
+                templates: action.templates
             }
 
         case SET_ACTIVE_COMPONENT:
@@ -118,6 +124,12 @@ export const documentReducer = (state = {}, action) => {
                         action.component
                     ]
                 }
+            }
+
+        case SET_MODAL:
+            return {
+                ...state,
+                modal: action.modal
             }
 
         default:

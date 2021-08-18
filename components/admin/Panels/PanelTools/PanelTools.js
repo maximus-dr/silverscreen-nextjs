@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../../core/functions/admin/components';
 import { getParent } from '../../../../core/functions/components';
-import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setComponentToBuffer, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
+import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setComponentToBuffer, setModal, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
 import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled';
 
 
@@ -80,7 +80,26 @@ export default function PanelTools() {
         dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
     }
 
-    const onSaveClick = () => {}
+    const template = activeComponent;
+
+    const onSaveClick = async () => {
+        dispatch(setModal('SaveTemplate'));
+
+        // const response = await fetch('/api/templates', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ template }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // });
+        // const data = await response.json();
+    }
+
+    const onTemplatesClick = async () => {
+        const response = await fetch('/api/templates');
+        const data = await response.json();
+        console.log('data', data);
+    }
 
 
     return activeComponent ? (
@@ -144,6 +163,13 @@ export default function PanelTools() {
                         onClick={onSaveClick}
                     >
                         save
+                    </ToolsButton>
+                </ToolsItem>
+                <ToolsItem>
+                    <ToolsButton
+                        onClick={onTemplatesClick}
+                    >
+                        templates
                     </ToolsButton>
                 </ToolsItem>
             </ToolsFixWrapper>

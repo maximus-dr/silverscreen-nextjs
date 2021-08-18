@@ -16,6 +16,7 @@ export const WorkspaceWrapper = styled.div`
     &::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+
     }
     &::-webkit-scrollbar-track {
         border-radius: 10px;
