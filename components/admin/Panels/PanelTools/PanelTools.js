@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../../core/functions/admin/components';
 import { getParent } from '../../../../core/functions/components';
 import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setComponentToBuffer, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
-import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled'
+import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled';
+
 
 export default function PanelTools() {
 
@@ -79,6 +80,8 @@ export default function PanelTools() {
         dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
     }
 
+    const onSaveClick = () => {}
+
 
     return activeComponent ? (
         <ToolsWrapper>
@@ -134,6 +137,13 @@ export default function PanelTools() {
                         onClick={onForwardClick}
                     >
                         forw
+                    </ToolsButton>
+                </ToolsItem>
+                <ToolsItem>
+                    <ToolsButton
+                        onClick={onSaveClick}
+                    >
+                        save
                     </ToolsButton>
                 </ToolsItem>
             </ToolsFixWrapper>

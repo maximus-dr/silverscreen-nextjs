@@ -137,6 +137,10 @@ const parseProp = (styles, propName) => {
             return result;
         }
 
+        if (propValue === 'unit') {
+            console.log('unit prop');
+        }
+
         result.value = propValue;
     }
 

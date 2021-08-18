@@ -14,12 +14,12 @@ export const BackgroundSizeSelect = styled.select`
 `;
 
 export const BackgroundSizeOutput = styled.div`
-    display: none;
     margin-top: 5px;
+    display: block;
 
     ${props => {
-        return props.isActive && css`
-            display: block;
+        return props.disabled && css`
+            display: none;
         `
     }}
 `;

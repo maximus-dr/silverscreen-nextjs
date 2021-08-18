@@ -14,10 +14,11 @@ export const BackgroundSize = (props) => {
 
     const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
-    console.log('parsedProp', parsedProp);
+
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
 
+    const isAuto = parsedProp.value && parsedProp.value === 'auto';
     const isAutoX = parsedProp.sizeX && parsedProp.sizeX.unit && parsedProp.sizeX.unit === 'auto';
     const isAutoY = parsedProp.sizeY && parsedProp.sizeY.unit && parsedProp.sizeY.unit === 'auto';
 
@@ -49,16 +50,16 @@ export const BackgroundSize = (props) => {
                     <option value="cover">cover</option>
                     <option value="unit">unit</option>
                     <option value="contain">contain</option>
-                    <option value="auto auto">auto</option>
+                    <option value="auto">auto</option>
                 </BackgroundSizeSelect>
 
-                <BackgroundSizeOutput isActive={true}>
+                <BackgroundSizeOutput disabled={isAuto}>
                     <OutputGroup>
                         <BackgroundSizeInput
                             type="number"
                             value={parsedProp.sizeX && parsedProp.sizeX.value || ''}
                             onChange={(e) => {
-                                if (parsedProp.sizeX.unit !== 'auto') {
+                                if (parsedProp.sizeX && parsedProp.sizeX.unit !== 'auto') {
                                     dispatch(setProp({
                                         name: 'backgroundSize',
                                         value: `${e.target.value}${parsedProp.sizeX.unit} ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
@@ -69,7 +70,7 @@ export const BackgroundSize = (props) => {
                             disabled={isAutoX}
                         />
                         <BackgroundSizeUnit
-                            value={parsedProp.sizeX && parsedProp.sizeX.unit || 'auto'}
+                            value={parsedProp.sizeX && parsedProp.sizeX.unit || 'px'}
                             onChange={(e) => {
                                 if (e.target.value === 'auto') {
                                     dispatch(setProp({
@@ -122,7 +123,7 @@ export const BackgroundSize = (props) => {
                             type="number"
                             value={parsedProp.sizeY && parsedProp.sizeY.value || ''}
                             onChange={(e) => {
-                                if (parsedProp.sizeY.unit !== 'auto') {
+                                if (parsedProp.sizeY && parsedProp.sizeY.unit !== 'auto') {
                                     dispatch(setProp({
                                         name: 'backgroundSize',
                                         value: `${parsedProp.sizeX.value}${parsedProp.sizeX.unit} ${e.target.value}${parsedProp.sizeY.unit}`,
@@ -133,7 +134,7 @@ export const BackgroundSize = (props) => {
                             disabled={isAutoY}
                         />
                         <BackgroundSizeUnit
-                            value={parsedProp.sizeY && parsedProp.sizeY.unit || 'auto'}
+                            value={parsedProp.sizeY && parsedProp.sizeY.unit || 'px'}
                             onChange={(e) => {
                                 if (e.target.value === 'auto') {
                                     dispatch(setProp({
