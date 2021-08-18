@@ -42,7 +42,7 @@ export default function Document(props) {
                 console.log('CTRL + V pressed');
                 const componentCopy = updateComponentIds({...bufferedComponent});
                 dispatch(addComponent(activeComponent.id, componentCopy));
-                dispatch(addComponentToActive(componentCopy));
+                activeComponent && dispatch(addComponentToActive(componentCopy));
             }
         }
 

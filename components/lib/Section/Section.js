@@ -138,7 +138,7 @@ export default function Section(props) {
             const template = templates[templateId];
             if (template.typeName === 'page') return;
             const id = generateNewId(10);
-            dispatch(addComponentToActive({id, ...template}));
+            activeComponent && dispatch(addComponentToActive({id, ...template}));
             dispatch(addComponent(targetId, {id, ...template}));
         }
 
