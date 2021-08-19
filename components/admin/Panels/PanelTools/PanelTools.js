@@ -17,11 +17,11 @@ export default function PanelTools() {
     if (!activeComponent) return null;
 
     const parent = getParent(componentsData, activeComponent.id);
-    const lastChild = parent.childrenList[parent.childrenList.length - 1];
+    const lastChild = parent && parent.childrenList[parent.childrenList.length - 1];
 
-    const isOnlyChild = parent.childrenList.length === 1;
+    const isOnlyChild = parent && parent.childrenList.length === 1;
     const isLastChild = activeComponent === lastChild;
-    const isFirstChild = parent.childrenList.indexOf(activeComponent) === 0;
+    const isFirstChild = parent && parent.childrenList.indexOf(activeComponent) === 0;
 
     const onCopyClick = () => {
         dispatch(setComponentToBuffer(activeComponent));
@@ -91,7 +91,7 @@ export default function PanelTools() {
     }
 
 
-    return activeComponent ? (
+    return activeComponent && parent ? (
         <ToolsWrapper>
             <ToolsFixWrapper>
                 <ToolsItem>
@@ -125,7 +125,7 @@ export default function PanelTools() {
                 </ToolsItem>
                 <ToolsItem>
                     <ToolsButton
-                        disabled={parent.typeName === 'page'}
+                        disabled={parent && parent.typeName === 'page'}
                         onClick={onUpClick}
                     >
                         up

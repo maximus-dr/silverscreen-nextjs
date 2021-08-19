@@ -136,9 +136,8 @@ export default function Section(props) {
 
         if (template) {
             if (template === 'Страница') return;
-            const id = generateNewId(10);
-            activeComponent && dispatch(addComponentToActive({...dragendComponent, id}));
-            dispatch(addComponent(targetId, {...dragendComponent, id}));
+            activeComponent && dispatch(addComponentToActive(dragendComponent));
+            dispatch(addComponent(targetId, dragendComponent));
         }
 
         if (e.altKey) {

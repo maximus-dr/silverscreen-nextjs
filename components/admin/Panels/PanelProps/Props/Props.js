@@ -28,7 +28,7 @@ export default function Props(props) {
     return (
         <Wrapper isActive={activeComponent}>
             {/* Выбор разрешения */}
-            <Resolutions activeComponent={activeComponent} />
+            {/* <Resolutions activeComponent={activeComponent} /> */}
 
             {/* Размеры */}
             <PropsWidth

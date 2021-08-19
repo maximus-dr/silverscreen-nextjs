@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
-import { generateNewId, getChild, getComponent } from '../../../core/functions/components';
+import { getChild, getComponent } from '../../../core/functions/components';
 import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent, unsetDragendComponent, addComponentToActive } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
 import { useEffect, useState } from 'react';
@@ -77,9 +77,8 @@ export default function Page(props) {
         }
         if (template) {
             if (template === 'Страница') return;
-            const id = generateNewId(10);
-            activeComponent && dispatch(addComponentToActive({...dragendComponent, id}));
-            dispatch(addComponent(targetId, {...dragendComponent, id}));
+            activeComponent && dispatch(addComponentToActive(dragendComponent));
+            dispatch(addComponent(targetId, dragendComponent));
         }
         if (dragendComponent) dispatch(unsetDragendComponent());
     }

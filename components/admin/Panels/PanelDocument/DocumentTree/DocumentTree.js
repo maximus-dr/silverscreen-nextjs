@@ -2,61 +2,8 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { generateNewId, getChild, getComponent, getParent } from "../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, deleteComponentFromList, setDragendComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive } from "../../../../../store/actions/document";
 import { TreeChildren, TreeItem, TreeItemName, TreeItemType, TreeWrapper } from "./DocumentTreeStyled";
-
-
-export const templates = {
-    p1: {
-        typeName: "page",
-        name: "default",
-        styles: {
-            common: {
-                paddingTop: '5px',
-                paddingRight: '5px',
-                paddingBottom: '5px',
-                paddingLeft: '5px',
-                border: '1px dashed rgba(0, 0, 0, 0.8)',
-                minHeight: '100vh',
-                backgroundColor: "#ffffff"
-            }
-        },
-        childrenList: []
-    },
-    sec01: {
-        typeName: "section",
-        name: "default",
-        styles: {
-            common: {
-                paddingTop: '15px',
-                paddingRight: '15px',
-                paddingBottom: '15px',
-                paddingLeft: '15px',
-                "minHeight": '50px',
-                "border": "1px dashed #42a5f5"
-            }
-        },
-        childrenList: []
-    },
-    lab001: {
-        typeName: "label",
-        name: "default",
-        value: 'Label',
-        styles: {
-            common: {
-                display: 'inline-block',
-                paddingTop: '5px',
-                paddingRight: '5px',
-                paddingBottom: '5px',
-                paddingLeft: '5px',
-                marginTop: '0px',
-                marignBottom: '0px',
-                "fontSize": "22px"
-            }
-        },
-        childrenList: []
-    }
-}
 
 
 
@@ -192,7 +139,7 @@ export default function DocumentTree(props) {
 
     const onDrop = (e, targetId) => {
         const componentId = e.dataTransfer.getData('componentId');
-        const templateId = e.dataTransfer.getData('templateId');
+        const template = e.dataTransfer.getData('template');
 
         setAllowDrop(false);
         setDragCounter(0);
@@ -205,10 +152,10 @@ export default function DocumentTree(props) {
             dispatch(deleteComponent(componentId));
             dispatch(addComponent(targetId, component));
         }
-        if (templateId) {
-            const template = templates[templateId];
-            const id = generateNewId(10);
-            dispatch(addComponent(targetId, {id, ...template}));
+        if (template) {
+            if (template === 'Страница') return;
+            activeComponent && dispatch(addComponentToActive(dragendComponent));
+            dispatch(addComponent(targetId, dragendComponent));
         }
         if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');

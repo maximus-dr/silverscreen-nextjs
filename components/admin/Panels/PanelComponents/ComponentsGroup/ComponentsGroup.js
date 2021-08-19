@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { generateNewId } from '../../../../../core/functions/components';
 import {  addComponent, addComponentToActive, setDragendComponent, unsetDragendComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
 import { updateComponentIds } from '../../../../../core/functions/admin/components';
@@ -39,12 +38,12 @@ export default function ComponentsGroup(props) {
                     key={template.id}
                     onClick={() => {
                         if (activeComponent) {
-                            if (template.name === 'page' && activeComponent.typeName !== 'Document') {
+                            if (template.typeName === 'page' && activeComponent.typeName !== 'Document') {
                                 return
                             }
-                            const id = generateNewId(10);
-                            activeComponent && dispatch(addComponentToActive({...template, id}));
-                            dispatch(addComponent(activeComponent.id, {...template, id}));
+                            const component = updateComponentIds(template);
+                            activeComponent && dispatch(addComponentToActive(component));
+                            dispatch(addComponent(activeComponent.id, component));
                         }
                     }}
                 >
@@ -66,7 +65,6 @@ export default function ComponentsGroup(props) {
                 <ComponentsUlContent
                     expanded={expanded}
                     onClick={() => {
-
                     }}
                 >
                     {templatesList}
