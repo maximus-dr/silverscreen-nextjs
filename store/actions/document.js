@@ -16,6 +16,8 @@ const UPDATE_COMPONENT_CHILDRENLIST = 'UPDATE_COMPONENT_CHILDRENLIST';
 const UPDATE_ACTIVE_COMPONENT_CHILDRENLIST = 'UPDATE_ACTIVE_COMPONENT_CHILDRENLIST';
 const ADD_COMPONENT_TO_ACTIVE = 'ADD_COMPONENT_TO_ACTIVE';
 const SET_MODAL = 'SET_MODAL';
+const CLOSE_MODAL = 'CLOSE_MODAL';
+
 
 
 const setDocumentComponentsData = (componentsData) => ({
@@ -110,6 +112,10 @@ const setModal = (modal) => ({
     modal
 });
 
+const closeModal = () => ({
+    type: CLOSE_MODAL
+});
+
 
 
 
@@ -131,7 +137,8 @@ export {
     updateComponentChildrenList,
     updateActiveComponentChildrenList,
     addComponentToActive,
-    setModal
+    setModal,
+    closeModal
 }
 
 export {
@@ -152,5 +159,6 @@ export {
     SET_TEMPLATES,
     SET_COMPONENT_TO_BUFFER,
     ADD_COMPONENT_TO_ACTIVE,
-    SET_MODAL
+    SET_MODAL,
+    CLOSE_MODAL
 }

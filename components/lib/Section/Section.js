@@ -120,7 +120,7 @@ export default function Section(props) {
         setAllowDrop(false);
         setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
-        const templateId = e.dataTransfer.getData('templateId');
+        const template = e.dataTransfer.getData('template');
 
         if (dragendComponent) {
             dispatch(unsetDragendComponent());
@@ -134,12 +134,11 @@ export default function Section(props) {
             dispatch(addComponent(targetId, component));
         }
 
-        if (templateId) {
-            const template = templates[templateId];
-            if (template.typeName === 'page') return;
+        if (template) {
+            if (template === 'Страница') return;
             const id = generateNewId(10);
-            activeComponent && dispatch(addComponentToActive({id, ...template}));
-            dispatch(addComponent(targetId, {id, ...template}));
+            activeComponent && dispatch(addComponentToActive({...dragendComponent, id}));
+            dispatch(addComponent(targetId, {...dragendComponent, id}));
         }
 
         if (e.altKey) {

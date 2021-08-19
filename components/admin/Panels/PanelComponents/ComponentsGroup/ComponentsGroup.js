@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId } from '../../../../../core/functions/components';
 import {  addComponent, addComponentToActive, setDragendComponent, unsetDragendComponent } from '../../../../../store/actions/document';
 import {ComponentsLi,ComponentsUl,ComponentsUlCaption,ComponentsUlWrapper,ComponentsUlContent,ComponentsUlSubtitle } from './ComponentsGroupStyled'
-import { nanoid } from 'nanoid';
+import { updateComponentIds } from '../../../../../core/functions/admin/components';
 
 
 
 export default function ComponentsGroup(props) {
-    const {title, templates} = props;
+    const {category, templates} = props;
 
     const [expanded, setExpanded] = useState(false);
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -17,9 +17,8 @@ export default function ComponentsGroup(props) {
 
     const onDragStart = (e, template) => {
         e.dataTransfer.effectAllowed = 'copy';
-        e.dataTransfer.setData('templateId', template.id);
-        const id = nanoid(10);
-        dispatch(setDragendComponent({id, ...template.component}));
+        e.dataTransfer.setData('template', template.category);
+        dispatch(setDragendComponent(updateComponentIds(template)));
     }
 
     const onDragEnd = () => {
@@ -44,8 +43,8 @@ export default function ComponentsGroup(props) {
                                 return
                             }
                             const id = generateNewId(10);
-                            activeComponent && dispatch(addComponentToActive({...template.component, id}));
-                            dispatch(addComponent(activeComponent.id, {...template.component, id}));
+                            activeComponent && dispatch(addComponentToActive({...template, id}));
+                            dispatch(addComponent(activeComponent.id, {...template, id}));
                         }
                     }}
                 >
@@ -61,7 +60,7 @@ export default function ComponentsGroup(props) {
                     expanded={expanded}
                     onClick={() => {setExpanded(prev => !prev)}}
                 >
-                    {title}
+                    {category}
                 </ComponentsUlCaption>
 
                 <ComponentsUlContent

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import Panel from '../Panel/Panel'
 import ComponentsGroup from './ComponentsGroup/ComponentsGroup'
 
@@ -83,15 +84,19 @@ const componentsGroups = [
 ];
 
 export default function PanelComponents() {
+
+    const templates = useSelector(state => state.document.templates);
+
+
     return (
         <>
             <Panel title="Компоненты">
-                {componentsGroups.map(group => {
+                {templates.map(item => {
                     return (
                         <ComponentsGroup
-                            key={group.name}
-                            title={group.name}
-                            templates={group.templates}
+                            key={item.category}
+                            category={item.category}
+                            templates={item.templates}
                         />
                     );
                 })}

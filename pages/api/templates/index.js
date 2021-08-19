@@ -12,24 +12,24 @@ export default function handler(req, res) {
 
     if (req.method === 'POST') {
         const template = req.body.template;
+        const {category, name} = template;
+        const newTemplate = {...template.data, name};
 
-        const category = 'label';
-        const templateName = 'default';
+        const templatesJSON = fs.readFileSync(templatesPath, 'utf8');
+        const templates = [...JSON.parse(templatesJSON)];
 
-        const newTemplate = {...template, name: templateName};
+        const index = templates.findIndex(item => item.category === category.trim());
 
-        const templatesData = fs.readFileSync(templatesPath, 'utf8');
-        const templates = JSON.parse(templatesData);
-
-
-
-        const templatesCopy = {...templates};
-
-        if (templatesCopy[category]) {
-            templatesCopy[category].templatesList.push(newTemplate);
+        if (index !== -1) {
+            templates[index].templates.push(newTemplate);
         }
-        fs.writeFileSync(templatesPath, JSON.stringify(templatesCopy));
-
-        res.status(200).json(templatesCopy);
+        if (index === -1) {
+            templates.push({
+                category,
+                templates: [newTemplate]
+            });
+        }
+        fs.writeFileSync(templatesPath, JSON.stringify(templates));
+        res.status(200).json(templates);
     }
 }

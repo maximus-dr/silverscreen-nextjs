@@ -80,19 +80,8 @@ export default function PanelTools() {
         dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
     }
 
-    const template = activeComponent;
-
     const onSaveClick = async () => {
-        dispatch(setModal('SaveTemplate'));
-
-        // const response = await fetch('/api/templates', {
-        //     method: 'POST',
-        //     body: JSON.stringify({ template }),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // });
-        // const data = await response.json();
+        dispatch(setModal('saveTemplate'));
     }
 
     const onTemplatesClick = async () => {

@@ -2,8 +2,7 @@ import React from 'react'
 import { PageBody } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { generateNewId, getChild, getComponent } from '../../../core/functions/components';
-import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent, unsetDragendComponent } from '../../../store/actions/document';
-import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
+import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent, unsetDragendComponent, addComponentToActive } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
 import { useEffect, useState } from 'react';
 
@@ -67,7 +66,7 @@ export default function Page(props) {
         setIsDroppable(false);
         setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
-        const templateId = e.dataTransfer.getData('templateId');
+        const template = e.dataTransfer.getData('template');
         if (targetId === componentId) return;
         if (componentId) {
             const component = getComponent(componentsData, componentId);
@@ -76,11 +75,11 @@ export default function Page(props) {
             dispatch(addComponent(targetId, component));
 
         }
-        if (templateId) {
-            const template = templates[templateId];
-            if (template.typeName === 'page') return;
+        if (template) {
+            if (template === 'Страница') return;
             const id = generateNewId(10);
-            dispatch(addComponent(targetId, {id, ...template}));
+            activeComponent && dispatch(addComponentToActive({...dragendComponent, id}));
+            dispatch(addComponent(targetId, {...dragendComponent, id}));
         }
         if (dragendComponent) dispatch(unsetDragendComponent());
     }
