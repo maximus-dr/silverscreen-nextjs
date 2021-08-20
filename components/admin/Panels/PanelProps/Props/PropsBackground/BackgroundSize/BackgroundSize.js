@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { parseProp } from "../../../../../../../core/functions/admin/props";
 import { clearBuffer, setProp } from "../../../../../../../store/actions/document";
-import { ItemKey, ItemValue } from "../../PropsStyled";
-import { BackgroundSizeInput, BackgroundSizeOutput, BackgroundSizeSelect, BackgroundSizeUnit, BackgroundSizeWrapper, OutputGroup } from "./BackgroundSizeStyled";
+import { ItemValue } from "../../PropsStyled";
+import { BackgroundSizeInput, BackgroundSizeOutput, BackgroundSizeSelect, BackgroundSizeUnit, BackgroundSizeWrapper, ColumnLeft, ItemKey, ItemLabel, OutputGroup } from "./BackgroundSizeStyled";
 
 
 
@@ -19,6 +19,7 @@ export const BackgroundSize = (props) => {
     const isAuto = parsedProp.value && parsedProp.value === 'auto';
     const isAutoX = parsedProp.sizeX && parsedProp.sizeX.unit && parsedProp.sizeX.unit === 'auto';
     const isAutoY = parsedProp.sizeY && parsedProp.sizeY.unit && parsedProp.sizeY.unit === 'auto';
+    const isUnit = parsedProp.value && parsedProp.value === 'unit';
 
     const onSelectChange = (e) => {
         if (e.target.value === 'default') {
@@ -46,6 +47,13 @@ export const BackgroundSize = (props) => {
             dispatch(setProp({
                 name: 'backgroundSize',
                 value: `${e.target.value}${parsedProp.sizeX.unit} ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
+                id: activeComponent.id
+            }));
+        }
+        if (!parsedProp.sizeX && !parsedProp.sizeY) {
+            dispatch(setProp({
+                name: 'backgroundSize',
+                value: `${e.target.value}px 0px`,
                 id: activeComponent.id
             }));
         }
@@ -89,7 +97,7 @@ export const BackgroundSize = (props) => {
         if (e.target.value === 'px' && !parsedProp.sizeX.value) {
             dispatch(setProp({
                 name: 'backgroundSize',
-                value: `100px ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
+                value: `px ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
                 id: activeComponent.id
             }))
         }
@@ -97,7 +105,7 @@ export const BackgroundSize = (props) => {
         if (e.target.value === '%' && !parsedProp.sizeX.value) {
             dispatch(setProp({
                 name: 'backgroundSize',
-                value: `100% ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
+                value: `% ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
                 id: activeComponent.id
             }))
         }
@@ -131,7 +139,7 @@ export const BackgroundSize = (props) => {
         if (e.target.value === 'px' && !parsedProp.sizeY.value) {
             dispatch(setProp({
                 name: 'backgroundSize',
-                value: `${parsedProp.sizeX.value}${parsedProp.sizeX.unit} 100px`,
+                value: `${parsedProp.sizeX.value}${parsedProp.sizeX.unit} px`,
                 id: activeComponent.id
             }))
         }
@@ -139,7 +147,7 @@ export const BackgroundSize = (props) => {
         if (e.target.value === '%' && !parsedProp.sizeY.value) {
             dispatch(setProp({
                 name: 'backgroundSize',
-                value: `${parsedProp.sizeX.value}${parsedProp.sizeX.unit} 100% `,
+                value: `${parsedProp.sizeX.value}${parsedProp.sizeX.unit} % `,
                 id: activeComponent.id
             }))
         }
@@ -148,7 +156,11 @@ export const BackgroundSize = (props) => {
 
     return (
         <BackgroundSizeWrapper>
-            <ItemKey>background-size:</ItemKey>
+            <ColumnLeft>
+                <ItemKey>background-size:</ItemKey>
+                <ItemLabel>x</ItemLabel>
+                <ItemLabel>y</ItemLabel>
+            </ColumnLeft>
             <ItemValue>
                 <BackgroundSizeSelect
                     value={parsedProp.value}
@@ -156,23 +168,26 @@ export const BackgroundSize = (props) => {
                 >
                     <option value="default">default</option>
                     <option value="cover">cover</option>
-                    <option value="unit">unit</option>
+                    <option value="px px">unit</option>
                     <option value="contain">contain</option>
                     <option value="auto">auto</option>
                 </BackgroundSizeSelect>
 
-                <BackgroundSizeOutput disabled={isAuto}>
+                <BackgroundSizeOutput>
                     <OutputGroup>
                         <BackgroundSizeInput
                             type="number"
+                            min={0}
+                            step={5}
                             value={parsedProp.sizeX && parsedProp.sizeX.value || ''}
                             onFocus={onInputFocus}
                             onChange={onInputXChange}
-                            disabled={isAutoX}
+                            disabled={isAutoX || !isUnit}
                         />
                         <BackgroundSizeUnit
                             value={parsedProp.sizeX && parsedProp.sizeX.unit || 'px'}
                             onChange={onUnitXChange}
+                            disabled={!isUnit}
                         >
                             <option value="px">px</option>
                             <option value="%">%</option>
@@ -182,14 +197,17 @@ export const BackgroundSize = (props) => {
                     <OutputGroup>
                         <BackgroundSizeInput
                             type="number"
+                            min={0}
+                            step={5}
                             value={parsedProp.sizeY && parsedProp.sizeY.value || ''}
                             onFocus={onInputFocus}
                             onChange={onInputYChange}
-                            disabled={isAutoY}
+                            disabled={isAutoY || !isUnit}
                         />
                         <BackgroundSizeUnit
                             value={parsedProp.sizeY && parsedProp.sizeY.unit || 'px'}
                             onChange={onUnitYChange}
+                            disabled={!isUnit}
                         >
                             <option value="px">px</option>
                             <option value="%">%</option>

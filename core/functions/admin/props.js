@@ -114,21 +114,25 @@ const parseProp = (styles, propName) => {
                 value:
                     x.includes('px') && x.replace('px', '') ||
                     x.includes('%') && x.replace('%', '') ||
-                    x === 'auto' && '',
+                    x === 'auto' && '' ||
+                    '',
                 unit:
                     x.includes('px') && 'px' ||
                     x.includes('%') && '%' ||
-                    x === 'auto' && 'auto'
+                    x === 'auto' && 'auto' ||
+                    ''
             };
             const sizeY = {
                 value:
                     y.includes('px') && y.replace('px', '') ||
                     y.includes('%') && y.replace('%', '') ||
-                    y === 'auto' && '',
+                    y === 'auto' && '' ||
+                    '',
                 unit:
                     y.includes('px') && 'px' ||
                     y.includes('%') && '%' ||
-                    y === 'auto' && 'auto'
+                    y === 'auto' && 'auto' ||
+                    ''
             }
             result.value = 'unit';
             result.sizeX = sizeX;

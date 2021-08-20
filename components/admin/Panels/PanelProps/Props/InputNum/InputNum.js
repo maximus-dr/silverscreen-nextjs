@@ -7,6 +7,7 @@ import { clearBuffer, setProp } from '../../../../../../store/actions/document';
 import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputNumWrapper } from './InputNumStyled'
 
 
+
 export default function InputNum(props) {
 
     const {units, min, max, step, parsedProp} = props;
@@ -21,10 +22,8 @@ export default function InputNum(props) {
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
 
-
     const [propUnit, setPropUnit] = useState(parsedProp && parsedProp.unit || units && units[0].name);
     const [disabled, setDisabled] = useState(true);
-
 
     // установка единиц измерений
     useEffect(() => {
@@ -104,7 +103,6 @@ export default function InputNum(props) {
         }
         if (inputValue) dispatch(setProp(prop));
     }
-
 
     const singleUnit = units && units.length === 1;
     const multipleUnits = units && units.length > 1;

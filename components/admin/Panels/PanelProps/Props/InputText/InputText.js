@@ -5,6 +5,7 @@ import { clearBuffer, setProp } from '../../../../../../store/actions/document';
 import { InputTextBody } from './InputTextStyled'
 
 
+
 export default function InputText(props) {
 
     const {parsedProp, isDisabled} = props;

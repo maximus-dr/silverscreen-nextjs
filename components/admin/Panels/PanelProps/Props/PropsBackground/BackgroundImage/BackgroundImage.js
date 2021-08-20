@@ -16,7 +16,6 @@ export default function BackgroundImage(props) {
     const isGradient = type === 'gradient';
     const isRadialGradient = parsedProp && parsedProp.gradient && parsedProp.gradient === 'radial-gradient' || false;
 
-
     useEffect(() => {
         if (parsedProp && parsedProp.url) {
             setType('url');
