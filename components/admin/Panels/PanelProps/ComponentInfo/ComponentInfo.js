@@ -2,8 +2,8 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteComponent, setComponentName, setComponentValue, unsetActiveComponent, deleteComponentFromList, setComponentValueToActive } from '../../../../../store/actions/document';
-import { getComponent, getParent } from '../../../../../core/functions/components';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer } from '../../../../../store/actions/document';
+import { getComponent } from '../../../../../core/functions/components';
 
 
 
@@ -12,8 +12,32 @@ export default function ComponentSeciton(props) {
     const {activeComponent} = props;
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, activeComponent.id);
+    const buffer = useSelector(state => state.document.buffer);
     const entries = Object.entries(componentData);
     const dispatch = useDispatch();
+
+    const onNameInputFocus = () => {
+        if (buffer) dispatch(clearBuffer());
+    }
+
+    const onValueInputFocus = () => {
+        if (buffer) dispatch(clearBuffer());
+    }
+
+    const onNameChange = (e) => {
+        dispatch(setComponentName(
+            e.target.value,
+            activeComponent.id
+        ));
+    }
+
+    const onValueChange = (e) => {
+        dispatch(setComponentValueToActive(e.target.value));
+        dispatch(setComponentValue(
+            e.target.value,
+            componentData.id
+        ));
+    }
 
 
     return (
@@ -33,12 +57,8 @@ export default function ComponentSeciton(props) {
                                     <ComponentName
                                         type="text"
                                         value={componentData.name}
-                                        onChange={(e) => {
-                                            dispatch(setComponentName(
-                                                e.target.value,
-                                                activeComponent.id
-                                            ))
-                                        }}
+                                        onFocus={onNameInputFocus}
+                                        onChange={onNameChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>
@@ -52,13 +72,8 @@ export default function ComponentSeciton(props) {
                                 <ComponentPropValue>
                                     <ComponentInfoTextarea
                                         value={componentData.value || ''}
-                                        onChange={(e) => {
-                                            dispatch(setComponentValueToActive(e.target.value));
-                                            dispatch(setComponentValue(
-                                                e.target.value,
-                                                componentData.id
-                                            ));
-                                        }}
+                                        onFocus={onValueInputFocus}
+                                        onChange={onValueChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>

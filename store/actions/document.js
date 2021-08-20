@@ -12,6 +12,7 @@ const UNSET_DRAGEND_COMPONENT = 'UNSET_DRAGEND_COMPONENT';
 const SET_DOCUMENT_COMPONENTS_DATA = 'SET_DOCUMENT_COMPONENTS_DATA';
 const SET_TEMPLATES = 'SET_TEMPLATES';
 const SET_COMPONENT_TO_BUFFER = 'SET_COMPONENT_TO_BUFFER';
+const CLEAR_BUFFER = 'CLEAR_BUFFER';
 const UPDATE_COMPONENT_CHILDRENLIST = 'UPDATE_COMPONENT_CHILDRENLIST';
 const UPDATE_ACTIVE_COMPONENT_CHILDRENLIST = 'UPDATE_ACTIVE_COMPONENT_CHILDRENLIST';
 const ADD_COMPONENT_TO_ACTIVE = 'ADD_COMPONENT_TO_ACTIVE';
@@ -107,6 +108,10 @@ const setComponentToBuffer = (component) => ({
     component
 });
 
+const clearBuffer = () => ({
+    type: CLEAR_BUFFER
+});
+
 const setModal = (modal) => ({
     type: SET_MODAL,
     modal
@@ -134,11 +139,12 @@ export {
     setDragendComponent,
     unsetDragendComponent,
     setComponentToBuffer,
+    clearBuffer,
     updateComponentChildrenList,
     updateActiveComponentChildrenList,
     addComponentToActive,
     setModal,
-    closeModal
+    closeModal,
 }
 
 export {
@@ -158,6 +164,7 @@ export {
     SET_DOCUMENT_COMPONENTS_DATA,
     SET_TEMPLATES,
     SET_COMPONENT_TO_BUFFER,
+    CLEAR_BUFFER,
     ADD_COMPONENT_TO_ACTIVE,
     SET_MODAL,
     CLOSE_MODAL

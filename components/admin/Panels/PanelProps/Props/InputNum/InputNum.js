@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getComponent } from '../../../../../../core/functions/components';
-import { setProp } from '../../../../../../store/actions/document';
+import { clearBuffer, setProp } from '../../../../../../store/actions/document';
 import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputNumWrapper } from './InputNumStyled'
 
 
@@ -16,6 +16,7 @@ export default function InputNum(props) {
     const fullWidth = !units;
     const inputValue = parsedProp && parsedProp.value || '';
     const resolution = useSelector(state => state.document.resolution);
+    const buffer = useSelector(state => state.document.buffer);
     const dispatch = useDispatch();
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
@@ -52,7 +53,9 @@ export default function InputNum(props) {
     //     }
     // }, [parsedProp, activeComponent]);
 
-
+    const onInputFocus = () => {
+        if (buffer) dispatch(clearBuffer());
+    }
 
     const onInputChange = (e) => {
         const value = e.target.value;
@@ -117,6 +120,7 @@ export default function InputNum(props) {
                 fullWidth={fullWidth}
                 value={inputValue}
                 disabled={disabled}
+                onFocus={onInputFocus}
                 onChange={onInputChange}
             />
             <InputNumUnit>

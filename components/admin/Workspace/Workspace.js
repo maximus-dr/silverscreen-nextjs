@@ -1,11 +1,8 @@
 import React from 'react'
-import { useState } from 'react';
 import { useSelector } from 'react-redux'
 import { renderComponents } from '../../../core/functions/render';
 import { modals } from '../Modal';
-import Notification from '../Modal/Notification/Notification';
 import Overlay from '../Modal/Overlay/Overlay';
-import SaveTemplateModal from '../Modal/SaveTemplate/SaveTemplateModal';
 import PanelTools from '../Panels/PanelTools/PanelTools';
 import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './WorkspaceStyled'
 

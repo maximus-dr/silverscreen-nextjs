@@ -2,8 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { parseProp } from '../../../../../../../core/functions/admin/props';
-import { setProp } from '../../../../../../../store/actions/document';
+import { clearBuffer, setProp } from '../../../../../../../store/actions/document';
 import { BackgroundImageLabel, BackgroundImageRadio, BackgroundImageRow, BackgroundImageTextarea, BackgroundImageWrapper, GradientDegInput, GradientDegInputWrapper, GradientInput, GradientInputsWrapper, GradientLabel, GradientRow, GradientSelect, GradientStopInput } from './BackgroundImageStyled';
 
 
@@ -11,6 +10,7 @@ import { BackgroundImageLabel, BackgroundImageRadio, BackgroundImageRow, Backgro
 export default function BackgroundImage(props) {
     const {parsedProp, activeComponent} = props;
     const resolution = useSelector(state => state.document.resolution);
+    const buffer = useSelector(state => state.document.buffer);
     const dispatch = useDispatch();
     const [type, setType] = useState('url');
     const isGradient = type === 'gradient';
@@ -27,9 +27,6 @@ export default function BackgroundImage(props) {
         }
     }, [parsedProp]);
 
-
-
-
     const gradient = {
         type: parsedProp.gradient || '',
         deg: parsedProp.gradient && parsedProp.value && parsedProp.value.deg || '',
@@ -42,9 +39,6 @@ export default function BackgroundImage(props) {
         point3: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].point || '',
         point4: parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].point || ''
     }
-
-
-
 
     const onGradientDegChange = (e, gradient) => {
         const type = gradient.type || 'linear-gradient';
@@ -142,6 +136,19 @@ export default function BackgroundImage(props) {
         }));
     }
 
+    const onInputFocus = () => {
+        if (buffer) dispatch(clearBuffer());
+    }
+
+    const onUrlChange = (e) => {
+        dispatch(setProp({
+            name: 'backgroundImage',
+            value: `url('${e.target.value}')`,
+            resolution,
+            id: activeComponent.id
+        }));
+    }
+
 
     return (
         <BackgroundImageWrapper>
@@ -151,21 +158,13 @@ export default function BackgroundImage(props) {
                     name="backgroundImageType"
                     id="bgImageType-1"
                     checked={type === "url"}
-                    onChange={() => {
-                        setType('url')
-                    }}
+                    onChange={() => setType('url')}
                 />
                 <BackgroundImageLabel htmlFor="bgImageType-1">url</BackgroundImageLabel>
                 <BackgroundImageTextarea
                     value={parsedProp && parsedProp.value && parsedProp.url && parsedProp.value || ''}
-                    onChange={(e) => {
-                        dispatch(setProp({
-                            name: 'backgroundImage',
-                            value: `url('${e.target.value}')`,
-                            resolution,
-                            id: activeComponent.id
-                        }))
-                    }}
+                    onFocus={onInputFocus}
+                    onChange={onUrlChange}
                     disabled={type !== 'url'}
                 />
             </BackgroundImageRow>
@@ -175,9 +174,7 @@ export default function BackgroundImage(props) {
                     name="backgroundImageType"
                     id="bgImageType-2"
                     checked={type === "gradient"}
-                    onChange={() => {
-                        setType('gradient')
-                    }}
+                    onChange={() => setType('gradient')}
                 />
 
                 <BackgroundImageLabel
@@ -204,6 +201,7 @@ export default function BackgroundImage(props) {
                             step={5}
                             disabled={!isGradient || isRadialGradient}
                             value={parsedProp.value && parsedProp.value.deg || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientDegChange(e, gradient)}
                         />
                         <GradientLabel disabled={!isGradient}>deg</GradientLabel>
@@ -213,6 +211,7 @@ export default function BackgroundImage(props) {
                         <GradientInput
                             type="text"
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].value || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color1')}
                             disabled={!isGradient}
                         />
@@ -223,6 +222,7 @@ export default function BackgroundImage(props) {
                             max={100}
                             step={5}
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[0].point || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point1')}
                             disabled={!isGradient || isRadialGradient}
                         />
@@ -233,6 +233,7 @@ export default function BackgroundImage(props) {
                         <GradientInput
                             type="text"
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].value || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color2')}
                             disabled={!isGradient}
                         />
@@ -243,6 +244,7 @@ export default function BackgroundImage(props) {
                             max={100}
                             step={5}
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[1].point || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point2')}
                             disabled={!isGradient || isRadialGradient}
                         />
@@ -253,6 +255,7 @@ export default function BackgroundImage(props) {
                         <GradientInput
                             type="text"
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].value || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color3')}
                             disabled={!isGradient}
                         />
@@ -263,6 +266,7 @@ export default function BackgroundImage(props) {
                             max={100}
                             step={5}
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[2].point || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point3')}
                             disabled={!isGradient || isRadialGradient}
                         />
@@ -273,6 +277,7 @@ export default function BackgroundImage(props) {
                         <GradientInput
                             type="text"
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].value || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientColorChange(e, gradient, 'color4')}
                             disabled={!isGradient}
                         />
@@ -283,6 +288,7 @@ export default function BackgroundImage(props) {
                             max={100}
                             step={5}
                             value={parsedProp.gradient && parsedProp.value && parsedProp.value.colors[3].point || ''}
+                            onFocus={onInputFocus}
                             onChange={(e) => onGradientPointChange(e, gradient, 'point4')}
                             disabled={!isGradient || isRadialGradient}
                         />
