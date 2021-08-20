@@ -67,6 +67,8 @@ export const StylesProvider = (styles) => {
         background-image: ${styles && styles.backgroundImage || ''};
         background-size: ${styles && styles.backgroundSize || ''};
         background-position: ${styles && styles.backgroundPosition || ''};
+        background-position-x: ${styles && styles.backgroundPositionX || ''};
+        background-position-y: ${styles && styles.backgroundPositionY || ''};
         background-repeat: ${styles && styles.backgroundRepeat || ''};
 
         opacity: ${styles && styles.opacity || ''};

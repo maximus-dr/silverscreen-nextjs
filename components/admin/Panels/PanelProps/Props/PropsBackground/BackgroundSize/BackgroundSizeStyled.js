@@ -46,7 +46,7 @@ export const ItemKey = styled.span`
 export const ItemLabel = styled.span`
     display: inline-block;
     align-self: flex-end;
-    padding-right: 15px;
+    padding-right: 9px;
     height: 21px;
     margin-bottom: 5px;
 `;

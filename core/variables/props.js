@@ -299,6 +299,16 @@ const propsList = {
         default: ''
     },
 
+    backgroundPositionX: {
+        type: 'backgroundPositionX',
+        default: 'default'
+    },
+
+    backgroundPositionY: {
+        type: 'backgroundPositionY',
+        default: 'default'
+    },
+
     backgroundRepeat: {
         type: 'select',
         options: [{id: 0, name: 'default'}, {id: 1, name: 'repeat'}, {id: 2, name: 'repeat-x'}, {id: 3, name: 'repeat-y'}, {id: 4, name: 'no-repeat'}],

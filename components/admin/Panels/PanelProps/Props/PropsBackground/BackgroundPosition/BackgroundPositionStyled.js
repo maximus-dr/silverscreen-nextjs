@@ -12,3 +12,13 @@ export const BackgroundPositionOutput = styled.div`
         `
     }}
 `;
+
+export const PositionInput = styled.input`
+    width: 55px;
+    margin-right: 5px;
+`;
+
+export const PositionUnit = styled.select`
+    width: 64px;
+    height: 21px;
+`;

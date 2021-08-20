@@ -14,8 +14,8 @@ export const WorkspaceWrapper = styled.div`
     transition: width 150ms;
 
     &::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 6px;
 
     }
     &::-webkit-scrollbar-track {

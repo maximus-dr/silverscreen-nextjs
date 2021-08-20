@@ -148,36 +148,83 @@ const parseProp = (styles, propName) => {
         result.value = propValue;
     }
 
-    if (propData.type === 'backgroundPosition' && propValue) {
-        if (propValue.includes('px') || propValue.includes('%')) {
-            const params = propValue.split(' ');
-            const x = params[0];
-            const y = params[1];
-            const posX = {
-                value:
-                    x.includes('px') && x.replace('px', '').trim() ||
-                    x.includes('%') && x.replace('%', '').trim() ||
-                    x,
-                unit:
-                    x.includes('px') && 'px' ||
-                    x.includes('%') && '%' ||
-                    ''
-            }
-            const posY = {
-                value:
-                    y.includes('px') && y.replace('px', '').trim() ||
-                    y.includes('%') && y.replace('%', '').trim() ||
-                    y,
-                unit:
-                    y.includes('px') && 'px' ||
-                    y.includes('%') && '%' ||
-                    ''
-            }
-            result.posX = posX;
-            result.posY = posY;
+    // if (propData.type === 'backgroundPosition') {
+    //     if (!propValue) {
+    //         result.value = 'default';
+    //         return result;
+    //     }
+
+    //     if (propValue) {
+    //         if (propValue.includes('px') || propValue.includes('%')) {
+    //             const params = propValue.split(' ');
+    //             const x = params[0];
+    //             const y = params[1];
+    //             const posX = {
+    //                 value:
+    //                     x.includes('px') && x.replace('px', '').trim() ||
+    //                     x.includes('%') && x.replace('%', '').trim() ||
+    //                     '',
+    //                 unit:
+    //                     x.includes('px') && 'px' ||
+    //                     x.includes('%') && '%' ||
+    //                     ''
+    //             }
+    //             const posY = {
+    //                 value:
+    //                     y.includes('px') && y.replace('px', '').trim() ||
+    //                     y.includes('%') && y.replace('%', '').trim() ||
+    //                     '',
+    //                 unit:
+    //                     y.includes('px') && 'px' ||
+    //                     y.includes('%') && '%' ||
+    //                     ''
+    //             }
+    //             result.value = 'custom';
+    //             result.posX = posX;
+    //             result.posY = posY;
+    //             return result;
+    //         }
+    //     }
+    // }
+
+    if (propData.type === 'backgroundPositionX') {
+        if (propValue) {
+            const x = propValue;
+            result.value =
+                x.includes('px') && x.replace('px', '').trim() ||
+                x.includes('%') && x.replace('%', '').trim() ||
+                '';
+            result.unit =
+                x.includes('px') && 'px' ||
+                x.includes('%') && '%';
+            return result;
+        }
+        if (!propValue) {
+            result.value = '';
+            result.unit = 'default';
             return result;
         }
     }
+
+    if (propData.type === 'backgroundPositionY') {
+        if (propValue) {
+            const y = propValue;
+            result.value =
+                y.includes('px') && y.replace('px', '').trim() ||
+                y.includes('%') && y.replace('%', '').trim() ||
+                '';
+            result.unit =
+                y.includes('px') && 'px' ||
+                y.includes('%') && '%';
+            return result;
+        }
+        if (!propValue) {
+            result.value = '';
+            result.unit = 'default';
+            return result;
+        }
+    }
+
 
     if (propData.type === 'backgroundImage' && propValue) {
         if (propValue.includes('url')) {
