@@ -4,7 +4,7 @@ import { StylesProvider } from '../../styles';
 
 
 
-export const DescriptionBody = styled.p`
+export const DescriptionComponent = styled.p`
 
     ${props => {
 

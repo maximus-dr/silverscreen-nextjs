@@ -154,13 +154,6 @@ export default function PanelTools() {
                         save
                     </ToolsButton>
                 </ToolsItem>
-                <ToolsItem>
-                    <ToolsButton
-                        onClick={onTemplatesClick}
-                    >
-                        templates
-                    </ToolsButton>
-                </ToolsItem>
             </ToolsFixWrapper>
         </ToolsWrapper>
     ) : null;

@@ -64,5 +64,30 @@
                 "childrenList": []
             }
         ]
+    },
+
+    {
+        "category": "Текст",
+        "templates": [
+            {
+                "typeName": "description",
+                "id": "desc001",
+                "name": "Текст",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "styles": {
+                    "common": {
+                        "marginTop": "0px",
+                        "marginBottom": "0px",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "14px",
+                        "lineHeight": "1"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
     }
 ]
