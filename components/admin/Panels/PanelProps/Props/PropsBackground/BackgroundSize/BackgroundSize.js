@@ -11,6 +11,7 @@ export const BackgroundSize = (props) => {
 
     const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
+    console.log(parsedProp);
 
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
@@ -31,6 +32,15 @@ export const BackgroundSize = (props) => {
             return;
         };
 
+        if (e.target.value === 'unit') {
+            dispatch(setProp({
+                name: 'backgroundSize',
+                value: '100px 50px',
+                id: activeComponent.id
+            }));
+            return;
+        }
+
         dispatch(setProp({
             name: 'backgroundSize',
             value: e.target.value,
@@ -43,7 +53,7 @@ export const BackgroundSize = (props) => {
     }
 
     const onInputXChange = (e) => {
-        if (parsedProp.sizeX && parsedProp.sizeX.unit !== 'auto') {
+        if (parsedProp.sizeX && parsedProp.sizeX.unit !== 'auto'  && parsedProp.sizeY && parsedProp.sizeY.value && parsedProp.sizeY.unit) {
             dispatch(setProp({
                 name: 'backgroundSize',
                 value: `${e.target.value}${parsedProp.sizeX.unit} ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
@@ -70,7 +80,7 @@ export const BackgroundSize = (props) => {
     }
 
     const onUnitXChange = (e) => {
-        if (e.target.value === 'auto') {
+        if (e.target.value === 'auto' && parsedProp.sizeY && parsedProp.sizeY.value && parseProp.sizeY.unit) {
             dispatch(setProp({
                 name: 'backgroundSize',
                 value: `auto ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
@@ -168,7 +178,7 @@ export const BackgroundSize = (props) => {
                 >
                     <option value="default">default</option>
                     <option value="cover">cover</option>
-                    <option value="px px">unit</option>
+                    <option value="unit">unit</option>
                     <option value="contain">contain</option>
                     <option value="auto">auto</option>
                 </BackgroundSizeSelect>

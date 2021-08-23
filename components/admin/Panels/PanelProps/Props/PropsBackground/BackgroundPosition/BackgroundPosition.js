@@ -14,8 +14,7 @@ export const BackgroundPosition = (props) => {
     const parsedPropY = styles && parseProp(styles, 'backgroundPositionY') || {};
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
-    console.log('parsedPropX', parsedPropX);
-    console.log('parsedPropY', parsedPropY);
+    
 
     const onSelectChange = (e) => {
         if (e.target.value === 'default') {

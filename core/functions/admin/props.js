@@ -134,6 +134,8 @@ const parseProp = (styles, propName) => {
                     y === 'auto' && 'auto' ||
                     ''
             }
+            if (sizeX.value === '') sizeX.value = '100';
+            if (sizeY.value === '') sizeY.value = '50';
             result.value = 'unit';
             result.sizeX = sizeX;
             result.sizeY = sizeY;
@@ -142,50 +144,12 @@ const parseProp = (styles, propName) => {
         }
 
         if (propValue === 'unit') {
-            console.log('unit prop');
+
         }
 
         result.value = propValue;
     }
 
-    // if (propData.type === 'backgroundPosition') {
-    //     if (!propValue) {
-    //         result.value = 'default';
-    //         return result;
-    //     }
-
-    //     if (propValue) {
-    //         if (propValue.includes('px') || propValue.includes('%')) {
-    //             const params = propValue.split(' ');
-    //             const x = params[0];
-    //             const y = params[1];
-    //             const posX = {
-    //                 value:
-    //                     x.includes('px') && x.replace('px', '').trim() ||
-    //                     x.includes('%') && x.replace('%', '').trim() ||
-    //                     '',
-    //                 unit:
-    //                     x.includes('px') && 'px' ||
-    //                     x.includes('%') && '%' ||
-    //                     ''
-    //             }
-    //             const posY = {
-    //                 value:
-    //                     y.includes('px') && y.replace('px', '').trim() ||
-    //                     y.includes('%') && y.replace('%', '').trim() ||
-    //                     '',
-    //                 unit:
-    //                     y.includes('px') && 'px' ||
-    //                     y.includes('%') && '%' ||
-    //                     ''
-    //             }
-    //             result.value = 'custom';
-    //             result.posX = posX;
-    //             result.posY = posY;
-    //             return result;
-    //         }
-    //     }
-    // }
 
     if (propData.type === 'backgroundPositionX') {
         if (propValue) {
