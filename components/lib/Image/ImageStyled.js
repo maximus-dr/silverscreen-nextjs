@@ -1,39 +1,42 @@
 import styled, {css} from 'styled-components';
-import { colors } from '../../../core/variables/variables';
-import { enableOutlines } from '../../../core/functions/outlines';
+import { getOutlines } from '../../../core/functions/outlines';
+import { screens } from '../../../core/variables/variables';
 import { StylesProvider } from '../../styles';
 
 
-export const ImageWrapper = styled.div`
-    ${props => enableOutlines(props.showOutlines, colors.outline_image)}
+
+export const ImageComponent = styled.img`
+
     ${props => {
-        const styles = props.componentData.styles || null;
+        const styles = props.componentData.styles && props.componentData.styles.common || null;
 
         return css`
+            background-color: #dfe6e9;
             ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
-        `
-    }}
-`;
+            ${props => props.isActiveComponent && getOutlines()}
+            ${props => props.allowDrop && `
+                outline: 2px solid #42a5f5;
+            `}
 
-export const ImageBody = styled.img.attrs(props => {
-    const styles = props.componentData.styles || null;
+            @media (min-width: ${screens['screen_mobile'].minWidth}) {
+                ${styles && StylesProvider(styles['screen_mobile'])}
+            }
 
-    return ({
-        src: props.link ? props.link : '',
-        alt: props.alt ? props.alt : '',
-        width: styles && styles.width ? styles.width : '100%',
-        height: styles && styles.height ? styles.height : 'auto'
-    })
-})`
-    display: block;
-    
-    ${props => {
-        const styles = props.componentData.styles || null;
+            @media (min-width: ${screens['screen_mobile_landscape'].minWidth}) {
+                ${styles && StylesProvider(styles['screen_mobile_landscape'])}
+            }
 
-        return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            @media (min-width: ${screens['screen_tablet'].minWidth}) {
+                ${styles && StylesProvider(styles['screen_tablet'])}
+            }
+
+            @media (min-width: ${screens['screen_tablet_landscape'].minWidth}) {
+                ${styles && StylesProvider(styles['screen_tablet_landscape'])}
+            }
+
+            @media (min-width: ${screens['screen_desktop'].minWidth}) {
+                ${styles && StylesProvider(styles['screen_desktop'])}
+            }
         `
     }}
 `;

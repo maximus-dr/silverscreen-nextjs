@@ -11,7 +11,6 @@ export const BackgroundSize = (props) => {
 
     const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
-    console.log(parsedProp);
 
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);

@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer } from '../../../../../store/actions/document';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink } from '../../../../../store/actions/document';
 import { getComponent } from '../../../../../core/functions/components';
 
 
@@ -34,6 +34,14 @@ export default function ComponentSeciton(props) {
     const onValueChange = (e) => {
         dispatch(setComponentValueToActive(e.target.value));
         dispatch(setComponentValue(
+            e.target.value,
+            componentData.id
+        ));
+    }
+
+    const onLinkChange = (e) => {
+        dispatch(setComponentLinkToActive(e.target.value));
+        dispatch(setComponentLink(
             e.target.value,
             componentData.id
         ));
@@ -74,6 +82,21 @@ export default function ComponentSeciton(props) {
                                         value={componentData.value || ''}
                                         onFocus={onValueInputFocus}
                                         onChange={onValueChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
+                    if (entrie[0] === 'link') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentInfoTextarea
+                                        value={componentData.link || ''}
+                                        onFocus={onValueInputFocus}
+                                        onChange={onLinkChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>

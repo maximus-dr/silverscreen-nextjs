@@ -16,6 +16,22 @@ const setValueToComponentsData = (componentsData, componentId, value) => {
     }
 }
 
+const setLinkToComponentsData = (componentsData, componentId, link) => {
+    if (componentsData.id === componentId) {
+        return {
+            ...componentsData,
+            link
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return setLinkToComponentsData(child, componentId, link);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
 
 const setNameToComponentsData = (componentsData, componentId, name) => {
     if (componentsData.id === componentId) {
@@ -114,6 +130,7 @@ const updateComponentChildrenList = (componentsData, componentId, childrenList) 
 
 export {
     setValueToComponentsData,
+    setLinkToComponentsData,
     setNameToComponentsData,
     addComponentToComponentsData,
     deleteComponentFromComponentsData,

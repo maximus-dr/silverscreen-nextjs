@@ -66,6 +66,20 @@
                 }
             },
             "childrenList": []
+        },
+
+        {
+            "typeName": "image",
+            "id": "img001",
+            "name": "Изображение 1",
+            "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
+            "styles": {
+                "common": {
+                    "width": "200px",
+                    "height": "auto"
+                }
+            },
+            "childrenList": []
         }
       ]
     }

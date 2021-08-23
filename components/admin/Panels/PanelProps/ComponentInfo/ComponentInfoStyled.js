@@ -36,7 +36,7 @@ export const ComponentElements = styled.div`
 export const ComponentInfoTextarea = styled.textarea`
     display:inline-block;
     border: solid 1px #000;
-    min-height:50px;
+    min-height:100px;
     width: 100%;
     resize: none;
 `;

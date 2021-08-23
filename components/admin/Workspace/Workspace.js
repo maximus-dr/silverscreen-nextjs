@@ -19,7 +19,6 @@ export default function Workspace() {
         el: modals[modalName]
     }
 
-
     return (
         <>
             <WorkspaceWrapper>

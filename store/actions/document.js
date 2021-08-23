@@ -4,6 +4,8 @@ const SET_RESOLUTION = 'SET_RESOLUTION';
 const SET_PROP = 'SET_PROP';
 const SET_COMPONENT_VALUE = 'SET_COMPONENT_VALUE';
 const SET_COMPONENT_VALUE_TO_ACTIVE = 'SET_COMPONENT_VALUE_TO_ACTIVE';
+const SET_COMPONENT_LINK = 'SET_COMPONENT_LINK';
+const SET_COMPONENT_LINK_TO_ACTIVE = 'SET_COMPONENT_LINK_TO_ACTIVE';
 const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
 const ADD_COMPONENT = 'ADD_COMPONENT';
 const DELETE_COMPONENT = 'DELETE_COMPONENT';
@@ -59,6 +61,17 @@ const setComponentValue = (value, id) => ({
 const setComponentValueToActive = (value) => ({
     type: SET_COMPONENT_VALUE_TO_ACTIVE,
     value
+});
+
+const setComponentLink = (link, id) => ({
+    type: SET_COMPONENT_LINK,
+    link,
+    id
+});
+
+const setComponentLinkToActive = (link) => ({
+    type: SET_COMPONENT_LINK_TO_ACTIVE,
+    link
 });
 
 const setComponentName = (name, id) => ({
@@ -133,6 +146,8 @@ export {
     setProp,
     setComponentValue,
     setComponentValueToActive,
+    setComponentLink,
+    setComponentLinkToActive,
     setComponentName,
     addComponent,
     deleteComponent,
@@ -154,6 +169,8 @@ export {
     SET_PROP,
     SET_COMPONENT_VALUE,
     SET_COMPONENT_VALUE_TO_ACTIVE,
+    SET_COMPONENT_LINK,
+    SET_COMPONENT_LINK_TO_ACTIVE,
     SET_COMPONENT_NAME,
     UPDATE_COMPONENT_CHILDRENLIST,
     UPDATE_ACTIVE_COMPONENT_CHILDRENLIST,

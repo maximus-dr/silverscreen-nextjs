@@ -10,7 +10,6 @@ import Select from '../Select/Select'
 export default function PropsEffects(props) {
     const {styles} = props;
     const parsedProp = parseProp(styles, 'opacity');
-    console.log(parsedProp);
 
     return (
         <Section>
@@ -19,11 +18,11 @@ export default function PropsEffects(props) {
                 <Item>
                     <ItemKey>opacity:</ItemKey>
                     <ItemValue>
-                        <InputNum 
-                            min={0} 
-                            max={1} 
-                            step={0.1} 
-                            parsedProp={parsedProp.value && parsedProp || {name: 'opacity', value: '1'}} 
+                        <InputNum
+                            min={0}
+                            max={1}
+                            step={0.1}
+                            parsedProp={parsedProp.value && parsedProp || {name: 'opacity', value: '1'}}
                         />
                     </ItemValue>
                 </Item>

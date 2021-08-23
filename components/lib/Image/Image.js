@@ -1,17 +1,22 @@
 import React, { useContext } from 'react'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { OutlinesContext } from '../../../context/outlinesContext'
-import { getComponent, getHandler } from '../../../core/functions/components';
-import { setDragendComponent } from '../../../store/actions/document';
-import { ImageBody, ImageWrapper } from './ImageStyled'
+import { getComponent, getHandler, getParent } from '../../../core/functions/components';
+import { setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
+import { ImageComponent } from './ImageStyled'
+import { MODE } from '../../../core/config/site';
 
 
 export default function Image(props) {
 
-    const {id} = props;
-    const outlines = useContext(OutlinesContext);
+    const {id} = props.componentData;
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const dispatch = useDispatch();
+
 
     const onDragStart = (e, componentId) => {
         dispatch(setDragendComponent(componentData));
@@ -21,8 +26,36 @@ export default function Image(props) {
         e.dataTransfer.effectAllowed = 'move';
     }
 
+    const onDragEnter = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.target.id === dragendComponent.id) return;
+
+        if (e.altKey) {
+            const parent = getParent(componentsData, id);
+            const hasCommonParent = parent.childrenList.includes(dragendComponent);
+
+            if (hasCommonParent) {
+                const index = parent.childrenList.indexOf(componentData);
+                const parentCopy = {
+                    ... parent,
+                    childrenList: [...parent.childrenList]
+                };
+                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+                parentCopy.childrenList.splice(index, 0, dragendComponent);
+                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            }
+        }
+    }
+
+    const onDragLeave = (e) => {
+        e.stopPropagation();
+    }
+
     const onDragEnd = (e) => {
         e.target.style.opacity = '1';
+        if (dragendComponent) dispatch(unsetDragendComponent());
     }
 
     const onDragOver = (e) => {
@@ -31,21 +64,39 @@ export default function Image(props) {
         e.stopPropagation();
     }
 
+    const onDrop = (e) => {
+        e.stopPropagation();
+    }
+
+
     return (
-        <ImageWrapper
-            {...props}
-            {...props.componentData}
-            showOutlines={outlines}
-            onClick={getHandler(props, 'onClick')}
+        <ImageComponent
+            id={id}
+            draggable
+            componentData={componentData}
+            alt={"alt"}
+            src={componentData.link}
+            width={componentData.width || '200px'}
+            height={componentData.height || 'auto'}
+            isActiveComponent={isActiveComponent}
+            {...props.handlers}
+            onClick={(e) => {
+                // getHandler(props, 'onClick')();
+                if (MODE === 'admin') {
+                    e.stopPropagation();
+                    if (activeComponent && activeComponent.id === id) {
+                        dispatch(unsetActiveComponent());
+                        return;
+                    }
+                    dispatch(setActiveComponent(props.componentData));
+                }
+            }}
             onDragStart={(e) => onDragStart(e, id)}
+            onDragEnter={onDragEnter}
+            onDragLeave={onDragLeave}
             onDragEnd={onDragEnd}
             onDragOver={onDragOver}
-        >
-            <ImageBody
-                {...props}
-                {...props.componentData}
-            />
-            {props.children}
-        </ImageWrapper>
+            onDrop={onDrop}
+        />
     )
 }

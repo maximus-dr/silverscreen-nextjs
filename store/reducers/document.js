@@ -1,6 +1,6 @@
-import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, updateComponentChildrenList } from "../../core/functions/admin/components";
+import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, updateComponentChildrenList, setLinkToComponentsData } from "../../core/functions/admin/components";
 import { setPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -70,6 +70,21 @@ export const documentReducer = (state = {}, action) => {
                 }
             }
 
+        case SET_COMPONENT_LINK:
+            console.log(action.id, action.link);
+            return {
+                ...state,
+                componentsData: setLinkToComponentsData(state.componentsData, action.id, action.link)
+            }
+
+        case SET_COMPONENT_LINK_TO_ACTIVE:
+            return {
+                ...state,
+                activeComponent: {
+                    ...state.activeComponent,
+                    link: action.link
+                }
+            }
 
         case SET_COMPONENT_NAME:
             return {
