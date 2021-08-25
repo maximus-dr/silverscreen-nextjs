@@ -2,13 +2,16 @@ import React, { useEffect } from 'react'
 import { SliderEmpty, SliderWrapper } from './SliderStyled'
 import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRef } from 'react';
+import { setActiveComponent } from '../../../store/actions/document';
+
 
 export default function Slider(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const dispatch = useDispatch();
 
     const settings = {
         emulateTouch: true,
@@ -31,7 +34,10 @@ export default function Slider(props) {
     return (
         <SliderWrapper
             onClick={(e) => {
-                e.stopPropagation()
+                e.stopPropagation();
+                if (!isActiveComponent) {
+                    dispatch(setActiveComponent(props.componentData))
+                }
             }}
             isActiveComponent={isActiveComponent}
         >
@@ -45,7 +51,14 @@ export default function Slider(props) {
                     }
                 }}
             >
-                {props.children}
+                {props.children.map((child, i) => {
+                    return (
+                        <>
+                            <div key={i} style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '1'}}></div>
+                            {child}
+                        </>
+                    );
+                })}
             </Carousel>
         </SliderWrapper>
     )

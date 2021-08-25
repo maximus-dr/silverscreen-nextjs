@@ -154,7 +154,7 @@ export default function Section(props) {
             onMouseEnter={props.onMouseEnter}
             onClick={(e) => {
                 getHandler(props, 'onClick')();
-                if (MODE === 'admin' && !props.componentData.role === 'slide') {
+                if (MODE === 'admin') {
                     e.stopPropagation();
                     if (activeComponent && activeComponent.id === id) {
                         dispatch(unsetActiveComponent());
@@ -165,7 +165,7 @@ export default function Section(props) {
             }}
             isActiveComponent={isActiveComponent}
             allowDrop={allowDrop}
-            draggable={!props.componentData.role === 'slide'}
+            draggable
             onDragStart={(e) => onDragStart(e, id)}
             onDragEnter={onDragEnter}
             onDragLeave={onDragLeave}
