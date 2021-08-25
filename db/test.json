@@ -3,105 +3,23 @@
   "id": "doc1",
   "name": "Test",
   "childrenList": [
-    {
-      "typeName": "page",
-      "id": "page1",
-      "name": "Main Page",
-      "styles": {
-        "common": {
-            "paddingTop": "5px",
-            "paddingRight": "5px",
-            "paddingBottom": "5px",
-            "paddingLeft": "5px",
-            "minHeight": "100vh",
-            "backgroundColor": "#ffffff"
-        }
-      },
-      "childrenList": [
         {
-            "typeName": "section",
-            "id": "sec001",
-            "name": "Section 1",
-            "styles": {
-                "common": {
-                    "minHeight": "50px",
-                    "border": "1px dashed #42a5f5",
-                    "paddingTop": "15px",
-                    "paddingRight": "15px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px"
-                }
-            },
-            "childrenList": []
+        "typeName": "page",
+        "id": "page1",
+        "name": "Main Page",
+        "styles": {
+            "common": {
+                "paddingTop": "5px",
+                "paddingRight": "5px",
+                "paddingBottom": "5px",
+                "paddingLeft": "5px",
+                "minHeight": "100vh",
+                "backgroundColor": "#ffffff"
+            }
         },
-        {
-            "typeName": "section",
-            "id": "sec002",
-            "name": "Section 2",
-            "styles": {
-                "common": {
-                    "minHeight": "50px",
-                    "border": "1px dashed #42a5f5",
-                    "paddingTop": "15px",
-                    "paddingRight": "15px",
-                    "paddingBottom": "15px",
-                    "paddingLeft": "15px"
-                }
-            },
-            "childrenList": []
-        },
-        {
-            "typeName": "label",
-            "id": "lab001",
-            "name": "Label 1",
-            "value": "Label",
-            "styles": {
-                "common": {
-                    "display": "inline-block",
-                    "paddingTop": "5px",
-                    "paddingRight": "5px",
-                    "paddingBottom": "5px",
-                    "paddingLeft": "5px",
-                    "fontSize": "22px"
-                }
-            },
-            "childrenList": []
-        },
+        "childrenList": [
 
-        {
-            "typeName": "image",
-            "id": "img001",
-            "name": "Изображение 1",
-            "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
-            "styles": {
-                "common": {
-                    "width": "200px",
-                    "height": "auto"
-                }
-            },
-            "childrenList": []
-        },
-
-        {
-            "typeName": "description",
-            "id": "desc001",
-            "name": "Текст",
-            "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            "styles": {
-                "common": {
-                    "marginTop": "0px",
-                    "marginBottom": "0px",
-                    "paddingTop": "5px",
-                    "paddingRight": "5px",
-                    "paddingBottom": "5px",
-                    "paddingLeft": "5px",
-                    "fontSize": "14px",
-                    "lineHeight": "1"
-                }
-            },
-            "childrenList": []
+        ]
         }
-      ]
-    }
-  ]
+    ]
 }

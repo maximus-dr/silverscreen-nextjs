@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { renderComponents } from '../../../core/functions/render';
+
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';
 import PanelTools from '../Panels/PanelTools/PanelTools';
+import Slider from '../../lib/Slider/Slider';
 import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './WorkspaceStyled'
 
 

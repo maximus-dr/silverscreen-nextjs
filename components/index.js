@@ -13,6 +13,7 @@ import Radio from "./lib/Radio/Radio";
 import Section from './lib/Section/Section';
 import Tab from './lib/Tab/Tab';
 import Document from "./lib/Document/Document";
+import Slider from "./lib/Slider/Slider";
 
 
 export const Provider = {
@@ -30,5 +31,6 @@ export const Provider = {
     'page': Page,
     'radio': Radio,
     'section': Section,
+    'slider': Slider,
     'tab': Tab
 }
