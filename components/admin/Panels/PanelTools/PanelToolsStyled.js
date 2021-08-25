@@ -5,7 +5,7 @@ export const ToolsWrapper = styled.div`
     position: absolute;
     left: 0;
     top: 0;
-
+    z-index: 100;
 `;
 
 export const ToolsFixWrapper = styled.div`

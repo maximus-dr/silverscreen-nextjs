@@ -1,17 +1,17 @@
 import React from 'react'
 import { SectionComponent } from './SectionStyled'
-import { generateNewId, getChild, getComponent, getHandler, getParent } from '../../../core/functions/components';
+import { getChild, getComponent, getHandler, getParent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
-import { templates } from '../../admin/Panels/PanelDocument/DocumentTree/DocumentTree';
 import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
 import { MODE } from '../../../core/config/site';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 
 
 
 export default function Section(props) {
-
+    
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
@@ -44,6 +44,7 @@ export default function Section(props) {
             }
         }
     }, [dragCounter, dragendComponent, componentData]);
+
 
 
 
@@ -144,6 +145,7 @@ export default function Section(props) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }
+
 
 
     return (

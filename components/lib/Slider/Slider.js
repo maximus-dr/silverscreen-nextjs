@@ -5,12 +5,17 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRef } from 'react';
 import { setActiveComponent } from '../../../store/actions/document';
+import { getComponent } from '../../../core/functions/components';
+
 
 
 export default function Slider(props) {
 
+
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, props.componentData.id);
     const dispatch = useDispatch();
 
     const settings = {
@@ -27,16 +32,22 @@ export default function Slider(props) {
 
     const slider = useRef();
 
-    useEffect(() => {
-        console.log(slider.current);
-    });
 
     return (
         <SliderWrapper
+            id={props.componentData.id}
             onClick={(e) => {
+                e.preventDefault();
                 e.stopPropagation();
                 if (!isActiveComponent) {
-                    dispatch(setActiveComponent(props.componentData))
+                    dispatch(setActiveComponent(componentData))
+                }
+            }}
+            onMouseDown={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (!isActiveComponent) {
+                    dispatch(setActiveComponent(componentData))
                 }
             }}
             isActiveComponent={isActiveComponent}
@@ -53,10 +64,10 @@ export default function Slider(props) {
             >
                 {props.children.map((child, i) => {
                     return (
-                        <>
-                            <div key={i} style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '1'}}></div>
+                        <div key={i}>
+                            <div style={{position: 'absolute', top: '0', left: '0', right: '0', bottom: '0', zIndex: '1'}}></div>
                             {child}
-                        </>
+                        </div>
                     );
                 })}
             </Carousel>
