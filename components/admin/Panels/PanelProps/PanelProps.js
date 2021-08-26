@@ -4,15 +4,16 @@ import Panel from '../Panel/Panel'
 import ComponentInfo from './ComponentInfo/ComponentInfo';
 import { PropsPanelWrapper} from './PanelPropsStyled';
 import Props from './Props/Props';
+import SliderProps from './SliderProps/SliderProps';
 
 
 
 export default function PanelProps() {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
-    
 
-    return activeComponent && activeComponent.typeName !== 'Document' 
+
+    return activeComponent && activeComponent.typeName !== 'Document'
         ? (
             <Panel title="Свойства">
                 <PropsPanelWrapper>
@@ -20,11 +21,19 @@ export default function PanelProps() {
                         activeComponent &&
                         <ComponentInfo activeComponent={activeComponent} />
                     }
-                    
-                    <Props activeComponent={activeComponent} />
+
+                    {
+                        activeComponent.typeName !== 'slider' &&
+                        <Props activeComponent={activeComponent} />
+                    }
+
+                    {
+                        activeComponent.typeName === 'slider' &&
+                        <SliderProps />
+                    }
 
                 </PropsPanelWrapper>
-            </Panel> 
+            </Panel>
         ) : (
             <Panel title="Свойства"></Panel>
         );
