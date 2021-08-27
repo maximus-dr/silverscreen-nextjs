@@ -89,5 +89,63 @@
                 "childrenList": []
             }
         ]
+    },
+
+    {
+        "category": "Изображение",
+        "templates": [
+            {
+                "typeName": "image",
+                "id": "img001",
+                "name": "Пустое",
+                "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
+                "styles": {
+                    "common": {
+                        "width": "100%",
+                        "maxWidth": "640px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Слайдер",
+        "templates": [
+            {
+                "typeName": "slider",
+                "id": "slider001",
+                "name": "Пустой",
+                "settings": {
+                    "initItem": "0",
+                    "arrows": "true",
+                    "buttons": "true",
+                    "swipeable": "true",
+                    "autoPlay": "true",
+                    "interval": "3000",
+                    "transitionTime": "350",
+                    "tolerance": "5",
+                    "infiniteLoop": "true",
+                    "axis": "horizontal"
+                },
+                "styles": {
+                    "common": {},
+                    "buttons": {
+                        "common": {}
+                    },
+                    "buttonsList": {
+                        "common": {}
+                    },
+                    "arrowLeft": {
+                        "common": {}
+                    },
+                    "arrowRight": {
+                        "common": {}
+                    }
+                },
+                "childrenList": []
+            }
+        ]
     }
 ]

@@ -16,6 +16,8 @@ import Slide from './Slide/Slide';
 
 export default function Slider(props) {
 
+    console.log(props.componentData);
+
     const {children} = props;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
@@ -25,17 +27,29 @@ export default function Slider(props) {
 
     const [activeItem, setActiveItem] = useState(0);
     const slider = useRef();
-    console.log('slider', slider.current);
 
-    const renderIndicator = (clickHandler, isSelected, index, label) => {
+    const settings = {
+        selectedItem: 0,
+        arrows: true,
+        buttons: true,
+        swipeable: true,
+        autoPlay: false,
+        interval: 5000,
+        transitionTime: 350,
+        swipeScrollTolerance: 5,
+        infiniteLoop: false,
+        axis: 'horizontal'
+    }
+
+    const renderIndicator = (index) => {
         return (
             <Bullet
-                isSelected={isSelected}
+                key={index}
+                isSelected={index === activeItem}
                 onClick={() => {
                     slider.current.moveTo(index, activeItem);
                 }}
             >
-                {index}
             </Bullet>
         );
     }
@@ -43,7 +57,7 @@ export default function Slider(props) {
     const renderArrowNext = () => {
         return (
             <ArrowNext
-                disabled={activeItem === children.length - 1}
+                disabled={!settings.infiniteLoop && activeItem === children.length - 1}
                 onClick={() => slider.current.increment()}
             >
                 Next
@@ -54,7 +68,7 @@ export default function Slider(props) {
     const renderArrowPrev = () => {
         return (
             <ArrowPrev
-                disabled={activeItem === 0}
+                disabled={!settings.infiniteLoop && activeItem === 0}
                 onClick={() => {
                     slider.current.decrement();
                 }}
@@ -64,7 +78,7 @@ export default function Slider(props) {
         );
     }
 
-    const onClick = (e) => {
+    const onSliderClick = (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (!isActiveComponent) {
@@ -72,7 +86,7 @@ export default function Slider(props) {
         }
     }
 
-    const onMouseDown = (e) => {
+    const onSliderMouseDown = (e) => {
         e.preventDefault();
         e.stopPropagation();
         if (!isActiveComponent) {
@@ -80,85 +94,33 @@ export default function Slider(props) {
         }
     }
 
-    const onChange = (index) => {
+    const onSliderChange = (index) => {
         if (index !== activeItem) setActiveItem(index);
         if (!settings.autoPlay) {
             slider.current.clearAutoPlay();
         }
     }
 
-    const settings = {
-        emulateTouch: true,
-        showThumbs: false,
-        showStatus: false,
-        showArrows: true,
-        showIndicators: true,
-        centerMode: false,
-        interval: 3000,
-        autoPlay: false,
-        selectedItem: 0,
-        axis: 'horizontal',
-        swipeable: false,
-        transitionTime: 350,
-        renderIndicator,
-        renderArrowNext,
-        renderArrowPrev
-    }
-
-    const AnimationHandler = (props, state) => {
-        const transitionTime = props.transitionTime + 'ms';
-        const transitionTimingFunction = 'ease-in-out';
-
-        let slideStyle = {
-            position: 'absolute',
-            display: 'block',
-            zIndex: -2,
-            minHeight: '100%',
-            opacity: 0,
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0,
-            transitionTimingFunction: transitionTimingFunction,
-            msTransitionTimingFunction: transitionTimingFunction,
-            MozTransitionTimingFunction: transitionTimingFunction,
-            WebkitTransitionTimingFunction: transitionTimingFunction,
-            OTransitionTimingFunction: transitionTimingFunction,
-        };
-
-        if (!state.swiping) {
-            slideStyle = {
-                ...slideStyle,
-                WebkitTransitionDuration: transitionTime,
-                MozTransitionDuration: transitionTime,
-                OTransitionDuration: transitionTime,
-                transitionDuration: transitionTime,
-                msTransitionDuration: transitionTime,
-            };
-        }
-
-        return {
-            slideStyle,
-            selectedStyle: { ...slideStyle, opacity: 1, position: 'relative' },
-            prevStyle: { ...slideStyle },
-        };
-    };
-
 
     return (
         <SliderWrapper
             id={props.componentData.id}
             isActiveComponent={isActiveComponent}
-            onClick={onClick}
-            onMouseDown={onMouseDown}
+            onClick={onSliderClick}
+            onMouseDown={onSliderMouseDown}
 
         >
             {!children && <SliderEmpty>Добавьте слайды</SliderEmpty>}
             <Carousel
                 {...settings}
                 ref={slider}
-                onChange={onChange}
-                animationHandler='fade'
+                onChange={onSliderChange}
+                showArrows={false}
+                showIndicators={false}
+                emulateTouch={true}
+                showThumbs={false}
+                showStatus={false}
+                centerMode={false}
             >
                 {children && children.map((child, i) => {
                     return (
@@ -168,6 +130,9 @@ export default function Slider(props) {
                     );
                 })}
             </Carousel>
+            {children && children.length > 1 && renderArrowPrev()}
+            {children && children.map((item, i) => renderIndicator(i))}
+            {children && children.length > 1 && renderArrowNext()}
         </SliderWrapper>
     );
 }

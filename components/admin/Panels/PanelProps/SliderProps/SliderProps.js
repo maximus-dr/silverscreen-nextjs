@@ -4,7 +4,6 @@ import { PropsBody, PropsHeader, PropsSection } from './SliderPropsStyled'
 export default function SliderProps() {
     return (
         <PropsSection>
-            <PropsHeader>Slider props</PropsHeader>
             <PropsBody>
                 <ul>
                     <li>Swipe</li>

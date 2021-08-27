@@ -23,15 +23,18 @@ export default function PanelProps() {
                     }
 
                     {
-                        activeComponent.typeName !== 'slider' &&
-                        <Props activeComponent={activeComponent} />
+                        activeComponent.typeName === 'slider' &&
+                        <>
+                            <h3>Настройки </h3>
+                            <SliderProps />
+                            <h3>Стили</h3>
+                        </>
                     }
 
                     {
-                        activeComponent.typeName === 'slider' &&
-                        <SliderProps />
+                        activeComponent.typeName &&
+                        <Props activeComponent={activeComponent} />
                     }
-
                 </PropsPanelWrapper>
             </Panel>
         ) : (
