@@ -6,7 +6,7 @@ export const PropWrapper = styled.div`
 `;
 
 export const PropInput = styled.input`
-    width: 50px;
+    width: 55px;
 `;
 
 export const PropLabel = styled.label``;

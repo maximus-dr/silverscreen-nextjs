@@ -1,7 +1,10 @@
-import styled, {css} from "styled-components";
+import styled, {css, keyframes} from "styled-components";
+
+
 
 export const PropsWrapper = styled.div`
     display: none;
+
     ${props => {
         return props.isActive && css`
             display: block;

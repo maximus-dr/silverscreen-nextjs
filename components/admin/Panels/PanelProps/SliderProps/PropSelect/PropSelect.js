@@ -3,11 +3,11 @@ import { Select, SelectLabel, SelectOption, SelectWrapper } from './PropSelectSt
 
 export default function PropSelect(props) {
 
-    const {options} = props;
+    const {options, value} = props;
 
     return (
         <SelectWrapper>
-            <Select>
+            <Select value={value}>
                 {options && options.map(item => (
                     <SelectOption key={item.value} value={item.value}>{item.value}</SelectOption>
                 ))}

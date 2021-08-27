@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+
 
 export const ComponentSectionWrapper = styled.div`
 
