@@ -1,7 +1,5 @@
 import React from 'react'
-import { Wrapper } from './PropsStyled'
-import Resolutions from './ToggleStyles/Resolutions/Resolutions'
-import { useSelector } from 'react-redux'
+import { PropsWrapper } from './PropsStyled'
 import PropsBorder from './PropsBorder/PropsBorder'
 import PropsWidth from './PropsWidth/PropsWidth'
 import PropsMargin from './PropsMargin/PropsMargin'
@@ -10,23 +8,16 @@ import PropsPosition from './PropsPosition/PropsPosition'
 import PropsFont from './PropsFont/PropsFont'
 import PropsBackground from './PropsBackground/PropsBackground'
 import PropsEffects from './PropsEffects/PropsEffects'
-import { getComponent } from '../../../../../core/functions/components'
-
+import Resolutions from './ToggleStyles/Resolutions/Resolutions'
 
 
 export default function Props(props) {
 
-    const {activeComponent} = props;
-    const id = activeComponent && activeComponent.id || '';
-    const resolution = useSelector(state => state.document.resolution && state.document.resolution || null);
-    const componentsData = useSelector(state => state.document.componentsData);
-    const componentData = getComponent(componentsData, id);
-
+    const {activeComponent, componentData} = props;
     const styles = componentData.styles.common || {};
 
-
     return (
-        <Wrapper isActive={activeComponent}>
+        <PropsWrapper isActive={activeComponent}>
             {/* Выбор разрешения */}
             {/* <Resolutions activeComponent={activeComponent} /> */}
 
@@ -77,6 +68,6 @@ export default function Props(props) {
                 styles={styles}
                 activeComponent={activeComponent}
             />
-        </Wrapper>
+        </PropsWrapper>
     )
 }

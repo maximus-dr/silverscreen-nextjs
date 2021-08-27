@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 
+export const PropsTitle = styled.div`
+    padding: 5px;
+`;
+
 export const PropsSection = styled.div`
     margin-bottom: 5px;
     border: 1px dashed black;

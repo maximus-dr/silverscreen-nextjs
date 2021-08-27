@@ -132,15 +132,18 @@
                 "styles": {
                     "common": {},
                     "buttons": {
-                        "common": {}
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
                     },
                     "buttonsList": {
                         "common": {}
                     },
-                    "arrowLeft": {
+                    "arrowPrev": {
                         "common": {}
                     },
-                    "arrowRight": {
+                    "arrowNext": {
                         "common": {}
                     }
                 },

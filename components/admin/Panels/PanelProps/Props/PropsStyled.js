@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 
-export const Wrapper = styled.div`
+export const PropsWrapper = styled.div`
     display: none;
     ${props => {
         return props.isActive && css`

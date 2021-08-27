@@ -4,7 +4,8 @@ import { StylesProvider } from "../../../styles";
 
 
 
-export const ArrowNextStyled = styled.button`
+export const ButtonsListWrapper = styled.div`
+
     ${props => {
         const styles = props.styles && props.styles.common || null;
 

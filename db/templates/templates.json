@@ -130,18 +130,32 @@
                     "axis": "horizontal"
                 },
                 "styles": {
-                    "common": {},
+                    "common": {
+                        "paddingTop": "15px",
+                        "paddingBottom": "15px"
+                    },
                     "buttons": {
-                        "common": {}
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
                     },
                     "buttonsList": {
-                        "common": {}
+                        "common": {
+                            "display": "inline-flex"
+                        }
                     },
-                    "arrowLeft": {
-                        "common": {}
+                    "arrowPrev": {
+                        "common": {
+                            "paddingLeft": "25px",
+                            "paddingRight": "25px"
+                        }
                     },
-                    "arrowRight": {
-                        "common": {}
+                    "arrowNext": {
+                        "common": {
+                            "paddingLeft": "25px",
+                            "paddingRight": "25px"
+                        }
                     }
                 },
                 "childrenList": []

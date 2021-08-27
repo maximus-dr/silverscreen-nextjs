@@ -3,8 +3,8 @@ import { screens } from "../../../../core/variables/variables";
 import { StylesProvider } from "../../../styles";
 
 
+export const ButtonStyled = styled.button`
 
-export const ArrowNextStyled = styled.button`
     ${props => {
         const styles = props.styles && props.styles.common || null;
 

@@ -7,56 +7,50 @@ import { useRef } from 'react';
 import { setActiveComponent } from '../../../store/actions/document';
 import { getComponent } from '../../../core/functions/components';
 import { useState } from 'react';
-import Bullet from './Bullet/Bullet';
+import Button from './Button/Button';
 import ArrowNext from './ArrowNext/ArrowNext';
 import ArrowPrev from './ArrowPrev/ArrowPrev';
 import Slide from './Slide/Slide';
+import ButtonsList from './ButtonsList/ButtonsList';
 
 
 
 export default function Slider(props) {
-
-    console.log(props.componentData);
 
     const {children} = props;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, props.componentData.id);
+    const buttonsStyles = componentData.styles.buttons;
+    const buttonsListStyles = componentData.styles.buttonsList;
+    const arrowPrevStyles = componentData.styles.arrowPrev;
+    const arrowNextStyles = componentData.styles.arrowNext;
+    const settings = componentData.settings;
     const dispatch = useDispatch();
 
     const [activeItem, setActiveItem] = useState(0);
     const slider = useRef();
 
-    const settings = {
-        selectedItem: 0,
-        arrows: true,
-        buttons: true,
-        swipeable: true,
-        autoPlay: false,
-        interval: 5000,
-        transitionTime: 350,
-        swipeScrollTolerance: 5,
-        infiniteLoop: false,
-        axis: 'horizontal'
-    }
 
-    const renderIndicator = (index) => {
+    const renderButton = (index, styles) => {
         return (
-            <Bullet
+            <Button
                 key={index}
+                styles={styles}
                 isSelected={index === activeItem}
                 onClick={() => {
                     slider.current.moveTo(index, activeItem);
                 }}
             >
-            </Bullet>
+            </Button>
         );
     }
 
-    const renderArrowNext = () => {
+    const renderArrowNext = (styles) => {
         return (
             <ArrowNext
+                styles={styles}
                 disabled={!settings.infiniteLoop && activeItem === children.length - 1}
                 onClick={() => slider.current.increment()}
             >
@@ -65,9 +59,10 @@ export default function Slider(props) {
         );
     }
 
-    const renderArrowPrev = () => {
+    const renderArrowPrev = (styles) => {
         return (
             <ArrowPrev
+                styles={styles}
                 disabled={!settings.infiniteLoop && activeItem === 0}
                 onClick={() => {
                     slider.current.decrement();
@@ -108,6 +103,7 @@ export default function Slider(props) {
             isActiveComponent={isActiveComponent}
             onClick={onSliderClick}
             onMouseDown={onSliderMouseDown}
+            componentData={componentData}
 
         >
             {!children && <SliderEmpty>Добавьте слайды</SliderEmpty>}
@@ -130,9 +126,14 @@ export default function Slider(props) {
                     );
                 })}
             </Carousel>
-            {children && children.length > 1 && renderArrowPrev()}
-            {children && children.map((item, i) => renderIndicator(i))}
-            {children && children.length > 1 && renderArrowNext()}
+            {children && children.length > 1 && renderArrowPrev(arrowPrevStyles)}
+            {
+                children &&
+                <ButtonsList styles={buttonsListStyles}>
+                    {children.map((item, i) => renderButton(i, buttonsStyles))}
+                </ButtonsList>
+            }
+            {children && children.length > 1 && renderArrowNext(arrowNextStyles)}
         </SliderWrapper>
     );
 }
