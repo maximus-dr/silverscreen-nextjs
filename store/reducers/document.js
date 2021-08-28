@@ -1,8 +1,7 @@
 import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, updateComponentChildrenList, setLinkToComponentsData } from "../../core/functions/admin/components";
-import { setPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE } from "../actions/document"
+import { setPropToComponentsData, setSettingsPropToComponentsData } from "../../core/functions/admin/props";
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE, SET_SETTINGS_PROP } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
-
 
 
 export const documentReducer = (state = {}, action) => {
@@ -51,6 +50,19 @@ export const documentReducer = (state = {}, action) => {
                             ...state.activeComponent.styles.common,
                             [action.prop.name]: action.prop.value
                         }
+                    }
+                }
+            }
+
+        case SET_SETTINGS_PROP:
+            return {
+                ...state,
+                componentsData: setSettingsPropToComponentsData(state.componentsData, action.prop),
+                activeComponent: {
+                    ...state.activeComponent,
+                    settings: {
+                        ...state.activeComponent.settings,
+                        [action.prop.name]: action.prop.value
                     }
                 }
             }
@@ -168,6 +180,7 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...noModalState
             }
+
 
         default:
             return state

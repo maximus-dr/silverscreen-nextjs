@@ -18,7 +18,42 @@
             }
         },
         "childrenList": [
-
+            {
+                "typeName": "slider",
+                "id": "slider001",
+                "name": "Пустой",
+                "settings": {
+                    "initItem": 0,
+                    "arrows": true,
+                    "buttons": true,
+                    "swipeable": true,
+                    "autoPlay": true,
+                    "interval": 3000,
+                    "transitionTime": 350,
+                    "tolerance": 5,
+                    "infiniteLoop": true,
+                    "axis": "horizontal"
+                },
+                "styles": {
+                    "common": {},
+                    "buttons": {
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
+                    },
+                    "buttonsList": {
+                        "common": {}
+                    },
+                    "arrowPrev": {
+                        "common": {}
+                    },
+                    "arrowNext": {
+                        "common": {}
+                    }
+                },
+                "childrenList": []
+            }
         ]
         }
     ]

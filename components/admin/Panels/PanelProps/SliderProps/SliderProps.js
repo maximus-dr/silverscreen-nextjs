@@ -26,23 +26,28 @@ export default function SliderProps(props) {
                 <PropsTitle>Настройки</PropsTitle>
                 <PropsBody>
                     <PropBoolean
-                        name="Стрелки"
+                        name="arrows"
+                        title="Стрелки"
                         value={settings.arrows}
                     />
                     <PropBoolean
-                        name="Кнопки"
+                        name="buttons"
+                        title="Кнопки"
                         value={settings.buttons}
                     />
                     <PropBoolean
-                        name="Свайп"
+                        name="swipeable"
+                        title="Свайп"
                         value={settings.swipeable}
                     />
                     <PropBoolean
-                        name="Автопрокрутка"
+                        name="autoPlay"
+                        title="Автопрокрутка"
                         value={settings.autoPlay}
                     />
                     <PropBoolean
-                        name="Бесконечная прокрутка"
+                        name="infiniteLoop"
+                        title="Бесконечная прокрутка"
                         value={settings.infiniteLoop}
                     />
                     <PropNum

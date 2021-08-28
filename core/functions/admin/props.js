@@ -309,9 +309,29 @@ const setPropToComponentsData = (componentsData, prop) => {
     }
 }
 
+const setSettingsPropToComponentsData = (componentsData, prop) => {
+    if (componentsData.id === prop.id) {
+        return {
+            ...componentsData,
+            settings: {
+                ...componentsData.settings,
+                [prop.name]: prop.value
+            }
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return setSettingsPropToComponentsData(child, prop);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
 
 
 export {
     parseProp,
-    setPropToComponentsData
+    setPropToComponentsData,
+    setSettingsPropToComponentsData
 }

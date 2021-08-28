@@ -62,12 +62,15 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            initialReduxState: reduxStore.getState()
+            initialReduxState: reduxStore.getState(),
+            componentsData
         }
     }
 }
 
-export default function AdminMainPage() {
+export default function AdminMainPage(props) {
+
+    console.log(props.componentsData);
 
     return (
         <Wrapper>

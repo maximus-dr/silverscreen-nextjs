@@ -7,7 +7,10 @@ export default function PropSelect(props) {
 
     return (
         <SelectWrapper>
-            <Select value={value}>
+            <Select 
+                value={value}
+                onChange={() => {}}
+            >
                 {options && options.map(item => (
                     <SelectOption key={item.value} value={item.value}>{item.value}</SelectOption>
                 ))}

@@ -20,6 +20,7 @@ const UPDATE_ACTIVE_COMPONENT_CHILDRENLIST = 'UPDATE_ACTIVE_COMPONENT_CHILDRENLI
 const ADD_COMPONENT_TO_ACTIVE = 'ADD_COMPONENT_TO_ACTIVE';
 const SET_MODAL = 'SET_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
+const SET_SETTINGS_PROP = 'SET_SETTINGS_PROP';
 
 
 
@@ -49,6 +50,11 @@ const setResolution = (resolution) => ({
 
 const setProp = (prop) => ({
     type: SET_PROP,
+    prop
+});
+
+const setSettingsProp = (prop) => ({
+    type: SET_SETTINGS_PROP,
     prop
 });
 
@@ -137,6 +143,8 @@ const closeModal = () => ({
 
 
 
+
+
 export {
     setDocumentComponentsData,
     setTemplates,
@@ -160,6 +168,7 @@ export {
     addComponentToActive,
     setModal,
     closeModal,
+    setSettingsProp
 }
 
 export {
@@ -184,5 +193,6 @@ export {
     CLEAR_BUFFER,
     ADD_COMPONENT_TO_ACTIVE,
     SET_MODAL,
-    CLOSE_MODAL
+    CLOSE_MODAL,
+    SET_SETTINGS_PROP
 }
