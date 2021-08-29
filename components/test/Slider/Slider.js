@@ -31,7 +31,6 @@ export default function Slider() {
     }
 
     const slider = useRef();
-    console.log(slider.current);
     const length = LENGTH;
     const text = useRef();
 
@@ -70,9 +69,6 @@ export default function Slider() {
                         setSelectedItem(slider.current.state.selectedItem);
                         console.log(slider.current.listRef.style.transform.replace('translate3d(', '').replace(')', '').split(', ')[0].replace('%', ''));
                         setTransform(slider.current.listRef.style.transform.replace('translate3d(', '').replace(')', '').split(', ')[0].replace('%', ''));
-                        // console.log(slider.current);
-                        // console.log(slider.current.listRef.style.transform);
-                        // setTransform(slider.current.listRef.style.transform)
                     }}
                     onSwipeMove={() => {
                         setTransform(slider.current.listRef.style.transform.replace('translate3d(', '').replace(')', '').split(', ')[0].replace('%', ''));

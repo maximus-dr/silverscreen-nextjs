@@ -68,9 +68,7 @@ export async function getServerSideProps() {
     }
 }
 
-export default function AdminMainPage(props) {
-
-    console.log(props.componentsData);
+export default function AdminMainPage() {
 
     return (
         <Wrapper>

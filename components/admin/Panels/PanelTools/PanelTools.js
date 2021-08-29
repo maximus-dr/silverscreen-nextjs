@@ -87,7 +87,6 @@ export default function PanelTools() {
     const onTemplatesClick = async () => {
         const response = await fetch('/api/templates');
         const data = await response.json();
-        console.log('data', data);
     }
 
 

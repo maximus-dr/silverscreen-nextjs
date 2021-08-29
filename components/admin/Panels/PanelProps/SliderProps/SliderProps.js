@@ -6,7 +6,7 @@ import { PropsBody, PropsSection, PropsTitle } from './SliderPropsStyled'
 import ToggleStyles from './ToggleStyles/ToggleStyles';
 
 
-const SLIDER_INIT_SLIDE = 1;
+const SLIDER_INIT_SLIDE = 0;
 const SLIDER_INTERVAL = 3000;
 const SLIDER_TRANSITION = 350;
 const SLIDER_TOLERANCE = 5;
@@ -18,7 +18,6 @@ export default function SliderProps(props) {
     const {componentData} = props;
     const settings = componentData.settings;
     const children = componentData.childrenList;
-    console.log(componentData);
 
     return (
         <>
@@ -51,30 +50,35 @@ export default function SliderProps(props) {
                         value={settings.infiniteLoop}
                     />
                     <PropNum
-                        name="Начальный слайд"
-                        min="1"
-                        max={children.length}
-                        value={settings.initItem || SLIDER_INIT_SLIDE}
+                        name="selectedItem"
+                        title="Начальный слайд"
+                        min={0}
+                        max={children.length > 0 ? children.length - 1 : 0}
+                        value={settings.selectedItem || SLIDER_INIT_SLIDE}
                     />
                     <PropNum
-                        name="Интервал"
-                        min={0}
-                        step={10}
+                        name="interval"
+                        title="Интервал"
+                        min={300}
+                        step={100}
                         value={settings.interval || SLIDER_INTERVAL}
                     />
                     <PropNum
-                        name="Переход"
-                        min={0}
+                        name="transitionTime"
+                        title="Переход"
+                        min={100}
                         step={10}
                         value={settings.transitionTime || SLIDER_TRANSITION}
                     />
                     <PropNum
-                        name="Чувствительность"
+                        name="swipeScrollTolerance"
+                        title="Чувствительность"
                         min={0}
                         step={5}
-                        value={settings.tolerance || SLIDER_TOLERANCE}
+                        value={settings.swipeScrollTolerance || SLIDER_TOLERANCE}
                     />
                     <PropSelect
+                        name='axis'
                         options={[{value: 'horizontal'}, {value: 'vertical'}]}
                         value={settings.axis || SLIDER_AXIS}
                     />

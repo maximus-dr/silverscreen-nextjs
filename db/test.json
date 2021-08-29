@@ -23,15 +23,15 @@
                 "id": "slider001",
                 "name": "Пустой",
                 "settings": {
-                    "initItem": 0,
+                    "selectedItem": 0,
                     "arrows": true,
                     "buttons": true,
                     "swipeable": true,
                     "autoPlay": true,
+                    "infiniteLoop": true,
                     "interval": 3000,
                     "transitionTime": 350,
-                    "tolerance": 5,
-                    "infiniteLoop": true,
+                    "swipeScrollTolerance": 5,
                     "axis": "horizontal"
                 },
                 "styles": {

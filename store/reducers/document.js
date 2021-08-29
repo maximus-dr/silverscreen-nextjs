@@ -83,7 +83,6 @@ export const documentReducer = (state = {}, action) => {
             }
 
         case SET_COMPONENT_LINK:
-            console.log(action.id, action.link);
             return {
                 ...state,
                 componentsData: setLinkToComponentsData(state.componentsData, action.id, action.link)

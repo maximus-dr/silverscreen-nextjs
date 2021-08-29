@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { SliderEmpty, SliderWrapper } from './SliderStyled'
 import { Carousel } from "react-responsive-carousel";
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { setActiveComponent } from '../../../store/actions/document';
 import { getComponent } from '../../../core/functions/components';
 import { useState } from 'react';
@@ -26,52 +26,12 @@ export default function Slider(props) {
     const buttonsListStyles = componentData.styles.buttonsList;
     const arrowPrevStyles = componentData.styles.arrowPrev;
     const arrowNextStyles = componentData.styles.arrowNext;
-    const settings = componentData.settings;
+    const settings = {...componentData.settings};
     const dispatch = useDispatch();
 
     const [activeItem, setActiveItem] = useState(0);
     const slider = useRef();
-
-
-    const renderButton = (index, styles) => {
-        return (
-            <Button
-                key={index}
-                styles={styles}
-                isSelected={index === activeItem}
-                onClick={() => {
-                    slider.current.moveTo(index, activeItem);
-                }}
-            >
-            </Button>
-        );
-    }
-
-    const renderArrowNext = (styles) => {
-        return (
-            <ArrowNext
-                styles={styles}
-                disabled={!settings.infiniteLoop && activeItem === children.length - 1}
-                onClick={() => slider.current.increment()}
-            >
-                Next
-            </ArrowNext>
-        );
-    }
-
-    const renderArrowPrev = (styles) => {
-        return (
-            <ArrowPrev
-                styles={styles}
-                disabled={!settings.infiniteLoop && activeItem === 0}
-                onClick={() => {
-                    slider.current.decrement();
-                }}
-            >
-                Prev
-            </ArrowPrev>
-        );
-    }
+    console.log(slider.current);
 
     const onSliderClick = (e) => {
         e.preventDefault();
@@ -109,6 +69,7 @@ export default function Slider(props) {
             {!children && <SliderEmpty>Добавьте слайды</SliderEmpty>}
             <Carousel
                 {...settings}
+                autoPlay={settings.autoPlay}
                 ref={slider}
                 onChange={onSliderChange}
                 showArrows={false}
@@ -118,22 +79,53 @@ export default function Slider(props) {
                 showStatus={false}
                 centerMode={false}
             >
-                {children && children.map((child, i) => {
-                    return (
+                {children && children.map((child, i) => (
                         <Slide key={i}>
                             {child}
                         </Slide>
-                    );
-                })}
+                    ))}
             </Carousel>
-            {children && children.length > 1 && renderArrowPrev(arrowPrevStyles)}
+
             {
+                settings.arrows &&
                 children &&
+                children.length > 1 &&
+                <ArrowPrev
+                    styles={arrowPrevStyles}
+                    disabled={!settings.infiniteLoop && activeItem === 0}
+                    onClick={() => {slider.current.decrement()}}
+                >
+                    Prev
+                </ArrowPrev>
+            }
+            {
+                settings.buttons &&
+                children &&
+                children.length > 1 &&
                 <ButtonsList styles={buttonsListStyles}>
-                    {children.map((item, i) => renderButton(i, buttonsStyles))}
+                    {children.map((item, i) => (
+                        <Button
+                            key={i}
+                            styles={buttonsStyles}
+                            isSelected={i === activeItem}
+                            onClick={() => {slider.current.moveTo(i, activeItem)}}
+                        >
+                        </Button>
+                    ))}
                 </ButtonsList>
             }
-            {children && children.length > 1 && renderArrowNext(arrowNextStyles)}
+            {
+                settings.arrows &&
+                children &&
+                children.length > 1 &&
+                <ArrowNext
+                styles={arrowNextStyles}
+                disabled={!settings.infiniteLoop && activeItem === children.length - 1}
+                onClick={() => slider.current.increment()}
+                >
+                    Next
+                </ArrowNext>
+            }
         </SliderWrapper>
     );
 }
