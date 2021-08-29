@@ -13,8 +13,8 @@ import Resolutions from './ToggleStyles/Resolutions/Resolutions'
 
 export default function Props(props) {
 
-    const {activeComponent, componentData} = props;
-    const styles = componentData.styles.common || {};
+    const {activeComponent, styles} = props;
+    // const styles = componentData.styles.common || {};
 
     return (
         <PropsWrapper isActive={activeComponent}>
