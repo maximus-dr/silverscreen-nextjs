@@ -1,22 +1,10 @@
 import React from 'react'
-import { PageBody } from './PageStyled';
+import { PageComponent } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/components';
-import { addComponent, deleteComponent, unsetActiveComponent, setActiveComponent, unsetDragendComponent, addComponentToActive } from '../../../store/actions/document';
-import { MODE } from '../../../core/config/site';
 import { useEffect, useState } from 'react';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/admin/components';
 
-
-
-const checkAllowDrop = (dragendComponent, dropTarget) => {
-    if (getChild(dragendComponent, dropTarget.id)) {
-        return false;
-    }
-    if (dragendComponent.typeName === 'page') {
-        return false;
-    }
-    return true;
-}
 
 
 export default function Page(props) {
@@ -29,83 +17,61 @@ export default function Page(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
 
-    const [isDroppable, setIsDroppable] = useState(false);
+    const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
 
+    const component = {
+        id,
+        componentsData,
+        componentData,
+        activeComponent,
+        dragendComponent,
+        isDropBox: true,
+        allowDrop,
+        setAllowDrop,
+        setDragCounter,
+        dispatch
+    }
+
+    const checkAllowDrop = (dragendComponent, dropTarget) => {
+        if (getChild(dragendComponent, dropTarget.id)) {
+            return false;
+        }
+        if (dragendComponent.typeName === 'page') {
+            return false;
+        }
+        return true;
+    }
+
     useEffect(() => {
-        if (dragCounter === 0) {
-            setIsDroppable(false);
-        }
-
-        else if (dragendComponent) {
-            setIsDroppable(checkAllowDrop(dragendComponent, componentData));
-        }
-    }, [dragCounter, componentData, dragendComponent]);
-
-    const onDragEnter = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.dataTransfer.dropEffect = isDroppable ? e.dataTransfer.effectAllowed : 'none';
-        if (!e.altKey) setDragCounter(prev => prev + 1);
-    }
-
-    const onDragLeave = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!e.altKey) setDragCounter(prev => prev - 1);
-    }
-
-    const onDragOver = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.dataTransfer.dropEffect = isDroppable ? e.dataTransfer.effectAllowed : 'none';
-    }
-
-    const onDrop = (e, targetId) => {
-        e.stopPropagation();
-        setIsDroppable(false);
-        setDragCounter(0);
-        const componentId = e.dataTransfer.getData('componentId');
-        const template = e.dataTransfer.getData('template');
-        if (targetId === componentId) return;
-        if (componentId) {
-            const component = getComponent(componentsData, componentId);
-            if (getChild(component, targetId)) return;
-            dispatch(deleteComponent(componentId));
-            dispatch(addComponent(targetId, component));
-
-        }
-        if (template) {
-            if (template === 'Страница') return;
-            activeComponent && dispatch(addComponentToActive(dragendComponent));
-            dispatch(addComponent(targetId, dragendComponent));
-        }
-        if (dragendComponent) dispatch(unsetDragendComponent());
-    }
-
-  return (
-      <PageBody
-	    id={id}
-        {...props}
-        componentData={componentData}
-        isActiveComponent={isActiveComponent}
-        isDroppable={isDroppable}
-        onDragEnter={onDragEnter}
-        onDragLeave={onDragLeave}
-        onDragOver={onDragOver}
-        onDrop={(e) => onDrop(e, props.componentData.id)}
-        onClick={(e) => {
-            if (MODE === 'admin') {
-                e.stopPropagation();
-                if (activeComponent && activeComponent.id === id) {
-                    dispatch(unsetActiveComponent());
-                    return;
-                }
-                dispatch(setActiveComponent(props.componentData));
+        if (dragendComponent) {
+            if (dragCounter === 0) {
+                setAllowDrop(false);
             }
-        }}
-      >
-        {props.children}
-      </PageBody>
-  )
+            else if (dragendComponent) {
+                setAllowDrop(checkAllowDrop(dragendComponent, componentData));
+            }
+        }
+    }, [dragCounter, dragendComponent, componentData]);
+
+
+    return (
+        <PageComponent
+            {...props}
+            id={id}
+            componentData={componentData}
+            onMouseEnter={props.onMouseEnter}
+            onClick={(e) => onClick(e, component)}
+            isActiveComponent={isActiveComponent}
+            onDragStart={(e) => onDragStart(e, component)}
+            onDragEnter={(e) => onDragEnter(e, component)}
+            onDragLeave={(e) => onDragLeave(e, component)}
+            onDragOver={(e) => onDragOver(e, component)}
+            onDragEnd={(e) => onDragEnd(e, component)}
+            onDrop={(e) => onDrop(e, component)}
+            allowDrop={allowDrop}
+        >
+            {props.children}
+        </PageComponent>
+    )
 }

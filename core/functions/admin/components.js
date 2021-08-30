@@ -132,8 +132,8 @@ const updateComponentChildrenListData = (componentsData, componentId, childrenLi
 
 
 const onDragStart = (e, component) => {
-    const {id, dispatch} = component
-    dispatch(setDragendComponent());
+    const {id, dispatch, componentData} = component
+    dispatch(setDragendComponent(componentData));
     e.stopPropagation();
     e.target.style.opacity = '0.4';
     e.dataTransfer.setData('componentId', id);

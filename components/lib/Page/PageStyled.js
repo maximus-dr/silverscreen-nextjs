@@ -3,7 +3,7 @@ import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
 
-export const PageBody = styled.div`
+export const PageComponent = styled.div`
 
   ${props => {
     const styles = props.componentData.styles && props.componentData.styles.common || null;

@@ -18,8 +18,8 @@ export default function Section(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
 
-    const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
+    const [dragCounter, setDragCounter] = useState(0);
 
     const component = {
         id,
