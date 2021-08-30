@@ -16,6 +16,7 @@ export default function Button(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
+    const isLocked = true;
 
     const component = {
         id,
@@ -24,6 +25,7 @@ export default function Button(props) {
         activeComponent,
         dragendComponent,
         isDropBox: false,
+        isLocked,
         dispatch
     }
 
@@ -40,7 +42,7 @@ export default function Button(props) {
             onDragOver={(e) => onDragOver(e, component)}
             onDragEnd={(e) => onDragEnd(e, component)}
             onDrop={(e) => onDrop(e, component)}
-            draggable
+            draggable={!isLocked}
         >
             {componentData && componentData.value || ''}
             {props.children}

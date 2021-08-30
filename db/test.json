@@ -23,6 +23,9 @@
                 "id": "button1",
                 "name": "Кнопка",
                 "value": "Отправить",
+                "handlers": {
+                    "onClick": [{"name": "setModal", "params": ["saveTemplate"]}]
+                },
                 "styles": {
                     "common": {}
                 },

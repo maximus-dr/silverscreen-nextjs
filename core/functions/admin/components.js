@@ -1,4 +1,4 @@
-import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
+import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, setModal, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
 import { MODE } from "../../config/site";
 import { generateNewId, getChild, getComponent, getHandler, getParent } from "../components";
 
@@ -246,16 +246,28 @@ const onDrop = (e, component) => {
     }
 }
 
+
 const onClick = (e, component) => {
-    const {id, componentData, activeComponent, dispatch} = component;
+    const {id, componentData, activeComponent, isLocked, dispatch} = component;
     if (MODE === 'admin') {
         e.stopPropagation();
-        if (activeComponent && activeComponent.id === id) {
-            dispatch(unsetActiveComponent());
-            return;
+
+        if (isLocked) {
+            if (!activeComponent || activeComponent && activeComponent.id !== id) {
+                dispatch(setActiveComponent(componentData));
+            }
         }
-        dispatch(setActiveComponent(componentData));
+
+        if (!isLocked) {
+            if (activeComponent && activeComponent.id === id) {
+                dispatch(unsetActiveComponent());
+                return;
+            }
+            dispatch(setActiveComponent(componentData));
+        }
     }
+
+
 }
 
 
