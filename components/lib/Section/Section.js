@@ -25,7 +25,7 @@ export default function Section(props) {
     const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
 
-    const state = {
+    const component = {
         id,
         componentsData,
         componentData,
@@ -35,7 +35,25 @@ export default function Section(props) {
         allowDrop,
         setAllowDrop,
         setDragCounter,
-        dispatch
+        dispatch,
+        setDragendComponent() {
+            dispatch(setDragendComponent(componentData))
+        },
+        unsetDragendComponent() {
+            dispatch(unsetDragendComponent())
+        },
+        updateComponentChildrenList(id, children) {
+            dispatch(updateComponentChildrenList(id, children))
+        },
+        deleteComponent(id) {
+            dispatch(deleteComponent(id))
+        },
+        addComponent(id, data) {
+            dispatch(addComponent(id, data))
+        },
+        addComponentToActive(component) {
+            dispatch(addComponentToActive(component))
+        }
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -60,8 +78,6 @@ export default function Section(props) {
     }, [dragCounter, dragendComponent, componentData]);
 
 
-
-
     return (
         <SectionComponent
             id={id}
@@ -82,12 +98,12 @@ export default function Section(props) {
             isActiveComponent={isActiveComponent}
             allowDrop={allowDrop}
             draggable
-            onDragStart={(e) => onDragStart(e, state)}
-            onDragEnter={(e) => onDragEnter(e, state)}
-            onDragLeave={(e) => onDragLeave(e, state)}
-            onDragOver={(e) => onDragOver(e, state)}
-            onDragEnd={(e) => onDragEnd(e, state)}
-            onDrop={(e) => onDrop(e, state)}
+            onDragStart={(e) => onDragStart(e, component)}
+            onDragEnter={(e) => onDragEnter(e, component)}
+            onDragLeave={(e) => onDragLeave(e, component)}
+            onDragOver={(e) => onDragOver(e, component)}
+            onDragEnd={(e) => onDragEnd(e, component)}
+            onDrop={(e) => onDrop(e, component)}
         >
             {props.children}
         </SectionComponent>

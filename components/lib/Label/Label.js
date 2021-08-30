@@ -5,7 +5,7 @@ import { MODE } from '../../../core/config/site';
 import { onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/admin/components';
 import { getComponent, getHandler, getParent } from '../../../core/functions/components';
 import { setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
-import { LabelSpan } from './LabelStyled'
+import { LabelComponent } from './LabelStyled'
 
 
 
@@ -21,18 +21,36 @@ export default function Label(props) {
     const text = componentData.value || '';
     const isDropBox = false;
 
-    const state = {
+    const component = {
         id,
         componentsData,
         componentData,
         activeComponent,
         dragendComponent,
         isDropBox,
-        dispatch
+        dispatch,
+        setDragendComponent() {
+            dispatch(setDragendComponent(componentData))
+        },
+        unsetDragendComponent() {
+            dispatch(unsetDragendComponent())
+        },
+        updateComponentChildrenList(id, children) {
+            dispatch(updateComponentChildrenList(id, children))
+        },
+        deleteComponent(id) {
+            dispatch(deleteComponent(id))
+        },
+        addComponent(id, data) {
+            dispatch(addComponent(id, data))
+        },
+        addComponentToActive(component) {
+            dispatch(addComponentToActive(component))
+        }
     }
 
     return (
-        <LabelSpan
+        <LabelComponent
             id={id}
             draggable
             {...props}
@@ -50,15 +68,15 @@ export default function Label(props) {
                     dispatch(setActiveComponent(props.componentData));
                 }
             }}
-            onDragStart={(e) => onDragStart(e, state)}
-            onDragEnter={(e) => onDragEnter(e, state)}
-            onDragLeave={(e) => onDragLeave(e, state)}
-            onDragOver={(e) => onDragOver(e, state)}
-            onDragEnd={(e) => onDragEnd(e, state)}
-            onDrop={(e) => onDrop(e, state)}
+            onDragStart={(e) => onDragStart(e, component)}
+            onDragEnter={(e) => onDragEnter(e, component)}
+            onDragLeave={(e) => onDragLeave(e, component)}
+            onDragOver={(e) => onDragOver(e, component)}
+            onDragEnd={(e) => onDragEnd(e, component)}
+            onDrop={(e) => onDrop(e, component)}
         >
             {text}
             {props.children}
-        </LabelSpan>
+        </LabelComponent>
     );
 }

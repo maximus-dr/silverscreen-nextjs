@@ -1,5 +1,6 @@
-import { addComponent, addComponentToActive, deleteComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
-import { generateNewId, getChild, getComponent, getParent } from "../components";
+import { generateNewId, getChild, getComponent, getHandler, getParent } from "../components";
+
+
 
 const setValueToComponentsData = (componentsData, componentId, value) => {
     if (componentsData.id === componentId) {
@@ -128,65 +129,68 @@ const updateComponentChildrenListData = (componentsData, componentId, childrenLi
 }
 
 
-const onDragStart = (e, state) => {
-    state.dispatch(setDragendComponent(state.componentData));
+const onDragStart = (e, component) => {
+    const {setDragendComponent, id} = component
+    setDragendComponent();
     e.stopPropagation();
     e.target.style.opacity = '0.4';
-    e.dataTransfer.setData('componentId', state.id);
+    e.dataTransfer.setData('componentId', id);
     e.dataTransfer.effectAllowed = 'move';
 }
 
 
-const onDragEnter = (e, state) => {
+const onDragEnter = (e, component) => {
+    const {componentsData, componentData, dragendComponent, allowDrop, isDropBox, setDragCounter, updateComponentChildrenList} = component;
     e.preventDefault();
     e.stopPropagation();
-    if (e.target.id === state.dragendComponent.id) return;
+    if (e.target.id === dragendComponent.id) return;
 
-    if (state.isDropBox) {
+    if (isDropBox) {
         if (!e.altKey) {
-            e.dataTransfer.dropEffect = state.allowDrop ? e.dataTransfer.effectAllowed : 'none';
+            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
-        if (!e.altKey) state.setDragCounter(prev => prev + 1);
+        if (!e.altKey) setDragCounter(prev => prev + 1);
     }
 
     if (e.altKey) {
-        if (state.isDropBox) {
-            if (!Array.from(e.target.children).find(item => item.id === state.dragendComponent.id)) {
+        if (isDropBox) {
+            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
                 Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
             };
         }
-        const parent = getParent(state.componentsData, state.componentData.id);
-        const hasCommonParent = parent.childrenList.includes(state.dragendComponent);
+        const parent = getParent(componentsData, componentData.id);
+        const hasCommonParent = parent.childrenList.includes(dragendComponent);
 
         if (hasCommonParent) {
-            const index = parent.childrenList.indexOf(state.componentData);
+            const index = parent.childrenList.indexOf(componentData);
             const parentCopy = {
                 ... parent,
                 childrenList: [...parent.childrenList]
             };
-            parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(state.dragendComponent), 1);
-            parentCopy.childrenList.splice(index, 0, state.dragendComponent);
-            state.dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+            parentCopy.childrenList.splice(index, 0, component.dragendComponent);
+            updateComponentChildrenList(parent.id, parentCopy.childrenList);
         }
     }
 }
 
-const onDragLeave = (e, state) => {
+const onDragLeave = (e, component) => {
+    const {isDropBox, setDragCounter} = component;
     e.stopPropagation();
-    if (state.isDropBox) {
-        if (!e.altKey) state.setDragCounter(prev => prev - 1);
+    if (isDropBox) {
+        if (!e.altKey) setDragCounter(prev => prev - 1);
         if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }
 }
 
-const onDragOver = (e, state) => {
-    if (state.isDropBox) {
+const onDragOver = (e, component) => {
+    if (component.isDropBox) {
         e.preventDefault();
         e.stopPropagation();
         if (!e.altKey) {
-            e.dataTransfer.dropEffect = state.allowDrop ? e.dataTransfer.effectAllowed : 'none';
+            e.dataTransfer.dropEffect = component.allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
         if (e.altKey) {
             e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
@@ -194,43 +198,44 @@ const onDragOver = (e, state) => {
     }
 }
 
-const onDragEnd = (e, state) => {
+const onDragEnd = (e, component) => {
+    const {isDropBox, dragendComponent, setAllowDrop, setDragCounter, unsetDragendComponent} = component;
     e.stopPropagation();
     e.target.style.opacity = '1';
-    if (state.isDropBox) {
-        state.setAllowDrop(false);
-        state.setDragCounter(0);
+    if (isDropBox) {
+        setAllowDrop(false);
+        setDragCounter(0);
     }
-    if (state.dragendComponent) {
-        state.dispatch(unsetDragendComponent());
+    if (dragendComponent) {
+        unsetDragendComponent();
     }
 }
 
-
-const onDrop = (e, state) => {
+const onDrop = (e, component) => {
+    const {isDropBox, setAllowDrop, setDragCounter, dragendComponent, unsetDragendComponent, id, componentsData, addComponent, addComponentToActive, activeComponent, deleteComponent} = component;
     e.stopPropagation();
-    if (state.isDropBox) {
-        state.setAllowDrop(false);
-        state.setDragCounter(0);
+    if (isDropBox) {
+        setAllowDrop(false);
+        setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
         const template = e.dataTransfer.getData('template');
 
-        if (state.dragendComponent) {
-            state.dispatch(unsetDragendComponent());
+        if (dragendComponent) {
+            unsetDragendComponent();
         }
-        if (state.id === componentId) return;
+        if (id === componentId) return;
 
         if (componentId && !e.altKey) {
-            const component = getComponent(state.componentsData, componentId);
-            if (getChild(component, state.id)) return;
-            state.dispatch(deleteComponent(componentId));
-            state.dispatch(addComponent(state.id, component));
+            const componentData = getComponent(componentsData, componentId);
+            if (getChild(componentData, id)) return;
+            deleteComponent(componentId);
+            addComponent(id, componentData);
         }
 
         if (template) {
             if (template === 'Страница') return;
-            state.activeComponent && state.dispatch(addComponentToActive(state.dragendComponent));
-            state.dispatch(addComponent(state.id, state.dragendComponent));
+            activeComponent && addComponentToActive(dragendComponent);
+            addComponent(id, dragendComponent);
         }
 
         if (e.altKey) {
