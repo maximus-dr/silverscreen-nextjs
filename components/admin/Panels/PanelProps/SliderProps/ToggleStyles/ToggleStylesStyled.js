@@ -11,6 +11,10 @@ export const ToggleItem = styled.div`
     display: flex;
 `;
 
-export const ToggleRadio = styled.input``;
+export const ToggleRadio = styled.input`
+    cursor: pointer;
+`;
 
-export const ToggleLabel = styled.label``;
+export const ToggleLabel = styled.label`
+    cursor: pointer;
+`;

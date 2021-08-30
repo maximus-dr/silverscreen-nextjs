@@ -1,4 +1,5 @@
-import { generateNewId } from "../components";
+import { addComponent, addComponentToActive, deleteComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
+import { generateNewId, getChild, getComponent, getParent } from "../components";
 
 const setValueToComponentsData = (componentsData, componentId, value) => {
     if (componentsData.id === componentId) {
@@ -110,7 +111,7 @@ const updateComponentIds = (component) => {
     }
 }
 
-const updateComponentChildrenList = (componentsData, componentId, childrenList) => {
+const updateComponentChildrenListData = (componentsData, componentId, childrenList) => {
     if (componentsData.id === componentId) {
         return {
             ...componentsData,
@@ -118,11 +119,123 @@ const updateComponentChildrenList = (componentsData, componentId, childrenList) 
         }
     }
     const children = componentsData.childrenList.map(child => {
-        return updateComponentChildrenList(child, componentId, childrenList);
+        return updateComponentChildrenListData(child, componentId, childrenList);
     });
     return {
         ...componentsData,
         childrenList: children
+    }
+}
+
+
+const onDragStart = (e, id, componentData, dispatch) => {
+    dispatch(setDragendComponent(componentData));
+    e.stopPropagation();
+    e.target.style.opacity = '0.4';
+    e.dataTransfer.setData('componentId', id);
+    e.dataTransfer.effectAllowed = 'move';
+}
+
+
+const onDragEnter = (e, componentsData, componentData, dragendComponent, isDropBox, allowDrop, setDragCounter, dispatch) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.target.id === dragendComponent.id) return;
+
+    if (isDropBox) {
+        if (!e.altKey) {
+            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        }
+        if (!e.altKey) setDragCounter(prev => prev + 1);
+    }
+
+    if (e.altKey) {
+        if (isDropBox) {
+            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
+                Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
+            };
+        }
+        const parent = getParent(componentsData, componentData.id);
+        const hasCommonParent = parent.childrenList.includes(dragendComponent);
+
+        if (hasCommonParent) {
+            const index = parent.childrenList.indexOf(componentData);
+            const parentCopy = {
+                ... parent,
+                childrenList: [...parent.childrenList]
+            };
+            parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+            parentCopy.childrenList.splice(index, 0, dragendComponent);
+            dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+        }
+    }
+}
+
+const onDragLeave = (e, isDropBox, setDragCounter) => {
+    e.stopPropagation();
+    if (isDropBox) {
+        if (!e.altKey) setDragCounter(prev => prev - 1);
+        if (e.altKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+        }
+    }
+}
+
+const onDragOver = (e, isDropBox, allowDrop) => {
+    if (isDropBox) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!e.altKey) {
+            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+        }
+        if (e.altKey) {
+            e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
+        }
+    }
+}
+
+const onDragEnd = (e, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch) => {
+    e.stopPropagation();
+    e.target.style.opacity = '1';
+    if (isDropBox) {
+        setAllowDrop(false);
+        setDragCounter(0);
+    }
+    if (dragendComponent) {
+        dispatch(unsetDragendComponent());
+    }
+}
+
+
+const onDrop = (e, targetId, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch, activeComponent, componentsData) => {
+    e.stopPropagation();
+    if (isDropBox) {
+        setAllowDrop(false);
+        setDragCounter(0);
+        const componentId = e.dataTransfer.getData('componentId');
+        const template = e.dataTransfer.getData('template');
+
+        if (dragendComponent) {
+            dispatch(unsetDragendComponent());
+        }
+        if (targetId === componentId) return;
+
+        if (componentId && !e.altKey) {
+            const component = getComponent(componentsData, componentId);
+            if (getChild(component, targetId)) return;
+            dispatch(deleteComponent(componentId));
+            dispatch(addComponent(targetId, component));
+        }
+
+        if (template) {
+            if (template === 'Страница') return;
+            activeComponent && dispatch(addComponentToActive(dragendComponent));
+            dispatch(addComponent(targetId, dragendComponent));
+        }
+
+        if (e.altKey) {
+            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+        }
     }
 }
 
@@ -135,5 +248,11 @@ export {
     addComponentToComponentsData,
     deleteComponentFromComponentsData,
     updateComponentIds,
-    updateComponentChildrenList
+    updateComponentChildrenListData,
+    onDragStart,
+    onDragEnter,
+    onDragLeave,
+    onDragOver,
+    onDragEnd,
+    onDrop
 }

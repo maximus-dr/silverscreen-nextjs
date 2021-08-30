@@ -289,6 +289,12 @@ const parseProp = (styles, propName) => {
 
 const setPropToComponentsData = (componentsData, prop) => {
     if (componentsData.id === prop.id) {
+        if (prop.subComponent) {
+            console.log('subcomponent');
+            return {...componentsData}
+        }
+
+
         return {
             ...componentsData,
             styles: {
@@ -308,6 +314,7 @@ const setPropToComponentsData = (componentsData, prop) => {
         childrenList: children
     }
 }
+
 
 const setSettingsPropToComponentsData = (componentsData, prop) => {
     if (componentsData.id === prop.id) {

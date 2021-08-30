@@ -7,11 +7,12 @@ import { MODE } from '../../../core/config/site';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useRef } from 'react';
+import { onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/admin/components';
 
 
 
 export default function Section(props) {
-    
+
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
@@ -19,10 +20,10 @@ export default function Section(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
+    const isDropBox = true;
 
     const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
-
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
         if (getChild(dragendComponent, dropTarget.id)) {
@@ -48,103 +49,103 @@ export default function Section(props) {
 
 
 
-	const onDragStart = (e, componentId) => {
-        dispatch(setDragendComponent(componentData));
-		e.stopPropagation();
-        e.target.style.opacity = '0.4';
-		e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.effectAllowed = 'move';
-	}
+	// const onDragStart = (e, componentId) => {
+    //     dispatch(setDragendComponent(componentData));
+	// 	e.stopPropagation();
+    //     e.target.style.opacity = '0.4';
+	// 	e.dataTransfer.setData('componentId', componentId);
+    //     e.dataTransfer.effectAllowed = 'move';
+	// }
 
-    const onDragEnter = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!e.altKey) {
-            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
-        }
-        if (!e.altKey) setDragCounter(prev => prev + 1);
-        if (e.target.id === dragendComponent.id) return;
+    // const onDragEnter = (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     if (!e.altKey) {
+    //         e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+    //     }
+    //     if (!e.altKey) setDragCounter(prev => prev + 1);
+    //     if (e.target.id === dragendComponent.id) return;
 
 
-        if (e.altKey) {
-            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
-                Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
-            };
-            const parent = getParent(componentsData, id);
-            const hasCommonParent = parent.childrenList.includes(dragendComponent);
+    //     if (e.altKey) {
+    //         if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
+    //             Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
+    //         };
+    //         const parent = getParent(componentsData, id);
+    //         const hasCommonParent = parent.childrenList.includes(dragendComponent);
 
-            if (hasCommonParent) {
-                const index = parent.childrenList.indexOf(componentData);
-                const parentCopy = {
-                    ... parent,
-                    childrenList: [...parent.childrenList]
-                };
-                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
-                parentCopy.childrenList.splice(index, 0, dragendComponent);
-                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
-            }
-        };
-    }
+    //         if (hasCommonParent) {
+    //             const index = parent.childrenList.indexOf(componentData);
+    //             const parentCopy = {
+    //                 ... parent,
+    //                 childrenList: [...parent.childrenList]
+    //             };
+    //             parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
+    //             parentCopy.childrenList.splice(index, 0, dragendComponent);
+    //             dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+    //         }
+    //     };
+    // }
 
-    const onDragLeave = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!e.altKey) setDragCounter(prev => prev - 1);
-        if (e.altKey) {
-            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
-        }
-    }
+    // const onDragLeave = (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     if (!e.altKey) setDragCounter(prev => prev - 1);
+    //     if (e.altKey) {
+    //         Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+    //     }
+    // }
 
-    const onDragOver = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (!e.altKey) {
-            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
-        }
-        if (e.altKey) {
-            e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
-        }
-    }
+    // const onDragOver = (e) => {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     if (!e.altKey) {
+    //         e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+    //     }
+    //     if (e.altKey) {
+    //         e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
+    //     }
+    // }
 
-    const onDragEnd = (e) => {
-        e.stopPropagation();
-        e.target.style.opacity = '1';
-        setAllowDrop(false);
-        setDragCounter(0);
-        if (dragendComponent) {
-            dispatch(unsetDragendComponent());
-        }
-    }
+    // const onDragEnd = (e) => {
+    //     e.stopPropagation();
+    //     e.target.style.opacity = '1';
+    //     setAllowDrop(false);
+    //     setDragCounter(0);
+    //     if (dragendComponent) {
+    //         dispatch(unsetDragendComponent());
+    //     }
+    // }
 
-    const onDrop = (e, targetId) => {
-        e.stopPropagation();
-        setAllowDrop(false);
-        setDragCounter(0);
-        const componentId = e.dataTransfer.getData('componentId');
-        const template = e.dataTransfer.getData('template');
+    // const onDrop = (e, targetId) => {
+    //     e.stopPropagation();
+    //     setAllowDrop(false);
+    //     setDragCounter(0);
+    //     const componentId = e.dataTransfer.getData('componentId');
+    //     const template = e.dataTransfer.getData('template');
 
-        if (dragendComponent) {
-            dispatch(unsetDragendComponent());
-        }
-        if (targetId === componentId) return;
+    //     if (dragendComponent) {
+    //         dispatch(unsetDragendComponent());
+    //     }
+    //     if (targetId === componentId) return;
 
-        if (componentId && !e.altKey) {
-            const component = getComponent(componentsData, componentId);
-            if (getChild(component, targetId)) return;
-            dispatch(deleteComponent(componentId));
-            dispatch(addComponent(targetId, component));
-        }
+    //     if (componentId && !e.altKey) {
+    //         const component = getComponent(componentsData, componentId);
+    //         if (getChild(component, targetId)) return;
+    //         dispatch(deleteComponent(componentId));
+    //         dispatch(addComponent(targetId, component));
+    //     }
 
-        if (template) {
-            if (template === 'Страница') return;
-            activeComponent && dispatch(addComponentToActive(dragendComponent));
-            dispatch(addComponent(targetId, dragendComponent));
-        }
+    //     if (template) {
+    //         if (template === 'Страница') return;
+    //         activeComponent && dispatch(addComponentToActive(dragendComponent));
+    //         dispatch(addComponent(targetId, dragendComponent));
+    //     }
 
-        if (e.altKey) {
-            Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
-        }
-    }
+    //     if (e.altKey) {
+    //         Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
+    //     }
+    // }
 
 
 
@@ -168,12 +169,12 @@ export default function Section(props) {
             isActiveComponent={isActiveComponent}
             allowDrop={allowDrop}
             draggable
-            onDragStart={(e) => onDragStart(e, id)}
-            onDragEnter={onDragEnter}
-            onDragLeave={onDragLeave}
-            onDragOver={onDragOver}
-            onDragEnd={onDragEnd}
-            onDrop={(e) => onDrop(e, id)}
+            onDragStart={(e) => onDragStart(e, id, componentData, dispatch)}
+            onDragEnter={(e) => onDragEnter(e, componentsData, componentData, dragendComponent, isDropBox, allowDrop, setDragCounter, dispatch)}
+            onDragLeave={(e) => onDragLeave(e, isDropBox, setDragCounter)}
+            onDragOver={(e) => onDragOver(e, isDropBox, allowDrop)}
+            onDragEnd={(e) => onDragEnd(e, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch)}
+            onDrop={(e) => onDrop(e, id, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch, activeComponent, componentsData)}
         >
             {props.children}
         </SectionComponent>

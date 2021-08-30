@@ -1,4 +1,7 @@
 import React from 'react'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import Props from '../Props/Props';
 import PropBoolean from './PropBoolean/PropBoolean'
 import PropNum from './PropNum/PropNum'
 import PropSelect from './PropSelect/PropSelect';
@@ -15,9 +18,23 @@ const SLIDER_AXIS = 'horizontal';
 
 
 export default function SliderProps(props) {
+
     const {componentData} = props;
     const settings = componentData.settings;
-    const children = componentData.childrenList;
+    const slides = componentData.childrenList;
+    const activeComponent = useSelector(state => state.document.activeComponent);
+
+    const [styledElement, setStyledElement] = useState('slider');
+
+    const styles = {
+        slider: componentData.styles.common,
+        arrowPrev: componentData.styles.arrowPrev.common,
+        arrowNext: componentData.styles.arrowNext.common,
+        buttonsList: componentData.styles.buttonsList.common,
+        buttons: componentData.styles.buttons.common,
+        activeButton: componentData.styles.buttons.common.isActive
+    }
+
 
     return (
         <>
@@ -53,7 +70,7 @@ export default function SliderProps(props) {
                         name="selectedItem"
                         title="Начальный слайд"
                         min={0}
-                        max={children.length > 0 ? children.length - 1 : 0}
+                        max={slides.length > 0 ? slides.length - 1 : 0}
                         value={settings.selectedItem || SLIDER_INIT_SLIDE}
                     />
                     <PropNum
@@ -87,8 +104,16 @@ export default function SliderProps(props) {
 
             <PropsSection>
                 <PropsTitle>Стили</PropsTitle>
-                <ToggleStyles />
+                <ToggleStyles
+                    activeItem={styledElement}
+                    setActiveItem={setStyledElement}
+                />
             </PropsSection>
+
+            <Props
+                activeComponent={activeComponent}
+                styles={styles[styledElement] || {}}
+            />
         </>
     )
 }

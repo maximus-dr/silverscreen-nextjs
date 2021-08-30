@@ -1,1 +1,170 @@
-[{"category":"Страница","templates":[{"typeName":"page","id":"page1","name":"Main Page","styles":{"common":{"paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","minHeight":"100vh","backgroundColor":"#ffffff"}},"childrenList":[]}]},{"category":"Секция","templates":[{"typeName":"section","id":"sec001","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"1px dashed #42a5f5","paddingTop":"15px","paddingRight":"15px","paddingBottom":"15px","paddingLeft":"15px"}},"childrenList":[]}]},{"category":"Заголовок","templates":[{"typeName":"label","id":"lab001","name":"Label 1","value":"Label","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px"}},"childrenList":[]}]},{"category":"Текст","templates":[{"typeName":"description","id":"desc001","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]}]},{"category":"Изображение","templates":[{"typeName":"image","id":"img001","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px"}},"childrenList":[]}]},{"category":"Слайдер","templates":[{"typeName":"slider","id":"slider001","name":"Пустой","settings":{"selectedItem":"0","arrows":true,"buttons":true,"swipeable":true,"autoPlay":true,"interval":3000,"transitionTime":350,"tolerance":5,"infiniteLoop":true,"axis":"horizontal"},"styles":{"common":{"paddingTop":"15px","paddingBottom":"15px"},"buttons":{"common":{"height":"10px","backgroundColor":"red"}},"buttonsList":{"common":{"display":"inline-flex"}},"arrowPrev":{"common":{"paddingLeft":"25px","paddingRight":"25px"}},"arrowNext":{"common":{"paddingLeft":"25px","paddingRight":"25px"}}},"childrenList":[]}]},{"category":"Тест","templates":[{"typeName":"slider","id":"templateDGlGllN-4H","name":"Слайдер","settings":{"selectedItem":"1","arrows":true,"buttons":true,"swipeable":true,"autoPlay":false,"interval":3000,"transitionTime":350,"swipeScrollTolerance":5,"infiniteLoop":false,"axis":"horizontal"},"styles":{"common":{},"buttons":{"common":{"height":"10px","backgroundColor":"red"}},"buttonsList":{"common":{}},"arrowPrev":{"common":{}},"arrowNext":{"common":{}}},"childrenList":[{"typeName":"image","id":"fdrwKnW-Fc","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px"}},"childrenList":[]},{"typeName":"image","id":"AzQn3_ouQh","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px"}},"childrenList":[]},{"typeName":"image","id":"lxVq7mEx-g","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px"}},"childrenList":[]}]}]}]
+[
+    {
+        "category": "Страница",
+        "templates": [
+            {
+                "typeName": "page",
+                "id": "page1",
+                "name": "Main Page",
+                "styles": {
+                    "common": {
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "minHeight": "100vh",
+                        "backgroundColor": "#ffffff"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Секция",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "sec001",
+                "name": "Section 1",
+                "styles": {
+                    "common": {
+                        "minHeight": "50px",
+                        "border": "1px dashed #42a5f5",
+                        "paddingTop": "15px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "15px",
+                        "paddingLeft": "15px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Заголовок",
+        "templates": [
+            {
+                "typeName": "label",
+                "id": "lab001",
+                "name": "Label 1",
+                "value": "Label",
+                "styles": {
+                    "common": {
+                        "display": "inline-block",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "22px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Текст",
+        "templates": [
+            {
+                "typeName": "description",
+                "id": "desc001",
+                "name": "Текст",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "styles": {
+                    "common": {
+                        "marginTop": "0px",
+                        "marginBottom": "0px",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "14px",
+                        "lineHeight": "1"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Изображение",
+        "templates": [
+            {
+                "typeName": "image",
+                "id": "img001",
+                "name": "Пустое",
+                "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
+                "styles": {
+                    "common": {
+                        "width": "100%",
+                        "maxWidth": "640px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Кнопка",
+        "templates": [
+            {
+                "typeName": "button",
+                "id": "button001",
+                "name": "Кнопка",
+                "value": "Отправить",
+                "styles": {
+                    "common": {}
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Слайдер",
+        "templates": [
+            {
+                "typeName": "slider",
+                "id": "slider001",
+                "name": "Пустой",
+                "settings": {
+                    "initItem": "0",
+                    "arrows": "true",
+                    "buttons": "true",
+                    "swipeable": "true",
+                    "autoPlay": "true",
+                    "interval": "3000",
+                    "transitionTime": "350",
+                    "tolerance": "5",
+                    "infiniteLoop": "true",
+                    "axis": "horizontal"
+                },
+                "styles": {
+                    "common": {},
+                    "buttons": {
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
+                    },
+                    "buttonsList": {
+                        "common": {}
+                    },
+                    "arrowPrev": {
+                        "common": {}
+                    },
+                    "arrowNext": {
+                        "common": {}
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    }
+]

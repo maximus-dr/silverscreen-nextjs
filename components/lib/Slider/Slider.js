@@ -30,7 +30,6 @@ export default function Slider(props) {
     const dispatch = useDispatch();
 
     const [activeItem, setActiveItem] = useState(0);
-    console.log(activeItem);
     const slider = useRef();
 
     const onSliderClick = (e) => {

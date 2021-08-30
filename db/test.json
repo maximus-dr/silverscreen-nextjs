@@ -19,40 +19,12 @@
         },
         "childrenList": [
             {
-                "typeName": "slider",
-                "id": "slider001",
-                "name": "Пустой",
-                "settings": {
-                    "selectedItem": 0,
-                    "arrows": true,
-                    "buttons": true,
-                    "swipeable": true,
-                    "autoPlay": true,
-                    "infiniteLoop": true,
-                    "interval": 3000,
-                    "transitionTime": 350,
-                    "swipeScrollTolerance": 5,
-                    "axis": "horizontal"
-                },
+                "typeName": "button",
+                "id": "button1",
+                "name": "Кнопка",
+                "value": "Отправить",
                 "styles": {
-                    "common": {},
-                    "buttons": {
-                        "common": {
-                            "height": "10px",
-                            "backgroundColor": "red"
-                        }
-                    },
-                    "buttonsList": {
-                        "common": {
-                            "border": "1px dashed red"
-                        }
-                    },
-                    "arrowPrev": {
-                        "common": {}
-                    },
-                    "arrowNext": {
-                        "common": {}
-                    }
+                    "common": {}
                 },
                 "childrenList": []
             }
