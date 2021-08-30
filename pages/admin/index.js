@@ -4,14 +4,13 @@ import Main from "../../components/admin/Main/Main";
 import SidebarRight from "../../components/admin/SidebarRight/SidebarRight";
 import Wrapper from "../../components/admin/Wrapper/Wrapper";
 import Workspace from "../../components/admin/Workspace/Workspace";
-import axios from 'axios';
-import { API_ALL_EVENTS } from "../../core/rest/paths";
 const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
 import { setDocumentComponentsData, setResolution, setTemplates } from "../../store/actions/document";
-
+import { useSelector } from "react-redux";
+import { renderComponents } from "../../core/functions/render";
 
 
 // export async function getStaticProps() {
@@ -35,26 +34,14 @@ import { setDocumentComponentsData, setResolution, setTemplates } from "../../st
 
 
 export async function getServerSideProps() {
+
     const dbPath = path.join(process.cwd(), 'db/test.json');
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
-
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
-
-
     const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
     const templates = JSON.parse(templatesData);
-
-
-    // const events = await axios.get(`https://soft.silverscreen.by:8443${API_ALL_EVENTS}`, {})
-    //   .then(res => res.data)
-    //   .catch(err => console.log(err));
-
-    // dispatch({
-    //     type: 'SET_EVENTS',
-    //     events
-    // });
 
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
@@ -62,20 +49,27 @@ export async function getServerSideProps() {
 
     return {
         props: {
-            initialReduxState: reduxStore.getState(),
-            componentsData
+            initialReduxState: reduxStore.getState()
         }
     }
 }
 
+
 export default function AdminMainPage() {
+
+    const componentsData = useSelector(state => state.document.componentsData);
+    const components = renderComponents(componentsData);
+    const resolution = useSelector(state => state.document.resolution);
 
     return (
         <Wrapper>
-            <Header style={{position: 'fixed', left: '0', right: '0'}}></Header>
+            <Header />
             <Main>
                 <SidebarLeft />
-                <Workspace />
+                <Workspace
+                    components={components}
+                    resolution={resolution}
+                />
                 <SidebarRight />
             </Main>
         </Wrapper>
