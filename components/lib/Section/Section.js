@@ -2,7 +2,6 @@ import React from 'react'
 import { SectionComponent } from './SectionStyled'
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/admin/components';
@@ -18,7 +17,6 @@ export default function Section(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
-    const isDropBox = true;
 
     const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
@@ -29,34 +27,11 @@ export default function Section(props) {
         componentData,
         activeComponent,
         dragendComponent,
-        isDropBox,
+        isDropBox: true,
         allowDrop,
         setAllowDrop,
         setDragCounter,
-        setActiveComponent(data) {
-            dispatch(setActiveComponent(data));
-        },
-        unsetActiveComponent() {
-            dispatch(unsetActiveComponent());
-        },
-        setDragendComponent() {
-            dispatch(setDragendComponent(componentData));
-        },
-        unsetDragendComponent() {
-            dispatch(unsetDragendComponent());
-        },
-        updateComponentChildrenList(id, children) {
-            dispatch(updateComponentChildrenList(id, children));
-        },
-        deleteComponent(id) {
-            dispatch(deleteComponent(id));
-        },
-        addComponent(id, data) {
-            dispatch(addComponent(id, data));
-        },
-        addComponentToActive(component) {
-            dispatch(addComponentToActive(component));
-        }
+        dispatch
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {

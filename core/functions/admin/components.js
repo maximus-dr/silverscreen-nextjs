@@ -1,3 +1,4 @@
+import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
 import { MODE } from "../../config/site";
 import { generateNewId, getChild, getComponent, getHandler, getParent } from "../components";
 
@@ -131,8 +132,8 @@ const updateComponentChildrenListData = (componentsData, componentId, childrenLi
 
 
 const onDragStart = (e, component) => {
-    const {setDragendComponent, id} = component
-    setDragendComponent();
+    const {id, dispatch} = component
+    dispatch(setDragendComponent());
     e.stopPropagation();
     e.target.style.opacity = '0.4';
     e.dataTransfer.setData('componentId', id);
@@ -141,7 +142,7 @@ const onDragStart = (e, component) => {
 
 
 const onDragEnter = (e, component) => {
-    const {componentsData, componentData, dragendComponent, allowDrop, isDropBox, setDragCounter, updateComponentChildrenList} = component;
+    const {componentsData, componentData, dragendComponent, allowDrop, isDropBox, setDragCounter, dispatch} = component;
     e.preventDefault();
     e.stopPropagation();
     if (e.target.id === dragendComponent.id) return;
@@ -170,7 +171,7 @@ const onDragEnter = (e, component) => {
             };
             parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
             parentCopy.childrenList.splice(index, 0, component.dragendComponent);
-            updateComponentChildrenList(parent.id, parentCopy.childrenList);
+            dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
         }
     }
 }
@@ -200,7 +201,7 @@ const onDragOver = (e, component) => {
 }
 
 const onDragEnd = (e, component) => {
-    const {isDropBox, dragendComponent, setAllowDrop, setDragCounter, unsetDragendComponent} = component;
+    const {isDropBox, dragendComponent, setAllowDrop, setDragCounter, dispatch} = component;
     e.stopPropagation();
     e.target.style.opacity = '1';
     if (isDropBox) {
@@ -208,12 +209,12 @@ const onDragEnd = (e, component) => {
         setDragCounter(0);
     }
     if (dragendComponent) {
-        unsetDragendComponent();
+        dispatch(unsetDragendComponent());
     }
 }
 
 const onDrop = (e, component) => {
-    const {isDropBox, setAllowDrop, setDragCounter, dragendComponent, unsetDragendComponent, id, componentsData, addComponent, addComponentToActive, activeComponent, deleteComponent} = component;
+    const {id, componentsData, isDropBox, setAllowDrop, setDragCounter, dragendComponent, activeComponent, dispatch} = component;
     e.stopPropagation();
     if (isDropBox) {
         setAllowDrop(false);
@@ -222,21 +223,21 @@ const onDrop = (e, component) => {
         const template = e.dataTransfer.getData('template');
 
         if (dragendComponent) {
-            unsetDragendComponent();
+            dispatch(unsetDragendComponent());
         }
         if (id === componentId) return;
 
         if (componentId && !e.altKey) {
             const componentData = getComponent(componentsData, componentId);
             if (getChild(componentData, id)) return;
-            deleteComponent(componentId);
-            addComponent(id, componentData);
+            dispatch(deleteComponent(componentId));
+            dispatch(addComponent(id, componentData));
         }
 
         if (template) {
             if (template === 'Страница') return;
-            activeComponent && addComponentToActive(dragendComponent);
-            addComponent(id, dragendComponent);
+            activeComponent && dispatch(addComponentToActive(dragendComponent));
+            dispatch(addComponent(id, dragendComponent));
         }
 
         if (e.altKey) {
@@ -246,14 +247,14 @@ const onDrop = (e, component) => {
 }
 
 const onClick = (e, component) => {
-    const {id, componentData, activeComponent, unsetActiveComponent, setActiveComponent} = component;
+    const {id, componentData, activeComponent, dispatch} = component;
     if (MODE === 'admin') {
         e.stopPropagation();
         if (activeComponent && activeComponent.id === id) {
-            unsetActiveComponent();
+            dispatch(unsetActiveComponent());
             return;
         }
-        setActiveComponent(componentData);
+        dispatch(setActiveComponent(componentData));
     }
 }
 
