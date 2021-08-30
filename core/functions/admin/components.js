@@ -1,3 +1,4 @@
+import { MODE } from "../../config/site";
 import { generateNewId, getChild, getComponent, getHandler, getParent } from "../components";
 
 
@@ -244,6 +245,18 @@ const onDrop = (e, component) => {
     }
 }
 
+const onClick = (e, component) => {
+    const {id, componentData, activeComponent, unsetActiveComponent, setActiveComponent} = component;
+    if (MODE === 'admin') {
+        e.stopPropagation();
+        if (activeComponent && activeComponent.id === id) {
+            unsetActiveComponent();
+            return;
+        }
+        setActiveComponent(componentData);
+    }
+}
+
 
 
 export {
@@ -259,5 +272,6 @@ export {
     onDragLeave,
     onDragOver,
     onDragEnd,
-    onDrop
+    onDrop,
+    onClick
 }
