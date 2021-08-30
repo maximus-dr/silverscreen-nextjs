@@ -128,65 +128,65 @@ const updateComponentChildrenListData = (componentsData, componentId, childrenLi
 }
 
 
-const onDragStart = (e, id, componentData, dispatch) => {
-    dispatch(setDragendComponent(componentData));
+const onDragStart = (e, state) => {
+    state.dispatch(setDragendComponent(state.componentData));
     e.stopPropagation();
     e.target.style.opacity = '0.4';
-    e.dataTransfer.setData('componentId', id);
+    e.dataTransfer.setData('componentId', state.id);
     e.dataTransfer.effectAllowed = 'move';
 }
 
 
-const onDragEnter = (e, componentsData, componentData, dragendComponent, isDropBox, allowDrop, setDragCounter, dispatch) => {
+const onDragEnter = (e, state) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.target.id === dragendComponent.id) return;
+    if (e.target.id === state.dragendComponent.id) return;
 
-    if (isDropBox) {
+    if (state.isDropBox) {
         if (!e.altKey) {
-            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+            e.dataTransfer.dropEffect = state.allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
-        if (!e.altKey) setDragCounter(prev => prev + 1);
+        if (!e.altKey) state.setDragCounter(prev => prev + 1);
     }
 
     if (e.altKey) {
-        if (isDropBox) {
-            if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
+        if (state.isDropBox) {
+            if (!Array.from(e.target.children).find(item => item.id === state.dragendComponent.id)) {
                 Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
             };
         }
-        const parent = getParent(componentsData, componentData.id);
-        const hasCommonParent = parent.childrenList.includes(dragendComponent);
+        const parent = getParent(state.componentsData, state.componentData.id);
+        const hasCommonParent = parent.childrenList.includes(state.dragendComponent);
 
         if (hasCommonParent) {
-            const index = parent.childrenList.indexOf(componentData);
+            const index = parent.childrenList.indexOf(state.componentData);
             const parentCopy = {
                 ... parent,
                 childrenList: [...parent.childrenList]
             };
-            parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
-            parentCopy.childrenList.splice(index, 0, dragendComponent);
-            dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
+            parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(state.dragendComponent), 1);
+            parentCopy.childrenList.splice(index, 0, state.dragendComponent);
+            state.dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
         }
     }
 }
 
-const onDragLeave = (e, isDropBox, setDragCounter) => {
+const onDragLeave = (e, state) => {
     e.stopPropagation();
-    if (isDropBox) {
-        if (!e.altKey) setDragCounter(prev => prev - 1);
+    if (state.isDropBox) {
+        if (!e.altKey) state.setDragCounter(prev => prev - 1);
         if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
     }
 }
 
-const onDragOver = (e, isDropBox, allowDrop) => {
-    if (isDropBox) {
+const onDragOver = (e, state) => {
+    if (state.isDropBox) {
         e.preventDefault();
         e.stopPropagation();
         if (!e.altKey) {
-            e.dataTransfer.dropEffect = allowDrop ? e.dataTransfer.effectAllowed : 'none';
+            e.dataTransfer.dropEffect = state.allowDrop ? e.dataTransfer.effectAllowed : 'none';
         }
         if (e.altKey) {
             e.dataTransfer.dropEffect = e.dataTransfer.effectAllowed;
@@ -194,43 +194,43 @@ const onDragOver = (e, isDropBox, allowDrop) => {
     }
 }
 
-const onDragEnd = (e, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch) => {
+const onDragEnd = (e, state) => {
     e.stopPropagation();
     e.target.style.opacity = '1';
-    if (isDropBox) {
-        setAllowDrop(false);
-        setDragCounter(0);
+    if (state.isDropBox) {
+        state.setAllowDrop(false);
+        state.setDragCounter(0);
     }
-    if (dragendComponent) {
-        dispatch(unsetDragendComponent());
+    if (state.dragendComponent) {
+        state.dispatch(unsetDragendComponent());
     }
 }
 
 
-const onDrop = (e, targetId, isDropBox, setAllowDrop, setDragCounter, dragendComponent, dispatch, activeComponent, componentsData) => {
+const onDrop = (e, state) => {
     e.stopPropagation();
-    if (isDropBox) {
-        setAllowDrop(false);
-        setDragCounter(0);
+    if (state.isDropBox) {
+        state.setAllowDrop(false);
+        state.setDragCounter(0);
         const componentId = e.dataTransfer.getData('componentId');
         const template = e.dataTransfer.getData('template');
 
-        if (dragendComponent) {
-            dispatch(unsetDragendComponent());
+        if (state.dragendComponent) {
+            state.dispatch(unsetDragendComponent());
         }
-        if (targetId === componentId) return;
+        if (state.id === componentId) return;
 
         if (componentId && !e.altKey) {
-            const component = getComponent(componentsData, componentId);
-            if (getChild(component, targetId)) return;
-            dispatch(deleteComponent(componentId));
-            dispatch(addComponent(targetId, component));
+            const component = getComponent(state.componentsData, componentId);
+            if (getChild(component, state.id)) return;
+            state.dispatch(deleteComponent(componentId));
+            state.dispatch(addComponent(state.id, component));
         }
 
         if (template) {
             if (template === 'Страница') return;
-            activeComponent && dispatch(addComponentToActive(dragendComponent));
-            dispatch(addComponent(targetId, dragendComponent));
+            state.activeComponent && state.dispatch(addComponentToActive(state.dragendComponent));
+            state.dispatch(addComponent(state.id, state.dragendComponent));
         }
 
         if (e.altKey) {

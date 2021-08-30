@@ -21,6 +21,15 @@ export default function Label(props) {
     const text = componentData.value || '';
     const isDropBox = false;
 
+    const state = {
+        id,
+        componentsData,
+        componentData,
+        activeComponent,
+        dragendComponent,
+        isDropBox,
+        dispatch
+    }
 
     return (
         <LabelSpan
@@ -41,12 +50,12 @@ export default function Label(props) {
                     dispatch(setActiveComponent(props.componentData));
                 }
             }}
-            onDragStart={(e) => onDragStart(e, id, componentData, dispatch)}
-            onDragEnter={(e) => onDragEnter(e, componentsData, componentData, dragendComponent, isDropBox, null, null, dispatch)}
-            onDragLeave={onDragLeave}
-            onDragEnd={(e) => onDragEnd(e, isDropBox, null, null, dragendComponent, dispatch)}
-            onDragOver={(e) => onDragOver(e, isDropBox, null)}
-            onDrop={(e) => onDrop(e, id, isDropBox)}
+            onDragStart={(e) => onDragStart(e, state)}
+            onDragEnter={(e) => onDragEnter(e, state)}
+            onDragLeave={(e) => onDragLeave(e, state)}
+            onDragOver={(e) => onDragOver(e, state)}
+            onDragEnd={(e) => onDragEnd(e, state)}
+            onDrop={(e) => onDrop(e, state)}
         >
             {text}
             {props.children}
