@@ -22,6 +22,7 @@ const SET_MODAL = 'SET_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
 const SET_SETTINGS_PROP = 'SET_SETTINGS_PROP';
 const SET_PAGE = 'SET_PAGE';
+const UNSET_PAGE = 'UNSET_PAGE';
 
 
 
@@ -146,6 +147,10 @@ const setPage = (pageId) => ({
     pageId
 });
 
+const unsetPage = () => ({
+    type: UNSET_PAGE
+});
+
 
 
 
@@ -175,7 +180,8 @@ export {
     setModal,
     closeModal,
     setSettingsProp,
-    setPage
+    setPage,
+    unsetPage
 }
 
 export {
@@ -202,5 +208,6 @@ export {
     SET_MODAL,
     CLOSE_MODAL,
     SET_SETTINGS_PROP,
-    SET_PAGE
+    SET_PAGE,
+    UNSET_PAGE
 }

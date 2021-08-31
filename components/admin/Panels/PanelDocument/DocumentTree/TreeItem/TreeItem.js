@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getChild, getComponent, getParent } from "../../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal } from "../../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal, unsetPage } from "../../../../../../store/actions/document";
 import { TreeChildren, Item, TreeItemName, TreeItemType, TreeWrapper } from "./TreeItemStyled";
 
 
@@ -167,15 +167,14 @@ export default function TreeItem(props) {
         };
     }
 
-    const onClick = (e) => {
+    const onClick = () => {
         if (isActive) {
             dispatch(unsetActiveComponent());
+            nodeData.typeName === 'page' && dispatch(unsetPage());
             return
         }
         dispatch(setActiveComponent(nodeData));
-        if (nodeData.typeName === 'page') {
-            dispatch(setPage(nodeData.id));
-        }
+        nodeData.typeName === 'page' && dispatch(setPage(nodeData.id));
     }
 
     const onItemTypeClick = (e) => {

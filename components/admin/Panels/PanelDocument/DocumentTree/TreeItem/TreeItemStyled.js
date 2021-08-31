@@ -23,20 +23,21 @@ const Item = styled.div`
     }
 
     ${props => props.isCurrentPage && `
-        background-color: #42a5f5;
+        background-color: rgba(0, 0, 0, 0.25);
 
         &:hover {
-            background-color: #42a5f5;
+            background-color: rgba(0, 0, 0, 0.3);
+            outline: 1px solid rgba(0, 0, 0, 0.7);
         }
     `}
 
     ${props => props.isActive && !props.isCurrentPage && `
-        outline: 1px solid #42a5f5;
-        background-color: rgba(0, 0, 0, 0.04);
+        outline: none;
+        background-color:  #42a5f5;
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.04);
-            outline: 1px solid #42a5f5;
+            background-color:  #42a5f5;
+            outline: 1px solid rgba(0, 0, 0, 0.7);
         }
     `}
 
@@ -186,6 +187,10 @@ const TreeItemName = styled.span`
 
 
     ${props => props.isPage && props.isCurrentPage && `
+        color: #ffffff;
+    `}
+
+    ${props => props.isActive && `
         color: #ffffff;
     `}
 `;
