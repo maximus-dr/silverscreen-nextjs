@@ -12,7 +12,7 @@ export const PageComponent = styled.div`
         ${props => props.isActiveComponent && getOutlines()}
         ${styles && StylesProvider(styles)}
         ${styles && styles.isActive && StylesProvider(styles.isActive)}
-        ${props => props.isDroppable && `
+        ${props => props.allowDrop && `
             outline: 2px solid #42a5f5;
         `}
     `

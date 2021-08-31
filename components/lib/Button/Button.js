@@ -8,7 +8,6 @@ import { ButtonComponent } from './ButtonStyled'
 
 
 export default function Button(props) {
-    console.log(props);
 
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -17,7 +16,9 @@ export default function Button(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
-    const isLocked = true;
+    const isLocked = false;
+
+
 
     const component = {
         id,

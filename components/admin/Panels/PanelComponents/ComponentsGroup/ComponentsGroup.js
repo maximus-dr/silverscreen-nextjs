@@ -38,7 +38,7 @@ export default function ComponentsGroup(props) {
                     key={template.id}
                     onClick={() => {
                         if (activeComponent) {
-                            if (template.typeName === 'page' && activeComponent.typeName !== 'Document') {
+                            if (template.typeName === 'page' && activeComponent.typeName !== 'pages') {
                                 return
                             }
                             const component = updateComponentIds(template);

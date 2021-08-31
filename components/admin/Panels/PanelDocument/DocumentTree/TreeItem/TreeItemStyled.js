@@ -18,21 +18,41 @@ const Item = styled.div`
     background-color: transparent;
 
     &:hover {
-        outline: 1px dashed #1976d2;
+        outline: 1px solid #42a5f5;
         background-color: rgba(0, 0, 0, 0.04);
     }
 
-    ${props => {
-        return props.isActive && css`
+    ${props => props.isCurrentPage && `
+        background-color: #42a5f5;
+
+        &:hover {
             background-color: #42a5f5;
-            color: #000000;
+        }
+    `}
+
+    ${props => props.isActive && !props.isCurrentPage && `
+        outline: 1px solid #42a5f5;
+        background-color: rgba(0, 0, 0, 0.04);
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            outline: 1px solid #42a5f5;
+        }
+    `}
+
+    ${props => {
+        return props.isActive && props.isCurrentPage && css`
+            background-color: #42a5f5;
+            outline: 1px solid rgba(0, 0, 0, 0.7);
 
             &:hover {
                 background-color: #42a5f5;
-                color: #000000;
+                outline: 1px solid rgba(0, 0, 0, 0.7);
             }
         `;
     }}
+
+
 
     ${props => props.allowDrop && `
         outline: 2px solid #42a5f5;
@@ -100,6 +120,7 @@ const TreeItemType = styled.span`
         `
     }}
 
+
     ${props => {
         return props.isPage && css`
             font-weight: bold;
@@ -128,6 +149,8 @@ const TreeItemType = styled.span`
         `
     }}
 
+
+
     ${props => {
         return props.isActive && props.hasChildren && css`
             &:hover {
@@ -147,7 +170,6 @@ const TreeItemName = styled.span`
     flex: 0 0 auto;
 
 
-
     ${props => {
         return props.isPage && css`
             font-weight: bold;
@@ -162,11 +184,10 @@ const TreeItemName = styled.span`
         `
     }}
 
-    ${props => {
-        return props.isActive && css`
-            color: #ffffff;
-        `
-    }}
+
+    ${props => props.isPage && props.isCurrentPage && `
+        color: #ffffff;
+    `}
 `;
 
 const TreeChildren = styled.div`

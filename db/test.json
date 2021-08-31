@@ -4,32 +4,44 @@
   "name": "Test",
   "childrenList": [
         {
-            "typeName": "page",
-            "id": "page1",
-            "name": "Main Page",
-            "styles": {
-                "common": {
-                    "paddingTop": "5px",
-                    "paddingRight": "5px",
-                    "paddingBottom": "5px",
-                    "paddingLeft": "5px",
-                    "minHeight": "100vh",
-                    "backgroundColor": "#ffffff"
-                }
-            },
+            "typeName": "modals",
+            "id": "doc-modals",
+            "childrenList": []
+        },
+
+        {
+            "typeName": "pages",
+            "id": "doc-pages",
             "childrenList": [
                 {
-                    "typeName": "button",
-                    "id": "button1",
-                    "name": "Кнопка",
-                    "value": "Отправить",
-                    "handlers": {
-                        "onClick": [{"action": "setModal", "params": ["saveTemplate"]}]
-                    },
+                    "typeName": "page",
+                    "id": "page1",
+                    "name": "Main Page",
                     "styles": {
-                        "common": {}
+                        "common": {
+                            "paddingTop": "5px",
+                            "paddingRight": "5px",
+                            "paddingBottom": "5px",
+                            "paddingLeft": "5px",
+                            "minHeight": "100vh",
+                            "backgroundColor": "#ffffff"
+                        }
                     },
-                    "childrenList": []
+                    "childrenList": [
+                        {
+                            "typeName": "button",
+                            "id": "button1",
+                            "name": "Кнопка",
+                            "value": "Отправить",
+                            "handlers": {
+                                "onClick": [{"action": "setModal", "params": ["saveTemplate"]}]
+                            },
+                            "styles": {
+                                "common": {}
+                            },
+                            "childrenList": []
+                        }
+                    ]
                 }
             ]
         }

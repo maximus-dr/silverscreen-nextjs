@@ -4,7 +4,7 @@ import DocumentTree from './DocumentTree/DocumentTree';
 
 
 
-export default function PanelDocument(props) {
+export default function PanelDocument() {
 
     return (
         <>

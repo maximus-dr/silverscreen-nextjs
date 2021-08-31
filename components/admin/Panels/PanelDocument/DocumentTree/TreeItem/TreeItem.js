@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { generateNewId, getChild, getComponent, getParent } from "../../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage } from "../../../../../../store/actions/document";
+import { getChild, getComponent, getParent } from "../../../../../../core/functions/components";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal } from "../../../../../../store/actions/document";
 import { TreeChildren, Item, TreeItemName, TreeItemType, TreeWrapper } from "./TreeItemStyled";
 
 
@@ -13,13 +13,13 @@ export default function TreeItem(props) {
 
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
+    const currentPage = useSelector(state => state.document.page);
 
-    const hasChildren = props.nodeData.childrenList && props.nodeData.childrenList.length > 0;
-    const isRootItem = props.nodeData.typeName === 'Document';
-    const isPage = props.nodeData.typeName === 'page' ||
-        props.nodeData.typeName === 'pages' ||
-        props.nodeData.typeName === 'modals';
-    const isActive = activeComponent && props.nodeData.id === activeComponent.id;
+    const hasChildren = nodeData.childrenList && nodeData.childrenList.length > 0;
+    const isRootItem = nodeData.typeName === 'Document';
+    const isPage = nodeData.typeName === 'page';
+    const isCurrentPage = nodeData.id === currentPage;
+    const isActive = activeComponent && nodeData.id === activeComponent.id;
     const componentsData = useSelector(state => state.document.componentsData);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const [expanded, setExpanded] = useState(false);
@@ -27,7 +27,7 @@ export default function TreeItem(props) {
     const [dragCounter, setDragCounter] = useState(0);
     const [allowDrop, setAllowDrop] = useState(false);
 
-    const childrenLength = props.nodeData.childrenList.length;
+    const childrenLength = nodeData.childrenList.length;
 
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -35,8 +35,8 @@ export default function TreeItem(props) {
             return false;
         }
         if (dropTarget.typeName === 'label' && dropTarget.id !== dragendComponent.id) return false;
-        if (dropTarget.typeName === 'Document' && dragendComponent.typeName !== 'page') return false;
-        if (dragendComponent.typeName === 'page' && dropTarget.typeName !== 'Document') {
+        if (dropTarget.typeName === 'Document') return false;
+        if (dragendComponent.typeName === 'page' && dropTarget.typeName !== 'pages') {
             return false;
         }
         return true;
@@ -48,10 +48,10 @@ export default function TreeItem(props) {
                 setAllowDrop(false);
             }
             else {
-                setAllowDrop(checkAllowDrop(dragendComponent, props.nodeData));
+                setAllowDrop(checkAllowDrop(dragendComponent, nodeData));
             }
         }
-    }, [dragCounter, dragendComponent, props.nodeData]);
+    }, [dragCounter, dragendComponent, nodeData]);
 
 
     // разворачивает список при добавлении новых элементов в него
@@ -92,13 +92,13 @@ export default function TreeItem(props) {
         if (!e.altKey) setDragCounter(prev => prev + 1);
         if (!e.altKey) e.dataTransfer.dropEffect = allowDrop ?  e.dataTransfer.effectAllowed : 'none';
 
-        if (props.nodeData.id === dragendComponent.id) return;
+        if (nodeData.id === dragendComponent.id) return;
 
         if (e.altKey) {
             if (!Array.from(e.target.children).find(item => item.id === dragendComponent.id)) {
                 Array.from(e.target.children).forEach(item => item.style.pointerEvents = 'none');
             };
-            const parent = getParent(componentsData, props.nodeData.id);
+            const parent = getParent(componentsData, nodeData.id);
             const hasCommonParent = parent && parent.childrenList.includes(dragendComponent);
 
             if (hasCommonParent) {
@@ -162,46 +162,64 @@ export default function TreeItem(props) {
         if (e.altKey) {
             Array.from(e.target.children).forEach(item => item.style.pointerEvents = '');
         }
+        if (nodeData.typeName === 'page' && nodeData.id !== currentPage) {
+            dispatch(setPage(nodeData.id));
+        };
+    }
+
+    const onClick = (e) => {
+        if (isActive) {
+            dispatch(unsetActiveComponent());
+            return
+        }
+        dispatch(setActiveComponent(nodeData));
+        if (nodeData.typeName === 'page') {
+            dispatch(setPage(nodeData.id));
+        }
+    }
+
+    const onItemTypeClick = (e) => {
+        e.preventDefault();
+        hasChildren && e.stopPropagation();
+        setExpanded(prev => !prev);
     }
 
 
     return (
-        <TreeWrapper>
+        <TreeWrapper onClick={(e) => {
+            e.stopPropagation();
+            if (nodeData.typeName !== 'page' && nodeData.typeName !== 'Document' && nodeData.typeName !== 'modals' && nodeData.typeName !== 'pages') {
+                const closestPage = e.target.closest('[id^="page-children-');
+                const pageId = closestPage && closestPage.id.replace('page-children-', '') || null;
+                if (pageId && currentPage !== pageId) {
+                    dispatch(setPage(pageId));
+                }
+            }
+        }}>
                 <Item
-                    id={`tree-${props.nodeData.id}`}
-                    draggable
-                    onDragStart={(e) => onDragStart(e, props.nodeData.id)}
+                    id={isPage ? `page-${nodeData.id}` : `node-${nodeData.id}`}
+                    draggable={nodeData.typeName !== 'Document' && nodeData.typeName !== 'modals' && nodeData.typeName !== 'pages'}
+                    onDragStart={(e) => onDragStart(e, nodeData.id)}
                     onDragEnter={onDragEnter}
                     onDragLeave={onDragLeave}
                     onDragOver={(e) => onDragOver(e)}
                     onDragEnd={onDragEnd}
-                    onDrop={(e) => onDrop(e, props.nodeData.id)}
+                    onDrop={(e) => onDrop(e, nodeData.id)}
                     isRootItem={isRootItem}
                     isActive={isActive}
+                    isCurrentPage={isCurrentPage}
                     allowDrop={allowDrop}
-                    onClick={() => {
-                        if (isActive) {
-                            dispatch(unsetActiveComponent());
-                            return
-                        }
-                        dispatch(setActiveComponent(props.nodeData));
-                        if (props.nodeData.typeName === 'page') {
-                            dispatch(setPage(props.nodeData.id));
-                        }
-                    }}
+                    onClick={onClick}
                 >
                     <TreeItemType
                         isRootItem={isRootItem}
                         isPage={isPage}
                         isActive={isActive}
+                        isCurrentPage={isCurrentPage}
                         hasChildren={hasChildren}
                         expanded={expanded}
                         onDragStart={(e) => e.preventDefault()}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            hasChildren && e.stopPropagation();
-                            setExpanded(prev => !prev);
-                        }}
+                        onClick={onItemTypeClick}
                     >
                         {nodeData.typeName}
                     </TreeItemType>
@@ -209,11 +227,12 @@ export default function TreeItem(props) {
                         isRootItem={isRootItem}
                         isPage={isPage}
                         isActive={isActive}
+                        isCurrentPage={isCurrentPage}
                     >
                         {nodeData.name}
                     </TreeItemName>
                 </Item>
-            <TreeChildren expanded={expanded}>
+            <TreeChildren id={isPage ? `page-children-${nodeData.id}` : `node-children-${nodeData.id}`} expanded={expanded}>
                 {props.children}
             </TreeChildren>
         </TreeWrapper>
