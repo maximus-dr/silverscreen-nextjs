@@ -21,6 +21,7 @@ const ADD_COMPONENT_TO_ACTIVE = 'ADD_COMPONENT_TO_ACTIVE';
 const SET_MODAL = 'SET_MODAL';
 const CLOSE_MODAL = 'CLOSE_MODAL';
 const SET_SETTINGS_PROP = 'SET_SETTINGS_PROP';
+const SET_PAGE = 'SET_PAGE';
 
 
 
@@ -140,6 +141,11 @@ const closeModal = () => ({
     type: CLOSE_MODAL
 });
 
+const setPage = (pageId) => ({
+    type: SET_PAGE,
+    pageId
+});
+
 
 
 
@@ -168,7 +174,8 @@ export {
     addComponentToActive,
     setModal,
     closeModal,
-    setSettingsProp
+    setSettingsProp,
+    setPage
 }
 
 export {
@@ -194,5 +201,6 @@ export {
     ADD_COMPONENT_TO_ACTIVE,
     SET_MODAL,
     CLOSE_MODAL,
-    SET_SETTINGS_PROP
+    SET_SETTINGS_PROP,
+    SET_PAGE
 }

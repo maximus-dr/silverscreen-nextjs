@@ -90,7 +90,10 @@ export default function PanelTools() {
     }
 
 
-    return activeComponent && parent ? (
+    return activeComponent &&
+        activeComponent.typeName !== 'pages' &&
+        activeComponent.typeName !== 'modals' &&
+        parent ? (
         <ToolsWrapper>
             <ToolsFixWrapper>
                 <ToolsItem>

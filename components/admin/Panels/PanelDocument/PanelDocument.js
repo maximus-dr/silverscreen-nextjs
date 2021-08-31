@@ -1,20 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { renderDocumentTree } from '../../../../core/functions/render';
 import Panel from '../Panel/Panel';
+import DocumentTree from './DocumentTree/DocumentTree';
 
 
 
 export default function PanelDocument(props) {
 
-    const componentsData = useSelector(state => state.document.componentsData);
-    const documentTree = renderDocumentTree(componentsData);
-
     return (
         <>
           <Panel title="Документ">
-              <div>{documentTree}</div>
-          </Panel>  
+              <DocumentTree />
+          </Panel>
         </>
     )
 }

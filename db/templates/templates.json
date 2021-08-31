@@ -166,5 +166,25 @@
                 "childrenList": []
             }
         ]
+    },
+
+    {
+        "category": "Модальное окно",
+        "templates": [
+            {
+                "typeName": "modal",
+                "id": "modal001",
+                "name": "Форма входа",
+                "modalName": "loginForm",
+                "styles": {
+                    "common": {
+                        "minHeight": "50px",
+                        "width": "100%",
+                        "border": "1px dashed black"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
     }
 ]

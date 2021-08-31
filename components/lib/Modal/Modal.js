@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionComponent } from './SectionStyled'
+import { ModalComponent } from './ModalStyled'
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -8,7 +8,7 @@ import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, 
 
 
 
-export default function Section(props) {
+export default function Modal(props) {
 
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
@@ -57,7 +57,7 @@ export default function Section(props) {
 
 
     return (
-        <SectionComponent
+        <ModalComponent
             {...props}
             id={id}
             componentData={componentData}
@@ -73,7 +73,8 @@ export default function Section(props) {
             draggable
             allowDrop={allowDrop}
         >
+            Modal
             {props.children}
-        </SectionComponent>
+        </ModalComponent>
     )
 }

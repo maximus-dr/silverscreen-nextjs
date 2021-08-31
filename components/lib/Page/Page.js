@@ -1,9 +1,9 @@
 import React from 'react'
-import { PageComponent } from './PageStyled';
+import { PageComponent, PageOverlay } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useEffect, useState } from 'react';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/admin/components';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
 
 
 
@@ -16,6 +16,7 @@ export default function Page(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
+    const modal = useSelector(state => state.document.modal);
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
@@ -72,6 +73,7 @@ export default function Page(props) {
             allowDrop={allowDrop}
         >
             {props.children}
+            {/* <PageOverlay isOpen={modal}></PageOverlay> */}
         </PageComponent>
     )
 }

@@ -14,6 +14,7 @@ import Section from './lib/Section/Section';
 import Tab from './lib/Tab/Tab';
 import Document from "./lib/Document/Document";
 import Slider from "./lib/Slider/Slider";
+import Modal from "./lib/Modal/Modal";
 
 
 export const Provider = {
@@ -28,6 +29,7 @@ export const Provider = {
     'input': Input,
     'label': Label,
     'link': Link,
+    'modal': Modal,
     'page': Page,
     'radio': Radio,
     'section': Section,

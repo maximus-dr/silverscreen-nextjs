@@ -37,9 +37,11 @@ export default function PanelProps() {
                     {
                         activeComponent.typeName &&
                         activeComponent.typeName !== 'slider' &&
+                        activeComponent.typeName !== 'pages' &&
+                        activeComponent.typeName !== 'modals' &&
                         <Props
                             activeComponent={activeComponent}
-                            styles={componentData.styles.common || {}}
+                            styles={componentData.styles && componentData.styles.common || {}}
                         />
                     }
                 </PropsPanelWrapper>

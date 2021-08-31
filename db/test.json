@@ -4,34 +4,34 @@
   "name": "Test",
   "childrenList": [
         {
-        "typeName": "page",
-        "id": "page1",
-        "name": "Main Page",
-        "styles": {
-            "common": {
-                "paddingTop": "5px",
-                "paddingRight": "5px",
-                "paddingBottom": "5px",
-                "paddingLeft": "5px",
-                "minHeight": "100vh",
-                "backgroundColor": "#ffffff"
-            }
-        },
-        "childrenList": [
-            {
-                "typeName": "button",
-                "id": "button1",
-                "name": "Кнопка",
-                "value": "Отправить",
-                "handlers": {
-                    "onClick": [{"name": "setModal", "params": ["saveTemplate"]}]
-                },
-                "styles": {
-                    "common": {}
-                },
-                "childrenList": []
-            }
-        ]
+            "typeName": "page",
+            "id": "page1",
+            "name": "Main Page",
+            "styles": {
+                "common": {
+                    "paddingTop": "5px",
+                    "paddingRight": "5px",
+                    "paddingBottom": "5px",
+                    "paddingLeft": "5px",
+                    "minHeight": "100vh",
+                    "backgroundColor": "#ffffff"
+                }
+            },
+            "childrenList": [
+                {
+                    "typeName": "button",
+                    "id": "button1",
+                    "name": "Кнопка",
+                    "value": "Отправить",
+                    "handlers": {
+                        "onClick": [{"action": "setModal", "params": ["saveTemplate"]}]
+                    },
+                    "styles": {
+                        "common": {}
+                    },
+                    "childrenList": []
+                }
+            ]
         }
     ]
 }

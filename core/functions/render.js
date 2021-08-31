@@ -1,5 +1,5 @@
 import { Provider } from '../../components';
-import DocumentTree from '../../components/admin/Panels/PanelDocument/DocumentTree/DocumentTree';
+import TreeItem from '../../components/admin/Panels/PanelDocument/DocumentTree/TreeItem/TreeItem';
 
 
 
@@ -52,7 +52,7 @@ const renderDocumentTree = (nodeData) => {
     const props = {
         nodeData,
         id: nodeData.id,
-        component: DocumentTree
+        component: TreeItem
     }
     return <GetTreeNodes {...props} />;
 }
@@ -68,7 +68,7 @@ const GetTreeNodes = (props) => {
                 const childProps = {
                     nodeData: child,
                     id: child.id,
-                    component: DocumentTree
+                    component: TreeItem
                 }
                 return <GetTreeNodes key={child.id} {...childProps} />;
             })

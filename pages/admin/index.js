@@ -11,6 +11,7 @@ import { initializeStore } from "../../store/store";
 import { setDocumentComponentsData, setResolution, setTemplates } from "../../store/actions/document";
 import { useSelector } from "react-redux";
 import { renderComponents } from "../../core/functions/render";
+import { getComponent } from "../../core/functions/components";
 
 
 // export async function getStaticProps() {
@@ -60,6 +61,12 @@ export default function AdminMainPage() {
     const componentsData = useSelector(state => state.document.componentsData);
     const components = renderComponents(componentsData);
     const resolution = useSelector(state => state.document.resolution);
+
+    const activePage = useSelector(state => state.document.page);
+    const page = activePage ? getComponent(componentsData, activePage) : null;
+
+
+
 
     return (
         <Wrapper>
