@@ -134,8 +134,8 @@ const parseProp = (styles, propName) => {
                     y === 'auto' && 'auto' ||
                     ''
             }
-            if (sizeX.value === '') sizeX.value = '100';
-            if (sizeY.value === '') sizeY.value = '50';
+            // if (sizeX.value === '') sizeX.value = '100';
+            // if (sizeY.value === '') sizeY.value = '50';
             result.value = 'unit';
             result.sizeX = sizeX;
             result.sizeY = sizeY;

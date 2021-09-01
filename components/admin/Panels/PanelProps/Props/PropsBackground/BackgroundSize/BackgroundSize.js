@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { parseProp } from "../../../../../../../core/functions/admin/props";
@@ -11,7 +12,6 @@ export const BackgroundSize = (props) => {
 
     const {styles, activeComponent} = props;
     const parsedProp = parseProp(styles, 'backgroundSize');
-
     const dispatch = useDispatch();
     const resolution = useSelector(state => state.document.resolution);
     const buffer = useSelector(state => state.document.buffer);
@@ -20,6 +20,7 @@ export const BackgroundSize = (props) => {
     const isAutoX = parsedProp.sizeX && parsedProp.sizeX.unit && parsedProp.sizeX.unit === 'auto';
     const isAutoY = parsedProp.sizeY && parsedProp.sizeY.unit && parsedProp.sizeY.unit === 'auto';
     const isUnit = parsedProp.value && parsedProp.value === 'unit';
+
 
     const onSelectChange = (e) => {
         if (e.target.value === 'default') {
@@ -66,6 +67,13 @@ export const BackgroundSize = (props) => {
                 id: activeComponent.id
             }));
         }
+        if (parsedProp.sizeY.unit === 'auto') {
+            dispatch(setProp({
+                name: 'backgroundSize',
+                value: `${e.target.value}${parsedProp.sizeX.unit} auto`,
+                id: activeComponent.id
+            }));
+        }
     }
 
     const onInputYChange = (e) => {
@@ -80,6 +88,22 @@ export const BackgroundSize = (props) => {
 
     const onUnitXChange = (e) => {
         if (e.target.value === 'auto' && parsedProp.sizeY && parsedProp.sizeY.value && parseProp.sizeY.unit) {
+            dispatch(setProp({
+                name: 'backgroundSize',
+                value: `auto ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
+                id: activeComponent.id
+            }));
+        }
+
+        if (e.target.value === 'auto' && parsedProp.sizeY.unit === 'auto') {
+            dispatch(setProp({
+                name: 'backgroundSize',
+                value: `auto auto`,
+                id: activeComponent.id
+            }));
+        }
+
+        if (e.target.value === 'auto' && parsedProp.sizeY.unit !== 'auto') {
             dispatch(setProp({
                 name: 'backgroundSize',
                 value: `auto ${parsedProp.sizeY.value}${parsedProp.sizeY.unit}`,
@@ -188,7 +212,7 @@ export const BackgroundSize = (props) => {
                             type="number"
                             min={0}
                             step={5}
-                            value={parsedProp.sizeX && parsedProp.sizeX.value || ''}
+                            value={parsedProp.sizeX && parsedProp.sizeX.value}
                             onFocus={onInputFocus}
                             onChange={onInputXChange}
                             disabled={isAutoX || !isUnit}

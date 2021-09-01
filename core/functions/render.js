@@ -47,7 +47,7 @@ const getComponents = (props) => {
 
 
 // отрисовка дерева документа в админке
-const renderDocumentTree = (nodeData, page) => {
+const renderDocumentTree = (nodeData, treeItem) => {
     if (!nodeData || Object.keys(nodeData).length === 0) return null;
     const props = {
         nodeData,

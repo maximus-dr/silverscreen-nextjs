@@ -6,7 +6,7 @@ import { ToggleItem, ToggleLabel, ToggleRadio, ToggleWrapper } from './ToggleSty
 export default function ToggleStyles(props) {
 
     const {activeItem, setActiveItem} = props;
-    console.log(activeItem);
+
     return (
         <ToggleWrapper>
             <ToggleItem>
