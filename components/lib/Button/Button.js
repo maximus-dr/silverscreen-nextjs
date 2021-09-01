@@ -10,6 +10,7 @@ import { ButtonComponent } from './ButtonStyled'
 export default function Button(props) {
 
     const id = props.componentData.id;
+    const state = useSelector(state => state.document);
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const componentsData = useSelector(state => state.document.componentsData);
@@ -20,8 +21,9 @@ export default function Button(props) {
 
     const component = {
         id,
-        componentsData,
+        state,
         componentData,
+        componentsData,
         activeComponent,
         dragendComponent,
         isDropBox: false,

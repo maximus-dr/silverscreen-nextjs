@@ -19,6 +19,7 @@ export default function TreeItem(props) {
     const hasChildren = nodeData.childrenList && nodeData.childrenList.length > 0;
     const isRootItem = nodeData.typeName === 'Document';
     const isPage = nodeData.typeName === 'page';
+    const isModal = modal && nodeData.id === modal.id;
     const isCurrentPage = nodeData.id === currentPage;
     const isActive = activeComponent && nodeData.id === activeComponent.id;
     const componentsData = useSelector(state => state.document.componentsData);
@@ -193,21 +194,39 @@ export default function TreeItem(props) {
         setExpanded(prev => !prev);
     }
 
+    const setTreeItemId = (nodeData) => {
+        let id = `node-${nodeData.id}`;
+        if (nodeData.typeName === 'page') id = `page-${nodeData.id}`;
+        if (nodeData.typeName === 'modal') id = `modal-${nodeData.id}`;
+        return id;
+    }
+
+    const setTreeItemChildrenId = (nodeData) => {
+        let id = `node-children-${nodeData.id}`;
+        if (nodeData.typeName === 'page') id = `page-children-${nodeData.id}`;
+        if (nodeData.typeName === 'modal') id = `modal-children-${nodeData.id}`;
+        return id;
+    }
+
 
     return (
         <TreeWrapper onClick={(e) => {
             e.stopPropagation();
-            if (nodeData.typeName !== 'page' && nodeData.typeName !== 'Document' && nodeData.typeName !== 'modals' && nodeData.typeName !== 'pages') {
+            if (nodeData.typeName !== 'page' && nodeData.typeName !== 'Document' && nodeData.typeName !== 'modals' && nodeData.typeName !== 'pages' && nodeData.typeName !== 'modal') {
                 const closestPage = e.target.closest('[id^="page-children-');
                 const pageId = closestPage && closestPage.id.replace('page-children-', '') || null;
+                const closestModal = e.target.closest('[id^="modal-children-');
+                const modalId = closestModal && closestModal.id.replace('modal-children-', '') || null;
                 if (pageId && currentPage !== pageId) {
                     dispatch(setPage(pageId));
-                    modal && dispatch(closeModal());
+                }
+                if (modalId && modal && modalId !== modal.id || modalId && !modal) {
+                    dispatch(setModal(getComponent(componentsData, modalId)));
                 }
             }
         }}>
                 <Item
-                    id={isPage ? `page-${nodeData.id}` : `node-${nodeData.id}`}
+                    id={setTreeItemId(nodeData)}
                     draggable={nodeData.typeName !== 'Document' && nodeData.typeName !== 'modals' && nodeData.typeName !== 'pages'}
                     onDragStart={(e) => onDragStart(e, nodeData.id)}
                     onDragEnter={onDragEnter}
@@ -217,6 +236,7 @@ export default function TreeItem(props) {
                     onDrop={(e) => onDrop(e, nodeData.id)}
                     isRootItem={isRootItem}
                     isActive={isActive}
+                    isModal={isModal}
                     isCurrentPage={isCurrentPage}
                     allowDrop={allowDrop}
                     onClick={onClick}
@@ -242,7 +262,7 @@ export default function TreeItem(props) {
                         {nodeData.name}
                     </TreeItemName>
                 </Item>
-            <TreeChildren id={isPage ? `page-children-${nodeData.id}` : `node-children-${nodeData.id}`} expanded={expanded}>
+            <TreeChildren id={setTreeItemChildrenId(nodeData)} expanded={expanded}>
                 {props.children}
             </TreeChildren>
         </TreeWrapper>

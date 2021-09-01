@@ -33,7 +33,7 @@
                             "name": "Кнопка",
                             "value": "Отправить",
                             "handlers": {
-                                "onClick": [{"action": "setModal", "params": ["Форма входа"]}]
+                                "onClick": [{"action": "openModal", "params": ["Форма входа"]}]
                             },
                             "styles": {
                                 "common": {}

@@ -113,6 +113,12 @@ const getChild = (componentData, childId) => {
     return result;
 }
 
+const getModal = (componentsData, modalName) => {
+    const modals = componentsData.childrenList.find(item => item.typeName === 'modals');
+    const modal = modals.childrenList.find(item => item.name === modalName);
+    return modal;
+}
+
 
 
 export {
@@ -123,5 +129,6 @@ export {
     generateNewId,
     getParent,
     getComponent,
-    getChild
+    getChild,
+    getModal
 }

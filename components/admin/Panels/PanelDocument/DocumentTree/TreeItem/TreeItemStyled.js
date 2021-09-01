@@ -53,6 +53,10 @@ const Item = styled.div`
         `;
     }}
 
+    ${props => props.isModal && `
+        background-color: rgba(0, 0, 0, 0.25);
+    `}
+
 
 
     ${props => props.allowDrop && `
@@ -191,6 +195,10 @@ const TreeItemName = styled.span`
     `}
 
     ${props => props.isActive && `
+        color: #ffffff;
+    `}
+
+    ${props => props.isModal && `
         color: #ffffff;
     `}
 `;

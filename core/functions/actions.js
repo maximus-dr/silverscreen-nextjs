@@ -1,10 +1,17 @@
-import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, setModal, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../store/actions/document";
+import { addComponent, addComponentToActive, closeModal, deleteComponent, setActiveComponent, setDragendComponent, setModal, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../store/actions/document";
 import { MODE } from "../config/site";
-import { getChild, getComponent, getHandler, getParent } from "./components";
+import { getChild, getComponent, getHandler, getModal, getParent } from "./components";
 
 
 const actions = {
-    setModal
+    openModal(state, dispatch, modalName) {
+        const modal = getModal(state.componentsData, modalName);
+        dispatch(setModal(modal));
+    },
+
+    closeModal(state, dispacth) {
+        dispacth(closeModal());
+    }
 }
 
 const onDragStart = (e, component) => {
@@ -124,7 +131,7 @@ const onDrop = (e, component) => {
 
 
 const onClick = (e, component) => {
-    const {id, componentData, activeComponent, isLocked, dispatch, handlers} = component;
+    const {id, state, componentData, activeComponent, isLocked, dispatch, handlers} = component;
 
 
     if (MODE === 'admin') {
@@ -137,8 +144,7 @@ const onClick = (e, component) => {
             if (handlers && handlers.onClick) {
                 const action = handlers.onClick[0].action;
                 const params = handlers.onClick[0].params;
-
-                dispatch(actions[action](...params));
+                actions[action](state, dispatch, ...params);
             }
             return;
         }

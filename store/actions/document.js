@@ -1,3 +1,5 @@
+import { getModal } from "../../core/functions/components";
+
 const SET_ACTIVE_COMPONENT = 'SET_ACTIVE_COMPONENT';
 const UNSET_ACTIVE_COMPONENT = 'UNSET_ACTIVE_COMPONENT';
 const SET_RESOLUTION = 'SET_RESOLUTION';
@@ -133,10 +135,12 @@ const clearBuffer = () => ({
     type: CLEAR_BUFFER
 });
 
-const setModal = (modal) => ({
-    type: SET_MODAL,
-    modal
-});
+const setModal = (modal) => {
+    return {
+        type: SET_MODAL,
+        modal
+    }
+};
 
 const closeModal = () => ({
     type: CLOSE_MODAL

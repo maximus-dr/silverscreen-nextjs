@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, {css, keyframes} from 'styled-components';
 import { screens } from '../../../core/variables/variables';
 import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';

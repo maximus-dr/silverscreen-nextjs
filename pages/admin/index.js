@@ -59,15 +59,12 @@ export async function getServerSideProps() {
 export default function AdminMainPage() {
 
     const componentsData = useSelector(state => state.document.componentsData);
-    const activeComponent = useSelector(state => state.document.activeComponent);
     const resolution = useSelector(state => state.document.resolution);
 
     const activePage = useSelector(state => state.document.page);
     const page = activePage ? getComponent(componentsData, activePage) : null;
     const components = renderComponents(page);
     const modalData = useSelector(state => state.document.modal);
-    // const modal = renderComponents(modalData);
-    // const modal = modalData ? getComponent(componentsData, modalData.id) : null;
     const modal = modalData ? renderComponents(getComponent(componentsData, modalData.id)) : null;
 
 
