@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getChild, getComponent, getParent } from "../../../../../../core/functions/components";
-import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal, unsetPage } from "../../../../../../store/actions/document";
+import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal, unsetPage, closeModal } from "../../../../../../store/actions/document";
 import { TreeChildren, Item, TreeItemName, TreeItemType, TreeWrapper } from "./TreeItemStyled";
 
 
@@ -14,6 +14,7 @@ export default function TreeItem(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const dispatch = useDispatch();
     const currentPage = useSelector(state => state.document.page);
+    const modal = useSelector(state => state.document.modal);
 
     const hasChildren = nodeData.childrenList && nodeData.childrenList.length > 0;
     const isRootItem = nodeData.typeName === 'Document';
@@ -164,17 +165,26 @@ export default function TreeItem(props) {
         }
         if (nodeData.typeName === 'page' && nodeData.id !== currentPage) {
             dispatch(setPage(nodeData.id));
+            dispatch(closeModal());
         };
     }
 
     const onClick = () => {
+        if (nodeData.typeName === 'modal') {
+            if (isActive) dispatch(closeModal());
+            if (!isActive) dispatch(setModal(nodeData));
+        }
+        if (nodeData.typeName === 'page') {
+            if (isActive) dispatch(unsetPage());
+            if (!isActive) {
+                dispatch(setPage(nodeData.id));
+                modal && dispatch(closeModal());
+            }
+        }
         if (isActive) {
             dispatch(unsetActiveComponent());
-            nodeData.typeName === 'page' && dispatch(unsetPage());
-            return
         }
-        dispatch(setActiveComponent(nodeData));
-        nodeData.typeName === 'page' && dispatch(setPage(nodeData.id));
+        if (!isActive) dispatch(setActiveComponent(nodeData));
     }
 
     const onItemTypeClick = (e) => {
@@ -192,6 +202,7 @@ export default function TreeItem(props) {
                 const pageId = closestPage && closestPage.id.replace('page-children-', '') || null;
                 if (pageId && currentPage !== pageId) {
                     dispatch(setPage(pageId));
+                    modal && dispatch(closeModal());
                 }
             }
         }}>

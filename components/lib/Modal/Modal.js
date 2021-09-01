@@ -1,5 +1,5 @@
 import React from 'react'
-import { ModalComponent } from './ModalStyled'
+import { ModalComponent, ModalOverlay } from './ModalStyled'
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -57,24 +57,25 @@ export default function Modal(props) {
 
 
     return (
-        <ModalComponent
-            {...props}
-            id={id}
-            componentData={componentData}
-            onMouseEnter={props.onMouseEnter}
-            onClick={(e) => onClick(e, component)}
-            isActiveComponent={isActiveComponent}
-            onDragStart={(e) => onDragStart(e, component)}
-            onDragEnter={(e) => onDragEnter(e, component)}
-            onDragLeave={(e) => onDragLeave(e, component)}
-            onDragOver={(e) => onDragOver(e, component)}
-            onDragEnd={(e) => onDragEnd(e, component)}
-            onDrop={(e) => onDrop(e, component)}
-            draggable
-            allowDrop={allowDrop}
-        >
-            Modal
-            {props.children}
-        </ModalComponent>
+        <>
+            <ModalComponent
+                {...props}
+                id={id}
+                componentData={componentData}
+                onMouseEnter={props.onMouseEnter}
+                onClick={(e) => onClick(e, component)}
+                isActiveComponent={isActiveComponent}
+                onDragStart={(e) => onDragStart(e, component)}
+                onDragEnter={(e) => onDragEnter(e, component)}
+                onDragLeave={(e) => onDragLeave(e, component)}
+                onDragOver={(e) => onDragOver(e, component)}
+                onDragEnd={(e) => onDragEnd(e, component)}
+                onDrop={(e) => onDrop(e, component)}
+                draggable
+                allowDrop={allowDrop}
+            >
+                {props.children}
+            </ModalComponent>
+        </>
     )
 }

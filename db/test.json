@@ -8,7 +8,6 @@
             "id": "doc-modals",
             "childrenList": []
         },
-
         {
             "typeName": "pages",
             "id": "doc-pages",
@@ -34,7 +33,7 @@
                             "name": "Кнопка",
                             "value": "Отправить",
                             "handlers": {
-                                "onClick": [{"action": "setModal", "params": ["saveTemplate"]}]
+                                "onClick": [{"action": "setModal", "params": ["Форма входа"]}]
                             },
                             "styles": {
                                 "common": {}
@@ -44,6 +43,15 @@
                     ]
                 }
             ]
+        },
+        {
+            "typeName": "label",
+            "id": "lab03030",
+            "name": "Label",
+            "styles": {
+                "common": {}
+            },
+            "childrenList": []
         }
     ]
 }

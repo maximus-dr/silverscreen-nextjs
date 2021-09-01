@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useEffect, useState } from 'react';
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import Modal from '../Modal/Modal';
 
 
 

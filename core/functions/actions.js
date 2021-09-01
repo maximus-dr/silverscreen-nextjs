@@ -138,7 +138,7 @@ const onClick = (e, component) => {
                 const action = handlers.onClick[0].action;
                 const params = handlers.onClick[0].params;
 
-                dispatch(actions[action]('saveTemplate'));
+                dispatch(actions[action](...params));
             }
             return;
         }

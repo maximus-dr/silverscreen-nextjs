@@ -18,8 +18,6 @@ export default function Button(props) {
     const dispatch = useDispatch();
     const isLocked = false;
 
-
-
     const component = {
         id,
         componentsData,

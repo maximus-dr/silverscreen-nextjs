@@ -17,7 +17,7 @@ export default function PanelProps() {
     const componentData = getComponent(componentsData, id);
 
 
-    return activeComponent && activeComponent.typeName !== 'Document'
+    return activeComponent
         ? (
             <Panel title="Свойства">
                 <PropsPanelWrapper>
@@ -36,9 +36,10 @@ export default function PanelProps() {
 
                     {
                         activeComponent.typeName &&
-                        activeComponent.typeName !== 'slider' &&
+                        activeComponent.typeName !== 'Document' &&
                         activeComponent.typeName !== 'pages' &&
                         activeComponent.typeName !== 'modals' &&
+                        activeComponent.typeName !== 'slider' &&
                         <Props
                             activeComponent={activeComponent}
                             styles={componentData.styles && componentData.styles.common || {}}

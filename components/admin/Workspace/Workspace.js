@@ -9,9 +9,9 @@ import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './Workspa
 
 export default function Workspace(props) {
 
-    const {components, resolution} = props;
+    const {components, resolution, modal} = props;
     const modalName = useSelector(state => state.document.modal);
-    const modal = {
+    const adminModals = {
         el: modals[modalName]
     }
 
@@ -21,13 +21,14 @@ export default function Workspace(props) {
                 <WorkspacePageWrapper>
                     <WorkspacePage pageWidth={`${resolution}px`}>
                         {components}
+                        {modal}
                     </WorkspacePage>
 
                     <PanelTools />
                     {/* <Notification /> */}
 
-                    <Overlay isOpen={modalName}>
-                        {modal.el && <modal.el isOpen={modalName} />}
+                    <Overlay isOpen={modalName && modalName === 'saveTemplate'}>
+                        {adminModals.el && <adminModals.el isOpen={modalName} />}
                     </Overlay>
                 </WorkspacePageWrapper>
             </WorkspaceWrapper>
