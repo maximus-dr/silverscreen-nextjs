@@ -1,7 +1,7 @@
-import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, setLinkToComponentsData, updateComponentChildrenListData } from "../../core/functions/admin/components";
+import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, setLinkToComponentsData, updateComponentChildrenListData, setUrlToComponentsData } from "../../core/functions/admin/components";
 import { setPropToComponentsData, setSettingsPropToComponentsData } from "../../core/functions/admin/props";
 import { getModal } from "../../core/functions/components";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE, SET_SETTINGS_PROP, SET_PAGE, UNSET_PAGE, SET_MODE } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE, SET_SETTINGS_PROP, SET_PAGE, UNSET_PAGE, SET_MODE, SET_COMPONENT_URL } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -102,6 +102,12 @@ export const documentReducer = (state = {}, action) => {
             return {
                 ...state,
                 componentsData: setNameToComponentsData(state.componentsData, action.id, action.name)
+            }
+
+        case SET_COMPONENT_URL:
+            return {
+                ...state,
+                componentsData: setUrlToComponentsData(state.componentsData, action.id, action.url)
             }
 
         case UPDATE_COMPONENT_CHILDRENLIST:

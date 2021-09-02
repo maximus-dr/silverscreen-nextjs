@@ -8,10 +8,12 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
-import { setDocumentComponentsData, setMode, setResolution, setTemplates } from "../../store/actions/document";
+import { setDocumentComponentsData, setMode, setPage, setResolution, setTemplates } from "../../store/actions/document";
 import { useSelector } from "react-redux";
 import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/components";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 
 // export async function getStaticProps() {
@@ -67,8 +69,13 @@ export default function AdminMainPage() {
     const components = renderComponents(page);
     const modalData = useSelector(state => state.document.modal);
     const modal = modalData ? renderComponents(getComponent(componentsData, modalData.id)) : null;
+    const dispatch = useDispatch();
 
-
+    useEffect(() => {
+        if (componentsData.childrenList.find(item => item.typeName === 'pages').childrenList.length > 0) {
+            dispatch(setPage(componentsData.childrenList.find(item => item.typeName === 'pages').childrenList[0].id));
+        };
+    });
 
     return (
         <Wrapper>

@@ -23,12 +23,11 @@ export const ComponentPropKey = styled.span`
     display: inline-block;
     padding-right: 5px;
     font-weight: bold;
-    width: 110px;
+    width: 85px;
 `;
 
 export const ComponentPropValue = styled.div`
-    display: inline-block;
-    width: 100%;
+
 `;
 
 export const ComponentElements = styled.div`
@@ -40,10 +39,10 @@ export const ComponentInfoTextarea = styled.textarea`
     display:inline-block;
     border: solid 1px #000;
     min-height:100px;
-    width: 100%;
     resize: none;
+    width: 160px;
 `;
 
 export const ComponentName = styled.input`
-    width: 100%;
+    width: 160px;
 `;

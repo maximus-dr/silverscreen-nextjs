@@ -9,6 +9,7 @@ const SET_COMPONENT_VALUE_TO_ACTIVE = 'SET_COMPONENT_VALUE_TO_ACTIVE';
 const SET_COMPONENT_LINK = 'SET_COMPONENT_LINK';
 const SET_COMPONENT_LINK_TO_ACTIVE = 'SET_COMPONENT_LINK_TO_ACTIVE';
 const SET_COMPONENT_NAME = 'SET_COMPONENT_NAME';
+const SET_COMPONENT_URL = 'SET_COMPONENT_URL';
 const ADD_COMPONENT = 'ADD_COMPONENT';
 const DELETE_COMPONENT = 'DELETE_COMPONENT';
 const SET_DRAGEND_COMPONENT = 'SET_DRAGEND_COMPONENT';
@@ -91,6 +92,12 @@ const setComponentName = (name, id) => ({
     id
 });
 
+const setComponentUrl = (id, url) => ({
+    type: SET_COMPONENT_URL,
+    id,
+    url
+});
+
 const updateComponentChildrenList = (componentId, childrenList) => ({
     type: UPDATE_COMPONENT_CHILDRENLIST,
     componentId,
@@ -159,7 +166,8 @@ const unsetPage = () => ({
 const setMode = (mode) => ({
     type: SET_MODE,
     mode
-})
+});
+
 
 
 
@@ -189,7 +197,8 @@ export {
     setSettingsProp,
     setPage,
     unsetPage,
-    setMode
+    setMode,
+    setComponentUrl
 }
 
 export {
@@ -218,5 +227,6 @@ export {
     SET_SETTINGS_PROP,
     SET_PAGE,
     UNSET_PAGE,
-    SET_MODE
+    SET_MODE,
+    SET_COMPONENT_URL
 }

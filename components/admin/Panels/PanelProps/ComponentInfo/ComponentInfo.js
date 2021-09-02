@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink } from '../../../../../store/actions/document';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl } from '../../../../../store/actions/document';
 import { getComponent } from '../../../../../core/functions/components';
 
 
@@ -28,6 +28,13 @@ export default function ComponentSeciton(props) {
         dispatch(setComponentName(
             e.target.value,
             activeComponent.id
+        ));
+    }
+
+    const onUrlChange = (e) => {
+        dispatch(setComponentUrl(
+            activeComponent.id,
+            e.target.value
         ));
     }
 
@@ -110,9 +117,9 @@ export default function ComponentSeciton(props) {
                                 <ComponentPropValue>
                                     <ComponentName
                                         type="text"
-                                        value={componentData.url}
-                                        onFocus={onNameInputFocus}
-                                        onChange={onNameChange}
+                                        value={componentData.url || ''}
+                                        onFocus={onValueInputFocus}
+                                        onChange={onUrlChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>
