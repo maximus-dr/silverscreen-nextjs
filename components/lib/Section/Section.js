@@ -16,6 +16,7 @@ export default function Section(props) {
     const componentsData = useSelector(state => state.document.componentsData);
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
+    const state = useSelector(state => state.document);
     const dispatch = useDispatch();
 
     const [allowDrop, setAllowDrop] = useState(false);
@@ -23,6 +24,7 @@ export default function Section(props) {
 
     const component = {
         id,
+        state,
         componentsData,
         componentData,
         activeComponent,

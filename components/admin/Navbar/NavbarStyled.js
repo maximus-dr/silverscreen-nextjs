@@ -5,7 +5,6 @@ export const NavbarWrapper = styled.div`
     align-items: center;
     justify-content: center;
     padding: 5px 0;
-    width: 100%;
 `;
 
 export const CurrentPage = styled.div`

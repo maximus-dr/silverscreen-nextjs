@@ -119,6 +119,12 @@ const getModal = (componentsData, modalName) => {
     return modal;
 }
 
+const getPage = (componentsData, pageId) => {
+    const pages = componentsData.childrenList.find(item => item.typeName === 'pages');
+    const page = pages.childrenList.find(item => item.id === pageId);
+    return page;
+}
+
 
 
 export {
@@ -130,5 +136,6 @@ export {
     getParent,
     getComponent,
     getChild,
-    getModal
+    getModal,
+    getPage
 }

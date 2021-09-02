@@ -18,12 +18,14 @@ export default function Page(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
     const modal = useSelector(state => state.document.modal);
+    const state = useSelector(state => state.document);
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
 
     const component = {
         id,
+        state,
         componentsData,
         componentData,
         activeComponent,

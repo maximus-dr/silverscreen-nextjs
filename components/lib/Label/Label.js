@@ -17,9 +17,11 @@ export default function Label(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
     const text = componentData.value || '';
+    const state = useSelector(state => state.document);
 
     const component = {
         id,
+        state,
         componentsData,
         componentData,
         activeComponent,

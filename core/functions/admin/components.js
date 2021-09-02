@@ -53,6 +53,22 @@ const setNameToComponentsData = (componentsData, componentId, name) => {
     }
 }
 
+const setLockToComponentsData = (componentsData, componentId, value) => {
+    if (componentsData.id === componentId) {
+        return {
+            ...componentsData,
+            locked: value
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return setLockToComponentsData(child, componentId, value);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
 
 const addComponentToComponentsData = (state, containerId, component) => {
     if (!state) {
@@ -138,5 +154,6 @@ export {
     addComponentToComponentsData,
     deleteComponentFromComponentsData,
     updateComponentIds,
-    updateComponentChildrenListData
+    updateComponentChildrenListData,
+    setLockToComponentsData
 }

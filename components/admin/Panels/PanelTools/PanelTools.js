@@ -52,6 +52,7 @@ export default function PanelTools() {
         dispatch(addComponent(outerParent.id, activeComponent));
     }
 
+
     const onBackwardClick = () => {
         let index;
         parent.childrenList.forEach((item, i) => {

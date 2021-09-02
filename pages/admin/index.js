@@ -8,7 +8,7 @@ const path = require('path');
 const fs = require('fs');
 import React from 'react'
 import { initializeStore } from "../../store/store";
-import { setDocumentComponentsData, setResolution, setTemplates } from "../../store/actions/document";
+import { setDocumentComponentsData, setMode, setResolution, setTemplates } from "../../store/actions/document";
 import { useSelector } from "react-redux";
 import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/components";
@@ -47,6 +47,7 @@ export async function getServerSideProps() {
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
     dispatch(setResolution('320'));
+    dispatch(setMode('admin'));
 
     return {
         props: {

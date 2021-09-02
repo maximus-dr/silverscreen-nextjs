@@ -131,36 +131,26 @@ const onDrop = (e, component) => {
 
 
 const onClick = (e, component) => {
-    const {id, state, componentData, activeComponent, isLocked, dispatch, handlers} = component;
+    const {id, state, componentData, activeComponent, dispatch, handlers} = component;
 
-
-    if (MODE === 'admin') {
+    if (state.mode === 'admin') {
+        e.preventDefault();
         e.stopPropagation();
 
-        if (isLocked) {
-            if (!activeComponent || activeComponent && activeComponent.id !== id) {
-                dispatch(setActiveComponent(componentData));
-            }
-            if (handlers && handlers.onClick) {
-                const action = handlers.onClick[0].action;
-                const params = handlers.onClick[0].params;
-                actions[action](state, dispatch, ...params);
-            }
+        if (activeComponent && activeComponent.id === id) {
+            dispatch(unsetActiveComponent());
             return;
         }
-
-        if (!isLocked) {
-            if (activeComponent && activeComponent.id === id) {
-                dispatch(unsetActiveComponent());
-                return;
-            }
-            dispatch(setActiveComponent(componentData));
-        }
+        dispatch(setActiveComponent(componentData));
     }
 
-
-
-
+    if (state.mode !== 'admin') {
+        if (handlers && handlers.onClick) {
+            const action = handlers.onClick[0].action;
+            const params = handlers.onClick[0].params;
+            actions[action](state, dispatch, ...params);
+        }
+    }
 }
 
 

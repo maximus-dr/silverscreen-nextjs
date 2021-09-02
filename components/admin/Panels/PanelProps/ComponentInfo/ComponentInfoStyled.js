@@ -23,6 +23,7 @@ export const ComponentPropKey = styled.span`
     display: inline-block;
     padding-right: 5px;
     font-weight: bold;
+    width: 110px;
 `;
 
 export const ComponentPropValue = styled.div`

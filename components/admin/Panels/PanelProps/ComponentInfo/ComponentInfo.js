@@ -103,6 +103,22 @@ export default function ComponentSeciton(props) {
                         );
                     }
 
+                    if (entrie[0] === 'url') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.url}
+                                        onFocus={onNameInputFocus}
+                                        onChange={onNameChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
                     return (
                         <ComponentPropItem key={entrie[0]}>
                             <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
