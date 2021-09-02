@@ -165,5 +165,14 @@
             {"typeName":"link","id":"link001","name":"Ссылка","value":"Link","url":"/","styles":{"common":{}},"childrenList":[]},{"typeName":"link","id":"templateNBWIoJcsj-","name":"Купить билет","value":"Купить билет","url":"/","styles":{"common":{"display":"inline-block","paddingTop":"18px","paddingRight":"37px","paddingBottom":"18px","paddingLeft":"37px","fontSize":"24px","width":"272px","textAlign":"center","backgroundColor":"#390072","color":"#ffffff","borderRadius":"37px"}},"childrenList":[]},
             {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor": "rgba(0, 0, 0, 0.3)", "width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/fb.svg?alt=media&token=07d36c5d-2f5e-4c59-a739-056c839fbb9d')","borderRadius":"50%"}},"childrenList":[]}
         ]
+    },
+
+    {
+        "category": "Иконка",
+        "templates": [
+            {"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/dolby%20atmos.svg?alt=media&token=d0eb0ed1-39a7-46d9-a6ed-aec0b5bb446c')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/ScreenX.svg?alt=media&token=94c0d316-2935-4396-a4d6-4db4dedfebc4')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/Imax.svg?alt=media&token=e55c8883-f22d-453e-8b64-961822e5faa3')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
+        ]
     }
 ]

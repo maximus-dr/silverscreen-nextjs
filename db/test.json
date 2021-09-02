@@ -23,18 +23,19 @@
                             "paddingBottom": "5px",
                             "paddingLeft": "5px",
                             "minHeight": "100vh",
-                            "backgroundColor": "#ffffff"
+                            "backgroundColor": "rgba(0, 0, 0, 0.5)"
                         }
                     },
                     "childrenList": [
                         {
-                            "typeName": "link",
-                            "id": "link001",
-                            "name": "Ссылка",
-                            "value": "Home",
-                            "url": "/",
+                            "typeName": "icon",
+                            "id": "icon001",
+                            "name": "Иконка",
                             "styles": {
-                                "common": {}
+                                "common": {
+                                    "width": "70px",
+                                    "height": "24px"
+                                }
                             },
                             "childrenList": []
                         },
