@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { getComponent, getHandler, getParent } from '../../../core/functions/components';
-import { setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
+import { getComponent } from '../../../core/functions/components';
 import { ImageComponent } from './ImageStyled'
-import { MODE } from '../../../core/config/site';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+
 
 
 export default function Image(props) {
@@ -15,59 +15,19 @@ export default function Image(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const state = useSelector(state => state.document);
     const dispatch = useDispatch();
 
-
-    const onDragStart = (e, componentId) => {
-        dispatch(setDragendComponent(componentData));
-        e.stopPropagation();
-        e.target.style.opacity = '0.4';
-        e.dataTransfer.setData('componentId', componentId);
-        e.dataTransfer.effectAllowed = 'move';
+    const component = {
+        id,
+        state,
+        componentsData,
+        componentData,
+        activeComponent,
+        dragendComponent,
+        isDropBox: false,
+        dispatch
     }
-
-    const onDragEnter = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (e.target.id === dragendComponent.id) return;
-
-        if (e.altKey) {
-            const parent = getParent(componentsData, id);
-            const hasCommonParent = parent.childrenList.includes(dragendComponent);
-
-            if (hasCommonParent) {
-                const index = parent.childrenList.indexOf(componentData);
-                const parentCopy = {
-                    ... parent,
-                    childrenList: [...parent.childrenList]
-                };
-                parentCopy.childrenList.splice(parentCopy.childrenList.indexOf(dragendComponent), 1);
-                parentCopy.childrenList.splice(index, 0, dragendComponent);
-                dispatch(updateComponentChildrenList(parent.id, parentCopy.childrenList));
-            }
-        }
-    }
-
-    const onDragLeave = (e) => {
-        e.stopPropagation();
-    }
-
-    const onDragEnd = (e) => {
-        e.target.style.opacity = '1';
-        if (dragendComponent) dispatch(unsetDragendComponent());
-    }
-
-    const onDragOver = (e) => {
-        e.dataTransfer.dropEffect =  dragendComponent && dragendComponent.id === id ? 'move' : 'none';
-        e.preventDefault();
-        e.stopPropagation();
-    }
-
-    const onDrop = (e) => {
-        e.stopPropagation();
-    }
-
 
     return (
         <ImageComponent
@@ -79,24 +39,13 @@ export default function Image(props) {
             width={componentData.width || '200px'}
             height={componentData.height || 'auto'}
             isActiveComponent={isActiveComponent}
-            {...props.handlers}
-            onClick={(e) => {
-                // getHandler(props, 'onClick')();
-                if (MODE === 'admin') {
-                    e.stopPropagation();
-                    if (activeComponent && activeComponent.id === id) {
-                        dispatch(unsetActiveComponent());
-                        return;
-                    }
-                    dispatch(setActiveComponent(props.componentData));
-                }
-            }}
-            onDragStart={(e) => onDragStart(e, id)}
-            onDragEnter={onDragEnter}
-            onDragLeave={onDragLeave}
-            onDragEnd={onDragEnd}
-            onDragOver={onDragOver}
-            onDrop={onDrop}
+            onClick={(e) => onClick(e, component)}
+            onDragStart={(e) => onDragStart(e, component)}
+            onDragEnter={(e) => onDragEnter(e, component)}
+            onDragLeave={(e) => onDragLeave(e, component)}
+            onDragOver={(e) => onDragOver(e, component)}
+            onDragEnd={(e) => onDragEnd(e, component)}
+            onDrop={(e) => onDrop(e, component)}
         />
     )
 }

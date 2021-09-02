@@ -1,1 +1,179 @@
-[{"category":"Страница","templates":[{"typeName":"page","id":"page1","name":"Main Page","styles":{"common":{"paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","minHeight":"100vh","backgroundColor":"#ffffff"}},"childrenList":[]}]},{"category":"Секция","templates":[{"typeName":"section","id":"sec001","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"1px dashed #42a5f5","paddingTop":"15px","paddingRight":"15px","paddingBottom":"15px","paddingLeft":"15px"}},"childrenList":[]}]},{"category":"Заголовок","templates":[{"typeName":"label","id":"lab001","name":"Label 1","value":"Label","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px"}},"childrenList":[]}]},{"category":"Текст","templates":[{"typeName":"description","id":"desc001","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]}]},{"category":"Изображение","templates":[{"typeName":"image","id":"img001","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px"}},"childrenList":[]}]},{"category":"Слайдер","templates":[{"typeName":"slider","id":"slider001","name":"Пустой","settings":{"initItem":"0","arrows":"true","buttons":"true","swipeable":"true","autoPlay":"true","interval":"3000","transitionTime":"350","tolerance":"5","infiniteLoop":"true","axis":"horizontal"},"styles":{"common":{},"buttons":{"common":{"height":"10px","backgroundColor":"red"}},"buttonsList":{"common":{}},"arrowPrev":{"common":{}},"arrowNext":{"common":{}}},"childrenList":[]}]},{"category":"Модальное окно","templates":[{"typeName":"modal","id":"templateg73vH53pes","name":"Форма с кнопкой закрытия","modalName":"loginForm","styles":{"common":{"minHeight":"","width":"","border":"1px dashed black","position":"absolute","zIndex":"100","top":"0px","right":"0px","bottom":"0px","left":"0px","backgroundColor":"rgba(0, 0, 0, 0.7)","display":"flex","flexDirection":"column","alignItems":"center"}},"childrenList":[{"typeName":"section","id":"zqUViuXIKE","name":"Окно формы","styles":{"common":{"minHeight":"320px","border":"1px dashed #42a5f5","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#ffffff","width":"260px","top":"","marginTop":"50px","borderRadius":"24px","display":"flex","flexDirection":"column"}},"childrenList":[{"typeName":"label","id":"N3szGV-L0m","name":"Заголовок","value":"Форма","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","marginBottom":"25px"}},"childrenList":[]},{"typeName":"description","id":"IfLvVlpvhi","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]},{"typeName":"button","id":"2jEZas4364","name":"Кнопка","value":"Отправить","styles":{"common":{"marginTop":"auto","justifyContent":"flex-start","marginBottom":"10px","width":"100px","alignSelf":"center"}},"childrenList":[]},{"typeName":"button","handlers":{"onClick":[{"action":"closeModal","params":[]}]},"id":"09f1UbAT5U","name":"Кнопка","value":"Закрыть","styles":{"common":{"width":"100px","alignSelf":"center"}},"childrenList":[]}]}]}]},{"category":"Ссылка","templates":[{"typeName":"link","id":"link001","name":"Ссылка","value":"Link","url":"/","styles":{"common":{}},"childrenList":[]},{"typeName":"link","id":"templateNBWIoJcsj-","name":"Купить билет","value":"Купить билет","url":"/","styles":{"common":{"display":"inline-block","paddingTop":"18px","paddingRight":"37px","paddingBottom":"18px","paddingLeft":"37px","fontSize":"24px","width":"272px","textAlign":"center","backgroundColor":"#390072","color":"#ffffff","borderRadius":"37px"}},"childrenList":[]},{"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor":"rgba(0, 0, 0, 0.3)","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/fb.svg?alt=media&token=07d36c5d-2f5e-4c59-a739-056c839fbb9d')","borderRadius":"50%"}},"childrenList":[]}]},{"category":"Иконка","templates":[{"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/dolby%20atmos.svg?alt=media&token=d0eb0ed1-39a7-46d9-a6ed-aec0b5bb446c')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},{"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/ScreenX.svg?alt=media&token=94c0d316-2935-4396-a4d6-4db4dedfebc4')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},{"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/Imax.svg?alt=media&token=e55c8883-f22d-453e-8b64-961822e5faa3')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}]}]
+[
+    {
+        "category": "Страница",
+        "templates": [
+            {
+                "typeName": "page",
+                "id": "page1",
+                "name": "Main Page",
+                "styles": {
+                    "common": {
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "minHeight": "100vh",
+                        "backgroundColor": "#ffffff"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Секция",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "sec001",
+                "name": "Section 1",
+                "styles": {
+                    "common": {
+                        "minHeight": "50px",
+                        "border": "1px dashed #42a5f5",
+                        "paddingTop": "15px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "15px",
+                        "paddingLeft": "15px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Заголовок",
+        "templates": [
+            {
+                "typeName": "label",
+                "id": "lab001",
+                "name": "Label 1",
+                "value": "Label",
+                "styles": {
+                    "common": {
+                        "display": "inline-block",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "22px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Текст",
+        "templates": [
+            {
+                "typeName": "description",
+                "id": "desc001",
+                "name": "Текст",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "styles": {
+                    "common": {
+                        "marginTop": "0px",
+                        "marginBottom": "0px",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "14px",
+                        "lineHeight": "1"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Изображение",
+        "templates": [
+            {
+                "typeName": "image",
+                "id": "img001",
+                "name": "Пустое",
+                "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
+                "styles": {
+                    "common": {
+                        "width": "100%",
+                        "maxWidth": "640px",
+                        "backgroundColor": "#dfe6e9"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Слайдер",
+        "templates": [
+            {
+                "typeName": "slider",
+                "id": "slider001",
+                "name": "Пустой",
+                "settings": {
+                    "initItem": "0",
+                    "arrows": "true",
+                    "buttons": "true",
+                    "swipeable": "true",
+                    "autoPlay": "true",
+                    "interval": "3000",
+                    "transitionTime": "350",
+                    "tolerance": "5",
+                    "infiniteLoop": "true",
+                    "axis": "horizontal"
+                },
+                "styles": {
+                    "common": {},
+                    "buttons": {
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
+                    },
+                    "buttonsList": {
+                        "common": {}
+                    },
+                    "arrowPrev": {
+                        "common": {}
+                    },
+                    "arrowNext": {
+                        "common": {}
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Модальное окно",
+        "templates": [
+            {"typeName":"modal","id":"templateg73vH53pes","name":"Форма с кнопкой закрытия","modalName":"loginForm","styles":{"common":{"minHeight":"","width":"","border":"1px dashed black","position":"absolute","zIndex":"100","top":"0px","right":"0px","bottom":"0px","left":"0px","backgroundColor":"rgba(0, 0, 0, 0.7)","display":"flex","flexDirection":"column","alignItems":"center"}},"childrenList":[{"typeName":"section","id":"zqUViuXIKE","name":"Окно формы","styles":{"common":{"minHeight":"320px","border":"1px dashed #42a5f5","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#ffffff","width":"260px","top":"","marginTop":"50px","borderRadius":"24px","display":"flex","flexDirection":"column"}},"childrenList":[{"typeName":"label","id":"N3szGV-L0m","name":"Заголовок","value":"Форма","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","marginBottom":"25px"}},"childrenList":[]},{"typeName":"description","id":"IfLvVlpvhi","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]},{"typeName":"button","id":"2jEZas4364","name":"Кнопка","value":"Отправить","styles":{"common":{"marginTop":"auto","justifyContent":"flex-start","marginBottom":"10px","width":"100px","alignSelf":"center"}},"childrenList":[]},{"typeName":"button","handlers":{"onClick":[{"action": "closeModal", "params": []}]}, "id":"09f1UbAT5U","name":"Кнопка","value":"Закрыть","styles":{"common":{"width":"100px","alignSelf":"center"}},"childrenList":[]}]}]}
+        ]
+    },
+
+    {
+        "category": "Ссылка",
+        "templates": [
+            {"typeName":"link","id":"link001","name":"Ссылка","value":"Link","url":"/","styles":{"common":{}},"childrenList":[]},{"typeName":"link","id":"templateNBWIoJcsj-","name":"Купить билет","value":"Купить билет","url":"/","styles":{"common":{"display":"inline-block","paddingTop":"18px","paddingRight":"37px","paddingBottom":"18px","paddingLeft":"37px","fontSize":"24px","width":"272px","textAlign":"center","backgroundColor":"#390072","color":"#ffffff","borderRadius":"37px"}},"childrenList":[]},
+            {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor": "rgba(0, 0, 0, 0.3)", "width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/fb.svg?alt=media&token=07d36c5d-2f5e-4c59-a739-056c839fbb9d')","borderRadius":"50%"}},"childrenList":[]}
+        ]
+    },
+
+    {
+        "category": "Иконка",
+        "templates": [
+            {"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/dolby%20atmos.svg?alt=media&token=d0eb0ed1-39a7-46d9-a6ed-aec0b5bb446c')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/ScreenX.svg?alt=media&token=94c0d316-2935-4396-a4d6-4db4dedfebc4')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/Imax.svg?alt=media&token=e55c8883-f22d-453e-8b64-961822e5faa3')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
+        ]
+    }
+]
