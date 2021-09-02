@@ -175,5 +175,12 @@
             {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/ScreenX.svg?alt=media&token=94c0d316-2935-4396-a4d6-4db4dedfebc4')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
             {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/Imax.svg?alt=media&token=e55c8883-f22d-453e-8b64-961822e5faa3')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
         ]
+    },
+
+    {
+        "category": "Форма",
+        "templates": [
+            {"typeName":"form","id":"templateocDcHhQw1D","name":"Пустая","styles":{"common":{"width":"300px","height":"500px","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"","paddingLeft":""}},"childrenList":[]}
+        ]
     }
 ]
