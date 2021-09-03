@@ -95,7 +95,7 @@ export default function PanelTools() {
         activeComponent.typeName !== 'pages' &&
         activeComponent.typeName !== 'modals' &&
         parent ? (
-        <ToolsWrapper>
+        <ToolsWrapper onMouseDown={(e) => e.stopPropagation()}>
             <ToolsFixWrapper>
                 <ToolsItem>
                     <ToolsButton

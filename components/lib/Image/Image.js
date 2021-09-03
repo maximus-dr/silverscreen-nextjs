@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { getComponent } from '../../../core/functions/components';
 import { ImageComponent } from './ImageStyled'
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 
 
 
@@ -40,6 +40,7 @@ export default function Image(props) {
             height={componentData.height || 'auto'}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}
+            onMouseDown={(e) => onMouseDown(e, component)}
             onDragStart={(e) => onDragStart(e, component)}
             onDragEnter={(e) => onDragEnter(e, component)}
             onDragLeave={(e) => onDragLeave(e, component)}

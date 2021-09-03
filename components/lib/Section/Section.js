@@ -4,7 +4,7 @@ import { getChild, getComponent } from '../../../core/functions/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 
 
 
@@ -64,6 +64,7 @@ export default function Section(props) {
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
             onClick={(e) => onClick(e, component)}
+            onMouseDown={(e) => onMouseDown(e, component)}
             isActiveComponent={isActiveComponent}
             onDragStart={(e) => onDragStart(e, component)}
             onDragEnter={(e) => onDragEnter(e, component)}

@@ -3,7 +3,7 @@ import { PageComponent, PageOverlay } from './PageStyled';
 import { useDispatch, useSelector } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useEffect, useState } from 'react';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 import Modal from '../Modal/Modal';
 
 
@@ -67,6 +67,7 @@ export default function Page(props) {
             onMouseEnter={props.onMouseEnter}
             onClick={(e) => onClick(e, component)}
             isActiveComponent={isActiveComponent}
+            onMouseDown={(e) => onMouseDown(e, component)}
             onDragStart={(e) => onDragStart(e, component)}
             onDragEnter={(e) => onDragEnter(e, component)}
             onDragLeave={(e) => onDragLeave(e, component)}

@@ -1,5 +1,7 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
+import { unsetActiveComponent } from '../../../store/actions/document';
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';
 import PanelTools from '../Panels/PanelTools/PanelTools';
@@ -11,6 +13,8 @@ export default function Workspace(props) {
 
     const {components, resolution, modal} = props;
     const modalName = useSelector(state => state.document.modal);
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const dispatch = useDispatch();
     const adminModals = {
         el: modals[modalName]
     }
@@ -18,8 +22,10 @@ export default function Workspace(props) {
     return (
         <>
             <WorkspaceWrapper>
-                <WorkspacePageWrapper>
-                    <WorkspacePage pageWidth={`${resolution}px`}>
+                <WorkspacePageWrapper onMouseDown={(e) => {
+                    if (activeComponent) dispatch(unsetActiveComponent());
+                }}>
+                    <WorkspacePage onMouseDown={(e) => e.stopPropagation()} pageWidth={`${resolution}px`}>
                         {components}
                         {modal}
                     </WorkspacePage>

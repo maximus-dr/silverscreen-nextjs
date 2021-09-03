@@ -48,7 +48,7 @@ export default function SaveTemplateModal(props) {
     }
 
     return (
-        <SaveTemplateWrapper isOpen={props.isOpen}>
+        <SaveTemplateWrapper isOpen={props.isOpen} onMouseDown={(e) => e.stopPropagation()}>
             <SaveTemplateFixWrapper>
                 <SaveTemplateTitle>
                     Сохранить шаблон

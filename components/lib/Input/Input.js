@@ -2,9 +2,9 @@ import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 import { getComponent } from '../../../core/functions/components';
-import { InputComponent, InputLabel, InputWrapper } from './InputStyled';
+import { InputComponent } from './InputStyled';
 
 
 
@@ -41,6 +41,7 @@ export default function Input(props) {
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}
+            onMouseDown={(e) => onMouseDown(e, component)}
             onDragStart={(e) => onDragStart(e, component)}
             onDragEnter={(e) => onDragEnter(e, component)}
             onDragLeave={(e) => onDragLeave(e, component)}
@@ -50,7 +51,7 @@ export default function Input(props) {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onFocus={(e) => e.preventDefault()}
-            autoComplete={state.mode === 'admin' && 'off'}
+            autoComplete={state.mode === 'admin' && 'off' || 'on'}
             autoFill={false}
         />
     );

@@ -115,7 +115,7 @@
                                     "id": "sec002",
                                     "name": " Секция",
                                     "styles": {
-                                        "common": {"position":"relative", "marginBottom": "48px"}
+                                        "common": {"position":"relative", "marginBottom": "24px"}
                                     },
                                     "childrenList": [
                                         {
@@ -168,6 +168,80 @@
                                             },
                                             "childrenList": []
                                         }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec004",
+                                    "name": "Секция",
+                                    "styles": {
+                                        "common": {
+                                            "width": "100%",
+                                            "marginBottom": "48px"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "link",
+                                            "id": "link001",
+                                            "name": "Забыл пароль",
+                                            "value": "Не могу вспомнить пароль",
+                                            "styles": {
+                                                "common": {
+                                                    "display": "inline-block",
+                                                    "color": "#ffffff",
+                                                    "fontSize": "16px",
+                                                    "lineHeight": "16px"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "button",
+                                    "id": "submit001",
+                                    "name": "Войти",
+                                    "value": "Войти",
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "width": "100%",
+                                            "maxWidth": "278px",
+                                            "textAlign": "center",
+                                            "paddingTop": "18px",
+                                            "paddingBottom": "18px",
+                                            "paddingLeft": "40px",
+                                            "paddingRight": "40px",
+                                            "marginBottom": "24px",
+                                            "backgroundColor": "#ffffff",
+                                            "color": "#390072",
+                                            "textTransform": "uppercase",
+                                            "border": "none",
+                                            "borderRadius": "25px",
+                                            "fontWeight": "bold"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec003",
+                                    "name": "Секция",
+                                    "styles": {
+                                        "common": {
+                                            "display": "flex",
+                                            "justifyContent": "center",
+                                            "width": "100%",
+                                            "maxWidth": "278px"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight": "8px", "backgroundColor": "rgba(0, 0, 0, 0.3)", "width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')","borderRadius":"50%"}},"childrenList":[]},
+                                        {"typeName":"link","id":"templateltQaGrIbrR2","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor": "rgba(0, 0, 0, 0.3)", "width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')","borderRadius":"50%"}},"childrenList":[]}
                                     ]
                                 }
                             ]

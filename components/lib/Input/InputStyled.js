@@ -2,18 +2,9 @@ import styled, {css, keyframes} from 'styled-components';
 import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
-const autofill = keyframes`
-    to {
-      color: inherit;
-      background: transparent;
-    }
-`
 
 
 export const InputComponent = styled.input`
-
-    animation: ${autofill} 0ms;
-
     :focus ~ label {
         bottom: 48px;
     }

@@ -5,6 +5,7 @@ import { getComponent, getHandler, getParent } from '../../../core/functions/com
 import { setActiveComponent, setDragendComponent, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from '../../../store/actions/document';
 import { useDispatch } from 'react-redux';
 import { MODE } from '../../../core/config/site';
+import { onClick, onMouseDown } from '../../../core/functions/actions';
 
 
 
@@ -17,6 +18,18 @@ export default function Description(props) {
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
+    const state = useSelector(state => state.document);
+
+    const component = {
+        id,
+        state,
+        componentsData,
+        componentData,
+        activeComponent,
+        dragendComponent,
+        isDropBox: false,
+        dispatch
+    }
 
 
     const onDragStart = (e, componentId) => {
@@ -78,17 +91,8 @@ export default function Description(props) {
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             {...props.handlers}
-            onClick={(e) => {
-                getHandler(props, 'onClick')();
-                if (MODE === 'admin') {
-                    e.stopPropagation();
-                    if (activeComponent && activeComponent.id === id) {
-                        dispatch(unsetActiveComponent());
-                        return;
-                    }
-                    dispatch(setActiveComponent(props.componentData));
-                }
-            }}
+            onClick={(e) => onClick(e, component)}
+            onMouseDown={(e) => onMouseDown(e, component)}
             onDragStart={(e) => onDragStart(e, id)}
             onDragEnter={onDragEnter}
             onDragLeave={onDragLeave}

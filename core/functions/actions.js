@@ -129,6 +129,16 @@ const onDrop = (e, component) => {
     }
 }
 
+const onMouseDown = (e, component) => {
+    const {id, state, componentData, activeComponent, dispatch, handlers} = component;
+    if (state.mode === 'admin') {
+        e.stopPropagation();
+        if (!activeComponent || activeComponent && activeComponent.id !== id) {
+            dispatch(setActiveComponent(componentData));
+        }
+    }
+}
+
 
 const onClick = (e, component) => {
     const {id, state, componentData, activeComponent, dispatch, handlers} = component;
@@ -136,12 +146,6 @@ const onClick = (e, component) => {
     if (state.mode === 'admin') {
         e.preventDefault();
         e.stopPropagation();
-
-        if (activeComponent && activeComponent.id === id) {
-            dispatch(unsetActiveComponent());
-            return;
-        }
-        dispatch(setActiveComponent(componentData));
     }
 
     if (state.mode !== 'admin') {
@@ -161,5 +165,6 @@ export {
     onDragOver,
     onDragEnd,
     onDrop,
-    onClick
+    onClick,
+    onMouseDown
 }
