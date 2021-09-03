@@ -61,7 +61,6 @@ export default function Form(props) {
 
     return (
         <FormComponent
-            {...props}
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}

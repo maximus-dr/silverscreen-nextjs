@@ -1,39 +1,57 @@
-import React, { useContext } from 'react'
-import { OutlinesContext } from '../../../context/outlinesContext';
-import { getAttrs } from '../../../core/functions/styles';
-import { InputBody, InputLabel, InputWrapper } from './InputStyled';
+import React from 'react'
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop } from '../../../core/functions/actions';
+import { getComponent } from '../../../core/functions/components';
+import { InputComponent, InputLabel, InputWrapper } from './InputStyled';
+
 
 
 export default function Input(props) {
 
-    const outlines = useContext(OutlinesContext);
-    const attrs = getAttrs(props.componentData);
+    const [value, setValue] = useState('');
 
-    // добавляет опциональные аттрибуты для компонента
-    const inputAttrs = attrs || {};
-    const labelAttrs = props.componentData.label && props.componentData.label.attrs || {};
+    const id = props.componentData.id;
+    const activeComponent = useSelector(state => state.document.activeComponent);
+    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const componentsData = useSelector(state => state.document.componentsData);
+    const componentData = getComponent(componentsData, id);
+    const dragendComponent = useSelector(state => state.document.dragendComponent);
+    const dispatch = useDispatch();
+    const state = useSelector(state => state.document);
 
+    const component = {
+        id,
+        state,
+        componentsData,
+        componentData,
+        activeComponent,
+        dragendComponent,
+        isDropBox: false,
+        dispatch
+    }
 
     return (
-        <InputWrapper 
-            {...props}
-            showOutlines={outlines} 
-        >
-            <InputBody
-                {...inputAttrs}
-                id={attrs && attrs.id || props.componentData.id}
-                type={attrs && attrs.type || 'text'}
-                name={attrs && attrs.name || 'name'}
-                componentData={props.componentData}
-            />
-            <InputLabel 
-                {...labelAttrs} 
-                {...props}
-                htmlFor={props.componentData.id && props.componentData.id}
-            >
-                {props.componentData.value || 'Label'}
-            </InputLabel>
-            {props.children}
-        </InputWrapper>
-    )
+        <InputComponent
+            id={id}
+            draggable
+            type="email"
+            placeholder={componentData.placeholder || ''}
+            componentData={componentData}
+            isActiveComponent={isActiveComponent}
+            onClick={(e) => onClick(e, component)}
+            onDragStart={(e) => onDragStart(e, component)}
+            onDragEnter={(e) => onDragEnter(e, component)}
+            onDragLeave={(e) => onDragLeave(e, component)}
+            onDragOver={(e) => onDragOver(e, component)}
+            onDragEnd={(e) => onDragEnd(e, component)}
+            onDrop={(e) => onDrop(e, component)}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onFocus={(e) => e.preventDefault()}
+            autoComplete={state.mode === 'admin' && 'off'}
+            autoFill={false}
+        />
+    );
 }

@@ -9,6 +9,7 @@ import { LabelComponent } from './LabelStyled'
 
 export default function Label(props) {
 
+
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
@@ -33,8 +34,9 @@ export default function Label(props) {
     return (
         <LabelComponent
             id={id}
+            as={componentData.tag || 'span'}
+            htmlFor={componentData.for || ''}
             draggable
-            {...props}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}

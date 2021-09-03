@@ -61,7 +61,6 @@ export default function Modal(props) {
     return (
         <>
             <ModalComponent
-                {...props}
                 id={id}
                 componentData={componentData}
                 onMouseEnter={props.onMouseEnter}

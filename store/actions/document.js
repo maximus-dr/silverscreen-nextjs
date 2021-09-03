@@ -27,6 +27,7 @@ const SET_SETTINGS_PROP = 'SET_SETTINGS_PROP';
 const SET_PAGE = 'SET_PAGE';
 const UNSET_PAGE = 'UNSET_PAGE';
 const SET_MODE = 'SET_MODE';
+const SET_COMPONENT_FOR = 'SET_COMPONENT_FOR';
 
 
 
@@ -96,6 +97,12 @@ const setComponentUrl = (id, url) => ({
     type: SET_COMPONENT_URL,
     id,
     url
+});
+
+const setComponentFor = (id, value) => ({
+    type: SET_COMPONENT_FOR,
+    id,
+    value
 });
 
 const updateComponentChildrenList = (componentId, childrenList) => ({
@@ -198,7 +205,8 @@ export {
     setPage,
     unsetPage,
     setMode,
-    setComponentUrl
+    setComponentUrl,
+    setComponentFor
 }
 
 export {
@@ -228,5 +236,6 @@ export {
     SET_PAGE,
     UNSET_PAGE,
     SET_MODE,
-    SET_COMPONENT_URL
+    SET_COMPONENT_URL,
+    SET_COMPONENT_FOR
 }

@@ -29,30 +29,148 @@
                     "childrenList": [
 
                         {
-                            "typeName": "section",
-                            "id": "sec001",
-                            "name": " Секция",
-                            "styles": {
-                                "common": {"minHeight":"50px","border":"1px dashed #42a5f5","paddingTop":"15px","paddingRight":"15px","paddingBottom":"15px","paddingLeft":"15px"}
-                            },
-                            "childrenList": []
-                        },
-
-                        {
                             "typeName": "form",
                             "id": "form001asdf",
                             "name": "Форма",
                             "styles": {
                                 "common": {
-                                    "width": "300px",
+                                    "width": "95%",
+                                    "maxWidth": "792px",
                                     "height": "500px",
                                     "backgroundColor": "#ffffff",
                                     "borderRadius": "25px",
                                     "marginRight": "auto",
-                                    "marginLeft": "auto"
+                                    "marginLeft": "auto",
+                                    "paddingTop": "50px",
+                                    "paddingLeft": "24px",
+                                    "paddingRight": "24px",
+                                    "paddingBottom": "32px",
+                                    "backgroundImage": "linear-gradient(218.81deg, #640374 44.43%, #270374 108.37%)"
                                 }
                             },
-                            "childrenList": []
+                            "childrenList": [
+                                {
+                                    "typeName": "section",
+                                    "id": "sec001",
+                                    "name": " Секция",
+                                    "styles": {
+                                        "common": {"position":"relative", "marginBottom": "48px"}
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "input",
+                                            "id": "input001",
+                                            "name": "email input",
+                                            "errorMessage": "неправильно введен email",
+                                            "type": "email",
+                                            "required": true,
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingTop": "34px",
+                                                    "paddingBottom": "10px",
+                                                    "paddingLeft": "16px",
+                                                    "paddingRight": "16px",
+                                                    "fontSize": "18px",
+                                                    "lineHeight": "24px",
+                                                    "backgroundColor": "transparent",
+                                                    "border": "2px solid rgba(255, 255, 255, 0.1)",
+                                                    "borderRadius": "4px",
+                                                    "color": "#ffffff",
+                                                    "outline": "none",
+
+                                                    "focus": {
+                                                        "border": "2px solid #FF7373",
+                                                        "borderRadius": "4px"
+                                                    }
+                                                }
+                                            },
+                                            "childrenList": []
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "inputLabel001",
+                                            "name": "email label",
+                                            "value": "Email или номер телефона",
+                                            "tag": "label",
+                                            "styles": {
+                                                "common": {
+                                                    "position": "absolute",
+                                                    "display": "inline-block",
+                                                    "transitions": ["all 200ms"],
+                                                    "color": "rgba(255, 255, 255, 0.5)",
+                                                    "left": "17px",
+                                                    "bottom": "30px",
+                                                    "pointerEvents": "none"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec002",
+                                    "name": " Секция",
+                                    "styles": {
+                                        "common": {"position":"relative", "marginBottom": "48px"}
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "input",
+                                            "id": "input002",
+                                            "name": "email input",
+                                            "errorMessage": "неправильно введен email",
+                                            "type": "email",
+                                            "required": true,
+                                            "styles": {
+                                                "common": {
+                                                    "width": "100%",
+                                                    "paddingTop": "34px",
+                                                    "paddingBottom": "10px",
+                                                    "paddingLeft": "16px",
+                                                    "paddingRight": "16px",
+                                                    "fontSize": "18px",
+                                                    "lineHeight": "24px",
+                                                    "backgroundColor": "transparent",
+                                                    "border": "2px solid rgba(255, 255, 255, 0.1)",
+                                                    "borderRadius": "4px",
+                                                    "color": "#ffffff",
+                                                    "outline": "none",
+
+                                                    "focus": {
+                                                        "border": "2px solid #FF7373",
+                                                        "borderRadius": "4px"
+                                                    }
+                                                }
+                                            },
+                                            "childrenList": []
+                                        },
+
+                                        {
+                                            "typeName": "label",
+                                            "id": "inputLabel002",
+                                            "name": "email label",
+                                            "value": "Пароль",
+                                            "tag": "label",
+                                            "styles": {
+                                                "common": {
+                                                    "position": "absolute",
+                                                    "display": "inline-block",
+                                                    "transitions": ["all 200ms"],
+                                                    "color": "rgba(255, 255, 255, 0.5)",
+                                                    "left": "17px",
+                                                    "bottom": "30px",
+                                                    "pointerEvents": "none"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

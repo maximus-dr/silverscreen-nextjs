@@ -60,7 +60,6 @@ export default function Section(props) {
 
     return (
         <SectionComponent
-            {...props}
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}

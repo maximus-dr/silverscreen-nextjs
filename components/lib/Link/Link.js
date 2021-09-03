@@ -37,7 +37,6 @@ export default function LinkComp(props) {
     return (
         <Link href={componentData.url || ''} passHref={mode !== 'admin'}>
             <LinkComponent
-                {...props}
                 id={id}
                 componentData={componentData}
                 isActiveComponent={isActiveComponent}

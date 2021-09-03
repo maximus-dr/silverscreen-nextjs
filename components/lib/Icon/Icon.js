@@ -33,7 +33,6 @@ export default function Icon(props) {
         <IconComponent
             id={id}
             draggable
-            {...props}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}

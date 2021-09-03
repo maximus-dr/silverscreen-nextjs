@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl } from '../../../../../store/actions/document';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor } from '../../../../../store/actions/document';
 import { getComponent } from '../../../../../core/functions/components';
 
 
@@ -33,6 +33,13 @@ export default function ComponentSeciton(props) {
 
     const onUrlChange = (e) => {
         dispatch(setComponentUrl(
+            activeComponent.id,
+            e.target.value
+        ));
+    }
+
+    const onForChange = (e) => {
+        dispatch(setComponentFor(
             activeComponent.id,
             e.target.value
         ));
@@ -95,6 +102,8 @@ export default function ComponentSeciton(props) {
                         );
                     }
 
+
+
                     if (entrie[0] === 'link') {
                         return (
                             <ComponentPropItem key={entrie[0]}>
@@ -120,6 +129,38 @@ export default function ComponentSeciton(props) {
                                         value={componentData.url || ''}
                                         onFocus={onValueInputFocus}
                                         onChange={onUrlChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
+                    if (entrie[0] === 'for') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.for || ''}
+                                        onFocus={onValueInputFocus}
+                                        onChange={onForChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
+                    if (entrie[0] === 'placeholder') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.placeholder || ''}
+                                        onFocus={onValueInputFocus}
+                                        onChange={onForChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>

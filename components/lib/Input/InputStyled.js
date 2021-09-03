@@ -1,41 +1,34 @@
-import styled, {css} from 'styled-components';
-import { getStyles } from '../../../core/functions/styles';
-import {enableOutlines} from '../../../core/functions/outlines';
-import { colors } from '../../../core/variables/variables';
+import styled, {css, keyframes} from 'styled-components';
+import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
+const autofill = keyframes`
+    to {
+      color: inherit;
+      background: transparent;
+    }
+`
 
-export const InputWrapper = styled.div`
-    ${props => enableOutlines(props.showOutlines, colors.outline_input)};
-    display: flex;
-    width: 100%;
+
+export const InputComponent = styled.input`
+
+    animation: ${autofill} 0ms;
+
+    :focus ~ label {
+        bottom: 48px;
+    }
+    ${props => props.value.length > 0 && `
+        ~ label {
+            bottom: 48px;
+        }
+    `}
+
     ${props => {
-        const styles = props.componentData.styles && props.componentData.styles.wrapper || null;
+        const styles = props.componentData.styles && props.componentData.styles.common || null;
         return css`
             ${styles && StylesProvider(styles)}
+            ${props => props.isActiveComponent && getOutlines()}
             ${styles && styles.isActive && StylesProvider(styles.isActive)}
         `
-    }}
-`;
-
-export const InputBody = styled.input`
-    ${props => {
-        const styles = props.componentData.styles && props.componentData.styles.body || null;
-
-        return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
-        `;
-    }}
-`;
-
-export const InputLabel = styled.label`
-    ${props => {
-        const styles = getStyles(props.componentData);
-
-        return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
-        `;
     }}
 `;
