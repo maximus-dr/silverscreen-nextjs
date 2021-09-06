@@ -3,7 +3,7 @@ import { getOutlines } from '../../../core/functions/outlines';
 import { StylesProvider } from '../../styles';
 
 
-export const ButtonComponent = styled.button`
+export const TextareaComponent = styled('textarea')`
     ${props => {
         const styles = props.componentData.styles && props.componentData.styles.common || null;
         return css`

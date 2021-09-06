@@ -67,6 +67,35 @@
     },
 
     {
+        "category": "Ссылка",
+        "templates": [
+            {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')"}},"childrenList":[]},
+            {"typeName":"link","id":"templateltQaGrIbrR2","name":"vk","value":"Link","url":"/","styles":{"common":{"width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')"}},"childrenList":[]}
+        ]
+    },
+
+    {
+        "category": "Кнопка",
+        "templates": [
+            {
+                "typeName": "button",
+                "id": "button001",
+                "name": "Простая кнопка",
+                "value": "Кнопка",
+                "styles": {
+                    "common": {
+                        "border": "none",
+                        "outline": "none"
+                    }
+                },
+                "childrenList": []
+            },
+
+            {"typeName":"button","id":"templatedPpsv0xgKt","name":"Закрыть","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(0, 0, 0, 0.3)"}},"childrenList":[]}
+        ]
+    },
+
+    {
         "category": "Текст",
         "templates": [
             {
@@ -88,6 +117,15 @@
                 },
                 "childrenList": []
             }
+        ]
+    },
+
+    {
+        "category": "Иконка",
+        "templates": [
+            {"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/dolbyAtmos.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/ScreenX.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
+            {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
         ]
     },
 
@@ -161,26 +199,49 @@
     },
 
     {
-        "category": "Ссылка",
-        "templates": [
-            {"typeName":"link","id":"link001","name":"Ссылка","value":"Link","url":"/","styles":{"common":{}},"childrenList":[]},{"typeName":"link","id":"templateNBWIoJcsj-","name":"Купить билет","value":"Купить билет","url":"/","styles":{"common":{"display":"inline-block","paddingTop":"18px","paddingRight":"37px","paddingBottom":"18px","paddingLeft":"37px","fontSize":"24px","width":"272px","textAlign":"center","backgroundColor":"#390072","color":"#ffffff","borderRadius":"37px"}},"childrenList":[]},
-            {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor": "rgba(0, 0, 0, 0.3)", "width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/fb.svg?alt=media&token=07d36c5d-2f5e-4c59-a739-056c839fbb9d')","borderRadius":"50%"}},"childrenList":[]}
-        ]
-    },
-
-    {
-        "category": "Иконка",
-        "templates": [
-            {"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/dolby%20atmos.svg?alt=media&token=d0eb0ed1-39a7-46d9-a6ed-aec0b5bb446c')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
-            {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/ScreenX.svg?alt=media&token=94c0d316-2935-4396-a4d6-4db4dedfebc4')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
-            {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://firebasestorage.googleapis.com/v0/b/kekstagram-2741a.appspot.com/o/Imax.svg?alt=media&token=e55c8883-f22d-453e-8b64-961822e5faa3')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
-        ]
-    },
-
-    {
         "category": "Форма",
         "templates": [
-            {"typeName":"form","id":"templateocDcHhQw1D","name":"Пустая","styles":{"common":{"width":"300px","height":"500px","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"","paddingLeft":""}},"childrenList":[]}
+            {"typeName":"form","id":"templateocDcHhQw1D","name":"Пустая","styles":{"common":{"width":"300px","height":"500px","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"","paddingLeft":""}},"childrenList":[]},
+            {"typeName":"form","id":"template8_Hrwki8Pq","name":"Silver 3","styles":{"common":{"width":"95%","maxWidth":"680px","height":"","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"50px","paddingLeft":"24px","paddingRight":"24px","paddingBottom":"32px","backgroundImage":"linear-gradient(218.81deg, #640374 44.43%, #270374 108.37%)","position":"relative","marginTop":"","top":"70px"}},"childrenList":[{"typeName":"section","id":"1Y_U41bo3c","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"flex","justifyContent":"space-between","maxWidth":"248px","marginBottom":"40px"}},"childrenList":[{"typeName":"label","id":"Kg4sNby0Yr","name":"Label 1","value":"вход","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","color":"#ffffff","lineHeight":"64px","borderBottom":"2px solid "}},"childrenList":[]},{"typeName":"label","id":"FHnRRdd96g","name":"Label 1","value":"регистрация","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","lineHeight":"64px","color":"#ffffff","borderBottom":"2px solid transparent","opacity":"0.5"}},"childrenList":[]}]},{"typeName":"button","id":"u3cQZAaXOu","name":"Простая кнопка","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(255, 255, 255, 0.1)"}},"childrenList":[]},{"typeName":"section","id":"jC4TZAzQLo","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"48px"}},"childrenList":[{"typeName":"input","id":"s_28xWjZ1X","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"b1Jq3tNSxy","name":"email label","value":"Email или номер телефона","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"hRjFWRM7A_","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"24px"}},"childrenList":[{"typeName":"input","id":"uPxOPwYcLF","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"6gRj17Bn2o","name":"email label","value":"Пароль","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"gmm2EGeHPM","name":"Секция","styles":{"common":{"width":"100%","marginBottom":"48px"}},"childrenList":[{"typeName":"link","id":"mHGHzkPmzQ","name":"Забыл пароль","value":"Не могу вспомнить пароль","styles":{"common":{"display":"inline-block","color":"#ffffff","fontSize":"16px","lineHeight":"16px"}},"childrenList":[]}]},{"typeName":"button","id":"U0O7Ue7F_m","name":"Войти","value":"Войти","styles":{"common":{"display":"inline-block","width":"100%","maxWidth":"278px","textAlign":"center","paddingTop":"18px","paddingBottom":"18px","paddingLeft":"40px","paddingRight":"40px","marginBottom":"24px","backgroundColor":"#ffffff","color":"#390072","textTransform":"uppercase","border":"none","borderRadius":"25px","fontWeight":"bold"}},"childrenList":[]},{"typeName":"section","id":"DAx35pqXbs","name":"Секция","styles":{"common":{"display":"flex","justifyContent":"center","width":"100%","maxWidth":"278px"}},"childrenList":[{"typeName":"link","id":"tvZNtQyhFJ","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')","borderRadius":""}},"childrenList":[]},{"typeName":"link","id":"4Fjb1pGbaM","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')","borderRadius":""}},"childrenList":[]}]}]}
+        ]
+    },
+
+    {
+        "category": "Инпут",
+        "templates": [
+            {
+                "typeName": "input",
+                "id": "2134",
+                "name": "Стандартный",
+                "type": "text",
+                "styles": {
+                    "common": {}
+                },
+                "childrenList": []
+            },
+            {"typeName":"input","id":"templateV2jrcglp8U","name":"Email","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]}
+        ]
+    },
+
+    {
+        "category": "Текстовое поле",
+        "templates": [
+            {
+                "typeName": "textarea",
+                "id": "textarea002",
+                "name": "Стандартное",
+                "rows": "4",
+                "autofocus": false,
+                "maxlength": "500",
+                "placeholder": "Введите текст...",
+                "readonly": false,
+                "required": false,
+                "wrap": "soft",
+                "styles": {
+                    "common": {}
+                },
+                "childrenList": []
+            }
         ]
     }
 ]

@@ -15,6 +15,7 @@ import Tab from './lib/Tab/Tab';
 import Document from "./lib/Document/Document";
 import Slider from "./lib/Slider/Slider";
 import Modal from "./lib/Modal/Modal";
+import Textarea from "./lib/Textarea/Textarea";
 
 
 export const Provider = {
@@ -34,5 +35,6 @@ export const Provider = {
     'radio': Radio,
     'section': Section,
     'slider': Slider,
-    'tab': Tab
+    'tab': Tab,
+    'textarea': Textarea
 }
