@@ -1,12 +1,16 @@
 import Link from 'next/link'
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { getPage } from '../../../core/functions/components'
 import Navbar from '../Navbar/Navbar'
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './HeaderStyled'
 
 
 export default function Header() {
-    const dispatch = useDispatch();
+
+    const pageID = useSelector(state => state.document.page);
+    const componentsData = useSelector(state => state.document.componentsData);
+    const page = getPage(componentsData, pageID);
 
     return (
         <HeaderWrapper>
@@ -15,7 +19,7 @@ export default function Header() {
             </HeaderLeft>
             <Navbar />
             <HeaderRight>
-                <Link href="/preview"><a>Предпросмотр</a></Link>
+                <Link href="/preview"><a target="_blank" onClick={() => {localStorage.setItem('page_data', JSON.stringify(page))}}>Предпросмотр</a></Link>
             </HeaderRight>
         </HeaderWrapper>
     )

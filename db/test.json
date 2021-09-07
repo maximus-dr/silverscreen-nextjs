@@ -27,22 +27,7 @@
                         }
                     },
                     "childrenList": [
-                        {
-                            "typeName": "textarea",
-                            "id": "textarea002",
-                            "name": "Текст",
-                            "rows": "4",
-                            "autofocus": false,
-                            "maxlength": "500",
-                            "placeholder": "Введите текст...",
-                            "readonly": false,
-                            "required": false,
-                            "wrap": "soft",
-                            "styles": {
-                                "common": {}
-                            },
-                            "childrenList": []
-                        }
+
                     ]
                 }
             ]
