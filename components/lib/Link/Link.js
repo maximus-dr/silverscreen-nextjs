@@ -12,12 +12,13 @@ export default function LinkComp(props) {
 
     const id = props.componentData.id;
     const state = useSelector(state => state.document);
-    const activeComponent = useSelector(state => state.document.activeComponent);
+    const activeComponent = state.activeComponent;
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = useSelector(state => state.document.componentsData);
+    const componentsData = state.componentsData;
     const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
-    const mode = useSelector(state => state.document.mode);
+    const dragendComponent = state.dragendComponent;
+    const mode = state.mode;
+    const draggable = state.mode === 'admin' ? true : false;
     const dispatch = useDispatch();
 
 
@@ -48,7 +49,7 @@ export default function LinkComp(props) {
                 onDragOver={(e) => onDragOver(e, component)}
                 onDragEnd={(e) => onDragEnd(e, component)}
                 onDrop={(e) => onDrop(e, component)}
-                draggable={mode === 'admin'}
+                draggable={draggable}
             >
                 {componentData && componentData.value || ''}
                 {props.children}

@@ -12,7 +12,7 @@ export default function PreviewPage() {
     const mode = useSelector(state => state.document.mode);
     const components = renderComponents(componentsData);
     const dispatch = useDispatch();
-
+    console.log(componentsData);
     useEffect(() => {
         if (mode !== 'preview') {
             dispatch(setMode('preview'));
@@ -21,7 +21,7 @@ export default function PreviewPage() {
         if (!componentsData) {
             dispatch(setDocumentComponentsData(data));
         }
-    })
+    });
 
     return (
         <div>

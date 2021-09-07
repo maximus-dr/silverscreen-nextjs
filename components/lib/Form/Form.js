@@ -12,13 +12,14 @@ import { FormComponent } from './FormStyled'
 export default function Form(props) {
 
     const id = props.componentData.id;
-    const activeComponent = useSelector(state => state.document.activeComponent);
-    const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = useSelector(state => state.document.componentsData);
-    const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const state = useSelector(state => state.document);
+    const activeComponent = state.activeComponent;
+    const isActiveComponent = activeComponent && activeComponent.id === id;
+    const componentsData = state.componentsData;
+    const componentData = getComponent(componentsData, id);
+    const dragendComponent = state.dragendComponent;
     const dispatch = useDispatch();
+    const draggable = state.mode === 'admin' ? true : false;
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
@@ -26,10 +27,7 @@ export default function Form(props) {
     const component = {
         id,
         state,
-        componentsData,
         componentData,
-        activeComponent,
-        dragendComponent,
         isDropBox: true,
         allowDrop,
         setAllowDrop,
@@ -73,7 +71,7 @@ export default function Form(props) {
             onDragOver={(e) => onDragOver(e, component)}
             onDragEnd={(e) => onDragEnd(e, component)}
             onDrop={(e) => onDrop(e, component)}
-            draggable
+            draggable={draggable}
             allowDrop={allowDrop}
         >
             {props.children}

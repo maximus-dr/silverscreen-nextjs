@@ -9,7 +9,6 @@ import Modal from '../Modal/Modal';
 
 
 export default function Page(props) {
-    console.log('page props', props);
 
     const id = props.componentData.id;
     const activeComponent = useSelector(state => state.document.activeComponent);

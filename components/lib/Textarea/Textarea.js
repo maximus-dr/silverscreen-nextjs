@@ -20,6 +20,7 @@ export default function Textarea(props) {
     const dispatch = useDispatch();
     const text = componentData.value || '';
     const state = useSelector(state => state.document);
+    const draggable = state.mode === 'admin' ? true : false;
 
     const component = {
         id,
@@ -36,7 +37,7 @@ export default function Textarea(props) {
         <TextareaComponent
             id={id}
             htmlFor={componentData.for || ''}
-            draggable
+            draggable={draggable}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}

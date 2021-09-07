@@ -9,21 +9,18 @@ import { IconComponent } from './IconStyled';
 export default function Icon(props) {
 
     const id = props.componentData.id;
-    const activeComponent = useSelector(state => state.document.activeComponent);
-    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
-    const componentsData = useSelector(state => state.document.componentsData);
-    const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
-    const dispatch = useDispatch();
     const state = useSelector(state => state.document);
+    const activeComponent = state.activeComponent;
+    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const componentsData = state.componentsData;
+    const componentData = getComponent(componentsData, id);
+    const dispatch = useDispatch();
+    const draggable = state.mode === 'admin' ? true : false;
 
     const component = {
         id,
         state,
-        componentsData,
         componentData,
-        activeComponent,
-        dragendComponent,
         isDropBox: false,
         dispatch
     }
@@ -32,7 +29,7 @@ export default function Icon(props) {
     return (
         <IconComponent
             id={id}
-            draggable
+            draggable={draggable}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}

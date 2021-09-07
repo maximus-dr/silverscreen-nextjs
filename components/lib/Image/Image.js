@@ -9,22 +9,19 @@ import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, 
 
 export default function Image(props) {
 
-    const {id} = props.componentData;
-    const componentsData = useSelector(state => state.document.componentsData);
-    const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
-    const activeComponent = useSelector(state => state.document.activeComponent);
-    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const id = props.componentData.id;
     const state = useSelector(state => state.document);
+    const componentsData = state.componentsData;
+    const componentData = getComponent(componentsData, id);
+    const activeComponent = state.activeComponent;
+    const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
+    const draggable = state.mode === 'admin' ? true : false;
     const dispatch = useDispatch();
 
     const component = {
         id,
         state,
-        componentsData,
         componentData,
-        activeComponent,
-        dragendComponent,
         isDropBox: false,
         dispatch
     }
@@ -32,7 +29,7 @@ export default function Image(props) {
     return (
         <ImageComponent
             id={id}
-            draggable
+            draggable={draggable}
             componentData={componentData}
             alt={"alt"}
             src={componentData.link}

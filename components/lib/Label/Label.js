@@ -11,22 +11,19 @@ export default function Label(props) {
 
 
     const id = props.componentData.id;
-    const activeComponent = useSelector(state => state.document.activeComponent);
+    const state = useSelector(state => state.document);
+    const activeComponent = state.activeComponent;
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
-    const componentsData = useSelector(state => state.document.componentsData);
+    const componentsData = state.componentsData;
     const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
     const text = componentData.value || '';
-    const state = useSelector(state => state.document);
+    const draggable = state.mode === 'admin' ? true : false;
 
     const component = {
         id,
         state,
-        componentsData,
         componentData,
-        activeComponent,
-        dragendComponent,
         isDropBox: false,
         dispatch
     }
@@ -36,7 +33,7 @@ export default function Label(props) {
             id={id}
             as={componentData.tag || 'span'}
             htmlFor={componentData.for || ''}
-            draggable
+            draggable={draggable}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
             onClick={(e) => onClick(e, component)}

@@ -18,6 +18,7 @@ export default function Modal(props) {
     const componentData = getComponent(componentsData, id);
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
+    const draggable = state.mode === 'admin' ? true : false;
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
@@ -73,7 +74,7 @@ export default function Modal(props) {
                 onDragOver={(e) => onDragOver(e, component)}
                 onDragEnd={(e) => onDragEnd(e, component)}
                 onDrop={(e) => onDrop(e, component)}
-                draggable
+                draggable={draggable}
                 allowDrop={allowDrop}
             >
                 {props.children}

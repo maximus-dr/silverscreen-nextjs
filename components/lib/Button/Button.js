@@ -11,23 +11,18 @@ export default function Button(props) {
 
     const id = props.componentData.id;
     const state = useSelector(state => state.document);
-    const activeComponent = useSelector(state => state.document.activeComponent);
+    const activeComponent = state.activeComponent;
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = useSelector(state => state.document.componentsData);
+    const componentsData = state.componentsData;
     const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
-    const isLocked = false;
+    const draggable = state.mode === 'admin' ? true : false;
 
     const component = {
         id,
         state,
         componentData,
-        componentsData,
-        activeComponent,
-        dragendComponent,
         isDropBox: false,
-        isLocked,
         dispatch,
         handlers: componentData.handlers
     }
@@ -46,7 +41,7 @@ export default function Button(props) {
             onDragOver={(e) => onDragOver(e, component)}
             onDragEnd={(e) => onDragEnd(e, component)}
             onDrop={(e) => onDrop(e, component)}
-            draggable={!isLocked}
+            draggable={draggable}
         >
             {componentData && componentData.value || ''}
             {props.children}
