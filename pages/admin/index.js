@@ -62,19 +62,17 @@ export async function getServerSideProps() {
 
 export default function AdminMainPage() {
 
-    const componentsData = useSelector(state => state.document.componentsData);
-    const resolution = useSelector(state => state.document.resolution);
     const state = useSelector(state => state);
 
-    const activePage = useSelector(state => state.document.page);
-    const page = activePage ? getComponent(componentsData, activePage) : null;
+    const {componentsData, resolution, page} = state.document;
+    const activePage = page ? getComponent(componentsData, page) : null;
     const modalData = useSelector(state => state.document.modal);
     const modal = modalData ? renderComponents(getComponent(componentsData, modalData.id), state) : null;
     const dispatch = useDispatch();
     const pages = componentsData.childrenList.find(item => item.typeName === 'pages');
     const isSinglePage = pages.childrenList.length === 1 && !page
 
-    const components = renderComponents(page, state);
+    const components = renderComponents(activePage, state);
 
     useEffect(() => {
         if (isSinglePage) {
