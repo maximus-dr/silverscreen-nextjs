@@ -9,8 +9,6 @@ import { TextareaComponent } from './TextareaStyled';
 
 export default function Textarea(props) {
 
-    console.log(props.componentData);
-
     const {autofocus, cols, rows, maxlength, placeholder, readonly, required} = props.componentData;
 
     const id = props.componentData.id;
