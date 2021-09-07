@@ -4,7 +4,7 @@
         "templates": [
             {
                 "typeName": "page",
-                "id": "page1",
+                "id": "page001",
                 "name": "Main Page",
                 "styles": {
                     "common": {

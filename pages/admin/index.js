@@ -72,7 +72,7 @@ export default function AdminMainPage() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (componentsData.childrenList.find(item => item.typeName === 'pages').childrenList.length > 0) {
+        if (componentsData.childrenList.find(item => item.typeName === 'pages').childrenList.length === 1 && !page) {
             dispatch(setPage(componentsData.childrenList.find(item => item.typeName === 'pages').childrenList[0].id));
         };
     });
