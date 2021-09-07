@@ -1,24 +1,20 @@
 import React from 'react'
-import { PageComponent, PageOverlay } from './PageStyled';
-import { useDispatch, useSelector } from 'react-redux';
+import { PageComponent } from './PageStyled';
+import { useDispatch } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/components';
 import { useEffect, useState } from 'react';
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
-import Modal from '../Modal/Modal';
 
 
 
 export default function Page(props) {
 
     const id = props.componentData.id;
-    const activeComponent = useSelector(state => state.document.activeComponent);
-    const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = useSelector(state => state.document.componentsData);
+    const state = props.state.document;
+    const {componentsData, activeComponent, dragendComponent} = state;
     const componentData = getComponent(componentsData, id);
-    const dragendComponent = useSelector(state => state.document.dragendComponent);
+    const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
-    const modal = useSelector(state => state.document.modal);
-    const state = useSelector(state => state.document);
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
@@ -26,10 +22,7 @@ export default function Page(props) {
     const component = {
         id,
         state,
-        componentsData,
         componentData,
-        activeComponent,
-        dragendComponent,
         isDropBox: true,
         allowDrop,
         setAllowDrop,
@@ -77,7 +70,6 @@ export default function Page(props) {
             allowDrop={allowDrop}
         >
             {props.children}
-            {/* <PageOverlay isOpen={modal}></PageOverlay> */}
         </PageComponent>
     )
 }

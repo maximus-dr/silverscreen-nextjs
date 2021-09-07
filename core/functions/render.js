@@ -3,12 +3,13 @@ import TreeItem from '../../components/admin/Panels/PanelDocument/DocumentTree/T
 
 
 
-const renderComponents = (componentData) => {
+const renderComponents = (componentData, state) => {
     if (!componentData || Object.keys(componentData) === 0) return;
     const props = {
         componentData,
         id: componentData.id,
-        component: Provider[componentData.typeName]
+        component: Provider[componentData.typeName],
+        state
     }
     return getComponents(props);
 }
@@ -28,7 +29,8 @@ const getComponents = (props) => {
             const childProps = {
                 id: child.id,
                 component: Provider[child.typeName],
-                componentData: child
+                componentData: child,
+                state: props.state
             }
             return getComponents(childProps);
             }
@@ -38,7 +40,7 @@ const getComponents = (props) => {
         }));
     }
     const result = (
-        <props.component key={props.id} componentData={props.componentData}>
+        <props.component key={props.id} componentData={props.componentData} state={props.state}>
             { getChildrenComponents(props) }
         </props.component>
     );

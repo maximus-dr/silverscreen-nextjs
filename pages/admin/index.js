@@ -59,6 +59,7 @@ export async function getServerSideProps() {
 }
 
 
+
 export default function AdminMainPage() {
 
     const componentsData = useSelector(state => state.document.componentsData);
@@ -66,14 +67,18 @@ export default function AdminMainPage() {
 
     const activePage = useSelector(state => state.document.page);
     const page = activePage ? getComponent(componentsData, activePage) : null;
-    const components = renderComponents(page);
     const modalData = useSelector(state => state.document.modal);
     const modal = modalData ? renderComponents(getComponent(componentsData, modalData.id)) : null;
     const dispatch = useDispatch();
+    const pages = componentsData.childrenList.find(item => item.typeName === 'pages');
+    const isSinglePage = pages.childrenList.length === 1 && !page
+
+    const state = useSelector(state => state);
+    const components = renderComponents(page, state);
 
     useEffect(() => {
-        if (componentsData.childrenList.find(item => item.typeName === 'pages').childrenList.length === 1 && !page) {
-            dispatch(setPage(componentsData.childrenList.find(item => item.typeName === 'pages').childrenList[0].id));
+        if (isSinglePage) {
+            dispatch(setPage(pages.childrenList[0].id));
         };
     });
 
