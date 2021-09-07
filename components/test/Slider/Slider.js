@@ -67,7 +67,6 @@ export default function Slider() {
                     onChange={() => {
                         slider.current.clearAutoPlay();
                         setSelectedItem(slider.current.state.selectedItem);
-                        console.log(slider.current.listRef.style.transform.replace('translate3d(', '').replace(')', '').split(', ')[0].replace('%', ''));
                         setTransform(slider.current.listRef.style.transform.replace('translate3d(', '').replace(')', '').split(', ')[0].replace('%', ''));
                     }}
                     onSwipeMove={() => {
