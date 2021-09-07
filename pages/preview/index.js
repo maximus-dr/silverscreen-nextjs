@@ -8,11 +8,12 @@ import { setDocumentComponentsData, setMode } from '../../store/actions/document
 
 export default function PreviewPage() {
 
-    const componentsData = useSelector(state => state.document.componentsData);
-    const mode = useSelector(state => state.document.mode);
-    const components = renderComponents(componentsData);
+    const state = useSelector(state => state);
+    const {componentsData, mode} = state.document;
     const dispatch = useDispatch();
-    console.log(componentsData);
+
+    const components = renderComponents(componentsData, state);
+
     useEffect(() => {
         if (mode !== 'preview') {
             dispatch(setMode('preview'));
