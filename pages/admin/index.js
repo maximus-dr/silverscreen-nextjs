@@ -14,6 +14,7 @@ import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { setEvents, setEventsAll } from "../../store/actions/events";
 
 
 // export async function getStaticProps() {
@@ -43,11 +44,16 @@ export async function getServerSideProps() {
     const componentsData = JSON.parse(data);
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
+
     const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
     const templates = JSON.parse(templatesData);
 
+    const eventsData = fs.readFileSync(path.join(process.cwd(), `db/events/events.json`), 'utf8');
+    const events = JSON.parse(eventsData);
+
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
+    dispatch(setEventsAll(events));
     dispatch(setResolution('320'));
     dispatch(setMode('admin'));
 

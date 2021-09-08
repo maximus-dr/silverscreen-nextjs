@@ -23,10 +23,20 @@
                             "paddingBottom": "5px",
                             "paddingLeft": "5px",
                             "minHeight": "100vh",
-                            "backgroundColor": "#ffffff"
+                            "backgroundColor": "#27272A"
                         }
                     },
                     "childrenList": [
+
+                        {
+                            "typeName": "events",
+                            "id": "events001",
+                            "name": "События",
+                            "styles": {
+                                "common": {}
+                            },
+                            "childrenList": []
+                        }
 
                     ]
                 }

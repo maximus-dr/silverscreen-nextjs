@@ -1,0 +1,39 @@
+[
+    {
+        "id": "1111",
+        "acronym": "Душа",
+        "ageLimit": {
+            "acronym": "6+",
+            "id": 2,
+            "name": "зрителям, достигшим 6 лет"
+        },
+        "annotation": "Уже немолодой школьный учитель музыки Джо Гарднер всю жизнь мечтал выступать на сцене в составе джазового ансамбля. Однажды он успешно проходит прослушивание у известной клубной певицы и, возвращаясь домой вне себя от счастья, падает в люк и умирает. Теперь у Джо одна дорога - в Великое После, но он сбегает с идущего в вечность эскалатора и случайно попадает в Великое До. Тут новенькие души обретают себя, и у будущих людей зарождаются увлечения, мечты и интересы. Джо становится наставником упрямой души 22, которая уже много веков не может найти свою искру и отправиться на Землю.",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/5376.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/5365.png",
+        "eventFilters": {
+            "shedule": ["now"],
+            "city": ["minsk", "grodno"],
+            "genres": ["family", "comedy", "cartoon", "fantasy"],
+            "language": ["ru", "eng"]
+        }
+    },
+
+    {
+        "id": "2222",
+        "acronym": "Вокруг света",
+        "ageLimit": {
+            "acronym": "6+",
+            "id": 2,
+            "name": "Детям"
+        },
+        "annotation": "Умнейший Паспарту всегда грезил о путешествиях… На его удачу, безрассудный Филеас согласился на безумное пари — обогнуть земной шар всего за 80 дней. Теперь двум совершенно непохожим друзьям предстоит совершить невозможное, а заодно увидеть весь мир, полный фантастических созданий, живописных мест и умопомрачительных приключений.",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6601.png",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6522.png",
+        "eventFilters": {
+            "shedule": ["soon"],
+            "city": ["minsk", "grodno"],
+            "genres": ["cartoon"],
+            "language": ["ru"]
+        }
+    }
+]
