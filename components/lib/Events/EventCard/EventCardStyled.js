@@ -5,6 +5,11 @@ export const EventCardComponent = styled.div`
     color: #ffffff;
     border: 1px dashed #ffffff;
     width: 272px;
+    margin-bottom: 25px;
+`;
+
+export const EventShedule = styled.div`
+
 `;
 
 export const EventPoster = styled.div`
@@ -13,6 +18,7 @@ export const EventPoster = styled.div`
     background-size: cover;
     overflow: hidden;
     background-position: center;
+
 
     ${props => {
         const {event} = props;
