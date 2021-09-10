@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { unsetActiveComponent } from '../../../store/actions/document';
 import { setFilter } from '../../../store/actions/filters';
+import Filters from '../../lib/Filters/Filters';
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';
 import PanelTools from '../Panels/PanelTools/PanelTools';
@@ -27,18 +28,7 @@ export default function Workspace(props) {
                     if (activeComponent) dispatch(unsetActiveComponent());
                 }}>
                     <WorkspacePage onMouseDown={(e) => e.stopPropagation()} pageWidth={`${resolution}px`}>
-
-                        <button onClick={() => {
-                            dispatch(setFilter('shedule', 'now'));
-                        }}>
-                            Сейчас
-                        </button>
-                        <button onClick={() => {
-                            dispatch(setFilter('shedule', 'soon'));
-                        }}>
-                            Скоро
-                        </button>
-
+                        <Filters />
                         {components}
                         {modal}
                     </WorkspacePage>

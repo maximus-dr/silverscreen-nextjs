@@ -1,17 +1,17 @@
-const SET_FILTER = 'SET_FILTER';
+const SET_EVENT_FILTER = 'SET_EVENT_FILTER';
 
-const setFilter = (category, filter) => {
+const setEventFilter = (category, filter) => {
     return {
-        type: SET_FILTER,
+        type: SET_EVENT_FILTER,
         category,
         filter
     }
 }
 
 export {
-    setFilter
+    setEventFilter
 }
 
 export {
-    SET_FILTER
+    SET_EVENT_FILTER
 }

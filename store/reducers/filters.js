@@ -1,12 +1,15 @@
-import { SET_FILTER } from "../actions/filters";
+import { SET_EVENT_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
     switch (action.type) {
-        case SET_FILTER:
+        case SET_EVENT_FILTER:
             return {
                 ...state,
-                [action.category]: action.filter
+                events: {
+                    ...state.events,
+                    [action.category]: action.filter
+                }
             }
         default:
             return {

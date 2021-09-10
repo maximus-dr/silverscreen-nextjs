@@ -1,16 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
+
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
 
 export const EventCardComponent = styled.div`
     color: #ffffff;
     border: 1px dashed #ffffff;
     width: 272px;
     margin-bottom: 25px;
+    animation: ${fadeIn} 100ms linear;
 `;
 
 export const EventShedule = styled.div`
 
 `;
+
+export const EventCity = styled.div``;
 
 export const EventPoster = styled.div`
     width: 272px;

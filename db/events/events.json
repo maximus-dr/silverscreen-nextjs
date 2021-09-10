@@ -4,7 +4,6 @@
         "acronym": "Душа",
         "ageLimit": {
             "acronym": "6+",
-            "id": 2,
             "name": "зрителям, достигшим 6 лет"
         },
         "annotation": "Уже немолодой школьный учитель музыки Джо Гарднер всю жизнь мечтал выступать на сцене в составе джазового ансамбля. Однажды он успешно проходит прослушивание у известной клубной певицы и, возвращаясь домой вне себя от счастья, падает в люк и умирает. Теперь у Джо одна дорога - в Великое После, но он сбегает с идущего в вечность эскалатора и случайно попадает в Великое До. Тут новенькие души обретают себя, и у будущих людей зарождаются увлечения, мечты и интересы. Джо становится наставником упрямой души 22, которая уже много веков не может найти свою искру и отправиться на Землю.",
@@ -12,9 +11,159 @@
         "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/5365.png",
         "eventFilters": {
             "shedule": ["now"],
-            "city": ["minsk", "grodno"],
+            "city": ["minsk"],
             "genres": ["family", "comedy", "cartoon", "fantasy"],
             "language": ["ru", "eng"]
+        },
+        "showList": [
+            {
+                "2021-09-10": [
+                    {
+                        "showFilters": {
+                            "cinema": ["voka"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id": "14234fsd",
+        "acronym": "Ночь пожирателей рекламы 2033",
+        "ageLimit": {
+            "acronym": "18+",
+            "name": "зрителям, достигшим 18 лет"
+        },
+        "annotation": "Контент демонстрируется на языке оригинала с русскими субтитрами.\n\nУникальная подборка рекламных роликов со всего мира, которую уже более 40 лет создает эксцентричный и креативный француз – Жан Мари Бурсико. Один раз в год зрители имеют возможность увидеть авторскую программу «Ночи», в которой Бурсико создает полотно современного рекламного рынка из разных элементов, жанров и тем.  Премьера 2021 - в Минске. Посмотри первым!\n",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6515.png",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6514.JPEG",
+        "eventFilters": {
+            "shedule": ["soon", "now"],
+            "city": ["minsk"],
+            "genres": ["show"],
+            "language": ["ov"]
+        },
+        "showList": [
+            {
+                "2021-09-10": [
+                    {
+                        "showFilters": {
+                            "cinema": ["arena"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id": "sdfsdgds3r4e",
+        "acronym": "Отчаянные аферистки",
+        "ageLimit": {
+            "acronym": "16+",
+            "name": "зрителям, достигшим 16 лет"
+        },
+        "language": {
+            "name": "Русский язык",
+            "acronym": "RU"
+        },
+        "annotation": "Конни и ДжоДжо – лучшие подруги, которые погрязли в быту и домашней рутине. Но однажды им удалось перевернуть свою жизнь, превратив парочку купонов на еду в 40 миллионов долларов! Теперь у них есть все - модная одежда, дорогие спорткары, частный самолет. И все было бы как в сказке, если бы не два копа, которые пытаются поймать отчаянных домохозяек и разоблачить их хитроумную схему. Невероятно находчивая комедия, основанная на реальных событиях, об одной из самых громких афер США!",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6539.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6525.JPEG",
+        "eventFilters": {
+            "shedule": ["soon"],
+            "city": ["grodno"],
+            "genres": ["criminal"],
+            "language": ["ru"]
+        },
+        "showList": [
+            {
+                "2021-09-10": [
+                    {
+                        "showFilters": {
+                            "cinema": ["moon"]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id": "sdfdsf03030",
+        "acronym": "Петровы в гриппе",
+        "ageLimit": {
+            "acronym": "18+",
+            "name": "зрителям, достигшим 18 лет"
+        },
+        "language": {
+            "name": "Русский язык",
+            "acronym": "RU"
+        },
+        "annotation": "Петровы — самая обычная семья. Он - автослесарь, она - библиотекарь, у них есть сын, но вместе они не живут. Казалось бы, ничего особенного. Но повседневная реальность взрывается в тот момент, когда семья заболевает гриппом, и жизнь оказывается полной безумия, фантастики и сюрреализма.",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6597.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "eventFilters": {
+            "shedule": ["soon"],
+            "city": ["minsk"],
+            "genres": ["drama", "fantastic"],
+            "language": ["ru"]
+        },
+        "showList": [
+            {
+                "2021-09-10": [
+                    {
+                        "showFilters": {
+                            "cinema": []
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "id": "ljlj0404",
+        "acronym": "Небесная команда",
+        "ageLimit": {
+            "acronym": "12+",
+            "name": "зрителям, достигшим 12 лет"
+        },
+        "language": {
+            "name": "Русский язык",
+            "acronym": "RU"
+        },
+        "annotation": "Пока живут фанаты, надежда не умрет… Они — болельщики хоккейного «Локомотива» из Ярославля. Люди, навсегда преданные клубу. Жены хоккеистов, сотрудники стадиона, молодые спортсмены и ветераны фан-движения, которые запевают на трибунах несколько десятков лет. В честь открытия нового сезона Континентальной хоккейной лиги армия поклонников «Локомотива» отправляется в Минск, на первый матч турнира, чтобы поддержать команду. Никто из них не знает, что эта поездка навсегда изменит жизнь каждого, а трагедия, которая случится с «Локомотивом» разделит спортивный мир на «до» и «после».",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6600.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6527.JPEG",
+        "eventFilters": {
+            "city": ["minsk", "grodno", "vitebsk"],
+            "shedule": ["now"],
+            "genres": ["sport", "bio", "drama"],
+            "language": ["ru"]
+        }
+    },
+
+    {
+        "id": "340953405kjf",
+        "acronym": "Микеланджело: Любовь и смерть",
+        "ageLimit": {
+            "acronym": "12+",
+            "name": "зрителям, достигшим 12 лет"
+        },
+        "language": {
+            "name": "Русский язык",
+            "acronym": "RU"
+        },
+        "annotation": "Один из важнейших художников эпохи Возрождения – а, возможно, и всех времён – станет объектом новой масштабной выставки в Национальной галерее.\n\nАвтор величайших шедевров мировой культуры (Сикстинской капеллы, статуи Давида и «Манчестерской Мадонны») был и живописцем, и скульптором, и архитектором.\n\nНовый фильм о страстном и ярком творце исследует корни творчества Микеланджело и пытается создать максимально полный и истинный портрет великого художника.",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6075.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6073.JPEG",
+        "eventFilters": {
+            "shedule": ["soon"],
+            "city": ["minsk", "grodno", "vitebsk"],
+            "genres": ["doc", "exhibition"],
+            "language": ["ru"]
         }
     },
 
@@ -23,7 +172,6 @@
         "acronym": "Вокруг света",
         "ageLimit": {
             "acronym": "6+",
-            "id": 2,
             "name": "Детям"
         },
         "annotation": "Умнейший Паспарту всегда грезил о путешествиях… На его удачу, безрассудный Филеас согласился на безумное пари — обогнуть земной шар всего за 80 дней. Теперь двум совершенно непохожим друзьям предстоит совершить невозможное, а заодно увидеть весь мир, полный фантастических созданий, живописных мест и умопомрачительных приключений.",
@@ -31,8 +179,26 @@
         "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6522.png",
         "eventFilters": {
             "shedule": ["soon"],
-            "city": ["minsk", "grodno"],
+            "city": ["vitebsk"],
             "genres": ["cartoon"],
+            "language": ["ru"]
+        }
+    },
+
+    {
+        "id": "3333",
+        "acronym": "Соври мне правду",
+        "ageLimit": {
+            "acronym": "18+",
+            "name": "зрителям, достигшим 18 лет"
+        },
+        "annotation": "Влюбленная пара проводит время вдали от цивилизации. Внезапный приезд сначала младшей сестры, а потом и бывшего парня девушки нарушают загородную идиллию. У каждого из героев свой план на эти выходные, а все вместе они становятся заложниками ситуации и участниками жестоких психологических игр. Влюбленность сменяется страстью, а невинный флирт вызывает ревность и может привести к смертельной опасности.",
+        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6598.JPEG",
+        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "eventFilters": {
+            "shedule": ["now"],
+            "city": ["grodno"],
+            "genres": ["thriller", "drama"],
             "language": ["ru"]
         }
     }

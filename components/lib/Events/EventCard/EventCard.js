@@ -1,5 +1,5 @@
 import React from 'react'
-import { EventAcronym, EventAgeLimit, EventCardComponent, EventGenre, EventLanguage, EventPoster, EventShedule } from './EventCardStyled';
+import { EventAcronym, EventAgeLimit, EventCardComponent, EventCity, EventGenre, EventLanguage, EventPoster, EventShedule } from './EventCardStyled';
 
 export default function EventCard(props) {
 
@@ -17,7 +17,8 @@ export default function EventCard(props) {
 
     return (
         <EventCardComponent>
-            <EventShedule>{event.eventFilters.shedule.map(item => item)}</EventShedule>
+            <EventCity>{event.eventFilters.city.map(item => item + ' ')}</EventCity>
+            <EventShedule>{event.eventFilters.shedule.map(item => item + ' ')}</EventShedule>
             <EventPoster event={event} />
             <EventAgeLimit>
                 {event.ageLimit.acronym}
