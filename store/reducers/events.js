@@ -1,4 +1,4 @@
-import { SET_EVENTS_ALL } from "../actions/events";
+import { SET_EVENTS_ALL, SET_EVENTS_FILTERED } from "../actions/events";
 
 
 const eventsReducer = (state = {}, action) => {
@@ -6,6 +6,11 @@ const eventsReducer = (state = {}, action) => {
         case SET_EVENTS_ALL:
             return {
                 all: action.events
+            }
+        case SET_EVENTS_FILTERED:
+            return {
+                ...state,
+                filtered: action.filteredEvents
             }
         default:
             return state;

@@ -142,7 +142,8 @@
             "shedule": ["now"],
             "genres": ["sport", "bio", "drama"],
             "language": ["ru"]
-        }
+        },
+        "showList": []
     },
 
     {
@@ -164,7 +165,8 @@
             "city": ["minsk", "grodno", "vitebsk"],
             "genres": ["doc", "exhibition"],
             "language": ["ru"]
-        }
+        },
+        "showList": []
     },
 
     {
@@ -182,7 +184,8 @@
             "city": ["vitebsk"],
             "genres": ["cartoon"],
             "language": ["ru"]
-        }
+        },
+        "showList": []
     },
 
     {
@@ -200,6 +203,7 @@
             "city": ["grodno"],
             "genres": ["thriller", "drama"],
             "language": ["ru"]
-        }
+        },
+        "showList": []
     }
 ]

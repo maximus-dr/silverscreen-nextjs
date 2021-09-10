@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setEventFilter } from '../../../store/actions/filters';
+import { setEventFilter, setShowFilter } from '../../../store/actions/filters';
 import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterSheduleWrapper, FiltersWrapper } from './FiltersStyled'
 
 
 export default function Filters() {
 
     const state = useSelector(state => state);
-    const filters = state.filters.events;
+    const eventFilters = state.filters.events;
+    const showFilters = state.filters.shows;
     const dispatch = useDispatch();
     const cities = [{name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
-    const city = filters && filters.city ? filters.city : cities[0];
+    const city = eventFilters && eventFilters.city ? eventFilters.city : cities[0];
 
 
     return (
@@ -39,7 +40,7 @@ export default function Filters() {
                     onClick={() => {
                         dispatch(setEventFilter('shedule', 'now'));
                     }}
-                    isActive={filters && filters.shedule === 'now'}
+                    isActive={eventFilters && eventFilters.shedule === 'now'}
                 >
                     Сейчас
                 </FilterButton>
@@ -47,7 +48,7 @@ export default function Filters() {
                     onClick={() => {
                         dispatch(setEventFilter('shedule', 'soon'));
                     }}
-                    isActive={filters && filters.shedule === 'soon'}
+                    isActive={eventFilters && eventFilters.shedule === 'soon'}
                 >
                     Скоро
                 </FilterButton>
@@ -55,8 +56,9 @@ export default function Filters() {
 
             <FilterCinemaWrapper>
                 <FilterCinemaSelect
+                    value={showFilters && showFilters.cinema || 'all'}
                     onChange={(e) => {
-
+                        dispatch(setShowFilter('cinema', e.target.value));
                     }}
                 >
                     <FilterCinemaOption value='all'>Все кинотеатры</FilterCinemaOption>
