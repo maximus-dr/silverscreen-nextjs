@@ -22,3 +22,11 @@ export const FilterCinemaWrapper = styled.div`
 export const FilterCinemaSelect = styled.select``;
 
 export const FilterCinemaOption = styled.option``;
+
+export const FilterDateWrapper = styled.div`
+    margin-bottom: 5px;
+`;
+
+export const FilterDateSelect = styled.select``;
+
+export const FilterDateOption = styled.option``;

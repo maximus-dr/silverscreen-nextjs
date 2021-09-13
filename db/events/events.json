@@ -12,20 +12,34 @@
         "eventFilters": {
             "shedule": ["now"],
             "city": ["minsk"],
-            "genres": ["family", "comedy", "cartoon", "fantasy"],
-            "language": ["ru", "eng"]
+            "genre": ["family", "comedy", "cartoon", "fantasy"],
+            "language": ["ru", "eng"],
+            "date": ["2021-09-10", "2021-09-11"]
         },
-        "showList": [
-            {
-                "2021-09-10": [
-                    {
-                        "showFilters": {
-                            "cinema": ["voka"]
-                        }
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "dusha1",
+                    "showFilters": {
+                        "cinema": ["voka"]
                     }
-                ]
-            }
-        ]
+                },
+                {
+                    "showId": "dusha2",
+                    "showFilters": {
+                        "cinema": ["arena"]
+                    }
+                }
+            ],
+            "2021-09-11": [
+                {
+                    "showId": "dusha",
+                    "showFilters": {
+                        "cinema": ["voka"]
+                    }
+                }
+            ]
+        }
     },
 
     {
@@ -41,20 +55,20 @@
         "eventFilters": {
             "shedule": ["soon", "now"],
             "city": ["minsk"],
-            "genres": ["show"],
-            "language": ["ov"]
+            "genre": ["show"],
+            "language": ["ov"],
+            "date": ["2021-09-10"]
         },
-        "showList": [
-            {
-                "2021-09-10": [
-                    {
-                        "showFilters": {
-                            "cinema": ["arena"]
-                        }
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "noch-pozhirateley1",
+                    "showFilters": {
+                        "cinema": ["arena"]
                     }
-                ]
-            }
-        ]
+                }
+            ]
+        }
     },
 
     {
@@ -74,20 +88,20 @@
         "eventFilters": {
             "shedule": ["soon"],
             "city": ["grodno"],
-            "genres": ["criminal"],
-            "language": ["ru"]
+            "genre": ["criminal"],
+            "language": ["ru"],
+            "date": ["2021-09-10"]
         },
-        "showList": [
-            {
-                "2021-09-10": [
-                    {
-                        "showFilters": {
-                            "cinema": ["moon"]
-                        }
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "otchayannye-aferistki",
+                    "showFilters": {
+                        "cinema": ["moon"]
                     }
-                ]
-            }
-        ]
+                }
+            ]
+        }
     },
 
     {
@@ -107,20 +121,10 @@
         "eventFilters": {
             "shedule": ["soon"],
             "city": ["minsk"],
-            "genres": ["drama", "fantastic"],
+            "genre": ["drama", "fantastic"],
             "language": ["ru"]
         },
-        "showList": [
-            {
-                "2021-09-10": [
-                    {
-                        "showFilters": {
-                            "cinema": []
-                        }
-                    }
-                ]
-            }
-        ]
+        "showList": {}
     },
 
     {
@@ -140,10 +144,10 @@
         "eventFilters": {
             "city": ["minsk", "grodno", "vitebsk"],
             "shedule": ["now"],
-            "genres": ["sport", "bio", "drama"],
+            "genre": ["sport", "bio", "drama"],
             "language": ["ru"]
         },
-        "showList": []
+        "showList": {}
     },
 
     {
@@ -163,10 +167,10 @@
         "eventFilters": {
             "shedule": ["soon"],
             "city": ["minsk", "grodno", "vitebsk"],
-            "genres": ["doc", "exhibition"],
+            "genre": ["doc", "exhibition"],
             "language": ["ru"]
         },
-        "showList": []
+        "showList": {}
     },
 
     {
@@ -182,10 +186,10 @@
         "eventFilters": {
             "shedule": ["soon"],
             "city": ["vitebsk"],
-            "genres": ["cartoon"],
+            "genre": ["cartoon"],
             "language": ["ru"]
         },
-        "showList": []
+        "showList": {}
     },
 
     {
@@ -201,9 +205,9 @@
         "eventFilters": {
             "shedule": ["now"],
             "city": ["grodno"],
-            "genres": ["thriller", "drama"],
+            "genre": ["thriller", "drama"],
             "language": ["ru"]
         },
-        "showList": []
+        "showList": {}
     }
 ]

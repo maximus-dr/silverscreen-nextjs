@@ -1,4 +1,4 @@
-import { SET_EVENT_FILTER, SET_SHOW_FILTER } from "../actions/filters";
+import { SET_EVENT_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
@@ -11,6 +11,7 @@ const filterReducer = (state = {}, action) => {
                     [action.category]: action.filter
                 }
             }
+
         case SET_SHOW_FILTER:
             return {
                 ...state,
@@ -19,6 +20,15 @@ const filterReducer = (state = {}, action) => {
                     [action.category]: action.filter
                 }
             }
+
+        case UNSET_EVENT_FILTER:
+            const noEventFilter = {...state.events};
+            delete noEventFilter[action.category];
+            return {
+                ...state,
+                events: noEventFilter
+            }
+
         default:
             return {
                 ...state

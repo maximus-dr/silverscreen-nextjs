@@ -9,7 +9,7 @@ export default function EventCard(props) {
             {item.toUpperCase()}
         </EventLanguage>)
     );
-    const genres = event.eventFilters.genres.map(item => (
+    const genres = event.eventFilters.genre.map(item => (
         <EventGenre key={item}>
             {item}
         </EventGenre>)
