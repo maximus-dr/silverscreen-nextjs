@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { setFilteredEvents } from '../../../store/actions/events';
-import { setEventFilter, setShowFilter } from '../../../store/actions/filters';
+import { setDate, setEventFilter, setShowFilter } from '../../../store/actions/filters';
 import EventCard from './EventCard/EventCard';
 import { EventsWrapper } from './EventsStyled'
 
@@ -14,33 +14,32 @@ export default function Events(props) {
     const eventFilters = state.filters.events;
     const showFilters = state.filters.shows;
     const dispatch = useDispatch();
-    const date = eventFilters ? eventFilters.date : null;
+    const date = state.filters.date;
 
 
-    const filterEvents = (events, filters) => {
+    const filterEvents = (events, filters, date) => {
         if (!filters) return [];
         const categories = Object.keys(filters);
         const filtered = new Set;
 
-        categories.forEach((category, i) => {
-            const filter = filters[category];
-            if (i === 0) {
-                events.forEach(event => {
-                    if (!event.eventFilters[category]) return;
-                    if (event.eventFilters[category].includes(filter)) {
-                        filtered.add(event);
-                    }
-                });
+        events.forEach(event => {
+            if (Object.keys(event.showList).includes(date)) {
+                filtered.add(event);
             }
+        })
 
-            if (i > 0) {
-                filtered.forEach(event => {
-                    if (!event.eventFilters[category]) return;
-                    if (!event.eventFilters[category].includes(filter)) {
-                        filtered.delete(event);
-                    }
-                })
-            }
+        categories.forEach((category) => {
+            const filter = filters[category];
+            filtered.forEach(event => {
+                const all = filters[category] === 'all';
+                const hasCategory = event.eventFilters[category];
+                const hasFilter = hasCategory && event.eventFilters[category].includes(filter);
+
+                if (all) return;
+                if (!hasFilter || !hasCategory) {
+                    filtered.delete(event);
+                }
+            });
         });
         return [...filtered];
     }
@@ -72,13 +71,13 @@ export default function Events(props) {
     useEffect(() => {
         dispatch(setEventFilter('city', 'minsk'));
         dispatch(setEventFilter('shedule', 'now'));
-        dispatch(setEventFilter('date', '2021-09-10'));
+        dispatch(setDate('2021-09-10'));
         dispatch(setShowFilter('cinema', 'all'));
     }, [dispatch]);
 
     useEffect(() => {
         if (eventFilters) {
-            let filtered = filterEvents(events, eventFilters);
+            let filtered = filterEvents(events, eventFilters, date);
             if (showFilters && filtered.length > 0) {
                 filtered = filtered.filter(item => filterShowList(item.showList, showFilters, date));
             }

@@ -1,6 +1,7 @@
 const SET_EVENT_FILTER = 'SET_EVENT_FILTER';
 const SET_SHOW_FILTER = 'SET_SHOW_FILTER';
 const UNSET_EVENT_FILTER = 'UNSET_EVENT_FILTER';
+const SET_DATE = 'SET_DATE';
 
 
 const setEventFilter = (category, filter) => ({
@@ -20,15 +21,22 @@ const setShowFilter = (category, filter) => ({
     filter
 });
 
+const setDate = (date) => ({
+    type: SET_DATE,
+    date
+});
+
 
 export {
     setEventFilter,
     setShowFilter,
-    unsetEventFilter
+    unsetEventFilter,
+    setDate
 }
 
 export {
     SET_EVENT_FILTER,
     SET_SHOW_FILTER,
-    UNSET_EVENT_FILTER
+    UNSET_EVENT_FILTER,
+    SET_DATE
 }

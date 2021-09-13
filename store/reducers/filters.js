@@ -1,4 +1,4 @@
-import { SET_EVENT_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER } from "../actions/filters";
+import { SET_DATE, SET_EVENT_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
@@ -27,6 +27,12 @@ const filterReducer = (state = {}, action) => {
             return {
                 ...state,
                 events: noEventFilter
+            }
+
+        case SET_DATE:
+            return {
+                ...state,
+                date: action.date
             }
 
         default:

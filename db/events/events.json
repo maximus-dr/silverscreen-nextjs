@@ -13,8 +13,7 @@
             "shedule": ["now"],
             "city": ["minsk"],
             "genre": ["family", "comedy", "cartoon", "fantasy"],
-            "language": ["ru", "eng"],
-            "date": ["2021-09-10", "2021-09-11"]
+            "language": ["ru", "eng"]
         },
         "showList": {
             "2021-09-10": [
@@ -38,6 +37,15 @@
                         "cinema": ["voka"]
                     }
                 }
+            ],
+
+            "2021-09-12": [
+                {
+                    "showId": "dusha3",
+                    "showFilters": {
+                        "cinema": ["voka"]
+                    }
+                }
             ]
         }
     },
@@ -57,7 +65,7 @@
             "city": ["minsk"],
             "genre": ["show"],
             "language": ["ov"],
-            "date": ["2021-09-10"]
+            "month": ["september"]
         },
         "showList": {
             "2021-09-10": [
@@ -90,12 +98,28 @@
             "city": ["grodno"],
             "genre": ["criminal"],
             "language": ["ru"],
-            "date": ["2021-09-10"]
+            "month": ["october", "september"]
         },
         "showList": {
             "2021-09-10": [
                 {
                     "showId": "otchayannye-aferistki",
+                    "showFilters": {
+                        "cinema": ["moon"]
+                    }
+                }
+            ],
+            "2021-09-11": [
+                {
+                    "showId": "otchayannye-aferistki2",
+                    "showFilters": {
+                        "cinema": ["moon"]
+                    }
+                }
+            ],
+            "2021-09-12": [
+                {
+                    "showId": "otchayannye-aferistki3",
                     "showFilters": {
                         "cinema": ["moon"]
                     }
@@ -122,7 +146,8 @@
             "shedule": ["soon"],
             "city": ["minsk"],
             "genre": ["drama", "fantastic"],
-            "language": ["ru"]
+            "language": ["ru"],
+            "month": ["november"]
         },
         "showList": {}
     },
@@ -168,7 +193,8 @@
             "shedule": ["soon"],
             "city": ["minsk", "grodno", "vitebsk"],
             "genre": ["doc", "exhibition"],
-            "language": ["ru"]
+            "language": ["ru"],
+            "month": ["december"]
         },
         "showList": {}
     },
@@ -189,7 +215,16 @@
             "genre": ["cartoon"],
             "language": ["ru"]
         },
-        "showList": {}
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "vokrug-sveta",
+                    "showFilters": {
+                        "cinema": ["moon"]
+                    }
+                }
+            ]
+        }
     },
 
     {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setEventFilter, setShowFilter, unsetEventFilter } from '../../../store/actions/filters';
-import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterSheduleWrapper, FiltersWrapper } from './FiltersStyled'
+import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterWrapper } from './FiltersStyled'
 
 
 export default function Filters() {
@@ -80,6 +80,21 @@ export default function Filters() {
                     <FilterCinemaOption value='moon'>Moon</FilterCinemaOption>
                 </FilterCinemaSelect>
             </FilterCinemaWrapper>
+
+            <FilterWrapper>
+                <FilterSelect
+                    value={eventFilters && eventFilters.month || 'all'}
+                    onChange={(e) => {
+                        dispatch(setEventFilter('month', e.target.value));
+                    }}
+                >
+                    <FilterOption value="all">Все месяцы</FilterOption>
+                    <FilterOption value="september">Сентябрь</FilterOption>
+                    <FilterOption value="october">Октябрь</FilterOption>
+                    <FilterOption value="november">Ноябрь</FilterOption>
+                    <FilterOption value="december">Декабрь</FilterOption>
+                </FilterSelect>
+            </FilterWrapper>
 
         </FiltersWrapper>
     )

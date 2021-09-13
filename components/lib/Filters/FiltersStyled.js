@@ -30,3 +30,11 @@ export const FilterDateWrapper = styled.div`
 export const FilterDateSelect = styled.select``;
 
 export const FilterDateOption = styled.option``;
+
+export const FilterWrapper = styled.div`
+    margin-bottom: 5px;
+`;
+
+export const FilterSelect = styled.select``;
+
+export const FilterOption = styled.option``;
