@@ -20,13 +20,29 @@
                 {
                     "showId": "dusha1",
                     "showFilters": {
-                        "cinema": ["voka"]
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59"]
                     }
                 },
                 {
                     "showId": "dusha2",
                     "showFilters": {
-                        "cinema": ["arena"]
+                        "cinema": ["arena"],
+                        "time": ["12:00-16:59"]
+                    }
+                },
+                {
+                    "showId": "dusha3",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["17:00-21:59"]
+                    }
+                },
+                {
+                    "showId": "dusha4",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["22:00-06:59"]
                     }
                 }
             ],

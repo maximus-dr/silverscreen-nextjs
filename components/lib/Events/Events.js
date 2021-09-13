@@ -46,12 +46,10 @@ export default function Events(props) {
 
     const filterShow = (show, filters) => {
         const categories = Object.keys(filters);
+        const match = [];
 
-        return categories.some(category => {
-            if (filters[category] === 'all') return true;
-            const filter = filters[category];
-            return show.showFilters[category].includes(filter);
-        });
+        console.log('filter show');
+
     }
 
     const filterShowList = (showList, filters, date) => {
@@ -79,7 +77,11 @@ export default function Events(props) {
         if (eventFilters) {
             let filtered = filterEvents(events, eventFilters, date);
             if (showFilters && filtered.length > 0) {
-                filtered = filtered.filter(item => filterShowList(item.showList, showFilters, date));
+
+                filtered = filtered.filter(item => {
+                    // console.log(filterShowList(item.showList, showFilters, date));
+                    return filterShowList(item.showList, showFilters, date);
+                });
             }
             dispatch(setFilteredEvents(filtered));
         }

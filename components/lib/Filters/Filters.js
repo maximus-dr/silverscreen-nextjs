@@ -96,6 +96,21 @@ export default function Filters() {
                 </FilterSelect>
             </FilterWrapper>
 
+            <FilterWrapper>
+                <FilterSelect
+                    value={showFilters && showFilters.time || 'all'}
+                    onChange={(e) => {
+                        dispatch(setShowFilter('time', e.target.value));
+                    }}
+                >
+                    <FilterOption value="all">Все сеансы</FilterOption>
+                    <FilterOption value="07:00-11:59">07:00-11:59</FilterOption>
+                    <FilterOption value="12:00-16:59">12:00-16:59</FilterOption>
+                    <FilterOption value="17:00-21:59">17:00-21:59</FilterOption>
+                    <FilterOption value="22:00-06:59">22:00-06:59</FilterOption>
+                </FilterSelect>
+            </FilterWrapper>
+
         </FiltersWrapper>
     )
 }
