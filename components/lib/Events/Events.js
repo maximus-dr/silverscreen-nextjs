@@ -63,8 +63,6 @@ export default function Events(props) {
                     }
                 });
             }
-
-
         });
         return [...filtered];
     }

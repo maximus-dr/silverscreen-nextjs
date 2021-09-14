@@ -13,7 +13,7 @@
             "shedule": ["now"],
             "city": ["minsk"],
             "genre": ["family", "comedy", "cartoon", "fantasy"],
-            "language": ["ru", "eng"]
+            "language": ["ru"]
         },
         "showList": {
             "2021-09-10": [
@@ -22,21 +22,24 @@
                     "showFilters": {
                         "cinema": ["voka"],
                         "time": ["07:00-11:59"],
-                        "video": ["2d"]
+                        "video": ["2d"],
+                        "language": ["ru"]
                     }
                 },
                 {
                     "showId": "dusha2",
                     "showFilters": {
                         "cinema": ["arena"],
-                        "time": ["12:00-16:59"]
+                        "time": ["12:00-16:59"],
+                        "language": ["ru"]
                     }
                 },
                 {
                     "showId": "dusha3",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["17:00-21:59"]
+                        "time": ["17:00-21:59"],
+                        "language": ["ru"]
                     }
                 }
             ],
@@ -44,7 +47,8 @@
                 {
                     "showId": "dusha",
                     "showFilters": {
-                        "cinema": ["voka"]
+                        "cinema": ["voka"],
+                        "language": ["ru"]
                     }
                 }
             ],
@@ -53,7 +57,8 @@
                 {
                     "showId": "dusha3",
                     "showFilters": {
-                        "cinema": ["voka"]
+                        "cinema": ["voka"],
+                        "language": ["ru"]
                     }
                 }
             ]
@@ -85,7 +90,10 @@
                         "cinema": ["arena"],
                         "time": ["17:00-21:59", "22:00-06:59"],
                         "video": ["2d"],
-                        "sound": ["dolbyAtmos"]
+                        "sound": ["dolbyAtmos"],
+                        "language": ["ov"],
+                        "subtitles": ["sub"],
+                        "auditorium": ["vip"]
                     }
                 },
                 {
@@ -94,7 +102,10 @@
                         "cinema": ["voka"],
                         "time": ["17:00-21:59", "22:00-06:59"],
                         "video": ["3d"],
-                        "sound": ["dolbyDigital"]
+                        "sound": ["dolbyDigital"],
+                        "language": ["ov"],
+                        "subtitles": ["sub"],
+                        "auditorium": ["voka"]
                     }
                 }
             ]
@@ -130,7 +141,8 @@
                         "cinema": ["moon"],
                         "time": ["07:00-11:59", "12:00-16:59"],
                         "video": ["screenX"],
-                        "sound": ["dolbyAtmos"]
+                        "sound": ["dolbyAtmos"],
+                        "auditorium": ["vegasLounge"]
                     }
                 }
             ],
@@ -141,7 +153,8 @@
                         "cinema": ["moon"],
                         "time": ["07:00-11:59", "12:00-16:59"],
                         "video": ["2d4k"],
-                        "sound": ["dolbyAtmos"]
+                        "sound": ["dolbyAtmos"],
+                        "auditorium": ["resto"]
                     }
                 }
             ],
@@ -152,7 +165,8 @@
                         "cinema": ["moon"],
                         "time": ["07:00-11:59", "12:00-16:59"],
                         "video": ["2d"],
-                        "sound": ["dolbyDigital"]
+                        "sound": ["dolbyDigital"],
+                        "auditorium": ["resto"]
                     }
                 }
             ]
@@ -186,14 +200,16 @@
                     "showId": "petrovy1",
                     "showFilters": {
                         "cinema": ["arena"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
+                        "auditorium": ["vip"]
                     }
                 },
                 {
                     "showId": "petrovy2",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
+                        "auditorium": ["vegasLounge"]
                     }
                 }
             ],
@@ -209,7 +225,8 @@
                     "showId": "petrovy2",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
+                        "auditorium": ["voka"]
                     }
                 }
             ],
@@ -225,7 +242,8 @@
                     "showId": "petrovy2",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
+                        "auditorium": ["voka"]
                     }
                 }
             ]
@@ -258,7 +276,8 @@
                     "showId": "nebesnaya1",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59"]
+                        "time": ["07:00-11:59"],
+                        "auditorium": ["vegasLounge"]
                     }
                 }
             ],
@@ -267,7 +286,8 @@
                     "showId": "nebesnaya2",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59"]
+                        "time": ["07:00-11:59"],
+                        "auditorium": ["vegasLounge"]
                     }
                 }
             ],
@@ -276,7 +296,8 @@
                     "showId": "nebesnaya3",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59"]
+                        "time": ["07:00-11:59"],
+                        "auditorium": ["vegasLounge"]
                     }
                 }
             ]
@@ -317,7 +338,8 @@
                     "showId": "mikelayndzelo2",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59"]
+                        "time": ["07:00-11:59"],
+                        "auditorium": ["voka"]
                     }
                 },
                 {
@@ -361,7 +383,8 @@
                     "showId": "vokrug-sveta12",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
+                        "time": ["07:00-11:59", "12:00-16:59"],
+                        "auditorium": ["voka"]
                     }
                 }
             ],
@@ -393,7 +416,8 @@
                     "showId": "vokrug-sveta",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
+                        "time": ["07:00-11:59", "12:00-16:59"],
+                        "auditorium": ["voka"]
                     }
                 }
             ]

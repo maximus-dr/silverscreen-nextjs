@@ -72,6 +72,62 @@ const videoFormats = [
     }
 ];
 
+const soundFormats = [
+    {
+        name: 'dolbyDigital',
+        acronym: 'Dolby Digital'
+    },
+    {
+        name: 'dolbyAtmos',
+        acronym: 'Dolby Atmos'
+    }
+];
+
+const languages = [
+    {
+        name: 'ru',
+        acronym: 'Русский язык'
+    },
+    {
+        name: 'by',
+        acronym: 'Беларуская мова'
+    },
+    {
+        name: 'ov',
+        acronym: 'Original'
+    },
+    {
+        name: 'eng',
+        acronym: 'English'
+    }
+]
+
+const sub = [
+    {
+        name: 'sub',
+        acronym: 'SUB'
+    }
+]
+
+const auditoriums = [
+    {
+        name: 'vip',
+        acronym: 'VIP'
+    },
+    {
+        name: 'vegasLounge',
+        acronym: 'VEGAS LOUNGE'
+    },
+    {
+        name: 'voka',
+        acronym: 'VOKA'
+    },
+    {
+        name: 'resto',
+        acronym: 'RESTO'
+    }
+]
+
 
 
 export default function Filters() {
@@ -228,6 +284,82 @@ export default function Filters() {
                         />
                         <MultipleLabel
                             htmlFor={`video-${item.name}`}
+                        >
+                            {item.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
+            </MultipleWrapper>
+
+            <FilterTitle>Звук</FilterTitle>
+            <MultipleWrapper>
+                {soundFormats.map(item => (
+                    <MultipleItem key={item.name}>
+                        <MultipleCheckbox
+                            id={`sound-${item.name}`}
+                            name={item.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleShowFilterChange(e, 'sound')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`sound-${item.name}`}
+                        >
+                            {item.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
+            </MultipleWrapper>
+
+            <FilterTitle>Язык</FilterTitle>
+            <MultipleWrapper>
+                {languages.map(item => (
+                    <MultipleItem key={item.name}>
+                        <MultipleCheckbox
+                            id={`language-${item.name}`}
+                            name={item.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleShowFilterChange(e, 'language')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`language-${item.name}`}
+                        >
+                            {item.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
+            </MultipleWrapper>
+
+            <FilterTitle>Субтитры</FilterTitle>
+            <MultipleWrapper>
+                {sub.map(item => (
+                    <MultipleItem key={item.name}>
+                        <MultipleCheckbox
+                            id={`subtitles-${item.name}`}
+                            name={item.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleShowFilterChange(e, 'subtitles')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`subtitles-${item.name}`}
+                        >
+                            {item.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
+            </MultipleWrapper>
+
+            <FilterTitle>Зал</FilterTitle>
+            <MultipleWrapper>
+                {auditoriums.map(item => (
+                    <MultipleItem key={item.name}>
+                        <MultipleCheckbox
+                            id={`auditorium-${item.name}`}
+                            name={item.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleShowFilterChange(e, 'auditorium')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`auditorium-${item.name}`}
                         >
                             {item.acronym}
                         </MultipleLabel>
