@@ -60,9 +60,7 @@ export default function Events(props) {
 
     const filterShowList = (showList, filters, date) => {
         if (!showList[date]) return false;
-        return showList[date].some(show => {
-            return filterShow(show, filters);
-        })
+        return showList[date].some(show => filterShow(show, filters));
     }
 
 
@@ -83,9 +81,7 @@ export default function Events(props) {
         if (eventFilters) {
             let filtered = filterEvents(events, eventFilters, date);
             if (showFilters && filtered.length > 0) {
-
                 filtered = filtered.filter(item => {
-                    // console.log(filterShowList(item.showList, showFilters, date));
                     return filterShowList(item.showList, showFilters, date);
                 });
             }
