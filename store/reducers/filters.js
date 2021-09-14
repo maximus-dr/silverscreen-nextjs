@@ -1,4 +1,4 @@
-import { SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_MULTIPLE_SHOW_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER, UNSET_MULTIPLE_SHOW_FILTER } from "../actions/filters";
+import { CLEAR_FILTERS, SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_MULTIPLE_SHOW_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER, UNSET_MULTIPLE_SHOW_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
@@ -139,6 +139,9 @@ const filterReducer = (state = {}, action) => {
                     }
                 }
             }
+
+        case CLEAR_FILTERS:
+            return {}
 
         default:
             return {

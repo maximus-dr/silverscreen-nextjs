@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setDate, setEventFilter, setMultipleEventFilter, setMultipleShowFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from '../../../store/actions/filters';
-import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
+import { clearFilters, setDate, setEventFilter, setMultipleEventFilter, setMultipleShowFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from '../../../store/actions/filters';
+import { ClearButton, FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
 const cities = [{name: 'all', acronym: 'Все города'}, {name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
 
@@ -261,6 +261,7 @@ export default function Filters() {
                             id={`genre-${genre.name}`}
                             name={genre.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.genre && showFilters.genre.includes(item.name) || false}
                             onChange={(e) => onMultipleEventFilterChange(e, 'genre')}
                         />
                         <MultipleLabel
@@ -280,6 +281,7 @@ export default function Filters() {
                             id={`video-${item.name}`}
                             name={item.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.video && showFilters.video.includes(item.name) || false}
                             onChange={(e) => onMultipleShowFilterChange(e, 'video')}
                         />
                         <MultipleLabel
@@ -299,6 +301,7 @@ export default function Filters() {
                             id={`sound-${item.name}`}
                             name={item.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.sound && showFilters.sound.includes(item.name) || false}
                             onChange={(e) => onMultipleShowFilterChange(e, 'sound')}
                         />
                         <MultipleLabel
@@ -318,6 +321,7 @@ export default function Filters() {
                             id={`language-${item.name}`}
                             name={item.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.language && showFilters.language.includes(item.name) || false}
                             onChange={(e) => onMultipleShowFilterChange(e, 'language')}
                         />
                         <MultipleLabel
@@ -337,6 +341,7 @@ export default function Filters() {
                             id={`subtitles-${item.name}`}
                             name={item.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.subtitles && showFilters.subtitles.includes(item.name) || false}
                             onChange={(e) => onMultipleShowFilterChange(e, 'subtitles')}
                         />
                         <MultipleLabel
@@ -356,6 +361,7 @@ export default function Filters() {
                             id={`auditorium-${item.name}`}
                             name={item.name}
                             type="checkbox"
+                            checked={showFilters && showFilters.auditorium && showFilters.auditorium.includes(item.name) || false}
                             onChange={(e) => onMultipleShowFilterChange(e, 'auditorium')}
                         />
                         <MultipleLabel
@@ -366,6 +372,12 @@ export default function Filters() {
                     </MultipleItem>
                 ))}
             </MultipleWrapper>
+
+            <ClearButton
+                onClick={() => dispatch(clearFilters())}
+            >
+                Очистить фильтры
+            </ClearButton>
 
         </FiltersWrapper>
     )

@@ -116,11 +116,11 @@ export default function Events(props) {
         : null;
 
     useEffect(() => {
-        dispatch(setEventFilter('city', 'all'));
-        dispatch(setEventFilter('shedule', 'now'));
-        dispatch(setDate('all'));
-        dispatch(setShowFilter('cinema', 'all'));
-    }, [dispatch]);
+        !eventFilters && dispatch(setEventFilter('city', 'all'));
+        !eventFilters && dispatch(setEventFilter('shedule', 'now'));
+        !eventFilters && dispatch(setDate('all'));
+        !eventFilters && dispatch(setShowFilter('cinema', 'all'));
+    }, [dispatch, eventFilters]);
 
     useEffect(() => {
         if (eventFilters) {

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 
-export const FiltersWrapper = styled.div``;
+export const FiltersWrapper = styled.div`
+    padding-bottom: 25px;
+`;
 
 export const FilterButton = styled.button`
     outline: none;
@@ -68,4 +70,9 @@ export const MultipleCheckbox = styled.input`
 
 export const MultipleLabel = styled.label`
     cursor: pointer;
+`;
+
+export const ClearButton = styled.button`
+    display: block;
+    margin: 0 auto;
 `;
