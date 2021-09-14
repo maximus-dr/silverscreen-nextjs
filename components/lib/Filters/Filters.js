@@ -261,7 +261,7 @@ export default function Filters() {
                             id={`genre-${genre.name}`}
                             name={genre.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.genre && showFilters.genre.includes(item.name) || false}
+                            checked={eventFilters && eventFilters.genre && eventFilters.genre.includes(genre.name) || false}
                             onChange={(e) => onMultipleEventFilterChange(e, 'genre')}
                         />
                         <MultipleLabel
