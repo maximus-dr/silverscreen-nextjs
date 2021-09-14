@@ -14,7 +14,7 @@ import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setEvents, setEventsAll } from "../../store/actions/events";
+import { setAllEvents} from "../../store/actions/events";
 
 
 // export async function getStaticProps() {
@@ -53,7 +53,7 @@ export async function getServerSideProps() {
 
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
-    dispatch(setEventsAll(events));
+    dispatch(setAllEvents(events));
     dispatch(setResolution('320'));
     dispatch(setMode('admin'));
 

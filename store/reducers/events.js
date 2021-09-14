@@ -1,13 +1,13 @@
-import { SET_EVENTS_ALL, SET_EVENTS_FILTERED } from "../actions/events";
+import { SET_ALL_EVENTS, SET_FILTERED_EVENTS } from "../actions/events";
 
 
 const eventsReducer = (state = {}, action) => {
     switch(action.type) {
-        case SET_EVENTS_ALL:
+        case SET_ALL_EVENTS:
             return {
                 all: action.events
             }
-        case SET_EVENTS_FILTERED:
+        case SET_FILTERED_EVENTS:
             return {
                 ...state,
                 filtered: action.filteredEvents

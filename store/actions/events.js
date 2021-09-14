@@ -1,24 +1,24 @@
-const SET_EVENTS_ALL = 'SET_EVENTS_ALL';
-const SET_EVENTS_FILTERED = 'SET_EVENTS_FILTERED';
+const SET_ALL_EVENTS = 'SET_ALL_EVENTS';
+const SET_FILTERED_EVENTS = 'SET_FILTERED_EVENTS';
 
 
-const setEventsAll = (events) => ({
-    type: SET_EVENTS_ALL,
+const setAllEvents = (events) => ({
+    type: SET_ALL_EVENTS,
     events
 });
 
 const setFilteredEvents = (filteredEvents) => ({
-    type: SET_EVENTS_FILTERED,
+    type: SET_FILTERED_EVENTS,
     filteredEvents
 })
 
 
 export {
-    setEventsAll,
+    setAllEvents,
     setFilteredEvents
 }
 
 export {
-    SET_EVENTS_ALL,
-    SET_EVENTS_FILTERED
+    SET_ALL_EVENTS,
+    SET_FILTERED_EVENTS
 }
