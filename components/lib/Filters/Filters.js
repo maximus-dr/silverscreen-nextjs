@@ -5,6 +5,55 @@ import { setDate, setEventFilter, setMultipleEventFilter, setShowFilter, unsetEv
 import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
 
+const genres = [
+    {
+        name: "family",
+        acronym: "Семейный"
+    },
+    {
+        name: "drama",
+        acronym: "Драма"
+    },
+    {
+        name: "comedy",
+        acronym: "Комедия"
+    },
+    {
+        name: "cartoon",
+        acronym: "Мультфильм"
+    },
+    {
+        name: "fantasy",
+        acronym: "Фэнтези"
+    },
+    {
+        name: "show",
+        acronym: "Шоу"
+    },
+    {
+        name: "fantastic",
+        acronym: "Фантастика"
+    },
+    {
+        name: "sport",
+        acronym: "Спорт"
+    },
+    {
+        name: "doc",
+        acronym: "Документальный"
+    },
+    {
+        name: "exhibition",
+        acronym: "Выставка"
+    },
+    {
+        name: "thriller",
+        acronym: "Триллер"
+    }
+];
+
+
+
 export default function Filters() {
 
     const state = useSelector(state => state);
@@ -122,33 +171,22 @@ export default function Filters() {
 
             <FilterTitle>Жанры</FilterTitle>
             <MultipleWrapper>
-                <MultipleItem>
-                    <MultipleCheckbox
-                        id="genre-family"
-                        name="family"
-                        type="checkbox"
-                        onChange={(e) => onMultipleFilterChange(e, 'genre')}
-                    />
-                    <MultipleLabel
-                        htmlFor="genre-family"
-                    >
-                        Семейный
-                    </MultipleLabel>
-                </MultipleItem>
+                {genres.map(genre => (
+                    <MultipleItem key={genre.name}>
+                        <MultipleCheckbox
+                            id={`genre-${genre.name}`}
+                            name={genre.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleFilterChange(e, 'genre')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`genre-${genre.name}`}
+                        >
+                            {genre.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
 
-                <MultipleItem>
-                    <MultipleCheckbox
-                        id="genre-drama"
-                        name="drama"
-                        type="checkbox"
-                        onChange={(e) => onMultipleFilterChange(e, 'genre')}
-                    />
-                    <MultipleLabel
-                        htmlFor="genre-drama"
-                    >
-                        Драма
-                    </MultipleLabel>
-                </MultipleItem>
             </MultipleWrapper>
 
         </FiltersWrapper>
