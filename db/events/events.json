@@ -37,13 +37,6 @@
                         "cinema": ["voka"],
                         "time": ["17:00-21:59"]
                     }
-                },
-                {
-                    "showId": "dusha4",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["22:00-06:59"]
-                    }
                 }
             ],
             "2021-09-11": [
@@ -81,14 +74,15 @@
             "city": ["minsk"],
             "genre": ["show"],
             "language": ["ov"],
-            "month": ["september"]
+            "month": ["september", "october"]
         },
         "showList": {
             "2021-09-10": [
                 {
                     "showId": "noch-pozhirateley1",
                     "showFilters": {
-                        "cinema": ["arena"]
+                        "cinema": ["arena"],
+                        "time": ["17:00-21:59", "22:00-06:59"]
                     }
                 }
             ]
@@ -121,7 +115,8 @@
                 {
                     "showId": "otchayannye-aferistki",
                     "showFilters": {
-                        "cinema": ["moon"]
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
                     }
                 }
             ],
@@ -129,7 +124,8 @@
                 {
                     "showId": "otchayannye-aferistki2",
                     "showFilters": {
-                        "cinema": ["moon"]
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
                     }
                 }
             ],
@@ -137,7 +133,8 @@
                 {
                     "showId": "otchayannye-aferistki3",
                     "showFilters": {
-                        "cinema": ["moon"]
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
                     }
                 }
             ]
@@ -163,9 +160,58 @@
             "city": ["minsk"],
             "genre": ["drama", "fantastic"],
             "language": ["ru"],
-            "month": ["november"]
+            "month": ["november", "december"]
         },
-        "showList": {}
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "petrovy1",
+                    "showFilters": {
+                        "cinema": ["arena"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                },
+                {
+                    "showId": "petrovy2",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                }
+            ],
+            "2021-09-11": [
+                {
+                    "showId": "petrovy1",
+                    "showFilters": {
+                        "cinema": ["arena"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                },
+                {
+                    "showId": "petrovy2",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                }
+            ],
+            "2021-09-12": [
+                {
+                    "showId": "petrovy1",
+                    "showFilters": {
+                        "cinema": ["arena"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                },
+                {
+                    "showId": "petrovy2",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
+                    }
+                }
+            ]
+        }
     },
 
     {
@@ -188,7 +234,35 @@
             "genre": ["sport", "bio", "drama"],
             "language": ["ru"]
         },
-        "showList": {}
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "nebesnaya1",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59"]
+                    }
+                }
+            ],
+            "2021-09-11": [
+                {
+                    "showId": "nebesnaya2",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59"]
+                    }
+                }
+            ],
+            "2021-09-12": [
+                {
+                    "showId": "nebesnaya3",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59"]
+                    }
+                }
+            ]
+        }
     },
 
     {
@@ -210,9 +284,33 @@
             "city": ["minsk", "grodno", "vitebsk"],
             "genre": ["doc", "exhibition"],
             "language": ["ru"],
-            "month": ["december"]
+            "month": ["october", "november", "december"]
         },
-        "showList": {}
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "mikelayndzelo1",
+                    "showFilters": {
+                        "cinema": ["arena"],
+                        "time": ["07:00-11:59"]
+                    }
+                },
+                {
+                    "showId": "mikelayndzelo2",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59"]
+                    }
+                },
+                {
+                    "showId": "mikelayndzelo3",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59"]
+                    }
+                }
+            ]
+        }
     },
 
     {
@@ -227,16 +325,57 @@
         "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6522.png",
         "eventFilters": {
             "shedule": ["soon"],
-            "city": ["vitebsk"],
+            "city": ["vitebsk", "grodno", "minsk"],
             "genre": ["cartoon"],
-            "language": ["ru"]
+            "language": ["ru"],
+            "month": ["september", "october"]
         },
         "showList": {
             "2021-09-10": [
                 {
                     "showId": "vokrug-sveta",
                     "showFilters": {
-                        "cinema": ["moon"]
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
+                    }
+                },
+                {
+                    "showId": "vokrug-sveta12",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
+                    }
+                }
+            ],
+            "2021-09-11": [
+                {
+                    "showId": "vokrug-sveta2",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
+                    }
+                },
+                {
+                    "showId": "vokrug-sveta22",
+                    "showFilters": {
+                        "cinema": ["arena"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
+                    }
+                }
+            ],
+            "2021-09-12": [
+                {
+                    "showId": "vokrug-sveta3",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
+                    }
+                },
+                {
+                    "showId": "vokrug-sveta",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["07:00-11:59", "12:00-16:59"]
                     }
                 }
             ]
@@ -259,6 +398,16 @@
             "genre": ["thriller", "drama"],
             "language": ["ru"]
         },
-        "showList": {}
+        "showList": {
+            "2021-09-10": [
+                {
+                    "showId": "vokrug-sveta",
+                    "showFilters": {
+                        "cinema": ["moon"],
+                        "time": ["07:00-11:59"]
+                    }
+                }
+            ]
+        }
     }
 ]

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setEventFilter, setShowFilter, unsetEventFilter } from '../../../store/actions/filters';
+import { setDate, setEventFilter, setShowFilter, unsetEventFilter } from '../../../store/actions/filters';
 import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterWrapper } from './FiltersStyled'
 
 
@@ -10,6 +10,7 @@ export default function Filters() {
     const state = useSelector(state => state);
     const eventFilters = state.filters.events;
     const showFilters = state.filters.shows;
+    const filters = state.filters;
     const dispatch = useDispatch();
     const cities = [{name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
     const city = eventFilters && eventFilters.city ? eventFilters.city : cities[0];
@@ -56,9 +57,9 @@ export default function Filters() {
 
             <FilterDateWrapper>
                 <FilterDateSelect
-                    value={eventFilters && eventFilters.date || '2021-09-10'}
+                    value={filters && filters.date || '2021-09-10'}
                     onChange={(e) => {
-                        dispatch(setEventFilter('date', e.target.value));
+                        dispatch(setDate(e.target.value));
                     }}
                 >
                     <FilterDateOption value="2021-09-10">2021-09-10</FilterDateOption>

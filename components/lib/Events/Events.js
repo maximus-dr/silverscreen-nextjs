@@ -31,11 +31,11 @@ export default function Events(props) {
         categories.forEach((category) => {
             const filter = filters[category];
             filtered.forEach(event => {
-                const all = filters[category] === 'all';
+                const selectAll = filters[category] === 'all';
                 const hasCategory = event.eventFilters[category];
-                const hasFilter = hasCategory && event.eventFilters[category].includes(filter);
+                const hasFilter = hasCategory && hasCategory.includes(filter);
 
-                if (all) return;
+                if (selectAll) return;
                 if (!hasFilter || !hasCategory) {
                     filtered.delete(event);
                 }
@@ -46,10 +46,16 @@ export default function Events(props) {
 
     const filterShow = (show, filters) => {
         const categories = Object.keys(filters);
-        const match = [];
+        const mismatch = categories.some(category => {
+            const showFilter = show.showFilters[category];
 
-        console.log('filter show');
-
+            if (filters[category] === 'all') return false;
+            if (!showFilter) return true;
+            return (
+                !showFilter.includes(filters[category])
+            );
+        });
+        return !mismatch;
     }
 
     const filterShowList = (showList, filters, date) => {
