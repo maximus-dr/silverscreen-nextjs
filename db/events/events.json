@@ -106,7 +106,7 @@
         "eventFilters": {
             "shedule": ["soon"],
             "city": ["grodno"],
-            "genre": ["criminal"],
+
             "language": ["ru"],
             "month": ["october", "september"]
         },

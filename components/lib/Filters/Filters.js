@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setDate, setEventFilter, setShowFilter, unsetEventFilter } from '../../../store/actions/filters';
-import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterWrapper } from './FiltersStyled'
+import { setDate, setEventFilter, setMultipleEventFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter } from '../../../store/actions/filters';
+import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
 
 export default function Filters() {
@@ -15,6 +15,14 @@ export default function Filters() {
     const cities = [{name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
     const city = eventFilters && eventFilters.city ? eventFilters.city : cities[0];
 
+
+    const onMultipleFilterChange = (e, category) => {
+        if (eventFilters && eventFilters[category] && eventFilters[category].includes(e.target.name)) {
+            dispatch(unsetMultipleEventFilter(category, e.target.name));
+            return;
+        }
+        dispatch(setMultipleEventFilter(category, e.target.name));
+    }
 
     return (
         <FiltersWrapper>
@@ -111,6 +119,37 @@ export default function Filters() {
                     <FilterOption value="22:00-06:59">22:00-06:59</FilterOption>
                 </FilterSelect>
             </FilterWrapper>
+
+            <FilterTitle>Жанры</FilterTitle>
+            <MultipleWrapper>
+                <MultipleItem>
+                    <MultipleCheckbox
+                        id="genre-family"
+                        name="family"
+                        type="checkbox"
+                        onChange={(e) => onMultipleFilterChange(e, 'genre')}
+                    />
+                    <MultipleLabel
+                        htmlFor="genre-family"
+                    >
+                        Семейный
+                    </MultipleLabel>
+                </MultipleItem>
+
+                <MultipleItem>
+                    <MultipleCheckbox
+                        id="genre-drama"
+                        name="drama"
+                        type="checkbox"
+                        onChange={(e) => onMultipleFilterChange(e, 'genre')}
+                    />
+                    <MultipleLabel
+                        htmlFor="genre-drama"
+                    >
+                        Драма
+                    </MultipleLabel>
+                </MultipleItem>
+            </MultipleWrapper>
 
         </FiltersWrapper>
     )

@@ -2,6 +2,8 @@ const SET_EVENT_FILTER = 'SET_EVENT_FILTER';
 const SET_SHOW_FILTER = 'SET_SHOW_FILTER';
 const UNSET_EVENT_FILTER = 'UNSET_EVENT_FILTER';
 const SET_DATE = 'SET_DATE';
+const SET_MULTIPLE_EVENT_FILTER = 'SET_MULTIPLE_EVENT_FILTER';
+const UNSET_MULTIPLE_EVENT_FILTER = 'UNSET_MULTIPLE_EVENT_FILTER';
 
 
 const setEventFilter = (category, filter) => ({
@@ -26,17 +28,33 @@ const setDate = (date) => ({
     date
 });
 
+const setMultipleEventFilter = (category, value) => ({
+    type: SET_MULTIPLE_EVENT_FILTER,
+    category,
+    value
+});
+
+const unsetMultipleEventFilter = (category, value) => ({
+    type: UNSET_MULTIPLE_EVENT_FILTER,
+    category,
+    value
+});
+
 
 export {
     setEventFilter,
     setShowFilter,
     unsetEventFilter,
-    setDate
+    setDate,
+    setMultipleEventFilter,
+    unsetMultipleEventFilter
 }
 
 export {
     SET_EVENT_FILTER,
     SET_SHOW_FILTER,
     UNSET_EVENT_FILTER,
-    SET_DATE
+    SET_DATE,
+    SET_MULTIPLE_EVENT_FILTER,
+    UNSET_MULTIPLE_EVENT_FILTER
 }

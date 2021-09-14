@@ -30,16 +30,37 @@ export default function Events(props) {
 
         categories.forEach((category) => {
             const filter = filters[category];
-            filtered.forEach(event => {
-                const selectAll = filters[category] === 'all';
-                const hasCategory = event.eventFilters[category];
-                const hasFilter = hasCategory && hasCategory.includes(filter);
+            const isMultiple = Array.isArray(filter);
 
-                if (selectAll) return;
-                if (!hasFilter || !hasCategory) {
-                    filtered.delete(event);
-                }
-            });
+            if (isMultiple) {
+                filtered.forEach(event => {
+                    const hasCategory = event.eventFilters[category];
+                    if (!hasCategory) {
+                        filtered.delete(event);
+                        return;
+                    }
+                    const match = filter.some(value => (
+                            event.eventFilters[category].includes(value)
+                        )
+                    );
+                    if (!match) filtered.delete(event);
+                })
+            }
+
+            if (!isMultiple) {
+                filtered.forEach(event => {
+                    const selectAll = filter === 'all';
+                    const hasCategory = event.eventFilters[category];
+                    const hasFilter = hasCategory && hasCategory.includes(filter);
+
+                    if (selectAll) return;
+                    if (!hasFilter || !hasCategory) {
+                        filtered.delete(event);
+                    }
+                });
+            }
+
+
         });
         return [...filtered];
     }
