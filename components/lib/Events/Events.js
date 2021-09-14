@@ -23,6 +23,10 @@ export default function Events(props) {
         const filtered = new Set;
 
         events.forEach(event => {
+            if (date === 'all') {
+                filtered.add(event);
+                return;
+            }
             if (Object.keys(event.showList).includes(date)) {
                 filtered.add(event);
             }
@@ -68,20 +72,42 @@ export default function Events(props) {
     const filterShow = (show, filters) => {
         const categories = Object.keys(filters);
         const mismatch = categories.some(category => {
+            const filter = filters[category];
             const showFilter = show.showFilters[category];
+            const isMultiple = Array.isArray(filter);
 
-            if (filters[category] === 'all') return false;
             if (!showFilter) return true;
-            return (
-                !showFilter.includes(filters[category])
-            );
+
+            if (isMultiple) {
+                return !filter.some(value => showFilter.includes(value));
+            }
+
+            if (!isMultiple) {
+                if (filter === 'all') return false;
+                return !showFilter.includes(filters[category]);
+            }
         });
         return !mismatch;
     }
 
     const filterShowList = (showList, filters, date) => {
-        if (!showList[date]) return false;
-        return showList[date].some(show => filterShow(show, filters));
+        const allDates = date === 'all';
+
+        if (allDates) {
+            let result = false;
+            for (let date in showList) {
+                const match = showList[date].some(show => filterShow(show, filters));
+                if (match) {
+                    result = true;
+                }
+            }
+            return result;
+        }
+
+        if (!allDates) {
+            if (!showList[date]) return false;
+            return showList[date].some(show => filterShow(show, filters));
+        }
     }
 
 
@@ -92,9 +118,9 @@ export default function Events(props) {
         : null;
 
     useEffect(() => {
-        dispatch(setEventFilter('city', 'minsk'));
+        dispatch(setEventFilter('city', 'all'));
         dispatch(setEventFilter('shedule', 'now'));
-        dispatch(setDate('2021-09-10'));
+        dispatch(setDate('all'));
         dispatch(setShowFilter('cinema', 'all'));
     }, [dispatch]);
 

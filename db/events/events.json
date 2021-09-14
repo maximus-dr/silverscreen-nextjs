@@ -21,7 +21,8 @@
                     "showId": "dusha1",
                     "showFilters": {
                         "cinema": ["voka"],
-                        "time": ["07:00-11:59"]
+                        "time": ["07:00-11:59"],
+                        "video": ["2d"]
                     }
                 },
                 {
@@ -82,7 +83,18 @@
                     "showId": "noch-pozhirateley1",
                     "showFilters": {
                         "cinema": ["arena"],
-                        "time": ["17:00-21:59", "22:00-06:59"]
+                        "time": ["17:00-21:59", "22:00-06:59"],
+                        "video": ["2d"],
+                        "sound": ["dolbyAtmos"]
+                    }
+                },
+                {
+                    "showId": "noch-pozhirateley2",
+                    "showFilters": {
+                        "cinema": ["voka"],
+                        "time": ["17:00-21:59", "22:00-06:59"],
+                        "video": ["3d"],
+                        "sound": ["dolbyDigital"]
                     }
                 }
             ]
@@ -116,7 +128,9 @@
                     "showId": "otchayannye-aferistki",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
+                        "time": ["07:00-11:59", "12:00-16:59"],
+                        "video": ["screenX"],
+                        "sound": ["dolbyAtmos"]
                     }
                 }
             ],
@@ -125,7 +139,9 @@
                     "showId": "otchayannye-aferistki2",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
+                        "time": ["07:00-11:59", "12:00-16:59"],
+                        "video": ["2d4k"],
+                        "sound": ["dolbyAtmos"]
                     }
                 }
             ],
@@ -134,7 +150,9 @@
                     "showId": "otchayannye-aferistki3",
                     "showFilters": {
                         "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
+                        "time": ["07:00-11:59", "12:00-16:59"],
+                        "video": ["2d"],
+                        "sound": ["dolbyDigital"]
                     }
                 }
             ]

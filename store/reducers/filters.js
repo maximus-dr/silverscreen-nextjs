@@ -1,4 +1,4 @@
-import { SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER } from "../actions/filters";
+import { SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_MULTIPLE_SHOW_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER, UNSET_MULTIPLE_SHOW_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
@@ -85,6 +85,57 @@ const filterReducer = (state = {}, action) => {
                     return {
                         ...state,
                         events
+                    }
+                }
+            }
+
+        case SET_MULTIPLE_SHOW_FILTER:
+
+            if (state.shows[action.category] && !state.shows[action.category].includes(action.value)) {
+                return {
+                    ...state,
+                    shows: {
+                        ...state.shows,
+                        [action.category]: [...state.shows[action.category], action.value]
+                    }
+                }
+            }
+            else {
+                return {
+                    ...state,
+                    shows: {
+                        ...state.shows,
+                        [action.category]: [action.value]
+                    }
+                }
+            }
+
+        case UNSET_MULTIPLE_SHOW_FILTER:
+            if (!state.shows) return;
+            if (!state.shows[action.category]) return;
+
+            const index = state.shows[action.category].indexOf(action.value);
+
+            if (index || index === 0) {
+                const filtered = [...state.shows[action.category]]
+                filtered.splice(index, 1);
+
+                if (filtered.length > 0) {
+                    return {
+                        ...state,
+                        shows: {
+                            ...state.shows,
+                            [action.category]: filtered
+                        }
+                    }
+                }
+
+                if (filtered.length === 0) {
+                    const shows = {...state.shows};
+                    delete shows[action.category];
+                    return {
+                        ...state,
+                        shows
                     }
                 }
             }

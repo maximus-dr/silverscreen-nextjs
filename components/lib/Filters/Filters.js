@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setDate, setEventFilter, setMultipleEventFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter } from '../../../store/actions/filters';
+import { setDate, setEventFilter, setMultipleEventFilter, setMultipleShowFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from '../../../store/actions/filters';
 import { FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
+const cities = [{name: 'all', acronym: 'Все города'}, {name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
 
 const genres = [
     {
@@ -52,6 +53,25 @@ const genres = [
     }
 ];
 
+const videoFormats = [
+    {
+        name: '2d',
+        acronym: '2D'
+    },
+    {
+        name: '3d',
+        acronym: '3D'
+    },
+    {
+        name: '2d4k',
+        acronym: '2D 4K'
+    },
+    {
+        name: 'screenX',
+        acronym: 'ScreenX'
+    }
+];
+
 
 
 export default function Filters() {
@@ -61,16 +81,23 @@ export default function Filters() {
     const showFilters = state.filters.shows;
     const filters = state.filters;
     const dispatch = useDispatch();
-    const cities = [{name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
     const city = eventFilters && eventFilters.city ? eventFilters.city : cities[0];
 
 
-    const onMultipleFilterChange = (e, category) => {
+    const onMultipleEventFilterChange = (e, category) => {
         if (eventFilters && eventFilters[category] && eventFilters[category].includes(e.target.name)) {
             dispatch(unsetMultipleEventFilter(category, e.target.name));
             return;
         }
         dispatch(setMultipleEventFilter(category, e.target.name));
+    }
+
+    const onMultipleShowFilterChange = (e, category) => {
+        if (showFilters && showFilters[category] && showFilters[category].includes(e.target.name)) {
+            dispatch(unsetMultipleShowFilter(category, e.target.name));
+            return;
+        }
+        dispatch(setMultipleShowFilter(category, e.target.name));
     }
 
     return (
@@ -119,6 +146,7 @@ export default function Filters() {
                         dispatch(setDate(e.target.value));
                     }}
                 >
+                    <FilterDateOption value="all">Все даты</FilterDateOption>
                     <FilterDateOption value="2021-09-10">2021-09-10</FilterDateOption>
                     <FilterDateOption value="2021-09-11">2021-09-11</FilterDateOption>
                     <FilterDateOption value="2021-09-12">2021-09-12</FilterDateOption>
@@ -177,7 +205,7 @@ export default function Filters() {
                             id={`genre-${genre.name}`}
                             name={genre.name}
                             type="checkbox"
-                            onChange={(e) => onMultipleFilterChange(e, 'genre')}
+                            onChange={(e) => onMultipleEventFilterChange(e, 'genre')}
                         />
                         <MultipleLabel
                             htmlFor={`genre-${genre.name}`}
@@ -186,7 +214,25 @@ export default function Filters() {
                         </MultipleLabel>
                     </MultipleItem>
                 ))}
+            </MultipleWrapper>
 
+            <FilterTitle>Видео</FilterTitle>
+            <MultipleWrapper>
+                {videoFormats.map(item => (
+                    <MultipleItem key={item.name}>
+                        <MultipleCheckbox
+                            id={`video-${item.name}`}
+                            name={item.name}
+                            type="checkbox"
+                            onChange={(e) => onMultipleShowFilterChange(e, 'video')}
+                        />
+                        <MultipleLabel
+                            htmlFor={`video-${item.name}`}
+                        >
+                            {item.acronym}
+                        </MultipleLabel>
+                    </MultipleItem>
+                ))}
             </MultipleWrapper>
 
         </FiltersWrapper>
