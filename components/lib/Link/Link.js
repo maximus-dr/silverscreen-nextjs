@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 import { getComponent } from '../../../core/functions/common/components';
 import { LinkComponent } from './LinkStyled'
 import Link from 'next/link';
+import { actionProvider } from '../../../actions';
 
 
 
@@ -18,7 +18,7 @@ export default function LinkComp(props) {
     const draggable = mode === 'admin' ? true : false;
     const dispatch = useDispatch();
 
-    const component = {
+    const params = {
         id,
         state,
         componentData,
@@ -36,16 +36,16 @@ export default function LinkComp(props) {
             <LinkComponent
                 id={id}
                 componentData={componentData}
-                isActiveComponent={isActiveComponent}
-                onClick={(e) => onClick(e, component)}
-                onMouseDown={(e) => onMouseDown(e, component)}
-                onDragStart={(e) => onDragStart(e, component)}
-                onDragEnter={(e) => onDragEnter(e, component)}
-                onDragLeave={(e) => onDragLeave(e, component)}
-                onDragOver={(e) => onDragOver(e, component)}
-                onDragEnd={(e) => onDragEnd(e, component)}
-                onDrop={(e) => onDrop(e, component)}
+                onClick={(e) => actionProvider('component', 'onClick')(e, params)}
+                onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
+                onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
+                onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
+                onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
+                onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
+                onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
+                onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
                 draggable={draggable}
+                isActiveComponent={isActiveComponent}
             >
                 {componentData && componentData.value || ''}
                 {props.children}

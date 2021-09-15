@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
+import { actionProvider } from '../../../actions';
 import { getChild, getComponent } from '../../../core/functions/common/components';
 import { FormComponent } from './FormStyled'
 
@@ -20,7 +20,7 @@ export default function Form(props) {
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
 
-    const component = {
+    const params = {
         id,
         state,
         componentData,
@@ -58,17 +58,17 @@ export default function Form(props) {
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
-            onClick={(e) => onClick(e, component)}
-            onMouseDown={(e) => onMouseDown(e, component)}
-            isActiveComponent={isActiveComponent}
-            onDragStart={(e) => onDragStart(e, component)}
-            onDragEnter={(e) => onDragEnter(e, component)}
-            onDragLeave={(e) => onDragLeave(e, component)}
-            onDragOver={(e) => onDragOver(e, component)}
-            onDragEnd={(e) => onDragEnd(e, component)}
-            onDrop={(e) => onDrop(e, component)}
+            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
+            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
+            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
+            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
+            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
+            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
+            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
+            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
             draggable={draggable}
             allowDrop={allowDrop}
+            isActiveComponent={isActiveComponent}
         >
             {props.children}
         </FormComponent>
