@@ -10,8 +10,8 @@ import { FormComponent } from './FormStyled'
 export default function Form(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, dragendComponent, mode} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const componentData = getComponent(componentsData, id);
     const dispatch = useDispatch();

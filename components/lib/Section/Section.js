@@ -11,8 +11,8 @@ import { actionProvider } from '../../../actions/index';
 export default function Section(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, dragendComponent, mode} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const draggable = mode === 'admin' ? true : false;
@@ -59,7 +59,10 @@ export default function Section(props) {
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
+            onClick={(e) => {
+                actionProvider('component', 'onClick')(e, params);
+                actionProvider('filter', 'onClick')(e, params);
+            }}
             onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
             onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
             onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}

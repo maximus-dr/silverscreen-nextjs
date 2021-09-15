@@ -8,8 +8,8 @@ import { IconComponent } from './IconStyled';
 export default function Icon(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, mode} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, mode} = state.document;
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const componentData = getComponent(componentsData, id);
     const dispatch = useDispatch();

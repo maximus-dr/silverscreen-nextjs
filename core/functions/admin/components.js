@@ -1,6 +1,4 @@
-import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setDragendComponent, setModal, unsetActiveComponent, unsetDragendComponent, updateComponentChildrenList } from "../../../store/actions/document";
-import { MODE } from "../../config/site";
-import { generateNewId, getChild, getComponent, getHandler, getParent } from "../common/components";
+import { generateNewId } from "../common/components";
 
 
 

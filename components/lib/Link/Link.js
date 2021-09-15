@@ -10,8 +10,8 @@ import { actionProvider } from '../../../actions';
 export default function LinkComp(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, mode} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, mode} = state.document;
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const componentData = getComponent(componentsData, id);
     const dragendComponent = state.dragendComponent;

@@ -13,7 +13,7 @@ export const componentActions = {
 
         onMouseDown(e, component) {
             const {id, state, dispatch, componentData} = component;
-            const {activeComponent} = state;
+            const {activeComponent} = state.document;
             e.stopPropagation();
             if (!activeComponent || activeComponent && activeComponent.id !== id) {
                 dispatch(setActiveComponent(componentData));
@@ -31,7 +31,7 @@ export const componentActions = {
 
         onDragEnter(e, component) {
             const {state, componentData, allowDrop, isDropBox, setDragCounter, dispatch} = component;
-            const {dragendComponent, componentsData} = state;
+            const {dragendComponent, componentsData} = state.document;
 
             e.preventDefault();
             e.stopPropagation();
@@ -93,7 +93,7 @@ export const componentActions = {
 
         onDragEnd(e, component) {
             const {state, isDropBox, setAllowDrop, setDragCounter, dispatch} = component;
-            const {dragendComponent} = state;
+            const {dragendComponent} = state.document;
             e.stopPropagation();
             e.target.style.opacity = '1';
             if (isDropBox) {
@@ -107,7 +107,7 @@ export const componentActions = {
 
         onDrop(e, component) {
             const {id, state, isDropBox, setAllowDrop, setDragCounter, dispatch} = component;
-            const {componentsData, dragendComponent, activeComponent} = state;
+            const {componentsData, dragendComponent, activeComponent} = state.document;
             e.stopPropagation();
             if (isDropBox) {
                 setAllowDrop(false);
@@ -146,7 +146,7 @@ export const componentActions = {
             if (handlers && handlers.onClick) {
                 const action = handlers.onClick[0].action;
                 const params = handlers.onClick[0].params;
-                actions[action](state, dispatch, ...params);
+                actions[action](state.document, dispatch, ...params);
             }
         },
     }

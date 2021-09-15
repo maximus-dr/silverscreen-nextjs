@@ -10,8 +10,8 @@ import { actionProvider } from '../../../actions';
 export default function Page(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, dragendComponent} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, dragendComponent} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();

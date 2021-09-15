@@ -9,8 +9,8 @@ import { actionProvider } from '../../../actions';
 export default function Description(props) {
 
     const id = props.componentData.id;
-    const state = props.state.document;
-    const {componentsData, activeComponent, mode} = state;
+    const state = props.state;
+    const {componentsData, activeComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();

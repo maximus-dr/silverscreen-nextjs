@@ -10,13 +10,13 @@ import { ButtonComponent } from './ButtonStyled'
 export default function Button(props) {
 
     const id = props.componentData.id;
-    const state = useSelector(state => state.document);
-    const activeComponent = state.activeComponent;
+    const state = useSelector(state => state);
+    const activeComponent = state.document.activeComponent;
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = state.componentsData;
+    const componentsData = state.document.componentsData;
     const componentData = getComponent(componentsData, id);
     const dispatch = useDispatch();
-    const draggable = state.mode === 'admin' ? true : false;
+    const draggable = state.document.mode === 'admin' ? true : false;
 
     const params = {
         id,

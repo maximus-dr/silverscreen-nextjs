@@ -1,5 +1,9 @@
 export const filterActions = {
     admin: {
-        onClick() {console.log('click')}
+        onClick(e, params) {
+            const {state} = params;
+
+            console.log('state', state);
+        }
     }
 }

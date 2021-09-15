@@ -19,8 +19,8 @@ export default function Textarea(props) {
     const dragendComponent = useSelector(state => state.document.dragendComponent);
     const dispatch = useDispatch();
     const text = componentData.value || '';
-    const state = useSelector(state => state.document);
-    const draggable = state.mode === 'admin' ? true : false;
+    const state = useSelector(state => state);
+    const draggable = state.document.mode === 'admin' ? true : false;
 
     const params = {
         id,
