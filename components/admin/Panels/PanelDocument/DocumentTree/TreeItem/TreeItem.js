@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getChild, getComponent, getParent } from "../../../../../../core/functions/components";
+import { getChild, getComponent, getParent } from "../../../../../../core/functions/common/components";
 import { addComponent, deleteComponent, setActiveComponent, unsetActiveComponent, setDragendComponent, unsetDragendComponent, updateComponentChildrenList, addComponentToActive, setPage, setModal, unsetPage, closeModal } from "../../../../../../store/actions/document";
 import { TreeChildren, Item, TreeItemName, TreeItemType, TreeWrapper } from "./TreeItemStyled";
 

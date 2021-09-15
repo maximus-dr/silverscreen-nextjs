@@ -1,4 +1,4 @@
-import { getModal } from "../../core/functions/components";
+import { getModal } from "../../core/functions/common/components";
 
 const SET_ACTIVE_COMPONENT = 'SET_ACTIVE_COMPONENT';
 const UNSET_ACTIVE_COMPONENT = 'UNSET_ACTIVE_COMPONENT';

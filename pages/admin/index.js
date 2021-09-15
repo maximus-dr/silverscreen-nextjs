@@ -11,7 +11,7 @@ import { initializeStore } from "../../store/store";
 import { setDocumentComponentsData, setMode, setPage, setResolution, setTemplates } from "../../store/actions/document";
 import { useSelector } from "react-redux";
 import { renderComponents } from "../../core/functions/render";
-import { getComponent } from "../../core/functions/components";
+import { getComponent } from "../../core/functions/common/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setAllEvents} from "../../store/actions/events";

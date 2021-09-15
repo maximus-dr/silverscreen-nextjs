@@ -1,6 +1,6 @@
 import React from 'react'
 import { SectionComponent } from './SectionStyled'
-import { getChild, getComponent } from '../../../core/functions/components';
+import { getChild, getComponent } from '../../../core/functions/common/components';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -20,6 +20,12 @@ export default function Section(props) {
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
+
+    const onFilterClick = (e) => {
+        e.preventDefault();
+        console.log('filter click');
+    }
+
 
     const component = {
         id,
@@ -59,7 +65,12 @@ export default function Section(props) {
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
-            onClick={(e) => onClick(e, component)}
+            onClick={(e) => {
+                onClick(e, component);
+                if (componentData.role === 'filter') {
+                    onFilterClick(e, component);
+                }
+            }}
             onMouseDown={(e) => onMouseDown(e, component)}
             isActiveComponent={isActiveComponent}
             onDragStart={(e) => onDragStart(e, component)}

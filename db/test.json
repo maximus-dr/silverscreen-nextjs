@@ -23,19 +23,40 @@
                             "paddingBottom": "5px",
                             "paddingLeft": "5px",
                             "minHeight": "100vh",
-                            "backgroundColor": "#27272A"
+                            "backgroundColor": "#ffffff"
                         }
                     },
                     "childrenList": [
 
                         {
-                            "typeName": "events",
-                            "id": "events001",
-                            "name": "События",
+                            "typeName": "filter",
+                            "id": "filter001",
+                            "name": "Фильтр",
                             "styles": {
                                 "common": {}
                             },
-                            "childrenList": []
+                            "childrenList": [
+                                {
+                                    "typeName": "section",
+                                    "id": "sec001",
+                                    "name": "Section 1",
+                                    "role": "filter",
+                                    "settings": {
+                                        "multiple": true
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "minHeight": "50px",
+                                            "border": "1px dashed #42a5f5",
+                                            "paddingTop": "15px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "15px",
+                                            "paddingLeft": "15px"
+                                        }
+                                    },
+                                    "childrenList": []
+                                }
+                            ]
                         }
 
                     ]

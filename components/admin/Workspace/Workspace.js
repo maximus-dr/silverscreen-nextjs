@@ -28,7 +28,7 @@ export default function Workspace(props) {
                     if (activeComponent) dispatch(unsetActiveComponent());
                 }}>
                     <WorkspacePage onMouseDown={(e) => e.stopPropagation()} pageWidth={`${resolution}px`}>
-                        <Filters />
+                        {/* <Filters /> */}
                         {components}
                         {modal}
                     </WorkspacePage>

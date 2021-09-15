@@ -1,6 +1,6 @@
 import React from 'react'
 import { ModalComponent, ModalOverlay } from './ModalStyled'
-import { getChild, getComponent } from '../../../core/functions/components';
+import { getChild, getComponent } from '../../../core/functions/common/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';

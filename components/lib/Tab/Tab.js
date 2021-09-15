@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Provider } from '../..';
-import { extractChildrenByRole } from '../../../core/functions/components';
+import { extractChildrenByRole } from '../../../core/functions/common/components';
 import { TabWarning, TabWarningCaption } from './TabStyled';
 
 
@@ -10,7 +10,7 @@ const createMessage = (message) => {
 
 
 export default function Tab(props) {
-    
+
     const tabBarData = extractChildrenByRole(props, 'tabBar');
     const tabHeadData = extractChildrenByRole(props, 'tabHead');
     const tabListData = extractChildrenByRole(props, 'tabList');
@@ -24,9 +24,9 @@ export default function Tab(props) {
     if (!tabListData) warnings.push(createMessage('Добавьте tabList'));
     if (!tabsData) warnings.push(createMessage('Добавьте tab'));
     if (!tabContentData) warnings.push(createMessage('Добавьте tabContent'));
-    
+
     const [activeTab, setActiveTab] = useState(tabsData && tabsData[0].props.componentData.tabKey || null);
-    
+
     if (warnings.length > 0) {
         return (
             <TabWarning>
@@ -44,7 +44,7 @@ export default function Tab(props) {
         Tab: null,
         TabContent: Provider[tabContentData[0].props.componentData.typeName]
     }
-    
+
     // Tabs
     const tabItems = tabsData.map(tab => {
 
@@ -71,7 +71,7 @@ export default function Tab(props) {
                 {...tabProps}
                 key={tab.key}
                 isActive={tab.props.componentData.tabKey === activeTab}
-                activeTab={activeTab}  
+                activeTab={activeTab}
             />
         );
     });
@@ -97,7 +97,7 @@ export default function Tab(props) {
                 </el.TabList>
                 {tabHeadChildren}
             </el.TabHead>
-            
+
             <el.TabContent key={tabContentData[0].key} {...tabContentProps}>
                 Active tab: <b>{activeTab}</b>
                 {tabContentData[0].props.children}

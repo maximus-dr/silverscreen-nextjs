@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { getPage } from '../../../core/functions/components'
+import { getPage } from '../../../core/functions/common/components'
 import Navbar from '../Navbar/Navbar'
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './HeaderStyled'
 

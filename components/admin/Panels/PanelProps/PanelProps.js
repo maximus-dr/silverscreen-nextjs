@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { getComponent } from '../../../../core/functions/components';
+import { getComponent } from '../../../../core/functions/common/components';
 import Panel from '../Panel/Panel'
 import ComponentInfo from './ComponentInfo/ComponentInfo';
 import { PropsPanelWrapper} from './PanelPropsStyled';

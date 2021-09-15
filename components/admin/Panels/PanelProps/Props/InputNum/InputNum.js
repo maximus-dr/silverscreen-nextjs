@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getComponent } from '../../../../../../core/functions/components';
+import { getComponent } from '../../../../../../core/functions/common/components';
 import { clearBuffer, setProp } from '../../../../../../store/actions/document';
 import { InputNumField, InputNumSelect, InputNumUnit, InputNumUnitSingle, InputNumWrapper } from './InputNumStyled'
 

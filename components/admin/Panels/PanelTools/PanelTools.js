@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { updateComponentIds } from '../../../../core/functions/admin/components';
-import { getParent } from '../../../../core/functions/components';
+import { getParent } from '../../../../core/functions/common/components';
 import { addComponent, addComponentToActive, deleteComponent, setActiveComponent, setComponentToBuffer, setModal, unsetActiveComponent, updateComponentChildrenList } from '../../../../store/actions/document';
 import { ToolsButton, ToolsFixWrapper, ToolsItem, ToolsWrapper } from './PanelToolsStyled';
 

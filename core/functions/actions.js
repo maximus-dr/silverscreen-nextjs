@@ -1,5 +1,5 @@
 import { addComponent, addComponentToActive, closeModal, deleteComponent, setActiveComponent, setDragendComponent, setModal, unsetDragendComponent, updateComponentChildrenList } from "../../store/actions/document";
-import { getChild, getComponent, getModal, getParent } from "./components";
+import { getChild, getComponent, getModal, getParent } from "./common/components";
 
 
 const actions = {

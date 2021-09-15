@@ -17,6 +17,7 @@ import Slider from "./lib/Slider/Slider";
 import Modal from "./lib/Modal/Modal";
 import Textarea from "./lib/Textarea/Textarea";
 import Events from "./lib/Events/Events";
+import Filter from "./lib/Filter/Filter";
 
 
 export const Provider = {
@@ -26,6 +27,7 @@ export const Provider = {
     'Document': Document,
     'dropdown': Dropdown,
     'events': Events,
+    'filter': Filter,
     'form': Form,
     'icon': Icon,
     'image': Image,

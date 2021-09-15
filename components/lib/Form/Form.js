@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
-import { getChild, getComponent } from '../../../core/functions/components';
+import { getChild, getComponent } from '../../../core/functions/common/components';
 import { FormComponent } from './FormStyled'
 
 

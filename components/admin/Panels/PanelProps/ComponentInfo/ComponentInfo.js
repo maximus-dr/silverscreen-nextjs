@@ -3,7 +3,7 @@ import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue,
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor } from '../../../../../store/actions/document';
-import { getComponent } from '../../../../../core/functions/components';
+import { getComponent } from '../../../../../core/functions/common/components';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { getComponent } from '../../../core/functions/components';
+import { getComponent } from '../../../core/functions/common/components';
 import { ImageComponent } from './ImageStyled'
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
 

@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRef, useEffect } from 'react';
 import { setActiveComponent } from '../../../store/actions/document';
-import { getComponent } from '../../../core/functions/components';
+import { getComponent } from '../../../core/functions/common/components';
 import { useState } from 'react';
 import Button from './Button/Button';
 import ArrowNext from './ArrowNext/ArrowNext';

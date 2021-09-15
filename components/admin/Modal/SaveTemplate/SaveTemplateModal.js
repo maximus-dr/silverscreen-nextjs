@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'
-import { generateNewId } from '../../../../core/functions/components';
+import { generateNewId } from '../../../../core/functions/common/components';
 import { get, post } from '../../../../core/rest/api';
 import { API_TEMPLATES } from '../../../../core/rest/paths';
 import { closeModal, setTemplates, unsetModal } from '../../../../store/actions/document';

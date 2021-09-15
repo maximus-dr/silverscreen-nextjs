@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { DropdownWarning, DropdownWarningCaption, HeadTag } from './DropdownStyled';
-import { extractChildrenByRole } from '../../../core/functions/components';
+import { extractChildrenByRole } from '../../../core/functions/common/components';
 import { Provider } from '../..';
 import { OutlinesContext } from '../../../context/outlinesContext';
 
@@ -50,12 +50,12 @@ export default function Dropdown(props) {
     const [state, setState] = useState(() => new Set().add(defaultItem));
     const [isOpen, setIsOpen] = useState(false);
     const [resetSelect, setResetSelect] = useState(false);
-    
+
     // закрывает выпадающее меню при клике вне этого меню
     useEffect(() => {
         const onClickOutside = (e) => {
-            if (dropdownMenuRef.current 
-                && !dropdownMenuRef.current.contains(e.target) 
+            if (dropdownMenuRef.current
+                && !dropdownMenuRef.current.contains(e.target)
                 && e.target.id !== 'outlines') {
                 setIsOpen(false);
             }
@@ -109,8 +109,8 @@ export default function Dropdown(props) {
         const target = e.currentTarget;
         const key = data.id;
         const value = data.optionValue || `option id: ${key}`;
-        
-        const item = 
+
+        const item =
             <HeadItem key={key} value={value} multiple={true} onClick={(e) => {
                 e.stopPropagation();
                 removeItem(item);
@@ -130,7 +130,7 @@ export default function Dropdown(props) {
         setResetSelect(false);
     };
 
-    
+
     if (warnings.length > 0) {
         return (
             <DropdownWarning>
@@ -140,7 +140,7 @@ export default function Dropdown(props) {
         );
     }
 
-    
+
     const dropdownHeadChildren = dropdownHeadData[0].props.children.map(child => {
         if (child && child.props.componentData.role && child.props.componentData.role === 'dropdownSelectArea') {
             return (
@@ -166,18 +166,18 @@ export default function Dropdown(props) {
                     }
                     // Option element
                     return (
-                        <el.DropdownOption 
-                            key={option.key} 
-                            {...option.props} 
-                            reset={resetSelect} 
-                            handlers={handlers}         
+                        <el.DropdownOption
+                            key={option.key}
+                            {...option.props}
+                            reset={resetSelect}
+                            handlers={handlers}
                         />
                     );
                 }
                 return option;
             });
 
-            
+
             el.DropdownOptionGroup = Provider[child.props.componentData.typeName];
             const optionGroupProps = {
                 ...child.props,
@@ -185,9 +185,9 @@ export default function Dropdown(props) {
             }
             // OptionGroup element
             return (
-                <el.DropdownOptionGroup 
-                    key={child.key} 
-                    {...optionGroupProps}    
+                <el.DropdownOptionGroup
+                    key={child.key}
+                    {...optionGroupProps}
                 />
             );
         }
@@ -196,10 +196,10 @@ export default function Dropdown(props) {
             el.DropdownReset = Provider[child.props.componentData.typeName];
             // Reset button element
             return (
-                <el.DropdownReset 
-                    key={child.key} 
-                    {...child.props} 
-                    handlers={{onClick: resetItems}}     
+                <el.DropdownReset
+                    key={child.key}
+                    {...child.props}
+                    handlers={{onClick: resetItems}}
                 />
             );
         }
@@ -207,17 +207,17 @@ export default function Dropdown(props) {
         return child;
     });
 
-    
+
     return (
         <el.DropdownWrapper
             showOutlines={outlines}
             {...dropdownWrapperData[0].props}
             {...dropdownWrapperData[0].props.componentData}
         >
-            <el.DropdownHead 
-                {...dropdownHeadData[0].props} 
-                {...dropdownHeadData[0].props.componentData} 
-                onClick={() => {setIsOpen(!isOpen)}} 
+            <el.DropdownHead
+                {...dropdownHeadData[0].props}
+                {...dropdownHeadData[0].props.componentData}
+                onClick={() => {setIsOpen(!isOpen)}}
                 isActive={isOpen}
             >
                 {dropdownHeadChildren}

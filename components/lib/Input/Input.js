@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { onClick, onDragEnd, onDragEnter, onDragLeave, onDragOver, onDragStart, onDrop, onMouseDown } from '../../../core/functions/actions';
-import { getComponent } from '../../../core/functions/components';
+import { getComponent } from '../../../core/functions/common/components';
 import { InputComponent } from './InputStyled';
 
 
