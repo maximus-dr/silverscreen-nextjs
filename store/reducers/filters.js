@@ -1,4 +1,4 @@
-import { CLEAR_FILTERS, SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_MULTIPLE_SHOW_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER, UNSET_MULTIPLE_SHOW_FILTER } from "../actions/filters";
+import { CLEAR_FILTERS, SET_DATE, SET_EVENT_FILTER, SET_MULTIPLE_EVENT_FILTER, SET_MULTIPLE_SHOW_FILTER, SET_SHOW_FILTER, UNSET_EVENT_FILTER, UNSET_MULTIPLE_EVENT_FILTER, UNSET_MULTIPLE_SHOW_FILTER, UNSET_SHOW_FILTER } from "../actions/filters";
 
 
 const filterReducer = (state = {}, action) => {
@@ -21,6 +21,14 @@ const filterReducer = (state = {}, action) => {
                 }
             }
 
+        case UNSET_SHOW_FILTER:
+            const noShowFilter = {...state.shows};
+            delete noShowFilter[action.category];
+            return {
+                ...state,
+                shows: noShowFilter
+            }
+
         case UNSET_EVENT_FILTER:
             const noEventFilter = {...state.events};
             delete noEventFilter[action.category];
@@ -37,7 +45,7 @@ const filterReducer = (state = {}, action) => {
 
         case SET_MULTIPLE_EVENT_FILTER:
             const {category, value} = action;
-            const hasCategory = state.events[category];
+            const hasCategory = state.events && state.events[category];
             const includesValue = hasCategory && state.events[category].includes(value);
 
             if (hasCategory && !includesValue) {
@@ -91,7 +99,7 @@ const filterReducer = (state = {}, action) => {
 
         case SET_MULTIPLE_SHOW_FILTER:
 
-            if (state.shows[action.category] && !state.shows[action.category].includes(action.value)) {
+            if (state.shows && state.shows[action.category] && !state.shows[action.category].includes(action.value)) {
                 return {
                     ...state,
                     shows: {

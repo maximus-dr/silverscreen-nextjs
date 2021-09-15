@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
+import { getComponent } from '../../../core/functions/common/components';
 import { setFilteredEvents } from '../../../store/actions/events';
-import { setDate, setEventFilter, setShowFilter } from '../../../store/actions/filters';
+import { setDate, setEventFilter, setMultipleShowFilter, setShowFilter } from '../../../store/actions/filters';
 import EventCard from './EventCard/EventCard';
-import { EventsWrapper } from './EventsStyled'
+import { EventsComponent } from './EventsStyled'
 
 
 export default function Events(props) {
@@ -15,6 +16,13 @@ export default function Events(props) {
     const showFilters = state.filters.shows;
     const dispatch = useDispatch();
     const date = state.filters.date;
+
+    const id = props.componentData.id;
+    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
+    const componentData = getComponent(componentsData, id);
+    const isActiveComponent = activeComponent && activeComponent.id === id;
+    const draggable = mode === 'admin' ? true : false;
+
 
 
     const filterEvents = (events, filters, date) => {
@@ -119,7 +127,6 @@ export default function Events(props) {
         !eventFilters && dispatch(setEventFilter('city', 'all'));
         !eventFilters && dispatch(setEventFilter('shedule', 'now'));
         !eventFilters && dispatch(setDate('all'));
-        !eventFilters && dispatch(setShowFilter('cinema', 'all'));
     }, [dispatch, eventFilters]);
 
     useEffect(() => {
@@ -136,8 +143,11 @@ export default function Events(props) {
 
 
     return (
-        <EventsWrapper>
+        <EventsComponent
+            id={id}
+            componentData={componentData}
+        >
             {cards}
-        </EventsWrapper>
+        </EventsComponent>
     )
 }

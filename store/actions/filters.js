@@ -1,5 +1,6 @@
 const SET_EVENT_FILTER = 'SET_EVENT_FILTER';
 const SET_SHOW_FILTER = 'SET_SHOW_FILTER';
+const UNSET_SHOW_FILTER = 'UNSET_SHOW_FILTER';
 const UNSET_EVENT_FILTER = 'UNSET_EVENT_FILTER';
 const SET_DATE = 'SET_DATE';
 const SET_MULTIPLE_EVENT_FILTER = 'SET_MULTIPLE_EVENT_FILTER';
@@ -22,6 +23,12 @@ const unsetEventFilter = (category) => ({
 
 const setShowFilter = (category, filter) => ({
     type: SET_SHOW_FILTER,
+    category,
+    filter
+});
+
+const unsetShowFilter = (category, filter) => ({
+    type: UNSET_SHOW_FILTER,
     category,
     filter
 });
@@ -62,8 +69,9 @@ const clearFilters = () => ({
 
 export {
     setEventFilter,
-    setShowFilter,
     unsetEventFilter,
+    setShowFilter,
+    unsetShowFilter,
     setDate,
     setMultipleEventFilter,
     unsetMultipleEventFilter,
@@ -74,8 +82,9 @@ export {
 
 export {
     SET_EVENT_FILTER,
-    SET_SHOW_FILTER,
     UNSET_EVENT_FILTER,
+    SET_SHOW_FILTER,
+    UNSET_SHOW_FILTER,
     SET_DATE,
     SET_MULTIPLE_EVENT_FILTER,
     UNSET_MULTIPLE_EVENT_FILTER,

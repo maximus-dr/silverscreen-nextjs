@@ -29,7 +29,8 @@ export default function Section(props) {
         allowDrop,
         setAllowDrop,
         setDragCounter,
-        dispatch
+        dispatch,
+        settings: componentData.settings
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -54,6 +55,7 @@ export default function Section(props) {
     }, [dragCounter, dragendComponent, componentData]);
 
 
+
     return (
         <SectionComponent
             id={id}
@@ -61,7 +63,7 @@ export default function Section(props) {
             onMouseEnter={props.onMouseEnter}
             onClick={(e) => {
                 actionProvider('component', 'onClick')(e, params);
-                actionProvider('filter', 'onClick')(e, params);
+                actionProvider(componentData.role, 'onClick')(e, params);
             }}
             onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
             onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
@@ -73,6 +75,7 @@ export default function Section(props) {
             draggable={draggable}
             allowDrop={allowDrop}
             isActiveComponent={isActiveComponent}
+            isActive={actionProvider('filter', 'checkIsActive')(null, params)}
         >
             {props.children}
         </SectionComponent>

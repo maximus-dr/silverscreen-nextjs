@@ -6,7 +6,8 @@ const MODE = 'admin';
 
 const actions = {
     filter: {
-        onClick: filterActions[MODE].onClick
+        onClick: filterActions[MODE].onClick,
+        checkIsActive: filterActions[MODE].checkIsActive
     },
     component: {
         onClick: componentActions[MODE].onClick,
@@ -24,5 +25,6 @@ const actions = {
 
 
 export const actionProvider = (role, handler) => {
+    if (!role) return null;
     return actions[role][handler]
 }

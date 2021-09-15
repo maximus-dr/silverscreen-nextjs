@@ -42,7 +42,10 @@
                                     "name": "Section 1",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true
+                                        "multiple": true,
+                                        "type": "show",
+                                        "category": "cinema",
+                                        "value": "voka"
                                     },
                                     "styles": {
                                         "common": {
@@ -51,12 +54,150 @@
                                             "paddingTop": "15px",
                                             "paddingRight": "15px",
                                             "paddingBottom": "15px",
-                                            "paddingLeft": "15px"
+                                            "paddingLeft": "15px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "red"
+                                            }
+                                        },
+                                        "isActive": {
+                                            "backgroundColor": "red"
                                         }
                                     },
-                                    "childrenList": []
+                                    "childrenList": [
+                                        {
+                                            "typeName": "label",
+                                            "id": "lab001",
+                                            "name": "Label 1",
+                                            "value": "voka",
+                                            "styles": {
+                                                "common": {
+                                                    "display": "inline-block",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "5px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "5px",
+                                                    "fontSize": "22px"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec002",
+                                    "name": "Section 2",
+                                    "role": "filter",
+                                    "settings": {
+                                        "multiple": true,
+                                        "type": "show",
+                                        "category": "cinema",
+                                        "value": "arena"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "minHeight": "50px",
+                                            "border": "1px dashed #42a5f5",
+                                            "paddingTop": "15px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "15px",
+                                            "paddingLeft": "15px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "red"
+                                            }
+                                        },
+                                        "isActive": {
+                                            "backgroundColor": "red"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "label",
+                                            "id": "lab002",
+                                            "name": "Label 2",
+                                            "value": "arena",
+                                            "styles": {
+                                                "common": {
+                                                    "display": "inline-block",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "5px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "5px",
+                                                    "fontSize": "22px"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec003",
+                                    "name": "Section 3",
+                                    "role": "filter",
+                                    "settings": {
+                                        "multiple": true,
+                                        "type": "show",
+                                        "category": "cinema",
+                                        "value": "moon"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "minHeight": "50px",
+                                            "border": "1px dashed #42a5f5",
+                                            "paddingTop": "15px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "15px",
+                                            "paddingLeft": "15px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "red"
+                                            }
+                                        },
+                                        "isActive": {
+                                            "backgroundColor": "red"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "label",
+                                            "id": "lab003",
+                                            "name": "Label 3",
+                                            "value": "moon",
+                                            "styles": {
+                                                "common": {
+                                                    "display": "inline-block",
+                                                    "paddingTop": "5px",
+                                                    "paddingRight": "5px",
+                                                    "paddingBottom": "5px",
+                                                    "paddingLeft": "5px",
+                                                    "fontSize": "22px"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
                                 }
                             ]
+                        },
+
+                        {
+                            "typeName": "events",
+                            "id": "events001",
+                            "name": "Фильмы",
+                            "styles": {
+                                "common": {
+                                    "backgroundColor": "#333333"
+                                }
+                            },
+                            "childrenList": []
                         }
 
                     ]
