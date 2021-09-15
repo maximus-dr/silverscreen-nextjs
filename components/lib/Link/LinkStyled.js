@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { getOutlines } from '../../../core/functions/outlines';
-import { StylesProvider } from '../../styles';
+import { stylesProvider } from '../../../styles/stylesProvider';
 
 
 export const LinkComponent = styled.a`
@@ -10,8 +10,8 @@ export const LinkComponent = styled.a`
         const styles = props.componentData.styles && props.componentData.styles.common ? props.componentData.styles.common : null;
 
         return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            ${styles && stylesProvider(styles)}
+            ${styles && styles.isActive && stylesProvider(styles.isActive)}
         `
     }}
 `;

@@ -1,6 +1,7 @@
 import styled, {css} from "styled-components";
 import { screens } from "../../../../core/variables/variables";
-import { StylesProvider } from "../../../styles";
+import { stylesProvider } from "../../../../styles/stylesProvider";
+
 
 
 export const ArrowPrevStyled = styled.button`
@@ -9,26 +10,26 @@ export const ArrowPrevStyled = styled.button`
         const styles = props.styles && props.styles.common || null;
 
         return css`
-            ${styles && StylesProvider(styles)}
+            ${styles && stylesProvider(styles)}
 
             @media (min-width: ${screens['screen_mobile'].minWidth}) {
-                ${styles && StylesProvider(styles['screen_mobile'])}
+                ${styles && stylesProvider(styles['screen_mobile'])}
             }
 
             @media (min-width: ${screens['screen_mobile_landscape'].minWidth}) {
-                ${styles && StylesProvider(styles['screen_mobile_landscape'])}
+                ${styles && stylesProvider(styles['screen_mobile_landscape'])}
             }
 
             @media (min-width: ${screens['screen_tablet'].minWidth}) {
-                ${styles && StylesProvider(styles['screen_tablet'])}
+                ${styles && stylesProvider(styles['screen_tablet'])}
             }
 
             @media (min-width: ${screens['screen_tablet_landscape'].minWidth}) {
-                ${styles && StylesProvider(styles['screen_tablet_landscape'])}
+                ${styles && stylesProvider(styles['screen_tablet_landscape'])}
             }
 
             @media (min-width: ${screens['screen_desktop'].minWidth}) {
-                ${styles && StylesProvider(styles['screen_desktop'])}
+                ${styles && stylesProvider(styles['screen_desktop'])}
             }
         `
     }}

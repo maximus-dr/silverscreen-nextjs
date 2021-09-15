@@ -1,7 +1,5 @@
 import styled, {css} from 'styled-components';
-import { enableOutlines } from '../../../core/functions/outlines';
-import { colors } from '../../../core/variables/variables';
-import { StylesProvider } from '../../styles';
+import { stylesProvider } from '../../../styles/stylesProvider';
 
 
 export const RadioButton = styled.input`
@@ -9,8 +7,8 @@ export const RadioButton = styled.input`
         const styles = props.componentData.styles && props.componentData.styles.input || null;
 
         return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            ${styles && stylesProvider(styles)}
+            ${styles && styles.isActive && stylesProvider(styles.isActive)}
         `
     }}
 `;
@@ -20,8 +18,8 @@ export const RadioLabel = styled.label`
         const styles = props.componentData.styles && props.componentData.styles.label || null;
 
         return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            ${styles && stylesProvider(styles)}
+            ${styles && styles.isActive && stylesProvider(styles.isActive)}
         `
     }}
 `;

@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import { colors } from '../../../core/variables/variables';
 import { enableOutlines } from '../../../core/functions/outlines';
-import { StylesProvider } from '../../styles';
+import { stylesProvider } from '../../../styles/stylesProvider';
 
 
 export const CheckboxLabel = styled.label`
@@ -12,8 +12,8 @@ export const CheckboxLabel = styled.label`
         const styles = data.styles && data.styles.label || null;
 
         return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            ${styles && stylesProvider(styles)}
+            ${styles && styles.isActive && stylesProvider(styles.isActive)}
         `;
     }}
 `;
@@ -24,8 +24,8 @@ export const CheckboxInput = styled.input`
         const styles = data.styles && data.styles.input || null;
 
         return css`
-            ${styles && StylesProvider(styles)}
-            ${styles && styles.isActive && StylesProvider(styles.isActive)}
+            ${styles && stylesProvider(styles)}
+            ${styles && styles.isActive && stylesProvider(styles.isActive)}
         `;
     }}
 `;

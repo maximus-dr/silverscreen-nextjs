@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import { getOutlines } from '../../../core/functions/outlines';
-import { StylesProvider } from '../../styles';
+import { stylesProvider } from '../../../styles/stylesProvider';
 
 
 export const PageComponent = styled.div`
@@ -10,8 +10,8 @@ export const PageComponent = styled.div`
 
     return css`
         ${props => props.isActiveComponent && getOutlines()}
-        ${styles && StylesProvider(styles)}
-        ${styles && styles.isActive && StylesProvider(styles.isActive)}
+        ${styles && stylesProvider(styles)}
+        ${styles && styles.isActive && stylesProvider(styles.isActive)}
         ${props => props.allowDrop && `
             outline: 2px solid #42a5f5;
         `}

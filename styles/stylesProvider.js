@@ -1,7 +1,7 @@
 import {css} from 'styled-components';
 
 
-export const StylesProvider = (styles) => {
+export const stylesProvider = (styles) => {
 
     return css`
         width: ${styles && styles.width || ''};
@@ -83,57 +83,57 @@ export const StylesProvider = (styles) => {
         pointer-events: ${styles && styles.pointerEvents || ''};
 
         &:hover {
-            ${styles && styles.hover && StylesProvider(styles.hover)}
+            ${styles && styles.hover && stylesProvider(styles.hover)}
         }
 
         &:active {
-            ${styles && styles.active && StylesProvider(styles.active)}
+            ${styles && styles.active && stylesProvider(styles.active)}
         }
 
         &:focus {
-            ${styles && styles.focus && StylesProvider(styles.focus)}
+            ${styles && styles.focus && stylesProvider(styles.focus)}
         }
 
         &:checked {
-            ${styles && styles.checked && StylesProvider(styles.checked)}
+            ${styles && styles.checked && stylesProvider(styles.checked)}
         }
 
         &:before {
-            ${styles && styles.before && StylesProvider(styles.before)}
+            ${styles && styles.before && stylesProvider(styles.before)}
         }
 
         &:after {
-            ${styles && styles.after && StylesProvider(styles.after)}
+            ${styles && styles.after && stylesProvider(styles.after)}
         }
 
         ${'' /* isActive */}
         ${props => {
 
             return props.isActive && css`
-                ${styles && styles.isActive && StylesProvider(styles.isActive)}
+                ${styles && styles.isActive && stylesProvider(styles.isActive)}
 
                 &:hover {
-                    ${styles && styles.isActive && styles.isActive.hover && StylesProvider(styles.isActive.hover)}
+                    ${styles && styles.isActive && styles.isActive.hover && stylesProvider(styles.isActive.hover)}
                 }
 
                 &:active {
-                    ${styles && styles.isActive && styles.isActive.active && StylesProvider(styles.isActive.active)}
+                    ${styles && styles.isActive && styles.isActive.active && stylesProvider(styles.isActive.active)}
                 }
 
                 &:focus {
-                    ${styles && styles.isActive && styles.isActive.focus && StylesProvider(styles.isActive.focus)}
+                    ${styles && styles.isActive && styles.isActive.focus && stylesProvider(styles.isActive.focus)}
                 }
 
                 &:checked {
-                    ${styles && styles.isActive && styles.isActive.checked && StylesProvider(styles.isActive.checked)}
+                    ${styles && styles.isActive && styles.isActive.checked && stylesProvider(styles.isActive.checked)}
                 }
 
                 &:before {
-                    ${styles && styles.isActive && styles.isActive.before && StylesProvider(styles.isActive.before)}
+                    ${styles && styles.isActive && styles.isActive.before && stylesProvider(styles.isActive.before)}
                 }
 
                 &:after {
-                    ${styles && styles.isActive && styles.isActive.after && StylesProvider(styles.isActive.after)}
+                    ${styles && styles.isActive && styles.isActive.after && stylesProvider(styles.isActive.after)}
                 }
             `;
         }}
