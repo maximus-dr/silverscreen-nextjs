@@ -125,6 +125,7 @@ export default function Events(props) {
 
     useEffect(() => {
         !eventFilters && dispatch(setEventFilter('city', 'all'));
+        !eventFilters && dispatch(setEventFilter('shedule', 'all'));
         !eventFilters && dispatch(setDate('all'));
     }, [dispatch, eventFilters]);
 

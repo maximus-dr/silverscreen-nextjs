@@ -18,10 +18,6 @@
                     "name": "Main Page",
                     "styles": {
                         "common": {
-                            "paddingTop": "5px",
-                            "paddingRight": "5px",
-                            "paddingBottom": "5px",
-                            "paddingLeft": "5px",
                             "minHeight": "100vh",
                             "backgroundColor": "#ffffff"
                         }
@@ -36,10 +32,10 @@
                                 "common": {
                                     "display": "flex",
                                     "flexWrap": "wrap",
-                                    "paddingTop": "15px",
-                                    "paddingRight": "15px",
-                                    "paddingBottom": "15px",
-                                    "paddingLeft": "15px"
+                                    "paddingTop": "25px",
+                                    "paddingRight": "25px",
+                                    "paddingBottom": "25px",
+                                    "paddingLeft": "25px"
                                 }
                             },
                             "childrenList": [
@@ -222,20 +218,36 @@
                         },
 
                         {
-                            "typeName": "filter",
-                            "id": "filter002",
+                            "typeName": "section",
+                            "id": "sec004",
                             "name": "Жанры",
                             "styles": {
                                 "common": {
                                     "display": "flex",
                                     "flexWrap": "wrap",
-                                    "paddingTop": "15px",
-                                    "paddingRight": "15px",
-                                    "paddingBottom": "15px",
-                                    "paddingLeft": "15px"
+                                    "paddingRight": "25px",
+                                    "paddingBottom": "25px",
+                                    "paddingLeft": "25px"
                                 }
                             },
                             "childrenList": [
+
+                                {
+                                    "typeName": "label",
+                                    "id": "lab005",
+                                    "name": "жанры",
+                                    "value": "жанры",
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "width": "100%",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "marginBottom": "16px"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
 
                                 {
                                     "typeName": "label",
@@ -627,6 +639,121 @@
                                             "isActive": {
                                                 "backgroundColor": "#390072",
                                                 "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                }
+                            ]
+                        },
+
+                        {
+                            "typeName": "section",
+                            "id": "sec005",
+                            "name": "Сейчас - скоро",
+                            "styles": {
+                                "common": {
+                                    "paddingTop": "15px",
+                                    "paddingRight": "25px",
+                                    "paddingBottom": "35px",
+                                    "paddingLeft": "25px"
+                                }
+                            },
+                            "childrenList": [
+
+                                {
+                                    "typeName": "label",
+                                    "id": "lab008",
+                                    "name": "Filter item",
+                                    "value": "все сеансы",
+                                    "role": "filter",
+                                    "settings": {
+                                        "type": "event",
+                                        "category": "shedule",
+                                        "value": "all"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "marginRight": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "5px",
+                                            "paddingBottom": "5px",
+                                            "paddingLeft": "5px",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "opacity": "0.54",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "opacity": "1",
+                                                "borderBottom": "2px solid #000000"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+
+                                {
+                                    "typeName": "label",
+                                    "id": "lab006",
+                                    "name": "Filter item",
+                                    "value": "сейчас",
+                                    "role": "filter",
+                                    "settings": {
+                                        "type": "event",
+                                        "category": "shedule",
+                                        "value": "now"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "marginRight": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "5px",
+                                            "paddingBottom": "5px",
+                                            "paddingLeft": "5px",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "opacity": "0.54",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "opacity": "1",
+                                                "borderBottom": "2px solid #000000"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+
+                                {
+                                    "typeName": "label",
+                                    "id": "lab007",
+                                    "name": "Filter item",
+                                    "value": "скоро",
+                                    "role": "filter",
+                                    "settings": {
+                                        "type": "event",
+                                        "category": "shedule",
+                                        "value": "soon"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "marginRight": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "5px",
+                                            "paddingBottom": "5px",
+                                            "paddingLeft": "5px",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "opacity": "0.54",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "opacity": "1",
+                                                "borderBottom": "2px solid #000000"
                                             }
                                         }
                                     },

@@ -1,4 +1,4 @@
-import { setMultipleEventFilter, setMultipleShowFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from "../store/actions/filters";
+import { setEventFilter, setMultipleEventFilter, setMultipleShowFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from "../store/actions/filters";
 
 
 export const filterActions = {
@@ -7,24 +7,36 @@ export const filterActions = {
         onClick(e, params) {
             if (!params) return;
             const {state, dispatch, settings} = params;
-            const {category, value, type} = settings;
+            const {category, value, type, multiple} = settings;
 
-            if (type && type === 'show') {
-                const showFilters = state.filters.shows;
-                if (showFilters && showFilters[category] && showFilters[category].includes(value)) {
-                    dispatch(unsetMultipleShowFilter(category, value));
-                    return;
+            if (multiple) {
+                if (type && type === 'show') {
+                    const showFilters = state.filters.shows;
+                    if (showFilters && showFilters[category] && showFilters[category].includes(value)) {
+                        dispatch(unsetMultipleShowFilter(category, value));
+                        return;
+                    }
+                    dispatch(setMultipleShowFilter(category, value));
                 }
-                dispatch(setMultipleShowFilter(category, value));
+
+                if (type && type === 'event') {
+                    const eventFilers = state.filters.events;
+                    if (eventFilers && eventFilers[category] && eventFilers[category].includes(value)) {
+                        dispatch(unsetMultipleEventFilter(category, value));
+                        return;
+                    }
+                    dispatch(setMultipleEventFilter(category, value));
+                }
             }
 
-            if (type && type === 'event') {
-                const eventFilers = state.filters.events;
-                if (eventFilers && eventFilers[category] && eventFilers[category].includes(value)) {
-                    dispatch(unsetMultipleEventFilter(category, value));
-                    return;
+            if (!multiple) {
+                if (type && type === 'event') {
+                    const eventFilters = state.filters.events;
+                    if (eventFilters && eventFilters[category] && eventFilters[category] === value) {
+                        return;
+                    }
+                    dispatch(setEventFilter(category, value));
                 }
-                dispatch(setMultipleEventFilter(category, value));
             }
         },
 
