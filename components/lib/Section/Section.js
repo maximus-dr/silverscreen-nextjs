@@ -14,6 +14,7 @@ export default function Section(props) {
     const state = props.state;
     const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
+    const {role, settings} = componentData;
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const draggable = mode === 'admin' ? true : false;
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export default function Section(props) {
         setAllowDrop,
         setDragCounter,
         dispatch,
-        settings: componentData.settings
+        settings
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -63,7 +64,7 @@ export default function Section(props) {
             onMouseEnter={props.onMouseEnter}
             onClick={(e) => {
                 actionProvider('component', 'onClick')(e, params);
-                actionProvider(componentData.role, 'onClick')(e, params);
+                role && actionProvider(role, 'onClick')(e, params);
             }}
             onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
             onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
@@ -75,7 +76,7 @@ export default function Section(props) {
             draggable={draggable}
             allowDrop={allowDrop}
             isActiveComponent={isActiveComponent}
-            isActive={actionProvider('filter', 'checkIsActive')(null, params)}
+            isActive={role && actionProvider(role, 'checkIsActive')(null, params) || false}
         >
             {props.children}
         </SectionComponent>

@@ -125,12 +125,11 @@ export default function Events(props) {
 
     useEffect(() => {
         !eventFilters && dispatch(setEventFilter('city', 'all'));
-        !eventFilters && dispatch(setEventFilter('shedule', 'now'));
         !eventFilters && dispatch(setDate('all'));
     }, [dispatch, eventFilters]);
 
     useEffect(() => {
-        if (eventFilters) {
+        if (eventFilters && events) {
             let filtered = filterEvents(events, eventFilters, date);
             if (showFilters && filtered.length > 0) {
                 filtered = filtered.filter(item => {

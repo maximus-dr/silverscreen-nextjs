@@ -12,6 +12,7 @@ export default function Label(props) {
     const state = props.state;
     const {componentsData, activeComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
+    const {role, settings} = componentData;
     const isActiveComponent = activeComponent && activeComponent.id === props.componentData.id;
     const dispatch = useDispatch();
     const text = componentData.value || '';
@@ -22,7 +23,8 @@ export default function Label(props) {
         state,
         componentData,
         isDropBox: false,
-        dispatch
+        dispatch,
+        settings
     }
 
     return (
@@ -32,7 +34,10 @@ export default function Label(props) {
             htmlFor={componentData.for || ''}
             draggable={draggable}
             componentData={componentData}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
+            onClick={(e) => {
+                actionProvider('component', 'onClick')(e, params);
+                role && actionProvider(role, 'onClick')(e, params);
+            }}
             onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
             onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
             onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
@@ -41,6 +46,7 @@ export default function Label(props) {
             onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
             onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
             isActiveComponent={isActiveComponent}
+            isActive={role && actionProvider(role, 'checkIsActive')(null, params) || false}
         >
             {text}
             {props.children}
