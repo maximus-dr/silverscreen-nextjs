@@ -11,7 +11,7 @@ export default function Page(props) {
 
     const id = props.componentData.id;
     const state = props.state;
-    const {componentsData, activeComponent, dragendComponent} = state.document;
+    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
@@ -27,7 +27,8 @@ export default function Page(props) {
         allowDrop,
         setAllowDrop,
         setDragCounter,
-        dispatch
+        dispatch,
+        mode
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -58,14 +59,14 @@ export default function Page(props) {
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+            onClick={(e) => actionProvider('component', 'onClick', mode)(e, params)}
+            onMouseDown={(e) => actionProvider('component', 'onMouseDown', mode)(e, params)}
+            onDragStart={(e) => actionProvider('component', 'onDragStart', mode)(e, params)}
+            onDragEnter={(e) => actionProvider('component', 'onDragEnter', mode)(e, params)}
+            onDragLeave={(e) => actionProvider('component', 'onDragLeave', mode)(e, params)}
+            onDragOver={(e) => actionProvider('component', 'onDragOver', mode)(e, params)}
+            onDragEnd={(e) => actionProvider('component', 'onDragEnd', mode)(e, params)}
+            onDrop={(e) => actionProvider('component', 'onDrop', mode)(e, params)}
             allowDrop={allowDrop}
             isActiveComponent={isActiveComponent}
         >

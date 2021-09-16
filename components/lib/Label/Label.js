@@ -24,7 +24,8 @@ export default function Label(props) {
         componentData,
         isDropBox: false,
         dispatch,
-        settings
+        settings,
+        mode
     }
 
     return (
@@ -35,18 +36,18 @@ export default function Label(props) {
             draggable={draggable}
             componentData={componentData}
             onClick={(e) => {
-                actionProvider('component', 'onClick')(e, params);
-                role && actionProvider(role, 'onClick')(e, params);
+                actionProvider('component', 'onClick', mode)(e, params);
+                role && actionProvider(role, 'onClick', mode)(e, params);
             }}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+            onMouseDown={(e) => actionProvider('component', 'onMouseDown', mode)(e, params)}
+            onDragStart={(e) => actionProvider('component', 'onDragStart', mode)(e, params)}
+            onDragEnter={(e) => actionProvider('component', 'onDragEnter', mode)(e, params)}
+            onDragLeave={(e) => actionProvider('component', 'onDragLeave', mode)(e, params)}
+            onDragOver={(e) => actionProvider('component', 'onDragOver', mode)(e, params)}
+            onDragEnd={(e) => actionProvider('component', 'onDragEnd',mode)(e, params)}
+            onDrop={(e) => actionProvider('component', 'onDrop', mode)(e, params)}
             isActiveComponent={isActiveComponent}
-            isActive={role && actionProvider(role, 'checkIsActive')(null, params) || false}
+            isActive={role && actionProvider(role, 'checkIsActive', mode)(null, params) || false}
         >
             {text}
             {props.children}
