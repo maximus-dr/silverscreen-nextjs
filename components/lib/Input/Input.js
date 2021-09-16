@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { actionProvider } from '../../../actions';
+import { getHandler } from '../../../actions';
 import { getComponent } from '../../../core/functions/common/components';
 import { InputComponent } from './InputStyled';
 
@@ -24,7 +24,8 @@ export default function Input(props) {
         state,
         componentData,
         isDropBox: false,
-        dispatch
+        dispatch,
+        mode
     }
 
     return (
@@ -35,14 +36,14 @@ export default function Input(props) {
             placeholder={componentData.placeholder || ''}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+            onClick={getHandler(params, 'onClick')}
+            onMouseDown={getHandler(params, 'onMouseDown')}
+            onDragStart={getHandler(params, 'onDragStart')}
+            onDragEnter={getHandler(params, 'onDragEnter')}
+            onDragLeave={getHandler(params, 'onDragLeave')}
+            onDragOver={getHandler(params, 'onDragOver')}
+            onDragEnd={getHandler(params, 'onDragEnd')}
+            onDrop={getHandler(params, 'onDrop')}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onFocus={(e) => e.preventDefault()}

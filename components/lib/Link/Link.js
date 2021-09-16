@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getComponent } from '../../../core/functions/common/components';
 import { LinkComponent } from './LinkStyled'
 import Link from 'next/link';
-import { actionProvider } from '../../../actions';
+import { getHandler } from '../../../actions';
 
 
 
@@ -27,7 +27,7 @@ export default function LinkComp(props) {
         dragendComponent,
         isDropBox: false,
         dispatch,
-        handlers: componentData.handlers
+        mode
     }
 
 
@@ -36,14 +36,14 @@ export default function LinkComp(props) {
             <LinkComponent
                 id={id}
                 componentData={componentData}
-                onClick={(e) => actionProvider('component', 'onClick')(e, params)}
-                onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-                onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-                onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-                onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-                onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-                onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-                onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+                onClick={getHandler(params, 'onClick')}
+                onMouseDown={getHandler(params, 'onMouseDown')}
+                onDragStart={getHandler(params, 'onDragStart')}
+                onDragEnter={getHandler(params, 'onDragEnter')}
+                onDragLeave={getHandler(params, 'onDragLeave')}
+                onDragOver={getHandler(params, 'onDragOver')}
+                onDragEnd={getHandler(params, 'onDragEnd')}
+                onDrop={getHandler(params, 'onDrop')}
                 draggable={draggable}
                 isActiveComponent={isActiveComponent}
             >

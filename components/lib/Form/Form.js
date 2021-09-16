@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { actionProvider } from '../../../actions';
+import { getHandler } from '../../../actions';
 import { getChild, getComponent } from '../../../core/functions/common/components';
 import { FormComponent } from './FormStyled'
 
@@ -28,7 +28,8 @@ export default function Form(props) {
         allowDrop,
         setAllowDrop,
         setDragCounter,
-        dispatch
+        dispatch,
+        mode
     }
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -58,14 +59,14 @@ export default function Form(props) {
             id={id}
             componentData={componentData}
             onMouseEnter={props.onMouseEnter}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+            onClick={getHandler(params, 'onClick')}
+            onMouseDown={getHandler(params, 'onMouseDown')}
+            onDragStart={getHandler(params, 'onDragStart')}
+            onDragEnter={getHandler(params, 'onDragEnter')}
+            onDragLeave={getHandler(params, 'onDragLeave')}
+            onDragOver={getHandler(params, 'onDragOver')}
+            onDragEnd={getHandler(params, 'onDragEnd')}
+            onDrop={getHandler(params, 'onDrop')}
             draggable={draggable}
             allowDrop={allowDrop}
             isActiveComponent={isActiveComponent}
