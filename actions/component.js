@@ -141,13 +141,21 @@ export const componentActions = {
     },
 
     preview: {
-        onClick(e, component) {
-            const {state, dispatch, handlers} = component;
-            if (handlers && handlers.onClick) {
-                const action = handlers.onClick[0].action;
-                const params = handlers.onClick[0].params;
-                actions[action](state.document, dispatch, ...params);
-            }
-        },
+        // onClick(e, component) {
+        //     const {state, dispatch, handlers} = component;
+        //     if (handlers && handlers.onClick) {
+        //         const action = handlers.onClick[0].action;
+        //         const params = handlers.onClick[0].params;
+        //         actions[action](state.document, dispatch, ...params);
+        //     }
+        // },
+        onClick() {},
+        onMouseDown() {},
+        onDragStart() {},
+        onDragEnter() {},
+        onDragLeave() {},
+        onDragEnd() {},
+        onDragOver() {},
+        onDrop() {},
     }
 }

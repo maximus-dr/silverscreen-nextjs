@@ -4,6 +4,11 @@ import { setEventFilter, setMultipleEventFilter, setMultipleShowFilter, unsetMul
 export const filterActions = {
 
     admin: {
+        onClick() {},
+        checkIsActive() {}
+    },
+
+    preview: {
         onClick(e, params) {
             if (!params) return;
             const {state, dispatch, settings} = params;
