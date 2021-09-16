@@ -4,8 +4,7 @@ import { setEventFilter, setMultipleEventFilter, setMultipleShowFilter, unsetMul
 export const filterActions = {
 
     admin: {
-        onClick() {},
-        checkIsActive() {}
+        onClick() {}
     },
 
     preview: {
@@ -56,6 +55,8 @@ export const filterActions = {
             if (type && type === 'event') {
                 return state.filters.events && state.filters.events[category] && state.filters.events[category].includes(value);
             }
+
+            return false;
         }
     }
 }

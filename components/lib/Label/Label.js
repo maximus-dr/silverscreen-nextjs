@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { actionProvider } from '../../../actions';
+import { getHandler, getHandlerResult } from '../../../actions';
 import { getComponent } from '../../../core/functions/common/components';
 import { LabelComponent } from './LabelStyled'
 
@@ -25,7 +25,8 @@ export default function Label(props) {
         isDropBox: false,
         dispatch,
         settings,
-        mode
+        mode,
+        role
     }
 
     return (
@@ -35,19 +36,16 @@ export default function Label(props) {
             htmlFor={componentData.for || ''}
             draggable={draggable}
             componentData={componentData}
-            onClick={(e) => {
-                actionProvider('component', 'onClick', mode)(e, params);
-                role && actionProvider(role, 'onClick', mode)(e, params);
-            }}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown', mode)(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart', mode)(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter', mode)(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave', mode)(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver', mode)(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd',mode)(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop', mode)(e, params)}
+            onClick={getHandler(params, 'onClick')}
+            onMouseDown={getHandler(params, 'onMouseDown')}
+            onDragStart={getHandler(params, 'onDragStart')}
+            onDragEnter={getHandler(params, 'onDragEnter')}
+            onDragLeave={getHandler(params, 'onDragLeave')}
+            onDragOver={getHandler(params, 'onDragOver')}
+            onDragEnd={getHandler(params, 'onDragEnd')}
+            onDrop={getHandler(params, 'onDrop')}
             isActiveComponent={isActiveComponent}
-            isActive={role && actionProvider(role, 'checkIsActive', mode)(null, params) || false}
+            isActive={getHandlerResult(params, 'checkIsActive')}
         >
             {text}
             {props.children}

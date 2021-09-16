@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { actionProvider } from '../../../actions';
+import { getHandler } from '../../../actions';
 import { getComponent } from '../../../core/functions/common/components';
 import { ButtonComponent } from './ButtonStyled'
 
@@ -11,12 +11,11 @@ export default function Button(props) {
 
     const id = props.componentData.id;
     const state = useSelector(state => state);
-    const activeComponent = state.document.activeComponent;
+    const {componentsData, activeComponent, mode} = state.document;
     const isActiveComponent = activeComponent && activeComponent.id === id;
-    const componentsData = state.document.componentsData;
     const componentData = getComponent(componentsData, id);
     const dispatch = useDispatch();
-    const draggable = state.document.mode === 'admin' ? true : false;
+    const draggable = mode === 'admin' ? true : false;
 
     const params = {
         id,
@@ -24,7 +23,7 @@ export default function Button(props) {
         componentData,
         isDropBox: false,
         dispatch,
-        handlers: componentData.handlers
+        mode
     }
 
     return (
@@ -33,14 +32,14 @@ export default function Button(props) {
             id={id}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
-            onClick={(e) => actionProvider('component', 'onClick')(e, params)}
-            onMouseDown={(e) => actionProvider('component', 'onMouseDown')(e, params)}
-            onDragStart={(e) => actionProvider('component', 'onDragStart')(e, params)}
-            onDragEnter={(e) => actionProvider('component', 'onDragEnter')(e, params)}
-            onDragLeave={(e) => actionProvider('component', 'onDragLeave')(e, params)}
-            onDragOver={(e) => actionProvider('component', 'onDragOver')(e, params)}
-            onDragEnd={(e) => actionProvider('component', 'onDragEnd')(e, params)}
-            onDrop={(e) => actionProvider('component', 'onDrop')(e, params)}
+            onClick={getHandler(params, 'onClick')}
+            onMouseDown={getHandler(params, 'onMouseDown')}
+            onDragStart={getHandler(params, 'onDragStart')}
+            onDragEnter={getHandler(params, 'onDragEnter')}
+            onDragLeave={getHandler(params, 'onDragLeave')}
+            onDragOver={getHandler(params, 'onDragOver')}
+            onDragEnd={getHandler(params, 'onDragEnd')}
+            onDrop={getHandler(params, 'onDrop')}
             draggable={draggable}
         >
             {componentData && componentData.value || ''}
