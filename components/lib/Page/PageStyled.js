@@ -17,6 +17,12 @@ export const PageComponent = styled.div`
         `}
     `
   }}
+
+  ${props => props.mode === 'admin' && `
+    * {
+        cursor: default !important;
+    }
+  `}
 `;
 
 export const PageOverlay = styled.div`

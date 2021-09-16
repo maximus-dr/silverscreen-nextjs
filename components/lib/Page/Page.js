@@ -69,6 +69,7 @@ export default function Page(props) {
             onDrop={getHandler(params, 'onDrop')}
             allowDrop={allowDrop}
             isActiveComponent={isActiveComponent}
+            mode={mode}
         >
             {props.children}
         </PageComponent>
