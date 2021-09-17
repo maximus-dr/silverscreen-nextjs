@@ -57,7 +57,7 @@ export async function getServerSideProps() {
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
     dispatch(setAllEvents(events));
-    dispatch(setResolution('1200'));
+    dispatch(setResolution('640'));
     dispatch(setMode('admin'));
 
     return {
@@ -71,9 +71,6 @@ export async function getServerSideProps() {
 
 export default function AdminMainPage() {
 
-    const router = useRouter();
-    console.log(router);
-
     const state = useSelector(state => state);
     const {componentsData, resolution, page} = state.document;
     const activePage = page ? getComponent(componentsData, page) : null;
@@ -85,11 +82,11 @@ export default function AdminMainPage() {
 
     const components = renderComponents(activePage, state);
 
-    useEffect(() => {
-        if (isSinglePage) {
-            dispatch(setPage(pages.childrenList[0].id));
-        };
-    });
+    // useEffect(() => {
+    //     if (isSinglePage) {
+    //         dispatch(setPage(pages.childrenList[0].id));
+    //     };
+    // });
 
     return (
         <Wrapper>

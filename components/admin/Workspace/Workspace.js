@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { unsetActiveComponent } from '../../../store/actions/document';
 import { setFilter } from '../../../store/actions/filters';
-import Filters from '../../lib/Filters/Filters';
+import Filters from '../../test/FIlters/Filters';
+
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';
 import PanelTools from '../Panels/PanelTools/PanelTools';
@@ -12,6 +13,7 @@ import { WorkspacePage, WorkspacePageWrapper, WorkspaceWrapper } from './Workspa
 
 
 export default function Workspace(props) {
+
 
     const {components, resolution, modal} = props;
     const modalName = useSelector(state => state.document.modal);
@@ -28,7 +30,7 @@ export default function Workspace(props) {
                     if (activeComponent) dispatch(unsetActiveComponent());
                 }}>
                     <WorkspacePage onMouseDown={(e) => e.stopPropagation()} pageWidth={`${resolution}px`}>
-                        {/* <Filters /> */}
+                        <Filters />
                         {components}
                         {modal}
                     </WorkspacePage>
