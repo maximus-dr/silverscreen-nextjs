@@ -20,6 +20,9 @@ export const HeaderRight = styled.div`
 `;
 
 export const HeaderLeft = styled.div`
+    display: flex;
+    align-items: center;
     width: 285px;
     height: 55px;
+    padding-left: 25px;
 `;

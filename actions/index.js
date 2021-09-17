@@ -34,7 +34,7 @@ export const getHandler = (params, name) => {
             return (e) => actionProvider('component', name, mode)(e, params);
         }
     }
-    if (role) {
+    if (role && mode !== 'admin') {
         const handler = actionProvider(role, name, mode);
         if (handler) {
             return (e) => actionProvider(role, name, mode)(e, params);
@@ -51,7 +51,7 @@ export const getHandlerResult = (params, name) => {
             return handler(null, params);
         }
     }
-    if (role) {
+    if (role && mode !== 'admin') {
         const handler = actionProvider(role, name, mode);
         if (handler) {
             return handler(null, params);

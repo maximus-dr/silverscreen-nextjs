@@ -15,7 +15,8 @@ import { getComponent } from "../../core/functions/common/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setAllEvents} from "../../store/actions/events";
-
+import { useRouter } from "next/dist/client/router";
+import Router from 'next/router';
 
 // export async function getStaticProps() {
 //     const dbPath = path.join(process.cwd(), 'db/db.json');
@@ -38,6 +39,8 @@ import { setAllEvents} from "../../store/actions/events";
 
 
 export async function getServerSideProps() {
+
+
 
     const dbPath = path.join(process.cwd(), 'db/test.json');
     const data = fs.readFileSync(dbPath, 'utf8');
@@ -68,8 +71,10 @@ export async function getServerSideProps() {
 
 export default function AdminMainPage() {
 
-    const state = useSelector(state => state);
+    const router = useRouter();
+    console.log(router);
 
+    const state = useSelector(state => state);
     const {componentsData, resolution, page} = state.document;
     const activePage = page ? getComponent(componentsData, page) : null;
     const modalData = useSelector(state => state.document.modal);

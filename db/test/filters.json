@@ -1,0 +1,831 @@
+{
+    "typeName": "Document",
+    "id": "doc1",
+    "name": "Test",
+    "childrenList": [
+          {
+              "typeName": "modals",
+              "id": "doc-modals",
+              "childrenList": []
+          },
+          {
+              "typeName": "pages",
+              "id": "doc-pages",
+              "childrenList": [
+                  {
+                      "typeName": "page",
+                      "id": "page1",
+                      "name": "Main Page",
+                      "styles": {
+                          "common": {
+                              "minHeight": "100vh",
+                              "backgroundColor": "#ffffff"
+                          }
+                      },
+                      "childrenList": [
+
+                          {
+                              "typeName": "section",
+                              "id": "filter001",
+                              "name": "Фильтры - пространство",
+                              "styles": {
+                                  "common": {
+                                      "display": "flex",
+                                      "flexWrap": "wrap",
+                                      "paddingTop": "25px",
+                                      "paddingRight": "25px",
+                                      "paddingBottom": "25px",
+                                      "paddingLeft": "25px"
+                                  }
+                              },
+                              "childrenList": [
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab004",
+                                      "name": "пространство",
+                                      "value": "пространство",
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "width": "100%",
+                                              "fontSize": "24px",
+                                              "lineHeight": "32px",
+                                              "marginBottom": "16px"
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "section",
+                                      "id": "sec001",
+                                      "name": "Section 1",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "show",
+                                          "category": "cinema",
+                                          "value": "voka"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "width": "325px",
+                                              "height": "128px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "8px",
+                                              "paddingTop": "15px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "15px",
+                                              "paddingLeft": "15px",
+                                              "marginBottom": "15px",
+                                              "marginRight": "15px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": [
+                                          {
+                                              "typeName": "label",
+                                              "id": "lab001",
+                                              "name": "Label 1",
+                                              "value": "voka",
+                                              "styles": {
+                                                  "common": {
+                                                      "display": "inline-block",
+                                                      "paddingTop": "5px",
+                                                      "paddingRight": "5px",
+                                                      "paddingBottom": "5px",
+                                                      "paddingLeft": "5px",
+                                                      "fontSize": "24px",
+                                                      "lineHeight": "32px"
+                                                  }
+                                              },
+                                              "childrenList": []
+                                          }
+                                      ]
+                                  },
+
+                                  {
+                                      "typeName": "section",
+                                      "id": "sec002",
+                                      "name": "Section 2",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "show",
+                                          "category": "cinema",
+                                          "value": "arena"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "width": "325px",
+                                              "height": "128px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "8px",
+                                              "paddingTop": "15px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "15px",
+                                              "paddingLeft": "15px",
+                                              "marginBottom": "15px",
+                                              "marginRight": "15px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": [
+                                          {
+                                              "typeName": "label",
+                                              "id": "lab002",
+                                              "name": "Label 2",
+                                              "value": "arena",
+                                              "styles": {
+                                                  "common": {
+                                                      "display": "inline-block",
+                                                      "paddingTop": "5px",
+                                                      "paddingRight": "5px",
+                                                      "paddingBottom": "5px",
+                                                      "paddingLeft": "5px",
+                                                      "fontSize": "24px",
+                                                      "lineHeight": "32px"
+                                                  }
+                                              },
+                                              "childrenList": []
+                                          }
+                                      ]
+                                  },
+
+                                  {
+                                      "typeName": "section",
+                                      "id": "sec003",
+                                      "name": "Section 3",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "show",
+                                          "category": "cinema",
+                                          "value": "moon"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "width": "325px",
+                                              "height": "128px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "8px",
+                                              "paddingTop": "15px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "15px",
+                                              "paddingLeft": "15px",
+                                              "marginBottom": "15px",
+                                              "marginRight": "15px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": [
+                                          {
+                                              "typeName": "label",
+                                              "id": "lab003",
+                                              "name": "Label 3",
+                                              "value": "moon",
+                                              "styles": {
+                                                  "common": {
+                                                      "display": "inline-block",
+                                                      "paddingTop": "5px",
+                                                      "paddingRight": "5px",
+                                                      "paddingBottom": "5px",
+                                                      "paddingLeft": "5px",
+                                                      "fontSize": "24px",
+                                                      "lineHeight": "32px"
+                                                  }
+                                              },
+                                              "childrenList": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+
+                          {
+                              "typeName": "section",
+                              "id": "sec004",
+                              "name": "Жанры",
+                              "styles": {
+                                  "common": {
+                                      "display": "flex",
+                                      "flexWrap": "wrap",
+                                      "paddingRight": "25px",
+                                      "paddingBottom": "25px",
+                                      "paddingLeft": "25px"
+                                  }
+                              },
+                              "childrenList": [
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab005",
+                                      "name": "жанры",
+                                      "value": "жанры",
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "width": "100%",
+                                              "fontSize": "24px",
+                                              "lineHeight": "32px",
+                                              "marginBottom": "16px"
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label004",
+                                      "name": "Filter item",
+                                      "value": "мультфильм",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "cartoon"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label005",
+                                      "name": "Filter item",
+                                      "value": "драма",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "drama"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label006",
+                                      "name": "Filter item",
+                                      "value": "семейный",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "family"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label007",
+                                      "name": "Filter item",
+                                      "value": "комедия",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "comedy"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label008",
+                                      "name": "Filter item",
+                                      "value": "фэнтези",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "fantasy"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label009",
+                                      "name": "Filter item",
+                                      "value": "шоу",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "show"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label0010",
+                                      "name": "Filter item",
+                                      "value": "фантастика",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "fantastic"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label0011",
+                                      "name": "Filter item",
+                                      "value": "спорт",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "sport"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label0012",
+                                      "name": "Filter item",
+                                      "value": "документальный",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "doc"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label0013",
+                                      "name": "Filter item",
+                                      "value": "выставка",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "exhibition"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "label0014",
+                                      "name": "Filter item",
+                                      "value": "триллер",
+                                      "role": "filter",
+                                      "settings": {
+                                          "multiple": true,
+                                          "type": "event",
+                                          "category": "genre",
+                                          "value": "thriller"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "fontSize": "18px",
+                                              "lineHeight": "22px",
+                                              "marginRight": "5px",
+                                              "marginBottom": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "15px",
+                                              "paddingBottom": "7px",
+                                              "paddingLeft": "15px",
+                                              "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "cursor": "pointer",
+
+                                              "isActive": {
+                                                  "backgroundColor": "#390072",
+                                                  "color": "#ffffff"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  }
+                              ]
+                          },
+
+                          {
+                              "typeName": "section",
+                              "id": "sec005",
+                              "name": "Сейчас - скоро",
+                              "styles": {
+                                  "common": {
+                                      "paddingTop": "15px",
+                                      "paddingRight": "25px",
+                                      "paddingBottom": "15px",
+                                      "paddingLeft": "25px",
+                                      "marginBottom": "20px"
+                                  }
+                              },
+                              "childrenList": [
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab008",
+                                      "name": "Filter item",
+                                      "value": "все сеансы",
+                                      "role": "filter",
+                                      "settings": {
+                                          "type": "event",
+                                          "category": "shedule",
+                                          "value": "all"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "marginRight": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "5px",
+                                              "paddingBottom": "5px",
+                                              "paddingLeft": "5px",
+                                              "fontSize": "24px",
+                                              "lineHeight": "32px",
+                                              "opacity": "0.54",
+                                              "cursor": "pointer",
+                                              "borderBottom":"2px solid transparent",
+
+                                              "isActive": {
+                                                  "opacity": "1",
+                                                  "borderBottom": "2px solid #000000"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab006",
+                                      "name": "Filter item",
+                                      "value": "сейчас",
+                                      "role": "filter",
+                                      "settings": {
+                                          "type": "event",
+                                          "category": "shedule",
+                                          "value": "now"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "marginRight": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "5px",
+                                              "paddingBottom": "5px",
+                                              "paddingLeft": "5px",
+                                              "fontSize": "24px",
+                                              "lineHeight": "32px",
+                                              "opacity": "0.54",
+                                              "cursor": "pointer",
+                                              "borderBottom":"2px solid transparent",
+
+                                              "isActive": {
+                                                  "opacity": "1",
+                                                  "borderBottom": "2px solid #000000"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  },
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab007",
+                                      "name": "Filter item",
+                                      "value": "скоро",
+                                      "role": "filter",
+                                      "settings": {
+                                          "type": "event",
+                                          "category": "shedule",
+                                          "value": "soon"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "display": "inline-block",
+                                              "marginRight": "5px",
+                                              "paddingTop": "5px",
+                                              "paddingRight": "5px",
+                                              "paddingBottom": "5px",
+                                              "paddingLeft": "5px",
+                                              "fontSize": "24px",
+                                              "lineHeight": "32px",
+                                              "opacity": "0.54",
+                                              "cursor": "pointer",
+                                              "borderBottom":"2px solid transparent",
+
+                                              "isActive": {
+                                                  "opacity": "1",
+                                                  "borderBottom": "2px solid #000000"
+                                              }
+                                          }
+                                      },
+                                      "childrenList": []
+                                  }
+                              ]
+                          },
+
+                          {
+                              "typeName": "section",
+                              "id": "sec006",
+                              "name": "Filters footer",
+                              "styles": {
+                                  "common": {
+                                      "paddingTop": "15px",
+                                      "paddingRight": "25px",
+                                      "paddingBottom": "15px",
+                                      "paddingLeft": "25px",
+                                      "marginBottom": "20px"
+                                  }
+                              },
+                              "childrenList": [
+
+                                  {
+                                      "typeName": "label",
+                                      "id": "lab009",
+                                      "name": "Сбросить фильтры",
+                                      "value": "сбросить",
+                                      "role": "filter",
+                                      "settings": {
+                                          "type": "clear"
+                                      },
+                                      "styles": {
+                                          "common": {
+                                              "paddingTop": "8px",
+                                              "paddingRight": "16px",
+                                              "paddingBottom": "12px",
+                                              "paddingLeft": "16px",
+                                              "backgroundColor": "rgba(57, 0, 114, 0.1)",
+                                              "borderRadius": "600px",
+                                              "color": "#390072",
+                                              "fontSize": "18px",
+                                              "lineHeight": "18px",
+                                              "cursor": "pointer"
+                                          }
+                                      },
+                                      "childrenList": []
+                                  }
+                              ]
+                          },
+
+                          {
+                              "typeName": "events",
+                              "id": "events001",
+                              "name": "Фильмы",
+                              "styles": {
+                                  "common": {
+                                      "backgroundColor": "#333333",
+                                      "display": "flex",
+                                      "flexWrap": "wrap"
+                                  }
+                              },
+                              "childrenList": []
+                          }
+
+                      ]
+                  }
+              ]
+          }
+      ]
+  }

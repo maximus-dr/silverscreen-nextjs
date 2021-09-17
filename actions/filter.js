@@ -1,4 +1,4 @@
-import { setEventFilter, setMultipleEventFilter, setMultipleShowFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from "../store/actions/filters";
+import { clearFilters, setEventFilter, setMultipleEventFilter, setMultipleShowFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from "../store/actions/filters";
 
 
 export const filterActions = {
@@ -41,6 +41,10 @@ export const filterActions = {
                     }
                     dispatch(setEventFilter(category, value));
                 }
+
+                if (type === 'clear') {
+                    dispatch(clearFilters());
+                }
             }
         },
 
@@ -57,6 +61,11 @@ export const filterActions = {
             }
 
             return false;
+        },
+
+        onClearFilters(e, params) {
+            const {dispatch} = params;
+            dispatch(clearFilters());
         }
     }
 }
