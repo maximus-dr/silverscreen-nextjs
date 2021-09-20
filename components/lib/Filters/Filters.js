@@ -55,30 +55,30 @@ const genres = [
 
 const videoFormats = [
     {
-        name: '2d',
+        name: '#videotype;2d',
         acronym: '2D'
     },
     {
-        name: '3d',
+        name: '#videotype;3d',
         acronym: '3D'
     },
     {
-        name: '2d4k',
+        name: '#videotype;2d4k',
         acronym: '2D 4K'
     },
     {
-        name: 'screenX',
+        name: '#videotype;screenX',
         acronym: 'ScreenX'
     }
 ];
 
 const soundFormats = [
     {
-        name: 'dolbyDigital',
+        name: '#audiotype;dolbyDigital',
         acronym: 'Dolby Digital'
     },
     {
-        name: 'dolbyAtmos',
+        name: '#audiotype;dolbyAtmos',
         acronym: 'Dolby Atmos'
     }
 ];
@@ -86,19 +86,19 @@ const soundFormats = [
 
 const auditoriums = [
     {
-        name: 'vip',
+        name: '#auditorium;vip',
         acronym: 'VIP'
     },
     {
-        name: 'vegasLounge',
+        name: '#auditorium;vegasLounge',
         acronym: 'VEGAS LOUNGE'
     },
     {
-        name: 'voka',
+        name: '#auditorium;voka',
         acronym: 'VOKA'
     },
     {
-        name: 'resto',
+        name: '#auditorium;resto',
         acronym: 'RESTO'
     }
 ]
@@ -121,6 +121,7 @@ export default function Filters() {
     const onMultipleFilterChange = (filter) => {
         if (filters.includes(filter)) {
             dispatch(unsetMultipleFilter(filter));
+            return;
         }
         dispatch(setMultipleFilter(filter));
     }
@@ -242,14 +243,14 @@ export default function Filters() {
                 {videoFormats.map(item => (
                     <MultipleItem key={item.name}>
                         <MultipleCheckbox
-                            id={`video-${item.name}`}
+                            id={item.name}
                             name={item.name}
                             type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'video')}
+                            checked={getFilterValue(filters, '#videotype;').includes(item.name)}
+                            onChange={(e) => onMultipleFilterChange(e.target.name)}
                         />
                         <MultipleLabel
-                            htmlFor={`video-${item.name}`}
+                            htmlFor={item.name}
                         >
                             {item.acronym}
                         </MultipleLabel>
@@ -262,14 +263,14 @@ export default function Filters() {
                 {soundFormats.map(item => (
                     <MultipleItem key={item.name}>
                         <MultipleCheckbox
-                            id={`sound-${item.name}`}
+                            id={item.name}
                             name={item.name}
                             type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'sound')}
+                            checked={getFilterValue(filters, '#audiotype;').includes(item.name)}
+                            onChange={(e) => onMultipleFilterChange(e.target.name)}
                         />
                         <MultipleLabel
-                            htmlFor={`sound-${item.name}`}
+                            htmlFor={item.name}
                         >
                             {item.acronym}
                         </MultipleLabel>
@@ -282,14 +283,14 @@ export default function Filters() {
                 {auditoriums.map(item => (
                     <MultipleItem key={item.name}>
                         <MultipleCheckbox
-                            id={`auditorium-${item.name}`}
+                            id={item.name}
                             name={item.name}
                             type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'auditorium')}
+                            checked={getFilterValue(filters, '#auditorium;').includes(item.name)}
+                            onChange={(e) => onMultipleFilterChange(e.target.name)}
                         />
                         <MultipleLabel
-                            htmlFor={`auditorium-${item.name}`}
+                            htmlFor={item.name}
                         >
                             {item.acronym}
                         </MultipleLabel>

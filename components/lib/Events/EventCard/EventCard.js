@@ -1,5 +1,7 @@
 import React from 'react'
-import { EventAcronym, EventAgeLimit, EventCardComponent, EventCity, EventGenre, EventLanguage, EventOverlay, EventPoster, EventShedule, TagsGroup } from './EventCardStyled';
+import { EventCardComponent, EventOverlay, EventPoster, TagsGroup } from './EventCardStyled';
+
+
 
 export default function EventCard(props) {
 
@@ -12,6 +14,8 @@ export default function EventCard(props) {
     const cinemaTags = filters.filter(tag => tag.includes('#cinema;'));
     const showTimeTags = filters.filter(tag => tag.includes('#showTime;'));
     const genreTags = filters.filter(tag => tag.includes('#genre;'));
+    const videoTypeTags = filters.filter(tag => tag.includes('#videotype;'));
+    const audioTypeTags = filters.filter(tag => tag.includes('#audiotype;'));
 
     return (
         <EventCardComponent>
@@ -39,6 +43,14 @@ export default function EventCard(props) {
 
                 <TagsGroup>
                     {genreTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {videoTypeTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {audioTypeTags.map(tag => <div key={tag}>{tag}</div>)}
                 </TagsGroup>
 
             </EventOverlay>
