@@ -1,33 +1,43 @@
 import React from 'react'
-import { EventAcronym, EventAgeLimit, EventCardComponent, EventCity, EventGenre, EventLanguage, EventPoster, EventShedule } from './EventCardStyled';
+import { EventAcronym, EventAgeLimit, EventCardComponent, EventCity, EventGenre, EventLanguage, EventOverlay, EventPoster, EventShedule, TagsGroup } from './EventCardStyled';
 
 export default function EventCard(props) {
 
     const {event} = props;
-    const language =  event.eventFilters.language.map(item => (
-        <EventLanguage key={item}>
-            {item.toUpperCase()}
-        </EventLanguage>)
-    );
-    const genres = event.eventFilters.genre && event.eventFilters.genre.map(item => (
-        <EventGenre key={item}>
-            {item}
-        </EventGenre>)
-    );
+    const {filters} = event;
+
+    const cityTags = filters.filter(tag => tag.includes('#city;'));
+    const sheduleTags = filters.filter(tag => tag.includes('#shedule;'));
+    const dateTags = filters.filter(tag => tag.includes('#date;'));
+    const cinemaTags = filters.filter(tag => tag.includes('#cinema;'));
+    const showTimeTags = filters.filter(tag => tag.includes('#showTime;'));
 
     return (
         <EventCardComponent>
-            <EventCity>{event.eventFilters.city.map(item => item + ' ')}</EventCity>
-            <EventShedule>{event.eventFilters.shedule.map(item => item + ' ')}</EventShedule>
-            <EventPoster event={event} />
-            <EventAgeLimit>
-                {event.ageLimit.acronym}
-            </EventAgeLimit>
-            {language}
-            <EventAcronym>
-                {event.acronym}
-            </EventAcronym>
-            {genres}
+            <EventOverlay>
+
+                <TagsGroup>
+                    {cityTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {sheduleTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {dateTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {cinemaTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {showTimeTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+            </EventOverlay>
+            <EventPoster link={event.posterLink || ''} />
         </EventCardComponent>
     );
 }

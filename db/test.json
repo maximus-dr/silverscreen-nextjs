@@ -23,7 +23,17 @@
                         }
                     },
                     "childrenList": [
-
+                        {
+                            "typeName": "events",
+                            "id": "events001",
+                            "name": "События",
+                            "styles": {
+                                "common": {
+                                    "backgroundColor": "#ffffff"
+                                }
+                            },
+                            "childrenList": []
+                        }
                     ]
                 }
             ]

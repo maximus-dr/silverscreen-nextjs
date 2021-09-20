@@ -82,11 +82,11 @@ export default function AdminMainPage() {
 
     const components = renderComponents(activePage, state);
 
-    // useEffect(() => {
-    //     if (isSinglePage) {
-    //         dispatch(setPage(pages.childrenList[0].id));
-    //     };
-    // });
+    useEffect(() => {
+        if (isSinglePage) {
+            dispatch(setPage(pages.childrenList[0].id));
+        };
+    });
 
     return (
         <Wrapper>

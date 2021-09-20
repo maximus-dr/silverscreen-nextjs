@@ -1,145 +1,95 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { getComponent } from '../../../core/functions/common/components';
-import { setFilteredEvents } from '../../../store/actions/events';
-import { setDate, setEventFilter, setMultipleShowFilter, setShowFilter } from '../../../store/actions/filters';
+import { getFilters, filter } from '../../../core/functions/common/filters';
+
 import EventCard from './EventCard/EventCard';
-import { EventsComponent } from './EventsStyled'
+import { EventsComponent } from './EventsStyled';
+
+const events = [
+    {
+        id: 'boss_molokosos-2',
+        filters: ['#city;minsk', '#city;grodno', '#genre;cartoon', '#shedule;now', '#date;2021-10-04', '#date;2021-10-05', '#cinema;moon', '#cinema;voka', '#cinema;arena',
+        '#showTime;07:00-11:59', '#showTime;12:00-16:59'],
+        posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png'
+    },
+
+    {
+        id: 'sovry_mne_pravdu',
+        filters: ['#city;minsk', '#genre;comedy', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;arena', '#showTime;12:00-16:59', '#showTime;17:00-21:59',
+        '#showTime;22:00-06:59'],
+        posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png'
+    },
+
+    {
+        id: 'petrovy_v_grippe',
+        filters: ['#city;minsk', '#city;grodno', '#genre;drama', '#shedule;now', '#genre;fantastic', '#date;2021-10-04', '#date;2021-10-05', '#cinema;moon', '#cinema;voka',
+        '#cinema;arena', '#showTime;12:00-16:59', '#showTime;17:00-21:59'],
+        posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png'
+    },
+
+    {
+        id: 'dune',
+        filters: ['#city;minsk', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;voka', '#showTime;12:00-16:59', '#showTime;17:00-21:59',
+        '#showTime;22:00-06:59'],
+        posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png'
+    }
+];
+
+const shows = [
+    {
+        id: 'show01',
+        eventId: 'boss_molokosos-2',
+        filters: ['#city;grodno', '#genre;cartoon', '#shedule;now', '#cinema;moon']
+    },
+    {
+        id: 'show02',
+        eventId: 'boss_molokosos-2',
+        filters: ['#city;minsk', '#genre;cartoon', '#shedule;now', '#cinema;voka']
+    },
+    {
+        id: 'show03',
+        eventId: 'boss_molokosos-2',
+        filters: ['#city;minsk', '#genre;cartoon', '#shedule;now', '#cinema;arena']
+    },
+    {
+        id: 'show04',
+        eventId: 'petrovy_v_grippe',
+        filters: ['#city;minsk', '#genre;drama', '#shedule;now', '#cinema;voka']
+    },
+    {
+        id: 'show05',
+        eventId: 'petrovy_v_grippe',
+        filters: ['#city;minsk', '#genre;drama', '#shedule;now', '#cinema;arena']
+    },
+    {
+        id: 'show06',
+        eventId: 'petrovy_v_grippe',
+        filters: ['#city;grodno', '#genre;drama', '#shedule;now', '#cinema;moon']
+    },
+
+]
 
 
 export default function Events(props) {
 
     const {state} = props;
-    const events = state.events.all;
-    const filteredEvents = state.events.filtered;
-    const eventFilters = state.filters.events;
-    const showFilters = state.filters.shows;
-    const dispatch = useDispatch();
-    const date = state.filters.date;
-
     const id = props.componentData.id;
-    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
+    const {componentsData} = state.document;
     const componentData = getComponent(componentsData, id);
-    const isActiveComponent = activeComponent && activeComponent.id === id;
-    const draggable = mode === 'admin' ? true : false;
+
+    const filters = state.filters;
+
+
+    const tags = getFilters(filters);
+    const filteredEvents = filter(events, tags);
+    const filteredShows = filter(shows, tags);
+
+
+    console.log(filteredEvents);
 
 
 
-    const filterEvents = (events, filters, date) => {
-        if (!filters) return [];
-        const categories = Object.keys(filters);
-        const filtered = new Set;
-
-        events.forEach(event => {
-            if (date === 'all') {
-                filtered.add(event);
-                return;
-            }
-            if (Object.keys(event.showList).includes(date)) {
-                filtered.add(event);
-            }
-        })
-
-        categories.forEach((category) => {
-            const filter = filters[category];
-            const isMultiple = Array.isArray(filter);
-
-            if (isMultiple) {
-                filtered.forEach(event => {
-                    const hasCategory = event.eventFilters[category];
-                    if (!hasCategory) {
-                        filtered.delete(event);
-                        return;
-                    }
-                    const match = filter.some(value => (
-                            event.eventFilters[category].includes(value)
-                        )
-                    );
-                    if (!match) filtered.delete(event);
-                })
-            }
-
-            if (!isMultiple) {
-                filtered.forEach(event => {
-                    const selectAll = filter === 'all';
-                    const hasCategory = event.eventFilters[category];
-                    const hasFilter = hasCategory && hasCategory.includes(filter);
-
-                    if (selectAll) return;
-                    if (!hasFilter || !hasCategory) {
-                        filtered.delete(event);
-                    }
-                });
-            }
-        });
-        return [...filtered];
-    }
-
-    const filterShow = (show, filters) => {
-        const categories = Object.keys(filters);
-        const mismatch = categories.some(category => {
-            const filter = filters[category];
-            const showFilter = show.showFilters[category];
-            const isMultiple = Array.isArray(filter);
-
-            if (!showFilter) return true;
-
-            if (isMultiple) {
-                return !filter.some(value => showFilter.includes(value));
-            }
-
-            if (!isMultiple) {
-                if (filter === 'all') return false;
-                return !showFilter.includes(filters[category]);
-            }
-        });
-        return !mismatch;
-    }
-
-    const filterShowList = (showList, filters, date) => {
-        const allDates = date === 'all';
-
-        if (allDates) {
-            let result = false;
-            for (let date in showList) {
-                const match = showList[date].some(show => filterShow(show, filters));
-                if (match) {
-                    result = true;
-                }
-            }
-            return result;
-        }
-
-        if (!allDates) {
-            if (!showList[date]) return false;
-            return showList[date].some(show => filterShow(show, filters));
-        }
-    }
-
-
-    const cards = filteredEvents
-        ? filteredEvents.map(item => {
-            return <EventCard key={item.id} event={item} />
-        })
-        : null;
-
-    useEffect(() => {
-        !eventFilters && dispatch(setEventFilter('city', 'all'));
-        !eventFilters && dispatch(setEventFilter('shedule', 'all'));
-        !eventFilters && dispatch(setDate('all'));
-    }, [dispatch, eventFilters]);
-
-    useEffect(() => {
-        if (eventFilters && events) {
-            let filtered = filterEvents(events, eventFilters, date);
-            if (showFilters && filtered.length > 0) {
-                filtered = filtered.filter(item => {
-                    return filterShowList(item.showList, showFilters, date);
-                });
-            }
-            dispatch(setFilteredEvents(filtered));
-        }
-    }, [dispatch, events, eventFilters, showFilters, date])
 
 
     return (
@@ -147,7 +97,14 @@ export default function Events(props) {
             id={id}
             componentData={componentData}
         >
-            {cards}
+            <div style={{padding: '5px 15px'}}><h3>Events</h3></div>
+            <div style={{display: 'inline-flex', flexWrap: 'wrap'}}>
+                {filteredEvents && filteredEvents.map(event => {
+                    return (
+                        <EventCard key={event.id} event={event} />
+                    );
+                })}
+            </div>
         </EventsComponent>
     )
 }

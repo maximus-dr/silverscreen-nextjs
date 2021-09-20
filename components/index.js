@@ -18,6 +18,7 @@ import Modal from "./lib/Modal/Modal";
 import Textarea from "./lib/Textarea/Textarea";
 import Events from "./lib/Events/Events";
 import Filter from "./lib/Filter/Filter";
+import Filters from "./lib/Filters/Filters";
 
 
 export const Provider = {
@@ -28,6 +29,7 @@ export const Provider = {
     'dropdown': Dropdown,
     'events': Events,
     'filter': Filter,
+    'filters': Filters,
     'form': Form,
     'icon': Icon,
     'image': Image,

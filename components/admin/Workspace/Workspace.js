@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { unsetActiveComponent } from '../../../store/actions/document';
 import { setFilter } from '../../../store/actions/filters';
-import Filters from '../../test/FIlters/Filters';
+import Events from '../../lib/Events/Events';
+import Filters from '../../lib/Filters/Filters';
+import Filters2 from '../../test/FIlters/Filters2';
 
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';

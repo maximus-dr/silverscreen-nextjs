@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { clearFilters, setDate, setEventFilter, setMultipleEventFilter, setMultipleShowFilter, setShowFilter, unsetEventFilter, unsetMultipleEventFilter, unsetMultipleShowFilter } from '../../../store/actions/filters';
+import { clearFilters, setDate, setEventFilter, setFilter, setShowFilter } from '../../../store/actions/filters';
 import { ClearButton, FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
-const cities = [{name: 'all', acronym: 'Все города'}, {name: 'minsk', acronym: 'Минск'}, {name: 'grodno', acronym: 'Гродно'}, {name: 'vitebsk', acronym: 'Витебск'}];
+const cities = [{name: '#city;all', acronym: 'Все города'}, {name: '#city;minsk', acronym: 'Минск'}, {name: '#city;grodno', acronym: 'Гродно'}];
 
 const genres = [
     {
@@ -132,38 +132,32 @@ const auditoriums = [
 
 export default function Filters() {
 
+
     const state = useSelector(state => state);
-    const eventFilters = state.filters.events;
-    const showFilters = state.filters.shows;
     const filters = state.filters;
     const dispatch = useDispatch();
-    const city = eventFilters && eventFilters.city ? eventFilters.city : cities[0];
 
 
-    const onMultipleEventFilterChange = (e, category) => {
-        if (eventFilters && eventFilters[category] && eventFilters[category].includes(e.target.name)) {
-            dispatch(unsetMultipleEventFilter(category, e.target.name));
-            return;
-        }
-        dispatch(setMultipleEventFilter(category, e.target.name));
+    const onFilterChange = (filter) => {
+        if (filters.includes(filter)) return;
+        dispatch(setFilter(filter));
     }
 
-    const onMultipleShowFilterChange = (e, category) => {
-        if (showFilters && showFilters[category] && showFilters[category].includes(e.target.name)) {
-            dispatch(unsetMultipleShowFilter(category, e.target.name));
-            return;
-        }
-        dispatch(setMultipleShowFilter(category, e.target.name));
+    const onMultipleFilterChange = (e, filter) => {
+
     }
+
+    const getFilterValue = (filters, category) => {
+        return filters.filter(tag => tag.includes(category));
+    };
+
 
     return (
         <FiltersWrapper>
             <div style={{marginBottom: '15px'}}>
                 <select
-                    value={city || cities[0].name}
-                    onChange={(e) => {
-                        dispatch(setEventFilter('city', e.target.value));
-                    }}
+                    value={getFilterValue(filters, '#city;')[0] || cities[0].name}
+                    onChange={(e) => onFilterChange(e.target.value)}
                 >
                     {cities.map(item => (
                         <option
@@ -179,17 +173,17 @@ export default function Filters() {
             <FilterSheduleWrapper>
                 <FilterButton
                     onClick={() => {
-                        dispatch(setEventFilter('shedule', 'now'));
+                        dispatch(setFilter('#shedule;now'));
                     }}
-                    isActive={eventFilters && eventFilters.shedule === 'now'}
+                    isActive={getFilterValue(filters, '#shedule;')[0] === '#shedule;now'}
                 >
                     Сейчас
                 </FilterButton>
                 <FilterButton
                     onClick={() => {
-                        dispatch(setEventFilter('shedule', 'soon'));
+                        dispatch(setFilter('#shedule;soon'));
                     }}
-                    isActive={eventFilters && eventFilters.shedule === 'soon'}
+                    isActive={getFilterValue(filters, '#shedule;')[0] === '#shedule;soon'}
                 >
                     Скоро
                 </FilterButton>
@@ -197,59 +191,44 @@ export default function Filters() {
 
             <FilterDateWrapper>
                 <FilterDateSelect
-                    value={filters && filters.date || '2021-09-10'}
+                    value={getFilterValue(filters, '#date;')[0] || '#date;all'}
                     onChange={(e) => {
-                        dispatch(setDate(e.target.value));
+                        dispatch(setFilter(e.target.value));
                     }}
                 >
-                    <FilterDateOption value="all">Все даты</FilterDateOption>
-                    <FilterDateOption value="2021-09-10">2021-09-10</FilterDateOption>
-                    <FilterDateOption value="2021-09-11">2021-09-11</FilterDateOption>
-                    <FilterDateOption value="2021-09-12">2021-09-12</FilterDateOption>
+                    <FilterDateOption value="#date;all">Все даты</FilterDateOption>
+                    <FilterDateOption value="#date;2021-10-04">2021-10-04</FilterDateOption>
+                    <FilterDateOption value="#date;2021-10-05">2021-10-05</FilterDateOption>
+                    <FilterDateOption value="#date;2021-10-06">2021-10-06</FilterDateOption>
                 </FilterDateSelect>
             </FilterDateWrapper>
 
             <FilterCinemaWrapper>
                 <FilterCinemaSelect
-                    value={showFilters && showFilters.cinema || 'all'}
+                    value={getFilterValue(filters, '#cinema;')[0] || '#cinema;all'}
                     onChange={(e) => {
-                        dispatch(setShowFilter('cinema', e.target.value));
+                        dispatch(setFilter(e.target.value));
                     }}
                 >
-                    <FilterCinemaOption value='all'>Все кинотеатры</FilterCinemaOption>
-                    <FilterCinemaOption value='voka'>Voka</FilterCinemaOption>
-                    <FilterCinemaOption value='arena'>Arena</FilterCinemaOption>
-                    <FilterCinemaOption value='moon'>Moon</FilterCinemaOption>
+                    <FilterCinemaOption value='#cinema;all'>Все кинотеатры</FilterCinemaOption>
+                    <FilterCinemaOption value='#cinema;voka'>Voka</FilterCinemaOption>
+                    <FilterCinemaOption value='#cinema;arena'>Arena</FilterCinemaOption>
+                    <FilterCinemaOption value='#cinema;moon'>Moon</FilterCinemaOption>
                 </FilterCinemaSelect>
             </FilterCinemaWrapper>
 
             <FilterWrapper>
                 <FilterSelect
-                    value={eventFilters && eventFilters.month || 'all'}
+                    value={getFilterValue(filters, '#showTime;')[0] || '#showTime;all'}
                     onChange={(e) => {
-                        dispatch(setEventFilter('month', e.target.value));
+                        dispatch(setFilter(e.target.value));
                     }}
                 >
-                    <FilterOption value="all">Все месяцы</FilterOption>
-                    <FilterOption value="september">Сентябрь</FilterOption>
-                    <FilterOption value="october">Октябрь</FilterOption>
-                    <FilterOption value="november">Ноябрь</FilterOption>
-                    <FilterOption value="december">Декабрь</FilterOption>
-                </FilterSelect>
-            </FilterWrapper>
-
-            <FilterWrapper>
-                <FilterSelect
-                    value={showFilters && showFilters.time || 'all'}
-                    onChange={(e) => {
-                        dispatch(setShowFilter('time', e.target.value));
-                    }}
-                >
-                    <FilterOption value="all">Все сеансы</FilterOption>
-                    <FilterOption value="07:00-11:59">07:00-11:59</FilterOption>
-                    <FilterOption value="12:00-16:59">12:00-16:59</FilterOption>
-                    <FilterOption value="17:00-21:59">17:00-21:59</FilterOption>
-                    <FilterOption value="22:00-06:59">22:00-06:59</FilterOption>
+                    <FilterOption value="#showTime;all">Все сеансы</FilterOption>
+                    <FilterOption value="#showTime;07:00-11:59">07:00-11:59</FilterOption>
+                    <FilterOption value="#showTime;12:00-16:59">12:00-16:59</FilterOption>
+                    <FilterOption value="#showTime;17:00-21:59">17:00-21:59</FilterOption>
+                    <FilterOption value="#showTime;22:00-06:59">22:00-06:59</FilterOption>
                 </FilterSelect>
             </FilterWrapper>
 
@@ -261,8 +240,8 @@ export default function Filters() {
                             id={`genre-${genre.name}`}
                             name={genre.name}
                             type="checkbox"
-                            checked={eventFilters && eventFilters.genre && eventFilters.genre.includes(genre.name) || false}
-                            onChange={(e) => onMultipleEventFilterChange(e, 'genre')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'genre')}
                         />
                         <MultipleLabel
                             htmlFor={`genre-${genre.name}`}
@@ -281,8 +260,8 @@ export default function Filters() {
                             id={`video-${item.name}`}
                             name={item.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.video && showFilters.video.includes(item.name) || false}
-                            onChange={(e) => onMultipleShowFilterChange(e, 'video')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'video')}
                         />
                         <MultipleLabel
                             htmlFor={`video-${item.name}`}
@@ -301,8 +280,8 @@ export default function Filters() {
                             id={`sound-${item.name}`}
                             name={item.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.sound && showFilters.sound.includes(item.name) || false}
-                            onChange={(e) => onMultipleShowFilterChange(e, 'sound')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'sound')}
                         />
                         <MultipleLabel
                             htmlFor={`sound-${item.name}`}
@@ -321,8 +300,8 @@ export default function Filters() {
                             id={`language-${item.name}`}
                             name={item.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.language && showFilters.language.includes(item.name) || false}
-                            onChange={(e) => onMultipleShowFilterChange(e, 'language')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'language')}
                         />
                         <MultipleLabel
                             htmlFor={`language-${item.name}`}
@@ -341,8 +320,8 @@ export default function Filters() {
                             id={`subtitles-${item.name}`}
                             name={item.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.subtitles && showFilters.subtitles.includes(item.name) || false}
-                            onChange={(e) => onMultipleShowFilterChange(e, 'subtitles')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'subtitles')}
                         />
                         <MultipleLabel
                             htmlFor={`subtitles-${item.name}`}
@@ -361,8 +340,8 @@ export default function Filters() {
                             id={`auditorium-${item.name}`}
                             name={item.name}
                             type="checkbox"
-                            checked={showFilters && showFilters.auditorium && showFilters.auditorium.includes(item.name) || false}
-                            onChange={(e) => onMultipleShowFilterChange(e, 'auditorium')}
+                            checked={false}
+                            onChange={(e) => onMultipleFilterChange(e, 'auditorium')}
                         />
                         <MultipleLabel
                             htmlFor={`auditorium-${item.name}`}
