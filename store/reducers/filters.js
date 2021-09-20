@@ -1,4 +1,4 @@
-import { CLEAR_FILTERS, SET_FILTER } from "../actions/filters";
+import { CLEAR_FILTERS, SET_FILTER, SET_MULTIPLE_FILTER, UNSET_MULTIPLE_FILTER } from "../actions/filters";
 
 
 const parseTagCategory = (tag) => {
@@ -22,8 +22,13 @@ const filterReducer = (state = [], action) => {
             if (value === 'all') {
                 return newState;
             }
-
             return [...newState, action.filter];
+
+        case SET_MULTIPLE_FILTER:
+            return [...state, action.filter];
+
+        case UNSET_MULTIPLE_FILTER:
+            return [...state].filter(tag => tag !== action.filter);
 
         case CLEAR_FILTERS:
             return []

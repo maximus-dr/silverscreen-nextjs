@@ -9,15 +9,15 @@ import { EventsComponent } from './EventsStyled';
 const events = [
     {
         id: 'boss_molokosos-2',
-        filters: ['#city;minsk', '#city;grodno', '#genre;cartoon', '#shedule;now', '#date;2021-10-04', '#date;2021-10-05', '#cinema;moon', '#cinema;voka', '#cinema;arena',
-        '#showTime;07:00-11:59', '#showTime;12:00-16:59'],
+        filters: ['#city;minsk', '#city;grodno', '#shedule;now', '#date;2021-10-04', '#date;2021-10-05', '#cinema;moon', '#cinema;voka', '#cinema;arena', '#showTime;07:00-11:59',
+        '#showTime;12:00-16:59', '#genre;cartoon', '#genre;family', '#genre;comedy'],
         posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png'
     },
 
     {
         id: 'sovry_mne_pravdu',
-        filters: ['#city;minsk', '#genre;comedy', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;arena', '#showTime;12:00-16:59', '#showTime;17:00-21:59',
-        '#showTime;22:00-06:59'],
+        filters: ['#city;minsk', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;arena', '#showTime;12:00-16:59', '#showTime;17:00-21:59', '#showTime;22:00-06:59',
+        '#genre;drama', '#genre;thriller'],
         posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png'
     },
 
@@ -30,8 +30,8 @@ const events = [
 
     {
         id: 'dune',
-        filters: ['#city;minsk', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;voka', '#showTime;12:00-16:59', '#showTime;17:00-21:59',
-        '#showTime;22:00-06:59'],
+        filters: ['#city;minsk', '#shedule;now', '#date;2021-10-05', '#date;2021-10-06', '#cinema;voka', '#showTime;12:00-16:59', '#showTime;17:00-21:59', '#showTime;22:00-06:59',
+        '#genre;drama', '#genre;fantastic', '#genre;adventure'],
         posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png'
     }
 ];
@@ -84,12 +84,6 @@ export default function Events(props) {
     const tags = getFilters(filters);
     const filteredEvents = filter(events, tags);
     const filteredShows = filter(shows, tags);
-
-
-    console.log(filteredEvents);
-
-
-
 
 
     return (

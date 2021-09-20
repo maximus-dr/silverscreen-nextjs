@@ -11,6 +11,7 @@ export default function EventCard(props) {
     const dateTags = filters.filter(tag => tag.includes('#date;'));
     const cinemaTags = filters.filter(tag => tag.includes('#cinema;'));
     const showTimeTags = filters.filter(tag => tag.includes('#showTime;'));
+    const genreTags = filters.filter(tag => tag.includes('#genre;'));
 
     return (
         <EventCardComponent>
@@ -34,6 +35,10 @@ export default function EventCard(props) {
 
                 <TagsGroup>
                     {showTimeTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {genreTags.map(tag => <div key={tag}>{tag}</div>)}
                 </TagsGroup>
 
             </EventOverlay>

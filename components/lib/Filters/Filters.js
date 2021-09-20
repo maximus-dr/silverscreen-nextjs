@@ -1,54 +1,54 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { clearFilters, setDate, setEventFilter, setFilter, setShowFilter } from '../../../store/actions/filters';
+import { clearFilters, setFilter, setMultipleFilter, unsetMultipleFilter, UNSET_MULTIPLE_FILTER } from '../../../store/actions/filters';
 import { ClearButton, FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
 const cities = [{name: '#city;all', acronym: 'Все города'}, {name: '#city;minsk', acronym: 'Минск'}, {name: '#city;grodno', acronym: 'Гродно'}];
 
 const genres = [
     {
-        name: "family",
+        name: "#genre;family",
         acronym: "Семейный"
     },
     {
-        name: "drama",
+        name: "#genre;drama",
         acronym: "Драма"
     },
     {
-        name: "comedy",
+        name: "#genre;comedy",
         acronym: "Комедия"
     },
     {
-        name: "cartoon",
+        name: "#genre;cartoon",
         acronym: "Мультфильм"
     },
     {
-        name: "fantasy",
+        name: "#genre;fantasy",
         acronym: "Фэнтези"
     },
     {
-        name: "show",
+        name: "#genre;show",
         acronym: "Шоу"
     },
     {
-        name: "fantastic",
+        name: "#genre;fantastic",
         acronym: "Фантастика"
     },
     {
-        name: "sport",
+        name: "#genre;sport",
         acronym: "Спорт"
     },
     {
-        name: "doc",
+        name: "#genre;doc",
         acronym: "Документальный"
     },
     {
-        name: "exhibition",
+        name: "#genre;exhibition",
         acronym: "Выставка"
     },
     {
-        name: "thriller",
+        name: "#genre;thriller",
         acronym: "Триллер"
     }
 ];
@@ -83,31 +83,6 @@ const soundFormats = [
     }
 ];
 
-const languages = [
-    {
-        name: 'ru',
-        acronym: 'Русский язык'
-    },
-    {
-        name: 'by',
-        acronym: 'Беларуская мова'
-    },
-    {
-        name: 'ov',
-        acronym: 'Original'
-    },
-    {
-        name: 'eng',
-        acronym: 'English'
-    }
-]
-
-const sub = [
-    {
-        name: 'sub',
-        acronym: 'SUB'
-    }
-]
 
 const auditoriums = [
     {
@@ -143,13 +118,23 @@ export default function Filters() {
         dispatch(setFilter(filter));
     }
 
-    const onMultipleFilterChange = (e, filter) => {
-
+    const onMultipleFilterChange = (filter) => {
+        if (filters.includes(filter)) {
+            dispatch(unsetMultipleFilter(filter));
+        }
+        dispatch(setMultipleFilter(filter));
     }
 
     const getFilterValue = (filters, category) => {
         return filters.filter(tag => tag.includes(category));
     };
+
+    useEffect(() => {
+        const sheduleFilter = filters && filters.some(item => item.includes('#shedule;'));
+        if (!sheduleFilter) {
+            dispatch(setFilter('#shedule;now'));
+        }
+    }, [dispatch, filters])
 
 
     return (
@@ -237,14 +222,14 @@ export default function Filters() {
                 {genres.map(genre => (
                     <MultipleItem key={genre.name}>
                         <MultipleCheckbox
-                            id={`genre-${genre.name}`}
+                            id={genre.name}
                             name={genre.name}
                             type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'genre')}
+                            checked={getFilterValue(filters, '#genre;').includes(genre.name)}
+                            onChange={(e) => onMultipleFilterChange(e.target.name)}
                         />
                         <MultipleLabel
-                            htmlFor={`genre-${genre.name}`}
+                            htmlFor={genre.name}
                         >
                             {genre.acronym}
                         </MultipleLabel>
@@ -285,46 +270,6 @@ export default function Filters() {
                         />
                         <MultipleLabel
                             htmlFor={`sound-${item.name}`}
-                        >
-                            {item.acronym}
-                        </MultipleLabel>
-                    </MultipleItem>
-                ))}
-            </MultipleWrapper>
-
-            <FilterTitle>Язык</FilterTitle>
-            <MultipleWrapper>
-                {languages.map(item => (
-                    <MultipleItem key={item.name}>
-                        <MultipleCheckbox
-                            id={`language-${item.name}`}
-                            name={item.name}
-                            type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'language')}
-                        />
-                        <MultipleLabel
-                            htmlFor={`language-${item.name}`}
-                        >
-                            {item.acronym}
-                        </MultipleLabel>
-                    </MultipleItem>
-                ))}
-            </MultipleWrapper>
-
-            <FilterTitle>Субтитры</FilterTitle>
-            <MultipleWrapper>
-                {sub.map(item => (
-                    <MultipleItem key={item.name}>
-                        <MultipleCheckbox
-                            id={`subtitles-${item.name}`}
-                            name={item.name}
-                            type="checkbox"
-                            checked={false}
-                            onChange={(e) => onMultipleFilterChange(e, 'subtitles')}
-                        />
-                        <MultipleLabel
-                            htmlFor={`subtitles-${item.name}`}
                         >
                             {item.acronym}
                         </MultipleLabel>
