@@ -36,12 +36,6 @@ export const TagsGroup = styled.div`
     margin-bottom: 5px;
 `;
 
-export const EventShedule = styled.div`
-
-`;
-
-export const EventCity = styled.div``;
-
 export const EventPoster = styled.div`
     width: 272px;
     height: 400px;
@@ -59,12 +53,10 @@ export const EventPoster = styled.div`
     }}
 `;
 
-export const EventAgeLimit = styled.div``;
-
-export const EventAcronym = styled.h3`
-
+export const EventId = styled.div`
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
 `;
 
-export const EventLanguage = styled.div``;
 
-export const EventGenre = styled.div``;

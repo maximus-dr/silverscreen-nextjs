@@ -7,6 +7,7 @@ import { setDocumentComponentsData, setResolution, setTemplates } from '../store
 import { initializeStore } from '../store/store';
 const path = require('path');
 const fs = require('fs');
+import Link from 'next/link'
 
 
 // export async function getStaticProps() {
@@ -57,6 +58,7 @@ export default function Home() {
 
   return (
     <>
+        <Link href='/admin'><a>Admin</a></Link>
         <h2>Home Page</h2>
         {/* {components} */}
     </>

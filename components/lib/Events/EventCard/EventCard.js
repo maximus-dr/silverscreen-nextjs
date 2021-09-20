@@ -1,5 +1,5 @@
 import React from 'react'
-import { EventCardComponent, EventOverlay, EventPoster, TagsGroup } from './EventCardStyled';
+import { EventCardComponent, EventId, EventOverlay, EventPoster, TagsGroup } from './EventCardStyled';
 
 
 
@@ -20,6 +20,7 @@ export default function EventCard(props) {
     return (
         <EventCardComponent>
             <EventOverlay>
+                <EventId>id: {event.id}</EventId>
 
                 <TagsGroup>
                     {cityTags.map(tag => <div key={tag}>{tag}</div>)}

@@ -17,20 +17,7 @@ export default function Header() {
     return (
         <HeaderWrapper>
             <HeaderLeft>
-                <button
-                    onClick={() => {
-                        Router.push({
-                            pathname: '/admin',
-                            query: {
-                                shedule: 'soon',
-                                'city': 'minsk;grodno;vitebsk',
-                                genre: 'cartoon_family'
-                            }
-                        });
-                    }}
-                >
-                    Click
-                </button>
+                <Link href='/'><a>Home</a></Link>
             </HeaderLeft>
             <Navbar />
             <HeaderRight>
