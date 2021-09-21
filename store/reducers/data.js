@@ -1,7 +1,7 @@
-import { SET_DATA_LIST } from "../actions/dataList";
+import { SET_DATA_LIST } from "../actions/data";
 
 
-const dataListReducer = (state = {}, action) => {
+const dataReducer = (state = {}, action) => {
     switch(action.type) {
         case SET_DATA_LIST:
             return {
@@ -13,5 +13,5 @@ const dataListReducer = (state = {}, action) => {
 }
 
 export {
-    dataListReducer
+    dataReducer
 }

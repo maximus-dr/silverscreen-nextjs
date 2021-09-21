@@ -1,14 +1,13 @@
 import { combineReducers } from "redux";
-import { dataListReducer } from "./dataList";
+import { dataReducer } from "./data";
 import { documentReducer } from "./document";
 import { filteredReducer } from "./filtered";
 import { filterReducer } from "./filters";
 
 
-
 const rootReducer = combineReducers({
     document: documentReducer,
-    dataList: dataListReducer,
+    data: dataReducer,
     filters: filterReducer,
     filtered: filteredReducer
 });

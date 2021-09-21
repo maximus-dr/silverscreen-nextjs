@@ -14,7 +14,7 @@ import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/common/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setDataList } from "../../store/actions/dataList";
+import { setDataList } from "../../store/actions/data";
 
 
 
