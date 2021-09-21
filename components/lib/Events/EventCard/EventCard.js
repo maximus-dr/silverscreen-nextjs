@@ -12,10 +12,11 @@ export default function EventCard(props) {
     const sheduleTags = filters.filter(tag => tag.includes('#shedule;'));
     const dateTags = filters.filter(tag => tag.includes('#date;'));
     const cinemaTags = filters.filter(tag => tag.includes('#cinema;'));
-    const showTimeTags = filters.filter(tag => tag.includes('#showTime;'));
+    const showTimeTags = filters.filter(tag => tag.includes('#showtime;'));
     const genreTags = filters.filter(tag => tag.includes('#genre;'));
     const videoTypeTags = filters.filter(tag => tag.includes('#videotype;'));
     const audioTypeTags = filters.filter(tag => tag.includes('#audiotype;'));
+    const auditoriumTags = filters.filter(tag => tag.includes('#auditorium;'));
 
     return (
         <EventCardComponent>
@@ -52,6 +53,10 @@ export default function EventCard(props) {
 
                 <TagsGroup>
                     {audioTypeTags.map(tag => <div key={tag}>{tag}</div>)}
+                </TagsGroup>
+
+                <TagsGroup>
+                    {auditoriumTags.map(tag => <div key={tag}>{tag}</div>)}
                 </TagsGroup>
 
             </EventOverlay>

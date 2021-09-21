@@ -14,10 +14,9 @@ export const EventCardComponent = styled.div`
     position: relative;
     color: #ffffff;
     border: 1px dashed #ffffff;
-    width: 272px;
-    height: 400px;
+    width: 306px;
+    height: 450px;
     margin-bottom: 25px;
-    margin-right: 25px;
     animation: ${fadeIn} 100ms linear;
 `;
 
@@ -37,8 +36,8 @@ export const TagsGroup = styled.div`
 `;
 
 export const EventPoster = styled.div`
-    width: 272px;
-    height: 400px;
+    width: 306px;
+    height: 450px;
     background-size: cover;
     overflow: hidden;
     background-position: center;

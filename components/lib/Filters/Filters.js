@@ -50,6 +50,10 @@ const genres = [
     {
         name: "#genre;thriller",
         acronym: "Триллер"
+    },
+    {
+        name: "#genre;adventure",
+        acronym: "Приключения"
     }
 ];
 
@@ -67,18 +71,18 @@ const videoFormats = [
         acronym: '2D 4K'
     },
     {
-        name: '#videotype;screenX',
+        name: '#videotype;screenx',
         acronym: 'ScreenX'
     }
 ];
 
 const soundFormats = [
     {
-        name: '#audiotype;dolbyDigital',
+        name: '#audiotype;dolbydigital',
         acronym: 'Dolby Digital'
     },
     {
-        name: '#audiotype;dolbyAtmos',
+        name: '#audiotype;dolbyatmos',
         acronym: 'Dolby Atmos'
     }
 ];
@@ -90,7 +94,7 @@ const auditoriums = [
         acronym: 'VIP'
     },
     {
-        name: '#auditorium;vegasLounge',
+        name: '#auditorium;vegaslounge',
         acronym: 'VEGAS LOUNGE'
     },
     {
@@ -185,7 +189,6 @@ export default function Filters() {
                     <FilterDateOption value="#date;all">Все даты</FilterDateOption>
                     <FilterDateOption value="#date;2021-10-04">2021-10-04</FilterDateOption>
                     <FilterDateOption value="#date;2021-10-05">2021-10-05</FilterDateOption>
-                    <FilterDateOption value="#date;2021-10-06">2021-10-06</FilterDateOption>
                 </FilterDateSelect>
             </FilterDateWrapper>
 
@@ -205,16 +208,16 @@ export default function Filters() {
 
             <FilterWrapper>
                 <FilterSelect
-                    value={getFilterValue(filters, '#showTime;')[0] || '#showTime;all'}
+                    value={getFilterValue(filters, '#showtime;')[0] || '#showtime;all'}
                     onChange={(e) => {
                         dispatch(setFilter(e.target.value));
                     }}
                 >
-                    <FilterOption value="#showTime;all">Все сеансы</FilterOption>
-                    <FilterOption value="#showTime;07:00-11:59">07:00-11:59</FilterOption>
-                    <FilterOption value="#showTime;12:00-16:59">12:00-16:59</FilterOption>
-                    <FilterOption value="#showTime;17:00-21:59">17:00-21:59</FilterOption>
-                    <FilterOption value="#showTime;22:00-06:59">22:00-06:59</FilterOption>
+                    <FilterOption value="#showtime;all">Все сеансы</FilterOption>
+                    <FilterOption value="#showtime;07:00-11:59">07:00-11:59</FilterOption>
+                    <FilterOption value="#showtime;12:00-16:59">12:00-16:59</FilterOption>
+                    <FilterOption value="#showtime;17:00-21:59">17:00-21:59</FilterOption>
+                    <FilterOption value="#showtime;22:00-06:59">22:00-06:59</FilterOption>
                 </FilterSelect>
             </FilterWrapper>
 
