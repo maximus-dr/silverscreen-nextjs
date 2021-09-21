@@ -14,9 +14,9 @@ import { renderComponents } from "../../core/functions/render";
 import { getComponent } from "../../core/functions/common/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setAllEvents} from "../../store/actions/events";
-import { useRouter } from "next/dist/client/router";
-import Router from 'next/router';
+import { setDataList } from "../../store/actions/dataList";
+
+
 
 // export async function getStaticProps() {
 //     const dbPath = path.join(process.cwd(), 'db/db.json');
@@ -40,8 +40,6 @@ import Router from 'next/router';
 
 export async function getServerSideProps() {
 
-
-
     const dbPath = path.join(process.cwd(), 'db/test.json');
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
@@ -54,9 +52,17 @@ export async function getServerSideProps() {
     const eventsData = fs.readFileSync(path.join(process.cwd(), `db/events/events.json`), 'utf8');
     const events = JSON.parse(eventsData);
 
+    const showsData = fs.readFileSync(path.join(process.cwd(), `db/shows/shows.json`), 'utf8');
+    const shows = JSON.parse(showsData);
+
+    const dataList = {
+        events,
+        shows
+    }
+
+    dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
-    dispatch(setAllEvents(events));
     dispatch(setResolution('640'));
     dispatch(setMode('admin'));
 

@@ -1,14 +1,16 @@
 import { combineReducers } from "redux";
+import { dataListReducer } from "./dataList";
 import { documentReducer } from "./document";
-import eventsReducer from "./events";
+import { filteredReducer } from "./filtered";
 import { filterReducer } from "./filters";
 
 
 
 const rootReducer = combineReducers({
     document: documentReducer,
-    events: eventsReducer,
-    filters: filterReducer
+    dataList: dataListReducer,
+    filters: filterReducer,
+    filtered: filteredReducer
 });
 
 export default rootReducer;

@@ -24,46 +24,26 @@ const filter = (items, filters) => {
     let filtered = [];
 
     categories.forEach((category, i) => {
-
         const filterValues = filters[category];
-        const multiple = filterValues.length > 1;
 
         if (i === 0) {
-            if (!multiple) {
-                items.forEach(item => {
-                    if (item.filters.includes(filterValues[0])) {
-                        filtered.push(item);
-                    }
-                })
-            }
-
-            if (multiple) {
-                items.forEach((item) => {
-                    const match = filterValues.some(value => {
-                        return item.filters.includes(value);
-                    });
-                    if (match) {
-                        filtered.push(item);
-                    }
+            items.forEach((item) => {
+                const match = filterValues.some(value => {
+                    return item.filters.includes(value);
                 });
-            }
+                if (match) {
+                    filtered.push(item);
+                }
+            });
         }
 
         if (i > 0) {
-            if (!multiple) {
-                filtered = filtered.filter(item => {
-                    return item.filters.includes(filterValues[0]);
+            filtered = filtered.filter(item => {
+                const match = filterValues.some(value => {
+                    return item.filters.includes(value);
                 });
-            }
-
-            if (multiple) {
-                filtered = filtered.filter(item => {
-                    const match = filterValues.some(value => {
-                        return item.filters.includes(value);
-                    });
-                    return match ? true : false;
-                });
-            }
+                return match ? true : false;
+            });
         }
     });
     return filtered;

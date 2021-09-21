@@ -1,455 +1,115 @@
 [
     {
-        "id": "1111",
-        "acronym": "Душа",
-        "ageLimit": {
-            "acronym": "6+",
-            "name": "зрителям, достигшим 6 лет"
-        },
-        "annotation": "Уже немолодой школьный учитель музыки Джо Гарднер всю жизнь мечтал выступать на сцене в составе джазового ансамбля. Однажды он успешно проходит прослушивание у известной клубной певицы и, возвращаясь домой вне себя от счастья, падает в люк и умирает. Теперь у Джо одна дорога - в Великое После, но он сбегает с идущего в вечность эскалатора и случайно попадает в Великое До. Тут новенькие души обретают себя, и у будущих людей зарождаются увлечения, мечты и интересы. Джо становится наставником упрямой души 22, которая уже много веков не может найти свою искру и отправиться на Землю.",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/5376.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/5365.png",
-        "eventFilters": {
-            "shedule": ["now"],
-            "city": ["minsk"],
-            "genre": ["family", "comedy", "cartoon", "fantasy"],
-            "language": ["ru"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "dusha1",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59"],
-                        "video": ["2d"],
-                        "language": ["ru"]
-                    }
-                },
-                {
-                    "showId": "dusha2",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["12:00-16:59"],
-                        "language": ["ru"]
-                    }
-                },
-                {
-                    "showId": "dusha3",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["17:00-21:59"],
-                        "language": ["ru"]
-                    }
-                }
-            ],
-            "2021-09-11": [
-                {
-                    "showId": "dusha",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "language": ["ru"]
-                    }
-                }
-            ],
-
-            "2021-09-12": [
-                {
-                    "showId": "dusha3",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "language": ["ru"]
-                    }
-                }
-            ]
-        }
+      "id":"boss_molokosos-2",
+      "filters":[
+        "#city;minsk",
+        "#city;grodno",
+        "#shedule;now",
+        "#date;2021-10-04",
+        "#date;2021-10-05",
+        "#cinema;moon",
+        "#cinema;voka",
+        "#cinema;arena",
+        "#showtime;07:00-11:59",
+        "#showtime;12:00-16:59",
+        "#genre;cartoon",
+        "#genre;family",
+        "#genre;comedy",
+        "#videotype;2d",
+        "#videotype;3d",
+        "#audiotype;dolbydigital",
+        "#auditorium;voka",
+        "#auditorium;resto"
+      ],
+      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
     },
-
     {
-        "id": "14234fsd",
-        "acronym": "Ночь пожирателей рекламы 2033",
-        "ageLimit": {
-            "acronym": "18+",
-            "name": "зрителям, достигшим 18 лет"
-        },
-        "annotation": "Контент демонстрируется на языке оригинала с русскими субтитрами.\n\nУникальная подборка рекламных роликов со всего мира, которую уже более 40 лет создает эксцентричный и креативный француз – Жан Мари Бурсико. Один раз в год зрители имеют возможность увидеть авторскую программу «Ночи», в которой Бурсико создает полотно современного рекламного рынка из разных элементов, жанров и тем.  Премьера 2021 - в Минске. Посмотри первым!\n",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6515.png",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6514.JPEG",
-        "eventFilters": {
-            "shedule": ["soon", "now"],
-            "city": ["minsk"],
-            "genre": ["show"],
-            "language": ["ov"],
-            "month": ["september", "october"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "noch-pozhirateley1",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["17:00-21:59", "22:00-06:59"],
-                        "video": ["2d"],
-                        "sound": ["dolbyAtmos"],
-                        "language": ["ov"],
-                        "subtitles": ["sub"],
-                        "auditorium": ["vip"]
-                    }
-                },
-                {
-                    "showId": "noch-pozhirateley2",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["17:00-21:59", "22:00-06:59"],
-                        "video": ["3d"],
-                        "sound": ["dolbyDigital"],
-                        "language": ["ov"],
-                        "subtitles": ["sub"],
-                        "auditorium": ["voka"]
-                    }
-                }
-            ]
-        }
+      "id":"sovry_mne_pravdu",
+      "filters":[
+        "#city;minsk",
+        "#shedule;now",
+        "#date;2021-10-04",
+        "#date;2021-10-05",
+        "#cinema;arena",
+        "#showtime;12:00-16:59",
+        "#showtime;17:00-21:59",
+        "#showtime;22:00-06:59",
+        "#genre;drama",
+        "#genre;thriller",
+        "#videotype;2d",
+        "#audiotype;dolbydigital",
+        "#auditorium;voka",
+        "#auditorium;vip"
+      ],
+      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png"
     },
-
     {
-        "id": "sdfsdgds3r4e",
-        "acronym": "Отчаянные аферистки",
-        "ageLimit": {
-            "acronym": "16+",
-            "name": "зрителям, достигшим 16 лет"
-        },
-        "language": {
-            "name": "Русский язык",
-            "acronym": "RU"
-        },
-        "annotation": "Конни и ДжоДжо – лучшие подруги, которые погрязли в быту и домашней рутине. Но однажды им удалось перевернуть свою жизнь, превратив парочку купонов на еду в 40 миллионов долларов! Теперь у них есть все - модная одежда, дорогие спорткары, частный самолет. И все было бы как в сказке, если бы не два копа, которые пытаются поймать отчаянных домохозяек и разоблачить их хитроумную схему. Невероятно находчивая комедия, основанная на реальных событиях, об одной из самых громких афер США!",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6539.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6525.JPEG",
-        "eventFilters": {
-            "shedule": ["soon"],
-            "city": ["grodno"],
-
-            "language": ["ru"],
-            "month": ["october", "september"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "otchayannye-aferistki",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"],
-                        "video": ["screenX"],
-                        "sound": ["dolbyAtmos"],
-                        "auditorium": ["vegasLounge"]
-                    }
-                }
-            ],
-            "2021-09-11": [
-                {
-                    "showId": "otchayannye-aferistki2",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"],
-                        "video": ["2d4k"],
-                        "sound": ["dolbyAtmos"],
-                        "auditorium": ["resto"]
-                    }
-                }
-            ],
-            "2021-09-12": [
-                {
-                    "showId": "otchayannye-aferistki3",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"],
-                        "video": ["2d"],
-                        "sound": ["dolbyDigital"],
-                        "auditorium": ["resto"]
-                    }
-                }
-            ]
-        }
+      "id":"petrovy_v_grippe",
+      "filters":[
+        "#city;minsk",
+        "#city;grodno",
+        "#genre;drama",
+        "#shedule;now",
+        "#genre;fantastic",
+        "#date;2021-10-04",
+        "#date;2021-10-05",
+        "#cinema;moon",
+        "#cinema;voka",
+        "#cinema;arena",
+        "#showtime;12:00-16:59",
+        "#showtime;17:00-21:59",
+        "#videotype;2d",
+        "#videotype;screenx",
+        "#audiotype;dolbyatmos",
+        "#auditorium;vip",
+        "#auditorium;vegaslounge",
+        "#auditorium;voka",
+        "#auditorium;resto"
+      ],
+      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
     },
-
     {
-        "id": "sdfdsf03030",
-        "acronym": "Петровы в гриппе",
-        "ageLimit": {
-            "acronym": "18+",
-            "name": "зрителям, достигшим 18 лет"
-        },
-        "language": {
-            "name": "Русский язык",
-            "acronym": "RU"
-        },
-        "annotation": "Петровы — самая обычная семья. Он - автослесарь, она - библиотекарь, у них есть сын, но вместе они не живут. Казалось бы, ничего особенного. Но повседневная реальность взрывается в тот момент, когда семья заболевает гриппом, и жизнь оказывается полной безумия, фантастики и сюрреализма.",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6597.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
-        "eventFilters": {
-            "shedule": ["soon"],
-            "city": ["minsk"],
-            "genre": ["drama", "fantastic"],
-            "language": ["ru"],
-            "month": ["november", "december"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "petrovy1",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
-                        "auditorium": ["vip"]
-                    }
-                },
-                {
-                    "showId": "petrovy2",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
-                        "auditorium": ["vegasLounge"]
-                    }
-                }
-            ],
-            "2021-09-11": [
-                {
-                    "showId": "petrovy1",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
-                    }
-                },
-                {
-                    "showId": "petrovy2",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
-                        "auditorium": ["voka"]
-                    }
-                }
-            ],
-            "2021-09-12": [
-                {
-                    "showId": "petrovy1",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"]
-                    }
-                },
-                {
-                    "showId": "petrovy2",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59", "17:00-21:59", "22:00-06:59"],
-                        "auditorium": ["voka"]
-                    }
-                }
-            ]
-        }
+      "id":"dune",
+      "filters":[
+        "#city;minsk",
+        "#shedule;now",
+        "#date;2021-10-04",
+        "#date;2021-10-05",
+        "#cinema;voka",
+        "#cinema;arena",
+        "#showtime;12:00-16:59",
+        "#showtime;17:00-21:59",
+        "#showtime;22:00-06:59",
+        "#genre;drama",
+        "#genre;fantastic",
+        "#genre;adventure",
+        "#videotype;2d",
+        "#videotype;2d4k",
+        "#videotype;screenx",
+        "#audiotype;dolbyatmos",
+        "#auditorium;vip",
+        "#auditorium;vegaslounge",
+        "#auditorium;voka"
+      ],
+      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png"
     },
-
     {
-        "id": "ljlj0404",
-        "acronym": "Небесная команда",
-        "ageLimit": {
-            "acronym": "12+",
-            "name": "зрителям, достигшим 12 лет"
-        },
-        "language": {
-            "name": "Русский язык",
-            "acronym": "RU"
-        },
-        "annotation": "Пока живут фанаты, надежда не умрет… Они — болельщики хоккейного «Локомотива» из Ярославля. Люди, навсегда преданные клубу. Жены хоккеистов, сотрудники стадиона, молодые спортсмены и ветераны фан-движения, которые запевают на трибунах несколько десятков лет. В честь открытия нового сезона Континентальной хоккейной лиги армия поклонников «Локомотива» отправляется в Минск, на первый матч турнира, чтобы поддержать команду. Никто из них не знает, что эта поездка навсегда изменит жизнь каждого, а трагедия, которая случится с «Локомотивом» разделит спортивный мир на «до» и «после».",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6600.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6527.JPEG",
-        "eventFilters": {
-            "city": ["minsk", "grodno", "vitebsk"],
-            "shedule": ["now"],
-            "genre": ["sport", "bio", "drama"],
-            "language": ["ru"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "nebesnaya1",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59"],
-                        "auditorium": ["vegasLounge"]
-                    }
-                }
-            ],
-            "2021-09-11": [
-                {
-                    "showId": "nebesnaya2",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59"],
-                        "auditorium": ["vegasLounge"]
-                    }
-                }
-            ],
-            "2021-09-12": [
-                {
-                    "showId": "nebesnaya3",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59"],
-                        "auditorium": ["vegasLounge"]
-                    }
-                }
-            ]
-        }
-    },
-
-    {
-        "id": "340953405kjf",
-        "acronym": "Микеланджело: Любовь и смерть",
-        "ageLimit": {
-            "acronym": "12+",
-            "name": "зрителям, достигшим 12 лет"
-        },
-        "language": {
-            "name": "Русский язык",
-            "acronym": "RU"
-        },
-        "annotation": "Один из важнейших художников эпохи Возрождения – а, возможно, и всех времён – станет объектом новой масштабной выставки в Национальной галерее.\n\nАвтор величайших шедевров мировой культуры (Сикстинской капеллы, статуи Давида и «Манчестерской Мадонны») был и живописцем, и скульптором, и архитектором.\n\nНовый фильм о страстном и ярком творце исследует корни творчества Микеланджело и пытается создать максимально полный и истинный портрет великого художника.",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6075.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6073.JPEG",
-        "eventFilters": {
-            "shedule": ["soon"],
-            "city": ["minsk", "grodno", "vitebsk"],
-            "genre": ["doc", "exhibition"],
-            "language": ["ru"],
-            "month": ["october", "november", "december"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "mikelayndzelo1",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["07:00-11:59"]
-                    }
-                },
-                {
-                    "showId": "mikelayndzelo2",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59"],
-                        "auditorium": ["voka"]
-                    }
-                },
-                {
-                    "showId": "mikelayndzelo3",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59"]
-                    }
-                }
-            ]
-        }
-    },
-
-    {
-        "id": "2222",
-        "acronym": "Вокруг света",
-        "ageLimit": {
-            "acronym": "6+",
-            "name": "Детям"
-        },
-        "annotation": "Умнейший Паспарту всегда грезил о путешествиях… На его удачу, безрассудный Филеас согласился на безумное пари — обогнуть земной шар всего за 80 дней. Теперь двум совершенно непохожим друзьям предстоит совершить невозможное, а заодно увидеть весь мир, полный фантастических созданий, живописных мест и умопомрачительных приключений.",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6601.png",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6522.png",
-        "eventFilters": {
-            "shedule": ["soon"],
-            "city": ["vitebsk", "grodno", "minsk"],
-            "genre": ["cartoon"],
-            "language": ["ru"],
-            "month": ["september", "october"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "vokrug-sveta",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
-                    }
-                },
-                {
-                    "showId": "vokrug-sveta12",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59"],
-                        "auditorium": ["voka"]
-                    }
-                }
-            ],
-            "2021-09-11": [
-                {
-                    "showId": "vokrug-sveta2",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
-                    }
-                },
-                {
-                    "showId": "vokrug-sveta22",
-                    "showFilters": {
-                        "cinema": ["arena"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
-                    }
-                }
-            ],
-            "2021-09-12": [
-                {
-                    "showId": "vokrug-sveta3",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59", "12:00-16:59"]
-                    }
-                },
-                {
-                    "showId": "vokrug-sveta",
-                    "showFilters": {
-                        "cinema": ["voka"],
-                        "time": ["07:00-11:59", "12:00-16:59"],
-                        "auditorium": ["voka"]
-                    }
-                }
-            ]
-        }
-    },
-
-    {
-        "id": "3333",
-        "acronym": "Соври мне правду",
-        "ageLimit": {
-            "acronym": "18+",
-            "name": "зрителям, достигшим 18 лет"
-        },
-        "annotation": "Влюбленная пара проводит время вдали от цивилизации. Внезапный приезд сначала младшей сестры, а потом и бывшего парня девушки нарушают загородную идиллию. У каждого из героев свой план на эти выходные, а все вместе они становятся заложниками ситуации и участниками жестоких психологических игр. Влюбленность сменяется страстью, а невинный флирт вызывает ревность и может привести к смертельной опасности.",
-        "bannerLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/photo/6598.JPEG",
-        "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
-        "eventFilters": {
-            "shedule": ["now"],
-            "city": ["grodno"],
-            "genre": ["thriller", "drama"],
-            "language": ["ru"]
-        },
-        "showList": {
-            "2021-09-10": [
-                {
-                    "showId": "vokrug-sveta",
-                    "showFilters": {
-                        "cinema": ["moon"],
-                        "time": ["07:00-11:59"]
-                    }
-                }
-            ]
-        }
+      "id":"klaustrofoby",
+      "filters":[
+        "#city;minsk",
+        "#city;grodno",
+        "#genre;action",
+        "#genre;thriller",
+        "#shedule;soon",
+        "#date;2021-11-01",
+        "#cinema;arena",
+        "#cinema;voka",
+        "#cinema;moon",
+        "#videotype;2d",
+        "#audiotype;dolbydigital",
+        "#auditorium;vip",
+        "#auditorium;voka"
+      ],
+      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png"
     }
-]
+  ]

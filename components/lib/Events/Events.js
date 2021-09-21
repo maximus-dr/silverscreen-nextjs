@@ -321,13 +321,14 @@ export default function Events(props) {
     const id = props.componentData.id;
     const {componentsData} = state.document;
     const componentData = getComponent(componentsData, id);
-
-    const filters = state.filters;
+    const {filters, dataList} = state;
 
 
     const tags = getFilters(filters);
     const filteredEvents = filter(events, tags);
     const filteredShows = filter(shows, tags);
+
+
 
 
     return (

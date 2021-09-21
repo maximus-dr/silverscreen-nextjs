@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { renderComponents } from '../../core/functions/render';
 import { setDocumentComponentsData, setMode } from '../../store/actions/document';
-import { setAllEvents } from '../../store/actions/events';
 import { initializeStore } from '../../store/store';
 const fs = require('fs');
 
