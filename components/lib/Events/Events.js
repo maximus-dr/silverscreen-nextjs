@@ -40,7 +40,7 @@ const events = [
     {
         id: 'dune',
         filters: [
-            '#city;minsk', '#shedule;now', '#date;2021-10-04', '#date;2021-10-05', '#cinema;voka', '#showtime;12:00-16:59', '#showtime;17:00-21:59', '#showtime;22:00-06:59',
+            '#city;minsk', '#shedule;now', '#date;2021-10-04', '#date;2021-10-05', '#cinema;voka', '#cinema;arena', '#showtime;12:00-16:59', '#showtime;17:00-21:59', '#showtime;22:00-06:59',
             '#genre;drama', '#genre;fantastic', '#genre;adventure', '#videotype;2d', '#videotype;2d4k', '#videotype;screenx', '#audiotype;dolbyatmos', '#auditorium;vip',
             '#auditorium;vegaslounge', '#auditorium;voka',
         ],
@@ -270,7 +270,7 @@ const shows = [
         eventId: 'dune',
         posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png',
         filters: [
-            '#city;minsk', '#shedule;now', '#date;2021-10-04', '#cinema;arena', '#showtime;22:00-06:59', '#genre;drama', '#genre;fantastic', '#genre;adventure', '#videotype;screenx', '#audiotype;dolbyatmos',
+            '#city;minsk', '#shedule;now', '#date;2021-10-04', '#cinema;voka', '#showtime;22:00-06:59', '#genre;drama', '#genre;fantastic', '#genre;adventure', '#videotype;screenx', '#audiotype;dolbyatmos',
             '#auditorium;vegaslounge'
         ]
     },
