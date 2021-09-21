@@ -45,6 +45,15 @@ const events = [
             '#auditorium;vegaslounge', '#auditorium;voka',
         ],
         posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png'
+    },
+
+    {
+        id: 'klaustrofoby',
+        filters: [
+            '#city;minsk', '#city;grodno', '#genre;action', '#genre;thriller', '#shedule;soon', '#date;2021-11-01', '#cinema;arena', '#cinema;voka', '#cinema;moon', '#videotype;2d',
+            '#audiotype;dolbydigital', '#auditorium;vip', '#auditorium;voka'
+        ],
+        posterLink: 'https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png'
     }
 ];
 
