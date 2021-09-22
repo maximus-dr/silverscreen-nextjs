@@ -1,6 +1,6 @@
 import React from 'react'
 import { getComponent } from '../../../core/functions/common/components';
-import { getFilters, filterData } from '../../../core/functions/common/filters';
+import { filterData, groupFilters } from '../../../core/functions/common/filters';
 import EventCard from './EventCard/EventCard';
 import { EventsComponent } from './EventsStyled';
 import ShowCard from './ShowCard/ShowCard';
@@ -16,7 +16,7 @@ export default function Events(props) {
     const id = props.componentData.id;
     const componentData = getComponent(componentsData, id);
 
-    const currentFilters = getFilters(filters);
+    const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
 
     const filteredEvents = filteredData.events;

@@ -1,4 +1,4 @@
-const getFilters = (tags) => {
+const groupFilters = (tags) => {
     const result = {}
     tags.forEach(tag => {
         const splitted = tag.split(';');
@@ -53,7 +53,7 @@ const filterData = (data, filters) => {
 
 
 export {
-    getFilters,
+    groupFilters,
     filterList,
     filterData
 }
