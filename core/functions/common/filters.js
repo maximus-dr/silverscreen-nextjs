@@ -1,55 +1,59 @@
 const getFilters = (tags) => {
-    const filters = {}
+    const result = {}
     tags.forEach(tag => {
         const splitted = tag.split(';');
         const key = splitted[0];
 
-        if (!filters[key]) {
-            filters[key] = [tag];
+        if (result[key]) {
+            result[key].push(tag);
             return;
         }
-        if (filters[key]) {
-            filters[key].push(tag);
+        if (!result[key]) {
+            result[key] = [tag];
             return;
         }
     });
-    return filters;
+    return result;
 }
 
+const filterList = (list, filters) => {
+    const result = [];
 
-const filter = (items, filters) => {
-    if (Object.keys(filters).length === 0) return items;
-
-    const categories = Object.keys(filters);
-    let filtered = [];
-
-    categories.forEach((category, i) => {
-        const filterValues = filters[category];
-
-        if (i === 0) {
-            items.forEach((item) => {
-                const match = filterValues.some(value => {
-                    return item.filters.includes(value);
-                });
-                if (match) {
-                    filtered.push(item);
-                }
+    list.forEach(item => {
+        let match = true;
+        for (let category in filters) {
+            const hasTag = filters[category].find(tag => {
+                return item.filters.includes(tag);
             });
+
+            if (!hasTag) {
+                match = false;
+                break;
+            }
         }
-
-        if (i > 0) {
-            filtered = filtered.filter(item => {
-                const match = filterValues.some(value => {
-                    return item.filters.includes(value);
-                });
-                return match ? true : false;
-            });
+        if (match) {
+            result.push(item);
         }
     });
-    return filtered;
+    return result;
 }
+
+
+const filterData = (data, filters) => {
+    let result = {};
+
+    for (let list in data) {
+        const filtered = filterList(data[list], filters);
+        result[list] = filtered;
+    }
+
+    return result;
+}
+
+
 
 export {
     getFilters,
-    filter
+    filterList,
+    filterData
 }
