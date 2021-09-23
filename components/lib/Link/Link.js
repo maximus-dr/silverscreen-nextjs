@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getComponent } from '../../../core/functions/common/components';
 import { LinkComponent } from './LinkStyled'
 import Link from 'next/link';
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 
 
 

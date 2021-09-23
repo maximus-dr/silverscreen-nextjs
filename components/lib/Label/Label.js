@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { getHandler, getHandlerResult } from '../../../actions';
+import { getHandler, getHandlerResult } from '../../../handlers';
 import { getComponent } from '../../../core/functions/common/components';
 import { LabelComponent } from './LabelStyled'
 

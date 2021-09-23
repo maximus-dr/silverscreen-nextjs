@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 import { getComponent } from '../../../core/functions/common/components';
 import { InputComponent } from './InputStyled';
 

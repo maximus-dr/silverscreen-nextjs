@@ -2,7 +2,7 @@ import React from 'react'
 import { DescriptionComponent } from './DescriptionStyled'
 import { getComponent } from '../../../core/functions/common/components';
 import { useDispatch } from 'react-redux';
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 
 
 export default function Description(props) {

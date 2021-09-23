@@ -3,7 +3,7 @@ import { PageComponent } from './PageStyled';
 import { useDispatch } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/common/components';
 import { useEffect, useState } from 'react';
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 import { useRouter } from 'next/router';
 import { setFilters } from '../../../store/actions/filters';
 import { clearURI, parseQuery } from '../../../core/functions/common/common';

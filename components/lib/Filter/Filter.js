@@ -1,6 +1,6 @@
 import React from 'react'
 import { FilterComponent } from './FilterStyled'
-import { getHandler } from '../../../actions/index';
+import { getHandler } from '../../../handlers/index';
 import { getComponent } from '../../../core/functions/common/components';
 import { useDispatch } from 'react-redux';
 

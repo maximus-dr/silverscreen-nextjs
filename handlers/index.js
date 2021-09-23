@@ -2,7 +2,7 @@ import { componentActions } from "./component";
 import { filterActions } from "./filter";
 
 
-export const actionProvider = (role, handler, mode) => {
+export const handlersProvider = (role, handler, mode) => {
     if (!role) return null;
 
     const actions = {
@@ -29,15 +29,15 @@ export const actionProvider = (role, handler, mode) => {
 export const getHandler = (params, name) => {
     const {mode, role} = params;
     if (mode === 'admin') {
-        const handler = actionProvider('component', name, mode);
+        const handler = handlersProvider('component', name, mode);
         if (handler) {
-            return (e) => actionProvider('component', name, mode)(e, params);
+            return (e) => handlersProvider('component', name, mode)(e, params);
         }
     }
     if (role && mode !== 'admin') {
-        const handler = actionProvider(role, name, mode);
+        const handler = handlersProvider(role, name, mode);
         if (handler) {
-            return (e) => actionProvider(role, name, mode)(e, params);
+            return (e) => handlersProvider(role, name, mode)(e, params);
         }
     }
     return null;
@@ -46,13 +46,13 @@ export const getHandler = (params, name) => {
 export const getHandlerResult = (params, name) => {
     const {mode, role} = params;
     if (mode === 'admin') {
-        const handler = actionProvider('component', name, mode);
+        const handler = handlersProvider('component', name, mode);
         if (handler) {
             return handler(null, params);
         }
     }
     if (role && mode !== 'admin') {
-        const handler = actionProvider(role, name, mode);
+        const handler = handlersProvider(role, name, mode);
         if (handler) {
             return handler(null, params);
         }

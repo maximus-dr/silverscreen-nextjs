@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 import { getChild, getComponent } from '../../../core/functions/common/components';
 import { FormComponent } from './FormStyled'
 

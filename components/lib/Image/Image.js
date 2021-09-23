@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { getComponent } from '../../../core/functions/common/components';
 import { ImageComponent } from './ImageStyled'
-import { getHandler } from '../../../actions';
+import { getHandler } from '../../../handlers';
 
 
 

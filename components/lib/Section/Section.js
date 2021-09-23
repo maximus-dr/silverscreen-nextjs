@@ -4,7 +4,7 @@ import { getChild, getComponent } from '../../../core/functions/common/component
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { getHandler, getHandlerResult } from '../../../actions/index';
+import { getHandler, getHandlerResult } from '../../../handlers/index';
 
 
 
