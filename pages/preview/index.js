@@ -3,6 +3,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { renderComponents } from '../../core/functions/render';
+import { setDataList } from '../../store/actions/data';
 import { setDocumentComponentsData, setMode } from '../../store/actions/document';
 import { initializeStore } from '../../store/store';
 const fs = require('fs');
@@ -15,7 +16,15 @@ export async function getServerSideProps() {
     const eventsData = fs.readFileSync(path.join(process.cwd(), `db/events/events.json`), `utf-8`);
     const events = JSON.parse(eventsData);
 
-    dispatch(setAllEvents(events));
+    const showsData = fs.readFileSync(path.join(process.cwd(), `db/shows/shows.json`), 'utf8');
+    const shows = JSON.parse(showsData);
+
+    const dataList = {
+        events,
+        shows
+    }
+
+    dispatch(setDataList(dataList));
 
     return {
         props: {

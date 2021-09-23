@@ -26,15 +26,15 @@ export default function ShowCard(props) {
         );
     }
 
-    const cityTags = getTagsGroup(filters, '#city;');
-    const sheduleTags = getTagsGroup(filters, '#shedule;');
-    const dateTags = getTagsGroup(filters, '#date;');
-    const cinemaTags = getTagsGroup(filters, '#cinema;');
-    const showTimeTags = getTagsGroup(filters, '#showtime;');
-    const genreTags = getTagsGroup(filters, '#genre;');
-    const videoTypeTags = getTagsGroup(filters, '#videotype;');
-    const audioTypeTags = getTagsGroup(filters, '#audiotype;');
-    const auditoriumTags = getTagsGroup(filters, '#auditorium;');
+    const cityTags = getTagsGroup(filters, '$city;');
+    const sheduleTags = getTagsGroup(filters, '$shedule;');
+    const dateTags = getTagsGroup(filters, '$date;');
+    const cinemaTags = getTagsGroup(filters, '$cinema;');
+    const showTimeTags = getTagsGroup(filters, '$showtime;');
+    const genreTags = getTagsGroup(filters, '$genre;');
+    const videoTypeTags = getTagsGroup(filters, '$videotype;');
+    const audioTypeTags = getTagsGroup(filters, '$audiotype;');
+    const auditoriumTags = getTagsGroup(filters, '$auditorium;');
 
 
     return (

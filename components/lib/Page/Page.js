@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { getChild, getComponent } from '../../../core/functions/common/components';
 import { useEffect, useState } from 'react';
 import { getHandler } from '../../../actions';
+import { useRouter } from 'next/router';
+import { setFilters } from '../../../store/actions/filters';
+import { clearURI, parseQuery } from '../../../core/functions/common/common';
 
 
 
@@ -15,6 +18,7 @@ export default function Page(props) {
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
@@ -51,6 +55,17 @@ export default function Page(props) {
             }
         }
     }, [dragCounter, dragendComponent, componentData]);
+
+
+    // filters in query string
+    useEffect(() => {
+        const queryFilter = router.query.filter;
+        if (queryFilter) {
+            const parsedFilters = parseQuery(queryFilter);
+            dispatch(setFilters(parsedFilters));
+            clearURI(router);
+        }
+    }, [dispatch, router]);
 
 
     return (

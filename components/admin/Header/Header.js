@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { getPage } from '../../../core/functions/common/components'
 import Navbar from '../Navbar/Navbar'
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './HeaderStyled'
-import Router from 'next/router';
+
 
 
 export default function Header() {
@@ -12,7 +12,6 @@ export default function Header() {
     const pageID = useSelector(state => state.document.page);
     const componentsData = useSelector(state => state.document.componentsData);
     const page = getPage(componentsData, pageID);
-
 
     return (
         <HeaderWrapper>

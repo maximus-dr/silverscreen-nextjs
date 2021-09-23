@@ -4,17 +4,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;grodno",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;moon",
-            "#date;2021-10-04",
-            "#showtime;07:00-11:59",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;resto"
+            "$city;grodno",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;moon",
+            "$date;2021-10-04",
+            "$showtime;07:00-11:59",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;resto"
         ]
     },
     {
@@ -22,17 +22,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;grodno",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;moon",
-            "#date;2021-10-04",
-            "#showtime;12:00-16:59",
-            "#videotype;3d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;grodno",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;moon",
+            "$date;2021-10-04",
+            "$showtime;12:00-16:59",
+            "$videotype;3d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -40,17 +40,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;grodno",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;moon",
-            "#date;2021-10-05",
-            "#showtime;07:00-11:59",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;resto"
+            "$city;grodno",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;moon",
+            "$date;2021-10-05",
+            "$showtime;07:00-11:59",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;resto"
         ]
     },
     {
@@ -58,17 +58,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;grodno",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;moon",
-            "#date;2021-10-05",
-            "#showtime;12:00-16:59",
-            "#videotype;3d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;grodno",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;moon",
+            "$date;2021-10-05",
+            "$showtime;12:00-16:59",
+            "$videotype;3d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -76,17 +76,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;minsk",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;voka",
-            "#date;2021-10-04",
-            "#showtime;07:00-11:59",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;voka",
+            "$date;2021-10-04",
+            "$showtime;07:00-11:59",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -94,17 +94,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;minsk",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;arena",
-            "#date;2021-10-04",
-            "#showtime;12:00-16:59",
-            "#videotype;3d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;arena",
+            "$date;2021-10-04",
+            "$showtime;12:00-16:59",
+            "$videotype;3d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -112,17 +112,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;minsk",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;voka",
-            "#date;2021-10-05",
-            "#showtime;07:00-11:59",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;voka",
+            "$date;2021-10-05",
+            "$showtime;07:00-11:59",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -130,17 +130,17 @@
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
         "filters":[
-            "#city;minsk",
-            "#genre;cartoon",
-            "#genre;family",
-            "#genre;comedy",
-            "#shedule;now",
-            "#cinema;arena",
-            "#date;2021-10-05",
-            "#showtime;12:00-16:59",
-            "#videotype;3d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$shedule;now",
+            "$cinema;arena",
+            "$date;2021-10-05",
+            "$showtime;12:00-16:59",
+            "$videotype;3d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -148,16 +148,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -165,16 +165,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;vip"
         ]
     },
     {
@@ -182,16 +182,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;22:00-06:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -199,16 +199,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -216,16 +216,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;vip"
         ]
     },
     {
@@ -233,16 +233,16 @@
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;22:00-06:59",
-            "#genre;drama",
-            "#genre;thriller",
-            "#videotype;2d",
-            "#audiotype;dolbydigital",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$videotype;2d",
+            "$audiotype;dolbydigital",
+            "$auditorium;voka"
         ]
     },
     {
@@ -250,16 +250,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;voka",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;voka",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;voka"
         ]
     },
     {
@@ -267,16 +267,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vegaslounge"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vegaslounge"
         ]
     },
     {
@@ -284,16 +284,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;voka",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;voka",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -301,16 +301,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -318,16 +318,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;grodno",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;moon",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;resto"
+            "$city;grodno",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;moon",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;resto"
         ]
     },
     {
@@ -335,16 +335,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;grodno",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;moon",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;grodno",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;moon",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -352,16 +352,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;grodno",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;moon",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;resto"
+            "$city;grodno",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;moon",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;resto"
         ]
     },
     {
@@ -369,16 +369,16 @@
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
         "filters":[
-            "#city;grodno",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;moon",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;grodno",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;moon",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -386,17 +386,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;voka"
         ]
     },
     {
@@ -404,17 +404,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;2d4k",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;2d4k",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -422,17 +422,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-04",
-            "#cinema;voka",
-            "#showtime;22:00-06:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vegaslounge"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$cinema;voka",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vegaslounge"
         ]
     },
     {
@@ -440,17 +440,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;12:00-16:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;2d",
-            "#audiotype;dolbyatmos",
-            "#auditorium;voka"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;2d",
+            "$audiotype;dolbyatmos",
+            "$auditorium;voka"
         ]
     },
     {
@@ -458,17 +458,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;17:00-21:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;2d4k",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vip"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;17:00-21:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;2d4k",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vip"
         ]
     },
     {
@@ -476,17 +476,17 @@
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
         "filters":[
-            "#city;minsk",
-            "#shedule;now",
-            "#date;2021-10-05",
-            "#cinema;arena",
-            "#showtime;22:00-06:59",
-            "#genre;drama",
-            "#genre;fantastic",
-            "#genre;adventure",
-            "#videotype;screenx",
-            "#audiotype;dolbyatmos",
-            "#auditorium;vegaslounge"
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$videotype;screenx",
+            "$audiotype;dolbyatmos",
+            "$auditorium;vegaslounge"
         ]
     }
 ]

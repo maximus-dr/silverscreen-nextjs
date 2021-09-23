@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { getComponent } from '../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../core/functions/common/filters';
 import EventCard from './EventCard/EventCard';
@@ -21,6 +21,14 @@ export default function Events(props) {
 
     const filteredEvents = filteredData.events;
     const filteredShows = filteredData.shows;
+
+    useEffect(() => {
+        const onBeforeUnload = () => {
+            sessionStorage.setItem('filters', filters);
+        };
+        window.addEventListener('beforeunload', onBeforeUnload);
+        return () => window.removeEventListener('beforeunload', onBeforeUnload);
+    }, [filters])
 
 
     return (

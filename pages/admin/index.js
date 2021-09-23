@@ -75,7 +75,7 @@ export async function getServerSideProps() {
 
 
 
-export default function AdminMainPage() {
+function AdminMainPage() {
 
     const state = useSelector(state => state);
     const {componentsData, resolution, page} = state.document;
@@ -109,3 +109,5 @@ export default function AdminMainPage() {
         </Wrapper>
     );
 }
+
+export default AdminMainPage;
