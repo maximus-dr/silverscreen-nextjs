@@ -26,13 +26,7 @@ const filterReducer = (state = [], action) => {
             return [...newState, action.filter];
 
         case SET_FILTERS:
-            const newFilters = [...state];
-
-            action.filters.forEach(filter => {
-                if (newFilters.includes(filter)) return;
-                newFilters.push(filter);
-            });
-            return newFilters
+            return [...action.filters];
 
         case SET_MULTIPLE_FILTER:
             return [...state, action.filter];

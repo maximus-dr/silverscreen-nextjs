@@ -15,6 +15,7 @@ export default function Page(props) {
     const id = props.componentData.id;
     const state = props.state;
     const {componentsData, activeComponent, dragendComponent, mode} = state.document;
+    const {filters} = state;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
@@ -57,15 +58,33 @@ export default function Page(props) {
     }, [dragCounter, dragendComponent, componentData]);
 
 
-    // filters in query string
+    // применяет фильтры из строки запроса или сессионного хранилища
     useEffect(() => {
         const queryFilter = router.query.filter;
         if (queryFilter) {
             const parsedFilters = parseQuery(queryFilter);
             dispatch(setFilters(parsedFilters));
             clearURI(router);
+            sessionStorage.removeItem('filters');
+        }
+
+        const cachedFilters = sessionStorage.getItem('filters');
+        if (cachedFilters) {
+            const sessionFilters = cachedFilters.split(',');
+            dispatch(setFilters(sessionFilters));
         }
     }, [dispatch, router]);
+
+    // отправляет фильтры в сессионное хранилище перед обновлением страницы
+    useEffect(() => {
+        const onBeforeUnload = () => {
+            filters && sessionStorage.setItem('filters', filters);
+        };
+        window.addEventListener('beforeunload', onBeforeUnload);
+        return () => window.removeEventListener('beforeunload', onBeforeUnload);
+    }, [filters]);
+
+
 
 
     return (

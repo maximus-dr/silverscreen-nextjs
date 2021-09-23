@@ -135,9 +135,13 @@ export default function Filters() {
     };
 
     useEffect(() => {
-        const sheduleFilter = filters && filters.some(item => item.includes('$shedule;'));
-        if (!sheduleFilter) {
-            dispatch(setFilter('$shedule;now'));
+        const cachedFilters = sessionStorage.getItem('filters');
+
+        if (!cachedFilters) {
+            const sheduleFilter = filters && filters.some(item => item.includes('$shedule;'));
+            if (!sheduleFilter) {
+                dispatch(setFilter('$shedule;now'));
+            }
         }
     }, [dispatch, filters])
 

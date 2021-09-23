@@ -22,14 +22,6 @@ export default function Events(props) {
     const filteredEvents = filteredData.events;
     const filteredShows = filteredData.shows;
 
-    useEffect(() => {
-        const onBeforeUnload = () => {
-            sessionStorage.setItem('filters', filters);
-        };
-        window.addEventListener('beforeunload', onBeforeUnload);
-        return () => window.removeEventListener('beforeunload', onBeforeUnload);
-    }, [filters])
-
 
     return (
         <EventsComponent
