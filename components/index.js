@@ -19,6 +19,8 @@ import Textarea from "./lib/Textarea/Textarea";
 import Events from "./lib/Events/Events";
 import Filter from "./lib/Filter/Filter";
 import Filters from "./lib/Filters/Filters";
+import EventsContainer from "./lib/Containers/EventsContainer/EventsContainer";
+import EventCard from "./lib/Cards/EventCard/EventCard";
 
 
 export const Provider = {
@@ -28,6 +30,8 @@ export const Provider = {
     'Document': Document,
     'dropdown': Dropdown,
     'events': Events,
+    'eventsContainer': EventsContainer,
+    'eventCard': EventCard,
     'filter': Filter,
     'filters': Filters,
     'form': Form,

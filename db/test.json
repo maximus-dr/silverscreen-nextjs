@@ -24,6 +24,24 @@
                     },
                     "childrenList": [
                         {
+                            "typeName": "eventsContainer",
+                            "id": "evcont001",
+                            "name": "Контейнер событий",
+                            "styles": {
+                                "common": {
+                                    "paddingTop": "25px",
+                                    "paddingRight": "15px",
+                                    "paddingBottom": "25px",
+                                    "paddingLeft": "15px",
+                                    "backgroundColor": "#ffffff",
+                                    "border": "1px dashed #000000",
+                                    "display": "flex",
+                                    "flexWrap": "wrap"
+                                }
+                            },
+                            "childrenList": []
+                        },
+                        {
                             "typeName": "events",
                             "id": "events001",
                             "name": "События",
