@@ -26,17 +26,18 @@
                         {
                             "typeName": "eventsContainer",
                             "id": "evcont001",
-                            "name": "Контейнер событий",
+                            "name": "События",
                             "styles": {
                                 "common": {
                                     "paddingTop": "25px",
                                     "paddingRight": "15px",
                                     "paddingBottom": "25px",
                                     "paddingLeft": "15px",
-                                    "backgroundColor": "#ffffff",
+                                    "backgroundColor": "#333333",
                                     "border": "1px dashed #000000",
                                     "display": "flex",
-                                    "flexWrap": "wrap"
+                                    "flexWrap": "wrap",
+                                    "justifyContent": "space-around"
                                 }
                             },
                             "childrenList": []

@@ -1,6 +1,41 @@
 [
     {
       "id":"boss_molokosos-2",
+      "acronym": "Босс-Молокосос 2",
+      "ageLimit": {
+          "acronym": "6+",
+          "name": "зрителям, достигшим 6 лет"
+      },
+      "eventType": {
+          "name": "cinema",
+          "acronym": "Кино"
+      },
+      "genre": [
+            {
+                "name": "cartoon",
+                "acronym": "мультфильм"
+            },
+            {
+                "name": "family",
+                "acronym": "семейный"
+            },
+            {
+                "name": "comedy",
+                "acronym": "комедия"
+            }
+      ],
+      "language": [
+          {
+              "name": "Русский язык",
+              "acronym": "RU"
+          }
+      ],
+      "technology": [
+            {
+                "name": "Imax",
+                "icon": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg"
+            }
+      ],
       "filters":[
         "$city;minsk",
         "$city;grodno",
@@ -23,8 +58,38 @@
       ],
       "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
     },
+
     {
       "id":"sovry_mne_pravdu",
+      "acronym": "Соври мне правду",
+      "ageLimit": {
+        "acronym": "18+",
+        "name": "зрителям, достигшим 18 лет"
+    },
+    "eventType": {
+        "name": "cinema",
+        "acronym": "Кино"
+    },
+    "genre": [
+          {
+              "name": "cartoon",
+              "acronym": "мультфильм"
+          },
+          {
+              "name": "family",
+              "acronym": "семейный"
+          },
+          {
+              "name": "comedy",
+              "acronym": "комедия"
+          }
+    ],
+    "language": [
+        {
+            "name": "Русский язык",
+            "acronym": "RU"
+        }
+    ],
       "filters":[
         "$city;minsk",
         "$shedule;now",
@@ -43,8 +108,38 @@
       ],
       "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png"
     },
+
     {
       "id":"petrovy_v_grippe",
+      "acronym": "Петровы в гриппе",
+      "ageLimit": {
+        "acronym": "12+",
+        "name": "зрителям, достигшим 12 лет"
+    },
+    "eventType": {
+        "name": "cinema",
+        "acronym": "Кино"
+    },
+    "genre": [
+          {
+              "name": "cartoon",
+              "acronym": "мультфильм"
+          },
+          {
+              "name": "family",
+              "acronym": "семейный"
+          },
+          {
+              "name": "comedy",
+              "acronym": "комедия"
+          }
+    ],
+    "language": [
+        {
+            "name": "Русский язык",
+            "acronym": "RU"
+        }
+    ],
       "filters":[
         "$city;minsk",
         "$city;grodno",
@@ -68,8 +163,38 @@
       ],
       "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
     },
+
     {
       "id":"dune",
+      "acronym": "Дюна",
+      "ageLimit": {
+        "acronym": "12+",
+        "name": "зрителям, достигшим 12 лет"
+    },
+    "eventType": {
+        "name": "cinema",
+        "acronym": "Кино"
+    },
+    "genre": [
+          {
+              "name": "cartoon",
+              "acronym": "мультфильм"
+          },
+          {
+              "name": "family",
+              "acronym": "семейный"
+          },
+          {
+              "name": "comedy",
+              "acronym": "комедия"
+          }
+    ],
+    "language": [
+        {
+            "name": "Русский язык",
+            "acronym": "RU"
+        }
+    ],
       "filters":[
         "$city;minsk",
         "$shedule;now",
@@ -93,8 +218,38 @@
       ],
       "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png"
     },
+
     {
       "id":"klaustrofoby",
+      "acronym": "Клаустрофобы",
+      "ageLimit": {
+        "acronym": "12+",
+        "name": "зрителям, достигшим 12 лет"
+    },
+    "eventType": {
+        "name": "cinema",
+        "acronym": "Кино"
+    },
+    "genre": [
+          {
+              "name": "cartoon",
+              "acronym": "мультфильм"
+          },
+          {
+              "name": "family",
+              "acronym": "семейный"
+          },
+          {
+              "name": "comedy",
+              "acronym": "комедия"
+          }
+    ],
+    "language": [
+        {
+            "name": "Русский язык",
+            "acronym": "RU"
+        }
+    ],
       "filters":[
         "$city;minsk",
         "$city;grodno",
