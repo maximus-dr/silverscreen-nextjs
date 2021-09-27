@@ -1,24 +1,6 @@
 import React from 'react'
-import { generateNewId, getComponent } from '../../../../core/functions/common/components';
-import Section from '../../Section/Section';
-import { EventCardComponent, EventGenre, EventPoster, EventRow, EventSubtitle, EventTag, EventTagRow, EventTags, EventTechnologyIcon, EventTitle } from './EventCardStyled'
-
-
-
-const posterData = (link) => {
-    const id = generateNewId(10);
-    return {
-        typeName: 'section',
-        id,
-        name: 'Постер',
-        styles: {
-            common: {
-                backgroundImage: `url(${link})`
-            }
-        },
-        childrenList: []
-    }
-}
+import { getComponent } from '../../../../core/functions/common/components';
+import { EventCardComponent, EventGenre, EventPoster, EventRow, EventSubtitle, EventTag, EventTags, EventTechnologyIcon, EventTitle } from './EventCardStyled'
 
 
 export default function EventCard(props) {
@@ -27,8 +9,6 @@ export default function EventCard(props) {
     const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
-
-    const poster = posterData(event.link);
 
 
     return (
