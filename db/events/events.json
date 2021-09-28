@@ -72,16 +72,12 @@
     },
     "genre": [
           {
-              "name": "cartoon",
-              "acronym": "мультфильм"
+              "name": "drama",
+              "acronym": "драма"
           },
           {
-              "name": "family",
-              "acronym": "семейный"
-          },
-          {
-              "name": "comedy",
-              "acronym": "комедия"
+              "name": "thriller",
+              "acronym": "триллер"
           }
     ],
     "language": [
@@ -122,16 +118,8 @@
     },
     "genre": [
           {
-              "name": "cartoon",
-              "acronym": "мультфильм"
-          },
-          {
-              "name": "family",
-              "acronym": "семейный"
-          },
-          {
-              "name": "comedy",
-              "acronym": "комедия"
+              "name": "fantastic",
+              "acronym": "фантастика"
           }
     ],
     "language": [
@@ -177,16 +165,16 @@
     },
     "genre": [
           {
-              "name": "cartoon",
-              "acronym": "мультфильм"
+              "name": "drama",
+              "acronym": "драма"
           },
           {
-              "name": "family",
-              "acronym": "семейный"
+              "name": "fantastic",
+              "acronym": "фантастика"
           },
           {
-              "name": "comedy",
-              "acronym": "комедия"
+              "name": "adventure",
+              "acronym": "приключения"
           }
     ],
     "language": [
@@ -232,16 +220,12 @@
     },
     "genre": [
           {
-              "name": "cartoon",
-              "acronym": "мультфильм"
+              "name": "action",
+              "acronym": "боевик"
           },
           {
-              "name": "family",
-              "acronym": "семейный"
-          },
-          {
-              "name": "comedy",
-              "acronym": "комедия"
+              "name": "thriller",
+              "acronym": "триллер"
           }
     ],
     "language": [

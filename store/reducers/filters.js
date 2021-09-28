@@ -2,28 +2,42 @@ import { CLEAR_FILTERS, SET_FILTER, SET_FILTERS, SET_MULTIPLE_FILTER, UNSET_MULT
 
 
 const parseTagCategory = (tag) => {
+    if (!tag) return null;
     return tag.split(';')[0] + ';';
 }
 
 const parseTagValue = (tag) => {
+    if (!tag) return null;
     return tag.split(';')[1];
 }
 
-
 const filterReducer = (state = [], action) => {
+
     switch (action.type) {
 
         case SET_FILTER:
-            if (state.includes(action.filter)) return [...state];
-
-            const value = parseTagValue(action.filter);
-            const category = parseTagCategory(action.filter);
-            let newState = state.filter(item => !item.includes(category));
-
-            if (value === 'all') {
-                return newState;
+            const isMultiple = action.isMultiple;
+            if (isMultiple) {
+                if (state.includes(action.filter)) {
+                    return [...state].filter(tag => tag !== action.filter);
+                }
+                else {
+                    return [...state, action.filter];
+                }
             }
-            return [...newState, action.filter];
+
+            if (!isMultiple) {
+                if (state.includes(action.filter)) return [...state];
+
+                const value = parseTagValue(action.filter);
+                const category = parseTagCategory(action.filter);
+                let newState = state.filter(item => !item.includes(category));
+
+                if (value === 'all') {
+                    return newState;
+                }
+                return [...newState, action.filter];
+            }
 
         case SET_FILTERS:
             return [...action.filters];
@@ -44,5 +58,7 @@ const filterReducer = (state = [], action) => {
 
 
 export {
-    filterReducer
+    filterReducer,
+    parseTagValue,
+    parseTagCategory
 }

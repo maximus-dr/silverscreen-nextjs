@@ -39,10 +39,20 @@ import { stylesProvider } from '../../../../styles/stylesProvider';
 //     }}
 // `;
 
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
+
 export const EventCardComponent = styled.div`
     width: 272px;
     height: 536px;
     margin-bottom: 40px;
+    animation: ${fadeIn} 100ms linear;
 `;
 
 

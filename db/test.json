@@ -61,10 +61,8 @@
                                     "name": "Section 1",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "show",
-                                        "category": "cinema",
-                                        "value": "voka"
+                                        "isMultiple": true,
+                                        "value": "$cinema;voka"
                                     },
                                     "styles": {
                                         "common": {
@@ -114,10 +112,8 @@
                                     "name": "Section 2",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "show",
-                                        "category": "cinema",
-                                        "value": "arena"
+                                        "isMultiple": true,
+                                        "value": "$cinema;arena"
                                     },
                                     "styles": {
                                         "common": {
@@ -167,10 +163,8 @@
                                     "name": "Section 3",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "show",
-                                        "category": "cinema",
-                                        "value": "moon"
+                                        "isMultiple": true,
+                                        "value": "$cinema;moon"
                                     },
                                     "styles": {
                                         "common": {
@@ -255,10 +249,8 @@
                                     "value": "мультфильм",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "cartoon"
+                                        "isMultiple": true,
+                                        "value": "$genre;cartoon"
                                     },
                                     "styles": {
                                         "common": {
@@ -291,10 +283,8 @@
                                     "value": "драма",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "drama"
+                                        "isMultiple": true,
+                                        "value": "$genre;drama"
                                     },
                                     "styles": {
                                         "common": {
@@ -327,10 +317,8 @@
                                     "value": "семейный",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "family"
+                                        "isMultiple": true,
+                                        "value": "$genre;family"
                                     },
                                     "styles": {
                                         "common": {
@@ -363,10 +351,8 @@
                                     "value": "комедия",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "comedy"
+                                        "isMultiple": true,
+                                        "value": "$genre;comedy"
                                     },
                                     "styles": {
                                         "common": {
@@ -399,10 +385,8 @@
                                     "value": "фэнтези",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "fantasy"
+                                        "isMultiple": true,
+                                        "value": "$genre;fantasy"
                                     },
                                     "styles": {
                                         "common": {
@@ -435,10 +419,8 @@
                                     "value": "шоу",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "show"
+                                        "isMultiple": true,
+                                        "value": "$genre;show"
                                     },
                                     "styles": {
                                         "common": {
@@ -471,10 +453,8 @@
                                     "value": "фантастика",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "fantastic"
+                                        "isMultiple": true,
+                                        "value": "$genre;fantastic"
                                     },
                                     "styles": {
                                         "common": {
@@ -507,10 +487,8 @@
                                     "value": "спорт",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "sport"
+                                        "isMultiple": true,
+                                        "value": "$genre;sport"
                                     },
                                     "styles": {
                                         "common": {
@@ -543,10 +521,8 @@
                                     "value": "документальный",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "doc"
+                                        "isMultiple": true,
+                                        "value": "$genre;doc"
                                     },
                                     "styles": {
                                         "common": {
@@ -579,10 +555,8 @@
                                     "value": "выставка",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "exhibition"
+                                        "isMultiple": true,
+                                        "value": "$genre;exhibition"
                                     },
                                     "styles": {
                                         "common": {
@@ -615,10 +589,8 @@
                                     "value": "триллер",
                                     "role": "filter",
                                     "settings": {
-                                        "multiple": true,
-                                        "type": "event",
-                                        "category": "genre",
-                                        "value": "thriller"
+                                        "isMultiple": true,
+                                        "value": "$genre;thriller"
                                     },
                                     "styles": {
                                         "common": {
@@ -668,9 +640,7 @@
                                     "value": "все сеансы",
                                     "role": "filter",
                                     "settings": {
-                                        "type": "event",
-                                        "category": "shedule",
-                                        "value": "all"
+                                        "value": "$shedule;all"
                                     },
                                     "styles": {
                                         "common": {
@@ -702,9 +672,7 @@
                                     "value": "сейчас",
                                     "role": "filter",
                                     "settings": {
-                                        "type": "event",
-                                        "category": "shedule",
-                                        "value": "now"
+                                        "value": "$shedule;now"
                                     },
                                     "styles": {
                                         "common": {
@@ -736,9 +704,7 @@
                                     "value": "скоро",
                                     "role": "filter",
                                     "settings": {
-                                        "type": "event",
-                                        "category": "shedule",
-                                        "value": "soon"
+                                        "value": "$shedule;soon"
                                     },
                                     "styles": {
                                         "common": {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { clearFilters, setFilter, setMultipleFilter, unsetMultipleFilter, UNSET_MULTIPLE_FILTER } from '../../../store/actions/filters';
+import { clearFilters, setFilter } from '../../../store/actions/filters';
 import { ClearButton, FilterButton, FilterCinemaOption, FilterCinemaSelect, FilterCinemaWrapper, FilterDateOption, FilterDateSelect, FilterDateWrapper, FilterOption, FilterSelect, FilterSheduleWrapper, FiltersWrapper, FilterTitle, FilterWrapper, MultipleCheckbox, MultipleItem, MultipleLabel, MultipleWrapper } from './FiltersStyled'
 
 const cities = [{name: '$city;all', acronym: 'Все города'}, {name: '$city;minsk', acronym: 'Минск'}, {name: '$city;grodno', acronym: 'Гродно'}];
@@ -117,17 +117,8 @@ export default function Filters() {
     const dispatch = useDispatch();
 
 
-    const onFilterChange = (filter) => {
-        if (filters.includes(filter)) return;
-        dispatch(setFilter(filter));
-    }
-
-    const onMultipleFilterChange = (filter) => {
-        if (filters.includes(filter)) {
-            dispatch(unsetMultipleFilter(filter));
-            return;
-        }
-        dispatch(setMultipleFilter(filter));
+    const onFilterChange = (filter, multiple) => {
+        dispatch(setFilter(filter, multiple));
     }
 
     const getFilterValue = (filters, category) => {
@@ -234,7 +225,9 @@ export default function Filters() {
                             name={genre.name}
                             type="checkbox"
                             checked={getFilterValue(filters, '$genre;').includes(genre.name)}
-                            onChange={(e) => onMultipleFilterChange(e.target.name)}
+                            onChange={(e) => {
+                                onFilterChange(e.target.name, true)
+                            }}
                         />
                         <MultipleLabel
                             htmlFor={genre.name}
@@ -254,7 +247,7 @@ export default function Filters() {
                             name={item.name}
                             type="checkbox"
                             checked={getFilterValue(filters, '$videotype;').includes(item.name)}
-                            onChange={(e) => onMultipleFilterChange(e.target.name)}
+                            onChange={(e) => onFilterChange(e.target.name, true)}
                         />
                         <MultipleLabel
                             htmlFor={item.name}
@@ -274,7 +267,7 @@ export default function Filters() {
                             name={item.name}
                             type="checkbox"
                             checked={getFilterValue(filters, '$audiotype;').includes(item.name)}
-                            onChange={(e) => onMultipleFilterChange(e.target.name)}
+                            onChange={(e) => onFilterChange(e.target.name, true)}
                         />
                         <MultipleLabel
                             htmlFor={item.name}
@@ -294,7 +287,7 @@ export default function Filters() {
                             name={item.name}
                             type="checkbox"
                             checked={getFilterValue(filters, '$auditorium;').includes(item.name)}
-                            onChange={(e) => onMultipleFilterChange(e.target.name)}
+                            onChange={(e) => onFilterChange(e.target.name, true)}
                         />
                         <MultipleLabel
                             htmlFor={item.name}

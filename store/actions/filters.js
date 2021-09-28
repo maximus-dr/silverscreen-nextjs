@@ -5,9 +5,10 @@ const SET_FILTERS = 'SET_FILTERS';
 const UNSET_MULTIPLE_FILTER = 'UNSET_MULTIPLE_FILTER';
 
 
-const setFilter = (filter) => ({
+const setFilter = (filter, isMultiple) => ({
     type: SET_FILTER,
-    filter
+    filter,
+    isMultiple
 });
 
 const setFilters = (filters) => ({
