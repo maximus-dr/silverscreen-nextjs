@@ -5,7 +5,7 @@ import { parseTagCategory, parseTagValue } from "../store/reducers/filters";
 export const filterHandlers = {
 
     onClick(e, params) {
-        const {settings, dispatch} = params;
+        const {settings, dispatch, state} = params;
         const {value, isMultiple} = settings;
 
         if (settings.type === 'clear') {

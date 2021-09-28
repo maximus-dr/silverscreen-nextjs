@@ -17,26 +17,39 @@ const filterReducer = (state = [], action) => {
 
         case SET_FILTER:
             const isMultiple = action.isMultiple;
+            let result;
+
             if (isMultiple) {
                 if (state.includes(action.filter)) {
-                    return [...state].filter(tag => tag !== action.filter);
+                    result = [...state].filter(tag => tag !== action.filter);
+                    sessionStorage.setItem('filters', result);
+                    return result;
                 }
                 else {
-                    return [...state, action.filter];
+                    result = [...state, action.filter];
+                    sessionStorage.setItem('filters', result);
+                    return result;
                 }
             }
 
             if (!isMultiple) {
-                if (state.includes(action.filter)) return [...state];
+                if (state.includes(action.filter)) {
+                    result = [...state];
+                    sessionStorage.setItem('filters', result);
+                    return result;
+                }
 
                 const value = parseTagValue(action.filter);
                 const category = parseTagCategory(action.filter);
-                let newState = state.filter(item => !item.includes(category));
+                result = state.filter(item => !item.includes(category));
 
                 if (value === 'all') {
-                    return newState;
+                    sessionStorage.setItem('filters', result);
+                    return result;
                 }
-                return [...newState, action.filter];
+                result = [...result, action.filter];
+                sessionStorage.setItem('filters', result);
+                return result;
             }
 
         case SET_FILTERS:
@@ -49,6 +62,7 @@ const filterReducer = (state = [], action) => {
             return [...state].filter(tag => tag !== action.filter);
 
         case CLEAR_FILTERS:
+            sessionStorage.removeItem('filters');
             return []
 
         default:

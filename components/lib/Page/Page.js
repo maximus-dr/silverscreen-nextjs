@@ -58,7 +58,7 @@ export default function Page(props) {
     }, [dragCounter, dragendComponent, componentData]);
 
 
-    // применяет фильтры из строки запроса или сессионного хранилища
+    // проверяет фильтры в sessionStorage
     useEffect(() => {
         const queryFilter = router.query.filter;
         if (queryFilter) {
@@ -74,16 +74,6 @@ export default function Page(props) {
             dispatch(setFilters(sessionFilters));
         }
     }, [dispatch, router]);
-
-    // отправляет фильтры в сессионное хранилище перед обновлением страницы
-    useEffect(() => {
-        const onBeforeUnload = () => {
-            filters && sessionStorage.setItem('filters', filters);
-        };
-        window.addEventListener('beforeunload', onBeforeUnload);
-        return () => window.removeEventListener('beforeunload', onBeforeUnload);
-    }, [filters]);
-
 
 
 
