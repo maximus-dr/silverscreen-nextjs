@@ -56,7 +56,8 @@ export const EventCardComponent = styled.div`
 `;
 
 
-export const EventPoster = styled.div`
+export const EventPoster = styled.a`
+    display: block;
     width: 272px;
     height: 400px;
     border-radius: 8px;

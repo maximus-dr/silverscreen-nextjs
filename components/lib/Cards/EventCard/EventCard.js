@@ -1,7 +1,7 @@
 import React from 'react'
 import { getComponent } from '../../../../core/functions/common/components';
 import { EventCardComponent, EventGenre, EventPoster, EventRow, EventSubtitle, EventTag, EventTags, EventTechnologyIcon, EventTitle } from './EventCardStyled'
-
+import Link from 'next/link';
 
 export default function EventCard(props) {
 
@@ -10,6 +10,10 @@ export default function EventCard(props) {
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
 
+    const onPosterClick = (e) => {
+        if (mode === 'admin') e.preventDefault();
+        return;
+    }
 
     return (
         <EventCardComponent
@@ -17,7 +21,9 @@ export default function EventCard(props) {
             componentData={componentData}
             isActiveComponent={isActiveComponent}
         >
-            <EventPoster link={event.posterLink} />
+            <Link href={`/afisha/${event.id}`} passHref={mode !== 'admin'}>
+                <EventPoster link={event.posterLink} onClick={onPosterClick} />
+            </Link>
 
             <EventRow>
                 <EventTags>

@@ -620,6 +620,369 @@
 
                         {
                             "typeName": "section",
+                            "id": "sec007",
+                            "name": "Технологии",
+                            "styles": {
+                                "common": {
+                                    "display": "flex",
+                                    "flexWrap": "wrap",
+                                    "paddingRight": "25px",
+                                    "paddingBottom": "25px",
+                                    "paddingLeft": "25px"
+                                }
+                            },
+                            "childrenList": [
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0015",
+                                    "name": "технологии",
+                                    "value": "технологии",
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "width": "100%",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "marginBottom": "16px"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0010",
+                                    "name": "2d",
+                                    "value": "2d",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$technology;2d"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0011",
+                                    "name": "3d",
+                                    "value": "3d",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$technology;3d"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0012",
+                                    "name": "2d4k",
+                                    "value": "2d4k",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$technology;2d4k"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0013",
+                                    "name": "dolbydigital",
+                                    "value": "dolbydigital",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$technology;dolbydigital"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0014",
+                                    "name": "dolbyatmos",
+                                    "value": "dolbyatmos",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$technology;dolbyatmos"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                }
+                            ]
+                        },
+
+                        {
+                            "typeName": "section",
+                            "id": "sec008",
+                            "name": "Залы",
+                            "styles": {
+                                "common": {
+                                    "display": "flex",
+                                    "flexWrap": "wrap",
+                                    "paddingRight": "25px",
+                                    "paddingBottom": "25px",
+                                    "paddingLeft": "25px"
+                                }
+                            },
+                            "childrenList": [
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0020",
+                                    "name": "залы",
+                                    "value": "залы",
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "width": "100%",
+                                            "fontSize": "24px",
+                                            "lineHeight": "32px",
+                                            "marginBottom": "16px"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0016",
+                                    "name": "vip",
+                                    "value": "vip",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$auditorium;vip"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0017",
+                                    "name": "voka",
+                                    "value": "voka",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$auditorium;voka"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0018",
+                                    "name": "vegas lounge",
+                                    "value": "vegas",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$auditorium;vegaslounge"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "label",
+                                    "id": "lab0019",
+                                    "name": "resto",
+                                    "value": "resto",
+                                    "role": "filter",
+                                    "settings": {
+                                        "isMultiple": true,
+                                        "value": "$auditorium;resto"
+                                    },
+                                    "styles": {
+                                        "common": {
+                                            "display": "inline-block",
+                                            "fontSize": "18px",
+                                            "lineHeight": "22px",
+                                            "marginRight": "5px",
+                                            "marginBottom": "5px",
+                                            "paddingTop": "5px",
+                                            "paddingRight": "15px",
+                                            "paddingBottom": "7px",
+                                            "paddingLeft": "15px",
+                                            "border": "2px solid rgba(57, 0, 114, 0.1)",
+                                            "borderRadius": "600px",
+                                            "cursor": "pointer",
+
+                                            "isActive": {
+                                                "backgroundColor": "#390072",
+                                                "color": "#ffffff"
+                                            }
+                                        }
+                                    },
+                                    "childrenList": []
+                                }
+                            ]
+                        },
+
+                        {
+                            "typeName": "section",
                             "id": "sec005",
                             "name": "Сейчас - скоро",
                             "styles": {
