@@ -15,7 +15,6 @@ export default function Page(props) {
     const id = props.componentData.id;
     const state = props.state;
     const {componentsData, activeComponent, dragendComponent, mode} = state.document;
-    const {filters} = state;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();

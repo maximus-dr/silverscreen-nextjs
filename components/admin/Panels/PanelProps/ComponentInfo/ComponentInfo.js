@@ -2,8 +2,9 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor } from '../../../../../store/actions/document';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor, setComponentRole } from '../../../../../store/actions/document';
 import { getComponent } from '../../../../../core/functions/common/components';
+import Settings from './Settings/Settings';
 
 
 
@@ -22,6 +23,17 @@ export default function ComponentSeciton(props) {
 
     const onValueInputFocus = () => {
         if (buffer) dispatch(clearBuffer());
+    }
+
+    const onRoleInputFocus = () => {
+        if (buffer) dispatch(clearBuffer());
+    }
+
+    const onRoleChange = (e) => {
+        dispatch(setComponentRole(
+            e.target.value,
+            activeComponent.id
+        ));
     }
 
     const onNameChange = (e) => {
@@ -69,7 +81,6 @@ export default function ComponentSeciton(props) {
 
                     if (entrie[0] === 'childrenList') return;
                     if (entrie[0] === 'styles') return;
-                    if (typeof entrie[1] !== 'string') return;
 
                     if (entrie[0] === 'name') {
                         return (
@@ -167,12 +178,39 @@ export default function ComponentSeciton(props) {
                         );
                     }
 
-                    return (
-                        <ComponentPropItem key={entrie[0]}>
-                            <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
-                            <ComponentPropValue>{entrie[1]}</ComponentPropValue>
-                        </ComponentPropItem>
-                    );
+                    if (entrie[0] === 'role') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.role || ''}
+                                        onFocus={onRoleInputFocus}
+                                        onChange={onRoleChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
+                    if (entrie[0] === 'settings') {
+                        const key = entrie[0];
+                        return (
+                            <Settings key={key} settings={entrie[1]} >
+
+                            </Settings>
+                        );
+                    }
+
+                    if (typeof entrie[1] === 'string') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>{entrie[1]}</ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
                 })}
 
             </ComponentData>

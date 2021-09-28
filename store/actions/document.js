@@ -28,6 +28,7 @@ const SET_PAGE = 'SET_PAGE';
 const UNSET_PAGE = 'UNSET_PAGE';
 const SET_MODE = 'SET_MODE';
 const SET_COMPONENT_FOR = 'SET_COMPONENT_FOR';
+const SET_COMPONENT_ROLE = 'SET_COMPONENT_ROLE';
 
 
 
@@ -90,6 +91,12 @@ const setComponentLinkToActive = (link) => ({
 const setComponentName = (name, id) => ({
     type: SET_COMPONENT_NAME,
     name,
+    id
+});
+
+const setComponentRole = (role, id) => ({
+    type: SET_COMPONENT_ROLE,
+    role,
     id
 });
 
@@ -206,7 +213,8 @@ export {
     unsetPage,
     setMode,
     setComponentUrl,
-    setComponentFor
+    setComponentFor,
+    setComponentRole
 }
 
 export {
@@ -237,5 +245,6 @@ export {
     UNSET_PAGE,
     SET_MODE,
     SET_COMPONENT_URL,
-    SET_COMPONENT_FOR
+    SET_COMPONENT_FOR,
+    SET_COMPONENT_ROLE
 }

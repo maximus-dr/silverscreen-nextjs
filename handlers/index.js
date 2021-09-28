@@ -7,6 +7,8 @@ export const handlers = (role, handler) => {
         admin: adminHandlers,
         filter: filterHandlers,
     }
+    if (!handlers[role]) return null;
+    if (!handlers[role][handler]) return null;
     return handlers[role][handler]
 }
 

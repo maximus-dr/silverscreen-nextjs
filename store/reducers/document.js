@@ -1,6 +1,6 @@
-import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, setLinkToComponentsData, updateComponentChildrenListData, setUrlToComponentsData, setForToComponentsData } from "../../core/functions/admin/components";
+import { setNameToComponentsData, setValueToComponentsData, deleteComponentFromComponentsData, addComponentToComponentsData, setLinkToComponentsData, updateComponentChildrenListData, setUrlToComponentsData, setForToComponentsData, setRoleToComponentsData } from "../../core/functions/admin/components";
 import { setPropToComponentsData, setSettingsPropToComponentsData } from "../../core/functions/admin/props";
-import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE, SET_SETTINGS_PROP, SET_PAGE, UNSET_PAGE, SET_MODE, SET_COMPONENT_URL, SET_COMPONENT_FOR } from "../actions/document"
+import { SET_RESOLUTION, SET_PROP, SET_COMPONENT_NAME, ADD_COMPONENT, DELETE_COMPONENT, SET_DRAGEND_COMPONENT, UNSET_DRAGEND_COMPONENT, SET_DOCUMENT_COMPONENTS_DATA, SET_ACTIVE_COMPONENT, UNSET_ACTIVE_COMPONENT, SET_COMPONENT_TO_BUFFER, UPDATE_COMPONENT_CHILDRENLIST, ADD_COMPONENT_TO_ACTIVE, UPDATE_ACTIVE_COMPONENT_CHILDRENLIST, SET_COMPONENT_VALUE_TO_ACTIVE, SET_TEMPLATES, SET_MODAL, CLOSE_MODAL, CLEAR_BUFFER, SET_COMPONENT_LINK, SET_COMPONENT_LINK_TO_ACTIVE, SET_SETTINGS_PROP, SET_PAGE, UNSET_PAGE, SET_MODE, SET_COMPONENT_URL, SET_COMPONENT_FOR, SET_COMPONENT_ROLE } from "../actions/document"
 import { SET_COMPONENT_VALUE } from './../actions/document';
 
 
@@ -79,6 +79,16 @@ export const documentReducer = (state = {}, action) => {
                 activeComponent: {
                     ...state.activeComponent,
                     value: action.value
+                }
+            }
+
+        case SET_COMPONENT_ROLE:
+            return {
+                ...state,
+                componentsData: setRoleToComponentsData(state.componentsData, action.id, action.role),
+                activeComponent: {
+                    ...state.activeComponent,
+                    role: action.role
                 }
             }
 
