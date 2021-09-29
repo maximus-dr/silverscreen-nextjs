@@ -280,5 +280,30 @@
                 },"childrenList":[]
             }
         ]
+    },
+
+    {
+        "category":"Контейнер",
+        "templates": [
+            {
+                "typeName":"eventsContainer",
+                "id":"templateBhFGjzKjuS",
+                "name":"События",
+                "styles": {
+                    "common": {
+                        "paddingTop": "25px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "25px",
+                        "paddingLeft": "15px",
+                        "backgroundColor": "#333333",
+                        "border": "1px dashed #000000",
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justifyContent": "space-around"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
     }
 ]

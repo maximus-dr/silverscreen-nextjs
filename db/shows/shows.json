@@ -249,6 +249,27 @@
         "id":"petrovy01",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "voka",
+            "acronym": "voka"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T12:05:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -266,6 +287,27 @@
         "id":"petrovy02",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "arena"
+        },
+        "auditorium": {
+            "name": "vegaslounge",
+            "acronym": "Vegas Lounge"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T18:35:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -283,6 +325,27 @@
         "id":"petrovy03",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "voka",
+            "acronym": "voka"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T14:35:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -300,6 +363,27 @@
         "id":"petrovy04",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "arena"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T19:05:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -317,6 +401,27 @@
         "id":"petrovy05",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "resto",
+            "acronym": "Resto"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T12:35:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$shedule;now",
@@ -334,6 +439,27 @@
         "id":"petrovy06",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T18:15:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$shedule;now",
@@ -351,6 +477,27 @@
         "id":"petrovy07",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "resto",
+            "acronym": "Resto"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T12:25:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$shedule;now",
@@ -368,6 +515,27 @@
         "id":"petrovy08",
         "eventId":"petrovy_v_grippe",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T19:00:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$shedule;now",
