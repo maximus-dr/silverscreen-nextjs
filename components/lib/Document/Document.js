@@ -13,47 +13,11 @@ export default function Document(props) {
     const bufferedComponent = useSelector(state => state.document.buffer);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        const onDocumentKeydown = (e) => {
-            const key = e.keyCode;
-            const ctrl = e.ctrlKey;
-            const keyC = 67;
-            const keyV = 86;
-            const keyZ = 90;
-            const keyX = 88;
 
-            // CTRL + C
-            if (ctrl && key === keyC && activeComponent) {
-                dispatch(setComponentToBuffer(activeComponent));
-            }
-            // CTRL + X
-            if (ctrl && key === keyX && activeComponent) {
-                dispatch(setComponentToBuffer(activeComponent));
-                dispatch(unsetActiveComponent());
-                dispatch(deleteComponent(activeComponent.id));
-            }
-            // CTRL + Z
-            if (ctrl && key === keyZ && activeComponent) {
-                console.log('CTRL + Z pressed');
-            }
-            // CTRL + V
-            if (ctrl && key === keyV && activeComponent && bufferedComponent) {
-                const componentCopy = updateComponentIds({...bufferedComponent});
-                dispatch(addComponent(activeComponent.id, componentCopy));
-                activeComponent && dispatch(addComponentToActive(componentCopy));
-            }
-        }
-
-        document.addEventListener('keydown', onDocumentKeydown);
-
-        return () => {
-            document.removeEventListener('keydown', onDocumentKeydown);
-        }
-    });
 
     function getCoords(elem) {
         let box = elem.getBoundingClientRect();
-        
+
         return {
           top: box.top + pageYOffset,
           left: box.left + pageXOffset,

@@ -7,16 +7,18 @@ import { getHandler } from '../../../handlers';
 import { useRouter } from 'next/router';
 import { setFilters } from '../../../store/actions/filters';
 import { clearURI, parseQuery } from '../../../core/functions/common/common';
-
+import { addComponent, addComponentToActive, deleteComponent, setComponentToBuffer, unsetActiveComponent } from '../../../store/actions/document';
+import { updateComponentIds } from '../../../core/functions/admin/components';
 
 
 export default function Page(props) {
 
     const id = props.componentData.id;
     const state = props.state;
-    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
+    const {componentsData, activeComponent, dragendComponent, mode, buffer} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
+
     const dispatch = useDispatch();
     const router = useRouter();
 
@@ -73,6 +75,44 @@ export default function Page(props) {
             dispatch(setFilters(sessionFilters));
         }
     }, [dispatch, router]);
+
+    useEffect(() => {
+        const onDocumentKeydown = (e) => {
+            const key = e.keyCode;
+            const ctrl = e.ctrlKey;
+            const keyC = 67;
+            const keyV = 86;
+            const keyZ = 90;
+            const keyX = 88;
+
+            // CTRL + C
+            if (ctrl && key === keyC && activeComponent) {
+                dispatch(setComponentToBuffer(activeComponent));
+            }
+            // CTRL + X
+            if (ctrl && key === keyX && activeComponent) {
+                dispatch(setComponentToBuffer(activeComponent));
+                dispatch(unsetActiveComponent());
+                dispatch(deleteComponent(activeComponent.id));
+            }
+            // CTRL + Z
+            if (ctrl && key === keyZ && activeComponent) {
+                console.log('CTRL + Z pressed');
+            }
+            // CTRL + V
+            if (ctrl && key === keyV && activeComponent && buffer) {
+                const componentCopy = updateComponentIds({...buffer});
+                dispatch(addComponent(activeComponent.id, componentCopy));
+                activeComponent && dispatch(addComponentToActive(componentCopy));
+            }
+        }
+
+        document.addEventListener('keydown', onDocumentKeydown);
+
+        return () => {
+            document.removeEventListener('keydown', onDocumentKeydown);
+        }
+    });
 
 
 
