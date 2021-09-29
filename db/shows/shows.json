@@ -3,6 +3,27 @@
         "id":"boss01",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "resto",
+            "acronym": "Resto"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T10:00:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$genre;cartoon",
@@ -21,6 +42,27 @@
         "id":"boss02",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "3d",
+            "acronym": "3D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T12:30:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$genre;cartoon",
@@ -39,6 +81,27 @@
         "id":"boss03",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "resto",
+            "acronym": "Resto"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T10:30:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$genre;cartoon",
@@ -57,6 +120,27 @@
         "id":"boss04",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "grodno",
+            "acronym": "Гродно"
+        },
+        "cinema": {
+            "name": "moon",
+            "acronym": "moon"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "3d",
+            "acronym": "3D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T13:00:00.000000+03:00",
         "filters":[
             "$city;grodno",
             "$genre;cartoon",
@@ -75,6 +159,27 @@
         "id":"boss05",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "voka",
+            "acronym": "voka"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T10:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$genre;cartoon",
@@ -93,6 +198,27 @@
         "id":"boss06",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "3d",
+            "acronym": "3D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T12:45:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$genre;cartoon",
@@ -111,6 +237,27 @@
         "id":"boss07",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T11:00:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$genre;cartoon",
@@ -129,6 +276,27 @@
         "id":"boss08",
         "eventId":"boss_molokosos-2",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "3d",
+            "acronym": "3D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T13:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$genre;cartoon",
@@ -147,6 +315,27 @@
         "id":"sovry01",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T13:35:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -164,6 +353,27 @@
         "id":"sovry02",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T18:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -181,6 +391,27 @@
         "id":"sovry03",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-04T22:45:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -198,6 +429,27 @@
         "id":"sovry04",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T13:45:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -215,6 +467,27 @@
         "id":"sovry05",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T19:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -232,6 +505,27 @@
         "id":"sovry06",
         "eventId":"sovry_mne_pravdu",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbydigital",
+            "acronym": "Dolby Digital"
+        },
+        "start": "2021-10-05T23:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -553,6 +847,27 @@
         "id":"dune01",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T13:40:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -571,6 +886,27 @@
         "id":"dune02",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "arena"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "2d4k",
+            "acronym": "2D4K"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T19:00:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -589,6 +925,27 @@
         "id":"dune03",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "auditorium": {
+            "name": "vegaslounge",
+            "acronym": "Vegas Lounge"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreeenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-04T22:45:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -607,6 +964,27 @@
         "id":"dune04",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "voka",
+            "acronym": "Voka"
+        },
+        "typeVideo": {
+            "name": "2d",
+            "acronym": "2D"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T13:05:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -625,6 +1003,27 @@
         "id":"dune05",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "vip",
+            "acronym": "Vip"
+        },
+        "typeVideo": {
+            "name": "2d4k",
+            "acronym": "2d4k"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T20:05:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
@@ -643,6 +1042,27 @@
         "id":"dune06",
         "eventId":"dune",
         "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6583.png",
+        "city": {
+            "name": "minsk",
+            "acronym": "Минск"
+        },
+        "cinema": {
+            "name": "arena",
+            "acronym": "Arena"
+        },
+        "auditorium": {
+            "name": "vegaslounge",
+            "acronym": "Vegas Lounge"
+        },
+        "typeVideo": {
+            "name": "screenx",
+            "acronym": "ScreeenX"
+        },
+        "typeAudio": {
+            "name": "dolbyatmos",
+            "acronym": "Dolby Atmos"
+        },
+        "start": "2021-10-05T22:15:00.000000+03:00",
         "filters":[
             "$city;minsk",
             "$shedule;now",
