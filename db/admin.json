@@ -1137,11 +1137,13 @@
                             ]
                         },
 
-
                         {
                             "typeName": "eventsContainer",
                             "id": "evcont001",
                             "name": "События",
+                            "settings": {
+                                "dataList": "events"
+                            },
                             "styles": {
                                 "common": {
                                     "paddingTop": "25px",
