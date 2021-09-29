@@ -1,6 +1,8 @@
 import React from 'react'
 import EventPageComponent from '../../../components/test/EventPage/EventPageComponent';
+import { fetchDataList } from '../../../core/functions/common/common';
 import { setDataList } from '../../../store/actions/data';
+import { setDocumentComponentsData } from '../../../store/actions/document';
 import { initializeStore } from '../../../store/store';
 const path = require('path');
 const fs = require('fs');
@@ -8,26 +10,17 @@ const fs = require('fs');
 
 export async function getServerSideProps() {
 
-    const dbPath = path.join(process.cwd(), 'db/test.json');
-    const data = fs.readFileSync(dbPath, 'utf8');
-    const componentsData = JSON.parse(data);
-
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
-    const eventsData = fs.readFileSync(path.join(process.cwd(), `db/events/events.json`), 'utf8');
-    const events = JSON.parse(eventsData);
+    const dbPath = path.join(process.cwd(), 'db/pages/afisha/event/event.json');
+    const data = fs.readFileSync(dbPath, 'utf8');
+    const componentsData = JSON.parse(data);
 
-    const showsData = fs.readFileSync(path.join(process.cwd(), `db/shows/shows.json`), 'utf8');
-    const shows = JSON.parse(showsData);
-
-    const dataList = {
-        events,
-        shows
-    }
+    const dataList = fetchDataList(fs, path);
 
     dispatch(setDataList(dataList));
-    // dispatch(setDocumentComponentsData(componentsData));
+    dispatch(setDocumentComponentsData(componentsData));
 
     return {
         props: {

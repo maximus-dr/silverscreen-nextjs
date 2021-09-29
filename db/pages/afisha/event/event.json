@@ -1,0 +1,9 @@
+{
+    "typeName": "page",
+    "id": "eventPage",
+    "name": "event page",
+    "styles": {
+        "common": {}
+    },
+    "childrenList": []
+}

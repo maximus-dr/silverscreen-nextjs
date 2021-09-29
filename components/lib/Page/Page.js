@@ -76,7 +76,9 @@ export default function Page(props) {
         }
     }, [dispatch, router]);
 
+    // обработчики нажатия клавиш
     useEffect(() => {
+        if (mode !== 'admin') return;
         const onDocumentKeydown = (e) => {
             const key = e.keyCode;
             const ctrl = e.ctrlKey;
@@ -106,14 +108,11 @@ export default function Page(props) {
                 activeComponent && dispatch(addComponentToActive(componentCopy));
             }
         }
-
         document.addEventListener('keydown', onDocumentKeydown);
-
         return () => {
             document.removeEventListener('keydown', onDocumentKeydown);
         }
     });
-
 
 
     return (

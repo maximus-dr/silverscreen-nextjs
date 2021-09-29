@@ -15,6 +15,7 @@ import { getComponent } from "../../core/functions/common/components";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setDataList } from "../../store/actions/data";
+import { fetchDataList } from "../../core/functions/common/common";
 
 
 
@@ -49,16 +50,7 @@ export async function getServerSideProps() {
     const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
     const templates = JSON.parse(templatesData);
 
-    const eventsData = fs.readFileSync(path.join(process.cwd(), `db/events/events.json`), 'utf8');
-    const events = JSON.parse(eventsData);
-
-    const showsData = fs.readFileSync(path.join(process.cwd(), `db/shows/shows.json`), 'utf8');
-    const shows = JSON.parse(showsData);
-
-    const dataList = {
-        events,
-        shows
-    }
+    const dataList = fetchDataList(fs, path);
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
