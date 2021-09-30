@@ -1,9 +1,41 @@
 {
     "typeName": "page",
-    "id": "eventPage",
-    "name": "event page",
+    "id": "page1",
+    "name": "Main Page",
     "styles": {
-        "common": {}
+        "common": {
+            "position": "relative",
+            "minHeight": "100vh",
+            "width": "100%",
+            "backgroundColor": "#27272a",
+            "color": "#ffffff"
+        }
     },
-    "childrenList": []
+    "childrenList": [
+
+        {
+            "typeName": "section",
+            "id": "sec001",
+            "name": "Event page background",
+            "role": "eventPoster",
+            "styles": {
+                "common": {
+                    "position": "absolute",
+                    "top": "0",
+                    "left": "0",
+                    "right": "0",
+                    "bottom": "0",
+                    "backgroundPositionX": "center",
+                    "backgroundPositionY": "center",
+                    "backgroundRepeat": "no-repeat",
+                    "backgroundSize": "cover",
+                    "backgroundAttachment": "fixed",
+                    "filter": "blur(10px)",
+                    "opacity": "0.2",
+                    "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"
+                }
+            },
+            "childrenList": []
+        }
+    ]
 }

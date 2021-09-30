@@ -32,6 +32,60 @@ export default function EventsContainer(props) {
         mode
     }
 
+    const template = {
+        typeName: 'section',
+        id: 'sec001',
+        name: 'poster wrapper',
+        styles: {
+            common: {}
+        },
+        childrenList: [
+            {
+                typeName: 'section',
+                id: 'sec002',
+                name: 'poster subwrapper',
+                styles: {
+                    common: {}
+                },
+                childrenList: [
+                    {
+                        typeName: 'link',
+                        id: 'link001',
+                        name: 'Постер',
+                        role: 'posterLink',
+                        styles: {
+                            common: {}
+                        },
+                        childrenList: []
+                    }
+                ]
+            }
+        ]
+    }
+
+    const createNewCard = (template, event) => {
+        const card = {...template}
+
+        const check = (item) => {
+            if (item.role === 'posterLink') {
+                console.log('match');
+            }
+            if (item.childrenList && item.childrenList.length > 0) {
+                item.childrenList.forEach(child => {
+                    check(child);
+                });
+            }
+        }
+
+        check(card);
+
+
+    }
+
+    createNewCard(template, events[3]);
+
+
+
     return (
         <EventsContainerComponent
             id={id}

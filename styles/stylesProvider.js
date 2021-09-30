@@ -70,6 +70,7 @@ export const stylesProvider = (styles) => {
         background-position-x: ${styles && styles.backgroundPositionX || ''};
         background-position-y: ${styles && styles.backgroundPositionY || ''};
         background-repeat: ${styles && styles.backgroundRepeat || ''};
+        background-attachment: ${styles && styles.backgroundAttachment || ''};
 
         opacity: ${styles && styles.opacity || ''};
         box-shadow: ${styles && styles.boxShadow || ''};

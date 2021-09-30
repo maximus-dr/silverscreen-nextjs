@@ -2,16 +2,14 @@ import styled from "styled-components";
 
 
 export const Page = styled.div`
-    z-index: -1;
     position: relative;
     min-height: 100vh;
     width: 100%;
     color: #ffffff;
-    background: rgb(39, 39, 42);
+    background: #27272a;
 `;
 
 export const PageBackground = styled.div`
-    z-index: -1;
     position: fixed;
     top: 0;
     left: 0;
@@ -36,6 +34,7 @@ export const PageBackground = styled.div`
 `;
 
 export const PageWrapper = styled.div`
+    position: relative;
     max-width: 1300px;
     margin: 0 auto;
     padding: 50px 25px;

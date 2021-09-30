@@ -4,14 +4,9 @@ import { useSelector } from 'react-redux';
 import { AudioTypeValue, Auditorium, ColumnLeftBottom, ColumnTopRight, EventPoster, EventTitle, Page, PageBackground, PageWrapper, ShowCard, ShowCardDate, ShowCardTop, ShowCinema, ShowCity, ShowsContainer, ShowTime, VideoTypeValue } from './EventPageStyled';
 
 
-export default function EventPageComponent() {
-    const route = useRouter();
-    const state = useSelector(state => state);
-    const {events, shows} = state.data;
+export default function EventPageComponent(props) {
 
-    const eventId = route.query.event;
-    const event = events.find(item => item.id === eventId);
-    const eventShows = shows.filter(show => show.eventId === eventId);
+    const {event, eventShows} = props;
 
 
     return (

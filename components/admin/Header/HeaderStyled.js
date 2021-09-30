@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const HeaderWrapper = styled.div`
-    z-index: 1;
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: space-between;

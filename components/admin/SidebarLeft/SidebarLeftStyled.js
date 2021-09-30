@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const SidebarWrapper = styled.div`
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     padding: 5px;
