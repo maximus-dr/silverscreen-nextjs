@@ -1,7 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { updateComponentIds } from '../../../../core/functions/admin/components';
 import { generateNewId, getComponent } from '../../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../../core/functions/common/filters';
+import { renderComponents } from '../../../../core/functions/render';
 import { getHandler } from '../../../../handlers';
 import EventCard from '../../Cards/EventCard/EventCard';
 import { EventsContainerComponent } from './EventsContainerStyled'
@@ -32,59 +34,48 @@ export default function EventsContainer(props) {
         mode
     }
 
-    const template = {
-        typeName: 'section',
-        id: 'sec001',
-        name: 'poster wrapper',
-        styles: {
-            common: {}
-        },
-        childrenList: [
-            {
-                typeName: 'section',
-                id: 'sec002',
-                name: 'poster subwrapper',
-                styles: {
-                    common: {}
-                },
-                childrenList: [
-                    {
-                        typeName: 'link',
-                        id: 'link001',
-                        name: 'Постер',
-                        role: 'posterLink',
-                        styles: {
-                            common: {}
-                        },
-                        childrenList: []
-                    }
-                ]
-            }
-        ]
-    }
+    // const template = {
+    //     typeName: 'section',
+    //     id: 'sec0012',
+    //     name: 'poster wrapper',
+    //     styles: {
+    //         common: {}
+    //     },
+    //     childrenList: [
+    //         {
+    //             typeName: 'link',
+    //             id: 'link001',
+    //             name: 'Постер',
+    //             role: 'posterLink',
+    //             styles: {
+    //                 common: {}
+    //             },
+    //             childrenList: []
+    //         }
+    //     ]
+    // }
 
-    const createNewCard = (template, event) => {
-        const card = {...template}
+    const createNewCard = (card, event) => {
 
-        const check = (item) => {
-            if (item.role === 'posterLink') {
-                console.log('match');
+        const updateCardData = (cardElement) => {
+            if (cardElement.role === 'posterLink') {
+                cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
             }
-            if (item.childrenList && item.childrenList.length > 0) {
-                item.childrenList.forEach(child => {
-                    check(child);
+            if (cardElement.childrenList && cardElement.childrenList.length > 0) {
+                cardElement.childrenList.forEach(child => {
+                    updateCardData(child);
                 });
             }
+            return cardElement;
         }
 
-        check(card);
-
-
+        const newCard = updateCardData({...card});
+        return newCard;
     }
 
-    createNewCard(template, events[3]);
-
-
+    const cardTemplate = componentData.childrenList[0];
+    const cardData = createNewCard(cardTemplate, filteredEvents[0]);
+    const card = renderComponents(cardData, state);
 
     return (
         <EventsContainerComponent
@@ -100,13 +91,7 @@ export default function EventsContainer(props) {
             onDragEnd={getHandler(params, 'onDragEnd')}
             onDrop={getHandler(params, 'onDrop')}
         >
-            {filteredEvents && filteredEvents.map(event => {
-                const cardId = generateNewId(10);
-                return (
-                    <EventCard id={cardId} key={event.id} event={event} state={state} />
-                );
-            })}
-            {children}
+            {card}
         </EventsContainerComponent>
     )
 }
