@@ -32,7 +32,7 @@ export default function LinkComp(props) {
 
 
     return (
-        <Link href={componentData.url || ''} passHref={mode !== 'admin'}>
+        <Link href={componentData.link || ''} passHref={mode !== 'admin'}>
             <LinkComponent
                 id={id}
                 componentData={componentData}

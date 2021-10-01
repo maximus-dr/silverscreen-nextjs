@@ -1,11 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import { updateComponentIds } from '../../../../core/functions/admin/components';
-import { generateNewId, getComponent } from '../../../../core/functions/common/components';
+import {  getComponent } from '../../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../../core/functions/common/filters';
 import { renderComponents } from '../../../../core/functions/render';
 import { getHandler } from '../../../../handlers';
-import EventCard from '../../Cards/EventCard/EventCard';
+import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { EventsContainerComponent } from './EventsContainerStyled'
 
 
@@ -14,7 +13,6 @@ export default function EventsContainer(props) {
 
     const {children, state} = props;
     const {filters, data} = state;
-    const {events} = data;
     const {id} = props.componentData;
     const {componentsData, activeComponent, dragendComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
@@ -34,31 +32,12 @@ export default function EventsContainer(props) {
         mode
     }
 
-    // const template = {
-    //     typeName: 'section',
-    //     id: 'sec0012',
-    //     name: 'poster wrapper',
-    //     styles: {
-    //         common: {}
-    //     },
-    //     childrenList: [
-    //         {
-    //             typeName: 'link',
-    //             id: 'link001',
-    //             name: 'Постер',
-    //             role: 'posterLink',
-    //             styles: {
-    //                 common: {}
-    //             },
-    //             childrenList: []
-    //         }
-    //     ]
-    // }
 
     const createNewCard = (card, event) => {
 
         const updateCardData = (cardElement) => {
             if (cardElement.role === 'posterLink') {
+                cardElement.link = `/afisha/${event.id}`
                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
             }
             if (cardElement.childrenList && cardElement.childrenList.length > 0) {
@@ -73,9 +52,13 @@ export default function EventsContainer(props) {
         return newCard;
     }
 
-    const cardTemplate = componentData.childrenList[0];
-    const cardData = createNewCard(cardTemplate, filteredEvents[0]);
-    const card = renderComponents(cardData, state);
+    let card = <EmptyEvent />;
+
+    if (componentData.childrenList.length > 0) {
+        const cardTemplate = componentData.childrenList[0];
+        const cardData = createNewCard(cardTemplate, filteredEvents[0]);
+        card = renderComponents(cardData, state);
+    }
 
     return (
         <EventsContainerComponent

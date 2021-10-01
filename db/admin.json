@@ -18,6 +18,7 @@
                     "name": "Main Page",
                     "styles": {
                         "common": {
+                            "minHeight": "100vh",
                             "backgroundColor": "#ffffff"
                         }
                     },

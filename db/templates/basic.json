@@ -305,5 +305,39 @@
                 "childrenList": []
             }
         ]
+    },
+    {
+        "category":"Карточка",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "templateunwd7-Wx33",
+                "name": "Карточка События",
+                "role": "card",
+                "styles": {
+                    "common":{}
+                },
+                "childrenList": [
+                    {
+                        "typeName": "link",
+                        "id": "link001",
+                        "name": "Постер",
+                        "role": "posterLink",
+                        "styles": {
+                            "common": {
+                                "display": "block",
+                                "width": "325px",
+                                "height": "455px",
+                                "borderRadius": "8px",
+                                "backgroundSize": "cover",
+                                "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                                "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')"
+                            }
+                        },
+                        "childrenList": []
+                    }
+                ]
+            }
+        ]
     }
 ]
