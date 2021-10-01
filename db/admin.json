@@ -45,34 +45,7 @@
                                 }
                             },
                             "childrenList": [
-                                {
-                                    "typeName": "section",
-                                    "id": "sec009",
-                                    "name": "Карточка",
-                                    "role": "card",
-                                    "styles": {
-                                        "common": {}
-                                    },
-                                    "childrenList": [
-                                        {
-                                            "typeName": "link",
-                                            "id": "link001",
-                                            "name": "Постер",
-                                            "role": "posterLink",
-                                            "styles": {
-                                                "common": {
-                                                "display": "block",
-                                                "width": "272px",
-                                                "height": "400px",
-                                                "borderRadius": "8px",
-                                                "backgroundSize": "cover",
-                                                "backgroundColor": "rgba(255, 255, 255, 0.1)"
-                                                }
-                                            },
-                                            "childrenList": []
-                                        }
-                                    ]
-                                }
+
                             ]
                         }
                     ]

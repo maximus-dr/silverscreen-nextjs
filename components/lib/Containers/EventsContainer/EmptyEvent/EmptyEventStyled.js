@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const EmptyEventWrapper = styled.div`
-    width: 325px;
-    height: 455px;
+    width: 272px;
+    height: 400px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;

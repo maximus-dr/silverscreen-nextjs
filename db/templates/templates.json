@@ -326,12 +326,11 @@
                         "styles": {
                             "common": {
                                 "display": "block",
-                                "width": "325px",
-                                "height": "455px",
+                                "width": "272px",
+                                "height": "400px",
                                 "borderRadius": "8px",
                                 "backgroundSize": "cover",
-                                "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                                "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')"
+                                "backgroundColor": "rgba(255, 255, 255, 0.1)"
                             }
                         },
                         "childrenList": []
