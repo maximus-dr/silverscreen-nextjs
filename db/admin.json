@@ -121,7 +121,7 @@
                                         }
                                     },
                                     "childrenList": [
-                                       
+
                                     ]
                                 },
 
@@ -157,7 +157,7 @@
                                         }
                                     },
                                     "childrenList": [
-                                        
+
                                     ]
                                 }
                             ]
@@ -1150,7 +1150,10 @@
                                                     "color": "#ffffff",
                                                     "fontSize": "20px",
                                                     "lineHeight": "24px",
-                                                    "fontWeight": "600"
+                                                    "fontWeight": "600",
+                                                    "marginTop": "15px",
+                                                    "marginBottom": "10px",
+                                                    "display": "inline-block"
                                                 }
                                             },
                                             "childrenList": []
@@ -1172,7 +1175,11 @@
                                                     "role": "genreItem",
                                                     "styles": {
                                                         "common": {
-        
+                                                            "color": "#ffffff",
+                                                            "fontSize": "14px",
+                                                            "textTransform": "uppercase",
+                                                            "marginRight": "10px",
+                                                            "display": "inline-block"
                                                         }
                                                     },
                                                     "childrenList": []
