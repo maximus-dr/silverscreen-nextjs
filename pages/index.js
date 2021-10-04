@@ -30,7 +30,7 @@ import Link from 'next/link'
 
 export async function getServerSideProps() {
 
-    const dbPath = path.join(process.cwd(), 'db/test.json');
+    const dbPath = path.join(process.cwd(), 'db/admin.json');
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
     const reduxStore = initializeStore()
