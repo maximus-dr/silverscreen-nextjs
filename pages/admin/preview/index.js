@@ -2,12 +2,12 @@ import path from 'path';
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateComponentIds } from '../../core/functions/admin/components';
-import { fetchDataList } from '../../core/functions/common/common';
-import { renderComponents } from '../../core/functions/render';
-import { setDataList } from '../../store/actions/data';
-import { setDocumentComponentsData, setMode } from '../../store/actions/document';
-import { initializeStore } from '../../store/store';
+import { updateComponentIds } from '../../../core/functions/admin/components';
+import { fetchDataList } from '../../../core/functions/common/common';
+import { renderComponents } from '../../../core/functions/render';
+import { setDataList } from '../../../store/actions/data';
+import { setDocumentComponentsData, setMode } from '../../../store/actions/document';
+import { initializeStore } from '../../../store/store';
 const fs = require('fs');
 
 
@@ -63,7 +63,7 @@ export const updatePageData = (component, events, pageEvent) => {
     }
 
     if (component.role === 'showsContainer') {
-        console.log('bingo');
+
     }
 
     if (component.role === 'eventTitle') {
@@ -116,7 +116,6 @@ export default function PreviewPage() {
 
         if (!componentsData) {
             const data = JSON.parse(localStorage.getItem('page_data'));
-            console.log(data);
             updatePageData(data, events);
             dispatch(setDocumentComponentsData(data));
         }

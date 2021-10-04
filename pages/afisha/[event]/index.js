@@ -7,14 +7,14 @@ import { renderComponents } from '../../../core/functions/render';
 import { setDataList } from '../../../store/actions/data';
 import { setDocumentComponentsData } from '../../../store/actions/document';
 import { initializeStore } from '../../../store/store';
-import { updatePageData } from './../../preview/index';
+import { updatePageData } from './../../admin/preview/index';
 const path = require('path');
 const fs = require('fs');
 
 
 
 
-export async function getServerSideProps({req, resolvedUrl}) {
+export async function getServerSideProps({resolvedUrl}) {
 
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
@@ -24,13 +24,13 @@ export async function getServerSideProps({req, resolvedUrl}) {
     const componentsData = JSON.parse(data);
 
     const dataList = fetchDataList(fs, path);
-    
+
     const params = resolvedUrl.split('/');
     const eventId = params[params.length - 1];
     const event = dataList.events.find(event => event.id === eventId);
 
     updatePageData(componentsData, dataList.events, event);
-    
+
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));

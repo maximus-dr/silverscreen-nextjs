@@ -47,7 +47,7 @@ export async function getServerSideProps() {
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
 
-    const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
+    const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/admin/templates/templates.json'), 'utf8');
     const templates = JSON.parse(templatesData);
 
     const dataList = fetchDataList(fs, path);
@@ -55,7 +55,7 @@ export async function getServerSideProps() {
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
-    dispatch(setResolution('640'));
+    dispatch(setResolution('1200'));
     dispatch(setMode('admin'));
 
     return {

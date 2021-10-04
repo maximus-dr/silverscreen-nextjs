@@ -19,7 +19,7 @@ export default function Header() {
     const onPreviewClick = (e) => {
         e.preventDefault();
 
-        post(API_PREVIEW, {page}, {'Content-Type': 'application/json'}, 
+        post(API_PREVIEW, {page}, {'Content-Type': 'application/json'},
         (res) => {
             if (res.status === 200) {
                 window.open('/preview', '_blank');
@@ -37,8 +37,8 @@ export default function Header() {
             </HeaderLeft>
             <Navbar />
             <HeaderRight>
-                <Link href="/preview">
-                    <a target="_blank" 
+                <Link href="admin/preview">
+                    <a target="_blank"
                         onClick={(e) => {
                             localStorage.setItem('page_data', JSON.stringify(page));
                             // onPreviewClick(e);

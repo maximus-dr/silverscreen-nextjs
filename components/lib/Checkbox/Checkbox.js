@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useRef } from 'react'
-import { OutlinesContext } from '../../../context/outlinesContext';
+import React, { useEffect, useRef } from 'react'
 import { getHandler } from '../../../core/functions/common/components'
 import { CheckboxInput, CheckboxLabel, CheckboxValue } from './CheckboxStyled';
 
 
 export default function Checkbox(props) {
 
-    const outlines = useContext(OutlinesContext);
+
     const ref = useRef(null);
 
     useEffect(() => {

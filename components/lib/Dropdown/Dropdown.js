@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { DropdownWarning, DropdownWarningCaption, HeadTag } from './DropdownStyled';
 import { extractChildrenByRole } from '../../../core/functions/common/components';
 import { Provider } from '../..';
-import { OutlinesContext } from '../../../context/outlinesContext';
 
 
 const createMessage = (message) => {
@@ -27,7 +26,6 @@ export default function Dropdown(props) {
     const dropdownSelectAreaData = extractChildrenByRole(props, 'dropdownSelectArea');
     const dropdownMenuData = extractChildrenByRole(props, 'dropdownMenu');
 
-    const outlines = useContext(OutlinesContext);
     const dropdownMenuRef = useRef(null);
 
     const warnings = [];
