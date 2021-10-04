@@ -12,9 +12,11 @@ const fs = require('fs');
 
 
 export const updatePageData = (component, events, pageEvent) => {
+
     if (component.role === 'eventsContainer') {
+        if (component.childrenList.length === 0) return;
         const card = component.childrenList.find(child => child.role === 'card');
-        
+
         const createNewCard = (card, event) => {
 
             const updateCardData = (cardElement) => {
@@ -47,17 +49,21 @@ export const updatePageData = (component, events, pageEvent) => {
             }
             const template = JSON.parse(JSON.stringify(card));
             const newCard = updateCardData(template);
-            
+
             return newCard;
         }
-        const cards = events.map(event => {
+        const cards =  events.map(event => {
             const newCard = createNewCard(card, event);
-            
+
             return updateComponentIds(newCard);
         });
 
 
         component.childrenList = cards;
+    }
+
+    if (component.role === 'showsContainer') {
+        console.log('bingo');
     }
 
     if (component.role === 'eventTitle') {
@@ -103,8 +109,6 @@ export default function PreviewPage() {
     const components = renderComponents(componentsData, state);
 
 
-    
-
     useEffect(() => {
         if (mode !== 'preview') {
             dispatch(setMode('preview'));
@@ -112,6 +116,7 @@ export default function PreviewPage() {
 
         if (!componentsData) {
             const data = JSON.parse(localStorage.getItem('page_data'));
+            console.log(data);
             updatePageData(data, events);
             dispatch(setDocumentComponentsData(data));
         }

@@ -332,10 +332,57 @@
                                 "height": "400px",
                                 "borderRadius": "8px",
                                 "backgroundSize": "cover",
-                                "backgroundColor": "rgba(255, 255, 255, 0.1)"
+                                "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                                "cursor": "pointer"
                             }
                         },
                         "childrenList": []
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab01010",
+                        "name": "Название",
+                        "role": "cardTitle",
+                        "styles": {
+                            "common": {
+                                "color": "#ffffff",
+                                "fontSize": "20px",
+                                "lineHeight": "24px",
+                                "fontWeight": "600",
+                                "marginTop": "15px",
+                                "marginBottom": "10px",
+                                "display": "inline-block"
+                            }
+                        },
+                        "childrenList": []
+                    },
+
+                    {
+                        "typeName": "section",
+                        "id": "secff",
+                        "name": "Жанры",
+                        "role": "genreList",
+                        "styles": {
+                            "common": {}
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab00re",
+                                "name": "Жанр",
+                                "role": "genreItem",
+                                "styles": {
+                                    "common": {
+                                        "color": "#ffffff",
+                                        "fontSize": "14px",
+                                        "textTransform": "uppercase",
+                                        "marginRight": "10px",
+                                        "display": "inline-block"
+                                    }
+                                },
+                                "childrenList": []
+                            }
+                        ]
                     }
                 ]
             }
