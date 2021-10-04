@@ -2,10 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import {  getComponent } from '../../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../../core/functions/common/filters';
-import { renderComponents } from '../../../../core/functions/render';
 import { getHandler } from '../../../../handlers';
 import EmptyEvent from './EmptyEvent/EmptyEvent';
-import { EventsContainerComponent } from './EventsContainerStyled'
+import { ShowsContainerComponent } from './ShowsContainerStyled';
 
 
 
@@ -22,6 +21,7 @@ export default function EventsContainer(props) {
     const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
     const filteredEvents = filteredData.events;
+    const filteredShows = filteredData.shows;
 
     const params = {
         id,
@@ -36,7 +36,7 @@ export default function EventsContainer(props) {
     const createNewCard = (card, event) => {
 
         const updateCardData = (cardElement) => {
-            if (cardElement.role === 'card') {
+            if (cardElement.role === 'showCard') {
                 cardElement.eventId = event.id;
             }
             if (cardElement.role === 'posterLink') {
@@ -71,7 +71,7 @@ export default function EventsContainer(props) {
     })
     
     return (
-        <EventsContainerComponent
+        <ShowsContainerComponent
             id={id}
             componentData={componentData}
             isActiveComponent={isActiveComponent}
@@ -85,6 +85,6 @@ export default function EventsContainer(props) {
             onDrop={getHandler(params, 'onDrop')}
         >
             { cardList || <EmptyEvent />}
-        </EventsContainerComponent>
+        </ShowsContainerComponent>
     )
 }

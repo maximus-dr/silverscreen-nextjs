@@ -91,6 +91,41 @@
                         }
                     },
                     "childrenList": []
+                },
+
+                {
+                    "typeName": "section",
+                    "id": "sec004",
+                    "name": "Сеансы",
+                    "role": "showsContainer",
+                    "styles": {
+                        "common": {
+                            "display": "flex",
+                            "flexWrap": "wrap"
+                        }
+                    },
+                    "childrenList": [
+                        {
+                            "typeName": "section",
+                            "id": "sec005",
+                            "name": "Сеанс",
+                            "role": "showCard",
+                            "styles": {
+                                "common": {
+                                    "marginRight": "25px",
+                                    "marginBottom": "25px",
+                                    "flexBasis": "350px",
+                                    "paddingTop": "16px",
+                                    "paddingRight": "16px",
+                                    "paddingBottom": "16px",
+                                    "paddingLeft": "16px",
+                                    "backgroundColor": "rgba(0, 0, 0, 0.6)",
+                                    "borderRadius": "8px",
+                                    "color": "#ffffff"
+                                }
+                            }
+                        }
+                    ]
                 }
             ]
         }

@@ -11,7 +11,7 @@ import { initializeStore } from '../../store/store';
 const fs = require('fs');
 
 
-export const updatePageData = (component, events, event) => {
+export const updatePageData = (component, events, pageEvent) => {
     if (component.role === 'eventsContainer') {
         const card = component.childrenList.find(child => child.role === 'card');
         
@@ -25,7 +25,7 @@ export const updatePageData = (component, events, event) => {
                     cardElement.link = `/afisha/${event.id}`
                     cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
                 }
-                if (cardElement.role === 'eventTitle') {
+                if (cardElement.role === 'cardTitle') {
                     cardElement.value = event.acronym;
                 }
                 if (cardElement.role === 'genreList') {
@@ -61,19 +61,19 @@ export const updatePageData = (component, events, event) => {
     }
 
     if (component.role === 'eventTitle') {
-        component.value = event.acronym;
+        component.value = pageEvent.acronym;
     }
 
     if (component.role === 'poster') {
-        component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
     }
 
     if (component.role === 'eventBackground') {
-        component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
     }
 
     if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updatePageData(child, events, event));
+        component.childrenList.forEach(child => updatePageData(child, events, pageEvent));
     }
 }
 

@@ -1144,7 +1144,7 @@
                                             "typeName": "label",
                                             "id": "lab01010",
                                             "name": "Название",
-                                            "role": "eventTitle",
+                                            "role": "cardTitle",
                                             "styles": {
                                                 "common": {
                                                     "color": "#ffffff",
