@@ -125,6 +125,13 @@ const getPage = (componentsData, pageId) => {
     return page;
 }
 
+const fetchComponentsData = (fs, path, url) => {
+    const dbPath = path.join(process.cwd(), url);
+    const data = fs.readFileSync(dbPath, 'utf8');
+    const componentsData = JSON.parse(data);
+    return componentsData;
+}
+
 
 
 export {
@@ -137,5 +144,6 @@ export {
     getComponent,
     getChild,
     getModal,
-    getPage
+    getPage,
+    fetchComponentsData
 }

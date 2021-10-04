@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import EventPageComponent from '../../../components/test/EventPage/EventPageComponent';
 import { fetchDataList } from '../../../core/functions/common/common';
+import { fetchComponentsData } from '../../../core/functions/common/components';
 import { renderComponents } from '../../../core/functions/render';
 import { setDataList } from '../../../store/actions/data';
 import { setDocumentComponentsData } from '../../../store/actions/document';
@@ -18,10 +18,7 @@ export async function getServerSideProps({resolvedUrl}) {
 
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
-
-    const dbPath = path.join(process.cwd(), 'db/pages/afisha/event/event.json');
-    const data = fs.readFileSync(dbPath, 'utf8');
-    const componentsData = JSON.parse(data);
+    const componentsData = fetchComponentsData(fs, path, 'db/pages/afisha/event/event.json');
 
     const dataList = fetchDataList(fs, path);
 
@@ -30,7 +27,6 @@ export async function getServerSideProps({resolvedUrl}) {
     const event = dataList.events.find(event => event.id === eventId);
 
     updatePageData(componentsData, dataList.events, event);
-
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
