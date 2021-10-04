@@ -36,6 +36,9 @@ export default function EventsContainer(props) {
     const createNewCard = (card, event) => {
 
         const updateCardData = (cardElement) => {
+            if (cardElement.role === 'card') {
+                cardElement.eventId = event.id;
+            }
             if (cardElement.role === 'posterLink') {
                 cardElement.link = `/afisha/${event.id}`
                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
@@ -52,14 +55,15 @@ export default function EventsContainer(props) {
         return newCard;
     }
 
-    let card = <EmptyEvent />;
-
-    if (componentData.childrenList.length > 0) {
+    if (mode === 'admin' && componentData.childrenList.length > 0) {
         const cardTemplate = componentData.childrenList[0];
-        const cardData = createNewCard(cardTemplate, filteredEvents[0]);
-        card = renderComponents(cardData, state);
+        createNewCard(cardTemplate, filteredEvents[0]);
     }
 
+    const cardList = mode === 'admin' ? children : children && children.filter(child => {
+        return filteredEvents.find(event => event.id === child.props.componentData.eventId)
+    })
+    
     return (
         <EventsContainerComponent
             id={id}
@@ -74,7 +78,7 @@ export default function EventsContainer(props) {
             onDragEnd={getHandler(params, 'onDragEnd')}
             onDrop={getHandler(params, 'onDrop')}
         >
-            {children || <EmptyEvent />}
+            { cardList || <EmptyEvent />}
         </EventsContainerComponent>
     )
 }

@@ -34,6 +34,9 @@ export default function PreviewPage() {
     const dispatch = useDispatch();
     const components = renderComponents(componentsData, state);
 
+
+    
+
     useEffect(() => {
         if (mode !== 'preview') {
             dispatch(setMode('preview'));
@@ -49,6 +52,9 @@ export default function PreviewPage() {
                     const createNewCard = (card, event) => {
 
                         const updateCardData = (cardElement) => {
+                            if (cardElement.role === 'card') {
+                                cardElement.eventId = event.id;
+                            }
                             if (cardElement.role === 'posterLink') {
                                 cardElement.link = `/afisha/${event.id}`
                                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
@@ -62,6 +68,7 @@ export default function PreviewPage() {
                         }
                         const template = JSON.parse(JSON.stringify(card));
                         const newCard = updateCardData(template);
+                        
                         return newCard;
                     }
 
@@ -70,7 +77,7 @@ export default function PreviewPage() {
 
                     const cards = events.map(event => {
                         const newCard = createNewCard(card, event);
-                
+                        
                         return updateComponentIds(newCard);
                     });
 
