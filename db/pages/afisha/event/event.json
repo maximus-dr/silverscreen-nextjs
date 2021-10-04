@@ -17,7 +17,7 @@
             "typeName": "section",
             "id": "sec001",
             "name": "Event page background",
-            "role": "eventPoster",
+            "role": "eventBackground",
             "styles": {
                 "common": {
                     "position": "absolute",
@@ -36,6 +36,63 @@
                 }
             },
             "childrenList": []
+        },
+
+        {
+            "typeName": "section",
+            "id": "sec002",
+            "name": "Page wrapper",
+            "styles": {
+                "common": {
+                    "position": "relative",
+                    "maxWidth": "1300px",
+                    "marginTop": "0",
+                    "marginBottom": "0",
+                    "marginLeft": "auto",
+                    "marginRight": "auto",
+                    "paddingTop": "50px",
+                    "paddingBottom": "50px",
+                    "paddingLeft": "25px",
+                    "paddingRight": "25px"
+                }
+            },
+            "childrenList": [
+                {
+                    "typeName": "label",
+                    "id": "dkfjkd",
+                    "tag": "h2",
+                    "name": "Название",
+                    "value": "Название",
+                    "role": "eventTitle",
+                    "styles": {
+                        "common": {
+                            "marginBottom": "50px",
+                            "marginLeft": "0",
+                            "marginTop": "0",
+                            "marginRight": "0",
+                            "fontSize": "52px",
+                            "lineHeight": "52px"
+                        }
+                    },
+                    "childrenList": []
+                },
+                {
+                    "typeName": "section",
+                    "id": "sec003",
+                    "name": "Постер",
+                    "role": "poster",
+                    "styles": {
+                        "common": {
+                            "marginBottom": "50px",
+                            "width": "272px",
+                            "height": "400px",
+                            "borderRadius": "8px",
+                            "backgroundSize": "cover"
+                        }
+                    },
+                    "childrenList": []
+                }
+            ]
         }
     ]
 }
