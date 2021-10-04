@@ -59,6 +59,19 @@ export default function PreviewPage() {
                                 cardElement.link = `/afisha/${event.id}`
                                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
                             }
+                            if (cardElement.role === 'eventTitle') {
+                                cardElement.value = event.acronym;
+                            }
+                            if (cardElement.role === 'genreList') {
+                                const genreItem = cardElement.childrenList.find(item => item.role === 'genreItem');
+
+                                const genreItems = event.genre.map(genre => {
+                                    const copy = JSON.parse(JSON.stringify(genreItem));
+                                    copy.value = genre.acronym;
+                                    return copy;
+                                });
+                                cardElement.childrenList = genreItems;
+                            }
                             if (cardElement.childrenList && cardElement.childrenList.length > 0) {
                                 cardElement.childrenList.forEach(child => {
                                     updateCardData(child);

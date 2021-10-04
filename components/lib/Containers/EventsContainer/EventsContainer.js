@@ -43,6 +43,12 @@ export default function EventsContainer(props) {
                 cardElement.link = `/afisha/${event.id}`
                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
             }
+            if (cardElement.role === 'eventTitle') {
+                cardElement.value = event.acronym;
+            }
+            if (cardElement.role === 'genreItem') {
+                cardElement.value = event.genre[0].acronym
+            }
             if (cardElement.childrenList && cardElement.childrenList.length > 0) {
                 cardElement.childrenList.forEach(child => {
                     updateCardData(child);
