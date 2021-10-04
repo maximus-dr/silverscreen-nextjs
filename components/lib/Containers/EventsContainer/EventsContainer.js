@@ -74,7 +74,7 @@ export default function EventsContainer(props) {
             onDragEnd={getHandler(params, 'onDragEnd')}
             onDrop={getHandler(params, 'onDrop')}
         >
-            {card}
+            {children || <EmptyEvent />}
         </EventsContainerComponent>
     )
 }

@@ -15,7 +15,6 @@ export default function Header() {
     const pageID = useSelector(state => state.document.page);
     const componentsData = useSelector(state => state.document.componentsData);
     const page = getPage(componentsData, pageID);
-    const router = useRouter();
 
     const onPreviewClick = (e) => {
         e.preventDefault();
@@ -42,8 +41,7 @@ export default function Header() {
                     <a target="_blank" 
                         onClick={(e) => {
                             localStorage.setItem('page_data', JSON.stringify(page));
-
-                            onPreviewClick(e);
+                            // onPreviewClick(e);
                         }}
                     >
                         Предпросмотр

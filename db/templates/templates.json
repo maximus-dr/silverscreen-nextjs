@@ -315,7 +315,9 @@
                 "name": "Карточка События",
                 "role": "card",
                 "styles": {
-                    "common":{}
+                    "common":{
+                        "marginBottom": "25px"
+                    }
                 },
                 "childrenList": [
                     {
