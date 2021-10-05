@@ -76,7 +76,7 @@ function AdminMainPage() {
     const modal = modalData ? renderComponents(getComponent(componentsData, modalData.id), state) : null;
     const dispatch = useDispatch();
     const pages = componentsData.childrenList.find(item => item.typeName === 'pages');
-    const isSinglePage = pages.childrenList.length === 1 && !page
+    const isSinglePage = pages.childrenList.length === 1 && !page;
 
     const components = renderComponents(activePage, state);
 

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { AudioTypeValue, Auditorium, ColumnLeftBottom, ColumnTopRight, EventPoster, EventTitle, Page, PageBackground, PageWrapper, ShowCard, ShowCardDate, ShowCardTop, ShowCinema, ShowCity, ShowsContainer, ShowTime, VideoTypeValue } from './EventPageStyled';
+import { AudioTypeValue, Auditorium, ColumnLeftBottom, EventPoster, EventTitle, Page, PageBackground, PageWrapper, ShowCard, ShowCardDate, ShowCardTop, ShowCardTopRight, ShowCinema, ShowCity, ShowsContainer, ShowTime, VideoTypeValue } from './EventPageStyled';
 
 
 export default function EventPageComponent(props) {
@@ -30,14 +30,14 @@ export default function EventPageComponent(props) {
                                     <ShowTime>
                                         {showStartTime}
                                     </ShowTime>
-                                    <ColumnTopRight>
+                                    <ShowCardTopRight>
                                         <ShowCinema>
                                             {show.cinema.acronym}
                                         </ShowCinema>
                                         <ShowCity>
                                             {show.city.acronym}
                                         </ShowCity>
-                                    </ColumnTopRight>
+                                    </ShowCardTopRight>
                                 </ShowCardTop>
 
                                 <ShowCardDate>

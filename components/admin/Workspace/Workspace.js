@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux'
 import { unsetActiveComponent } from '../../../store/actions/document';
+import EventPageComponent from '../../test/EventPage/EventPageComponent';
 import { modals } from '../Modal';
 import Overlay from '../Modal/Overlay/Overlay';
 import PanelTools from '../Panels/PanelTools/PanelTools';

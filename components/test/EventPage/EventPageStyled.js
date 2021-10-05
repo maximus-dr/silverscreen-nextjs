@@ -73,6 +73,12 @@ export const ShowCard = styled.div`
     color: #ffffff;
 `;
 
+export const ShowCardTop = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+`;
+
 export const ShowTime = styled.span`
     font-size: 36px;
     line-height: 36px;
@@ -90,17 +96,11 @@ export const ShowCity = styled.span`
     color: rgba(255, 255, 255, 0.5);
 `;
 
-export const ColumnTopRight = styled.div`
+export const ShowCardTopRight = styled.div`
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2px;
-`;
-
-export const ShowCardTop = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
 `;
 
 export const ShowCardDate = styled.span`

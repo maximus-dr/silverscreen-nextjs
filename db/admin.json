@@ -15,7 +15,8 @@
                 {
                     "typeName": "page",
                     "id": "page1",
-                    "name": "Main Page",
+                    "name": "Afisha Page",
+                    "path": "/afisha",
                     "styles": {
                         "common": {
                             "minHeight": "100vh",
@@ -1198,6 +1199,7 @@
                     "typeName": "page",
                     "id": "page2",
                     "name": "Event Page",
+                    "path": "/afisha/event",
                     "styles": {
                         "common": {
                             "position": "relative",
@@ -1276,14 +1278,15 @@
                                     "typeName": "section",
                                     "id": "sec003",
                                     "name": "Постер",
-                                    "role": "poster",
+                                    "role": "posterLink",
                                     "styles": {
                                         "common": {
                                             "marginBottom": "50px",
                                             "width": "272px",
                                             "height": "400px",
                                             "borderRadius": "8px",
-                                            "backgroundSize": "cover"
+                                            "backgroundSize": "cover",
+                                            "backgroundColor": "rgba(0, 0, 0, 0.3)"
                                         }
                                     },
                                     "childrenList": []
@@ -1320,7 +1323,158 @@
                                                     "color": "#ffffff"
                                                 }
                                             },
-                                            "childrenList": []
+                                            "childrenList": [
+                                                {
+                                                    "typeName": "section",
+                                                    "id": "sec014",
+                                                    "name": "showcard top",
+                                                    "styles": {
+                                                        "common": {
+                                                            "display": "flex",
+                                                            "justifyContent": "space-between",
+                                                            "width": "100%"
+                                                        }
+                                                    },
+                                                    "childrenList": [
+                                                        {
+                                                            "typeName": "label",
+                                                            "id": "lab0021",
+                                                            "name": "Show Time",
+                                                            "value": "00:00",
+                                                            "styles": {
+                                                                "common": {
+                                                                    "fontSize": "36px",
+                                                                    "lineHeight": "36px"
+                                                                }
+                                                            },
+                                                            "childrenList": [
+
+                                                            ]
+                                                        },
+                                                        {
+                                                            "typeName": "section",
+                                                            "id": "sec015",
+                                                            "name": "top right",
+                                                            "styles": {
+                                                                "common": {
+                                                                    "display": "inline-flex",
+                                                                    "flexDirection": "column",
+                                                                    "alignItems": "center",
+                                                                    "paddingTop": "2px"
+                                                                }
+                                                            },
+                                                            "childrenList": [
+                                                                {
+                                                                    "typeName": "label",
+                                                                    "id": "lab0022",
+                                                                    "name": "show cinema",
+                                                                    "value": "Кинотеатр",
+                                                                    "styles": {
+                                                                        "common": {
+                                                                            "textAlign": "center",
+                                                                            "fontSize": "20px",
+                                                                            "textTransform": "uppercase"
+                                                                        }
+                                                                    },
+                                                                    "childrenList": []
+                                                                },
+                                                                {
+                                                                    "typeName": "label",
+                                                                    "id": "lab0023",
+                                                                    "name": "show city",
+                                                                    "value": "Город",
+                                                                    "styles": {
+                                                                        "common": {
+                                                                            "textAlign": "center",
+                                                                            "fontSize": "16px",
+                                                                            "color": "rgba(255, 255, 255, 0.5)"
+                                                                        }
+                                                                    },
+                                                                    "childrenList": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+
+                                                {
+                                                    "typeName": "label",
+                                                    "id": "lab0024",
+                                                    "name": "show date",
+                                                    "value": "01/01/2021",
+                                                    "styles": {
+                                                        "common": {
+                                                            "display": "inline-block",
+                                                            "paddingTop": "3px",
+                                                            "paddingBottom": "3px",
+                                                            "paddingRight": "11px",
+                                                            "paddingLeft": "11px"
+                                                        }
+                                                    },
+                                                    "childrenList": [
+
+                                                    ]
+                                                },
+
+                                                {
+                                                    "typeName": "section",
+                                                    "id": "sec0014",
+                                                    "name": "left bottom",
+                                                    "styles": {
+                                                        "common": {
+                                                            "display": "flex",
+                                                            "flexDirection": "column",
+                                                            "marginTop": "12px",
+                                                            "marginBottom": "12px"
+                                                        }
+                                                    },
+                                                    "childrenList": [
+                                                        {
+                                                            "typeName": "label",
+                                                            "id": "lab0025",
+                                                            "name": "video type",
+                                                            "value": "Video Type",
+                                                            "styles": {
+                                                                "common": {
+                                                                    "fontSize": "16px",
+                                                                    "color": "rgba(255, 255, 255, 0.5)"
+                                                                }
+                                                            },
+                                                            "childrenList": []
+                                                        },
+                                                        {
+                                                            "typeName": "label",
+                                                            "id": "lab0026",
+                                                            "name": "audio type",
+                                                            "value": "Audio Type",
+                                                            "styles": {
+                                                                "common": {
+                                                                    "fontSize": "16px",
+                                                                    "color": "rgba(255, 255, 255, 0.5)"
+                                                                }
+                                                            },
+                                                            "childrenList": []
+                                                        }
+                                                    ]
+                                                },
+
+                                                {
+                                                    "typeName": "label",
+                                                    "id": "lab0027",
+                                                    "name": "auditorium",
+                                                    "value": "Кинозал",
+                                                    "styles": {
+                                                        "common": {
+                                                            "display": "inline-block",
+                                                            "fontSize": "18px",
+                                                            "color": "#F1C40F",
+                                                            "textTransform": "uppercase"
+                                                        }
+                                                    },
+                                                    "childrenList": []
+                                                }
+
+                                            ]
                                         }
                                     ]
                                 }
