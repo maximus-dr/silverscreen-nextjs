@@ -35,7 +35,7 @@ export async function getServerSideProps() {
     const componentsData = JSON.parse(data);
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
-    const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/templates/templates.json'), 'utf8');
+    const templatesData = fs.readFileSync(path.join(process.cwd(), 'db/admin/templates/templates.json'), 'utf8');
     const templates = JSON.parse(templatesData);
 
     dispatch(setDocumentComponentsData(componentsData));

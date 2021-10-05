@@ -127,7 +127,7 @@
 
                                 {
                                     "typeName": "label",
-                                    "id": "sec003",
+                                    "id": "sec0011",
                                     "name": "moon",
                                     "value": "moon",
                                     "role": "filter",
@@ -936,7 +936,7 @@
 
                         {
                             "typeName": "section",
-                            "id": "sec005",
+                            "id": "sec0013",
                             "name": "Сейчас - скоро",
                             "styles": {
                                 "common": {
@@ -1191,7 +1191,144 @@
                             ]
                         }
                     ]
+                },
+
+
+                {
+                    "typeName": "page",
+                    "id": "page2",
+                    "name": "Event Page",
+                    "styles": {
+                        "common": {
+                            "position": "relative",
+                            "minHeight": "100vh",
+                            "width": "100%",
+                            "backgroundColor": "#27272a",
+                            "color": "#ffffff"
+                        }
+                    },
+                    "childrenList": [
+
+                        {
+                            "typeName": "section",
+                            "id": "sec009",
+                            "name": "Event page background",
+                            "role": "eventBackground",
+                            "styles": {
+                                "common": {
+                                    "position": "absolute",
+                                    "top": "0",
+                                    "left": "0",
+                                    "right": "0",
+                                    "bottom": "0",
+                                    "backgroundPositionX": "center",
+                                    "backgroundPositionY": "center",
+                                    "backgroundRepeat": "no-repeat",
+                                    "backgroundSize": "cover",
+                                    "backgroundAttachment": "fixed",
+                                    "filter": "blur(10px)",
+                                    "opacity": "0.2",
+                                    "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"
+                                }
+                            },
+                            "childrenList": []
+                        },
+
+                        {
+                            "typeName": "section",
+                            "id": "sec0010",
+                            "name": "Page wrapper",
+                            "styles": {
+                                "common": {
+                                    "position": "relative",
+                                    "maxWidth": "1300px",
+                                    "marginTop": "0",
+                                    "marginBottom": "0",
+                                    "marginLeft": "auto",
+                                    "marginRight": "auto",
+                                    "paddingTop": "50px",
+                                    "paddingBottom": "50px",
+                                    "paddingLeft": "25px",
+                                    "paddingRight": "25px"
+                                }
+                            },
+                            "childrenList": [
+                                {
+                                    "typeName": "label",
+                                    "id": "dkfjkd",
+                                    "tag": "h2",
+                                    "name": "Название",
+                                    "value": "Название",
+                                    "role": "eventTitle",
+                                    "styles": {
+                                        "common": {
+                                            "marginBottom": "50px",
+                                            "marginLeft": "0",
+                                            "marginTop": "0",
+                                            "marginRight": "0",
+                                            "fontSize": "52px",
+                                            "lineHeight": "52px"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+                                {
+                                    "typeName": "section",
+                                    "id": "sec003",
+                                    "name": "Постер",
+                                    "role": "poster",
+                                    "styles": {
+                                        "common": {
+                                            "marginBottom": "50px",
+                                            "width": "272px",
+                                            "height": "400px",
+                                            "borderRadius": "8px",
+                                            "backgroundSize": "cover"
+                                        }
+                                    },
+                                    "childrenList": []
+                                },
+
+                                {
+                                    "typeName": "section",
+                                    "id": "sec0012",
+                                    "name": "Сеансы",
+                                    "role": "showsContainer",
+                                    "styles": {
+                                        "common": {
+                                            "display": "flex",
+                                            "flexWrap": "wrap"
+                                        }
+                                    },
+                                    "childrenList": [
+                                        {
+                                            "typeName": "section",
+                                            "id": "sec005",
+                                            "name": "Сеанс",
+                                            "role": "showCard",
+                                            "styles": {
+                                                "common": {
+                                                    "marginRight": "25px",
+                                                    "marginBottom": "25px",
+                                                    "flexBasis": "350px",
+                                                    "paddingTop": "16px",
+                                                    "paddingRight": "16px",
+                                                    "paddingBottom": "16px",
+                                                    "paddingLeft": "16px",
+                                                    "backgroundColor": "rgba(0, 0, 0, 0.6)",
+                                                    "borderRadius": "8px",
+                                                    "color": "#ffffff"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
+
             ]
         }
     ]
