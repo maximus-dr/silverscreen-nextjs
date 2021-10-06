@@ -81,10 +81,16 @@ function AdminMainPage() {
     const components = renderComponents(activePage, state);
 
     useEffect(() => {
-        if (isSinglePage) {
+        const sessionActivePage = sessionStorage.getItem('admin_active_page');
+        if (sessionActivePage) {
+            dispatch(setPage(sessionActivePage));
+            return;
+        }
+        if (pages.childrenList.length > 0) {
             dispatch(setPage(pages.childrenList[0].id));
-        };
-    });
+            return;
+        }
+    }, []);
 
     return (
         <Wrapper>

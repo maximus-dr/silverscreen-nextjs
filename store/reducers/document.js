@@ -203,6 +203,7 @@ export const documentReducer = (state = {}, action) => {
             }
 
         case SET_PAGE:
+            sessionStorage.setItem('admin_active_page', action.pageId);
             return {
                 ...state,
                 page: action.pageId
