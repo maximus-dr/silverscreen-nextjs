@@ -5,7 +5,7 @@ import { filterData, groupFilters } from '../../../../core/functions/common/filt
 import { getHandler } from '../../../../handlers';
 import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { EventsContainerComponent } from './EventsContainerStyled'
-
+import { createNewCard } from '../../../../core/functions/common/common'
 
 
 export default function EventsContainer(props) {
@@ -31,14 +31,12 @@ export default function EventsContainer(props) {
         mode
     }
 
-    if (mode === 'admin' && componentData.childrenList.length > 0) {
-        const cardTemplate = componentData.childrenList[0];
-        createNewCard(cardTemplate, filteredEvents[0]);
-    }
-
-    const cardList = mode === 'admin' ? children : children && children.filter(child => {
-        return filteredEvents.find(event => event.id === child.props.componentData.eventId)
-    })
+    const cardList = mode === 'admin' 
+        ? children 
+        : children && children.filter(child => {
+            const eventId = child.props.componentData.eventId;
+            return filteredEvents.find(event => event.id === eventId);
+        });
     
     return (
         <EventsContainerComponent

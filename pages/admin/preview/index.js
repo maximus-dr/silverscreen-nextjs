@@ -3,7 +3,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateComponentIds } from '../../../core/functions/admin/components';
-import { fetchDataList } from '../../../core/functions/common/common';
+import { createNewCard, fetchDataList } from '../../../core/functions/common/common';
 import { renderComponents } from '../../../core/functions/render';
 import { setDataList } from '../../../store/actions/data';
 import { setDocumentComponentsData, setMode } from '../../../store/actions/document';
@@ -16,54 +16,13 @@ export const updatePageData = (component, events, pageEvent) => {
     if (component.role === 'container') {
         if (component.childrenList.length === 0) return;
         const card = component.childrenList.find(child => child.role === 'card');
-
-        const createNewCard = (card, event) => {
-
-            const updateCardData = (cardElement) => {
-                if (cardElement.role === 'card') {
-                    cardElement.eventId = event.id;
-                }
-                if (cardElement.role === 'posterLink') {
-                    cardElement.link = `/afisha/${event.id}`
-                    cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
-                }
-                if (cardElement.role === 'cardTitle') {
-                    cardElement.value = event.acronym;
-                }
-                if (cardElement.role === 'genreList') {
-                    const genreItem = cardElement.childrenList.find(item => item.role === 'genreItem');
-
-                    const genreItems = event.genre.map(genre => {
-                        const copy = JSON.parse(JSON.stringify(genreItem));
-                        copy.value = genre.acronym;
-                        return copy;
-                    });
-                    cardElement.childrenList = genreItems;
-                }
-                if (cardElement.childrenList && cardElement.childrenList.length > 0) {
-                    cardElement.childrenList.forEach(child => {
-                        updateCardData(child);
-                    });
-                }
-                return cardElement;
-            }
-            const template = JSON.parse(JSON.stringify(card));
-            const newCard = updateCardData(template);
-
-            return newCard;
-        }
         const cards =  events.map(event => {
-            const newCard = createNewCard(card, event);
-
+            const newCard = createNewCard(JSON.parse(JSON.stringify(card)), event);
             return updateComponentIds(newCard);
         });
 
 
         component.childrenList = cards;
-    }
-
-    if (component.role === 'showsContainer') {
-
     }
 
     if (component.role === 'eventTitle') {
