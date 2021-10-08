@@ -5,22 +5,21 @@ import { filterData, groupFilters } from '../../../../core/functions/common/filt
 import { getHandler } from '../../../../handlers';
 import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { EventsContainerComponent } from './EventsContainerStyled'
-import { createNewCard } from '../../../../core/functions/common/common'
 
 
 export default function EventsContainer(props) {
 
     const {children, state} = props;
     const {filters, data} = state;
-    const {id} = props.componentData;
-    const {componentsData, activeComponent, dragendComponent, mode} = state.document;
+    const {id, dataList} = props.componentData;
+    const {componentsData, activeComponent, mode} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
 
     const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
-    const filteredEvents = filteredData.events;
+    const filteredList = filteredData[dataList];
 
     const params = {
         id,
@@ -35,7 +34,7 @@ export default function EventsContainer(props) {
         ? children 
         : children && children.filter(child => {
             const eventId = child.props.componentData.eventId;
-            return filteredEvents.find(event => event.id === eventId);
+            return filteredList.find(event => event.id === eventId);
         });
     
     return (
