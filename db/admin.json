@@ -1095,10 +1095,8 @@
                             "typeName": "eventsContainer",
                             "id": "evcont001",
                             "name": "События",
-                            "role": "eventsContainer",
-                            "settings": {
-                                "dataList": "events"
-                            },
+                            "role": "container",
+                            "dataList": "events",
                             "styles": {
                                 "common": {
                                     "paddingTop": "25px",
@@ -1296,7 +1294,8 @@
                                     "typeName": "section",
                                     "id": "sec0012",
                                     "name": "Сеансы",
-                                    "role": "showsContainer",
+                                    "role": "container",
+                                    "dataList": "shows",
                                     "styles": {
                                         "common": {
                                             "display": "flex",

@@ -13,7 +13,7 @@ const fs = require('fs');
 
 export const updatePageData = (component, events, pageEvent) => {
 
-    if (component.role === 'eventsContainer') {
+    if (component.role === 'container') {
         if (component.childrenList.length === 0) return;
         const card = component.childrenList.find(child => child.role === 'card');
 

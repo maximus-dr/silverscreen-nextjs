@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import {  getComponent } from '../../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../../core/functions/common/filters';
-import { renderComponents } from '../../../../core/functions/render';
 import { getHandler } from '../../../../handlers';
 import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { EventsContainerComponent } from './EventsContainerStyled'
@@ -30,35 +29,6 @@ export default function EventsContainer(props) {
         isDropBox: false,
         dispatch,
         mode
-    }
-
-
-    const createNewCard = (card, event) => {
-
-        const updateCardData = (cardElement) => {
-            if (cardElement.role === 'card') {
-                cardElement.eventId = event.id;
-            }
-            if (cardElement.role === 'posterLink') {
-                cardElement.link = `/afisha/${event.id}`
-                cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
-            }
-            if (cardElement.role === 'cardTitle') {
-                cardElement.value = event.acronym;
-            }
-            if (cardElement.role === 'genreItem') {
-                cardElement.value = event.genre[0].acronym
-            }
-            if (cardElement.childrenList && cardElement.childrenList.length > 0) {
-                cardElement.childrenList.forEach(child => {
-                    updateCardData(child);
-                });
-            }
-            return cardElement;
-        }
-
-        const newCard = updateCardData({...card});
-        return newCard;
     }
 
     if (mode === 'admin' && componentData.childrenList.length > 0) {
