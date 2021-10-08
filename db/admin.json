@@ -1134,7 +1134,8 @@
                                                     "height": "400px",
                                                     "borderRadius": "8px",
                                                     "backgroundSize": "cover",
-                                                    "backgroundColor": "rgba(255, 255, 255, 0.1)"
+                                                    "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                                                    "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')"
                                                 }
                                             },
                                             "childrenList": []
@@ -1144,6 +1145,7 @@
                                             "id": "lab01010",
                                             "name": "Название",
                                             "role": "cardTitle",
+                                            "value":"Название",
                                             "styles": {
                                                 "common": {
                                                     "color": "#ffffff",
@@ -1172,6 +1174,7 @@
                                                     "id": "lab00re",
                                                     "name": "Жанр",
                                                     "role": "genreItem",
+                                                    "value": "жанр",
                                                     "styles": {
                                                         "common": {
                                                             "color": "#ffffff",

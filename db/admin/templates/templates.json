@@ -345,7 +345,7 @@
                         "id": "lab01010",
                         "name": "Название",
                         "role": "cardTitle",
-                        "value": "Босс-Молокосос 2",
+                        "value": "Название",
                         "styles": {
                             "common": {
                                 "color": "#ffffff",
@@ -374,7 +374,7 @@
                                 "id": "lab00re",
                                 "name": "Жанр",
                                 "role": "genreItem",
-                                "value": "мультфильм",
+                                "value": "жанр",
                                 "styles": {
                                     "common": {
                                         "color": "#ffffff",
