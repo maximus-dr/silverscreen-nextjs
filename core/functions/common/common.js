@@ -22,7 +22,7 @@ const fetchDataList = (fs, path) => {
 }
 
 const updatePageContainers = (dataList, eventId) => {
-
+    
 }
 
 const createNewCard = (card, event) => {

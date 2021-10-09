@@ -37,7 +37,7 @@ export default function Header() {
             </HeaderLeft>
             <Navbar />
             <HeaderRight>
-                <Link href="/admin/preview">
+                <Link href="/preview">
                     <a target="_blank"
                         onClick={(e) => {
                             localStorage.setItem('page_data', JSON.stringify(page));

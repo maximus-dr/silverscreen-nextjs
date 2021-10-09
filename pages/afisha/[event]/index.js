@@ -7,7 +7,7 @@ import { renderComponents } from '../../../core/functions/render';
 import { setDataList } from '../../../store/actions/data';
 import { setDocumentComponentsData } from '../../../store/actions/document';
 import { initializeStore } from '../../../store/store';
-import { updatePageData } from './../../admin/preview/index';
+import { updatePageData } from './../../preview/index';
 const path = require('path');
 const fs = require('fs');
 
