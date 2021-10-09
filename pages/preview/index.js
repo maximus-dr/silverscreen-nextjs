@@ -75,9 +75,9 @@ export default function PreviewPage() {
         }
 
         if (!componentsData) {
-            const data = JSON.parse(localStorage.getItem('page_data'));
-            updatePageData(data, events);
-            dispatch(setDocumentComponentsData(data));
+            const pageData = JSON.parse(localStorage.getItem('page_data'));
+            updatePageData(pageData, events);
+            dispatch(setDocumentComponentsData(pageData));
         }
     });
 

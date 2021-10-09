@@ -26,7 +26,7 @@ export async function getServerSideProps({resolvedUrl}) {
     const eventId = params[params.length - 1];
     const event = dataList.events.find(event => event.id === eventId);
 
-    updatePageData(componentsData, dataList.events, event);
+    // updatePageData(componentsData, dataList.events, event);
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
