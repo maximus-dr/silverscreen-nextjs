@@ -7,12 +7,13 @@ const parseQuery = (query) => {
 }
 
 const fetchDataList = (fs, path) => {
-    const eventsData = fs.readFileSync(path.join(process.cwd(), `db/data/events/events.json`), 'utf8');
-    const events = JSON.parse(eventsData);
-
-    const showsData = fs.readFileSync(path.join(process.cwd(), `db/data/shows/shows.json`), 'utf8');
-    const shows = JSON.parse(showsData);
-
+    const readData = (url) => {
+        const data = fs.readFileSync(path.join(process.cwd(), url), 'utf8');
+        const parsedData = JSON.parse(data);
+        return parsedData;
+    }
+    const events = readData(`db/data/events/events.json`);
+    const shows = readData(`db/data/shows/shows.json`);
     const dataList = {
         events,
         shows

@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {  getComponent } from '../../../../core/functions/common/components';
+import {  getChild, getComponent } from '../../../../core/functions/common/components';
 import { filterData, groupFilters } from '../../../../core/functions/common/filters';
 import { getHandler } from '../../../../handlers';
 import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { EventsContainerComponent } from './EventsContainerStyled'
+import { useEffect } from 'react';
+import { getHandlerResult } from './../../../../handlers/index';
 
 
 export default function EventsContainer(props) {
@@ -12,10 +15,13 @@ export default function EventsContainer(props) {
     const {children, state} = props;
     const {filters, data} = state;
     const {id, dataList} = props.componentData;
-    const {componentsData, activeComponent, mode} = state.document;
+    const {componentsData, activeComponent, mode, dragendComponent} = state.document;
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
+
+    const [allowDrop, setAllowDrop] = useState(false);
+    const [dragCounter, setDragCounter] = useState(0);
 
     const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
@@ -25,7 +31,10 @@ export default function EventsContainer(props) {
         id,
         state,
         componentData,
-        isDropBox: false,
+        isDropBox: true,
+        allowDrop,
+        setAllowDrop,
+        setDragCounter,
         dispatch,
         mode
     }
@@ -36,12 +45,33 @@ export default function EventsContainer(props) {
             const eventId = child.props.componentData.eventId;
             return filteredList.find(event => event.id === eventId);
         });
+
+    const checkAllowDrop = (dragendComponent, dropTarget) => {
+        if (getChild(dragendComponent, dropTarget.id)) {
+            return false;
+        }
+        if (dragendComponent.typeName === 'page') {
+            return false;
+        }
+        return true;
+    }
+
+    useEffect(() => {
+        if (dragendComponent) {
+            if (dragCounter === 0) {
+                setAllowDrop(false);
+            }
+            else if (dragendComponent) {
+                setAllowDrop(checkAllowDrop(dragendComponent, componentData));
+            }
+        }
+    }, [dragCounter, dragendComponent, componentData]);
     
     return (
         <EventsContainerComponent
             id={id}
+            {...props}
             componentData={componentData}
-            isActiveComponent={isActiveComponent}
             onClick={getHandler(params, 'onClick')}
             onMouseDown={getHandler(params, 'onMouseDown')}
             onDragStart={getHandler(params, 'onDragStart')}
@@ -50,6 +80,9 @@ export default function EventsContainer(props) {
             onDragOver={getHandler(params, 'onDragOver')}
             onDragEnd={getHandler(params, 'onDragEnd')}
             onDrop={getHandler(params, 'onDrop')}
+            allowDrop={allowDrop}
+            isActiveComponent={isActiveComponent}
+            isActive={getHandlerResult(params, 'checkIsActive')}
         >
             { cardList || <EmptyEvent />}
         </EventsContainerComponent>
