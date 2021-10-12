@@ -12,12 +12,12 @@ import { renderComponents } from '../../core/functions/render';
 const fs = require('fs');
 
 
-export const updatePageData = (component, events, pageEvent) => {
+export const updatePageData = (component, dataList, pageEvent) => {
 
     if (component.role === 'container') {
         if (component.childrenList.length === 0) return;
         const card = component.childrenList.find(child => child.role === 'card');
-        const cards =  events.map(event => {
+        const cards =  dataList[component.dataList].map(event => {
             const newCard = createNewCard(JSON.parse(JSON.stringify(card)), event);
             return updateComponentIds(newCard);
         });
@@ -39,7 +39,7 @@ export const updatePageData = (component, events, pageEvent) => {
     }
 
     if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updatePageData(child, events, pageEvent));
+        component.childrenList.forEach(child => updatePageData(child, dataList, pageEvent));
     }
 }
 
@@ -65,6 +65,7 @@ export default function PreviewPage() {
     const state = useSelector(state => state);
     const {componentsData, mode} = state.document;
     const {events} = state.data;
+    const {data} = state;
     const dispatch = useDispatch();
     const components = renderComponents(componentsData, state);
 
@@ -76,7 +77,7 @@ export default function PreviewPage() {
 
         if (!componentsData) {
             const pageData = JSON.parse(localStorage.getItem('page_data'));
-            updatePageData(pageData, events);
+            updatePageData(pageData, data);
             dispatch(setDocumentComponentsData(pageData));
         }
     });

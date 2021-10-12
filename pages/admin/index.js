@@ -55,7 +55,7 @@ export async function getServerSideProps() {
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
-    dispatch(setResolution('320'));
+    dispatch(setResolution('640'));
     dispatch(setMode('admin'));
 
     return {
@@ -90,7 +90,7 @@ function AdminMainPage() {
             dispatch(setPage(pages.childrenList[0].id));
             return;
         }
-    }, []);
+    }, [dispatch, pages]);
 
     return (
         <Wrapper>

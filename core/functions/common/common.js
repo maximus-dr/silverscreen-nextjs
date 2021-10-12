@@ -22,7 +22,35 @@ const fetchDataList = (fs, path) => {
 }
 
 const updatePageContainers = (dataList, eventId) => {
-    
+
+    if (component.role === 'container') {
+        if (component.childrenList.length === 0) return;
+        const card = component.childrenList.find(child => child.role === 'card');
+        const cards =  events.map(event => {
+            const newCard = createNewCard(JSON.parse(JSON.stringify(card)), event);
+            return updateComponentIds(newCard);
+        });
+
+
+        component.childrenList = cards;
+    }
+
+    if (component.role === 'eventTitle') {
+        component.value = pageEvent.acronym;
+    }
+
+    if (component.role === 'poster') {
+        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
+    }
+
+    if (component.role === 'eventBackground') {
+        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
+    }
+
+    if (component.childrenList && component.childrenList.length > 0) {
+        component.childrenList.forEach(child => updatePageData(child, events, pageEvent));
+    }
+    return;
 }
 
 const createNewCard = (card, event) => {
