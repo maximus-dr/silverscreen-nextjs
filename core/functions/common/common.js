@@ -61,16 +61,21 @@ const createNewCard = (card, event) => {
 }
 
 
-const updateComponentData = (component, data, event) => {
-    if (!event) {
-        event =  data.events[0];
-    }
+const updateComponentData = (component, data, eventId) => {
 
-    if (component.role === 'container' && component.childrenList.length > 0) {
+    let dataList = component.dataList ? data[component.dataList] : null;
+    let event = dataList && eventId
+        ? dataList.find(item => item.id === eventId)
+        : dataList
+            ? dataList[0] : null;
+
+    if (component.role === 'container' &&
+        component.childrenList.length > 0) {
         const card = component.childrenList.find(child => child.role === 'card');
         if (card) {
             const cards =  data[component.dataList].map(item => {
-                const newCard = createNewCard(JSON.parse(JSON.stringify(card)), item);
+                const template = JSON.parse(JSON.stringify(card));
+                const newCard = createNewCard(template, item);
                 return updateComponentIds(newCard);
             });
             component.childrenList = cards;
@@ -93,7 +98,7 @@ const updateComponentData = (component, data, event) => {
     }
 
     if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updateComponentData(child, data, event));
+        component.childrenList.forEach(child => updateComponentData(child, data, eventId));
     }
 }
 

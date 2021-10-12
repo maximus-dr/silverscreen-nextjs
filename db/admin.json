@@ -1218,6 +1218,7 @@
                             "id": "sec009",
                             "name": "Event page background",
                             "role": "eventBackground",
+                            "dataList": "events",
                             "styles": {
                                 "common": {
                                     "position": "absolute",
@@ -1264,6 +1265,7 @@
                                     "name": "Название",
                                     "value": "Название",
                                     "role": "eventTitle",
+                                    "dataList": "events",
                                     "styles": {
                                         "common": {
                                             "marginBottom": "50px",
@@ -1280,7 +1282,8 @@
                                     "typeName": "section",
                                     "id": "sec003",
                                     "name": "Постер",
-                                    "role": "cardPosterLink",
+                                    "role": "poster",
+                                    "dataList": "events",
                                     "styles": {
                                         "common": {
                                             "marginBottom": "50px",

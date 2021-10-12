@@ -39,6 +39,9 @@ export default function PreviewPage() {
     const dispatch = useDispatch();
     const components = renderComponents(componentsData, state);
     const router = useRouter();
+    const query = router.query;
+
+    const eventId = query.eventId || null;
 
     useEffect(() => {
         if (mode !== 'preview') {
@@ -47,7 +50,7 @@ export default function PreviewPage() {
 
         if (!componentsData) {
             const pageData = JSON.parse(localStorage.getItem('page_data'));
-            updateComponentData(pageData, data);
+            updateComponentData(pageData, data, eventId);
             dispatch(setDocumentComponentsData(pageData));
         }
     });
