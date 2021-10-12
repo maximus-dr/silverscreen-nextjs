@@ -65,7 +65,7 @@ export default function Page(props) {
         if (queryFilter) {
             const parsedFilters = parseQuery(queryFilter);
             dispatch(setFilters(parsedFilters));
-            clearURI(router);
+            // clearURI(router);
             sessionStorage.removeItem('filters');
         }
 
