@@ -1259,42 +1259,84 @@
                             },
                             "childrenList": [
                                 {
-                                    "typeName": "label",
-                                    "id": "dkfjkd",
-                                    "tag": "h2",
-                                    "name": "Название",
-                                    "value": "Название",
-                                    "role": "eventTitle",
-                                    "dataList": "events",
-                                    "styles": {
-                                        "common": {
-                                            "marginBottom": "50px",
-                                            "marginLeft": "0",
-                                            "marginTop": "0",
-                                            "marginRight": "0",
-                                            "fontSize": "52px",
-                                            "lineHeight": "52px"
-                                        }
-                                    },
-                                    "childrenList": []
-                                },
-                                {
                                     "typeName": "section",
-                                    "id": "sec003",
-                                    "name": "Постер",
-                                    "role": "poster",
-                                    "dataList": "events",
+                                    "id": "sec0015",
+                                    "name": "event description",
                                     "styles": {
-                                        "common": {
-                                            "marginBottom": "50px",
-                                            "width": "272px",
-                                            "height": "400px",
-                                            "borderRadius": "8px",
-                                            "backgroundSize": "cover",
-                                            "backgroundColor": "rgba(0, 0, 0, 0.3)"
-                                        }
+                                        "common": {}
                                     },
-                                    "childrenList": []
+                                    "childrenList": [
+                                        {
+                                            "typeName": "label",
+                                            "id": "dkfjkd",
+                                            "tag": "h2",
+                                            "name": "Название",
+                                            "value": "Название",
+                                            "role": "eventTitle",
+                                            "dataList": "events",
+                                            "styles": {
+                                                "common": {
+                                                    "marginBottom": "50px",
+                                                    "marginLeft": "0",
+                                                    "marginTop": "0",
+                                                    "marginRight": "0",
+                                                    "fontSize": "52px",
+                                                    "lineHeight": "52px"
+                                                }
+                                            },
+                                            "childrenList": []
+                                        },
+                                        {
+                                            "typeName": "section",
+                                            "id": "sec0016",
+                                            "name": "section",
+                                            "styles": {
+                                                "common": {
+                                                    "display": "flex",
+                                                    "flexWrap": "wrap",
+                                                    "alignItems": "flex-start"
+                                                }
+                                            },
+                                            "childrenList": [
+                                                {
+                                                    "typeName": "section",
+                                                    "id": "sec003",
+                                                    "name": "Постер",
+                                                    "role": "poster",
+                                                    "dataList": "events",
+                                                    "styles": {
+                                                        "common": {
+                                                            "width": "272px",
+                                                            "height": "400px",
+                                                            "borderRadius": "8px",
+                                                            "backgroundSize": "cover",
+                                                            "backgroundColor": "rgba(0, 0, 0, 0.3)",
+                                                            "marginRight": "50px",
+                                                            "marginBottom": "50px"
+                                                        }
+                                                    },
+                                                    "childrenList": []
+                                                },
+                                                {
+                                                    "typeName": "description",
+                                                    "id": "desc001",
+                                                    "value": "Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или невозможных слов.",
+                                                    "role": "eventAnnotation",
+                                                    "dataList": "events",
+                                                    "styles": {
+                                                        "common": {
+                                                            "width": "500px",
+                                                            "marginTop": "15px",
+                                                            "marginBottom": "50px",
+                                                            "fontSize": "16px",
+                                                            "lineHeight": "20px"
+                                                        }
+                                                    },
+                                                    "childrenList": []
+                                                }
+                                            ]
+                                        }
+                                    ]
                                 },
 
                                 {

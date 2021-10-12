@@ -1,254 +1,259 @@
 [
     {
-      "id":"boss_molokosos-2",
-      "acronym": "Босс-Молокосос 2",
-      "ageLimit": {
-          "acronym": "6+",
-          "name": "зрителям, достигшим 6 лет"
-      },
-      "eventType": {
-          "name": "cinema",
-          "acronym": "Кино"
-      },
-      "genre": [
+        "id":"boss_molokosos-2",
+        "acronym": "Босс-Молокосос 2",
+        "ageLimit": {
+            "acronym": "6+",
+            "name": "зрителям, достигшим 6 лет"
+        },
+        "annotation": "Братья Тим и Тед давно повзрослели и отдалились друг от друга. Тед стал генеральным директором инвестиционного фонда, а Тим посвятил себя семье. Он женился, поселился в пригороде и обзавелся двумя прекрасными дочерьми — Тиной и Табитой. 7-летняя Табита — умная и очень усердная. Несмотря на свой юный возраст, она уже лучшая в классе, а малышка Тина на самом деле оказывается агентом компании BabyCorp.",
+        "eventType": {
+            "name": "cinema",
+            "acronym": "Кино"
+        },
+        "genre": [
+                {
+                    "name": "cartoon",
+                    "acronym": "мультфильм"
+                },
+                {
+                    "name": "family",
+                    "acronym": "семейный"
+                },
+                {
+                    "name": "comedy",
+                    "acronym": "комедия"
+                }
+        ],
+        "language": [
             {
-                "name": "cartoon",
-                "acronym": "мультфильм"
+                "name": "Русский язык",
+                "acronym": "RU"
+            }
+        ],
+        "technology": [
+                {
+                    "name": "Imax",
+                    "icon": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg"
+                }
+        ],
+        "filters":[
+            "$city;minsk",
+            "$city;grodno",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$date;2021-10-05",
+            "$cinema;moon",
+            "$cinema;voka",
+            "$cinema;arena",
+            "$showtime;07:00-11:59",
+            "$showtime;12:00-16:59",
+            "$genre;cartoon",
+            "$genre;family",
+            "$genre;comedy",
+            "$technology;2d",
+            "$technology;3d",
+            "$technology;dolbydigital",
+            "$auditorium;voka",
+            "$auditorium;resto"
+        ],
+        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
+    },
+
+    {
+        "id":"sovry_mne_pravdu",
+        "acronym": "Соври мне правду",
+        "ageLimit": {
+            "acronym": "18+",
+            "name": "зрителям, достигшим 18 лет"
+        },
+        "annotation": "Влюбленная пара проводит время вдали от цивилизации. Внезапный приезд сначала младшей сестры, а потом и бывшего парня девушки нарушают загородную идиллию. У каждого из героев свой план на эти выходные, а все вместе они становятся заложниками ситуации и участниками жестоких психологических игр. Влюбленность сменяется страстью, а невинный флирт вызывает ревность и может привести к смертельной опасности.",
+        "eventType": {
+            "name": "cinema",
+            "acronym": "Кино"
+        },
+        "genre": [
+            {
+                "name": "drama",
+                "acronym": "драма"
             },
             {
-                "name": "family",
-                "acronym": "семейный"
+                "name": "thriller",
+                "acronym": "триллер"
+            }
+        ],
+        "language": [
+            {
+                "name": "Русский язык",
+                "acronym": "RU"
+            }
+        ],
+        "filters":[
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$date;2021-10-05",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$showtime;17:00-21:59",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;thriller",
+            "$technology;2d",
+            "$technology;dolbydigital",
+            "$auditorium;voka",
+            "$auditorium;vip"
+        ],
+        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png"
+    },
+
+    {
+        "id":"petrovy_v_grippe",
+        "acronym": "Петровы в гриппе",
+        "ageLimit": {
+            "acronym": "12+",
+            "name": "зрителям, достигшим 12 лет"
+        },
+        "annotation": "Петровы — самая обычная семья. Он - автослесарь, она - библиотекарь, у них есть сын, но вместе они не живут. Казалось бы, ничего особенного. Но повседневная реальность взрывается в тот момент, когда семья заболевает гриппом, и жизнь наполняется безумием, фантастикой и сюрреализмом.",
+        "eventType": {
+            "name": "cinema",
+            "acronym": "Кино"
+        },
+        "genre": [
+            {
+                "name": "fantastic",
+                "acronym": "фантастика"
+            }
+        ],
+        "language": [
+            {
+                "name": "Русский язык",
+                "acronym": "RU"
+            }
+        ],
+        "filters":[
+            "$city;minsk",
+            "$city;grodno",
+            "$genre;drama",
+            "$shedule;now",
+            "$genre;fantastic",
+            "$date;2021-10-04",
+            "$date;2021-10-05",
+            "$cinema;moon",
+            "$cinema;voka",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$showtime;17:00-21:59",
+            "$technology;2d",
+            "$technology;screenx",
+            "$technology;dolbyatmos",
+            "$auditorium;vip",
+            "$auditorium;vegaslounge",
+            "$auditorium;voka",
+            "$auditorium;resto"
+        ],
+        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
+    },
+
+    {
+        "id":"dune",
+        "acronym": "Дюна",
+        "ageLimit": {
+            "acronym": "12+",
+            "name": "зрителям, достигшим 12 лет"
+        },
+        "annotation": "Наследник знаменитого дома Атрейдесов Пол отправляется вместе с семьей на одну из самых опасных планет во Вселенной – Арракис. Здесь нет ничего, кроме песка, палящего солнца, гигантских чудовищ…и основной причины межгалактических конфликтов – невероятно ценного ресурса, который называется меланж. В результате захвата власти Пол вынужден бежать и скрываться, и это становится началом его эпического путешествия. Враждебный мир Арракиса приготовил для него множество тяжелых испытаний, но только тот, кто готов взглянуть в глаза своему страху, достоин стать избранным.",
+        "eventType": {
+            "name": "cinema",
+            "acronym": "Кино"
+        },
+        "genre": [
+            {
+                "name": "drama",
+                "acronym": "драма"
             },
             {
-                "name": "comedy",
-                "acronym": "комедия"
-            }
-      ],
-      "language": [
-          {
-              "name": "Русский язык",
-              "acronym": "RU"
-          }
-      ],
-      "technology": [
+                "name": "fantastic",
+                "acronym": "фантастика"
+            },
             {
-                "name": "Imax",
-                "icon": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg"
+                "name": "adventure",
+                "acronym": "приключения"
             }
-      ],
-      "filters":[
-        "$city;minsk",
-        "$city;grodno",
-        "$shedule;now",
-        "$date;2021-10-04",
-        "$date;2021-10-05",
-        "$cinema;moon",
-        "$cinema;voka",
-        "$cinema;arena",
-        "$showtime;07:00-11:59",
-        "$showtime;12:00-16:59",
-        "$genre;cartoon",
-        "$genre;family",
-        "$genre;comedy",
-        "$technology;2d",
-        "$technology;3d",
-        "$technology;dolbydigital",
-        "$auditorium;voka",
-        "$auditorium;resto"
-      ],
-      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
+        ],
+        "language": [
+            {
+                "name": "Русский язык",
+                "acronym": "RU"
+            }
+        ],
+        "filters":[
+            "$city;minsk",
+            "$shedule;now",
+            "$date;2021-10-04",
+            "$date;2021-10-05",
+            "$cinema;voka",
+            "$cinema;arena",
+            "$showtime;12:00-16:59",
+            "$showtime;17:00-21:59",
+            "$showtime;22:00-06:59",
+            "$genre;drama",
+            "$genre;fantastic",
+            "$genre;adventure",
+            "$technology;2d",
+            "$technology;2d4k",
+            "$technology;screenx",
+            "$technology;dolbyatmos",
+            "$auditorium;vip",
+            "$auditorium;vegaslounge",
+            "$auditorium;voka"
+        ],
+        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG"
     },
 
     {
-      "id":"sovry_mne_pravdu",
-      "acronym": "Соври мне правду",
-      "ageLimit": {
-        "acronym": "18+",
-        "name": "зрителям, достигшим 18 лет"
-    },
-    "eventType": {
-        "name": "cinema",
-        "acronym": "Кино"
-    },
-    "genre": [
-          {
-              "name": "drama",
-              "acronym": "драма"
-          },
-          {
-              "name": "thriller",
-              "acronym": "триллер"
-          }
-    ],
-    "language": [
-        {
-            "name": "Русский язык",
-            "acronym": "RU"
-        }
-    ],
-      "filters":[
-        "$city;minsk",
-        "$shedule;now",
-        "$date;2021-10-04",
-        "$date;2021-10-05",
-        "$cinema;arena",
-        "$showtime;12:00-16:59",
-        "$showtime;17:00-21:59",
-        "$showtime;22:00-06:59",
-        "$genre;drama",
-        "$genre;thriller",
-        "$technology;2d",
-        "$technology;dolbydigital",
-        "$auditorium;voka",
-        "$auditorium;vip"
-      ],
-      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png"
-    },
-
-    {
-      "id":"petrovy_v_grippe",
-      "acronym": "Петровы в гриппе",
-      "ageLimit": {
-        "acronym": "12+",
-        "name": "зрителям, достигшим 12 лет"
-    },
-    "eventType": {
-        "name": "cinema",
-        "acronym": "Кино"
-    },
-    "genre": [
-          {
-              "name": "fantastic",
-              "acronym": "фантастика"
-          }
-    ],
-    "language": [
-        {
-            "name": "Русский язык",
-            "acronym": "RU"
-        }
-    ],
-      "filters":[
-        "$city;minsk",
-        "$city;grodno",
-        "$genre;drama",
-        "$shedule;now",
-        "$genre;fantastic",
-        "$date;2021-10-04",
-        "$date;2021-10-05",
-        "$cinema;moon",
-        "$cinema;voka",
-        "$cinema;arena",
-        "$showtime;12:00-16:59",
-        "$showtime;17:00-21:59",
-        "$technology;2d",
-        "$technology;screenx",
-        "$technology;dolbyatmos",
-        "$auditorium;vip",
-        "$auditorium;vegaslounge",
-        "$auditorium;voka",
-        "$auditorium;resto"
-      ],
-      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
-    },
-
-    {
-      "id":"dune",
-      "acronym": "Дюна",
-      "ageLimit": {
-        "acronym": "12+",
-        "name": "зрителям, достигшим 12 лет"
-    },
-    "eventType": {
-        "name": "cinema",
-        "acronym": "Кино"
-    },
-    "genre": [
-          {
-              "name": "drama",
-              "acronym": "драма"
-          },
-          {
-              "name": "fantastic",
-              "acronym": "фантастика"
-          },
-          {
-              "name": "adventure",
-              "acronym": "приключения"
-          }
-    ],
-    "language": [
-        {
-            "name": "Русский язык",
-            "acronym": "RU"
-        }
-    ],
-      "filters":[
-        "$city;minsk",
-        "$shedule;now",
-        "$date;2021-10-04",
-        "$date;2021-10-05",
-        "$cinema;voka",
-        "$cinema;arena",
-        "$showtime;12:00-16:59",
-        "$showtime;17:00-21:59",
-        "$showtime;22:00-06:59",
-        "$genre;drama",
-        "$genre;fantastic",
-        "$genre;adventure",
-        "$technology;2d",
-        "$technology;2d4k",
-        "$technology;screenx",
-        "$technology;dolbyatmos",
-        "$auditorium;vip",
-        "$auditorium;vegaslounge",
-        "$auditorium;voka"
-      ],
-      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG"
-    },
-
-    {
-      "id":"klaustrofoby",
-      "acronym": "Клаустрофобы",
-      "ageLimit": {
-        "acronym": "12+",
-        "name": "зрителям, достигшим 12 лет"
-    },
-    "eventType": {
-        "name": "cinema",
-        "acronym": "Кино"
-    },
-    "genre": [
-          {
-              "name": "action",
-              "acronym": "боевик"
-          },
-          {
-              "name": "thriller",
-              "acronym": "триллер"
-          }
-    ],
-    "language": [
-        {
-            "name": "Русский язык",
-            "acronym": "RU"
-        }
-    ],
-      "filters":[
-        "$city;minsk",
-        "$city;grodno",
-        "$genre;action",
-        "$genre;thriller",
-        "$shedule;soon",
-        "$date;2021-11-01",
-        "$cinema;arena",
-        "$cinema;voka",
-        "$cinema;moon",
-        "$technology;2d",
-        "$technology;dolbydigital",
-        "$auditorium;vip",
-        "$auditorium;voka"
-      ],
-      "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png"
+        "id":"klaustrofoby",
+        "acronym": "Клаустрофобы",
+        "ageLimit": {
+            "acronym": "12+",
+            "name": "зрителям, достигшим 12 лет"
+        },
+        "annotation": "Шестеро незнакомцев, каждый из которых стал единственным победителем одного из смертельно опасных квестов, вновь оказываются в игре не по своей воле. Но прежние задания покажутся им сущим пустяком по сравнению с жуткими испытаниями, которые ожидают их на этот раз: игра стала еще опаснее и безжалостнее, а шансы на выживание стремятся к нулю.",
+        "eventType": {
+            "name": "cinema",
+            "acronym": "Кино"
+        },
+        "genre": [
+            {
+                "name": "action",
+                "acronym": "боевик"
+            },
+            {
+                "name": "thriller",
+                "acronym": "триллер"
+            }
+        ],
+        "language": [
+            {
+                "name": "Русский язык",
+                "acronym": "RU"
+            }
+        ],
+        "filters":[
+            "$city;minsk",
+            "$city;grodno",
+            "$genre;action",
+            "$genre;thriller",
+            "$shedule;soon",
+            "$date;2021-11-01",
+            "$cinema;arena",
+            "$cinema;voka",
+            "$cinema;moon",
+            "$technology;2d",
+            "$technology;dolbydigital",
+            "$auditorium;vip",
+            "$auditorium;voka"
+        ],
+        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png"
     }
   ]

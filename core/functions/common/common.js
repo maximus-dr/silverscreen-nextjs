@@ -37,7 +37,7 @@ const createNewCard = (card, event) => {
                 break;
 
             case 'cardPosterLink':
-                cardElement.link = `/afisha/${event.id}`
+                cardElement.link = `/afisha/event?eventId=${event.id}`
                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
                 break;
 
@@ -81,7 +81,7 @@ const createNewCard = (card, event) => {
 
             case 'cardTypeAudio':
                 cardElement.value = event.typeAudio.acronym;
-
+                break;
         }
 
         const children = cardElement.childrenList;
@@ -121,7 +121,6 @@ const updateComponentData = (component, data, eventId) => {
 
     if (event) {
         if (component.role === 'eventTitle') {
-
             component.value = event.acronym;
         }
 
@@ -131,6 +130,10 @@ const updateComponentData = (component, data, eventId) => {
 
         if (component.role === 'eventBackground') {
             component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        }
+
+        if (component.role === 'eventAnnotation') {
+            component.value = event.annotation;
         }
     }
 
