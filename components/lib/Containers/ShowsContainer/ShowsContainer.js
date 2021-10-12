@@ -8,6 +8,7 @@ import EmptyEvent from './EmptyEvent/EmptyEvent';
 import { ShowsContainerComponent } from './ShowsContainerStyled'
 import { useEffect } from 'react';
 import { getHandlerResult } from './../../../../handlers/index';
+import { useRouter } from 'next/router';
 
 
 export default function ShowsContainer(props) {
@@ -19,13 +20,19 @@ export default function ShowsContainer(props) {
     const componentData = getComponent(componentsData, id);
     const isActiveComponent = activeComponent && activeComponent.id === id;
     const dispatch = useDispatch();
+    const router = useRouter();
+    const {query} = router;
+
+    const eventId = query.eventId || null;
 
     const [allowDrop, setAllowDrop] = useState(false);
     const [dragCounter, setDragCounter] = useState(0);
 
     const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
-    const filteredList = filteredData[dataList];
+    const filteredList = eventId
+        ? filteredData[dataList].filter(item => item.eventId === eventId)
+        : filteredData[dataList];
 
     const params = {
         id,
@@ -43,7 +50,10 @@ export default function ShowsContainer(props) {
         ? children
         : children && children.filter(child => {
             const cardId = child.props.componentData.cardId;
-            return filteredList.find(event => event.id === cardId);
+            const match = filteredList.find(item => item.id === cardId);
+            if (match) {
+                return true;
+            }
         });
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
