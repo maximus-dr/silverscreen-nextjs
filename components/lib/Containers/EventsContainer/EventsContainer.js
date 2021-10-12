@@ -39,11 +39,11 @@ export default function EventsContainer(props) {
         mode
     }
 
-    const cardList = mode === 'admin' 
-        ? children 
+    const cardList = mode === 'admin'
+        ? children
         : children && children.filter(child => {
-            const eventId = child.props.componentData.eventId;
-            return filteredList.find(event => event.id === eventId);
+            const cardId = child.props.componentData.cardId;
+            return filteredList.find(event => event.id === cardId);
         });
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
@@ -66,7 +66,7 @@ export default function EventsContainer(props) {
             }
         }
     }, [dragCounter, dragendComponent, componentData]);
-    
+
     return (
         <EventsContainerComponent
             id={id}

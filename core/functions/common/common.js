@@ -33,7 +33,7 @@ const createNewCard = (card, event) => {
 
         switch (cardElement.role) {
             case 'card':
-                cardElement.eventId = event.id;
+                cardElement.cardId = event.id;
                 break;
 
             case 'cardPosterLink':
