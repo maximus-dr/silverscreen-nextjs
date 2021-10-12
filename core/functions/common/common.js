@@ -1,10 +1,14 @@
+import { updateComponentIds } from "../admin/components";
+
 const clearURI = (router) => {
     router.replace(router.pathname, undefined, {shallow: true})
 }
 
+
 const parseQuery = (query) => {
     return query.split(' ');
 }
+
 
 const fetchDataList = (fs, path) => {
     const readData = (url) => {
@@ -21,37 +25,6 @@ const fetchDataList = (fs, path) => {
     return dataList;
 }
 
-const updatePageContainers = (dataList, eventId) => {
-
-    if (component.role === 'container') {
-        if (component.childrenList.length === 0) return;
-        const card = component.childrenList.find(child => child.role === 'card');
-        const cards =  events.map(event => {
-            const newCard = createNewCard(JSON.parse(JSON.stringify(card)), event);
-            return updateComponentIds(newCard);
-        });
-
-
-        component.childrenList = cards;
-    }
-
-    if (component.role === 'eventTitle') {
-        component.value = pageEvent.acronym;
-    }
-
-    if (component.role === 'poster') {
-        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
-    }
-
-    if (component.role === 'eventBackground') {
-        component.styles.common.backgroundImage = `url('` + pageEvent.posterLink + `')`;
-    }
-
-    if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updatePageData(child, events, pageEvent));
-    }
-    return;
-}
 
 const createNewCard = (card, event) => {
 
@@ -61,7 +34,7 @@ const createNewCard = (card, event) => {
                 cardElement.eventId = event.id;
                 break;
 
-            case 'posterLink':
+            case 'cardPosterLink':
                 cardElement.link = `/afisha/${event.id}`
                 cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
                 break;
@@ -70,7 +43,7 @@ const createNewCard = (card, event) => {
                 cardElement.value = event.acronym;
                 break;
 
-            case 'genreItem':
+            case 'cardGenre':
                 cardElement.value = event.genre[0].acronym;
                 break;
         }
@@ -88,10 +61,47 @@ const createNewCard = (card, event) => {
 }
 
 
+const updateComponentData = (component, data, event) => {
+    if (!event) {
+        event =  data.events[0];
+    }
+
+    if (component.role === 'container' && component.childrenList.length > 0) {
+        const card = component.childrenList.find(child => child.role === 'card');
+        if (card) {
+            const cards =  data[component.dataList].map(item => {
+                const newCard = createNewCard(JSON.parse(JSON.stringify(card)), item);
+                return updateComponentIds(newCard);
+            });
+            component.childrenList = cards;
+        }
+    }
+
+    if (event) {
+        if (component.role === 'eventTitle') {
+
+            component.value = event.acronym;
+        }
+
+        if (component.role === 'poster') {
+            component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        }
+
+        if (component.role === 'eventBackground') {
+            component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        }
+    }
+
+    if (component.childrenList && component.childrenList.length > 0) {
+        component.childrenList.forEach(child => updateComponentData(child, data, event));
+    }
+}
+
+
 export {
     clearURI,
     parseQuery,
     fetchDataList,
-    updatePageContainers,
+    updateComponentData,
     createNewCard
 }

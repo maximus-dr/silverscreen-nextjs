@@ -1126,7 +1126,7 @@
                                             "typeName": "link",
                                             "id": "link001",
                                             "name": "Постер",
-                                            "role": "posterLink",
+                                            "role": "cardPosterLink",
                                             "styles": {
                                                 "common": {
                                                     "display": "block",
@@ -1165,7 +1165,7 @@
                                             "typeName": "section",
                                             "id": "secff",
                                             "name": "Жанры",
-                                            "role": "genreList",
+                                            "role": "cardGenreList",
                                             "styles": {
                                                 "common": {}
                                             },
@@ -1174,7 +1174,7 @@
                                                     "typeName": "label",
                                                     "id": "lab00re",
                                                     "name": "Жанр",
-                                                    "role": "genreItem",
+                                                    "role": "cardGenre",
                                                     "value": "жанр",
                                                     "styles": {
                                                         "common": {
@@ -1280,7 +1280,7 @@
                                     "typeName": "section",
                                     "id": "sec003",
                                     "name": "Постер",
-                                    "role": "posterLink",
+                                    "role": "cardPosterLink",
                                     "styles": {
                                         "common": {
                                             "marginBottom": "50px",
