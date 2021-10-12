@@ -23,12 +23,7 @@ const Item = styled.div`
     }
 
     ${props => props.isCurrentPage && `
-        background-color: rgba(0, 0, 0, 0.25);
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.3);
-            outline: 1px solid rgba(0, 0, 0, 0.7);
-        }
+        outline: 2px solid #42a5f5;
     `}
 
     ${props => props.isActive && !props.isCurrentPage && `
@@ -52,11 +47,6 @@ const Item = styled.div`
             }
         `;
     }}
-
-    ${props => props.isModal && `
-        background-color: rgba(0, 0, 0, 0.25);
-    `}
-
 
 
     ${props => props.allowDrop && `
@@ -87,6 +77,7 @@ const TreeItemType = styled.span`
             color: rgba(0, 0, 0, 0.55);
         `
     }}
+
 
     ${props => {
         return props.hasChildren && css`
@@ -191,14 +182,10 @@ const TreeItemName = styled.span`
 
 
     ${props => props.isPage && props.isCurrentPage && `
-        color: #ffffff;
+
     `}
 
     ${props => props.isActive && `
-        color: #ffffff;
-    `}
-
-    ${props => props.isModal && `
         color: #ffffff;
     `}
 `;
