@@ -1314,7 +1314,7 @@
                                             "typeName": "section",
                                             "id": "sec005",
                                             "name": "Сеанс",
-                                            "role": "showCard",
+                                            "role": "card",
                                             "styles": {
                                                 "common": {
                                                     "marginRight": "25px",
@@ -1347,6 +1347,7 @@
                                                             "id": "lab0021",
                                                             "name": "Show Time",
                                                             "value": "00:00",
+                                                            "role": "cardEventStart",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "36px",
@@ -1375,6 +1376,7 @@
                                                                     "id": "lab0022",
                                                                     "name": "show cinema",
                                                                     "value": "Кинотеатр",
+                                                                    "role": "cardCinema",
                                                                     "styles": {
                                                                         "common": {
                                                                             "textAlign": "center",
@@ -1389,6 +1391,7 @@
                                                                     "id": "lab0023",
                                                                     "name": "show city",
                                                                     "value": "Город",
+                                                                    "role": "cardCity",
                                                                     "styles": {
                                                                         "common": {
                                                                             "textAlign": "center",
@@ -1408,6 +1411,7 @@
                                                     "id": "lab0024",
                                                     "name": "show date",
                                                     "value": "01/01/2021",
+                                                    "role": "cardEventDate",
                                                     "styles": {
                                                         "common": {
                                                             "display": "inline-block",
@@ -1440,6 +1444,7 @@
                                                             "id": "lab0025",
                                                             "name": "video type",
                                                             "value": "Video Type",
+                                                            "role": "cardTypeVideo",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "16px",
@@ -1453,6 +1458,7 @@
                                                             "id": "lab0026",
                                                             "name": "audio type",
                                                             "value": "Audio Type",
+                                                            "role": "cardTypeAudio",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "16px",
@@ -1469,6 +1475,7 @@
                                                     "id": "lab0027",
                                                     "name": "auditorium",
                                                     "value": "Кинозал",
+                                                    "role": "cardAuditorium",
                                                     "styles": {
                                                         "common": {
                                                             "display": "inline-block",

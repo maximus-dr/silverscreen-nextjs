@@ -29,6 +29,8 @@ const fetchDataList = (fs, path) => {
 const createNewCard = (card, event) => {
 
     const updateCardData = (cardElement) => {
+        const eventStart = new Date(event.start);
+
         switch (cardElement.role) {
             case 'card':
                 cardElement.eventId = event.id;
@@ -46,7 +48,42 @@ const createNewCard = (card, event) => {
             case 'cardGenre':
                 cardElement.value = event.genre[0].acronym;
                 break;
+
+            case 'cardCinema':
+                cardElement.value = event.cinema.acronym;
+                break;
+
+            case 'cardCity':
+                cardElement.value = event.city.acronym;
+                break;
+
+            case 'cardEventStart':
+                const eventStartTime = eventStart.toLocaleTimeString('en-US', {
+                    hour12: false,
+                    hour: 'numeric',
+                    minute: 'numeric'
+                });
+                cardElement.value = eventStartTime;
+                break;
+
+            case 'cardEventDate':
+                const eventDate = eventStart.toLocaleDateString('en-US');
+                cardElement.value = eventDate;
+                break;
+
+            case 'cardAuditorium':
+                cardElement.value = event.auditorium.acronym;
+                break;
+
+            case 'cardTypeVideo':
+                cardElement.value = event.typeVideo.acronym;
+                break;
+
+            case 'cardTypeAudio':
+                cardElement.value = event.typeAudio.acronym;
+
         }
+
         const children = cardElement.childrenList;
         if (children && children.length > 0) {
             children.forEach(child => {
