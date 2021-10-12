@@ -20,7 +20,8 @@ import Events from "./lib/Events/Events";
 import Filter from "./lib/Filter/Filter";
 import Filters from "./lib/Filters/Filters";
 import EventsContainer from "./lib/Containers/EventsContainer/EventsContainer";
-import EventCard from "./lib/Cards/EventCard/EventCard";
+import ShowsContainer from "./lib/Containers/ShowsContainer/ShowsContainer";
+
 
 
 export const Provider = {
@@ -31,7 +32,6 @@ export const Provider = {
     'dropdown': Dropdown,
     'events': Events,
     'eventsContainer': EventsContainer,
-    'eventCard': EventCard,
     'filter': Filter,
     'filters': Filters,
     'form': Form,
@@ -43,6 +43,7 @@ export const Provider = {
     'modal': Modal,
     'page': Page,
     'radio': Radio,
+    'showsContainer': ShowsContainer,
     'section': Section,
     'slider': Slider,
     'tab': Tab,

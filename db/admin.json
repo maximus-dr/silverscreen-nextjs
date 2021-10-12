@@ -1298,7 +1298,7 @@
                                 },
 
                                 {
-                                    "typeName": "section",
+                                    "typeName": "showsContainer",
                                     "id": "sec0012",
                                     "name": "Сеансы",
                                     "role": "container",
