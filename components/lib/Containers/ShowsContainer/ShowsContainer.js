@@ -94,7 +94,7 @@ export default function ShowsContainer(props) {
             isActiveComponent={isActiveComponent}
             isActive={getHandlerResult(params, 'checkIsActive')}
         >
-            { cardList || <EmptyEvent />}
+            { cardList && cardList.length > 0 ? cardList : <EmptyEvent />}
         </ShowsContainerComponent>
     )
 }
