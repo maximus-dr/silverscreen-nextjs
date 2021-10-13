@@ -17,6 +17,8 @@
                     "id": "page1",
                     "name": "Afisha Page",
                     "path": "/afisha",
+                    "role": "",
+                    "dataList": "",
                     "styles": {
                         "common": {
                             "minHeight": "100vh",
@@ -28,6 +30,8 @@
                             "typeName": "section",
                             "id": "filter001",
                             "name": "Фильтры - кинотеатры",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "display": "flex",
@@ -44,6 +48,8 @@
                                     "id": "lab004",
                                     "name": "Заголовок",
                                     "value": "пространство",
+                                    "role": "",
+                                    "dataList": "",
                                     "styles": {
                                         "common": {
                                             "display": "inline-block",
@@ -62,6 +68,7 @@
                                     "name": "Voka",
                                     "value": "voka",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$cinema;voka"
@@ -96,6 +103,7 @@
                                     "name": "arena",
                                     "value": "arena",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$cinema;arena"
@@ -132,6 +140,7 @@
                                     "name": "moon",
                                     "value": "moon",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$cinema;moon"
@@ -168,6 +177,8 @@
                             "typeName": "section",
                             "id": "sec004",
                             "name": "Жанры",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "display": "flex",
@@ -184,6 +195,8 @@
                                     "id": "lab005",
                                     "name": "жанры",
                                     "value": "жанры",
+                                    "role": "",
+                                    "dataList": "",
                                     "styles": {
                                         "common": {
                                             "display": "inline-block",
@@ -202,6 +215,7 @@
                                     "name": "мультфильм",
                                     "value": "мультфильм",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;cartoon"
@@ -236,6 +250,7 @@
                                     "name": "драма",
                                     "value": "драма",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;drama"
@@ -270,6 +285,7 @@
                                     "name": "семейный",
                                     "value": "семейный",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;family"
@@ -304,6 +320,7 @@
                                     "name": "комедия",
                                     "value": "комедия",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;comedy"
@@ -338,6 +355,7 @@
                                     "name": "фэнтези",
                                     "value": "фэнтези",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;fantasy"
@@ -372,6 +390,7 @@
                                     "name": "шоу",
                                     "value": "шоу",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;show"
@@ -406,6 +425,7 @@
                                     "name": "фантастика",
                                     "value": "фантастика",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;fantastic"
@@ -440,6 +460,7 @@
                                     "name": "спорт",
                                     "value": "спорт",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;sport"
@@ -474,6 +495,7 @@
                                     "name": "документальный",
                                     "value": "документальный",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;doc"
@@ -508,6 +530,7 @@
                                     "name": "выставка",
                                     "value": "выставка",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;exhibition"
@@ -542,6 +565,7 @@
                                     "name": "триллер",
                                     "value": "триллер",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$genre;thriller"
@@ -576,6 +600,8 @@
                             "typeName": "section",
                             "id": "sec007",
                             "name": "Технологии",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "display": "flex",
@@ -591,6 +617,8 @@
                                     "id": "lab0015",
                                     "name": "технологии",
                                     "value": "технологии",
+                                    "role": "",
+                                    "dataList": "",
                                     "styles": {
                                         "common": {
                                             "display": "inline-block",
@@ -608,6 +636,7 @@
                                     "name": "2d",
                                     "value": "2d",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$technology;2d"
@@ -641,6 +670,7 @@
                                     "name": "3d",
                                     "value": "3d",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$technology;3d"
@@ -674,6 +704,7 @@
                                     "name": "2d4k",
                                     "value": "2d4k",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$technology;2d4k"
@@ -707,6 +738,7 @@
                                     "name": "dolbydigital",
                                     "value": "dolbydigital",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$technology;dolbydigital"
@@ -740,6 +772,7 @@
                                     "name": "dolbyatmos",
                                     "value": "dolbyatmos",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$technology;dolbyatmos"
@@ -774,6 +807,8 @@
                             "typeName": "section",
                             "id": "sec008",
                             "name": "Залы",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "display": "flex",
@@ -806,6 +841,7 @@
                                     "name": "vip",
                                     "value": "vip",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$auditorium;vip"
@@ -839,6 +875,7 @@
                                     "name": "voka",
                                     "value": "voka",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$auditorium;voka"
@@ -872,6 +909,7 @@
                                     "name": "vegas lounge",
                                     "value": "vegas",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$auditorium;vegaslounge"
@@ -905,6 +943,7 @@
                                     "name": "resto",
                                     "value": "resto",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "isMultiple": true,
                                         "value": "$auditorium;resto"
@@ -939,6 +978,8 @@
                             "typeName": "section",
                             "id": "sec0013",
                             "name": "Сейчас - скоро",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "paddingTop": "15px",
@@ -956,6 +997,7 @@
                                     "name": "все сеансы",
                                     "value": "все сеансы",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "value": "$shedule;all"
                                     },
@@ -988,6 +1030,7 @@
                                     "name": "сейчас",
                                     "value": "сейчас",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "value": "$shedule;now"
                                     },
@@ -1020,6 +1063,7 @@
                                     "name": "скоро",
                                     "value": "скоро",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "value": "$shedule;soon"
                                     },
@@ -1052,6 +1096,8 @@
                             "typeName": "section",
                             "id": "sec006",
                             "name": "Filters footer",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "paddingTop": "15px",
@@ -1069,6 +1115,7 @@
                                     "name": "Сбросить",
                                     "value": "сбросить",
                                     "role": "filter",
+                                    "dataList": "",
                                     "settings": {
                                         "type": "clear"
                                     },
@@ -1116,6 +1163,7 @@
                                     "id": "templateunwd7-Wx33",
                                     "name": "Карточка События",
                                     "role": "card",
+                                    "dataList": "",
                                     "styles": {
                                         "common":{
                                             "marginBottom": "25px"
@@ -1127,6 +1175,7 @@
                                             "id": "link001",
                                             "name": "Постер",
                                             "role": "cardPosterLink",
+                                            "dataList": "",
                                             "styles": {
                                                 "common": {
                                                     "display": "block",
@@ -1146,6 +1195,7 @@
                                             "id": "lab01010",
                                             "name": "Название",
                                             "role": "cardTitle",
+                                            "dataList": "",
                                             "value":"Название",
                                             "styles": {
                                                 "common": {
@@ -1166,6 +1216,7 @@
                                             "id": "secff",
                                             "name": "Жанры",
                                             "role": "cardGenreList",
+                                            "dataList": "",
                                             "styles": {
                                                 "common": {}
                                             },
@@ -1202,6 +1253,8 @@
                     "id": "page2",
                     "name": "Event Page",
                     "path": "/afisha/event",
+                    "role": "",
+                    "dataList": "",
                     "styles": {
                         "common": {
                             "position": "relative",
@@ -1243,6 +1296,8 @@
                             "typeName": "section",
                             "id": "sec0010",
                             "name": "Page wrapper",
+                            "role": "",
+                            "dataList": "",
                             "styles": {
                                 "common": {
                                     "position": "relative",
@@ -1262,6 +1317,8 @@
                                     "typeName": "section",
                                     "id": "sec0015",
                                     "name": "event description",
+                                    "role": "",
+                                    "dataList": "",
                                     "styles": {
                                         "common": {}
                                     },
@@ -1290,6 +1347,8 @@
                                             "typeName": "section",
                                             "id": "sec0016",
                                             "name": "section",
+                                            "role": "",
+                                            "dataList": "",
                                             "styles": {
                                                 "common": {
                                                     "display": "flex",
@@ -1302,7 +1361,7 @@
                                                     "typeName": "section",
                                                     "id": "sec003",
                                                     "name": "Постер",
-                                                    "role": "poster",
+                                                    "role": "eventPoster",
                                                     "dataList": "events",
                                                     "styles": {
                                                         "common": {
@@ -1357,6 +1416,7 @@
                                             "id": "sec005",
                                             "name": "Сеанс",
                                             "role": "card",
+                                            "dataList": "",
                                             "styles": {
                                                 "common": {
                                                     "marginRight": "25px",
@@ -1376,6 +1436,8 @@
                                                     "typeName": "section",
                                                     "id": "sec014",
                                                     "name": "showcard top",
+                                                    "role": "",
+                                                    "dataList": "",
                                                     "styles": {
                                                         "common": {
                                                             "display": "flex",
@@ -1390,6 +1452,7 @@
                                                             "name": "Show Time",
                                                             "value": "00:00",
                                                             "role": "cardEventStart",
+                                                            "dataList": "",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "36px",
@@ -1404,6 +1467,8 @@
                                                             "typeName": "section",
                                                             "id": "sec015",
                                                             "name": "top right",
+                                                            "role": "",
+                                                            "dataList": "",
                                                             "styles": {
                                                                 "common": {
                                                                     "display": "inline-flex",
@@ -1419,6 +1484,7 @@
                                                                     "name": "show cinema",
                                                                     "value": "Кинотеатр",
                                                                     "role": "cardCinema",
+                                                                    "dataList": "",
                                                                     "styles": {
                                                                         "common": {
                                                                             "textAlign": "center",
@@ -1434,6 +1500,7 @@
                                                                     "name": "show city",
                                                                     "value": "Город",
                                                                     "role": "cardCity",
+                                                                    "dataList": "",
                                                                     "styles": {
                                                                         "common": {
                                                                             "textAlign": "center",
@@ -1454,6 +1521,7 @@
                                                     "name": "show date",
                                                     "value": "01/01/2021",
                                                     "role": "cardEventDate",
+                                                    "dataList": "",
                                                     "styles": {
                                                         "common": {
                                                             "display": "inline-block",
@@ -1472,6 +1540,8 @@
                                                     "typeName": "section",
                                                     "id": "sec0014",
                                                     "name": "left bottom",
+                                                    "role": "",
+                                                    "dataList": "",
                                                     "styles": {
                                                         "common": {
                                                             "display": "flex",
@@ -1487,6 +1557,7 @@
                                                             "name": "video type",
                                                             "value": "Video Type",
                                                             "role": "cardTypeVideo",
+                                                            "dataList": "",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "16px",
@@ -1501,6 +1572,7 @@
                                                             "name": "audio type",
                                                             "value": "Audio Type",
                                                             "role": "cardTypeAudio",
+                                                            "dataList": "",
                                                             "styles": {
                                                                 "common": {
                                                                     "fontSize": "16px",
@@ -1518,6 +1590,7 @@
                                                     "name": "auditorium",
                                                     "value": "Кинозал",
                                                     "role": "cardAuditorium",
+                                                    "dataList": "",
                                                     "styles": {
                                                         "common": {
                                                             "display": "inline-block",

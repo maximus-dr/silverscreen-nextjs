@@ -124,7 +124,7 @@ const updateComponentData = (component, data, eventId) => {
             component.value = event.acronym;
         }
 
-        if (component.role === 'poster') {
+        if (component.role === 'eventPoster') {
             component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
         }
 
