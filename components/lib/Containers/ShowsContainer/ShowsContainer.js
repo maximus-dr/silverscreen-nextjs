@@ -30,7 +30,7 @@ export default function ShowsContainer(props) {
 
     const currentFilters = groupFilters(filters);
     const filteredData = filterData(data, currentFilters);
-    const filteredList = eventId
+    const filteredList = eventId && dataList
         ? filteredData[dataList].filter(item => item.eventId === eventId)
         : filteredData[dataList];
 
