@@ -34,6 +34,22 @@ const setRoleToComponentsData = (componentsData, componentId, role) => {
     }
 }
 
+const setDatalistToComponentsData = (componentsData, componentId, dataList) => {
+    if (componentsData.id === componentId) {
+        return {
+            ...componentsData,
+            dataList
+        }
+    }
+    const children = componentsData.childrenList.map(child => {
+        return setDatalistToComponentsData(child, componentId, dataList);
+    });
+    return {
+        ...componentsData,
+        childrenList: children
+    }
+}
+
 const setLinkToComponentsData = (componentsData, componentId, link) => {
     if (componentsData.id === componentId) {
         return {
@@ -204,5 +220,6 @@ export {
     setLockToComponentsData,
     setUrlToComponentsData,
     setForToComponentsData,
-    setRoleToComponentsData
+    setRoleToComponentsData,
+    setDatalistToComponentsData
 }

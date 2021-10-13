@@ -29,6 +29,7 @@ const UNSET_PAGE = 'UNSET_PAGE';
 const SET_MODE = 'SET_MODE';
 const SET_COMPONENT_FOR = 'SET_COMPONENT_FOR';
 const SET_COMPONENT_ROLE = 'SET_COMPONENT_ROLE';
+const SET_COMPONENT_DATALIST = 'SET_COMPONENT_DATALIST';
 
 
 
@@ -97,6 +98,12 @@ const setComponentName = (name, id) => ({
 const setComponentRole = (role, id) => ({
     type: SET_COMPONENT_ROLE,
     role,
+    id
+});
+
+const setComponentDatalist = (dataList, id) => ({
+    type: SET_COMPONENT_DATALIST,
+    dataList,
     id
 });
 
@@ -214,7 +221,8 @@ export {
     setMode,
     setComponentUrl,
     setComponentFor,
-    setComponentRole
+    setComponentRole,
+    setComponentDatalist
 }
 
 export {
@@ -246,5 +254,6 @@ export {
     SET_MODE,
     SET_COMPONENT_URL,
     SET_COMPONENT_FOR,
-    SET_COMPONENT_ROLE
+    SET_COMPONENT_ROLE,
+    SET_COMPONENT_DATALIST
 }

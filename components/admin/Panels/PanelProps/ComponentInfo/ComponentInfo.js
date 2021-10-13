@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentData, ComponentPropItem, ComponentPropKey, ComponentPropValue, ComponentSectionWrapper, ComponentInfoTextarea, ComponentName } from './ComponentInfoStyled'
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor, setComponentRole } from '../../../../../store/actions/document';
+import { setComponentName, setComponentValue, setComponentValueToActive, clearBuffer, setComponentLinkToActive, setComponentLink, setComponentUrl, setComponentFor, setComponentRole, setComponentDatalist } from '../../../../../store/actions/document';
 import { getComponent } from '../../../../../core/functions/common/components';
 import Settings from './Settings/Settings';
 
@@ -70,6 +70,13 @@ export default function ComponentSeciton(props) {
         dispatch(setComponentLink(
             e.target.value,
             componentData.id
+        ));
+    }
+
+    const onDataListChange = (e) => {
+        dispatch(setComponentDatalist(
+            e.target.value,
+            activeComponent.id
         ));
     }
 
@@ -188,6 +195,22 @@ export default function ComponentSeciton(props) {
                                         value={componentData.role || ''}
                                         onFocus={onRoleInputFocus}
                                         onChange={onRoleChange}
+                                    />
+                                </ComponentPropValue>
+                            </ComponentPropItem>
+                        );
+                    }
+
+                    if (entrie[0] === 'dataList') {
+                        return (
+                            <ComponentPropItem key={entrie[0]}>
+                                <ComponentPropKey>{entrie[0]}:</ComponentPropKey>
+                                <ComponentPropValue>
+                                    <ComponentName
+                                        type="text"
+                                        value={componentData.dataList || ''}
+                                        onFocus={onRoleInputFocus}
+                                        onChange={onDataListChange}
                                     />
                                 </ComponentPropValue>
                             </ComponentPropItem>

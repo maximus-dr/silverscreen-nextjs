@@ -55,7 +55,7 @@ export async function getServerSideProps() {
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));
     dispatch(setTemplates(templates));
-    dispatch(setResolution('640'));
+    dispatch(setResolution('1024'));
     dispatch(setMode('admin'));
 
     return {
