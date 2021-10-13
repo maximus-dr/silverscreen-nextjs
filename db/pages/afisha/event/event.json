@@ -103,7 +103,7 @@
                                     "typeName": "section",
                                     "id": "sec003",
                                     "name": "Постер",
-                                    "role": "poster",
+                                    "role": "eventPoster",
                                     "dataList": "events",
                                     "styles": {
                                         "common": {

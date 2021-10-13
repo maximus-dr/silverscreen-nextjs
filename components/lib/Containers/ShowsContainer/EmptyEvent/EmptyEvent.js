@@ -5,7 +5,7 @@ export default function EmptyEvent() {
     return (
         <EmptyEventWrapper>
             <EmptyEventTitle>
-                Не нашли фильм?
+                Сеансы не найдены
             </EmptyEventTitle>
         </EmptyEventWrapper>
     )

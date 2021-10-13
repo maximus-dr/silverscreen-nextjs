@@ -109,7 +109,7 @@ const updateComponentData = (component, data, eventId) => {
     if (component.role === 'container' &&
         component.childrenList.length > 0) {
         const card = component.childrenList.find(child => child.role === 'card');
-        if (card) {
+        if (card && component.dataList) {
             const cards =  data[component.dataList].map(item => {
                 const template = JSON.parse(JSON.stringify(card));
                 const newCard = createNewCard(template, item);

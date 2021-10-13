@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 export const EmptyEventWrapper = styled.div`
-    width: 272px;
-    height: 400px;
+    width: 350px;
+    height: 164px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.1);
     color: #ffffff;
@@ -13,6 +13,6 @@ export const EmptyEventWrapper = styled.div`
 
 export const EmptyEventTitle = styled.span`
     display: inline-block;
-    margin-top: 50px;
     font-size: 28px;
+    margin-top: 60px;
 `;

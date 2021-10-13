@@ -3,7 +3,7 @@ const path = require('path');
 
 
 export default function handler(req, res) {
-    const templatesPath = path.join(process.cwd(), 'db/templates/templates.json');
+    const templatesPath = path.join(process.cwd(), 'db/admin/templates/templates.json');
 
     if (req.method === 'GET') {
         const templates = fs.readFileSync(templatesPath, 'utf8');
