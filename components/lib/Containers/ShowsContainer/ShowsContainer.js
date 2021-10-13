@@ -49,6 +49,7 @@ export default function ShowsContainer(props) {
     const cardList = mode === 'admin'
         ? children
         : children && children.filter(child => {
+            if (!filteredList) return;
             const cardId = child.props.componentData.cardId;
             const match = filteredList.find(item => item.id === cardId);
             if (match) {
