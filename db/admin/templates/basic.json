@@ -1,26 +1,91 @@
 [
     {
-        "category": "Страница",
+        "category":"Страница",
         "templates": [
             {
                 "typeName": "page",
                 "id": "page1",
-                "name": "Main Page",
+                "name": "Пустая",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
                     "common": {
-                        "paddingTop": "5px",
-                        "paddingRight": "5px",
-                        "paddingBottom": "5px",
-                        "paddingLeft": "5px",
                         "minHeight": "100vh",
                         "backgroundColor": "#ffffff"
                     }
                 },
                 "childrenList": []
+            },
+
+            {
+                "typeName": "page",
+                "id": "templateASLIhAbT88",
+                "name": "Темный фон",
+                "path": "/afisha/event",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "relative",
+                        "minHeight": "100vh",
+                        "width": "100%",
+                        "backgroundColor": "#27272a",
+                        "color": "#ffffff",
+                        "backgroundSize": ""
+                    }
+                },
+                "childrenList": []
+            },
+
+            {
+                "typeName":"page",
+                "id": "templateSe-qo2r1b1",
+                "name": "Темный фон + Wrapper",
+                "path": "/afisha/event",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "relative",
+                        "minHeight": "100vh",
+                        "width": "100%",
+                        "backgroundColor": "#27272a",
+                        "color": "#ffffff"
+                    }
+                },
+                "childrenList": [
+                    {
+                        "typeName": "section",
+                        "id": "sec0010",
+                        "name": "Page wrapper",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "position": "relative",
+                                "maxWidth": "1300px",
+                                "marginTop": "0",
+                                "marginBottom": "0",
+                                "marginLeft": "auto",
+                                "marginRight": "auto",
+                                "paddingTop": "50px",
+                                "paddingBottom": "50px",
+                                "paddingLeft": "25px",
+                                "paddingRight": "25px",
+                                "minHeight": "100vh",
+                                "zIndex": "1"
+                            }
+                        },
+                        "childrenList": []
+                    }
+                ]
             }
         ]
     },
-
     {
         "category": "Секция",
         "templates": [
@@ -28,6 +93,9 @@
                 "typeName": "section",
                 "id": "sec001",
                 "name": "Section 1",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
                     "common": {
                         "minHeight": "50px",
@@ -51,6 +119,9 @@
                 "id": "lab001",
                 "name": "Label 1",
                 "value": "Label",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
                     "common": {
                         "display": "inline-block",
@@ -69,8 +140,46 @@
     {
         "category": "Ссылка",
         "templates": [
-            {"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')"}},"childrenList":[]},
-            {"typeName":"link","id":"templateltQaGrIbrR2","name":"vk","value":"Link","url":"/","styles":{"common":{"width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')"}},"childrenList":[]}
+            {
+                "typeName": "link",
+                "id": "templateltQaGrIbrR",
+                "name": "fb",
+                "value": "Link", "url": "/",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "marginRight": "8px",
+                        "width": "48px",
+                        "height": "48px",
+                        "display": "block",
+                        "fontSize": "0px",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')"
+                    }
+                },
+                "childrenList": []
+            },
+            {
+                "typeName": "link",
+                "id": "templateltQaGrIbrR2",
+                "name": "vk",
+                "value": "Link",
+                "url": "/",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "48px",
+                        "height": "48px",
+                        "display": "block",
+                        "fontSize": "0px",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')"
+                    }
+                },
+                "childrenList": []
+            }
         ]
     },
 
@@ -82,6 +191,9 @@
                 "id": "button001",
                 "name": "Простая кнопка",
                 "value": "Кнопка",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
                     "common": {
                         "border": "none",
@@ -102,6 +214,9 @@
                 "typeName": "description",
                 "id": "desc001",
                 "name": "Текст",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
                 "styles": {
                     "common": {
@@ -123,9 +238,69 @@
     {
         "category": "Иконка",
         "templates": [
-            {"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/dolbyAtmos.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
-            {"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/ScreenX.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},
-            {"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}
+            {
+                "typeName": "icon",
+                "id": "templateIpU-euHZOU",
+                "name": "Dolby Atmos",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "70px",
+                        "height": "26px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/dolbyAtmos.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList":[]
+            },
+            {
+                "typeName": "icon",
+                "id": "templatekP2t_zrYa6",
+                "name": "ScreenX",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "87px",
+                        "height": "17px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/ScreenX.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList": []
+            },
+            {
+                "typeName": "icon",
+                "id": "template-45063nxhZ",
+                "name": "Imax",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "66px",
+                        "height": "12px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList": []
+            }
         ]
     },
 
@@ -136,6 +311,9 @@
                 "typeName": "image",
                 "id": "img001",
                 "name": "Пустое",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
                 "styles": {
                     "common": {
@@ -253,7 +431,9 @@
                 "id":"label-filter001",
                 "name":"Жанр",
                 "value":"фильтр",
-                "role":"filter",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "settings": {
                     "isMultiple":true,
                     "value":"$category;new"
@@ -283,60 +463,369 @@
     },
 
     {
-        "category":"Контейнер",
+        "category": "Контейнер",
         "templates": [
             {
-                "typeName":"eventsContainer",
-                "id":"templateBhFGjzKjuS",
-                "name":"События",
+                "typeName": "eventsContainer",
+                "id": "templateBhFGjzKjuS",
+                "name": "События",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
                     "common": {
+                        "minHeight": "520px",
                         "paddingTop": "25px",
                         "paddingRight": "15px",
                         "paddingBottom": "25px",
                         "paddingLeft": "15px",
                         "backgroundColor": "#333333",
-                        "border": "1px dashed #000000",
                         "display": "flex",
                         "flexWrap": "wrap",
                         "justifyContent": "space-around"
                     }
                 },
                 "childrenList": []
+            },
+            {
+                "typeName": "showsContainer",
+                "id": "template-6ICnGnVbA",
+                "name": "Сеансы",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "alignItems": "flex-start",
+                        "minHeight": "380px"
+                    }
+                },
+                "childrenList": []
             }
         ]
     },
+
     {
-        "category":"Карточка",
+        "category": "Карточка",
         "templates": [
             {
                 "typeName": "section",
                 "id": "templateunwd7-Wx33",
                 "name": "Карточка События",
-                "role": "card",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
                 "styles": {
-                    "common":{}
+                    "common": {
+                        "marginBottom": "25px"
+                    }
                 },
                 "childrenList": [
                     {
                         "typeName": "link",
                         "id": "link001",
                         "name": "Постер",
-                        "role": "posterLink",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
                         "styles": {
                             "common": {
                                 "display": "block",
-                                "width": "325px",
-                                "height": "455px",
+                                "width": "272px",
+                                "height": "400px",
                                 "borderRadius": "8px",
                                 "backgroundSize": "cover",
                                 "backgroundColor": "rgba(255, 255, 255, 0.1)",
-                                "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')"
+                                "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')",
+                                "cursor": "pointer"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab01010",
+                        "name": "Название",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "value": "Название",
+                        "styles": {
+                            "common": {
+                                "color": "#ffffff",
+                                "fontSize": "20px",
+                                "lineHeight": "24px",
+                                "fontWeight": "600",
+                                "marginTop": "15px",
+                                "marginBottom": "10px",
+                                "display": "inline-block"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "section",
+                        "id": "secff",
+                        "name": "Жанры",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {}
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab00re",
+                                "name": "Жанр",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "value": "жанр",
+                                "styles": {
+                                    "common": {
+                                        "color": "#ffffff",
+                                        "fontSize": "14px",
+                                        "textTransform": "uppercase",
+                                        "marginRight": "10px",
+                                        "display": "inline-block"
+                                    }
+                                },
+                                "childrenList":[]
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            {
+                "typeName": "section",
+                "id": "template1YI-bTiMX5",
+                "name": "Карточка Сеанса",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "marginRight": "25px",
+                        "marginBottom": "25px",
+                        "flexBasis": "350px",
+                        "paddingTop": "16px",
+                        "paddingRight": "16px",
+                        "paddingBottom": "16px",
+                        "paddingLeft": "16px",
+                        "backgroundColor": "rgba(0, 0, 0, 0.6)",
+                        "borderRadius": "8px",
+                        "color": "#ffffff"
+                    }
+                },
+                "childrenList": [
+                    {
+                        "typeName": "section",
+                        "id": "sec014",
+                        "name": "showcard top",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "width": "100%"
+                            }
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab0021",
+                                "name": "Show Time",
+                                "value": "00:00",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "36px",
+                                        "lineHeight": "36px"
+                                    }
+                                },
+                                "childrenList":[]
+                            },
+                            {
+                                "typeName": "section",
+                                "id": "sec015",
+                                "name": "top right",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "display": "inline-flex",
+                                        "flexDirection": "column",
+                                        "alignItems": "center",
+                                        "paddingTop": "2px"
+                                    }
+                                },
+                                "childrenList": [
+                                    {
+                                        "typeName": "label",
+                                        "id": "lab0022",
+                                        "name": "show cinema",
+                                        "value": "Кинотеатр",
+                                        "data": "",
+                                        "dataAction": "",
+                                        "dataList": "",
+                                        "styles": {
+                                            "common": {
+                                                "textAlign": "center",
+                                                "fontSize": "20px",
+                                                "textTransform": "uppercase"
+                                            }
+                                        },
+                                        "childrenList": []
+                                    },
+                                    {
+                                        "typeName": "label",
+                                        "id": "lab0023",
+                                        "name": "show city",
+                                        "value": "Город",
+                                        "data": "",
+                                        "dataAction": "",
+                                        "dataList": "",
+                                        "styles": {
+                                            "common": {
+                                                "textAlign": "center",
+                                                "fontSize": "16px",
+                                                "color": "rgba(255, 255, 255, 0.5)"
+                                            }
+                                        },
+                                        "childrenList": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab0024",
+                        "name": "show date",
+                        "value": "01/01/2021",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "inline-block",
+                                "paddingTop": "3px",
+                                "paddingBottom": "3px",
+                                "paddingRight": "11px",
+                                "paddingLeft": "11px"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "section",
+                        "id": "sec0014",
+                        "name": "left bottom",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "marginTop": "12px",
+                                "marginBottom": "12px"
+                            }
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab0025",
+                                "name": "video type",
+                                "value": "Video Type",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "16px",
+                                        "color": "rgba(255, 255, 255, 0.5)"
+                                    }
+                                },
+                                "childrenList": []
+                            },
+                            {
+                                "typeName": "label",
+                                "id": "lab0026",
+                                "name": "audio type",
+                                "value": "Audio Type",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "16px",
+                                        "color": "rgba(255, 255, 255, 0.5)"
+                                    }
+                                },
+                                "childrenList": []
+                            }
+                        ]
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab0027",
+                        "name": "auditorium",
+                        "value": "Кинозал",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "inline-block",
+                                "fontSize": "18px",
+                                "color": "#F1C40F",
+                                "textTransform": "uppercase"
                             }
                         },
                         "childrenList": []
                     }
                 ]
+            }
+        ]
+    },
+
+    {
+        "category": "Мои шаблоны",
+        "templates": [
+            {
+                "typeName": "section", "id": "templateNjDFfkE_QW",
+                "name": "Фон страницы Blured", "role": "eventBackground",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "absolute",
+                        "top": "0",
+                        "left": "0",
+                        "right": "0",
+                        "bottom": "0",
+                        "backgroundPositionX": "center",
+                        "backgroundPositionY": "center",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundSize": "cover",
+                        "backgroundAttachment": "fixed",
+                        "filter": "blur(10px)",
+                        "opacity": "0.2",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"
+                    }
+                },
+                "childrenList": []
             }
         ]
     }
