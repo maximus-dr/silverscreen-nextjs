@@ -1,1 +1,833 @@
-[{"category":"Страница","templates":[{"typeName":"page","id":"page1","name":"Пустая","styles":{"common":{"minHeight":"100vh","backgroundColor":"#ffffff"}},"childrenList":[]},{"typeName":"page","id":"templateASLIhAbT88","name":"Темный фон","path":"/afisha/event","role":"","dataList":"","styles":{"common":{"position":"relative","minHeight":"100vh","width":"100%","backgroundColor":"#27272a","color":"#ffffff","backgroundSize":""}},"childrenList":[]},{"typeName":"page","id":"templateSe-qo2r1b1","name":"Темный фон + Wrapper","path":"/afisha/event","role":"","dataList":"","styles":{"common":{"position":"relative","minHeight":"100vh","width":"100%","backgroundColor":"#27272a","color":"#ffffff"}},"childrenList":[{"typeName":"section","id":"sec0010","name":"Page wrapper","role":"","dataList":"","styles":{"common":{"position":"relative","maxWidth":"1300px","marginTop":"0","marginBottom":"0","marginLeft":"auto","marginRight":"auto","paddingTop":"50px","paddingBottom":"50px","paddingLeft":"25px","paddingRight":"25px","minHeight":"100vh","zIndex":"1"}},"childrenList":[]}]},{"typeName":"page","id":"template8dDetS6X31","name":"Афиша","styles":{"common":{"minHeight":"100vh","backgroundColor":"#ffffff"}},"childrenList":[{"typeName":"section","id":"z83wmVWZrQ","name":"Afisha Header","role":"","dataList":"","styles":{"common":{"backgroundColor":"#fff","paddingTop":"15px","paddingRight":"25px","paddingBottom":"15px","paddingLeft":"25px","marginBottom":"","alignItems":"center","justifyContent":"space-between","display":"flex"}},"childrenList":[{"typeName":"label","id":"0ZPu_p6Rfp","name":"Label 1","value":"Афиша","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"44px","fontWeight":"bold"}},"childrenList":[]},{"typeName":"section","id":"PP_aCa9oUj","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-block","borderRadius":""}},"childrenList":[{"typeName":"label","id":"VwEwUv10zH","name":"все сеансы","value":"все сеансы","role":"filter","dataList":"","settings":{"value":"$shedule;all"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]},{"typeName":"label","id":"4XE63U_H_O","name":"сейчас","value":"сейчас","role":"filter","dataList":"","settings":{"value":"$shedule;now"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]},{"typeName":"label","id":"VtbWvFVb0G","name":"скоро","value":"скоро","role":"filter","dataList":"","settings":{"value":"$shedule;soon"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]}]}]},{"typeName":"section","id":"JN9nFNgniH","name":"Блок Фильтров","role":"","dataList":"","styles":{"common":{"backgroundColor":"#fff","display":"flex","flexWrap":"wrap","paddingTop":"25px","paddingRight":"25px","paddingBottom":"25px","paddingLeft":"25px"}},"childrenList":[{"typeName":"section","id":"ukwcKvwpNU","name":"Жанры","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","width":"100%","flexDirection":"column","alignItems":"flex-start","justifyContent":"","marginBottom":"15px"}},"childrenList":[{"typeName":"label","id":"wrsBajoBBf","name":"Заголовок","value":"жанры","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"64HeoQsmtX","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-flex","flexWrap":"wrap","width":"auto","borderRadius":"","marginBottom":""}},"childrenList":[{"typeName":"label","id":"VmZbAKTXs1","name":"мультфильм","value":"мультфильм","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;cartoon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"xTL700f7LH","name":"драма","value":"драма","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;drama"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"D0g3xjYEK0","name":"семейный","value":"семейный","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;family"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"zo1DliFcBc","name":"комедия","value":"комедия","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;comedy"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"9NzCisYOhr","name":"фэнтези","value":"фэнтези","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;fantasy"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"FsiEuO1g1c","name":"шоу","value":"шоу","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;show"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"jb5dE4ajka","name":"фантастика","value":"фантастика","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;fantastic"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"VLaZwaiqZr","name":"спорт","value":"спорт","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;sport"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"wyZSG7dFGK","name":"документальный","value":"документальный","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;doc"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"3XSVk-kjk9","name":"выставка","value":"выставка","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;exhibition"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"L0nyXgzXMz","name":"триллер","value":"триллер","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;thriller"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"r6Aic4bkg1","name":"Пространство","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"inline-flex","flexDirection":"column","marginBottom":"20px","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"nkK0WmGd54","name":"Заголовок","value":"пространство","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"dJwFUltQzD","name":"Section 1","styles":{"common":{"minHeight":"","border":"","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"MKLXbZqS0d","name":"Voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"HTZJcHjTLD","name":"arena","value":"arena","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;arena"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"mbG9tIUO1N","name":"moon","value":"moon","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;moon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"HChx85RtFH","name":"Залы","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"Mp85FL5WGx","name":"залы","value":"залы","styles":{"common":{"display":"inline-block","width":"auto","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"VIpamlCO-y","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"e06F9F1pJ1","name":"vip","value":"vip","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vip"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"iQDAaApN2g","name":"voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"0mzQd-Kp4m","name":"vegas lounge","value":"vegas","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vegaslounge"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"sjtbE8-s9c","name":"resto","value":"resto","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;resto"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"uggoAPP-sE","name":"Технологии","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"ZK9096I4vZ","name":"технологии","value":"технологии","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"mOqd0f4xoT","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"nv0hdW6PSN","name":"2d","value":"2d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"G5IhevFpWz","name":"3d","value":"3d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;3d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"dNnFJ9_xgg","name":"2d4k","value":"2d4k","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d4k"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"SqfsksJJaF","name":"dolbydigital","value":"dolbydigital","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbydigital"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"LieUO1KzDT","name":"dolbyatmos","value":"dolbyatmos","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbyatmos"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"VD-mvPS-RD","name":"Filters footer","role":"","dataList":"","styles":{"common":{"paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","marginBottom":"20px","width":"100%","marginTop":"25px"}},"childrenList":[{"typeName":"label","id":"oLA53gdKO4","name":"Сбросить","value":"сбросить","role":"filter","dataList":"","settings":{"type":"clear"},"styles":{"common":{"paddingTop":"8px","paddingRight":"16px","paddingBottom":"12px","paddingLeft":"16px","backgroundColor":"rgba(57, 0, 114, 0.1)","borderRadius":"600px","color":"#390072","fontSize":"16px","lineHeight":"18px","cursor":"pointer","marginTop":"","display":"inline-block"}},"childrenList":[]}]}]},{"typeName":"eventsContainer","id":"voKvymHvpE","name":"События","role":"container","dataList":"events","styles":{"common":{"minHeight":"520px","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#333333","display":"flex","flexWrap":"wrap","justifyContent":"space-around"}},"childrenList":[{"typeName":"section","id":"dn_INKH1H-","name":"Карточка События","role":"card","styles":{"common":{"marginBottom":"25px"}},"childrenList":[{"typeName":"link","id":"9AzeR6NdR2","name":"Постер","role":"cardPosterLink","styles":{"common":{"display":"block","width":"272px","height":"400px","borderRadius":"8px","backgroundSize":"cover","backgroundColor":"rgba(255, 255, 255, 0.1)","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')","cursor":"pointer"}},"childrenList":[]},{"typeName":"label","id":"Mmn7FDstTp","name":"Название","role":"cardTitle","value":"Название","styles":{"common":{"color":"#ffffff","fontSize":"20px","lineHeight":"24px","fontWeight":"600","marginTop":"15px","marginBottom":"10px","display":"inline-block"}},"childrenList":[]},{"typeName":"section","id":"Eaa44tTNiu","name":"Жанры","role":"genreList","styles":{"common":{}},"childrenList":[{"typeName":"label","id":"mEEqaiX5uf","name":"Жанр","role":"cardGenre","value":"жанр","styles":{"common":{"color":"#ffffff","fontSize":"14px","textTransform":"uppercase","marginRight":"10px","display":"inline-block"}},"childrenList":[]}]}]}]}]},{"typeName":"page","id":"templatemo8ZvBs2ic","name":"Event","path":"/afisha/event","role":"","dataList":"","styles":{"common":{"position":"relative","minHeight":"100vh","width":"100%","backgroundColor":"#27272a","color":"#ffffff"}},"childrenList":[{"typeName":"section","id":"Mqb8SjER4K","name":"Page wrapper","role":"","dataList":"","styles":{"common":{"position":"relative","maxWidth":"1300px","marginTop":"0","marginBottom":"0","marginLeft":"auto","marginRight":"auto","paddingTop":"50px","paddingBottom":"50px","paddingLeft":"25px","paddingRight":"25px","minHeight":"100vh","zIndex":"1"}},"childrenList":[{"typeName":"section","id":"BuwfyuQ7E-","name":"Описание события","role":"","dataList":"","styles":{"common":{}},"childrenList":[{"typeName":"label","id":"sp6fduvzrR","tag":"h2","name":"Название","value":"Название","role":"eventTitle","dataList":"events","styles":{"common":{"marginBottom":"50px","marginLeft":"0","marginTop":"0","marginRight":"0","fontSize":"52px","lineHeight":"52px"}},"childrenList":[]},{"typeName":"section","id":"EYh8OslOqj","name":"section","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","alignItems":"flex-start"}},"childrenList":[{"typeName":"section","id":"ofA0Xn6wdw","name":"Постер","role":"eventPoster","dataList":"events","styles":{"common":{"width":"272px","height":"400px","borderRadius":"8px","backgroundSize":"cover","backgroundColor":"rgba(0, 0, 0, 0.3)","marginRight":"50px","marginBottom":"50px"}},"childrenList":[]},{"typeName":"description","id":"V1t60eebHj","value":"Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или невозможных слов.","role":"eventAnnotation","dataList":"events","styles":{"common":{"width":"500px","marginTop":"15px","marginBottom":"50px","fontSize":"16px","lineHeight":"20px"}},"childrenList":[]}]}]},{"typeName":"section","id":"FHvuV4KDND","name":"Блок Фильтров Светлый","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingTop":"","paddingRight":"25px","paddingBottom":"25px","paddingLeft":""}},"childrenList":[{"typeName":"section","id":"cACRbwJ_Kd","name":"Жанры","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","width":"100%","flexDirection":"column","alignItems":"flex-start","justifyContent":"","marginBottom":"15px"}},"childrenList":[{"typeName":"label","id":"t_ZXZVvY9l","name":"Заголовок","value":"время","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"Pv0QD-x3np","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-flex","flexWrap":"wrap","width":"auto","borderRadius":"","marginBottom":""}},"childrenList":[]},{"typeName":"section","id":"VPD4xSVPTd","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"QfZNx0tyPn","name":"мультфильм","value":"07:00 - 11:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;07:00-11:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"XXJZomg-EO","name":"мультфильм","value":"12:00 - 16:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;12:00-16:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"duNHwIGK89","name":"мультфильм","value":"17:00 - 21:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;17:00-21:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Gu7YdEpqez","name":"мультфильм","value":"22:00 - 06:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;22:00-06:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"nt4U3emVWM","name":"Пространство","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"inline-flex","flexDirection":"column","marginBottom":"20px","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"0teqS8CQes","name":"Заголовок","value":"пространство","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"tVbL9IwPVs","name":"Section 1","styles":{"common":{"minHeight":"","border":"","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"UwLejT7sAM","name":"Voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"p3r5Iw1phg","name":"arena","value":"arena","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;arena"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"3HeQscuLgS","name":"moon","value":"moon","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;moon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"yGKRUFwLfP","name":"Залы","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"YRBtQOni7B","name":"залы","value":"залы","styles":{"common":{"display":"inline-block","width":"auto","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"K7olWaCilK","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"Ol-_bwSYkA","name":"vip","value":"vip","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vip"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"YjuABvM8jQ","name":"voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"bc9VJ15l6O","name":"vegas lounge","value":"vegas","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vegaslounge"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"PdM2yJwG_J","name":"resto","value":"resto","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;resto"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"Eky_XoLsAa","name":"Технологии","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"8LA5JKQCW4","name":"технологии","value":"технологии","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"r0Qubw5jkO","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"udoaPF2ueh","name":"2d","value":"2d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"JGgU9xSoQ8","name":"3d","value":"3d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;3d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"6SGZdvfipf","name":"2d4k","value":"2d4k","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d4k"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"tUEDGlFro5","name":"dolbydigital","value":"dolbydigital","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbydigital"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Kh1O3p0lg2","name":"dolbyatmos","value":"dolbyatmos","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbyatmos"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"ePknQ9xTsb","name":"Filters footer","role":"","dataList":"","styles":{"common":{"paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","marginBottom":"20px","width":"100%","marginTop":"25px"}},"childrenList":[{"typeName":"label","id":"oirlhYQGV-","name":"Сбросить","value":"сбросить","role":"filter","dataList":"","settings":{"type":"clear"},"styles":{"common":{"paddingTop":"8px","paddingRight":"16px","paddingBottom":"12px","paddingLeft":"16px","backgroundColor":"rgba(0, 0, 0, 0.3)","borderRadius":"600px","color":"#fff","fontSize":"16px","lineHeight":"18px","cursor":"pointer","marginTop":"","display":"inline-block"}},"childrenList":[]}]}]},{"typeName":"showsContainer","id":"zsW_QmpT1Y","name":"Сеансы","role":"container","dataList":"shows","styles":{"common":{"display":"flex","flexWrap":"wrap","alignItems":"flex-start","minHeight":"380px"}},"childrenList":[{"typeName":"section","id":"SSbnDCl815","name":"Карточка Сеанса","role":"card","dataList":"","styles":{"common":{"marginRight":"25px","marginBottom":"25px","flexBasis":"350px","paddingTop":"16px","paddingRight":"16px","paddingBottom":"16px","paddingLeft":"16px","backgroundColor":"rgba(0, 0, 0, 0.6)","borderRadius":"8px","color":"#ffffff"}},"childrenList":[{"typeName":"section","id":"K1przTINhx","name":"showcard top","role":"","dataList":"","styles":{"common":{"display":"flex","justifyContent":"space-between","width":"100%"}},"childrenList":[{"typeName":"label","id":"ks6YhlHIzz","name":"Show Time","value":"00:00","role":"cardEventStart","dataList":"","styles":{"common":{"fontSize":"36px","lineHeight":"36px"}},"childrenList":[]},{"typeName":"section","id":"zXivrvFgop","name":"top right","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexDirection":"column","alignItems":"center","paddingTop":"2px"}},"childrenList":[{"typeName":"label","id":"HPGYlF2y0W","name":"show cinema","value":"Кинотеатр","role":"cardCinema","dataList":"","styles":{"common":{"textAlign":"center","fontSize":"20px","textTransform":"uppercase"}},"childrenList":[]},{"typeName":"label","id":"ZQsBHPmIqT","name":"show city","value":"Город","role":"cardCity","dataList":"","styles":{"common":{"textAlign":"center","fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]}]}]},{"typeName":"label","id":"oGkMuPaXSC","name":"show date","value":"01/01/2021","role":"cardEventDate","dataList":"","styles":{"common":{"display":"inline-block","paddingTop":"3px","paddingBottom":"3px","paddingRight":"11px","paddingLeft":"11px"}},"childrenList":[]},{"typeName":"section","id":"R3p2ULS1Ci","name":"left bottom","role":"","dataList":"","styles":{"common":{"display":"flex","flexDirection":"column","marginTop":"12px","marginBottom":"12px"}},"childrenList":[{"typeName":"label","id":"hlV9So_AqJ","name":"video type","value":"Video Type","role":"cardTypeVideo","dataList":"","styles":{"common":{"fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]},{"typeName":"label","id":"RYzoO9gfkG","name":"audio type","value":"Audio Type","role":"cardTypeAudio","dataList":"","styles":{"common":{"fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]}]},{"typeName":"label","id":"UuTsnYr9vw","name":"auditorium","value":"Кинозал","role":"cardAuditorium","dataList":"","styles":{"common":{"display":"inline-block","fontSize":"18px","color":"#F1C40F","textTransform":"uppercase"}},"childrenList":[]}]}]}]},{"typeName":"section","id":"uVJ_34VS4D","name":"Фон страницы Blured","role":"eventBackground","dataList":"events","styles":{"common":{"position":"absolute","top":"0","left":"0","right":"0","bottom":"0","backgroundPositionX":"center","backgroundPositionY":"center","backgroundRepeat":"no-repeat","backgroundSize":"cover","backgroundAttachment":"fixed","filter":"blur(10px)","opacity":"0.2","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"}},"childrenList":[]}]}]},{"category":"Секция","templates":[{"typeName":"section","id":"sec001","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"1px dashed #42a5f5","paddingTop":"15px","paddingRight":"15px","paddingBottom":"15px","paddingLeft":"15px"}},"childrenList":[]}]},{"category":"Заголовок","templates":[{"typeName":"label","id":"lab001","name":"Label 1","value":"Label","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px"}},"childrenList":[]}]},{"category":"Ссылка","templates":[{"typeName":"link","id":"templateltQaGrIbrR","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')"}},"childrenList":[]},{"typeName":"link","id":"templateltQaGrIbrR2","name":"vk","value":"Link","url":"/","styles":{"common":{"width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')"}},"childrenList":[]}]},{"category":"Кнопка","templates":[{"typeName":"button","id":"button001","name":"Простая кнопка","value":"Кнопка","styles":{"common":{"border":"none","outline":"none"}},"childrenList":[]},{"typeName":"button","id":"templatedPpsv0xgKt","name":"Закрыть","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(0, 0, 0, 0.3)"}},"childrenList":[]}]},{"category":"Текст","templates":[{"typeName":"description","id":"desc001","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]}]},{"category":"Иконка","templates":[{"typeName":"icon","id":"templateIpU-euHZOU","name":"Dolby Atmos","styles":{"common":{"width":"70px","height":"26px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/dolbyAtmos.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},{"typeName":"icon","id":"templatekP2t_zrYa6","name":"ScreenX","styles":{"common":{"width":"87px","height":"17px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/ScreenX.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]},{"typeName":"icon","id":"template-45063nxhZ","name":"Imax","styles":{"common":{"width":"66px","height":"12px","backgroundColor":"","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg')","backgroundSize":"cover","backgroundPositionX":"","backgroundRepeat":"no-repeat","backgroundPositionY":""}},"childrenList":[]}]},{"category":"Изображение","templates":[{"typeName":"image","id":"img001","name":"Пустое","link":"https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640","styles":{"common":{"width":"100%","maxWidth":"640px","backgroundColor":"#dfe6e9"}},"childrenList":[]}]},{"category":"Слайдер","templates":[{"typeName":"slider","id":"slider001","name":"Пустой","settings":{"initItem":"0","arrows":"true","buttons":"true","swipeable":"true","autoPlay":"true","interval":"3000","transitionTime":"350","tolerance":"5","infiniteLoop":"true","axis":"horizontal"},"styles":{"common":{},"buttons":{"common":{"height":"10px","backgroundColor":"red"}},"buttonsList":{"common":{}},"arrowPrev":{"common":{}},"arrowNext":{"common":{}}},"childrenList":[]}]},{"category":"Модальное окно","templates":[{"typeName":"modal","id":"templateg73vH53pes","name":"Форма с кнопкой закрытия","modalName":"loginForm","styles":{"common":{"minHeight":"","width":"","border":"1px dashed black","position":"absolute","zIndex":"100","top":"0px","right":"0px","bottom":"0px","left":"0px","backgroundColor":"rgba(0, 0, 0, 0.7)","display":"flex","flexDirection":"column","alignItems":"center"}},"childrenList":[{"typeName":"section","id":"zqUViuXIKE","name":"Окно формы","styles":{"common":{"minHeight":"320px","border":"1px dashed #42a5f5","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#ffffff","width":"260px","top":"","marginTop":"50px","borderRadius":"24px","display":"flex","flexDirection":"column"}},"childrenList":[{"typeName":"label","id":"N3szGV-L0m","name":"Заголовок","value":"Форма","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","marginBottom":"25px"}},"childrenList":[]},{"typeName":"description","id":"IfLvVlpvhi","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]},{"typeName":"button","id":"2jEZas4364","name":"Кнопка","value":"Отправить","styles":{"common":{"marginTop":"auto","justifyContent":"flex-start","marginBottom":"10px","width":"100px","alignSelf":"center"}},"childrenList":[]},{"typeName":"button","handlers":{"onClick":[{"action":"closeModal","params":[]}]},"id":"09f1UbAT5U","name":"Кнопка","value":"Закрыть","styles":{"common":{"width":"100px","alignSelf":"center"}},"childrenList":[]}]}]}]},{"category":"Форма","templates":[{"typeName":"form","id":"templateocDcHhQw1D","name":"Пустая","styles":{"common":{"width":"300px","height":"500px","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"","paddingLeft":""}},"childrenList":[]},{"typeName":"form","id":"template8_Hrwki8Pq","name":"Silver 3","styles":{"common":{"width":"95%","maxWidth":"680px","height":"","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"50px","paddingLeft":"24px","paddingRight":"24px","paddingBottom":"32px","backgroundImage":"linear-gradient(218.81deg, #640374 44.43%, #270374 108.37%)","position":"relative","marginTop":"","top":"70px"}},"childrenList":[{"typeName":"section","id":"1Y_U41bo3c","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"flex","justifyContent":"space-between","maxWidth":"248px","marginBottom":"40px"}},"childrenList":[{"typeName":"label","id":"Kg4sNby0Yr","name":"Label 1","value":"вход","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","color":"#ffffff","lineHeight":"64px","borderBottom":"2px solid "}},"childrenList":[]},{"typeName":"label","id":"FHnRRdd96g","name":"Label 1","value":"регистрация","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","lineHeight":"64px","color":"#ffffff","borderBottom":"2px solid transparent","opacity":"0.5"}},"childrenList":[]}]},{"typeName":"button","id":"u3cQZAaXOu","name":"Простая кнопка","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(255, 255, 255, 0.1)"}},"childrenList":[]},{"typeName":"section","id":"jC4TZAzQLo","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"48px"}},"childrenList":[{"typeName":"input","id":"s_28xWjZ1X","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"b1Jq3tNSxy","name":"email label","value":"Email или номер телефона","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"hRjFWRM7A_","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"24px"}},"childrenList":[{"typeName":"input","id":"uPxOPwYcLF","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"6gRj17Bn2o","name":"email label","value":"Пароль","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"gmm2EGeHPM","name":"Секция","styles":{"common":{"width":"100%","marginBottom":"48px"}},"childrenList":[{"typeName":"link","id":"mHGHzkPmzQ","name":"Забыл пароль","value":"Не могу вспомнить пароль","styles":{"common":{"display":"inline-block","color":"#ffffff","fontSize":"16px","lineHeight":"16px"}},"childrenList":[]}]},{"typeName":"button","id":"U0O7Ue7F_m","name":"Войти","value":"Войти","styles":{"common":{"display":"inline-block","width":"100%","maxWidth":"278px","textAlign":"center","paddingTop":"18px","paddingBottom":"18px","paddingLeft":"40px","paddingRight":"40px","marginBottom":"24px","backgroundColor":"#ffffff","color":"#390072","textTransform":"uppercase","border":"none","borderRadius":"25px","fontWeight":"bold"}},"childrenList":[]},{"typeName":"section","id":"DAx35pqXbs","name":"Секция","styles":{"common":{"display":"flex","justifyContent":"center","width":"100%","maxWidth":"278px"}},"childrenList":[{"typeName":"link","id":"tvZNtQyhFJ","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')","borderRadius":""}},"childrenList":[]},{"typeName":"link","id":"4Fjb1pGbaM","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')","borderRadius":""}},"childrenList":[]}]}]}]},{"category":"Инпут","templates":[{"typeName":"input","id":"2134","name":"Стандартный","type":"text","styles":{"common":{}},"childrenList":[]},{"typeName":"input","id":"templateV2jrcglp8U","name":"Email","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]}]},{"category":"Текстовое поле","templates":[{"typeName":"textarea","id":"textarea002","name":"Стандартное","rows":"4","autofocus":false,"maxlength":"500","placeholder":"Введите текст...","readonly":false,"required":false,"wrap":"soft","styles":{"common":{}},"childrenList":[]}]},{"category":"Фильтр","templates":[{"typeName":"label","id":"label-filter001","name":"Жанр","value":"фильтр","role":"filter","settings":{"isMultiple":true,"value":"$category;new"},"styles":{"common":{"display":"inline-block","fontSize":"18px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]},{"category":"Контейнер","templates":[{"typeName":"eventsContainer","id":"templateBhFGjzKjuS","name":"События","role":"container","dataList":"","styles":{"common":{"minHeight":"520px","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#333333","display":"flex","flexWrap":"wrap","justifyContent":"space-around"}},"childrenList":[]},{"typeName":"showsContainer","id":"template-6ICnGnVbA","name":"Сеансы","role":"container","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","alignItems":"flex-start","minHeight":"380px"}},"childrenList":[]}]},{"category":"Карточка","templates":[{"typeName":"section","id":"templateunwd7-Wx33","name":"Карточка События","role":"card","styles":{"common":{"marginBottom":"25px"}},"childrenList":[{"typeName":"link","id":"link001","name":"Постер","role":"cardPosterLink","styles":{"common":{"display":"block","width":"272px","height":"400px","borderRadius":"8px","backgroundSize":"cover","backgroundColor":"rgba(255, 255, 255, 0.1)","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')","cursor":"pointer"}},"childrenList":[]},{"typeName":"label","id":"lab01010","name":"Название","role":"cardTitle","value":"Название","styles":{"common":{"color":"#ffffff","fontSize":"20px","lineHeight":"24px","fontWeight":"600","marginTop":"15px","marginBottom":"10px","display":"inline-block"}},"childrenList":[]},{"typeName":"section","id":"secff","name":"Жанры","role":"genreList","styles":{"common":{}},"childrenList":[{"typeName":"label","id":"lab00re","name":"Жанр","role":"cardGenre","value":"жанр","styles":{"common":{"color":"#ffffff","fontSize":"14px","textTransform":"uppercase","marginRight":"10px","display":"inline-block"}},"childrenList":[]}]}]},{"typeName":"section","id":"template1YI-bTiMX5","name":"Карточка Сеанса","role":"card","dataList":"","styles":{"common":{"marginRight":"25px","marginBottom":"25px","flexBasis":"350px","paddingTop":"16px","paddingRight":"16px","paddingBottom":"16px","paddingLeft":"16px","backgroundColor":"rgba(0, 0, 0, 0.6)","borderRadius":"8px","color":"#ffffff"}},"childrenList":[{"typeName":"section","id":"sec014","name":"showcard top","role":"","dataList":"","styles":{"common":{"display":"flex","justifyContent":"space-between","width":"100%"}},"childrenList":[{"typeName":"label","id":"lab0021","name":"Show Time","value":"00:00","role":"cardEventStart","dataList":"","styles":{"common":{"fontSize":"36px","lineHeight":"36px"}},"childrenList":[]},{"typeName":"section","id":"sec015","name":"top right","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexDirection":"column","alignItems":"center","paddingTop":"2px"}},"childrenList":[{"typeName":"label","id":"lab0022","name":"show cinema","value":"Кинотеатр","role":"cardCinema","dataList":"","styles":{"common":{"textAlign":"center","fontSize":"20px","textTransform":"uppercase"}},"childrenList":[]},{"typeName":"label","id":"lab0023","name":"show city","value":"Город","role":"cardCity","dataList":"","styles":{"common":{"textAlign":"center","fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]}]}]},{"typeName":"label","id":"lab0024","name":"show date","value":"01/01/2021","role":"cardEventDate","dataList":"","styles":{"common":{"display":"inline-block","paddingTop":"3px","paddingBottom":"3px","paddingRight":"11px","paddingLeft":"11px"}},"childrenList":[]},{"typeName":"section","id":"sec0014","name":"left bottom","role":"","dataList":"","styles":{"common":{"display":"flex","flexDirection":"column","marginTop":"12px","marginBottom":"12px"}},"childrenList":[{"typeName":"label","id":"lab0025","name":"video type","value":"Video Type","role":"cardTypeVideo","dataList":"","styles":{"common":{"fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]},{"typeName":"label","id":"lab0026","name":"audio type","value":"Audio Type","role":"cardTypeAudio","dataList":"","styles":{"common":{"fontSize":"16px","color":"rgba(255, 255, 255, 0.5)"}},"childrenList":[]}]},{"typeName":"label","id":"lab0027","name":"auditorium","value":"Кинозал","role":"cardAuditorium","dataList":"","styles":{"common":{"display":"inline-block","fontSize":"18px","color":"#F1C40F","textTransform":"uppercase"}},"childrenList":[]}]}]},{"category":"Мои шаблоны","templates":[{"typeName":"section","id":"templatevuOzJnxv5j","name":"Afisha Header","role":"","dataList":"","styles":{"common":{"backgroundColor":"#fff","paddingTop":"15px","paddingRight":"25px","paddingBottom":"15px","paddingLeft":"25px","marginBottom":"","alignItems":"center","justifyContent":"space-between","display":"flex"}},"childrenList":[{"typeName":"label","id":"Xg8-ZHJk34","name":"Label 1","value":"Афиша","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"44px","fontWeight":"bold"}},"childrenList":[]},{"typeName":"section","id":"866MovaZmF","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-block","borderRadius":""}},"childrenList":[{"typeName":"label","id":"lab008","name":"все сеансы","value":"все сеансы","role":"filter","dataList":"","settings":{"value":"$shedule;all"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]},{"typeName":"label","id":"lab006","name":"сейчас","value":"сейчас","role":"filter","dataList":"","settings":{"value":"$shedule;now"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]},{"typeName":"label","id":"lab007","name":"скоро","value":"скоро","role":"filter","dataList":"","settings":{"value":"$shedule;soon"},"styles":{"common":{"display":"inline-block","marginRight":"5px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","lineHeight":"32px","opacity":"0.54","cursor":"pointer","borderBottom":"2px solid transparent","isActive":{"opacity":"1","borderBottom":"2px solid #000000"}}},"childrenList":[]}]}]},{"typeName":"section","id":"templateFobGL7GkBc","name":"Блок Фильтров","role":"","dataList":"","styles":{"common":{"backgroundColor":"#fff","display":"flex","flexWrap":"wrap","paddingTop":"25px","paddingRight":"25px","paddingBottom":"25px","paddingLeft":"25px"}},"childrenList":[{"typeName":"section","id":"sec004","name":"Жанры","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","width":"100%","flexDirection":"column","alignItems":"flex-start","justifyContent":"","marginBottom":"15px"}},"childrenList":[{"typeName":"label","id":"2gFi9LRnmg","name":"Заголовок","value":"жанры","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"NxJX2xEoim","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-flex","flexWrap":"wrap","width":"auto","borderRadius":"","marginBottom":""}},"childrenList":[{"typeName":"label","id":"label004","name":"мультфильм","value":"мультфильм","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;cartoon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label005","name":"драма","value":"драма","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;drama"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label006","name":"семейный","value":"семейный","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;family"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label007","name":"комедия","value":"комедия","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;comedy"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label008","name":"фэнтези","value":"фэнтези","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;fantasy"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label009","name":"шоу","value":"шоу","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;show"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label0010","name":"фантастика","value":"фантастика","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;fantastic"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label0011","name":"спорт","value":"спорт","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;sport"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label0012","name":"документальный","value":"документальный","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;doc"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label0013","name":"выставка","value":"выставка","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;exhibition"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"label0014","name":"триллер","value":"триллер","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$genre;thriller"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"uIyuvCHBSo","name":"Пространство","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"inline-flex","flexDirection":"column","marginBottom":"20px","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"lab004","name":"Заголовок","value":"пространство","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"GgMK_KKvqn","name":"Section 1","styles":{"common":{"minHeight":"","border":"","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"sec001","name":"Voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"sec002","name":"arena","value":"arena","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;arena"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"sec0011","name":"moon","value":"moon","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;moon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"sec008","name":"Залы","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"lab0020","name":"залы","value":"залы","styles":{"common":{"display":"inline-block","width":"auto","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"OSrPToYfnF","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"lab0016","name":"vip","value":"vip","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vip"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0017","name":"voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0018","name":"vegas lounge","value":"vegas","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vegaslounge"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0019","name":"resto","value":"resto","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;resto"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"sec007","name":"Технологии","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"lab0015","name":"технологии","value":"технологии","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"jUw7eQHGzF","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"lab0010","name":"2d","value":"2d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0011","name":"3d","value":"3d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;3d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0012","name":"2d4k","value":"2d4k","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d4k"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0013","name":"dolbydigital","value":"dolbydigital","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbydigital"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"lab0014","name":"dolbyatmos","value":"dolbyatmos","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbyatmos"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid rgba(57, 0, 114, 0.1)","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"#390072","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"sec006","name":"Filters footer","role":"","dataList":"","styles":{"common":{"paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","marginBottom":"20px","width":"100%","marginTop":"25px"}},"childrenList":[{"typeName":"label","id":"lab009","name":"Сбросить","value":"сбросить","role":"filter","dataList":"","settings":{"type":"clear"},"styles":{"common":{"paddingTop":"8px","paddingRight":"16px","paddingBottom":"12px","paddingLeft":"16px","backgroundColor":"rgba(57, 0, 114, 0.1)","borderRadius":"600px","color":"#390072","fontSize":"16px","lineHeight":"18px","cursor":"pointer","marginTop":"","display":"inline-block"}},"childrenList":[]}]}]},{"typeName":"section","id":"templateNjDFfkE_QW","name":"Фон страницы Blured","role":"eventBackground","dataList":"","styles":{"common":{"position":"absolute","top":"0","left":"0","right":"0","bottom":"0","backgroundPositionX":"center","backgroundPositionY":"center","backgroundRepeat":"no-repeat","backgroundSize":"cover","backgroundAttachment":"fixed","filter":"blur(10px)","opacity":"0.2","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"}},"childrenList":[]},{"typeName":"section","id":"templateJcfZhdNdbu","name":"Описание события","role":"","dataList":"","styles":{"common":{}},"childrenList":[{"typeName":"label","id":"dkfjkd","tag":"h2","name":"Название","value":"Название","role":"eventTitle","dataList":"","styles":{"common":{"marginBottom":"50px","marginLeft":"0","marginTop":"0","marginRight":"0","fontSize":"52px","lineHeight":"52px"}},"childrenList":[]},{"typeName":"section","id":"sec0016","name":"section","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","alignItems":"flex-start"}},"childrenList":[{"typeName":"section","id":"sec003","name":"Постер","role":"eventPoster","dataList":"","styles":{"common":{"width":"272px","height":"400px","borderRadius":"8px","backgroundSize":"cover","backgroundColor":"rgba(0, 0, 0, 0.3)","marginRight":"50px","marginBottom":"50px"}},"childrenList":[]},{"typeName":"description","id":"desc001","value":"Есть много вариантов Lorem Ipsum, но большинство из них имеет не всегда приемлемые модификации, например, юмористические вставки или слова, которые даже отдалённо не напоминают латынь. Если вам нужен Lorem Ipsum для серьёзного проекта, вы наверняка не хотите какой-нибудь шутки, скрытой в середине абзаца. Также все другие известные генераторы Lorem Ipsum используют один и тот же текст, который они просто повторяют, пока не достигнут нужный объём. Это делает предлагаемый здесь генератор единственным настоящим Lorem Ipsum генератором. Он использует словарь из более чем 200 латинских слов, а также набор моделей предложений. В результате сгенерированный Lorem Ipsum выглядит правдоподобно, не имеет повторяющихся абзацей или невозможных слов.","role":"eventAnnotation","dataList":"","styles":{"common":{"width":"500px","marginTop":"15px","marginBottom":"50px","fontSize":"16px","lineHeight":"20px"}},"childrenList":[]}]}]},{"typeName":"section","id":"template_wexzXkbwg","name":"Блок Фильтров Светлый","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingTop":"","paddingRight":"25px","paddingBottom":"25px","paddingLeft":""}},"childrenList":[{"typeName":"section","id":"15n0A1qwWv","name":"Жанры","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","width":"100%","flexDirection":"column","alignItems":"flex-start","justifyContent":"","marginBottom":"15px"}},"childrenList":[{"typeName":"label","id":"9YIpvTtjNu","name":"Заголовок","value":"время","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"dRjFVRf-PD","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","display":"inline-flex","flexWrap":"wrap","width":"auto","borderRadius":"","marginBottom":""}},"childrenList":[]},{"typeName":"section","id":"Y1uBofhAoG","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"bYy4ZDBLue","name":"мультфильм","value":"07:00 - 11:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;07:00-11:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"-t9Gzdedtj","name":"мультфильм","value":"12:00 - 16:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;12:00-16:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Sk-yg2awjf","name":"мультфильм","value":"17:00 - 21:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;17:00-21:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Ha1IcdaFZJ","name":"мультфильм","value":"22:00 - 06:59","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$showtime;22:00-06:59"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"NYpmoPXBAC","name":"Пространство","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"inline-flex","flexDirection":"column","marginBottom":"20px","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"5EKxtyimYK","name":"Заголовок","value":"пространство","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"_NHq1Z2gc-","name":"Section 1","styles":{"common":{"minHeight":"","border":"","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"L5euxLi_dn","name":"Voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"_s6LTA5up0","name":"arena","value":"arena","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;arena"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Pn1GFnHf-i","name":"moon","value":"moon","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$cinema;moon"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"TlIfJLs7_T","name":"Залы","role":"","dataList":"","styles":{"common":{"display":"flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"BoHFchzlKz","name":"залы","value":"залы","styles":{"common":{"display":"inline-block","width":"auto","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"YneIVy95HP","name":"Section 1","styles":{"common":{"minHeight":"","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"2XS3_f9Iim","name":"vip","value":"vip","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vip"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"rKd_4kuEfI","name":"voka","value":"voka","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;voka"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"xsrUDRlQgU","name":"vegas lounge","value":"vegas","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;vegaslounge"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"Zu0oPbTD6D","name":"resto","value":"resto","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$auditorium;resto"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"5px","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"f8mP3rqqbd","name":"Технологии","role":"","dataList":"","styles":{"common":{"display":"inline-flex","flexWrap":"wrap","paddingRight":"","paddingBottom":"","paddingLeft":"","flexDirection":"column","marginRight":"50px"}},"childrenList":[{"typeName":"label","id":"7doLf-fB9D","name":"технологии","value":"технологии","role":"","dataList":"","styles":{"common":{"display":"inline-block","width":"","fontSize":"22px","lineHeight":"32px","marginBottom":"10px","paddingLeft":"10px"}},"childrenList":[]},{"typeName":"section","id":"WAXtZJm7m2","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":""}},"childrenList":[{"typeName":"label","id":"Qx_iNlNLMZ","name":"2d","value":"2d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"87Vs60eQFQ","name":"3d","value":"3d","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;3d"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"oCSoyZZdN-","name":"2d4k","value":"2d4k","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;2d4k"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"j9FthIE1UX","name":"dolbydigital","value":"dolbydigital","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbydigital"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]},{"typeName":"label","id":"y5hYAcU1Ac","name":"dolbyatmos","value":"dolbyatmos","role":"filter","dataList":"","settings":{"isMultiple":true,"value":"$technology;dolbyatmos"},"styles":{"common":{"display":"inline-block","fontSize":"16px","lineHeight":"22px","marginRight":"5px","marginBottom":"","paddingTop":"5px","paddingRight":"15px","paddingBottom":"7px","paddingLeft":"15px","border":"2px solid #fff","borderRadius":"600px","cursor":"pointer","isActive":{"backgroundColor":"rgba(0,0,0,0.6)","color":"#ffffff"}}},"childrenList":[]}]}]},{"typeName":"section","id":"QGubgfEnj7","name":"Filters footer","role":"","dataList":"","styles":{"common":{"paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","marginBottom":"20px","width":"100%","marginTop":"25px"}},"childrenList":[{"typeName":"label","id":"em2D1dXrzi","name":"Сбросить","value":"сбросить","role":"filter","dataList":"","settings":{"type":"clear"},"styles":{"common":{"paddingTop":"8px","paddingRight":"16px","paddingBottom":"12px","paddingLeft":"16px","backgroundColor":"rgba(0, 0, 0, 0.3)","borderRadius":"600px","color":"#fff","fontSize":"16px","lineHeight":"18px","cursor":"pointer","marginTop":"","display":"inline-block"}},"childrenList":[]}]}]}]}]
+[
+    {
+        "category":"Страница",
+        "templates": [
+            {
+                "typeName": "page",
+                "id": "page1",
+                "name": "Пустая",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "minHeight": "100vh",
+                        "backgroundColor": "#ffffff"
+                    }
+                },
+                "childrenList": []
+            },
+
+            {
+                "typeName": "page",
+                "id": "templateASLIhAbT88",
+                "name": "Темный фон",
+                "path": "/afisha/event",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "relative",
+                        "minHeight": "100vh",
+                        "width": "100%",
+                        "backgroundColor": "#27272a",
+                        "color": "#ffffff",
+                        "backgroundSize": ""
+                    }
+                },
+                "childrenList": []
+            },
+
+            {
+                "typeName":"page",
+                "id": "templateSe-qo2r1b1",
+                "name": "Темный фон + Wrapper",
+                "path": "/afisha/event",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "relative",
+                        "minHeight": "100vh",
+                        "width": "100%",
+                        "backgroundColor": "#27272a",
+                        "color": "#ffffff"
+                    }
+                },
+                "childrenList": [
+                    {
+                        "typeName": "section",
+                        "id": "sec0010",
+                        "name": "Page wrapper",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "position": "relative",
+                                "maxWidth": "1300px",
+                                "marginTop": "0",
+                                "marginBottom": "0",
+                                "marginLeft": "auto",
+                                "marginRight": "auto",
+                                "paddingTop": "50px",
+                                "paddingBottom": "50px",
+                                "paddingLeft": "25px",
+                                "paddingRight": "25px",
+                                "minHeight": "100vh",
+                                "zIndex": "1"
+                            }
+                        },
+                        "childrenList": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "category": "Секция",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "sec001",
+                "name": "Section 1",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "minHeight": "50px",
+                        "border": "1px dashed #42a5f5",
+                        "paddingTop": "15px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "15px",
+                        "paddingLeft": "15px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Заголовок",
+        "templates": [
+            {
+                "typeName": "label",
+                "id": "lab001",
+                "name": "Label 1",
+                "value": "Label",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "display": "inline-block",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "22px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Ссылка",
+        "templates": [
+            {
+                "typeName": "link",
+                "id": "templateltQaGrIbrR",
+                "name": "fb",
+                "value": "Link", "url": "/",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "marginRight": "8px",
+                        "width": "48px",
+                        "height": "48px",
+                        "display": "block",
+                        "fontSize": "0px",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')"
+                    }
+                },
+                "childrenList": []
+            },
+            {
+                "typeName": "link",
+                "id": "templateltQaGrIbrR2",
+                "name": "vk",
+                "value": "Link",
+                "url": "/",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "48px",
+                        "height": "48px",
+                        "display": "block",
+                        "fontSize": "0px",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Кнопка",
+        "templates": [
+            {
+                "typeName": "button",
+                "id": "button001",
+                "name": "Простая кнопка",
+                "value": "Кнопка",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "border": "none",
+                        "outline": "none"
+                    }
+                },
+                "childrenList": []
+            },
+
+            {"typeName":"button","id":"templatedPpsv0xgKt","name":"Закрыть","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(0, 0, 0, 0.3)"}},"childrenList":[]}
+        ]
+    },
+
+    {
+        "category": "Текст",
+        "templates": [
+            {
+                "typeName": "description",
+                "id": "desc001",
+                "name": "Текст",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "styles": {
+                    "common": {
+                        "marginTop": "0px",
+                        "marginBottom": "0px",
+                        "paddingTop": "5px",
+                        "paddingRight": "5px",
+                        "paddingBottom": "5px",
+                        "paddingLeft": "5px",
+                        "fontSize": "14px",
+                        "lineHeight": "1"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Иконка",
+        "templates": [
+            {
+                "typeName": "icon",
+                "id": "templateIpU-euHZOU",
+                "name": "Dolby Atmos",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "70px",
+                        "height": "26px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/dolbyAtmos.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList":[]
+            },
+            {
+                "typeName": "icon",
+                "id": "templatekP2t_zrYa6",
+                "name": "ScreenX",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "87px",
+                        "height": "17px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/ScreenX.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList": []
+            },
+            {
+                "typeName": "icon",
+                "id": "template-45063nxhZ",
+                "name": "Imax",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "width": "66px",
+                        "height": "12px",
+                        "backgroundColor": "",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg')",
+                        "backgroundSize": "cover",
+                        "backgroundPositionX": "",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPositionY": ""
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Изображение",
+        "templates": [
+            {
+                "typeName": "image",
+                "id": "img001",
+                "name": "Пустое",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "link": "https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640",
+                "styles": {
+                    "common": {
+                        "width": "100%",
+                        "maxWidth": "640px",
+                        "backgroundColor": "#dfe6e9"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Слайдер",
+        "templates": [
+            {
+                "typeName": "slider",
+                "id": "slider001",
+                "name": "Пустой",
+                "settings": {
+                    "initItem": "0",
+                    "arrows": "true",
+                    "buttons": "true",
+                    "swipeable": "true",
+                    "autoPlay": "true",
+                    "interval": "3000",
+                    "transitionTime": "350",
+                    "tolerance": "5",
+                    "infiniteLoop": "true",
+                    "axis": "horizontal"
+                },
+                "styles": {
+                    "common": {},
+                    "buttons": {
+                        "common": {
+                            "height": "10px",
+                            "backgroundColor": "red"
+                        }
+                    },
+                    "buttonsList": {
+                        "common": {}
+                    },
+                    "arrowPrev": {
+                        "common": {}
+                    },
+                    "arrowNext": {
+                        "common": {}
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Модальное окно",
+        "templates": [
+            {"typeName":"modal","id":"templateg73vH53pes","name":"Форма с кнопкой закрытия","modalName":"loginForm","styles":{"common":{"minHeight":"","width":"","border":"1px dashed black","position":"absolute","zIndex":"100","top":"0px","right":"0px","bottom":"0px","left":"0px","backgroundColor":"rgba(0, 0, 0, 0.7)","display":"flex","flexDirection":"column","alignItems":"center"}},"childrenList":[{"typeName":"section","id":"zqUViuXIKE","name":"Окно формы","styles":{"common":{"minHeight":"320px","border":"1px dashed #42a5f5","paddingTop":"25px","paddingRight":"15px","paddingBottom":"25px","paddingLeft":"15px","backgroundColor":"#ffffff","width":"260px","top":"","marginTop":"50px","borderRadius":"24px","display":"flex","flexDirection":"column"}},"childrenList":[{"typeName":"label","id":"N3szGV-L0m","name":"Заголовок","value":"Форма","styles":{"common":{"display":"inline-block","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"22px","marginBottom":"25px"}},"childrenList":[]},{"typeName":"description","id":"IfLvVlpvhi","name":"Текст","value":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.","styles":{"common":{"marginTop":"0px","marginBottom":"0px","paddingTop":"5px","paddingRight":"5px","paddingBottom":"5px","paddingLeft":"5px","fontSize":"14px","lineHeight":"1"}},"childrenList":[]},{"typeName":"button","id":"2jEZas4364","name":"Кнопка","value":"Отправить","styles":{"common":{"marginTop":"auto","justifyContent":"flex-start","marginBottom":"10px","width":"100px","alignSelf":"center"}},"childrenList":[]},{"typeName":"button","handlers":{"onClick":[{"action": "closeModal", "params": []}]}, "id":"09f1UbAT5U","name":"Кнопка","value":"Закрыть","styles":{"common":{"width":"100px","alignSelf":"center"}},"childrenList":[]}]}]}
+        ]
+    },
+
+    {
+        "category": "Форма",
+        "templates": [
+            {"typeName":"form","id":"templateocDcHhQw1D","name":"Пустая","styles":{"common":{"width":"300px","height":"500px","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"","paddingLeft":""}},"childrenList":[]},
+            {"typeName":"form","id":"template8_Hrwki8Pq","name":"Silver 3","styles":{"common":{"width":"95%","maxWidth":"680px","height":"","backgroundColor":"#ffffff","borderRadius":"25px","marginRight":"auto","marginLeft":"auto","paddingTop":"50px","paddingLeft":"24px","paddingRight":"24px","paddingBottom":"32px","backgroundImage":"linear-gradient(218.81deg, #640374 44.43%, #270374 108.37%)","position":"relative","marginTop":"","top":"70px"}},"childrenList":[{"typeName":"section","id":"1Y_U41bo3c","name":"Section 1","styles":{"common":{"minHeight":"50px","border":"none","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","borderRadius":"","display":"flex","justifyContent":"space-between","maxWidth":"248px","marginBottom":"40px"}},"childrenList":[{"typeName":"label","id":"Kg4sNby0Yr","name":"Label 1","value":"вход","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","color":"#ffffff","lineHeight":"64px","borderBottom":"2px solid "}},"childrenList":[]},{"typeName":"label","id":"FHnRRdd96g","name":"Label 1","value":"регистрация","styles":{"common":{"display":"inline-block","paddingTop":"","paddingRight":"","paddingBottom":"","paddingLeft":"","fontSize":"29px","lineHeight":"64px","color":"#ffffff","borderBottom":"2px solid transparent","opacity":"0.5"}},"childrenList":[]}]},{"typeName":"button","id":"u3cQZAaXOu","name":"Простая кнопка","value":"Кнопка","styles":{"common":{"border":"none","outline":"none","width":"32px","height":"32px","fontSize":"0px","borderRadius":"50%","opacity":"1","position":"absolute","top":"16px","right":"16px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/close.svg')","backgroundSize":"contain","backgroundRepeat":"no-repeat","backgroundColor":"rgba(255, 255, 255, 0.1)"}},"childrenList":[]},{"typeName":"section","id":"jC4TZAzQLo","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"48px"}},"childrenList":[{"typeName":"input","id":"s_28xWjZ1X","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"b1Jq3tNSxy","name":"email label","value":"Email или номер телефона","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"hRjFWRM7A_","name":" Секция","styles":{"common":{"position":"relative","marginBottom":"24px"}},"childrenList":[{"typeName":"input","id":"uPxOPwYcLF","name":"email input","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]},{"typeName":"label","id":"6gRj17Bn2o","name":"email label","value":"Пароль","tag":"label","styles":{"common":{"position":"absolute","display":"inline-block","transitions":["all 200ms"],"color":"rgba(255, 255, 255, 0.5)","left":"17px","bottom":"30px","pointerEvents":"none"}},"childrenList":[]}]},{"typeName":"section","id":"gmm2EGeHPM","name":"Секция","styles":{"common":{"width":"100%","marginBottom":"48px"}},"childrenList":[{"typeName":"link","id":"mHGHzkPmzQ","name":"Забыл пароль","value":"Не могу вспомнить пароль","styles":{"common":{"display":"inline-block","color":"#ffffff","fontSize":"16px","lineHeight":"16px"}},"childrenList":[]}]},{"typeName":"button","id":"U0O7Ue7F_m","name":"Войти","value":"Войти","styles":{"common":{"display":"inline-block","width":"100%","maxWidth":"278px","textAlign":"center","paddingTop":"18px","paddingBottom":"18px","paddingLeft":"40px","paddingRight":"40px","marginBottom":"24px","backgroundColor":"#ffffff","color":"#390072","textTransform":"uppercase","border":"none","borderRadius":"25px","fontWeight":"bold"}},"childrenList":[]},{"typeName":"section","id":"DAx35pqXbs","name":"Секция","styles":{"common":{"display":"flex","justifyContent":"center","width":"100%","maxWidth":"278px"}},"childrenList":[{"typeName":"link","id":"tvZNtQyhFJ","name":"fb","value":"Link","url":"/","styles":{"common":{"marginRight":"8px","backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/fb.svg')","borderRadius":""}},"childrenList":[]},{"typeName":"link","id":"4Fjb1pGbaM","name":"fb","value":"Link","url":"/","styles":{"common":{"backgroundColor":"","width":"48px","height":"48px","display":"block","fontSize":"0px","backgroundImage":"url('https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/vk.svg')","borderRadius":""}},"childrenList":[]}]}]}
+        ]
+    },
+
+    {
+        "category": "Инпут",
+        "templates": [
+            {
+                "typeName": "input",
+                "id": "2134",
+                "name": "Стандартный",
+                "type": "text",
+                "styles": {
+                    "common": {}
+                },
+                "childrenList": []
+            },
+            {"typeName":"input","id":"templateV2jrcglp8U","name":"Email","errorMessage":"неправильно введен email","type":"email","required":true,"styles":{"common":{"width":"100%","paddingTop":"34px","paddingBottom":"10px","paddingLeft":"16px","paddingRight":"16px","fontSize":"18px","lineHeight":"24px","backgroundColor":"transparent","border":"2px solid rgba(255, 255, 255, 0.1)","borderRadius":"4px","color":"#ffffff","outline":"none","focus":{"border":"2px solid #FF7373","borderRadius":"4px"}}},"childrenList":[]}
+        ]
+    },
+
+    {
+        "category": "Текстовое поле",
+        "templates": [
+            {
+                "typeName": "textarea",
+                "id": "textarea002",
+                "name": "Стандартное",
+                "rows": "4",
+                "autofocus": false,
+                "maxlength": "500",
+                "placeholder": "Введите текст...",
+                "readonly": false,
+                "required": false,
+                "wrap": "soft",
+                "styles": {
+                    "common": {}
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Фильтр",
+        "templates": [
+            {
+                "typeName":"label",
+                "id":"label-filter001",
+                "name":"Жанр",
+                "value":"фильтр",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "settings": {
+                    "isMultiple":true,
+                    "value":"$category;new"
+                },
+                "styles": {
+                    "common": {
+                        "display":"inline-block",
+                        "fontSize":"18px",
+                        "lineHeight":"22px",
+                        "marginRight":"5px",
+                        "marginBottom":"5px",
+                        "paddingTop":"5px",
+                        "paddingRight":"15px",
+                        "paddingBottom":"7px",
+                        "paddingLeft":"15px",
+                        "border":"2px solid rgba(57, 0, 114, 0.1)",
+                        "borderRadius":"600px",
+                        "cursor":"pointer",
+                        "isActive": {
+                            "backgroundColor":"#390072",
+                            "color":"#ffffff"
+                        }
+                    }
+                },"childrenList":[]
+            }
+        ]
+    },
+
+    {
+        "category": "Контейнер",
+        "templates": [
+            {
+                "typeName": "eventsContainer",
+                "id": "templateBhFGjzKjuS",
+                "name": "События",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "minHeight": "520px",
+                        "paddingTop": "25px",
+                        "paddingRight": "15px",
+                        "paddingBottom": "25px",
+                        "paddingLeft": "15px",
+                        "backgroundColor": "#333333",
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "justifyContent": "space-around"
+                    }
+                },
+                "childrenList": []
+            },
+            {
+                "typeName": "showsContainer",
+                "id": "template-6ICnGnVbA",
+                "name": "Сеансы",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "display": "flex",
+                        "flexWrap": "wrap",
+                        "alignItems": "flex-start",
+                        "minHeight": "380px"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    },
+
+    {
+        "category": "Карточка",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "templateunwd7-Wx33",
+                "name": "Карточка События",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "marginBottom": "25px"
+                    }
+                },
+                "childrenList": [
+                    {
+                        "typeName": "link",
+                        "id": "link001",
+                        "name": "Постер",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "block",
+                                "width": "272px",
+                                "height": "400px",
+                                "borderRadius": "8px",
+                                "backgroundSize": "cover",
+                                "backgroundColor": "rgba(255, 255, 255, 0.1)",
+                                "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png')",
+                                "cursor": "pointer"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab01010",
+                        "name": "Название",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "value": "Название",
+                        "styles": {
+                            "common": {
+                                "color": "#ffffff",
+                                "fontSize": "20px",
+                                "lineHeight": "24px",
+                                "fontWeight": "600",
+                                "marginTop": "15px",
+                                "marginBottom": "10px",
+                                "display": "inline-block"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "section",
+                        "id": "secff",
+                        "name": "Жанры",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {}
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab00re",
+                                "name": "Жанр",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "value": "жанр",
+                                "styles": {
+                                    "common": {
+                                        "color": "#ffffff",
+                                        "fontSize": "14px",
+                                        "textTransform": "uppercase",
+                                        "marginRight": "10px",
+                                        "display": "inline-block"
+                                    }
+                                },
+                                "childrenList":[]
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            {
+                "typeName": "section",
+                "id": "template1YI-bTiMX5",
+                "name": "Карточка Сеанса",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "marginRight": "25px",
+                        "marginBottom": "25px",
+                        "flexBasis": "350px",
+                        "paddingTop": "16px",
+                        "paddingRight": "16px",
+                        "paddingBottom": "16px",
+                        "paddingLeft": "16px",
+                        "backgroundColor": "rgba(0, 0, 0, 0.6)",
+                        "borderRadius": "8px",
+                        "color": "#ffffff"
+                    }
+                },
+                "childrenList": [
+                    {
+                        "typeName": "section",
+                        "id": "sec014",
+                        "name": "showcard top",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "flex",
+                                "justifyContent": "space-between",
+                                "width": "100%"
+                            }
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab0021",
+                                "name": "Show Time",
+                                "value": "00:00",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "36px",
+                                        "lineHeight": "36px"
+                                    }
+                                },
+                                "childrenList":[]
+                            },
+                            {
+                                "typeName": "section",
+                                "id": "sec015",
+                                "name": "top right",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "display": "inline-flex",
+                                        "flexDirection": "column",
+                                        "alignItems": "center",
+                                        "paddingTop": "2px"
+                                    }
+                                },
+                                "childrenList": [
+                                    {
+                                        "typeName": "label",
+                                        "id": "lab0022",
+                                        "name": "show cinema",
+                                        "value": "Кинотеатр",
+                                        "data": "",
+                                        "dataAction": "",
+                                        "dataList": "",
+                                        "styles": {
+                                            "common": {
+                                                "textAlign": "center",
+                                                "fontSize": "20px",
+                                                "textTransform": "uppercase"
+                                            }
+                                        },
+                                        "childrenList": []
+                                    },
+                                    {
+                                        "typeName": "label",
+                                        "id": "lab0023",
+                                        "name": "show city",
+                                        "value": "Город",
+                                        "data": "",
+                                        "dataAction": "",
+                                        "dataList": "",
+                                        "styles": {
+                                            "common": {
+                                                "textAlign": "center",
+                                                "fontSize": "16px",
+                                                "color": "rgba(255, 255, 255, 0.5)"
+                                            }
+                                        },
+                                        "childrenList": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab0024",
+                        "name": "show date",
+                        "value": "01/01/2021",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "inline-block",
+                                "paddingTop": "3px",
+                                "paddingBottom": "3px",
+                                "paddingRight": "11px",
+                                "paddingLeft": "11px"
+                            }
+                        },
+                        "childrenList": []
+                    },
+                    {
+                        "typeName": "section",
+                        "id": "sec0014",
+                        "name": "left bottom",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "flex",
+                                "flexDirection": "column",
+                                "marginTop": "12px",
+                                "marginBottom": "12px"
+                            }
+                        },
+                        "childrenList": [
+                            {
+                                "typeName": "label",
+                                "id": "lab0025",
+                                "name": "video type",
+                                "value": "Video Type",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "16px",
+                                        "color": "rgba(255, 255, 255, 0.5)"
+                                    }
+                                },
+                                "childrenList": []
+                            },
+                            {
+                                "typeName": "label",
+                                "id": "lab0026",
+                                "name": "audio type",
+                                "value": "Audio Type",
+                                "data": "",
+                                "dataAction": "",
+                                "dataList": "",
+                                "styles": {
+                                    "common": {
+                                        "fontSize": "16px",
+                                        "color": "rgba(255, 255, 255, 0.5)"
+                                    }
+                                },
+                                "childrenList": []
+                            }
+                        ]
+                    },
+                    {
+                        "typeName": "label",
+                        "id": "lab0027",
+                        "name": "auditorium",
+                        "value": "Кинозал",
+                        "data": "",
+                        "dataAction": "",
+                        "dataList": "",
+                        "styles": {
+                            "common": {
+                                "display": "inline-block",
+                                "fontSize": "18px",
+                                "color": "#F1C40F",
+                                "textTransform": "uppercase"
+                            }
+                        },
+                        "childrenList": []
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "category": "Мои шаблоны",
+        "templates": [
+            {
+                "typeName": "section",
+                "id": "templateNjDFfkE_QW",
+                "name": "Фон страницы Blured",
+                "data": "",
+                "dataAction": "",
+                "dataList": "",
+                "styles": {
+                    "common": {
+                        "position": "absolute",
+                        "top": "0",
+                        "left": "0",
+                        "right": "0",
+                        "bottom": "0",
+                        "backgroundPositionX": "center",
+                        "backgroundPositionY": "center",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundSize": "cover",
+                        "backgroundAttachment": "fixed",
+                        "filter": "blur(10px)",
+                        "opacity": "0.2",
+                        "backgroundImage": "url('https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG')"
+                    }
+                },
+                "childrenList": []
+            }
+        ]
+    }
+]

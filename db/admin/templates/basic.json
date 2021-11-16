@@ -803,8 +803,9 @@
         "category": "Мои шаблоны",
         "templates": [
             {
-                "typeName": "section", "id": "templateNjDFfkE_QW",
-                "name": "Фон страницы Blured", "role": "eventBackground",
+                "typeName": "section",
+                "id": "templateNjDFfkE_QW",
+                "name": "Фон страницы Blured",
                 "data": "",
                 "dataAction": "",
                 "dataList": "",
