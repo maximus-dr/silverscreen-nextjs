@@ -1,42 +1,23 @@
 [
     {
         "id":"boss_molokosos-2",
-        "acronym": "Босс-Молокосос 2",
-        "ageLimit": {
-            "acronym": "6+",
-            "name": "зрителям, достигшим 6 лет"
+        "data": {
+            "title": "Босс-Молокосос 2",
+            "annotation": "Братья Тим и Тед давно повзрослели и отдалились друг от друга. Тед стал генеральным директором инвестиционного фонда, а Тим посвятил себя семье. Он женился, поселился в пригороде и обзавелся двумя прекрасными дочерьми — Тиной и Табитой. 7-летняя Табита — умная и очень усердная. Несмотря на свой юный возраст, она уже лучшая в классе, а малышка Тина на самом деле оказывается агентом компании BabyCorp.",
+            "ageLimit": "зрителям, достигшим 6 лет",
+            "ageLimitAcronym": "6+",
+            "eventType": "Кино",
+            "genres": [
+                "мультфильм",
+                "семейный",
+                "комедия"
+            ],
+            "languages": ["Русский язык"],
+            "languageAcronyms": ["RU"],
+            "technologies": ["Imax"],
+            "technologyIcons": ["https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg"],
+            "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
         },
-        "annotation": "Братья Тим и Тед давно повзрослели и отдалились друг от друга. Тед стал генеральным директором инвестиционного фонда, а Тим посвятил себя семье. Он женился, поселился в пригороде и обзавелся двумя прекрасными дочерьми — Тиной и Табитой. 7-летняя Табита — умная и очень усердная. Несмотря на свой юный возраст, она уже лучшая в классе, а малышка Тина на самом деле оказывается агентом компании BabyCorp.",
-        "eventType": {
-            "name": "cinema",
-            "acronym": "Кино"
-        },
-        "genre": [
-                {
-                    "name": "cartoon",
-                    "acronym": "мультфильм"
-                },
-                {
-                    "name": "family",
-                    "acronym": "семейный"
-                },
-                {
-                    "name": "comedy",
-                    "acronym": "комедия"
-                }
-        ],
-        "language": [
-            {
-                "name": "Русский язык",
-                "acronym": "RU"
-            }
-        ],
-        "technology": [
-                {
-                    "name": "Imax",
-                    "icon": "https://portal.silverscreen.by:8448/meadiaStorage/imgsite/img/test/Imax.svg"
-                }
-        ],
         "filters":[
             "$eventId;boss_molokosos-2",
             "$city;minsk",
@@ -57,38 +38,26 @@
             "$technology;dolbydigital",
             "$auditorium;voka",
             "$auditorium;resto"
-        ],
-        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
+        ]
     },
 
     {
         "id":"sovry_mne_pravdu",
-        "acronym": "Соври мне правду",
-        "ageLimit": {
-            "acronym": "18+",
-            "name": "зрителям, достигшим 18 лет"
+        "data": {
+            "title": "Соври мне правду",
+            "annotation": "Влюбленная пара проводит время вдали от цивилизации. Внезапный приезд сначала младшей сестры, а потом и бывшего парня девушки нарушают загородную идиллию. У каждого из героев свой план на эти выходные, а все вместе они становятся заложниками ситуации и участниками жестоких психологических игр. Влюбленность сменяется страстью, а невинный флирт вызывает ревность и может привести к смертельной опасности.",
+            "ageLimit": "зрителям, достигшим 18 лет",
+            "ageLimitAcronym": "18+",
+            "eventType": "Кино",
+            "genres": [
+                "драма",
+                "триллер"
+            ],
+            "languages": ["Русский язык"],
+            "languageAcronyms": ["RU"],
+            "technologies": ["2d", "Dolby Digital"],
+            "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6403.png"
         },
-        "annotation": "Влюбленная пара проводит время вдали от цивилизации. Внезапный приезд сначала младшей сестры, а потом и бывшего парня девушки нарушают загородную идиллию. У каждого из героев свой план на эти выходные, а все вместе они становятся заложниками ситуации и участниками жестоких психологических игр. Влюбленность сменяется страстью, а невинный флирт вызывает ревность и может привести к смертельной опасности.",
-        "eventType": {
-            "name": "cinema",
-            "acronym": "Кино"
-        },
-        "genre": [
-            {
-                "name": "drama",
-                "acronym": "драма"
-            },
-            {
-                "name": "thriller",
-                "acronym": "триллер"
-            }
-        ],
-        "language": [
-            {
-                "name": "Русский язык",
-                "acronym": "RU"
-            }
-        ],
         "filters":[
             "$eventId;sovry_mne_pravdu",
             "$city;minsk",
@@ -105,34 +74,25 @@
             "$technology;dolbydigital",
             "$auditorium;voka",
             "$auditorium;vip"
-        ],
-        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6546.png"
+        ]
     },
 
     {
         "id":"petrovy_v_grippe",
-        "acronym": "Петровы в гриппе",
-        "ageLimit": {
-            "acronym": "12+",
-            "name": "зрителям, достигшим 12 лет"
+        "data": {
+            "title": "Петровы в гриппе",
+            "annotation": "Петровы — самая обычная семья. Он - автослесарь, она - библиотекарь, у них есть сын, но вместе они не живут. Казалось бы, ничего особенного. Но повседневная реальность взрывается в тот момент, когда семья заболевает гриппом, и жизнь наполняется безумием, фантастикой и сюрреализмом.",
+            "ageLimit": "зрителям, достигшим 12 лет",
+            "ageLimitAcronym": "12+",
+            "eventType": "Кино",
+            "genres": [
+                "фантастика"
+            ],
+            "languages": ["Русский язык"],
+            "languageAcronyms": ["RU"],
+            "technologies": ["ScreenX", "Dolby Atmos"],
+            "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
         },
-        "annotation": "Петровы — самая обычная семья. Он - автослесарь, она - библиотекарь, у них есть сын, но вместе они не живут. Казалось бы, ничего особенного. Но повседневная реальность взрывается в тот момент, когда семья заболевает гриппом, и жизнь наполняется безумием, фантастикой и сюрреализмом.",
-        "eventType": {
-            "name": "cinema",
-            "acronym": "Кино"
-        },
-        "genre": [
-            {
-                "name": "fantastic",
-                "acronym": "фантастика"
-            }
-        ],
-        "language": [
-            {
-                "name": "Русский язык",
-                "acronym": "RU"
-            }
-        ],
         "filters":[
             "$eventId;petrovy_v_grippe",
             "$city;minsk",
@@ -154,42 +114,27 @@
             "$auditorium;vegaslounge",
             "$auditorium;voka",
             "$auditorium;resto"
-        ],
-        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6523.png"
+        ]
     },
 
     {
         "id":"dune",
-        "acronym": "Дюна",
-        "ageLimit": {
-            "acronym": "12+",
-            "name": "зрителям, достигшим 12 лет"
+        "data": {
+            "title": "Дюна",
+            "annotation": "Наследник знаменитого дома Атрейдесов Пол отправляется вместе с семьей на одну из самых опасных планет во Вселенной – Арракис. Здесь нет ничего, кроме песка, палящего солнца, гигантских чудовищ…и основной причины межгалактических конфликтов – невероятно ценного ресурса, который называется меланж. В результате захвата власти Пол вынужден бежать и скрываться, и это становится началом его эпического путешествия. Враждебный мир Арракиса приготовил для него множество тяжелых испытаний, но только тот, кто готов взглянуть в глаза своему страху, достоин стать избранным.",
+            "ageLimit": "зрителям, достигшим 12 лет",
+            "ageLimitAcronym": "12+",
+            "eventType": "Кино",
+            "genres": [
+                "драма",
+                "фантастика",
+                "приключения"
+            ],
+            "languages": ["Русский язык"],
+            "languageAcronyms": ["RU"],
+            "technologies": ["2d", "Dolby Atmos", "2d4k", "ScreenX"],
+            "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG"
         },
-        "annotation": "Наследник знаменитого дома Атрейдесов Пол отправляется вместе с семьей на одну из самых опасных планет во Вселенной – Арракис. Здесь нет ничего, кроме песка, палящего солнца, гигантских чудовищ…и основной причины межгалактических конфликтов – невероятно ценного ресурса, который называется меланж. В результате захвата власти Пол вынужден бежать и скрываться, и это становится началом его эпического путешествия. Враждебный мир Арракиса приготовил для него множество тяжелых испытаний, но только тот, кто готов взглянуть в глаза своему страху, достоин стать избранным.",
-        "eventType": {
-            "name": "cinema",
-            "acronym": "Кино"
-        },
-        "genre": [
-            {
-                "name": "drama",
-                "acronym": "драма"
-            },
-            {
-                "name": "fantastic",
-                "acronym": "фантастика"
-            },
-            {
-                "name": "adventure",
-                "acronym": "приключения"
-            }
-        ],
-        "language": [
-            {
-                "name": "Русский язык",
-                "acronym": "RU"
-            }
-        ],
         "filters":[
             "$eventId;dune",
             "$city;minsk",
@@ -211,38 +156,26 @@
             "$auditorium;vip",
             "$auditorium;vegaslounge",
             "$auditorium;voka"
-        ],
-        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6519.JPEG"
+        ]
     },
 
     {
         "id":"klaustrofoby",
-        "acronym": "Клаустрофобы",
-        "ageLimit": {
-            "acronym": "12+",
-            "name": "зрителям, достигшим 12 лет"
+        "data": {
+            "title": "Клаустрофобы",
+            "annotation": "Шестеро незнакомцев, каждый из которых стал единственным победителем одного из смертельно опасных квестов, вновь оказываются в игре не по своей воле. Но прежние задания покажутся им сущим пустяком по сравнению с жуткими испытаниями, которые ожидают их на этот раз: игра стала еще опаснее и безжалостнее, а шансы на выживание стремятся к нулю.",
+            "ageLimit": "зрителям, достигшим 12 лет",
+            "ageLimitAcronym": "12+",
+            "eventType": "Кино",
+            "genres": [
+                "боевик",
+                "триллер"
+            ],
+            "languages": ["Русский язык"],
+            "languageAcronyms": ["RU"],
+            "technologies": ["2d", "Dolby Digital"],
+            "posterLink": "https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png"
         },
-        "annotation": "Шестеро незнакомцев, каждый из которых стал единственным победителем одного из смертельно опасных квестов, вновь оказываются в игре не по своей воле. Но прежние задания покажутся им сущим пустяком по сравнению с жуткими испытаниями, которые ожидают их на этот раз: игра стала еще опаснее и безжалостнее, а шансы на выживание стремятся к нулю.",
-        "eventType": {
-            "name": "cinema",
-            "acronym": "Кино"
-        },
-        "genre": [
-            {
-                "name": "action",
-                "acronym": "боевик"
-            },
-            {
-                "name": "thriller",
-                "acronym": "триллер"
-            }
-        ],
-        "language": [
-            {
-                "name": "Русский язык",
-                "acronym": "RU"
-            }
-        ],
         "filters":[
             "$eventId;klaustrofoby",
             "$city;minsk",
@@ -258,7 +191,6 @@
             "$technology;dolbydigital",
             "$auditorium;vip",
             "$auditorium;voka"
-        ],
-        "posterLink":"https://portal.silverscreen.by:8448/meadiaStorage/bin/system/cinema/eventsphoto/medium/6611.png"
+        ]
     }
   ]

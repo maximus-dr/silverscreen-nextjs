@@ -29,60 +29,69 @@ const fetchDataList = (fs, path) => {
 const createNewCard = (card, event) => {
 
     const updateCardData = (cardElement) => {
-        const eventStart = new Date(event.start);
 
-        switch (cardElement.role) {
-            case 'card':
-                cardElement.cardId = event.id;
-                break;
+        if (cardElement.role) {
+            Object.keys(event).forEach(key => {
+                if (key === cardElement.role) {
 
-            case 'cardPosterLink':
-                cardElement.link = `/afisha/event?eventId=${event.id}`
-                cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
-                break;
-
-            case 'cardTitle':
-                cardElement.value = event.acronym;
-                break;
-
-            case 'cardGenre':
-                cardElement.value = event.genre[0].acronym;
-                break;
-
-            case 'cardCinema':
-                cardElement.value = event.cinema.acronym;
-                break;
-
-            case 'cardCity':
-                cardElement.value = event.city.acronym;
-                break;
-
-            case 'cardEventStart':
-                const eventStartTime = eventStart.toLocaleTimeString('en-US', {
-                    hour12: false,
-                    hour: 'numeric',
-                    minute: 'numeric'
-                });
-                cardElement.value = eventStartTime;
-                break;
-
-            case 'cardEventDate':
-                const eventDate = eventStart.toLocaleDateString('en-US');
-                cardElement.value = eventDate;
-                break;
-
-            case 'cardAuditorium':
-                cardElement.value = event.auditorium.acronym;
-                break;
-
-            case 'cardTypeVideo':
-                cardElement.value = event.typeVideo.acronym;
-                break;
-
-            case 'cardTypeAudio':
-                cardElement.value = event.typeAudio.acronym;
-                break;
+                }
+            })
         }
+
+        // const eventStart = new Date(event.start);
+
+        // switch (cardElement.role) {
+        //     case 'card':
+        //         cardElement.cardId = event.id;
+        //         break;
+
+        //     case 'cardPosterLink':
+        //         cardElement.link = `/afisha/event?eventId=${event.id}`
+        //         cardElement.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
+        //         break;
+
+        //     case 'cardTitle':
+        //         cardElement.value = event.acronym;
+        //         break;
+
+        //     case 'cardGenre':
+        //         cardElement.value = event.genre[0].acronym;
+        //         break;
+
+        //     case 'cardCinema':
+        //         cardElement.value = event.cinema.acronym;
+        //         break;
+
+        //     case 'cardCity':
+        //         cardElement.value = event.city.acronym;
+        //         break;
+
+        //     case 'cardEventStart':
+        //         const eventStartTime = eventStart.toLocaleTimeString('en-US', {
+        //             hour12: false,
+        //             hour: 'numeric',
+        //             minute: 'numeric'
+        //         });
+        //         cardElement.value = eventStartTime;
+        //         break;
+
+        //     case 'cardEventDate':
+        //         const eventDate = eventStart.toLocaleDateString('en-US');
+        //         cardElement.value = eventDate;
+        //         break;
+
+        //     case 'cardAuditorium':
+        //         cardElement.value = event.auditorium.acronym;
+        //         break;
+
+        //     case 'cardTypeVideo':
+        //         cardElement.value = event.typeVideo.acronym;
+        //         break;
+
+        //     case 'cardTypeAudio':
+        //         cardElement.value = event.typeAudio.acronym;
+        //         break;
+        // }
 
         const children = cardElement.childrenList;
         if (children && children.length > 0) {
@@ -100,37 +109,16 @@ const createNewCard = (card, event) => {
 
 const updatePageData = (component, data) => {
 
-    let dataList = component.dataList ? data[component.dataList] : null;
-    let event = dataList ? dataList[0] : null;
-
     if (component.role === 'container' &&
         component.childrenList.length > 0) {
         const card = component.childrenList.find(child => child.role === 'card');
         if (card && component.dataList) {
-            const cards =  data[component.dataList].map(item => {
+            const cards =  data[component.dataList].map(event => {
                 const template = JSON.parse(JSON.stringify(card));
-                const newCard = createNewCard(template, item);
+                const newCard = createNewCard(template, event);
                 return updateComponentIds(newCard);
             });
             component.childrenList = cards;
-        }
-    }
-
-    if (event) {
-        if (component.role === 'eventTitle') {
-            component.value = event.acronym;
-        }
-
-        if (component.role === 'eventPoster') {
-            component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
-        }
-
-        if (component.role === 'eventBackground') {
-            component.styles.common.backgroundImage = `url('` + event.posterLink + `')`;
-        }
-
-        if (component.role === 'eventAnnotation') {
-            component.value = event.annotation;
         }
     }
 

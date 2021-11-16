@@ -39,13 +39,14 @@ export default function EventsContainer(props) {
         mode
     }
 
-    const cardList = mode === 'admin'
-        ? children
-        : children && children.filter(child => {
-            if (!filteredList) return;
-            const cardId = child.props.componentData.cardId;
-            return filteredList.find(event => event.id === cardId);
-        });
+    const cardList = children;
+        // ? children
+        // : children && children.filter(child => {
+        //     console.log(child);
+        //     if (!filteredList) return;
+        //     const cardId = child.props.componentData.cardId;
+        //     return filteredList.find(event => event.id === cardId);
+        // });
 
     const checkAllowDrop = (dragendComponent, dropTarget) => {
         if (getChild(dragendComponent, dropTarget.id)) {
