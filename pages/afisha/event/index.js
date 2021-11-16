@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { fetchDataList, updateComponentData } from '../../../core/functions/common/common';
+import { fetchDataList, updatePageData } from '../../../core/functions/common/common';
 import { renderComponents } from '../../../core/functions/render';
 import { setDataList } from '../../../store/actions/data';
 import { setDocumentComponentsData } from '../../../store/actions/document';
@@ -24,7 +24,7 @@ export async function getServerSideProps({ query }) {
 
     const {eventId} = query;
 
-    updateComponentData(componentsData, dataList, eventId);
+    updatePageData(componentsData, dataList, eventId);
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));

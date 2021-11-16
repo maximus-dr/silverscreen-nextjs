@@ -1,7 +1,7 @@
 import path from 'path';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { fetchDataList, updateComponentData } from '../../core/functions/common/common';
+import { fetchDataList, updatePageData } from '../../core/functions/common/common';
 import { setDataList } from '../../store/actions/data';
 import { setDocumentComponentsData } from '../../store/actions/document';
 import { initializeStore } from '../../store/store';
@@ -19,7 +19,7 @@ export async function getServerSideProps() {
     const data = fs.readFileSync(dbPath, 'utf8');
     const componentsData = JSON.parse(data);
 
-    updateComponentData(componentsData, dataList);
+    updatePageData(componentsData, dataList);
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));

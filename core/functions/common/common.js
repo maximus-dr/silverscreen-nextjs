@@ -98,7 +98,7 @@ const createNewCard = (card, event) => {
 }
 
 
-const updateComponentData = (component, data, eventId) => {
+const updatePageData = (component, data, eventId) => {
 
     let dataList = component.dataList ? data[component.dataList] : null;
     let event = dataList && eventId
@@ -138,7 +138,7 @@ const updateComponentData = (component, data, eventId) => {
     }
 
     if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updateComponentData(child, data, eventId));
+        component.childrenList.forEach(child => updatePageData(child, data, eventId));
     }
 }
 
@@ -147,6 +147,6 @@ export {
     clearURI,
     parseQuery,
     fetchDataList,
-    updateComponentData,
+    updatePageData,
     createNewCard
 }

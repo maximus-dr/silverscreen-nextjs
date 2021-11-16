@@ -2,7 +2,7 @@ import path from 'path';
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchDataList, updateComponentData } from '../../core/functions/common/common';
+import { fetchDataList, updatePageData } from '../../core/functions/common/common';
 
 import { setDataList } from '../../store/actions/data';
 import { setDocumentComponentsData, setMode } from '../../store/actions/document';
@@ -50,7 +50,7 @@ export default function PreviewPage() {
 
         if (!componentsData) {
             const pageData = JSON.parse(localStorage.getItem('page_data'));
-            updateComponentData(pageData, data, eventId);
+            updatePageData(pageData, data, eventId);
             dispatch(setDocumentComponentsData(pageData));
         }
     });
