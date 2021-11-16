@@ -98,13 +98,10 @@ const createNewCard = (card, event) => {
 }
 
 
-const updatePageData = (component, data, eventId) => {
+const updatePageData = (component, data) => {
 
     let dataList = component.dataList ? data[component.dataList] : null;
-    let event = dataList && eventId
-        ? dataList.find(item => item.id === eventId)
-        : dataList
-            ? dataList[0] : null;
+    let event = dataList ? dataList[0] : null;
 
     if (component.role === 'container' &&
         component.childrenList.length > 0) {
@@ -138,7 +135,7 @@ const updatePageData = (component, data, eventId) => {
     }
 
     if (component.childrenList && component.childrenList.length > 0) {
-        component.childrenList.forEach(child => updatePageData(child, data, eventId));
+        component.childrenList.forEach(child => updatePageData(child, data));
     }
 }
 

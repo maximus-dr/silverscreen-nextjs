@@ -11,7 +11,7 @@ const fs = require('fs');
 
 
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps() {
 
     const reduxStore = initializeStore()
     const { dispatch } = reduxStore
@@ -21,10 +21,7 @@ export async function getServerSideProps({ query }) {
     const componentsData = JSON.parse(data);
 
     const dataList = fetchDataList(fs, path);
-
-    const {eventId} = query;
-
-    updatePageData(componentsData, dataList, eventId);
+    updatePageData(componentsData, dataList);
 
     dispatch(setDataList(dataList));
     dispatch(setDocumentComponentsData(componentsData));

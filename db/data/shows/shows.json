@@ -35,7 +35,8 @@
             "$showtime;07:00-11:59",
             "$technology;2d",
             "$technology;dolbydigital",
-            "$auditorium;resto"
+            "$auditorium;resto",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {

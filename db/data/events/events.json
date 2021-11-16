@@ -38,6 +38,7 @@
                 }
         ],
         "filters":[
+            "$eventId;boss_molokosos-2",
             "$city;minsk",
             "$city;grodno",
             "$shedule;now",
@@ -89,6 +90,7 @@
             }
         ],
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -132,6 +134,7 @@
             }
         ],
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;minsk",
             "$city;grodno",
             "$genre;drama",
@@ -188,6 +191,7 @@
             }
         ],
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -240,6 +244,7 @@
             }
         ],
         "filters":[
+            "$eventId;klaustrofoby",
             "$city;minsk",
             "$city;grodno",
             "$genre;action",
