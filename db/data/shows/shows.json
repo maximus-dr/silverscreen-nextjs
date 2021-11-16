@@ -75,7 +75,8 @@
             "$showtime;12:00-16:59",
             "$technology;3d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -114,7 +115,8 @@
             "$showtime;07:00-11:59",
             "$technology;2d",
             "$technology;dolbydigital",
-            "$auditorium;resto"
+            "$auditorium;resto",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -153,7 +155,8 @@
             "$showtime;12:00-16:59",
             "$technology;3d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -192,7 +195,8 @@
             "$showtime;07:00-11:59",
             "$technology;2d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -231,7 +235,8 @@
             "$showtime;12:00-16:59",
             "$technology;3d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -270,7 +275,8 @@
             "$showtime;07:00-11:59",
             "$technology;2d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -309,7 +315,8 @@
             "$showtime;12:00-16:59",
             "$technology;3d",
             "$technology;dolbydigital",
-            "$auditorium;voka"
+            "$auditorium;voka",
+            "$eventId;boss_molokosos-2"
         ]
     },
     {
@@ -376,6 +383,7 @@
         },
         "start": "2021-10-04T18:15:00.000000+03:00",
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -414,6 +422,7 @@
         },
         "start": "2021-10-04T22:45:00.000000+03:00",
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -452,6 +461,7 @@
         },
         "start": "2021-10-05T13:45:00.000000+03:00",
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -490,6 +500,7 @@
         },
         "start": "2021-10-05T19:15:00.000000+03:00",
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -528,6 +539,7 @@
         },
         "start": "2021-10-05T23:15:00.000000+03:00",
         "filters":[
+            "$eventId;sovry_mne_pravdu",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -566,6 +578,7 @@
         },
         "start": "2021-10-04T12:05:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -604,6 +617,7 @@
         },
         "start": "2021-10-04T18:35:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -642,6 +656,7 @@
         },
         "start": "2021-10-05T14:35:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -680,6 +695,7 @@
         },
         "start": "2021-10-05T19:05:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -718,6 +734,7 @@
         },
         "start": "2021-10-04T12:35:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;grodno",
             "$shedule;now",
             "$date;2021-10-04",
@@ -756,6 +773,7 @@
         },
         "start": "2021-10-04T18:15:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;grodno",
             "$shedule;now",
             "$date;2021-10-04",
@@ -794,6 +812,7 @@
         },
         "start": "2021-10-05T12:25:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;grodno",
             "$shedule;now",
             "$date;2021-10-05",
@@ -832,6 +851,7 @@
         },
         "start": "2021-10-05T19:00:00.000000+03:00",
         "filters":[
+            "$eventId;petrovy_v_grippe",
             "$city;grodno",
             "$shedule;now",
             "$date;2021-10-05",
@@ -870,6 +890,7 @@
         },
         "start": "2021-10-04T13:40:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -909,6 +930,7 @@
         },
         "start": "2021-10-04T19:00:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -948,6 +970,7 @@
         },
         "start": "2021-10-04T22:45:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-04",
@@ -987,6 +1010,7 @@
         },
         "start": "2021-10-05T13:05:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -1026,6 +1050,7 @@
         },
         "start": "2021-10-05T20:05:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
@@ -1065,6 +1090,7 @@
         },
         "start": "2021-10-05T22:15:00.000000+03:00",
         "filters":[
+            "$eventId;dune",
             "$city;minsk",
             "$shedule;now",
             "$date;2021-10-05",
